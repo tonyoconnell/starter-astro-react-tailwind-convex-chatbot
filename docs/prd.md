@@ -14,6 +14,8 @@ This document contains the full breakdown of features, epics, and stories for th
 
 * **Background Context**
     This project is an AI-accelerated starter template for building sophisticated conversational and agent-based applications. It is designed for solo developers, entrepreneurs, and technical visionaries who want to leverage AI pair programming effectively. The core problem it solves is the immense friction and setup time required to build a modern, robust, and AI-ready application, allowing the creator to focus on innovation rather than boilerplate.
+    
+    **See [[project-brief]] for complete context and strategic vision.**
 
 * **Change Log**
     | Date | Version | Description | Author |
@@ -179,7 +181,15 @@ This document contains the full breakdown of features, epics, and stories for th
 ---
 ### **Next Steps**
 
-This PRD, along with the `architecture.md`, contains the complete plan for the MVP. These documents should be handed off to the **Scrum Master (Bob)**. His task is to begin the development cycle by using the `create-next-story` task to draft the first story (Story 1.1) from Epic 1.
+This PRD, along with the [[architecture]], contains the complete plan for the MVP. These documents should be handed off to the **Scrum Master (Bob)**. His task is to begin the development cycle by using the `create-next-story` task to draft the first story ([[story-1.1-project-scaffolding]]) from [[epic-1]].
+
+### **Related Documents**
+* [[project-brief]] - Strategic foundation and problem definition
+* [[architecture]] - Technical specifications and system design
+* [[epic-1]] - Foundation & Core Setup
+* [[epic-2]] - Authentication & Real-Time Data
+* [[epic-3]] - Conversational AI Implementation
+* [[epic-4]] - In-App Code Generation & Context Framework
 
 ```
 

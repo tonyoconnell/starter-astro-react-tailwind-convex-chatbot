@@ -2,10 +2,17 @@
 
 **Goal:** To establish the complete, deployable project structure with all core tooling, a basic UI shell with theming, and a functioning CI/CD pipeline.
 
+**Related Documents:**
+* [[prd]] - Product Requirements Document
+* [[architecture]] - Technical architecture specifications
+* [[architecture/tech-stack]] - Technology stack details
+
 ## Stories
 
 ### Story 1.1: Project Scaffolding & Initial Deployment
 **As a** Context Engineer, **I want** the basic monorepo structure with a 'Hello World' page and a working CI/CD pipeline, **so that** I can validate the end-to-end deployment process from day one.
+
+**Status:** ✅ COMPLETED - See [[story-1.1-project-scaffolding]] for full implementation details.
 
 *Acceptance Criteria:*
 1. The project monorepo is initialized using Turborepo.
@@ -16,18 +23,24 @@
 ### Story 1.2: Core Backend Setup (Convex)
 **As a** Context Engineer, **I want** the Convex backend initialized and connected to my frontend, **so that** the application has a live, real-time data layer.
 
+**Status:** 🔄 IN PROGRESS - See [[story-1.2-convex-backend-setup]] for current status.
+
 *Acceptance Criteria:*
 1. The `convex/` directory is initialized.
-2. The database schema from the architecture document is implemented in `convex/schema.ts`.
+2. The database schema from [[architecture/database-schema]] is implemented in `convex/schema.ts`.
 3. The frontend application successfully connects to the Convex development server.
 
 ### Story 1.3: UI Foundation & Theming
 **As a** Context Engineer, **I want** a basic UI component library and a light/dark theme toggle implemented, **so that** future features can be built with a consistent look.
 
+**Status:** 📋 PLANNED - Authentication integration needed first.
+
 *Acceptance Criteria:*
 1. ShadCN and TailwindCSS are installed and configured.
 2. A functional light/dark mode toggle is implemented.
 3. At least two essential UI components (e.g., Button, Card) are created in the `packages/ui` directory.
+
+**See [[story-1.3-authentication-integration]] for current authentication setup progress.**
 
 ### Story 1.4: Page Layouts & Protected Route Shell
 **As a** Context Engineer, **I want** a basic public layout and a protected dashboard layout defined, **so that** I have a clear structure for public and private content.

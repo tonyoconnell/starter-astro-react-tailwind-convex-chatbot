@@ -1,5 +1,5 @@
 import { defineMiddleware } from "astro:middleware";
-import { serverAuthGuard } from "@starter/lib/auth";
+import { auth } from "@starter/lib/auth";
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { request, url, redirect } = context;
@@ -10,15 +10,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
     "/settings", 
     "/chat",
     "/dashboard"
-  ];
-
-  // Define public routes that don't need auth
-  const publicRoutes = [
-    "/",
-    "/login",
-    "/signup",
-    "/about",
-    "/api/auth"
   ];
 
   const pathname = url.pathname;
@@ -35,23 +26,32 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  // Only apply auth guard to protected routes
+  // Check authentication for protected routes
   if (isProtectedRoute) {
-    const { user, shouldRedirect, redirectUrl } = await serverAuthGuard(request, {
-      requireAuth: true,
-      redirectTo: "/login",
-    });
-
-    if (shouldRedirect && redirectUrl) {
-      // Add current URL as redirect parameter
-      const loginUrl = new URL(redirectUrl, url.origin);
+    try {
+      // Use proper BetterAuth session validation
+      const session = await auth.api.getSession({
+        headers: Object.fromEntries(request.headers.entries())
+      });
+      
+      if (!session || !session.user) {
+        // Redirect to auth test page for login
+        const loginUrl = new URL("/auth-test", url.origin);
+        loginUrl.searchParams.set("redirect", pathname);
+        return redirect(loginUrl.toString());
+      }
+      
+      // Add auth data to locals for use in pages
+      context.locals.isAuthenticated = true;
+      context.locals.user = session.user;
+    } catch (error) {
+      console.error("Authentication check failed:", error);
+      
+      // Redirect to auth page on error
+      const loginUrl = new URL("/auth-test", url.origin);
       loginUrl.searchParams.set("redirect", pathname);
       return redirect(loginUrl.toString());
     }
-
-    // Add user to locals for use in Astro pages
-    context.locals.user = user;
-    context.locals.isAuthenticated = !!user;
   }
 
   return next();

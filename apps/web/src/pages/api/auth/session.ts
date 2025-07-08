@@ -5,24 +5,36 @@
  */
 
 import type { APIRoute } from "astro";
-import { authClient } from "@starter/lib/auth";
+import { auth } from "@starter/lib/auth";
+
+// Disable prerendering for SSR mode
+export const prerender = false;
 
 export const GET: APIRoute = async ({ request }) => {
   try {
-    // Get session from BetterAuth
-    const session = await authClient.getSession({
-      headers: request.headers,
+    console.log("Session check requested");
+    
+    // Get session from BetterAuth using proper API
+    const session = await auth.api.getSession({
+      headers: Object.fromEntries(request.headers.entries())
     });
 
-    if (session?.user) {
+    if (session && session.user) {
+      console.log("Active session found:", session.user.id);
       return new Response(
         JSON.stringify({
-          user: session.user,
+          user: {
+            id: session.user.id,
+            name: session.user.name,
+            email: session.user.email,
+            image: session.user.image,
+          },
           session: {
             id: session.session.id,
-            userId: session.user.id,
+            userId: session.session.userId,
             expiresAt: session.session.expiresAt,
           },
+          authenticated: true
         }),
         {
           status: 200,
@@ -33,10 +45,12 @@ export const GET: APIRoute = async ({ request }) => {
       );
     }
 
+    console.log("No active session found");
     return new Response(
       JSON.stringify({
         user: null,
         session: null,
+        authenticated: false
       }),
       {
         status: 200,
@@ -65,9 +79,11 @@ export const GET: APIRoute = async ({ request }) => {
 
 export const DELETE: APIRoute = async ({ request }) => {
   try {
-    // Sign out with BetterAuth
-    await authClient.signOut({
-      headers: request.headers,
+    console.log("Sign out requested");
+    
+    // Use proper BetterAuth signOut API
+    const result = await auth.api.signOut({
+      headers: Object.fromEntries(request.headers.entries())
     });
 
     return new Response(
@@ -79,8 +95,8 @@ export const DELETE: APIRoute = async ({ request }) => {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          // Clear session cookie
-          "Set-Cookie": "better-auth-session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict",
+          // BetterAuth will handle cookie clearing in the result
+          ...Object.fromEntries(result.headers?.entries() || []),
         },
       }
     );

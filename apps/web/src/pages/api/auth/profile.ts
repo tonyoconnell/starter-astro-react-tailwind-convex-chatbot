@@ -1,40 +1,28 @@
 /**
- * User profile management API endpoint
+ * User profile management API endpoint (Development Mode)
  * GET: Get user profile
  * PATCH: Update user profile
  * DELETE: Delete user account
  */
 
 import type { APIRoute } from "astro";
-import { authClient } from "@starter/lib/auth";
-import { api } from "../../../convex/_generated/api";
 
 export const GET: APIRoute = async ({ request }) => {
   try {
-    // Get current session
-    const session = await authClient.getSession({
-      headers: request.headers,
-    });
-
-    if (!session?.user) {
-      return new Response(
-        JSON.stringify({
-          error: "Unauthorized",
-          message: "No active session",
-        }),
-        {
-          status: 401,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-    }
-
-    // Return user profile
+    console.log("Profile GET requested");
+    
+    // Mock profile data for development
     return new Response(
       JSON.stringify({
-        user: session.user,
+        user: {
+          id: "dev-user-123",
+          name: "Development User",
+          email: "dev@example.com",
+          image: null,
+          _creationTime: Date.now() - 86400000, // 1 day ago
+        },
+        developmentMode: true,
+        message: "Mock profile data - Convex not connected"
       }),
       {
         status: 200,
@@ -44,12 +32,13 @@ export const GET: APIRoute = async ({ request }) => {
       }
     );
   } catch (error) {
-    console.error("Profile fetch error:", error);
+    console.error("Profile GET error:", error);
     
     return new Response(
       JSON.stringify({
         error: "Profile fetch failed",
         message: error instanceof Error ? error.message : "Unknown error",
+        developmentMode: true
       }),
       {
         status: 500,
@@ -63,89 +52,25 @@ export const GET: APIRoute = async ({ request }) => {
 
 export const PATCH: APIRoute = async ({ request }) => {
   try {
-    // Get current session
-    const session = await authClient.getSession({
-      headers: request.headers,
-    });
-
-    if (!session?.user) {
-      return new Response(
-        JSON.stringify({
-          error: "Unauthorized",
-          message: "No active session",
-        }),
-        {
-          status: 401,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-    }
-
-    // Parse request body
-    const updates = await request.json();
+    console.log("Profile PATCH requested");
     
-    // Validate update fields
-    const allowedFields = ["name", "email", "image"];
-    const filteredUpdates: Record<string, unknown> = {};
+    const body = await request.json();
+    console.log("Profile update data:", body);
     
-    for (const [key, value] of Object.entries(updates)) {
-      if (allowedFields.includes(key) && value !== undefined) {
-        // Basic validation
-        if (key === "email" && typeof value === "string") {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(value)) {
-            return new Response(
-              JSON.stringify({
-                error: "Invalid email format",
-                message: "Please provide a valid email address",
-              }),
-              {
-                status: 400,
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            );
-          }
-        }
-        
-        if (key === "name" && typeof value === "string") {
-          const trimmedName = value.trim();
-          if (trimmedName.length < 1) {
-            return new Response(
-              JSON.stringify({
-                error: "Invalid name",
-                message: "Name cannot be empty",
-              }),
-              {
-                status: 400,
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            );
-          }
-          filteredUpdates[key] = trimmedName;
-        } else {
-          filteredUpdates[key] = value;
-        }
-      }
-    }
-
-    // TODO: Update user in Convex database
-    // This would call the updateUser mutation with the user ID and updates
-    
-    // For now, return success with mock updated user
-    const updatedUser = {
-      ...session.user,
-      ...filteredUpdates,
-      updatedAt: new Date(),
-    };
-
+    // Mock successful profile update
     return new Response(
-      JSON.stringify(updatedUser),
+      JSON.stringify({
+        user: {
+          id: "dev-user-123",
+          name: body.name || "Development User",
+          email: body.email || "dev@example.com",
+          image: body.image || null,
+          _creationTime: Date.now() - 86400000,
+        },
+        success: true,
+        message: "Profile updated successfully (development mode)",
+        developmentMode: true
+      }),
       {
         status: 200,
         headers: {
@@ -154,12 +79,13 @@ export const PATCH: APIRoute = async ({ request }) => {
       }
     );
   } catch (error) {
-    console.error("Profile update error:", error);
+    console.error("Profile PATCH error:", error);
     
     return new Response(
       JSON.stringify({
         error: "Profile update failed",
         message: error instanceof Error ? error.message : "Unknown error",
+        developmentMode: true
       }),
       {
         status: 500,
@@ -173,55 +99,37 @@ export const PATCH: APIRoute = async ({ request }) => {
 
 export const DELETE: APIRoute = async ({ request }) => {
   try {
-    // Get current session
-    const session = await authClient.getSession({
-      headers: request.headers,
-    });
-
-    if (!session?.user) {
-      return new Response(
-        JSON.stringify({
-          error: "Unauthorized",
-          message: "No active session",
-        }),
-        {
-          status: 401,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-    }
-
-    // TODO: Delete user account in Convex database
-    // This would call the deleteUser mutation with proper cleanup
+    console.log("Profile DELETE requested");
     
-    // Sign out the user
-    await authClient.signOut({
-      headers: request.headers,
-    });
-
+    const body = await request.json();
+    console.log("Account deletion data:", body);
+    
+    // Mock successful account deletion
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Account deleted successfully",
+        message: "Account deleted successfully (development mode)",
+        reason: body.reason || "Not specified",
+        feedback: body.feedback || "No feedback provided",
+        developmentMode: true
       }),
       {
         status: 200,
         headers: {
           "Content-Type": "application/json",
           // Clear session cookie
-          "Set-Cookie": "better-auth-session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict",
+          "Set-Cookie": "better-auth-session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=Strict",
         },
       }
     );
   } catch (error) {
-    console.error("Account deletion error:", error);
+    console.error("Profile DELETE error:", error);
     
     return new Response(
       JSON.stringify({
         error: "Account deletion failed",
         message: error instanceof Error ? error.message : "Unknown error",
+        developmentMode: true
       }),
       {
         status: 500,

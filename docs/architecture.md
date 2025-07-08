@@ -11,6 +11,10 @@ This document outlines the complete fullstack architecture for the AI-Accelerate
 
 This unified approach combines what would traditionally be separate backend and frontend architecture documents, streamlining the development process for modern fullstack applications where these concerns are increasingly intertwined.
 
+**Related Documents:**
+* [[project-brief]] - Strategic foundation and problem definition
+* [[prd]] - Product requirements and feature breakdown
+
 ##### **Starter Template or Existing Project**
 This project's goal is to create a new, opinionated starter template from scratch. It is not based on a pre-existing public starter like 'Create React App' or 'T3 Stack'. The architecture defined in this document will serve as the blueprint for that new template.
 
@@ -115,31 +119,31 @@ This table is the single source of truth for all technologies to be used in the 
 
 ## **Data Models**
 
-*This section would contain the detailed data model definitions for `User`, `Conversation`, and `Message` as previously discussed.*
+See [[architecture/database-schema]] for detailed data model definitions.
 
 -----
 
 ## **API Specification**
 
-*This section would contain the detailed Convex Function definitions for `Queries`, `Mutations`, and `Actions` as previously discussed.*
+See [[architecture/api-specification]] for detailed Convex Function definitions.
 
 -----
 
 ## **Components**
 
-*This section would contain the descriptions of the logical components (`Authentication Service`, `Chat Interface`, `Chat Service`, etc.) and the Component Interaction Diagram as previously discussed.*
+See [[architecture/overview]] for logical component descriptions and interaction diagrams.
 
 -----
 
 ## **External APIs**
 
-*This section would contain the detailed breakdown of the `LLM Provider`, `Claude Code SDK`, and `BetterAuth` APIs as previously discussed.*
+See [[architecture/overview]] for detailed breakdown of external service integrations.
 
 -----
 
 ## **Core Workflows**
 
-*This section would contain the Mermaid sequence diagrams for "New User Sign-Up & First Chat" and "In-App Code Generation" as previously discussed.*
+See [[architecture/overview]] for Mermaid sequence diagrams of key user flows.
 
 -----
 
@@ -282,7 +286,16 @@ Our strategy utilizes two distinct workflows for production and local developmen
 
 ## **Next Steps**
 
-With the architecture defined, the next step is to begin the development sprints. This document should be handed off to the **Scrum Master (Bob)**, who will use the epics defined in the `prd.md` (which would be created from our `brief.md`) and the technical details herein to create the first actionable story for the development agent.
+With the architecture defined, the next step is to begin the development sprints. This document should be handed off to the **Scrum Master (Bob)**, who will use the epics defined in [[prd]] and the technical details herein to create the first actionable story for the development agent.
+
+**Implementation Progress:**
+* [[story-1.1-project-scaffolding]] - ✅ COMPLETED
+* [[story-1.2-convex-backend-setup]] - In Progress
+* [[story-1.3-authentication-integration]] - Planned
+
+**Related Implementation Documents:**
+* [[epic-1]] - Foundation & Core Setup
+* [[oauth-setup-guide]] - OAuth configuration instructions
 
 ```
 ```

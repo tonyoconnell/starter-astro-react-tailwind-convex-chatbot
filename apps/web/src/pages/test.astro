@@ -1,0 +1,112 @@
+---
+// Test page to verify authentication system components
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication System Test</title>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">🧪 Authentication System Test</h1>
+      
+      <!-- Status Info -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold text-blue-900 mb-4">System Status</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <span class="font-medium text-blue-800">Mode:</span>
+            <span class="text-blue-700 ml-2">Development (No Convex)</span>
+          </div>
+          <div>
+            <span class="font-medium text-blue-800">Auth Backend:</span>
+            <span class="text-blue-700 ml-2">Mock Responses</span>
+          </div>
+          <div>
+            <span class="font-medium text-blue-800">OAuth:</span>
+            <span class="text-blue-700 ml-2">Redirects Only</span>
+          </div>
+          <div>
+            <span class="font-medium text-blue-800">Database:</span>
+            <span class="text-blue-700 ml-2">Not Connected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Navigation -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Page Tests -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">📄 Page Tests</h3>
+          <div class="space-y-2">
+            <a href="/" class="block text-blue-600 hover:text-blue-800">→ Homepage</a>
+            <a href="/login-simple" class="block text-blue-600 hover:text-blue-800">→ Login Page (Simple)</a>
+            <a href="/login" class="block text-gray-400 hover:text-gray-600">→ Login Page (React - May Error)</a>
+          </div>
+        </div>
+
+        <!-- Protected Route Tests -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">🔒 Protected Routes</h3>
+          <div class="space-y-2">
+            <a href="/profile" class="block text-orange-600 hover:text-orange-800">→ Profile (Should Redirect)</a>
+            <a href="/settings" class="block text-orange-600 hover:text-orange-800">→ Settings (Should Redirect)</a>
+          </div>
+          <p class="text-xs text-gray-500 mt-3">These should redirect to login</p>
+        </div>
+
+        <!-- API Tests -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">🔌 API Tests</h3>
+          <div class="space-y-2">
+            <a href="/api/auth/session" class="block text-green-600 hover:text-green-800" target="_blank">→ Session Check</a>
+            <a href="/api/auth/profile" class="block text-green-600 hover:text-green-800" target="_blank">→ Profile Data</a>
+            <a href="/api/auth/signin/google" class="block text-orange-600 hover:text-orange-800">→ Google OAuth</a>
+            <a href="/api/auth/signin/github" class="block text-orange-600 hover:text-orange-800">→ GitHub OAuth</a>
+          </div>
+          <p class="text-xs text-gray-500 mt-3">OAuth links will redirect and test the flow</p>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-yellow-900 mb-4">🎯 Testing Instructions</h3>
+        <ol class="list-decimal list-inside space-y-2 text-yellow-800">
+          <li>Test page navigation - all should load without errors</li>
+          <li>Try protected routes - should redirect to login with redirect parameter</li>
+          <li>Test OAuth buttons on login page - click them to see mock success redirect</li>
+          <li>Check API endpoints - should return JSON responses</li>
+          <li>Check browser console for any JavaScript errors</li>
+        </ol>
+        
+        <div class="mt-4 p-3 bg-yellow-100 rounded">
+          <h4 class="font-semibold text-yellow-900 mb-2">OAuth Testing:</h4>
+          <p class="text-sm text-yellow-800">
+            The OAuth buttons won't do real authentication yet, but they should:
+          </p>
+          <ul class="text-sm text-yellow-800 mt-1 ml-4">
+            <li>• Redirect to the same page with ?auth_success=google or ?auth_success=github</li>
+            <li>• Show the redirect URL in your browser's address bar</li>
+            <li>• Log the action in the browser's developer console</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Expected Behavior -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6 mt-6">
+        <h3 class="text-lg font-semibold text-green-900 mb-4">✅ Expected Results</h3>
+        <ul class="list-disc list-inside space-y-1 text-green-800 text-sm">
+          <li>All pages load without middleware errors</li>
+          <li>Login page shows OAuth buttons (may not have real icons)</li>
+          <li>Protected routes redirect to login with proper redirect parameter</li>
+          <li>OAuth buttons redirect back with mock success parameters</li>
+          <li>API endpoints return proper JSON responses</li>
+          <li>No console errors related to authentication</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

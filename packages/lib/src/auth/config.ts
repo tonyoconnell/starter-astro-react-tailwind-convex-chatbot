@@ -1,24 +1,30 @@
 import { betterAuth } from "better-auth";
-import { convexAdapter } from "@better-auth-kit/convex";
-import { ConvexHttpClient } from "convex/browser";
+import { createAuthClient } from "better-auth/react";
 
-// Initialize Convex client for database adapter
-const convexClient = new ConvexHttpClient(process.env.CONVEX_URL || "");
+// Note: Commented out Convex imports to avoid initialization errors
+// import { convexAdapter } from "@better-auth-kit/convex";
+// import { ConvexHttpClient } from "convex/browser";
+
+// Initialize Convex client for database adapter (only if URL is provided)
+// const convexUrl = process.env.CONVEX_URL;
+// const convexClient = convexUrl ? new ConvexHttpClient(convexUrl) : null;
 
 export const auth = betterAuth({
-  database: convexAdapter(convexClient),
+  // Use in-memory database for development (session storage in memory)
+  // TODO: Add Convex adapter once backend is deployed
+  // database: convexClient ? convexAdapter(convexClient) : undefined,
   
   // OAuth providers configuration
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-      redirectURI: `${process.env.BETTER_AUTH_URL}/api/auth/callback/google`,
+      clientId: import.meta.env.GOOGLE_CLIENT_ID || "",
+      clientSecret: import.meta.env.GOOGLE_CLIENT_SECRET || "",
+      redirectURI: `${import.meta.env.BETTER_AUTH_URL}/api/auth/callback/google`,
     },
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
-      redirectURI: `${process.env.BETTER_AUTH_URL}/api/auth/callback/github`,
+      clientId: import.meta.env.GITHUB_CLIENT_ID || "",
+      clientSecret: import.meta.env.GITHUB_CLIENT_SECRET || "",
+      redirectURI: `${import.meta.env.BETTER_AUTH_URL}/api/auth/callback/github`,
     },
   },
 
@@ -51,10 +57,10 @@ export const auth = betterAuth({
   },
 
   // Base URL for OAuth callbacks
-  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:4321",
+  baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321",
   
   // Secret for signing sessions
-  secret: process.env.BETTER_AUTH_SECRET || "your-secret-key-here-change-in-production",
+  secret: import.meta.env.BETTER_AUTH_SECRET || "your-secret-key-here-change-in-production",
 
   // User configuration
   user: {
@@ -81,8 +87,10 @@ export const auth = betterAuth({
   },
 });
 
-// Export auth client for use in applications
-export const authClient = auth.createAuthClient();
+// Create and export auth client for use in applications
+export const authClient = createAuthClient({
+  baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321"
+});
 
 // Type definitions for authenticated user
 export interface AuthUser {

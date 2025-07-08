@@ -150,6 +150,8 @@ The high-level vision is to establish this template as the de facto standard for
 * **Integration Requirements:** Must integrate with LLM providers (via OpenRouter or Requesty.AI for runtime flexibility), the Claude Code SDK for in-app code generation, and the observability suite (PostHog, Sentry, Logflare).
 * **Security/Compliance:** Standard web security best practices will be followed. Authentication will be handled by a Convex-compatible library.
 
+**See [[architecture]] for detailed technical specifications and system design.**
+
 ### **Constraints & Assumptions**
 
 ##### **Constraints**
@@ -186,4 +188,5 @@ The high-level vision is to establish this template as the de facto standard for
 
 This Project Brief is now complete and serves as the strategic foundation for the template.
 
-* **Architect Handoff:** The next logical step is to engage the **Architect (Winston)**. He should use this brief to create a detailed `architecture.md` document that defines the specific structures, patterns, and integrations required to build the MVP of this template.
+* **Architect Handoff:** The next logical step is to engage the **Architect (Winston)**. He should use this brief to create a detailed [[architecture]] document that defines the specific structures, patterns, and integrations required to build the MVP of this template.
+* **Product Requirements:** Development should follow the comprehensive [[prd]] (Product Requirements Document) which breaks down the MVP into actionable epics and stories.

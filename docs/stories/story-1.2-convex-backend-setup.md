@@ -1,6 +1,6 @@
 # Story 1.2: Core Backend Setup (Convex)
 
-**Epic:** 1 - Foundation & Core Setup  
+**Epic:** [[epic-1]] - Foundation & Core Setup  
 **Story:** 1.2  
 **Status:** ✅ COMPLETED  
 **Assigned:** Dev Agent  
@@ -22,11 +22,11 @@
 
 ### Architecture Alignment
 This story implements the backend architecture defined in:
-- `docs/architecture.md` - Overall system architecture and tech stack
-- `docs/architecture/database-schema.md` - Database design and relationships
-- `docs/architecture/tech-stack.md` - Technology versions and constraints
-- `docs/architecture/coding-standards.md` - Development standards and patterns
-- `docs/architecture/source-tree.md` - Project structure and organization
+- [[architecture]] - Overall system architecture and tech stack
+- [[architecture/database-schema]] - Database design and relationships
+- [[architecture/tech-stack]] - Technology versions and constraints
+- [[architecture/coding-standards]] - Development standards and patterns
+- [[architecture/source-tree]] - Project structure and organization
 
 ### Technology Stack Context
 - **Backend Platform:** Convex ~1.11 for serverless functions and real-time database
@@ -501,8 +501,13 @@ The core implementation is excellent and production-ready. The only issue is tha
 
 ---
 
-**Next Story:** 1.3 - Authentication Integration & User Management  
-**Previous Story:** 1.1 - Project Scaffolding & Initial Deployment  
+**Next Story:** [[story-1.3-authentication-integration]] - Authentication Integration & User Management  
+**Previous Story:** [[story-1.1-project-scaffolding]] - Project Scaffolding & Initial Deployment  
 
-**Dependencies:** Story 1.1 must be complete  
+**Dependencies:** [[story-1.1-project-scaffolding]] must be complete  
 **Blockers:** None
+
+**Related Documents:**
+* [[epic-1]] - Parent epic
+* [[architecture/database-schema]] - Database design specifications
+* [[architecture/coding-standards]] - Development guidelines

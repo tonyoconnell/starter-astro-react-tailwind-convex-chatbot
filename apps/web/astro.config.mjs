@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid', // Allows SSR for API routes while keeping pages static
+  output: 'server', // Enable SSR for API routes and middleware
   adapter: cloudflare({
     platformProxy: {
       enabled: true
@@ -13,13 +13,8 @@ export default defineConfig({
   }),
   integrations: [react(), tailwind()],
   
-  // Security headers for authentication
+  // Security configuration
   security: {
     checkOrigin: true,
-  },
-  
-  // Enable experimental features for better auth support
-  experimental: {
-    hybridOutput: true,
   },
 });

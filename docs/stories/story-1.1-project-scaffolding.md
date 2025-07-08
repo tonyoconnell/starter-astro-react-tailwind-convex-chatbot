@@ -1,6 +1,6 @@
 # Story 1.1: Project Scaffolding & Initial Deployment
 
-**Epic:** 1 - Foundation & Core Setup  
+**Epic:** [[epic-1]] - Foundation & Core Setup  
 **Story:** 1.1  
 **Status:** ✅ DONE  
 **Assigned:** Dev Agent  
@@ -27,7 +27,7 @@
 - **CI/CD:** GitHub Actions
 
 ### Architecture Requirements
-Based on the project structure defined in `docs/arch-project-structure.md`:
+Based on the project structure defined in [[architecture]]:
 ```
 ai-starter-template/
 ├── apps/
@@ -198,8 +198,13 @@ ai-starter-template/
 
 ---
 
-**Next Story:** 1.2 - Core Backend Setup (Convex)  
+**Next Story:** [[story-1.2-convex-backend-setup]] - Core Backend Setup (Convex)  
 **Previous Story:** None (First story)  
 
 **Dependencies:** None  
 **Blockers:** None
+
+**Related Documents:**
+* [[epic-1]] - Parent epic
+* [[architecture]] - Technical specifications
+* [[prd]] - Product requirements

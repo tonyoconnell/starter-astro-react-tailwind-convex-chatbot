@@ -1,5 +1,6 @@
 import { atom, computed } from "nanostores";
 import type { User, Session, AuthState, AuthError } from "./types";
+import { notificationActions } from "./notifications";
 
 // Note: Convex client integration will be added when the main app initializes
 // This allows the store to work without Convex dependency in the shared lib
@@ -121,6 +122,7 @@ export const authActions = {
 
       if (response.ok) {
         authActions.clearAuth();
+        notificationActions.success("Signed out", "You have been successfully signed out");
         // Redirect to home page
         window.location.href = "/";
       } else {
@@ -128,11 +130,13 @@ export const authActions = {
       }
     } catch (error) {
       console.error("Sign out error:", error);
+      const errorMsg = "Failed to sign out. Please try again.";
       $error.set({
         code: "SIGNOUT_ERROR",
-        message: "Failed to sign out",
+        message: errorMsg,
         details: error,
       });
+      notificationActions.error("Sign out failed", errorMsg);
     } finally {
       $isLoading.set(false);
     }
@@ -182,6 +186,7 @@ export const authActions = {
       if (response.ok) {
         const updatedUser = await response.json();
         $user.set(updatedUser);
+        notificationActions.success("Profile updated", "Your profile has been successfully updated");
         
         // Sync with Convex if available
         if (convexClient && updatedUser.tokenIdentifier) {
@@ -194,6 +199,7 @@ export const authActions = {
             });
           } catch (convexError) {
             console.warn("Failed to sync profile update with Convex:", convexError);
+            notificationActions.warning("Sync warning", "Profile updated but sync with database failed");
           }
         }
         
@@ -203,11 +209,13 @@ export const authActions = {
       }
     } catch (error) {
       console.error("Profile update error:", error);
+      const errorMsg = "Failed to update profile. Please try again.";
       $error.set({
         code: "PROFILE_UPDATE_ERROR",
-        message: "Failed to update profile",
+        message: errorMsg,
         details: error,
       });
+      notificationActions.error("Profile update failed", errorMsg);
       throw error;
     } finally {
       $isLoading.set(false);

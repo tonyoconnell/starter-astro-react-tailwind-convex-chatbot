@@ -1,5 +1,6 @@
 // Export all authentication utilities and types
 
+// Re-enable auth config exports now that OAuth is set up
 export { auth, authClient } from "./config";
 export type { AuthUser } from "./config";
 
@@ -14,6 +15,12 @@ export {
   useAuthStore,
   setConvexClient,
 } from "./store";
+
+export {
+  $notifications,
+  notificationActions,
+  type Notification,
+} from "./notifications";
 
 export {
   AuthGuard,
