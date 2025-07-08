@@ -101,10 +101,36 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'SECURITY: Attempting to modify sensitive file - review required'",
+            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} protect warn",
             "blockExecution": false,
             "enabled": true,
             "name": "sensitive-file-warning"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/.env*|**/secrets/**|**/credentials/**",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} protect block",
+            "blockExecution": true,
+            "enabled": false,
+            "name": "sensitive-file-blocker"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{ts,tsx,js,jsx,json}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} scan warn",
+            "timeout": 5000,
+            "enabled": true,
+            "name": "credential-scanner"
           }
         ]
       }
@@ -115,7 +141,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '✅ Build completed successfully'",
+            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh build-success 'Build completed successfully' success console",
             "enabled": true,
             "name": "build-notification"
           }
@@ -126,9 +152,20 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '✅ Tests completed'",
+            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh test-success 'All tests passed' success console",
             "enabled": true,
             "name": "test-notification"
+          }
+        ]
+      },
+      {
+        "event": "security-warning",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh security-warning 'Security issue detected' warning all",
+            "enabled": true,
+            "name": "security-notification"
           }
         ]
       }
@@ -138,9 +175,21 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'Session ended - cleaning up temporary files' && rm -rf /Users/toc/Server/ONEd/.tmp /Users/toc/Server/ONEd/.claude-cache 2>/dev/null || true",
+            "command": "/Users/toc/Server/ONEd/.claude/cleanup-hook.sh session",
             "enabled": true,
-            "name": "cleanup-temp-files"
+            "name": "session-cleanup"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/cleanup-hook.sh temp",
+            "enabled": true,
+            "name": "subagent-cleanup"
           }
         ]
       }
