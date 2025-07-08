@@ -3,6 +3,7 @@ import { v } from "convex/values";
 
 /**
  * Create a new user account (called during authentication flow)
+ * Updated for BetterAuth integration
  */
 export const createUser = mutation({
   args: {
@@ -12,15 +13,11 @@ export const createUser = mutation({
     tokenIdentifier: v.string(),
   },
   handler: async (ctx, { name, email, image, tokenIdentifier }) => {
-    // Check if user already exists
+    // Check if user already exists - update if exists, create if not
     const existingUser = await ctx.db
       .query("users")
       .withIndex("by_token", (q) => q.eq("tokenIdentifier", tokenIdentifier))
       .first();
-
-    if (existingUser) {
-      throw new Error("User already exists");
-    }
 
     // Validate and sanitize inputs
     const sanitizedName = name.trim();
@@ -30,7 +27,66 @@ export const createUser = mutation({
 
     const sanitizedEmail = email?.toLowerCase().trim();
 
-    // Create the user
+    if (existingUser) {
+      // Update existing user with latest OAuth data
+      await ctx.db.patch(existingUser._id, {
+        name: sanitizedName,
+        email: sanitizedEmail,
+        image: image?.trim(),
+      });
+      return existingUser._id;
+    }
+
+    // Create new user
+    const userId = await ctx.db.insert("users", {
+      name: sanitizedName,
+      email: sanitizedEmail,
+      image: image?.trim(),
+      tokenIdentifier,
+    });
+
+    return userId;
+  },
+});
+
+/**
+ * Create or update user from OAuth provider (BetterAuth integration)
+ */
+export const upsertUserFromOAuth = mutation({
+  args: {
+    providerId: v.string(),
+    providerUserId: v.string(),
+    name: v.string(),
+    email: v.optional(v.string()),
+    image: v.optional(v.string()),
+    tokenIdentifier: v.string(),
+  },
+  handler: async (ctx, { providerId, providerUserId, name, email, image, tokenIdentifier }) => {
+    // Check if user exists by token identifier
+    const existingUser = await ctx.db
+      .query("users")
+      .withIndex("by_token", (q) => q.eq("tokenIdentifier", tokenIdentifier))
+      .first();
+
+    // Validate and sanitize inputs
+    const sanitizedName = name.trim();
+    if (!sanitizedName) {
+      throw new Error("Name is required");
+    }
+
+    const sanitizedEmail = email?.toLowerCase().trim();
+
+    if (existingUser) {
+      // Update existing user
+      await ctx.db.patch(existingUser._id, {
+        name: sanitizedName,
+        email: sanitizedEmail,
+        image: image?.trim(),
+      });
+      return existingUser._id;
+    }
+
+    // Create new user
     const userId = await ctx.db.insert("users", {
       name: sanitizedName,
       email: sanitizedEmail,

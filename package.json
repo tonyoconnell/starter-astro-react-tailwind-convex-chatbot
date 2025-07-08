@@ -20,5 +20,9 @@
     "turbo": "^2.0.0",
     "wrangler": "^4.23.0"
   },
-  "packageManager": "bun@1.1.0"
+  "packageManager": "bun@1.1.0",
+  "dependencies": {
+    "@better-auth-kit/convex": "^1.2.2",
+    "better-auth": "^1.2.12"
+  }
 }

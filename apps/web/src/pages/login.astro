@@ -1,0 +1,100 @@
+---
+// Check if user is already authenticated
+const { redirect } = Astro;
+
+// Get redirect URL from query params
+const redirectTo = Astro.url.searchParams.get("redirect") || "/";
+
+// TODO: Check if user is already authenticated and redirect if so
+// This will be implemented once session validation is working
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to your account to access personalized features and chat functionality." />
+    <title>Sign In - AI Starter Template</title>
+    
+    <!-- Prevent indexing of login page -->
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">
+              AI Starter
+            </a>
+          </div>
+          <div>
+            <a 
+              href="/"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-md mx-auto mt-12 px-4 sm:px-6 lg:px-8">
+      <!-- Login Form Component -->
+      <div id="login-form-container"></div>
+      
+      <!-- Additional Information -->
+      <div class="mt-8 text-center">
+        <p class="text-sm text-gray-600">
+          Don't have an account yet?
+          <a href="/signup" class="font-medium text-blue-600 hover:text-blue-500 ml-1">
+            Sign up here
+          </a>
+        </p>
+      </div>
+      
+      <!-- Help Links -->
+      <div class="mt-6 text-center">
+        <div class="flex justify-center space-x-4 text-sm">
+          <a href="/help" class="text-gray-500 hover:text-gray-700">
+            Need Help?
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="/privacy" class="text-gray-500 hover:text-gray-700">
+            Privacy Policy
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="/terms" class="text-gray-500 hover:text-gray-700">
+            Terms of Service
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- React Component -->
+    <script type="module">
+      import { LoginForm } from '/src/components/auth/LoginForm.tsx';
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+
+      const container = document.getElementById('login-form-container');
+      const root = createRoot(container);
+      
+      // Get redirect URL from current page
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectTo = urlParams.get('redirect') || '/';
+      
+      root.render(React.createElement(LoginForm, { 
+        redirectTo: redirectTo,
+        className: "w-full"
+      }));
+    </script>
+  </body>
+</html>

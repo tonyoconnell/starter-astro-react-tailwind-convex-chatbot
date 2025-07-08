@@ -5,11 +5,21 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'hybrid', // Allows SSR for API routes while keeping pages static
   adapter: cloudflare({
     platformProxy: {
       enabled: true
     }
   }),
   integrations: [react(), tailwind()],
+  
+  // Security headers for authentication
+  security: {
+    checkOrigin: true,
+  },
+  
+  // Enable experimental features for better auth support
+  experimental: {
+    hybridOutput: true,
+  },
 });

@@ -1,0 +1,136 @@
+---
+// Check if user is already authenticated
+const { redirect } = Astro;
+
+// Get redirect URL from query params
+const redirectTo = Astro.url.searchParams.get("redirect") || "/";
+
+// TODO: Check if user is already authenticated and redirect if so
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create your account to get started with AI-powered conversations and personalized features." />
+    <title>Sign Up - AI Starter Template</title>
+    
+    <!-- Prevent indexing of signup page -->
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">
+              AI Starter
+            </a>
+          </div>
+          <div>
+            <a 
+              href="/"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-md mx-auto mt-12 px-4 sm:px-6 lg:px-8">
+      <!-- Welcome Message -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">
+          Get Started Today
+        </h1>
+        <p class="text-gray-600">
+          Join thousands of users experiencing the future of AI conversations
+        </p>
+      </div>
+
+      <!-- Features List -->
+      <div class="mb-8 bg-white rounded-lg shadow-sm p-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">What you'll get:</h2>
+        <ul class="space-y-3">
+          <li class="flex items-center text-sm text-gray-700">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Unlimited AI conversations
+          </li>
+          <li class="flex items-center text-sm text-gray-700">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Personalized chat history
+          </li>
+          <li class="flex items-center text-sm text-gray-700">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Advanced AI features
+          </li>
+          <li class="flex items-center text-sm text-gray-700">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Secure data protection
+          </li>
+        </ul>
+      </div>
+
+      <!-- Signup Form Component -->
+      <div id="signup-form-container"></div>
+      
+      <!-- Additional Information -->
+      <div class="mt-8 text-center">
+        <p class="text-sm text-gray-600">
+          Already have an account?
+          <a href="/login" class="font-medium text-blue-600 hover:text-blue-500 ml-1">
+            Sign in here
+          </a>
+        </p>
+      </div>
+      
+      <!-- Terms and Privacy -->
+      <div class="mt-6 text-center">
+        <p class="text-xs text-gray-500">
+          By signing up, you agree to our 
+          <a href="/terms" class="text-blue-600 hover:text-blue-500">Terms of Service</a>
+          and 
+          <a href="/privacy" class="text-blue-600 hover:text-blue-500">Privacy Policy</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- React Component -->
+    <script type="module">
+      import { LoginForm } from '/src/components/auth/LoginForm.tsx';
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+
+      const container = document.getElementById('signup-form-container');
+      const root = createRoot(container);
+      
+      // Get redirect URL from current page
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectTo = urlParams.get('redirect') || '/';
+      
+      // Update the title for signup context
+      const signupForm = React.createElement(LoginForm, { 
+        redirectTo: redirectTo,
+        className: "w-full"
+      });
+      
+      root.render(signupForm);
+    </script>
+  </body>
+</html>
