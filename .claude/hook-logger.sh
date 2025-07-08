@@ -52,8 +52,8 @@ log_hook_execution() {
 # Function to get current time in milliseconds
 get_time_ms() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    echo $(($(date +%s) * 1000 + $(date +%N | cut -c1-3)))
+    # macOS - use python for better precision
+    python3 -c "import time; print(int(time.time() * 1000))" 2>/dev/null || echo $(($(date +%s) * 1000))
   else
     # Linux
     echo $(($(date +%s%N) / 1000000))

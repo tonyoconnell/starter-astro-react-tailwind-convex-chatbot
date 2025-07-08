@@ -39,9 +39,62 @@
             "name": "format-config-files"
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{ts,tsx,js,jsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/test-hook.sh {workspace} affected",
+            "timeout": 15000,
+            "enabled": true,
+            "name": "test-after-edit"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{ts,tsx,js,jsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/lint-hook.sh {workspace} lint",
+            "timeout": 10000,
+            "enabled": true,
+            "name": "lint-on-edit"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/package.json|**/tsconfig.json|**/*.config.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/build-hook.sh {workspace} incremental 1",
+            "timeout": 30000,
+            "enabled": true,
+            "name": "build-on-config-change"
+          }
+        ]
       }
     ],
     "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{ts,tsx,js,jsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/test-hook.sh {workspace} fast {file}",
+            "timeout": 10000,
+            "enabled": false,
+            "name": "test-before-edit",
+            "blockOnFailure": false
+          }
+        ]
+      },
       {
         "matcher": "Edit|Write|MultiEdit",
         "pattern": "**/.env*|**/secrets/**|**/*key*|**/*token*|**/*password*",
