@@ -5,7 +5,7 @@ Please review the complete document. Once you are satisfied, let me know, and I 
 ````markdown
 # AI-Accelerated Starter Template Fullstack Architecture Document
 
-### **Introduction**
+## **Introduction**
 
 This document outlines the complete fullstack architecture for the AI-Accelerated Starter Template, including backend systems, frontend implementation, and their integration. It serves as the single source of truth for AI-driven development, ensuring consistency across the entire technology stack.
 
@@ -20,7 +20,7 @@ This project's goal is to create a new, opinionated starter template from scratc
 | July 8, 2025 | 1.0 | Initial draft of the architecture document. | Winston (Architect) |
 
 ---
-### **High Level Architecture**
+###**High Level Architecture**
 
 ##### **Technical Summary**
 
@@ -86,7 +86,7 @@ graph TD
 
 -----
 
-### **Tech Stack**
+## **Tech Stack**
 
 This table is the single source of truth for all technologies to be used in the project.
 
@@ -113,37 +113,37 @@ This table is the single source of truth for all technologies to be used in the 
 
 -----
 
-### **Data Models**
+## **Data Models**
 
 *This section would contain the detailed data model definitions for `User`, `Conversation`, and `Message` as previously discussed.*
 
 -----
 
-### **API Specification**
+## **API Specification**
 
 *This section would contain the detailed Convex Function definitions for `Queries`, `Mutations`, and `Actions` as previously discussed.*
 
 -----
 
-### **Components**
+## **Components**
 
 *This section would contain the descriptions of the logical components (`Authentication Service`, `Chat Interface`, `Chat Service`, etc.) and the Component Interaction Diagram as previously discussed.*
 
 -----
 
-### **External APIs**
+## **External APIs**
 
 *This section would contain the detailed breakdown of the `LLM Provider`, `Claude Code SDK`, and `BetterAuth` APIs as previously discussed.*
 
 -----
 
-### **Core Workflows**
+## **Core Workflows**
 
 *This section would contain the Mermaid sequence diagrams for "New User Sign-Up & First Chat" and "In-App Code Generation" as previously discussed.*
 
 -----
 
-### **Database Schema**
+## **Database Schema**
 
 This schema will be defined in `convex/schema.ts` and uses BetterAuth for user management.
 
@@ -200,7 +200,7 @@ export default defineSchema({
 
 -----
 
-### **Unified Project Structure**
+## **Unified Project Structure**
 
 ```plaintext
 ai-starter-template/
@@ -231,25 +231,25 @@ ai-starter-template/
 
 -----
 
-### **Development Workflow**
+## **Development Workflow**
 
 *This section would contain the `Local Development Setup` and `Environment Configuration` details as previously discussed.*
 
 -----
 
-### **Deployment Architecture**
+## **Deployment Architecture**
 
 *This section would contain the `Deployment Strategy`, `CI/CD Pipeline`, and `Environments` table as previously discussed.*
 
 -----
 
-### **Security and Performance**
+## **Security and Performance**
 
 *This section would contain the `Security Requirements` and `Performance Optimization` strategies as previously discussed.*
 
 -----
 
-### **Testing Strategy**
+## **Testing Strategy**
 
 This strategy includes a standard testing pyramid and a specialized AI agent for enhancing test coverage.
 
@@ -259,13 +259,13 @@ This strategy includes a standard testing pyramid and a specialized AI agent for
 
 -----
 
-### **Coding Standards**
+## **Coding Standards**
 
 *This section would contain the `Critical Fullstack Rules` and `Naming Conventions` table as previously discussed.*
 
 -----
 
-### **Error Handling Strategy**
+## **Error Handling Strategy**
 
 Our strategy utilizes two distinct workflows for production and local development to ensure robustness and a fast feedback loop.
 
@@ -274,13 +274,13 @@ Our strategy utilizes two distinct workflows for production and local developmen
 
 -----
 
-### **Checklist Results Report**
+## **Checklist Results Report**
 
 *This section will be populated after the architect-checklist has been executed against this document.*
 
 -----
 
-### **Next Steps**
+## **Next Steps**
 
 With the architecture defined, the next step is to begin the development sprints. This document should be handed off to the **Scrum Master (Bob)**, who will use the epics defined in the `prd.md` (which would be created from our `brief.md`) and the technical details herein to create the first actionable story for the development agent.
 
