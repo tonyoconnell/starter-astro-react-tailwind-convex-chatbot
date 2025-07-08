@@ -1,0 +1,14 @@
+{
+  "node": {
+    "moduleSystem": "esm"
+  },
+  "generate": "api",
+  "pushConfig": {
+    "prod": {
+      "dryrun": false
+    },
+    "dev": {
+      "dryrun": false
+    }
+  }
+}
