@@ -10,11 +10,11 @@ This table is the single source of truth for all technologies to be used in the 
 | **UI Component Lib** | ShadCN + Radix UI | `latest` | Headless UI components | Provides accessible, unstyled primitives for a custom design. |
 | **CSS Framework** | TailwindCSS | `~3.4` | Utility-first CSS styling | Rapidly builds modern designs without leaving HTML. |
 | **State Management**| NanoStores | `latest` | Lightweight, shared state | Simple and effective for Astro's island architecture. |
-| **Backend Platform**| Convex | `~1.11` | Backend logic, DB, and functions | Unified platform simplifies backend dev, offers real-time. |
+| **Backend Platform**| Convex | `~1.11` | Backend logic, DB, and functions | Unified platform simplifies backend dev, offers real-time. [ESLint Config](https://docs.convex.dev/eslint) |
 | **API Style** | Convex Functions | `~1.11` | Queries, Mutations, Actions | Type-safe, serverless functions co-located with the schema. |
 | **Database** | Convex DB | `~1.11` | Real-time document database | Integrated, transactional, and provides real-time updates. |
 | **File Storage** | Cloudflare R2 | `N/A` | S3-compatible object storage | Seamless and cost-effective integration with the Cloudflare ecosystem. |
-| **Authentication** | BetterAuth | `TBD` | User authentication & management | Chosen solution, pending final due diligence during implementation. |
+| **Authentication** | BetterAuth | `TBD` | User authentication & management | Chosen solution, pending final due diligence during implementation. [Astro Integration](https://www.better-auth.com/docs/integrations/astro) |
 | **Unit/Integration Testing** | Vitest | `~1.4` | Test runner for FE and BE | Fast, modern test framework that works well with Vite/Astro/Convex. |
 | **E2E Testing** | Playwright | `~1.42` | End-to-end browser testing | Recommended for its modern features, reliability, and tracing. |
 | **Build Tool** | Astro CLI / Vite | `~5.2` | Building, bundling, and dev server | Native tooling for the Astro framework. |

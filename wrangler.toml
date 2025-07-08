@@ -1,0 +1,11 @@
+name = "ai-starter-template"
+compatibility_date = "2024-07-01"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+
+# Build configuration for Astro static site
+pages_build_output_dir = "apps/web/dist"
