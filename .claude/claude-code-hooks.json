@@ -1,0 +1,118 @@
+{
+  "$schema": "https://docs.anthropic.com/schemas/claude-code-hooks.json",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "timeout": 5000,
+            "enabled": true,
+            "name": "format-on-save"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{ts,tsx,js,jsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "timeout": 5000,
+            "enabled": true,
+            "name": "format-typescript-files"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/*.{json,md,astro}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "timeout": 5000,
+            "enabled": true,
+            "name": "format-config-files"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "pattern": "**/.env*|**/secrets/**|**/*key*|**/*token*|**/*password*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'SECURITY: Attempting to modify sensitive file - review required'",
+            "blockExecution": false,
+            "enabled": true,
+            "name": "sensitive-file-warning"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "event": "build-complete",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ Build completed successfully'",
+            "enabled": true,
+            "name": "build-notification"
+          }
+        ]
+      },
+      {
+        "event": "test-complete",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ Tests completed'",
+            "enabled": true,
+            "name": "test-notification"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Session ended - cleaning up temporary files' && rm -rf /Users/toc/Server/ONEd/.tmp /Users/toc/Server/ONEd/.claude-cache 2>/dev/null || true",
+            "enabled": true,
+            "name": "cleanup-temp-files"
+          }
+        ]
+      }
+    ]
+  },
+  "config": {
+    "debug": false,
+    "logFile": ".claude/hooks.log",
+    "categories": {
+      "formatting": {
+        "description": "Code formatting and style hooks",
+        "enabled": true
+      },
+      "testing": {
+        "description": "Test execution and validation hooks",
+        "enabled": true
+      },
+      "security": {
+        "description": "Security and sensitive file protection hooks",
+        "enabled": true
+      },
+      "notifications": {
+        "description": "Development workflow notifications",
+        "enabled": true
+      }
+    }
+  }
+}
