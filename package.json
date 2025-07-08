@@ -4,14 +4,17 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "convex"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "clean": "turbo run clean"
+    "clean": "turbo run clean",
+    "convex:dev": "cd convex && bun run dev",
+    "convex:deploy": "cd convex && bun run deploy"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
