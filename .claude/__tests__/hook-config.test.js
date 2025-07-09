@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 
 // Test configuration
 const CONFIG_FILE = path.join(__dirname, '..', 'claude-code-hooks.json');
-const CONFIG_MANAGER = path.join(__dirname, '..', 'hook-config-manager.js');
+const CONFIG_MANAGER = path.join(__dirname, '..', 'hooks', 'hook-config-manager.js');
 
 describe('Claude Code Hooks Configuration', () => {
   let originalConfig;
@@ -73,7 +73,7 @@ describe('Claude Code Hooks Configuration', () => {
   });
 
   test('Logger script is executable', () => {
-    const loggerScript = path.join(__dirname, '..', 'hook-logger.sh');
+    const loggerScript = path.join(__dirname, '..', 'hooks', 'hook-logger.sh');
     expect(fs.existsSync(loggerScript)).toBe(true);
     
     const stats = fs.statSync(loggerScript);
@@ -81,7 +81,7 @@ describe('Claude Code Hooks Configuration', () => {
   });
 
   test('Format hook script is executable', () => {
-    const formatScript = path.join(__dirname, '..', 'format-hook.sh');
+    const formatScript = path.join(__dirname, '..', 'hooks', 'format-hook.sh');
     expect(fs.existsSync(formatScript)).toBe(true);
     
     const stats = fs.statSync(formatScript);

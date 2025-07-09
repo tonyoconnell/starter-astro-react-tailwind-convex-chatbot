@@ -3,10 +3,10 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Test configuration
-const SECURITY_HOOK = path.join(__dirname, '..', 'security-hook.sh');
-const NOTIFICATION_HOOK = path.join(__dirname, '..', 'notification-hook.sh');
-const CLEANUP_HOOK = path.join(__dirname, '..', 'cleanup-hook.sh');
-const BYPASS_UTILITY = path.join(__dirname, '..', 'hook-bypass.sh');
+const SECURITY_HOOK = path.join(__dirname, '..', 'hooks', 'security-hook.sh');
+const NOTIFICATION_HOOK = path.join(__dirname, '..', 'hooks', 'notification-hook.sh');
+const CLEANUP_HOOK = path.join(__dirname, '..', 'hooks', 'cleanup-hook.sh');
+const BYPASS_UTILITY = path.join(__dirname, '..', 'hooks', 'hook-bypass.sh');
 
 describe('Security Hooks', () => {
   test('Security hook script is executable', () => {

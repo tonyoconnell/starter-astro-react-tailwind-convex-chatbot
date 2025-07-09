@@ -3,10 +3,10 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Test configuration
-const TEST_HOOK = path.join(__dirname, '..', 'test-hook.sh');
-const LINT_HOOK = path.join(__dirname, '..', 'lint-hook.sh');
-const BUILD_HOOK = path.join(__dirname, '..', 'build-hook.sh');
-const DEBOUNCER = path.join(__dirname, '..', 'hook-debouncer.sh');
+const TEST_HOOK = path.join(__dirname, '..', 'hooks', 'test-hook.sh');
+const LINT_HOOK = path.join(__dirname, '..', 'hooks', 'lint-hook.sh');
+const BUILD_HOOK = path.join(__dirname, '..', 'hooks', 'build-hook.sh');
+const DEBOUNCER = path.join(__dirname, '..', 'hooks', 'hook-debouncer.sh');
 
 describe('Development Workflow Hooks', () => {
   test('Test hook script is executable', () => {

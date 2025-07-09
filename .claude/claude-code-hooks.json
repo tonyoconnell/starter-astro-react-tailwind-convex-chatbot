@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "command": ".claude/hooks/format-hook.sh {workspace}",
             "timeout": 5000,
             "enabled": true,
             "name": "format-on-save"
@@ -20,7 +20,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "command": ".claude/hooks/format-hook.sh {workspace}",
             "timeout": 5000,
             "enabled": true,
             "name": "format-typescript-files"
@@ -33,7 +33,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/format-hook.sh {workspace}",
+            "command": ".claude/hooks/format-hook.sh {workspace}",
             "timeout": 5000,
             "enabled": true,
             "name": "format-config-files"
@@ -46,7 +46,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/test-hook.sh {workspace} affected",
+            "command": ".claude/hooks/test-hook.sh {workspace} affected",
             "timeout": 15000,
             "enabled": true,
             "name": "test-after-edit"
@@ -59,7 +59,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/lint-hook.sh {workspace} lint",
+            "command": ".claude/hooks/lint-hook.sh {workspace} lint",
             "timeout": 10000,
             "enabled": true,
             "name": "lint-on-edit"
@@ -72,7 +72,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/build-hook.sh {workspace} incremental 1",
+            "command": ".claude/hooks/build-hook.sh {workspace} incremental 1",
             "timeout": 30000,
             "enabled": true,
             "name": "build-on-config-change"
@@ -87,7 +87,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/test-hook.sh {workspace} fast {file}",
+            "command": ".claude/hooks/test-hook.sh {workspace} fast {file}",
             "timeout": 10000,
             "enabled": false,
             "name": "test-before-edit",
@@ -101,7 +101,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} protect warn",
+            "command": ".claude/hooks/security-hook.sh {file} protect warn",
             "blockExecution": false,
             "enabled": true,
             "name": "sensitive-file-warning"
@@ -114,7 +114,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} protect block",
+            "command": ".claude/hooks/security-hook.sh {file} protect block",
             "blockExecution": true,
             "enabled": false,
             "name": "sensitive-file-blocker"
@@ -127,7 +127,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/security-hook.sh {file} scan warn",
+            "command": ".claude/hooks/security-hook.sh {file} scan warn",
             "timeout": 5000,
             "enabled": true,
             "name": "credential-scanner"
@@ -141,7 +141,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh build-success 'Build completed successfully' success console",
+            "command": ".claude/hooks/notification-hook.sh build-success 'Build completed successfully' success console",
             "enabled": true,
             "name": "build-notification"
           }
@@ -152,7 +152,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh test-success 'All tests passed' success console",
+            "command": ".claude/hooks/notification-hook.sh test-success 'All tests passed' success console",
             "enabled": true,
             "name": "test-notification"
           }
@@ -163,7 +163,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/notification-hook.sh security-warning 'Security issue detected' warning all",
+            "command": ".claude/hooks/notification-hook.sh security-warning 'Security issue detected' warning all",
             "enabled": true,
             "name": "security-notification"
           }
@@ -175,7 +175,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/cleanup-hook.sh session",
+            "command": ".claude/hooks/cleanup-hook.sh session",
             "enabled": true,
             "name": "session-cleanup"
           }
@@ -187,7 +187,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/toc/Server/ONEd/.claude/cleanup-hook.sh temp",
+            "command": ".claude/hooks/cleanup-hook.sh temp",
             "enabled": true,
             "name": "subagent-cleanup"
           }
@@ -197,7 +197,7 @@
   },
   "config": {
     "debug": false,
-    "logFile": ".claude/hooks.log",
+    "logFile": ".claude/hooks/hooks.log",
     "categories": {
       "formatting": {
         "description": "Code formatting and style hooks",
