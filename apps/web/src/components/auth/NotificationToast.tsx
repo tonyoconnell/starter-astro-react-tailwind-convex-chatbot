@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { $notifications, notificationActions, type Notification } from "@starter/lib/auth/notifications";
+import { $notifications, notificationActions, type Notification } from "@starter/lib/auth";
 
 interface ToastItemProps {
   notification: Notification;

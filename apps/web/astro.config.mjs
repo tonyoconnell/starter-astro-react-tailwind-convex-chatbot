@@ -15,7 +15,7 @@ export default defineConfig({
   
   // Development server configuration
   server: {
-    port: parseInt(process.env.ASTRO_PORT || '5000'),
+    port: parseInt(process.env.ASTRO_PORT || '5100'),
     host: process.env.ASTRO_HOST || 'localhost'
   },
   

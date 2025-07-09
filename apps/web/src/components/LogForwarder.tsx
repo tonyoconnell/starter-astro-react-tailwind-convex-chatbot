@@ -23,13 +23,15 @@ export function LogForwarder({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Determine if log forwarding should be enabled
-    const shouldEnable = enabled ?? shouldEnableLogForwarding();
+    // Force enable in browser context during development
+    const shouldEnable = enabled ?? true;
     
     if (!shouldEnable) {
       console.info('LogForwarder: Disabled for this environment');
       return;
     }
+    
+    console.log('LogForwarder: Enabled and initializing...');
 
     // Configure log forwarder
     const config = getLogConfig(environment);

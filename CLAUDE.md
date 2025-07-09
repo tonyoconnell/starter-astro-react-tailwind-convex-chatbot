@@ -16,6 +16,25 @@ This is an AI-Accelerated Starter Template designed for building conversational 
 - **Deployment**: Cloudflare (Pages for frontend, Workers for serverless)
 - **Testing**: Vitest for unit/integration, Playwright for E2E
 
+## Port Configuration Management
+
+**IMPORTANT**: All port configurations are now managed centrally through `scripts/port-registry.ts`. When you need to change ports, modify the `PORT_REGISTRY` object and run the sync command:
+
+```bash
+# Change ports in scripts/port-registry.ts, then:
+bun config:sync      # Regenerate all configuration files
+bun config:verify    # Verify all configs are consistent  
+bun config:status    # Show current port assignments
+```
+
+This automatically updates:
+- `package.json` scripts
+- `.env.example` variables  
+- `apps/web/astro.config.mjs` defaults
+- `local-server/server.ts` fallback ports
+
+**Never manually edit port numbers in configuration files** - always use the port registry as the single source of truth.
+
 ## Development Commands
 
 ### Quick Start (Recommended)
@@ -28,21 +47,19 @@ bun install
 bun start:auto       # Auto-detects best available ports
 
 # Or use specific ranges
-bun start            # User range (5000/5001)
-bun start:claude     # Claude range (5100/5101)
+bun start            # User range (5100/5101)
+bun start:claude     # Claude range (5150/5151)
 ```
 
 ### Dual-Port Strategy
 
-**User Development Range (5000-5099):**
-- **Port 5000**: Main Astro application (your development)
-- **Port 5001**: Local observability server (your development)
-- **Ports 5002-5005**: Reserved for your future services
+**User Development Range (5100-5101):**
+- **Port 5100**: Main Astro application (your development)
+- **Port 5101**: Local observability server (your development)
 
-**Claude Testing Range (5100-5199):**
-- **Port 5100**: Main Astro application (Claude testing)
-- **Port 5101**: Local observability server (Claude testing)
-- **Ports 5102-5105**: Reserved for Claude test scenarios
+**Claude Testing Range (5150-5151):**
+- **Port 5150**: Main Astro application (Claude testing)
+- **Port 5151**: Local observability server (Claude testing)
 
 ### Individual Services
 

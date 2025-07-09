@@ -1,4 +1,6 @@
 ---
+import { LogForwarder } from '../components/LogForwarder.tsx';
+
 export interface Props {
   title: string;
   description?: string;
@@ -73,7 +75,9 @@ const { title, description = "AI-Accelerated Starter Template with authenticatio
     </main>
 
     <!-- Log Forwarder for Development -->
-    <div id="log-forwarder"></div>
+    <div id="log-forwarder">
+      <LogForwarder client:load />
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
@@ -117,25 +121,6 @@ const { title, description = "AI-Accelerated Starter Template with authenticatio
         </div>
       </div>
     </footer>
-    <!-- Log Forwarder Initialization (Development Only) -->
-    <script>
-      // Only load LogForwarder in development
-      if (import.meta.env.DEV) {
-        import('../components/LogForwarder.tsx').then(({ LogForwarder }) => {
-          import('react').then(React => {
-            import('react-dom/client').then(({ createRoot }) => {
-              const container = document.getElementById('log-forwarder');
-              if (container) {
-                const root = createRoot(container);
-                root.render(React.createElement(LogForwarder));
-              }
-            });
-          });
-        }).catch(error => {
-          console.warn('Failed to load LogForwarder:', error);
-        });
-      }
-    </script>
   </body>
 </html>
 

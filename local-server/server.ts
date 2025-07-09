@@ -1,4 +1,5 @@
 import type { LogMessage, LogBatch, ServerConfig, HealthCheckResponse } from './types';
+import { PortRegistryUtils } from '../scripts/port-registry';
 
 class LocalObservabilityServer {
   private config: ServerConfig;
@@ -6,18 +7,34 @@ class LocalObservabilityServer {
   private logsReceived: number = 0;
 
   constructor() {
+    // Use port registry as fallback defaults
+    const defaultLogPort = PortRegistryUtils.getLogServerPort('user');
+    const defaultAstroPort = PortRegistryUtils.getAstroPort('user');
+    
     this.config = {
-      port: parseInt(process.env.LOG_SERVER_PORT || '5001'),
+      port: parseInt(process.env.LOG_SERVER_PORT || defaultLogPort.toString()),
       enableFileLogging: process.env.ENABLE_FILE_LOGGING === 'true',
       logFile: process.env.LOG_FILE || 'local-server/logs.txt',
-      corsOrigins: (process.env.CORS_ORIGINS || 'http://localhost:5000,http://localhost:3000').split(','),
+      corsOrigins: (process.env.CORS_ORIGINS || `http://localhost:${defaultAstroPort},http://localhost:3000`).split(','),
       maxLogSize: parseInt(process.env.MAX_LOG_SIZE || '1000')
     };
     this.startTime = Date.now();
   }
 
   private formatLogMessage(log: LogMessage): string {
-    const timestamp = new Date(log.timestamp).toISOString();
+    // Handle various timestamp formats more robustly
+    let timestamp: string;
+    try {
+      const date = new Date(log.timestamp);
+      if (isNaN(date.getTime())) {
+        timestamp = new Date().toISOString();
+      } else {
+        timestamp = date.toISOString();
+      }
+    } catch (error) {
+      timestamp = new Date().toISOString();
+    }
+    
     const level = log.level.toUpperCase().padEnd(5);
     const source = log.source ? ` [${log.source}]` : '';
     const url = log.url ? ` (${log.url})` : '';

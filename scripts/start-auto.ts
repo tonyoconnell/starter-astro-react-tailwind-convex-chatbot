@@ -2,8 +2,10 @@
 
 /**
  * Intelligent port selection and startup script
- * Automatically detects available port ranges and starts services
+ * Uses central port registry for dynamic configuration
  */
+
+import { PortRegistryUtils } from './port-registry';
 
 interface PortStatus {
   port: number;
@@ -14,53 +16,65 @@ interface PortStatus {
 class AutoStarter {
   private async checkPort(port: number): Promise<PortStatus> {
     try {
-      const server = Bun.serve({
-        port,
-        fetch: () => new Response('test'),
+      // Use lsof directly to check for any process using the port (IPv4 or IPv6)
+      const proc = Bun.spawn(['lsof', '-i', `:${port}`, '-t'], { 
+        stdout: 'pipe',
+        stderr: 'ignore'
       });
+      const output = await new Response(proc.stdout).text();
+      const pid = output.trim();
       
-      server.stop();
-      return { port, available: true };
-    } catch (error: any) {
-      if (error.code === 'EADDRINUSE') {
+      if (pid) {
+        // Port is in use, get process info
         try {
-          const proc = Bun.spawn(['lsof', '-i', `:${port}`, '-t'], { 
+          const procInfo = Bun.spawn(['ps', '-p', pid, '-o', 'comm='], {
             stdout: 'pipe',
             stderr: 'ignore'
           });
-          const output = await new Response(proc.stdout).text();
-          const pid = output.trim();
-          
-          if (pid) {
-            const procInfo = Bun.spawn(['ps', '-p', pid, '-o', 'comm='], {
-              stdout: 'pipe',
-              stderr: 'ignore'
-            });
-            const processName = (await new Response(procInfo.stdout).text()).trim();
-            return { port, available: false, processInfo: `${processName} (${pid})` };
-          }
+          const processName = (await new Response(procInfo.stdout).text()).trim();
+          return { port, available: false, processInfo: `${processName} (${pid})` };
         } catch {
-          // lsof failed, but we know port is in use
+          return { port, available: false, processInfo: `PID ${pid} (Unknown)` };
         }
-        return { port, available: false, processInfo: 'Unknown process' };
       }
+      
+      // No process found using lsof, port appears free
       return { port, available: true };
+    } catch (error) {
+      // If lsof fails, fall back to the bind test
+      try {
+        const server = Bun.serve({
+          port,
+          fetch: () => new Response('test'),
+        });
+        
+        server.stop();
+        return { port, available: true };
+      } catch (bindError: any) {
+        if (bindError.code === 'EADDRINUSE') {
+          return { port, available: false, processInfo: 'Process detected via bind test' };
+        }
+        return { port, available: true };
+      }
     }
   }
 
-  private async checkPortRange(astroPort: number, logPort: number): Promise<{
+  private async checkPortRange(rangeName: 'user' | 'claude'): Promise<{
     range: 'user' | 'claude';
     astroStatus: PortStatus;
     logStatus: PortStatus;
     available: boolean;
   }> {
+    const astroPort = PortRegistryUtils.getAstroPort(rangeName);
+    const logPort = PortRegistryUtils.getLogServerPort(rangeName);
+    
     const [astroStatus, logStatus] = await Promise.all([
       this.checkPort(astroPort),
       this.checkPort(logPort)
     ]);
 
     return {
-      range: astroPort === 5000 ? 'user' : 'claude',
+      range: rangeName,
       astroStatus,
       logStatus,
       available: astroStatus.available && logStatus.available
@@ -77,15 +91,18 @@ class AutoStarter {
 
     // Check both ranges
     const [userRange, claudeRange] = await Promise.all([
-      this.checkPortRange(5000, 5001), // User range
-      this.checkPortRange(5100, 5101)  // Claude range
+      this.checkPortRange('user'),
+      this.checkPortRange('claude')
     ]);
 
-    console.log('👤 User range (5000-5001):');
+    const userSummary = PortRegistryUtils.getRangeSummary('user');
+    const claudeSummary = PortRegistryUtils.getRangeSummary('claude');
+
+    console.log(`👤 User range (${userSummary}):`);
     console.log(`  • Astro: ${userRange.astroStatus.available ? '✅ Available' : `❌ In use (${userRange.astroStatus.processInfo})`}`);
     console.log(`  • Logs:  ${userRange.logStatus.available ? '✅ Available' : `❌ In use (${userRange.logStatus.processInfo})`}`);
 
-    console.log('\n🤖 Claude range (5100-5101):');
+    console.log(`\n🤖 Claude range (${claudeSummary}):`);
     console.log(`  • Astro: ${claudeRange.astroStatus.available ? '✅ Available' : `❌ In use (${claudeRange.astroStatus.processInfo})`}`);
     console.log(`  • Logs:  ${claudeRange.logStatus.available ? '✅ Available' : `❌ In use (${claudeRange.logStatus.processInfo})`}`);
 
@@ -94,24 +111,24 @@ class AutoStarter {
       // Both available - prefer user range (default)
       return {
         selectedRange: 'user',
-        astroPort: 5000,
-        logPort: 5001,
+        astroPort: PortRegistryUtils.getAstroPort('user'),
+        logPort: PortRegistryUtils.getLogServerPort('user'),
         reason: 'Both ranges available, using user range (default)'
       };
     } else if (userRange.available) {
       // Only user range available
       return {
         selectedRange: 'user',
-        astroPort: 5000,
-        logPort: 5001,
+        astroPort: PortRegistryUtils.getAstroPort('user'),
+        logPort: PortRegistryUtils.getLogServerPort('user'),
         reason: 'User range available, Claude range occupied'
       };
     } else if (claudeRange.available) {
       // Only Claude range available
       return {
         selectedRange: 'claude',
-        astroPort: 5100,
-        logPort: 5101,
+        astroPort: PortRegistryUtils.getAstroPort('claude'),
+        logPort: PortRegistryUtils.getLogServerPort('claude'),
         reason: 'Claude range available, user range occupied'
       };
     } else {
@@ -121,17 +138,16 @@ class AutoStarter {
   }
 
   private async startServices(astroPort: number, logPort: number, range: 'user' | 'claude'): Promise<void> {
-    const rangeName = range === 'user' ? 'User' : 'Claude';
-    const rangeEmoji = range === 'user' ? '👤' : '🤖';
+    const rangeInfo = PortRegistryUtils.getRange(range);
     
-    console.log(`\n🚀 Starting ${rangeName} services on ports ${astroPort}/${logPort}...\n`);
+    console.log(`\n🚀 Starting ${rangeInfo.name} services on ports ${astroPort}/${logPort}...\n`);
 
     // Use concurrently to start both services
     const { spawn } = Bun;
     
     const proc = spawn([
       'bunx', 'concurrently',
-      '--names', `${rangeEmoji}APP,${rangeEmoji}LOGS`,
+      '--names', `${rangeInfo.emoji}APP,${rangeInfo.emoji}LOGS`,
       '--prefix-colors', range === 'user' ? 'blue,green' : 'magenta,cyan',
       `ASTRO_PORT=${astroPort} bun run dev`,
       `cd local-server && LOG_SERVER_PORT=${logPort} bun run dev`
@@ -176,7 +192,7 @@ class AutoStarter {
       console.log('  • bun start           (force user range)');
       console.log('  • bun start:claude    (force Claude range)');
       console.log('  • bun ports:check     (check all ports)');
-      console.log('  • bun dev:isolated    (separate terminals)');
+      console.log('  • bun dev:instruct    (separate terminals)');
       process.exit(1);
     }
   }

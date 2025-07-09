@@ -1,24 +1,23 @@
 #!/usr/bin/env bun
 
 /**
- * Port cleanup utility for development environment
- * Safely kills processes occupying development ports
+ * Port killer for development server ports
+ * Uses central port registry for dynamic configuration
  */
+
+import { PortRegistryUtils } from './port-registry';
 
 interface PortProcess {
   port: number;
   pid: string;
   processName: string;
   canKill: boolean;
-  reason?: string;
+  reason: string;
 }
 
 type PortRange = 'user' | 'claude' | 'all';
 
 class PortKiller {
-  private readonly userPorts = [5000, 5001, 5002, 5003, 5004, 5005];
-  private readonly claudePorts = [5100, 5101, 5102, 5103, 5104, 5105];
-  
   // Processes that are generally safe to kill for development
   private readonly safeToKill = [
     'bun',
@@ -30,23 +29,67 @@ class PortKiller {
     'astro',
     'vite',
     'webpack',
-    'next-server',
-    'serve',
-    'http-server',
-    'live-server'
+    'rollup',
+    'parcel',
+    'esbuild',
+    'turbo',
+    'next',
+    'nuxt',
+    'react-scripts',
+    'vue-cli-service',
+    'ng',
+    'grunt',
+    'gulp',
+    'nodemon',
+    'pm2',
+    'forever',
+    'concurrently'
   ];
 
-  // System processes that should NOT be killed
+  // Processes that should not be killed automatically
   private readonly unsafeToKill = [
+    'kernel',
     'launchd',
-    'kernel_task',
-    'Safari',
-    'Chrome',
-    'Firefox',
-    'ControlCenter',
-    'Dock',
-    'Finder',
-    'WindowServer',
+    'systemd',
+    'init',
+    'kthreadd',
+    'ksoftirqd',
+    'migration',
+    'rcu_',
+    'watchdog',
+    'sshd',
+    'networkd',
+    'systemd-',
+    'dbus',
+    'avahi',
+    'cups',
+    'bluetooth',
+    'networkmanager',
+    'wpa_supplicant',
+    'dhcpcd',
+    'ntpd',
+    'chronyd',
+    'rsyslog',
+    'cron',
+    'atd',
+    'gdm',
+    'lightdm',
+    'xorg',
+    'wayland',
+    'pulseaudio',
+    'pipewire',
+    'alsa',
+    'udev',
+    'polkit',
+    'accountsservice',
+    'udisks',
+    'colord',
+    'rtkit',
+    'controlcenter',
+    'control center',
+    'finder',
+    'dock',
+    'windowserver',
     'loginwindow'
   ];
 
@@ -59,12 +102,15 @@ class PortKiller {
   private get ports(): number[] {
     switch (this.range) {
       case 'user':
-        return this.userPorts;
+        return PortRegistryUtils.getPortNumbersForRange('user');
       case 'claude':
-        return this.claudePorts;
+        return PortRegistryUtils.getPortNumbersForRange('claude');
       case 'all':
       default:
-        return [...this.userPorts, ...this.claudePorts];
+        return [
+          ...PortRegistryUtils.getPortNumbersForRange('user'),
+          ...PortRegistryUtils.getPortNumbersForRange('claude')
+        ];
     }
   }
 
@@ -80,17 +126,18 @@ class PortKiller {
 
       if (!pid) return null;
 
-      // Get process name
-      const nameProc = Bun.spawn(['ps', '-p', pid, '-o', 'comm='], {
+      // Get process name using ps
+      const nameProc = Bun.spawn(['ps', '-p', pid, '-o', 'command='], {
         stdout: 'pipe',
         stderr: 'ignore'
       });
-      const processName = (await new Response(nameProc.stdout).text()).trim();
+      const processCommand = (await new Response(nameProc.stdout).text()).trim();
+      const processName = processCommand.split(' ')[0].split('/').pop() || '';
 
       if (!processName) return null;
 
       // Determine if safe to kill
-      const baseName = processName.split('/').pop()?.toLowerCase() || '';
+      const baseName = processName.toLowerCase();
       
       let canKill = false;
       let reason = '';
@@ -119,84 +166,79 @@ class PortKiller {
     }
   }
 
-  private async scanPorts(): Promise<PortProcess[]> {
-    const results = await Promise.all(
-      this.ports.map(port => this.getPortProcess(port))
-    );
-    
-    return results.filter((result): result is PortProcess => result !== null);
-  }
-
-  private async killProcess(process: PortProcess, force: boolean = false): Promise<boolean> {
-    if (!process.canKill && !force) {
-      console.log(`⚠️  Skipping ${process.processName} (${process.pid}) on port ${process.port}: ${process.reason}`);
-      return false;
-    }
-
+  private async killProcess(pid: string): Promise<boolean> {
     try {
-      console.log(`🔪 Killing ${process.processName} (${process.pid}) on port ${process.port}...`);
+      console.log(`🔪 Killing process ${pid}...`);
       
-      // Try graceful termination first
-      const killProc = Bun.spawn(['kill', process.pid], {
-        stderr: 'ignore'
-      });
+      // Try graceful kill first
+      const killProc = Bun.spawn(['kill', pid], { stderr: 'ignore' });
       await killProc.exited;
-
-      // Wait a moment for graceful shutdown
+      
+      // Wait for process to exit
       await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // Check if process is still running
-      const checkProc = Bun.spawn(['ps', '-p', process.pid], {
+      
+      // Check if still running
+      const checkProc = Bun.spawn(['ps', '-p', pid], {
         stdout: 'ignore',
         stderr: 'ignore'
       });
       await checkProc.exited;
-
+      
       if (checkProc.exitCode === 0) {
-        // Process still running, force kill
-        console.log(`💀 Force killing ${process.processName} (${process.pid})...`);
-        const forceKillProc = Bun.spawn(['kill', '-9', process.pid], {
-          stderr: 'ignore'
-        });
+        // Force kill if still running
+        console.log(`💀 Force killing process ${pid}...`);
+        const forceKillProc = Bun.spawn(['kill', '-9', pid], { stderr: 'ignore' });
         await forceKillProc.exited;
       }
-
-      console.log(`✅ Successfully killed ${process.processName} on port ${process.port}`);
+      
       return true;
-
     } catch (error) {
-      console.log(`❌ Failed to kill ${process.processName} (${process.pid}): ${error}`);
+      console.log(`❌ Failed to kill process ${pid}: ${error}`);
       return false;
     }
   }
 
-  public async run(options: { force?: boolean; interactive?: boolean } = {}): Promise<void> {
-    const { force = false, interactive = true } = options;
-    
+  public async run(): Promise<void> {
     const rangeText = this.range === 'user' ? 'User Development' : 
                      this.range === 'claude' ? 'Claude Testing' : 'All';
     
     console.log(`🔍 Scanning ${rangeText} ports for running processes...\n`);
 
-    const processes = await this.scanPorts();
+    // Get all port processes
+    const processes = await Promise.all(
+      this.ports.map(port => this.getPortProcess(port))
+    );
 
-    if (processes.length === 0) {
-      console.log('✅ No processes found on development ports!');
+    const runningProcesses = processes.filter(p => p !== null) as PortProcess[];
+
+    if (runningProcesses.length === 0) {
+      console.log(`✅ No processes found running on ${rangeText.toLowerCase()} ports.`);
       return;
     }
 
+    // Show found processes
     console.log('📋 Found running processes:');
-    processes.forEach(proc => {
-      const emoji = proc.canKill ? '🟢' : '🔴';
-      const rangeEmoji = this.userPorts.includes(proc.port) ? '👤' : '🤖';
-      console.log(`  ${emoji} ${rangeEmoji} Port ${proc.port}: ${proc.processName} (${proc.pid}) - ${proc.reason}`);
+    runningProcesses.forEach(proc => {
+      const rangeInfo = this.range === 'user' 
+        ? PortRegistryUtils.getRange('user')
+        : this.range === 'claude' 
+        ? PortRegistryUtils.getRange('claude')
+        : proc.port >= 5160 
+        ? PortRegistryUtils.getRange('claude') 
+        : PortRegistryUtils.getRange('user');
+      
+      const emoji = rangeInfo.emoji;
+      const statusIcon = proc.canKill ? '✅' : '🔴';
+      console.log(`  ${statusIcon} ${emoji} Port ${proc.port}: ${proc.processName} (${proc.pid}) - ${proc.reason}`);
     });
 
-    const killableProcesses = processes.filter(p => p.canKill);
-    const unsafeProcesses = processes.filter(p => !p.canKill);
+    // Separate safe and unsafe processes
+    const safeProcesses = runningProcesses.filter(p => p.canKill);
+    const unsafeProcesses = runningProcesses.filter(p => !p.canKill);
 
-    if (killableProcesses.length === 0) {
+    if (safeProcesses.length === 0) {
       console.log('\n⚠️  No safe processes to kill automatically.');
+      
       if (unsafeProcesses.length > 0) {
         console.log('\n🔧 Manual actions required:');
         unsafeProcesses.forEach(proc => {
@@ -207,39 +249,36 @@ class PortKiller {
       return;
     }
 
-    if (interactive && !force) {
-      console.log(`\n❓ Kill ${killableProcesses.length} safe development processes? (y/N)`);
-      // For non-interactive environments, we'll skip the prompt
-      console.log('🤖 Running in non-interactive mode, proceeding with safe kills...');
+    // Kill safe processes
+    console.log(`\n🔪 Killing ${safeProcesses.length} safe development process${safeProcesses.length > 1 ? 'es' : ''}...`);
+    
+    const killResults = await Promise.all(
+      safeProcesses.map(proc => this.killProcess(proc.pid))
+    );
+
+    const successCount = killResults.filter(r => r).length;
+    const failCount = killResults.filter(r => !r).length;
+
+    console.log(`\n📊 Results:`);
+    console.log(`  ✅ Successfully killed: ${successCount} processes`);
+    if (failCount > 0) {
+      console.log(`  ❌ Failed to kill: ${failCount} processes`);
     }
 
-    console.log('\n🔪 Killing safe development processes...');
-    
-    let killedCount = 0;
-    for (const process of killableProcesses) {
-      const success = await this.killProcess(process, force);
-      if (success) killedCount++;
-    }
-
-    console.log(`\n📊 Summary: ${killedCount}/${killableProcesses.length} processes killed`);
-    
     if (unsafeProcesses.length > 0) {
-      console.log(`⚠️  ${unsafeProcesses.length} processes require manual review`);
-    }
-
-    if (killedCount > 0) {
-      console.log('\n✨ Ports should now be available for development!');
-      console.log('   Run: bun ports:check to verify');
+      console.log(`\n⚠️  ${unsafeProcesses.length} unsafe process${unsafeProcesses.length > 1 ? 'es' : ''} left running:`);
+      unsafeProcesses.forEach(proc => {
+        console.log(`  • Port ${proc.port}: ${proc.processName} (${proc.pid}) - ${proc.reason}`);
+      });
+      console.log('\n💡 Review these processes manually before killing them.');
     }
   }
 }
 
 // Run port killer if this file is executed directly
 if (import.meta.main) {
-  // Parse command line arguments
   const args = process.argv.slice(2);
   let range: PortRange = 'all';
-  let force = false;
   
   for (const arg of args) {
     if (arg.startsWith('--range=')) {
@@ -248,14 +287,8 @@ if (import.meta.main) {
         range = rangeValue;
       }
     }
-    if (arg === '--force') {
-      force = true;
-    }
   }
   
   const killer = new PortKiller(range);
-  killer.run({ force, interactive: false }).catch(error => {
-    console.error('❌ Port killer failed:', error);
-    process.exit(1);
-  });
+  killer.run();
 }

@@ -23,12 +23,13 @@ vi.mock('../../convex/_generated/api', () => ({
 }));
 
 describe('ChatInterface Integration Tests', () => {
-  const mockUseQuery = vi.mocked(
-    await import('convex/react').then(m => m.useQuery)
-  );
-  const mockUseMutation = vi.mocked(
-    await import('convex/react').then(m => m.useMutation)
-  );
+  const convexReact = vi.hoisted(() => ({
+    useQuery: vi.fn(),
+    useMutation: vi.fn(),
+  }));
+  
+  const mockUseQuery = vi.mocked(convexReact.useQuery);
+  const mockUseMutation = vi.mocked(convexReact.useMutation);
 
   const mockSendMessage = vi.fn();
   const mockChat = {

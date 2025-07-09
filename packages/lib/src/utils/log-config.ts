@@ -4,7 +4,7 @@ import type { LogForwarderConfig } from './log-forwarder';
  * Default configuration for log forwarding
  */
 export const DEFAULT_LOG_CONFIG: LogForwarderConfig = {
-  serverUrl: 'http://localhost:5001/log',
+  serverUrl: 'http://localhost:5101/log',
   enabled: true,
   batchSize: 10,
   batchTimeout: 2000,
@@ -52,7 +52,7 @@ export const TEST_LOG_CONFIG: Partial<LogForwarderConfig> = {
  * Get log configuration based on environment
  */
 export function getLogConfig(environment?: string): Partial<LogForwarderConfig> {
-  const env = environment || import.meta.env?.MODE || process.env.NODE_ENV || 'development';
+  const env = environment || import.meta.env?.MODE || (typeof process !== 'undefined' && process.env?.NODE_ENV) || 'development';
   
   switch (env) {
     case 'development':
@@ -73,18 +73,24 @@ export function getLogConfig(environment?: string): Partial<LogForwarderConfig> 
  * Check if log forwarding should be enabled based on environment
  */
 export function shouldEnableLogForwarding(): boolean {
-  // Only enable in development mode
-  const isDev = import.meta.env?.DEV || 
-               process.env.NODE_ENV === 'development' ||
-               process.env.NODE_ENV === 'dev';
-  
-  // Check for explicit override
+  // Check for explicit override first
   const override = import.meta.env?.VITE_ENABLE_LOG_FORWARDING || 
-                  process.env.ENABLE_LOG_FORWARDING;
+                  (typeof process !== 'undefined' && process.env?.ENABLE_LOG_FORWARDING);
   
   if (override !== undefined) {
     return override === 'true';
   }
+  
+  // For now, always enable in browser context during development
+  if (typeof window !== 'undefined') {
+    console.log('LogForwarder: Enabling for browser context');
+    return true;
+  }
+  
+  // Server-side checks
+  const isDev = Boolean(import.meta.env?.DEV || 
+                       (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') ||
+                       (typeof process !== 'undefined' && process.env?.NODE_ENV === 'dev'));
   
   return isDev;
 }
@@ -94,6 +100,6 @@ export function shouldEnableLogForwarding(): boolean {
  */
 export function getLogServerUrl(): string {
   return import.meta.env?.VITE_LOG_SERVER_URL || 
-         process.env.LOG_SERVER_URL || 
-         'http://localhost:5001/log';
+         (typeof process !== 'undefined' && process.env?.LOG_SERVER_URL) || 
+         'http://localhost:5101/log';
 }

@@ -1,9 +1,11 @@
 #!/usr/bin/env bun
 
 /**
- * Port validation utility for development environment
- * Checks if required ports are available before starting services
+ * Port availability checker for development server ports
+ * Uses central port registry for dynamic configuration
  */
+
+import { PortRegistryUtils } from './port-registry';
 
 interface PortConfig {
   port: number;
@@ -15,24 +17,6 @@ interface PortConfig {
 type PortRange = 'user' | 'claude' | 'all';
 
 class PortChecker {
-  private readonly userPorts: PortConfig[] = [
-    { port: 5000, name: 'Astro Main App (User)', required: true, range: 'user' },
-    { port: 5001, name: 'Log Server (User)', required: true, range: 'user' },
-    { port: 5002, name: 'Reserved (User)', required: false, range: 'user' },
-    { port: 5003, name: 'Reserved (User)', required: false, range: 'user' },
-    { port: 5004, name: 'Reserved (User)', required: false, range: 'user' },
-    { port: 5005, name: 'Reserved (User)', required: false, range: 'user' }
-  ];
-
-  private readonly claudePorts: PortConfig[] = [
-    { port: 5100, name: 'Astro Main App (Claude)', required: true, range: 'claude' },
-    { port: 5101, name: 'Log Server (Claude)', required: true, range: 'claude' },
-    { port: 5102, name: 'Reserved (Claude)', required: false, range: 'claude' },
-    { port: 5103, name: 'Reserved (Claude)', required: false, range: 'claude' },
-    { port: 5104, name: 'Reserved (Claude)', required: false, range: 'claude' },
-    { port: 5105, name: 'Reserved (Claude)', required: false, range: 'claude' }
-  ];
-
   private range: PortRange;
 
   constructor(range: PortRange = 'all') {
@@ -42,50 +26,72 @@ class PortChecker {
   private get ports(): PortConfig[] {
     switch (this.range) {
       case 'user':
-        return this.userPorts;
+        return PortRegistryUtils.getPortsForRange('user').map(p => ({
+          port: p.port,
+          name: `${p.name} (User)`,
+          required: p.required,
+          range: 'user' as const
+        }));
       case 'claude':
-        return this.claudePorts;
+        return PortRegistryUtils.getPortsForRange('claude').map(p => ({
+          port: p.port,
+          name: `${p.name} (Claude)`,
+          required: p.required,
+          range: 'claude' as const
+        }));
       case 'all':
       default:
-        return [...this.userPorts, ...this.claudePorts];
+        return PortRegistryUtils.getAllPorts().map(p => ({
+          port: p.port,
+          name: `${p.name} (${p.range === 'user' ? 'User' : 'Claude'})`,
+          required: p.required,
+          range: p.range
+        }));
     }
   }
 
   private async isPortInUse(port: number): Promise<{ inUse: boolean; processInfo?: string }> {
     try {
-      // Try to create a server on the port
-      const server = Bun.serve({
-        port,
-        fetch: () => new Response('test'),
+      // Use lsof directly to check for any process using the port (IPv4 or IPv6)
+      const proc = Bun.spawn(['lsof', '-i', `:${port}`, '-t'], { 
+        stdout: 'pipe',
+        stderr: 'ignore'
       });
+      const output = await new Response(proc.stdout).text();
+      const pid = output.trim();
       
-      server.stop();
-      return { inUse: false };
-    } catch (error: any) {
-      if (error.code === 'EADDRINUSE') {
-        // Get process info using lsof
+      if (pid) {
+        // Port is in use, get process info
         try {
-          const proc = Bun.spawn(['lsof', '-i', `:${port}`, '-t'], { 
+          const procInfo = Bun.spawn(['ps', '-p', pid, '-o', 'comm='], {
             stdout: 'pipe',
             stderr: 'ignore'
           });
-          const output = await new Response(proc.stdout).text();
-          const pid = output.trim();
-          
-          if (pid) {
-            const procInfo = Bun.spawn(['ps', '-p', pid, '-o', 'comm='], {
-              stdout: 'pipe',
-              stderr: 'ignore'
-            });
-            const processName = (await new Response(procInfo.stdout).text()).trim();
-            return { inUse: true, processInfo: `PID ${pid} (${processName})` };
-          }
+          const processName = (await new Response(procInfo.stdout).text()).trim();
+          return { inUse: true, processInfo: `PID ${pid} (${processName})` };
         } catch {
-          // lsof might not be available or might fail
+          return { inUse: true, processInfo: `PID ${pid} (Unknown)` };
         }
-        return { inUse: true, processInfo: 'Unknown process' };
       }
+      
+      // No process found using lsof, port appears free
       return { inUse: false };
+    } catch (error) {
+      // If lsof fails, fall back to the bind test
+      try {
+        const server = Bun.serve({
+          port,
+          fetch: () => new Response('test'),
+        });
+        
+        server.stop();
+        return { inUse: false };
+      } catch (bindError: any) {
+        if (bindError.code === 'EADDRINUSE') {
+          return { inUse: true, processInfo: 'Process detected via bind test' };
+        }
+        return { inUse: false };
+      }
     }
   }
 
@@ -97,11 +103,12 @@ class PortChecker {
       })
     );
 
-    const available = results.filter(r => !r.inUse).map(r => ({ port: r.port, name: r.name, required: r.required }));
+    const available = results.filter(r => !r.inUse).map(r => ({ port: r.port, name: r.name, required: r.required, range: r.range }));
     const inUse = results.filter(r => r.inUse).map(r => ({ 
       port: r.port, 
       name: r.name, 
       required: r.required,
+      range: r.range,
       processInfo: r.processInfo || 'Unknown'
     }));
 
@@ -119,18 +126,18 @@ class PortChecker {
       if (conflict.range === 'user') {
         if (conflict.name.includes('Astro')) {
           console.log(`    • Use Claude range: bun start:claude`);
-          console.log(`    • Use different port: ASTRO_PORT=5010 bun start`);
+          console.log(`    • Use different port: ASTRO_PORT=${PortRegistryUtils.getAstroPort('claude')} bun start`);
         } else if (conflict.name.includes('Log Server')) {
           console.log(`    • Use Claude range: bun start:claude`);
-          console.log(`    • Use different port: LOG_SERVER_PORT=5011 bun start`);
+          console.log(`    • Use different port: LOG_SERVER_PORT=${PortRegistryUtils.getLogServerPort('claude')} bun start`);
         }
       } else if (conflict.range === 'claude') {
         if (conflict.name.includes('Astro')) {
           console.log(`    • Use user range: bun start`);
-          console.log(`    • Use different port: ASTRO_PORT=5110 bun start:claude`);
+          console.log(`    • Use different port: ASTRO_PORT=${PortRegistryUtils.getAstroPort('user')} bun start:claude`);
         } else if (conflict.name.includes('Log Server')) {
           console.log(`    • Use user range: bun start`);
-          console.log(`    • Use different port: LOG_SERVER_PORT=5111 bun start:claude`);
+          console.log(`    • Use different port: LOG_SERVER_PORT=${PortRegistryUtils.getLogServerPort('user')} bun start:claude`);
         }
       }
     });
@@ -141,11 +148,11 @@ class PortChecker {
     console.log('\n  Alternative approaches:');
     if (this.range === 'user' || this.range === 'all') {
       console.log('    • Switch to Claude range: bun start:claude');
-      console.log('    • Use isolated terminals: bun dev:isolated');
+      console.log('    • Use isolated terminals: bun dev:instruct');
     }
     if (this.range === 'claude' || this.range === 'all') {
       console.log('    • Switch to User range: bun start');
-      console.log('    • Use isolated terminals: bun dev:claude');
+      console.log('    • Use isolated terminals: bun dev:instruct');
     }
     console.log('    • Use auto-detection: bun start:auto');
     console.log(`    • Check all ports: bun ports:check`);
@@ -159,63 +166,46 @@ class PortChecker {
 
     const { available, inUse } = await this.checkAllPorts();
 
-    // Show available ports
-    if (available.length > 0) {
-      console.log('✅ Available ports:');
-      available.forEach(port => {
-        const status = port.required ? '(required)' : '(reserved)';
-        const emoji = port.range === 'user' ? '👤' : '🤖';
-        console.log(`  ${emoji} ${port.port}: ${port.name} ${status}`);
-      });
-    }
+    // Combine all ports and sort by port number
+    const allPorts = [
+      ...available.map(p => ({ ...p, status: 'available', processInfo: p.required ? '(required)' : '(reserved)' })),
+      ...inUse.map(p => ({ ...p, status: 'in-use' }))
+    ].sort((a, b) => a.port - b.port);
 
-    // Show conflicts
-    if (inUse.length > 0) {
-      console.log('\n❌ Ports in use:');
-      inUse.forEach(port => {
-        const severity = port.required ? '⚠️  CONFLICT' : 'ℹ️  INFO';
-        const emoji = port.range === 'user' ? '👤' : '🤖';
-        console.log(`  ${emoji} ${port.port}: ${port.name} - ${port.processInfo} ${severity}`);
-      });
-    }
+    // Show all ports in unified layout
+    console.log('📋 All ports:');
+    allPorts.forEach(port => {
+      const rangeInfo = PortRegistryUtils.getRange(port.range);
+      const emoji = rangeInfo.emoji;
+      const statusIcon = port.status === 'available' ? '✅' : '🔴';
+      const name = port.name.padEnd(25); // Pad to 25 characters for alignment
+      
+      console.log(`  ${statusIcon} ${emoji} ${port.port}: ${name} ${port.status === 'available' ? port.processInfo : '- ' + port.processInfo}`);
+    });
 
     // Check if required ports are available
     const requiredConflicts = inUse.filter(p => p.required);
     
+    // Summary
+    console.log(`\n📊 Port Status Summary:`);
+    console.log(`  • Available: ${available.length} ports`);
+    console.log(`  • In Use: ${inUse.length} ports`);
+    
     if (requiredConflicts.length === 0) {
-      console.log(`\n🎉 All required ${rangeText.toLowerCase()} ports are available!`);
-      
-      if (this.range === 'user' || this.range === 'all') {
-        console.log('\n👤 User commands:');
-        console.log('  • bun start          (both services on 5000/5001)');
-        console.log('  • bun dev:app-only   (main app only)');
-        console.log('  • bun dev:logs-only  (log server only)');
-      }
-      
-      if (this.range === 'claude' || this.range === 'all') {
-        console.log('\n🤖 Claude commands:');
-        console.log('  • bun start:claude   (both services on 5100/5101)');
-        console.log('  • bun dev:claude-app (main app only)');
-        console.log('  • bun dev:claude-logs(log server only)');
-      }
-      
-      if (this.range === 'all') {
-        console.log('\n🔄 Auto commands:');
-        console.log('  • bun start:auto     (intelligent port selection)');
-      }
-      
-      process.exit(0);
+      console.log(`  • Status: ✅ Ready to start ${rangeText.toLowerCase()} services`);
     } else {
-      console.log(`\n⚠️  ${rangeText} port conflicts detected!`);
-      this.suggestSolutions(requiredConflicts);
-      process.exit(1);
+      console.log(`  • Status: ⚠️  ${requiredConflicts.length} required port${requiredConflicts.length > 1 ? 's' : ''} occupied`);
+    }
+    
+    // Optional: Show suggested commands only if user wants solutions
+    if (requiredConflicts.length > 0) {
+      console.log(`\n💡 Run 'bun ports:kill${this.range === 'user' ? ':user' : this.range === 'claude' ? ':claude' : ''}' to free up ports`);
     }
   }
 }
 
 // Run port checker if this file is executed directly
 if (import.meta.main) {
-  // Parse command line arguments
   const args = process.argv.slice(2);
   let range: PortRange = 'all';
   
@@ -229,8 +219,5 @@ if (import.meta.main) {
   }
   
   const checker = new PortChecker(range);
-  checker.run().catch(error => {
-    console.error('❌ Port checker failed:', error);
-    process.exit(1);
-  });
+  checker.run();
 }

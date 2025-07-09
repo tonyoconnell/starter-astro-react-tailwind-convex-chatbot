@@ -2,8 +2,10 @@
 
 /**
  * Smart startup script that handles port conflicts intelligently
- * Provides multiple strategies for robust development server startup
+ * Uses central port registry for dynamic configuration
  */
+
+import { PortRegistryUtils } from './port-registry';
 
 type PortRange = 'user' | 'claude' | 'auto';
 
@@ -22,9 +24,6 @@ interface PortStatus {
 }
 
 class SmartStarter {
-  private userPorts = { astro: 5000, logs: 5001 };
-  private claudePorts = { astro: 5100, logs: 5101 };
-
   private async checkPort(port: number): Promise<PortStatus> {
     try {
       const server = Bun.serve({
@@ -74,12 +73,15 @@ class SmartStarter {
     }
   }
 
-  private async checkPortRange(astroPort: number, logPort: number): Promise<{
+  private async checkPortRange(rangeName: 'user' | 'claude'): Promise<{
     astroStatus: PortStatus;
     logStatus: PortStatus;
     available: boolean;
     canClear: boolean;
   }> {
+    const astroPort = PortRegistryUtils.getAstroPort(rangeName);
+    const logPort = PortRegistryUtils.getLogServerPort(rangeName);
+    
     const [astroStatus, logStatus] = await Promise.all([
       this.checkPort(astroPort),
       this.checkPort(logPort)
@@ -135,7 +137,10 @@ class SmartStarter {
     }
   }
 
-  private async clearPorts(astroPort: number, logPort: number): Promise<boolean> {
+  private async clearPorts(rangeName: 'user' | 'claude'): Promise<boolean> {
+    const astroPort = PortRegistryUtils.getAstroPort(rangeName);
+    const logPort = PortRegistryUtils.getLogServerPort(rangeName);
+    
     console.log(`🧹 Clearing ports ${astroPort} and ${logPort}...`);
     
     const [astroKilled, logKilled] = await Promise.all([
@@ -149,11 +154,12 @@ class SmartStarter {
     return astroKilled && logKilled;
   }
 
-  private async startServices(astroPort: number, logPort: number, range: string): Promise<void> {
-    const rangeName = range === 'user' ? 'User' : range === 'claude' ? 'Claude' : 'Auto-selected';
-    const rangeEmoji = range === 'user' ? '👤' : range === 'claude' ? '🤖' : '🔄';
+  private async startServices(rangeName: 'user' | 'claude'): Promise<void> {
+    const rangeInfo = PortRegistryUtils.getRange(rangeName);
+    const astroPort = PortRegistryUtils.getAstroPort(rangeName);
+    const logPort = PortRegistryUtils.getLogServerPort(rangeName);
     
-    console.log(`\n🚀 Starting ${rangeName} services...`);
+    console.log(`\n🚀 Starting ${rangeInfo.name} services...`);
     console.log(`🌐 Main app: http://localhost:${astroPort}`);
     console.log(`📡 Log server: http://localhost:${logPort}/health\n`);
 
@@ -162,8 +168,8 @@ class SmartStarter {
     
     const proc = spawn([
       'bunx', 'concurrently',
-      '--names', `${rangeEmoji}APP,${rangeEmoji}LOGS`,
-      '--prefix-colors', range === 'user' ? 'blue,green' : 'magenta,cyan',
+      '--names', `${rangeInfo.emoji}APP,${rangeInfo.emoji}LOGS`,
+      '--prefix-colors', rangeName === 'user' ? 'blue,green' : 'magenta,cyan',
       `ASTRO_PORT=${astroPort} bun run dev`,
       `cd local-server && LOG_SERVER_PORT=${logPort} bun run dev`
     ], {
@@ -189,56 +195,42 @@ class SmartStarter {
   }
 
   private async getAvailableRange(options: StartupOptions): Promise<{
-    astroPort: number;
-    logPort: number;
-    range: string;
+    rangeName: 'user' | 'claude';
     strategy: string;
   }> {
     console.log('🔍 Analyzing port availability...\n');
 
     const [userRange, claudeRange] = await Promise.all([
-      this.checkPortRange(this.userPorts.astro, this.userPorts.logs),
-      this.checkPortRange(this.claudePorts.astro, this.claudePorts.logs)
+      this.checkPortRange('user'),
+      this.checkPortRange('claude')
     ]);
 
-    console.log('👤 User range (5000-5001):');
+    const userSummary = PortRegistryUtils.getRangeSummary('user');
+    const claudeSummary = PortRegistryUtils.getRangeSummary('claude');
+
+    console.log(`👤 User range (${userSummary}):`);
     console.log(`  • Astro: ${userRange.astroStatus.available ? '✅ Available' : `❌ ${userRange.astroStatus.processInfo}`}`);
     console.log(`  • Logs:  ${userRange.logStatus.available ? '✅ Available' : `❌ ${userRange.logStatus.processInfo}`}`);
 
-    console.log('\n🤖 Claude range (5100-5101):');
+    console.log(`\n🤖 Claude range (${claudeSummary}):`);
     console.log(`  • Astro: ${claudeRange.astroStatus.available ? '✅ Available' : `❌ ${claudeRange.astroStatus.processInfo}`}`);
     console.log(`  • Logs:  ${claudeRange.logStatus.available ? '✅ Available' : `❌ ${claudeRange.logStatus.processInfo}`}`);
 
     // Strategy selection based on options and availability
     if (options.range === 'user') {
       if (userRange.available) {
-        return {
-          astroPort: this.userPorts.astro,
-          logPort: this.userPorts.logs,
-          range: 'user',
-          strategy: 'Requested user range available'
-        };
+        return { rangeName: 'user', strategy: 'Requested user range available' };
       } else if (options.autoKill && userRange.canClear) {
         console.log('\n🧹 Auto-clearing user ports...');
-        const cleared = await this.clearPorts(this.userPorts.astro, this.userPorts.logs);
+        const cleared = await this.clearPorts('user');
         if (cleared) {
-          return {
-            astroPort: this.userPorts.astro,
-            logPort: this.userPorts.logs,
-            range: 'user',
-            strategy: 'User range cleared and available'
-          };
+          return { rangeName: 'user', strategy: 'User range cleared and available' };
         }
       }
       
       if (options.fallback && claudeRange.available) {
         console.log('\n🔄 Falling back to Claude range...');
-        return {
-          astroPort: this.claudePorts.astro,
-          logPort: this.claudePorts.logs,
-          range: 'claude',
-          strategy: 'Fallback to Claude range'
-        };
+        return { rangeName: 'claude', strategy: 'Fallback to Claude range' };
       }
 
       throw new Error('User range not available and fallback options exhausted');
@@ -246,33 +238,18 @@ class SmartStarter {
 
     if (options.range === 'claude') {
       if (claudeRange.available) {
-        return {
-          astroPort: this.claudePorts.astro,
-          logPort: this.claudePorts.logs,
-          range: 'claude',
-          strategy: 'Requested Claude range available'
-        };
+        return { rangeName: 'claude', strategy: 'Requested Claude range available' };
       } else if (options.autoKill && claudeRange.canClear) {
         console.log('\n🧹 Auto-clearing Claude ports...');
-        const cleared = await this.clearPorts(this.claudePorts.astro, this.claudePorts.logs);
+        const cleared = await this.clearPorts('claude');
         if (cleared) {
-          return {
-            astroPort: this.claudePorts.astro,
-            logPort: this.claudePorts.logs,
-            range: 'claude',
-            strategy: 'Claude range cleared and available'
-          };
+          return { rangeName: 'claude', strategy: 'Claude range cleared and available' };
         }
       }
 
       if (options.fallback && userRange.available) {
         console.log('\n🔄 Falling back to user range...');
-        return {
-          astroPort: this.userPorts.astro,
-          logPort: this.userPorts.logs,
-          range: 'user',
-          strategy: 'Fallback to user range'
-        };
+        return { rangeName: 'user', strategy: 'Fallback to user range' };
       }
 
       throw new Error('Claude range not available and fallback options exhausted');
@@ -280,51 +257,26 @@ class SmartStarter {
 
     // Auto mode - intelligent selection
     if (userRange.available && claudeRange.available) {
-      return {
-        astroPort: this.userPorts.astro,
-        logPort: this.userPorts.logs,
-        range: 'user',
-        strategy: 'Both ranges available, using user (default)'
-      };
+      return { rangeName: 'user', strategy: 'Both ranges available, using user (default)' };
     } else if (userRange.available) {
-      return {
-        astroPort: this.userPorts.astro,
-        logPort: this.userPorts.logs,
-        range: 'user',
-        strategy: 'User range available'
-      };
+      return { rangeName: 'user', strategy: 'User range available' };
     } else if (claudeRange.available) {
-      return {
-        astroPort: this.claudePorts.astro,
-        logPort: this.claudePorts.logs,
-        range: 'claude',
-        strategy: 'Claude range available'
-      };
+      return { rangeName: 'claude', strategy: 'Claude range available' };
     } else if (options.autoKill) {
       // Try clearing the most promising range
       if (userRange.canClear) {
         console.log('\n🧹 Auto-clearing user ports...');
-        const cleared = await this.clearPorts(this.userPorts.astro, this.userPorts.logs);
+        const cleared = await this.clearPorts('user');
         if (cleared) {
-          return {
-            astroPort: this.userPorts.astro,
-            logPort: this.userPorts.logs,
-            range: 'user',
-            strategy: 'User range cleared and available'
-          };
+          return { rangeName: 'user', strategy: 'User range cleared and available' };
         }
       }
       
       if (claudeRange.canClear) {
         console.log('\n🧹 Auto-clearing Claude ports...');
-        const cleared = await this.clearPorts(this.claudePorts.astro, this.claudePorts.logs);
+        const cleared = await this.clearPorts('claude');
         if (cleared) {
-          return {
-            astroPort: this.claudePorts.astro,
-            logPort: this.claudePorts.logs,
-            range: 'claude',
-            strategy: 'Claude range cleared and available'
-          };
+          return { rangeName: 'claude', strategy: 'Claude range cleared and available' };
         }
       }
     }
@@ -336,12 +288,13 @@ class SmartStarter {
     try {
       console.log('🎯 Smart Startup initiated...\n');
 
-      const { astroPort, logPort, range, strategy } = await this.getAvailableRange(options);
+      const { rangeName, strategy } = await this.getAvailableRange(options);
+      const rangeSummary = PortRegistryUtils.getRangeSummary(rangeName);
       
       console.log(`\n✅ Selected strategy: ${strategy}`);
-      console.log(`🎯 Using ${range} range: ${astroPort}/${logPort}`);
+      console.log(`🎯 Using ${rangeName} range: ${rangeSummary}`);
 
-      await this.startServices(astroPort, logPort, range);
+      await this.startServices(rangeName);
       
     } catch (error) {
       console.error('\n❌ Smart startup failed:', error);
@@ -350,7 +303,7 @@ class SmartStarter {
       console.log('  • bun ports:kill:claude  (kill Claude range processes)');
       console.log('  • bun start:force        (force start user range)');
       console.log('  • bun start:claude:force (force start Claude range)');
-      console.log('  • bun dev:isolated       (separate terminals)');
+      console.log('  • bun dev:instruct       (separate terminals)');
       console.log('  • bun ports:check        (check port status)');
       process.exit(1);
     }
