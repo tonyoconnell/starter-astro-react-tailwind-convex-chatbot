@@ -18,27 +18,85 @@ This is an AI-Accelerated Starter Template designed for building conversational 
 
 ## Development Commands
 
-> Note: The project hasn't been implemented yet. These are the expected commands based on the architecture document:
+### Quick Start (Recommended)
 
 ```bash
-# Install dependencies (using Bun)
+# Install dependencies
 bun install
 
-# Start development servers
-bun dev              # Start Astro dev server
+# Start both services (intelligent selection)
+bun start:auto       # Auto-detects best available ports
+
+# Or use specific ranges
+bun start            # User range (5000/5001)
+bun start:claude     # Claude range (5100/5101)
+```
+
+### Dual-Port Strategy
+
+**User Development Range (5000-5099):**
+- **Port 5000**: Main Astro application (your development)
+- **Port 5001**: Local observability server (your development)
+- **Ports 5002-5005**: Reserved for your future services
+
+**Claude Testing Range (5100-5199):**
+- **Port 5100**: Main Astro application (Claude testing)
+- **Port 5101**: Local observability server (Claude testing)
+- **Ports 5102-5105**: Reserved for Claude test scenarios
+
+### Individual Services
+
+```bash
+# User development (your normal workflow)
+bun dev:app-only     # Astro dev server on port 5000
+bun dev:logs-only    # Observability server on port 5001
+bun dev:isolated     # Instructions for 2-terminal setup
+
+# Claude testing (automated testing)
+bun dev:claude-app   # Astro dev server on port 5100
+bun dev:claude-logs  # Observability server on port 5101
+bun dev:claude       # Instructions for Claude 2-terminal setup
+```
+
+### Port Management
+
+```bash
+# Check port availability
+bun ports:check         # Check all ports
+bun ports:check:user    # Check user range only
+bun ports:check:claude  # Check Claude range only
+
+# Intelligent startup
+bun start:auto          # Auto-select best available range
+```
+
+**Benefits:**
+- ✅ **No Conflicts**: User and Claude never compete for same ports
+- ✅ **Clear Separation**: Easy to identify which services are yours vs Claude's
+- ✅ **Flexible Testing**: Claude can restart test servers without affecting your work
+- ✅ **Intelligent Detection**: Auto-selection finds best available range
+
+### Backend & Testing
+
+```bash
+# Convex backend
 bunx convex dev      # Start Convex backend
 
-# Run tests
+# Testing
 bun test             # Run unit tests with Vitest
 bun test:e2e         # Run E2E tests with Playwright
 
 # Build for production
 bun build            # Build Astro frontend
 bunx convex deploy   # Deploy Convex backend
-
-# Deploy to Cloudflare
-bunx wrangler pages deploy dist/  # Deploy frontend to Cloudflare Pages
 ```
+
+### Observability Features
+
+- **Real-time log forwarding**: Frontend console → Local server
+- **Debug panel**: Press `Ctrl+Shift+L` in browser
+- **Health checks**: http://localhost:5001/health
+- **Port conflict detection**: Automatic validation with solutions
 
 ## High-Level Architecture
 

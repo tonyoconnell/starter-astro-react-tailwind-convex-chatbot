@@ -1,0 +1,143 @@
+---
+import { AuthGuard } from "../components/auth/AuthGuard";
+
+export interface Props {
+  title: string;
+  description?: string;
+  requireAuth?: boolean;
+}
+
+const { 
+  title, 
+  description = "AI-Accelerated Starter Template with authentication and chat capabilities",
+  requireAuth = true
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Preload Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  </head>
+  <body class="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
+    {requireAuth ? (
+      <AuthGuard client:load>
+        <!-- Protected Header -->
+        <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+          <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+              <!-- Logo/Brand -->
+              <div class="flex items-center">
+                <a href="/" class="text-xl font-bold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+                  AI Starter
+                </a>
+              </div>
+              
+              <!-- Navigation Links -->
+              <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                <a href="/dashboard" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+                  Dashboard
+                </a>
+                <a href="/chat" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+                  Chat
+                </a>
+                <a href="/profile" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+                  Profile
+                </a>
+                
+                <!-- User Menu -->
+                <div class="relative ml-3">
+                  <div id="user-menu" class="flex items-center">
+                    <button type="button" class="flex items-center text-sm rounded-full text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                      <span class="sr-only">Open user menu</span>
+                      <div class="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium">
+                        U
+                      </div>
+                      <span class="ml-2 text-sm font-medium hidden md:block">User</span>
+                      <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Mobile menu button -->
+              <div class="sm:hidden">
+                <button type="button" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700" aria-label="Breadcrumb">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-4 py-3">
+              <a href="/" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-sm">
+                Home
+              </a>
+              <svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-900 dark:text-white text-sm font-medium" id="breadcrumb-current">
+                Dashboard
+              </span>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+          <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+              <div class="text-sm text-gray-600 dark:text-gray-400">
+                © 2025 AI Starter Template. Protected area.
+              </div>
+              <div class="flex space-x-6">
+                <a href="/api/auth/signout" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </AuthGuard>
+    ) : (
+      <!-- Non-protected content -->
+      <slot />
+    )}
+  </body>
+</html>
+
+<style>
+  /* Import global styles */
+  @import "../styles/global.css";
+</style>

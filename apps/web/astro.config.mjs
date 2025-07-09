@@ -13,6 +13,12 @@ export default defineConfig({
   }),
   integrations: [react(), tailwind()],
   
+  // Development server configuration
+  server: {
+    port: parseInt(process.env.ASTRO_PORT || '5000'),
+    host: process.env.ASTRO_HOST || 'localhost'
+  },
+  
   // Security configuration
   security: {
     checkOrigin: true,

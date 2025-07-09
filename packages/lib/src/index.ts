@@ -10,6 +10,8 @@ export * from "./types/message";
 // Re-export utilities
 export * from "./utils/chat-helpers";
 export * from "./utils/message-formatting";
+export * from "./utils/log-forwarder";
+export * from "./utils/log-config";
 
 export function formatDate(date: Date): string {
   return new Intl.DateTimeFormat('en-US', {

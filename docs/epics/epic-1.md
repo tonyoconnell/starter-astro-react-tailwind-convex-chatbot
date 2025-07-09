@@ -46,7 +46,7 @@
 ### Story 1.4: Page Layouts & Protected Route Shell
 **As a** Context Engineer, **I want** a basic public layout and a protected dashboard layout defined, **so that** I have a clear structure for public and private content.
 
-**Status:** 📋 PLANNED - See [[story-1.4-page-layouts-protected-routes]] for story details.
+**Status:** ✅ COMPLETED - See [[story-1.4-page-layouts-protected-routes]] for full implementation details.
 
 *Acceptance Criteria:*
 1. A main layout component is created in Astro with a simple header and footer.
@@ -65,15 +65,15 @@
 
 ## Epic Status
 
-**Overall Progress:** 3 of 5 stories completed (60%)
+**Overall Progress:** 4 of 5 stories completed (80%)
 
 **Completed Stories:**
 - ✅ Story 1.1: Project Scaffolding & Initial Deployment
 - ✅ Story 1.2: Core Backend Setup (Convex)  
 - ✅ Story 1.3: Authentication Integration & User Management
+- ✅ Story 1.4: Page Layouts & Protected Route Shell
 
 **Remaining Stories:**
-- 📋 Story 1.4: Page Layouts & Protected Route Shell
 - 📋 Story 1.5: Local Observability Pipeline (Proof of Concept)
 
-**Ready for Development:** Story 1.4 can begin immediately as it depends on completed authentication work.
+**Ready for Development:** Story 1.5 can begin immediately as all dependencies are complete.

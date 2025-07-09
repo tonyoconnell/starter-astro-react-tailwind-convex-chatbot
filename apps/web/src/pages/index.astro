@@ -1,67 +1,187 @@
 ---
-// Hello World page for Astro application
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>AI Starter Template</title>
-	</head>
-	<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-		<main class="text-center">
-			<h1 class="text-4xl font-bold text-gray-800 mb-4">
-				Hello World! 🚀
-			</h1>
-			<p class="text-lg text-gray-600 mb-6">
-				Welcome to your AI-Accelerated Starter Template
-			</p>
-			<div class="bg-white p-6 rounded-lg shadow-md max-w-md mb-6">
-				<h2 class="text-xl font-semibold text-gray-800 mb-2">
-					Tech Stack
-				</h2>
-				<ul class="text-left text-gray-600">
-					<li>✅ Astro + React</li>
-					<li>✅ TailwindCSS</li>
-					<li>✅ TypeScript</li>
-					<li>✅ Turborepo</li>
-					<li>🔄 Convex (Coming Soon)</li>
-				</ul>
-			</div>
-			
-			<div class="bg-blue-50 border border-blue-200 p-6 rounded-lg shadow-md max-w-md mb-4">
-				<h2 class="text-xl font-semibold text-blue-800 mb-3">
-					🧪 Authentication Testing
-				</h2>
-				<div class="space-y-2">
-					<a href="/auth-test" class="block text-green-600 hover:text-green-800 font-bold">
-						🔐 Real OAuth Test
-					</a>
-					<a href="/test" class="block text-blue-600 hover:text-blue-800 font-medium">
-						→ Test Dashboard
-					</a>
-					<a href="/login-simple" class="block text-blue-600 hover:text-blue-800 font-medium">
-						→ Simple Login
-					</a>
-					<a href="/api/auth/session" class="block text-gray-600 hover:text-gray-800 font-medium" target="_blank">
-						→ API Session Check
-					</a>
-				</div>
-				<p class="text-xs text-blue-600 mt-3">
-					OAuth credentials configured - ready for real authentication!
-				</p>
-			</div>
-			
-			<div class="bg-green-50 border border-green-200 p-4 rounded-lg shadow-md max-w-md">
-				<h3 class="text-lg font-semibold text-green-800 mb-2">
-					✅ Ready for Real OAuth
-				</h3>
-				<p class="text-sm text-green-700">
-					Google and GitHub OAuth credentials are configured. Click "Real OAuth Test" to try actual authentication!
-				</p>
-			</div>
-		</main>
-	</body>
-</html>
+<Layout title="Home - AI Starter Template">
+  <div class="bg-gray-50 dark:bg-gray-900">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="text-center">
+          <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            AI-Accelerated
+            <span class="text-blue-600 dark:text-blue-400">Starter Template</span>
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            A modern full-stack template for building AI-powered applications with Astro, React, Convex, and BetterAuth. 
+            Start building your next AI application in minutes, not days.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/api/auth/signin" 
+               class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center">
+              Get Started
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a href="/dashboard" 
+               class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+              View Dashboard
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 lg:py-24 bg-white dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Everything You Need to Build AI Apps
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Pre-configured with modern tools and best practices for rapid development
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Authentication -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Secure Authentication</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Ready-to-use authentication with BetterAuth, supporting Google, GitHub, and email/password login.
+            </p>
+          </div>
+
+          <!-- Real-time Database -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Real-time Database</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Convex provides a powerful real-time database with serverless functions and automatic reactivity.
+            </p>
+          </div>
+
+          <!-- Modern UI -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Modern UI Components</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Built with TailwindCSS and ShadCN components for beautiful, responsive interfaces.
+            </p>
+          </div>
+
+          <!-- AI Integration -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">AI-Ready</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Pre-configured for AI integrations with OpenRouter and other LLM providers.
+            </p>
+          </div>
+
+          <!-- Type Safety -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Type Safety</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Full TypeScript support with strict mode for robust, maintainable code.
+            </p>
+          </div>
+
+          <!-- Deployment -->
+          <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+            <div class="h-12 w-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Easy Deployment</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Deploy to Cloudflare Pages with GitHub Actions for fast, global distribution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Section -->
+    <div class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Built with Modern Technologies
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">
+            Carefully selected tools for maximum developer productivity
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Astro</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Static Site Generator</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">React</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Interactive Components</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Convex</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Backend & Database</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-2">TailwindCSS</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Styling Framework</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="py-16 lg:py-24 bg-blue-600 dark:bg-blue-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+          Ready to Build Your AI Application?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          Start with authentication, explore the dashboard, and begin building your next great idea.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/api/auth/signin" 
+             class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+            Sign In to Get Started
+          </a>
+          <a href="/chat" 
+             class="border border-white text-white hover:bg-blue-500 px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+            Try the Chat Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

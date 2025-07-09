@@ -1,67 +1,26 @@
 ---
+import ProtectedLayout from '../layouts/ProtectedLayout.astro';
+
 // Protected Dashboard Page
 const { isAuthenticated, user } = Astro.locals;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - AI Starter Template</title>
-  <meta name="robots" content="noindex, nofollow" />
-</head>
-<body class="bg-gray-100 min-h-screen">
-  <!-- Navigation Header -->
-  <nav class="bg-white shadow-sm border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <a href="/" class="text-2xl font-bold text-blue-600">
-            AI Starter
-          </a>
-        </div>
-        <div class="flex items-center space-x-4">
-          <a 
-            href="/profile"
-            class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-          >
-            Profile
-          </a>
-          <a 
-            href="/settings"
-            class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-          >
-            Settings
-          </a>
-          <a 
-            href="/auth-test"
-            class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-700"
-          >
-            Sign Out
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+<ProtectedLayout title="Dashboard - AI Starter Template">
+  <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
     <!-- Page Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
-      <p class="text-gray-600 mt-2">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
         Welcome back{user?.name ? `, ${user.name}` : ''}! Here's your activity overview.
       </p>
     </div>
 
     <!-- Authentication Status -->
-    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-8">
-      <h2 class="text-lg font-semibold text-green-800 mb-2">✅ Authentication Status</h2>
-      <p class="text-green-700">You are successfully authenticated and accessing a protected page!</p>
+    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8">
+      <h2 class="text-lg font-semibold text-green-800 dark:text-green-400 mb-2">✅ Authentication Status</h2>
+      <p class="text-green-700 dark:text-green-300">You are successfully authenticated and accessing a protected page!</p>
       {user && (
-        <div class="mt-3 text-sm text-green-600">
+        <div class="mt-3 text-sm text-green-600 dark:text-green-400">
           <p><strong>User ID:</strong> {user.id}</p>
           <p><strong>Name:</strong> {user.name}</p>
           {user.email && <p><strong>Email:</strong> {user.email}</p>}
@@ -72,29 +31,29 @@ const { isAuthenticated, user } = Astro.locals;
     <!-- Dashboard Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Quick Stats -->
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">📊 Quick Stats</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">📊 Quick Stats</h2>
         <div class="space-y-3">
           <div class="flex justify-between items-center">
-            <span class="text-gray-600">Total Conversations:</span>
-            <span class="text-2xl font-bold text-blue-600">0</span>
+            <span class="text-gray-600 dark:text-gray-300">Total Conversations:</span>
+            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">0</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-gray-600">Messages Sent:</span>
-            <span class="text-2xl font-bold text-green-600">0</span>
+            <span class="text-gray-600 dark:text-gray-300">Messages Sent:</span>
+            <span class="text-2xl font-bold text-green-600 dark:text-green-400">0</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-gray-600">Time Active:</span>
-            <span class="text-2xl font-bold text-purple-600">0h</span>
+            <span class="text-gray-600 dark:text-gray-300">Time Active:</span>
+            <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">0h</span>
           </div>
         </div>
       </div>
 
       <!-- Recent Activity -->
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">🕒 Recent Activity</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">🕒 Recent Activity</h2>
         <div class="space-y-3">
-          <div class="text-center py-8 text-gray-500">
+          <div class="text-center py-8 text-gray-500 dark:text-gray-400">
             <p class="text-sm">No recent activity</p>
             <p class="text-xs mt-1">Start a conversation to see your activity here</p>
           </div>
@@ -102,24 +61,24 @@ const { isAuthenticated, user } = Astro.locals;
       </div>
 
       <!-- Quick Actions -->
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">⚡ Quick Actions</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">⚡ Quick Actions</h2>
         <div class="space-y-3">
           <a 
             href="/chat"
-            class="block w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-center transition-colors"
+            class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center transition-colors"
           >
             💬 Start New Chat
           </a>
           <a 
             href="/profile"
-            class="block w-full bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 text-center transition-colors"
+            class="block w-full bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-center transition-colors"
           >
             👤 View Profile
           </a>
           <a 
             href="/settings"
-            class="block w-full bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 text-center transition-colors"
+            class="block w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-center transition-colors"
           >
             ⚙️ Settings
           </a>
@@ -130,33 +89,55 @@ const { isAuthenticated, user } = Astro.locals;
     <!-- Feature Cards -->
     <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- AI Chat Feature -->
-      <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-6 border border-blue-200">
-        <h3 class="text-2xl font-bold text-blue-800 mb-3">🤖 AI Chat Assistant</h3>
-        <p class="text-blue-700 mb-4">
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-800">
+        <h3 class="text-2xl font-bold text-blue-800 dark:text-blue-400 mb-3">🤖 AI Chat Assistant</h3>
+        <p class="text-blue-700 dark:text-blue-300 mb-4">
           Start conversations with AI to get help with coding, writing, analysis, and more.
         </p>
         <a 
           href="/chat"
-          class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+          class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
         >
           Start Chatting →
         </a>
       </div>
 
       <!-- Code Generation Feature -->
-      <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg p-6 border border-green-200">
-        <h3 class="text-2xl font-bold text-green-800 mb-3">💻 Code Generation</h3>
-        <p class="text-green-700 mb-4">
+      <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg p-6 border border-green-200 dark:border-green-800">
+        <h3 class="text-2xl font-bold text-green-800 dark:text-green-400 mb-3">💻 Code Generation</h3>
+        <p class="text-green-700 dark:text-green-300 mb-4">
           Generate, review, and refactor code with AI assistance across multiple programming languages.
         </p>
         <button 
-          class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+          class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md opacity-50 cursor-not-allowed"
           disabled
         >
           Coming Soon
         </button>
       </div>
     </div>
-  </main>
-</body>
-</html>
+
+    <!-- System Information -->
+    <div class="mt-12 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">🔧 System Information</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div>
+          <span class="font-medium text-gray-600 dark:text-gray-300">Framework:</span>
+          <span class="text-gray-800 dark:text-white ml-2">Astro + React</span>
+        </div>
+        <div>
+          <span class="font-medium text-gray-600 dark:text-gray-300">Backend:</span>
+          <span class="text-gray-800 dark:text-white ml-2">Convex</span>
+        </div>
+        <div>
+          <span class="font-medium text-gray-600 dark:text-gray-300">Auth:</span>
+          <span class="text-gray-800 dark:text-white ml-2">BetterAuth</span>
+        </div>
+        <div>
+          <span class="font-medium text-gray-600 dark:text-gray-300">Styling:</span>
+          <span class="text-gray-800 dark:text-white ml-2">TailwindCSS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ProtectedLayout>
