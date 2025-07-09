@@ -1,7 +1,7 @@
-# Story 1.4: Basic Chat Interface & Real-time Messaging
+# Story 3.1: Basic Chat Interface & Real-time Messaging
 
-**Epic:** [[epic-1]] - Foundation & Core Setup  
-**Story:** 1.4  
+**Epic:** [[epic-3]] - Conversational AI Implementation  
+**Story:** 3.1  
 **Status:** COMPLETED  
 **Assigned:** Dev Agent  
 **Created:** July 8, 2025  
@@ -307,8 +307,8 @@ The implementation follows the established patterns from previous stories and ma
 
 ---
 
-**Next Story:** 1.5 - UI Foundation & Advanced Components  
-**Previous Story:** [[story-1.3-authentication-integration]] - Authentication Integration & User Management  
+**Next Story:** 3.2 - Integrate LLM for AI Responses  
+**Previous Story:** [[story-2.3-feature-flag-system]] - Basic Feature Flag System  
 
 **Dependencies:** [[story-1.3-authentication-integration]] must be complete  
 **Blockers:** None identified  

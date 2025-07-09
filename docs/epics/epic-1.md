@@ -23,27 +23,30 @@
 ### Story 1.2: Core Backend Setup (Convex)
 **As a** Context Engineer, **I want** the Convex backend initialized and connected to my frontend, **so that** the application has a live, real-time data layer.
 
-**Status:** 🔄 IN PROGRESS - See [[story-1.2-convex-backend-setup]] for current status.
+**Status:** ✅ COMPLETED - See [[story-1.2-convex-backend-setup]] for full implementation details.
 
 *Acceptance Criteria:*
 1. The `convex/` directory is initialized.
 2. The database schema from [[architecture/database-schema]] is implemented in `convex/schema.ts`.
 3. The frontend application successfully connects to the Convex development server.
 
-### Story 1.3: UI Foundation & Theming
-**As a** Context Engineer, **I want** a basic UI component library and a light/dark theme toggle implemented, **so that** future features can be built with a consistent look.
+### Story 1.3: Authentication Integration & User Management
+**As a** Context Engineer, **I want** a complete authentication system using BetterAuth, **so that** users can sign up, log in, and access protected content with a solid foundation for the application.
 
-**Status:** 📋 PLANNED - Authentication integration needed first.
+**Status:** ✅ COMPLETED - See [[story-1.3-authentication-integration]] for full implementation details.
 
 *Acceptance Criteria:*
-1. ShadCN and TailwindCSS are installed and configured.
-2. A functional light/dark mode toggle is implemented.
-3. At least two essential UI components (e.g., Button, Card) are created in the `packages/ui` directory.
-
-**See [[story-1.3-authentication-integration]] for current authentication setup progress.**
+1. BetterAuth library is fully integrated with OAuth providers
+2. Users can sign up, log in, and log out with Google/GitHub
+3. Protected routes are properly secured with authentication guards
+4. User session management works correctly across page loads
+5. ShadCN and TailwindCSS are installed and configured
+6. UI components support both light and dark themes
 
 ### Story 1.4: Page Layouts & Protected Route Shell
 **As a** Context Engineer, **I want** a basic public layout and a protected dashboard layout defined, **so that** I have a clear structure for public and private content.
+
+**Status:** 📋 PLANNED - See [[story-1.4-page-layouts-protected-routes]] for story details.
 
 *Acceptance Criteria:*
 1. A main layout component is created in Astro with a simple header and footer.
@@ -53,7 +56,24 @@
 ### Story 1.5: Local Observability Pipeline (Proof of Concept)
 **As a** Context Engineer, **I want** client-side logs to be forwarded to my local Bun server, **so that** I can validate the real-time feedback loop.
 
+**Status:** 📋 PLANNED - See [[story-1.5-local-observability-pipeline]] for story details.
+
 *Acceptance Criteria:*
 1. A local Bun server with a `/log` endpoint is created.
 2. A utility in the frontend captures `console.log()` messages.
 3. The captured messages are successfully sent to and displayed by the local Bun server.
+
+## Epic Status
+
+**Overall Progress:** 3 of 5 stories completed (60%)
+
+**Completed Stories:**
+- ✅ Story 1.1: Project Scaffolding & Initial Deployment
+- ✅ Story 1.2: Core Backend Setup (Convex)  
+- ✅ Story 1.3: Authentication Integration & User Management
+
+**Remaining Stories:**
+- 📋 Story 1.4: Page Layouts & Protected Route Shell
+- 📋 Story 1.5: Local Observability Pipeline (Proof of Concept)
+
+**Ready for Development:** Story 1.4 can begin immediately as it depends on completed authentication work.
