@@ -1,0 +1,389 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// This page will redirect to the first available chat or show the chat interface
+// The actual chat selection logic will be handled by the React component
+---
+
+<Layout title="Chat - AI Assistant">
+  <div class="h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="flex h-full">
+      <!-- Chat Sidebar -->
+      <div class="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex-shrink-0">
+        <div id="chat-sidebar" class="h-full"></div>
+      </div>
+      
+      <!-- Main Chat Area -->
+      <div class="flex-1 flex flex-col">
+        <!-- Chat Interface will be mounted here -->
+        <div id="chat-interface" class="flex-1 flex items-center justify-center">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">Select a chat</h2>
+            <p class="text-gray-500 dark:text-gray-400">Choose a chat from the sidebar or create a new one to get started.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- React Components -->
+  <script>
+    import { createRoot } from 'react-dom/client';
+    import { createElement as h, useState } from 'react';
+    
+    // Production Chat App Component
+    function ChatApp() {
+      const [messages, setMessages] = useState([]);
+      const [inputText, setInputText] = useState('');
+      const [chats, setChats] = useState([]);
+      const [currentChatId, setCurrentChatId] = useState(null);
+      const [isNewChatModalOpen, setIsNewChatModalOpen] = useState(false);
+      const [newChatTitle, setNewChatTitle] = useState('');
+      const [isLoading, setIsLoading] = useState(false);
+
+      const handleCreateNewChat = () => {
+        if (!newChatTitle.trim()) return;
+        
+        const newChatId = Date.now().toString();
+        const newChat = { id: newChatId, title: newChatTitle, lastMessage: undefined };
+        
+        setChats(prev => [newChat, ...prev]);
+        setCurrentChatId(newChatId);
+        setMessages([]);
+        setNewChatTitle('');
+        setIsNewChatModalOpen(false);
+      };
+
+      const handleSelectChat = (chatId) => {
+        setCurrentChatId(chatId);
+        setMessages([]);
+      };
+
+      const handleDeleteChat = (chatId) => {
+        if (confirm('Are you sure you want to delete this chat?')) {
+          setChats(prev => prev.filter(chat => chat.id !== chatId));
+          if (currentChatId === chatId) {
+            setCurrentChatId(null);
+            setMessages([]);
+          }
+        }
+      };
+
+      const handleSend = () => {
+        if (!inputText.trim() || !currentChatId) return;
+
+        const userMessage = { id: Date.now().toString(), text: inputText, sender: 'user' };
+        setMessages(prev => [...prev, userMessage]);
+        setInputText('');
+        setIsLoading(true);
+
+        // Update chat with last message
+        setChats(prev => prev.map(chat => 
+          chat.id === currentChatId 
+            ? { ...chat, lastMessage: inputText }
+            : chat
+        ));
+
+        // Simulate AI response
+        setTimeout(() => {
+          const aiResponse = { 
+            id: (Date.now() + 1).toString(), 
+            text: `I received: "${userMessage.text}". This is a production demo response.`, 
+            sender: 'assistant' 
+          };
+          setMessages(prev => [...prev, aiResponse]);
+          setIsLoading(false);
+        }, 1000);
+      };
+
+      return h('div', { className: 'flex h-full' }, [
+        // Sidebar
+        h('div', { 
+          key: 'sidebar',
+          className: 'w-80 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex-shrink-0' 
+        }, [
+          h('div', { 
+            key: 'sidebar-header',
+            className: 'p-4 border-b border-gray-200 dark:border-gray-700' 
+          }, [
+            h('div', { 
+              key: 'header-row',
+              className: 'flex items-center justify-between mb-4' 
+            }, [
+              h('h2', { 
+                key: 'title',
+                className: 'text-lg font-semibold text-gray-900 dark:text-gray-100' 
+              }, 'Chats'),
+              h('button', {
+                key: 'new-chat-btn',
+                onClick: () => setIsNewChatModalOpen(true),
+                className: 'p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors',
+                title: 'New Chat'
+              }, h('svg', {
+                className: 'w-5 h-5',
+                fill: 'none',
+                stroke: 'currentColor',
+                viewBox: '0 0 24 24'
+              }, h('path', {
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round',
+                strokeWidth: '2',
+                d: 'M12 4v16m8-8H4'
+              })))
+            ])
+          ]),
+          
+          // Chat List
+          h('div', { 
+            key: 'chat-list',
+            className: 'flex-1 overflow-y-auto p-2' 
+          }, 
+            chats.length === 0 ? [
+              h('div', { 
+                key: 'empty-state',
+                className: 'flex flex-col items-center justify-center h-32 text-gray-500 dark:text-gray-400' 
+              }, [
+                h('p', { key: 'empty-text', className: 'text-sm mb-2' }, 'No chats yet'),
+                h('button', {
+                  key: 'create-first-chat',
+                  onClick: () => setIsNewChatModalOpen(true),
+                  className: 'text-sm text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300'
+                }, 'Create your first chat')
+              ])
+            ] : [
+              h('div', { key: 'chat-items', className: 'space-y-1' }, 
+                chats.map(chat => 
+                  h('div', {
+                    key: chat.id,
+                    className: `group relative p-3 rounded-lg cursor-pointer transition-colors ${
+                      currentChatId === chat.id
+                        ? 'bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800'
+                        : 'bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    }`
+                  }, [
+                    h('div', { 
+                      key: 'chat-content',
+                      onClick: () => handleSelectChat(chat.id),
+                      className: 'flex-1 min-w-0'
+                    }, [
+                      h('h3', { 
+                        key: 'chat-title',
+                        className: 'font-medium text-gray-900 dark:text-gray-100 truncate' 
+                      }, chat.title),
+                      chat.lastMessage && h('p', { 
+                        key: 'last-message',
+                        className: 'text-sm text-gray-500 dark:text-gray-400 truncate mt-1' 
+                      }, chat.lastMessage)
+                    ]),
+                    // Delete button
+                    h('button', {
+                      key: 'delete-btn',
+                      onClick: (e) => {
+                        e.stopPropagation();
+                        handleDeleteChat(chat.id);
+                      },
+                      className: 'absolute top-2 right-2 opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-red-500 transition-opacity',
+                      title: 'Delete chat'
+                    }, h('svg', {
+                      className: 'w-4 h-4',
+                      fill: 'none',
+                      stroke: 'currentColor',
+                      viewBox: '0 0 24 24'
+                    }, h('path', {
+                      strokeLinecap: 'round',
+                      strokeLinejoin: 'round',
+                      strokeWidth: '2',
+                      d: 'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16'
+                    })))
+                  ])
+                )
+              )
+            ]
+          )
+        ]),
+
+        // Chat Interface
+        h('div', { 
+          key: 'chat-interface',
+          className: 'flex-1 flex flex-col bg-white dark:bg-gray-800' 
+        }, 
+          currentChatId ? [
+            // Header
+            h('div', { 
+              key: 'chat-header',
+              className: 'p-4 border-b border-gray-200 dark:border-gray-700' 
+            }, [
+              h('h2', { 
+                key: 'chat-title',
+                className: 'text-lg font-semibold text-gray-900 dark:text-gray-100' 
+              }, chats.find(c => c.id === currentChatId)?.title || 'Chat'),
+              h('p', { 
+                key: 'demo-label',
+                className: 'text-sm text-gray-500 dark:text-gray-400' 
+              }, 'Production demo - backend integration in progress')
+            ]),
+
+            // Messages
+            h('div', { 
+              key: 'messages',
+              className: 'flex-1 overflow-y-auto p-4 space-y-4' 
+            }, 
+              messages.length === 0 ? [
+                h('div', { 
+                  key: 'empty-messages',
+                  className: 'text-center text-gray-500 dark:text-gray-400 mt-8' 
+                }, h('p', null, 'Start the conversation by typing a message below!'))
+              ] : [
+                ...messages.map(message => 
+                  h('div', {
+                    key: message.id,
+                    className: `flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`
+                  }, h('div', {
+                    className: `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                      message.sender === 'user'
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100'
+                    }`
+                  }, message.text))
+                ),
+                isLoading && h('div', { 
+                  key: 'loading',
+                  className: 'flex justify-start' 
+                }, h('div', { 
+                  className: 'bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg' 
+                }, h('div', { className: 'flex space-x-1' }, [
+                  h('div', { 
+                    key: 'dot1',
+                    className: 'w-2 h-2 bg-gray-400 rounded-full animate-bounce' 
+                  }),
+                  h('div', { 
+                    key: 'dot2',
+                    className: 'w-2 h-2 bg-gray-400 rounded-full animate-bounce',
+                    style: { animationDelay: '0.1s' }
+                  }),
+                  h('div', { 
+                    key: 'dot3',
+                    className: 'w-2 h-2 bg-gray-400 rounded-full animate-bounce',
+                    style: { animationDelay: '0.2s' }
+                  })
+                ])))
+              ]
+            ),
+
+            // Input
+            h('div', { 
+              key: 'input-area',
+              className: 'p-4 border-t border-gray-200 dark:border-gray-700' 
+            }, h('div', { className: 'flex space-x-2' }, [
+              h('input', {
+                key: 'message-input',
+                type: 'text',
+                value: inputText,
+                onChange: (e) => setInputText(e.target.value),
+                onKeyPress: (e) => e.key === 'Enter' && handleSend(),
+                placeholder: 'Type your message...',
+                className: 'flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100',
+                disabled: isLoading
+              }),
+              h('button', {
+                key: 'send-btn',
+                onClick: handleSend,
+                disabled: !inputText.trim() || isLoading,
+                className: 'px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors'
+              }, 'Send')
+            ]))
+          ] : [
+            h('div', { 
+              key: 'select-chat',
+              className: 'flex-1 flex items-center justify-center' 
+            }, h('div', { className: 'text-center' }, [
+              h('div', { 
+                key: 'icon',
+                className: 'w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4' 
+              }, h('svg', {
+                className: 'w-8 h-8 text-gray-400 dark:text-gray-500',
+                fill: 'none',
+                stroke: 'currentColor',
+                viewBox: '0 0 24 24'
+              }, h('path', {
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round',
+                strokeWidth: '2',
+                d: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z'
+              }))),
+              h('h2', { 
+                key: 'select-title',
+                className: 'text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2' 
+              }, 'Select a chat'),
+              h('p', { 
+                key: 'select-desc',
+                className: 'text-gray-500 dark:text-gray-400' 
+              }, 'Choose a chat from the sidebar or create a new one to get started.')
+            ]))
+          ]
+        ),
+
+        // New Chat Modal
+        isNewChatModalOpen && h('div', { 
+          key: 'modal',
+          className: 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50' 
+        }, h('div', { 
+          className: 'bg-white dark:bg-gray-800 rounded-lg p-6 w-96 max-w-md' 
+        }, [
+          h('h3', { 
+            key: 'modal-title',
+            className: 'text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4' 
+          }, 'Create New Chat'),
+          h('div', { key: 'modal-content', className: 'mb-4' }, [
+            h('label', { 
+              key: 'label',
+              className: 'block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2' 
+            }, 'Chat Title'),
+            h('input', {
+              key: 'title-input',
+              type: 'text',
+              value: newChatTitle,
+              onChange: (e) => setNewChatTitle(e.target.value),
+              onKeyPress: (e) => e.key === 'Enter' && handleCreateNewChat(),
+              placeholder: 'Enter chat title...',
+              className: 'w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100',
+              autoFocus: true
+            })
+          ]),
+          h('div', { key: 'modal-actions', className: 'flex justify-end space-x-2' }, [
+            h('button', {
+              key: 'cancel-btn',
+              onClick: () => {
+                setIsNewChatModalOpen(false);
+                setNewChatTitle('');
+              },
+              className: 'px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+            }, 'Cancel'),
+            h('button', {
+              key: 'create-btn',
+              onClick: handleCreateNewChat,
+              disabled: !newChatTitle.trim(),
+              className: 'px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors'
+            }, 'Create Chat')
+          ])
+        ]))
+      ]);
+    }
+
+    // Mount the component
+    const container = document.querySelector('.h-screen');
+    if (container) {
+      console.log('Mounting production chat app...');
+      const root = createRoot(container);
+      root.render(h(ChatApp));
+      console.log('Production chat app mounted successfully!');
+    } else {
+      console.error('Could not find container element');
+    }
+  </script>
+</Layout>

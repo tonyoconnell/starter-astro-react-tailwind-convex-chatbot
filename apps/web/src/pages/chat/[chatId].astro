@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Get the chat ID from the URL parameters
+const { chatId } = Astro.params;
+
+// Validate chatId format (basic validation)
+if (!chatId || typeof chatId !== 'string') {
+  return Astro.redirect('/chat');
+}
+
+// Set page title
+const title = `Chat - AI Assistant`;
+---
+
+<Layout title={title}>
+  <div class="h-screen bg-gray-100">
+    <div class="flex h-full">
+      <!-- Chat Sidebar -->
+      <div class="w-80 bg-white border-r border-gray-200 flex-shrink-0">
+        <div id="chat-sidebar" class="h-full"></div>
+      </div>
+      
+      <!-- Main Chat Area -->
+      <div class="flex-1 flex flex-col">
+        <!-- Chat Interface will be mounted here -->
+        <div id="chat-interface" class="h-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- React Components -->
+  <script define:vars={{ chatId }}>
+    import { ChatApp } from '../../components/chat/ChatApp.tsx';
+    import { createRoot } from 'react-dom/client';
+    import { ConvexProvider, ConvexReactClient } from 'convex/react';
+    import { createElement } from 'react';
+    
+    // Initialize Convex client
+    const convex = new ConvexReactClient(import.meta.env.PUBLIC_CONVEX_URL);
+    
+    // Mount the chat application with the specific chat ID
+    const appRoot = createRoot(document.getElementById('chat-interface').parentElement);
+    
+    appRoot.render(
+      createElement(ConvexProvider, { client: convex }, 
+        createElement(ChatApp, { initialChatId: chatId })
+      )
+    );
+  </script>
+</Layout>

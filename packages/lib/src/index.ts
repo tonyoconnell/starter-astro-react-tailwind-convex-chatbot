@@ -3,6 +3,14 @@
 // Re-export auth types (User from auth will override this basic one)
 export type { User } from "./auth/types";
 
+// Re-export chat and message types
+export * from "./types/chat";
+export * from "./types/message";
+
+// Re-export utilities
+export * from "./utils/chat-helpers";
+export * from "./utils/message-formatting";
+
 export function formatDate(date: Date): string {
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',

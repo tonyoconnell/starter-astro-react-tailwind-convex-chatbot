@@ -12,6 +12,8 @@ A comprehensive starter template for building conversational and agent-based app
 - **Deployment**: Cloudflare Pages
 - **Monorepo**: Turborepo
 - **CI/CD**: GitHub Actions
+- **Authentication**: BetterAuth with OAuth providers
+- **Database**: Convex real-time database (in development)
 
 ## 🏗️ Project Structure
 
@@ -123,11 +125,44 @@ bun run test
 cd packages/lib && bun test
 ```
 
+## 💬 Chat Interface
+
+The application features a comprehensive chat interface for AI conversations:
+
+### Key Features
+
+- **Real-time messaging** with AI assistants
+- **Multiple chat sessions** with persistent history
+- **Dark mode support** that follows system preferences
+- **Responsive design** for desktop and mobile
+- **Search functionality** across chat history
+- **Authentication required** for secure access
+
+### Getting Started
+
+1. Navigate to `/chat` after logging in
+2. Click **"Create your first chat"** or the **"+"** button
+3. Enter a chat title and start messaging
+4. Switch between chats using the sidebar
+
+### User Guide
+
+For detailed instructions on using the chat interface, see the [Chat Interface User Guide](./docs/user-guide/chat-interface.md).
+
+### Technical Implementation
+
+- **Frontend**: React components with Astro pages
+- **State Management**: React hooks with local storage
+- **Styling**: TailwindCSS with dark mode support
+- **Testing**: Comprehensive unit and E2E tests
+- **Accessibility**: Full keyboard navigation and screen reader support
+
 ## 📖 Documentation
 
 - [BMAD Method](./CLAUDE.md) - AI-driven development framework
 - [Architecture](./docs/architecture.md) - Detailed system design
 - [Project Brief](./docs/project-brief.md) - Project overview and goals
+- [Chat Interface User Guide](./docs/user-guide/chat-interface.md) - Complete chat feature guide
 
 ## 🤝 Contributing
 

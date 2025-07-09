@@ -3,27 +3,64 @@ import { v } from "convex/values";
 
 /**
  * Get all chats for a specific user with real-time updates
+ * Returns chats ordered by most recent first with metadata
  */
 export const getUserChats = query({
-  args: { userId: v.id("users") },
-  handler: async (ctx, { userId }) => {
+  args: { 
+    userId: v.id("users"),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, { userId, limit = 50 }) => {
     const chats = await ctx.db
       .query("chats")
       .withIndex("by_user", (q) => q.eq("userId", userId))
       .order("desc")
-      .collect();
-    
-    return chats;
+      .take(limit);
+
+    // Get the latest message for each chat for display
+    const chatsWithLatestMessage = await Promise.all(
+      chats.map(async (chat) => {
+        const latestMessage = await ctx.db
+          .query("messages")
+          .withIndex("by_chat_and_created", (q) => q.eq("chatId", chat._id))
+          .order("desc")
+          .first();
+
+        return {
+          ...chat,
+          latestMessage: latestMessage || null,
+          messageCount: await ctx.db
+            .query("messages")
+            .withIndex("by_chat_and_created", (q) => q.eq("chatId", chat._id))
+            .collect()
+            .then((messages) => messages.length),
+        };
+      })
+    );
+
+    return chatsWithLatestMessage;
   },
 });
 
 /**
- * Get a specific chat by ID
+ * Get a specific chat by ID with authorization check
  */
 export const getChatById = query({
-  args: { chatId: v.id("chats") },
-  handler: async (ctx, { chatId }) => {
+  args: { 
+    chatId: v.id("chats"),
+    userId: v.id("users"),
+  },
+  handler: async (ctx, { chatId, userId }) => {
     const chat = await ctx.db.get(chatId);
+    
+    if (!chat) {
+      throw new Error("Chat not found");
+    }
+
+    if (chat.userId !== userId) {
+      throw new Error("Unauthorized: You don't have access to this chat");
+    }
+
     return chat;
   },
 });

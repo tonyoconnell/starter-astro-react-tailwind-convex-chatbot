@@ -8,6 +8,7 @@ export interface User {
   emailVerified: boolean;
   createdAt: Date;
   updatedAt: Date;
+  tokenIdentifier?: string; // For Convex integration
 }
 
 export interface Session {
