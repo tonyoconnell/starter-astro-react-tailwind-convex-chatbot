@@ -1,0 +1,48 @@
+{
+    "mcpServers": {
+      "convex": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "convex@latest",
+          "mcp",
+          "start"
+        ],
+        "description": "Convex MCP server for database exploration and query execution"
+      },
+      "TalkToFigma": {
+        "type": "stdio",
+        "command": "bunx",
+        "args": ["cursor-talk-to-figma-mcp@latest"]
+      },
+      "github": {
+        "type": "stdio",
+        "command": "npx", 
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-github"
+        ],
+        "description": "GitHub repository management server"
+      },
+      "playwright": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@executeautomation/playwright-mcp-server"
+        ],
+        "description": "Browser automation and testing server"
+      },
+      "cloudflare": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["mcp-remote", "https://docs.mcp.cloudflare.com/sse"]
+      },
+      "sentry": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["mcp-remote@latest", "https://mcp.sentry.dev/sse"]
+      }
+    }
+  }
