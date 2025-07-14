@@ -191,6 +191,45 @@ This template is designed for "Context Engineer + AI Coder" collaboration:
 - Backend: Convex automatic deployment
 - Environment-specific configurations for dev/staging/production
 
+## Authentication Setup (BetterAuth + Astro)
+
+### Important: Environment Variables in Astro
+
+**Key Learning**: Astro looks for `.env` files in the app directory, not the monorepo root!
+
+1. **Environment File Location**: 
+   - Astro expects `.env` in `apps/web/.env`, NOT in the root directory
+   - If you have a root `.env`, copy it: `cp .env apps/web/.env`
+
+2. **Accessing Environment Variables**:
+   - Server-side: Use `import.meta.env.VARIABLE_NAME` (not `process.env`)
+   - All env vars are available server-side (not just PUBLIC_ prefixed ones)
+   - Client-side: Only `PUBLIC_` prefixed variables are accessible
+
+3. **TypeScript Support**:
+   - Create `apps/web/src/env.d.ts` for type definitions:
+   ```typescript
+   interface ImportMetaEnv {
+     readonly GOOGLE_CLIENT_ID: string;
+     readonly GOOGLE_CLIENT_SECRET: string;
+     readonly GITHUB_CLIENT_ID: string;
+     readonly GITHUB_CLIENT_SECRET: string;
+     readonly BETTER_AUTH_URL: string;
+     readonly BETTER_AUTH_SECRET: string;
+   }
+   ```
+
+4. **BetterAuth Configuration**:
+   - Initialize BetterAuth directly in API routes using `import.meta.env`
+   - Don't use helper functions that check `process.env` - they won't work
+   - Always include redirect URIs in OAuth provider configuration
+
+5. **Common Issues & Solutions**:
+   - **Empty OAuth client_id**: Environment variables not loaded → Check `.env` location
+   - **500 errors on auth endpoints**: Missing env vars → Copy `.env` to `apps/web/`
+   - **Middleware errors**: Don't import heavy auth configs in middleware
+   - **Dev server restart**: Required after adding/changing `.env` files
+
 ## BMAD Configuration
 
 The project's BMAD configuration is in `.bmad-core/core-config.yaml`. Key settings:
