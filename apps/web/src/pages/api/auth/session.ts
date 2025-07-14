@@ -5,10 +5,34 @@
  */
 
 import type { APIRoute } from "astro";
-import { auth } from "@starter/lib/auth";
+import { betterAuth } from "better-auth";
 
 // Disable prerendering for SSR mode
 export const prerender = false;
+
+// Create auth instance with Astro's environment variables
+const auth = betterAuth({
+  socialProviders: {
+    google: {
+      clientId: import.meta.env.GOOGLE_CLIENT_ID || "",
+      clientSecret: import.meta.env.GOOGLE_CLIENT_SECRET || "",
+      redirectURI: `${import.meta.env.BETTER_AUTH_URL || "http://localhost:4321"}/api/auth/callback/google`,
+    },
+    github: {
+      clientId: import.meta.env.GITHUB_CLIENT_ID || "",
+      clientSecret: import.meta.env.GITHUB_CLIENT_SECRET || "",
+      redirectURI: `${import.meta.env.BETTER_AUTH_URL || "http://localhost:4321"}/api/auth/callback/github`,
+    },
+  },
+  baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321",
+  secret: import.meta.env.BETTER_AUTH_SECRET || "development-secret",
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    },
+  },
+});
 
 export const GET: APIRoute = async ({ request }) => {
   try {

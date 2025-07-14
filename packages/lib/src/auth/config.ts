@@ -9,24 +9,18 @@ import { createAuthClient } from "better-auth/react";
 // const convexUrl = process.env.CONVEX_URL;
 // const convexClient = convexUrl ? new ConvexHttpClient(convexUrl) : null;
 
+// For client-side usage, this config won't have access to server env vars
+// Use createServerAuth in API routes instead
+const isDev = process.env.NODE_ENV !== 'production';
+
 export const auth = betterAuth({
   // Use in-memory database for development (session storage in memory)
   // TODO: Add Convex adapter once backend is deployed
   // database: convexClient ? convexAdapter(convexClient) : undefined,
   
-  // OAuth providers configuration
-  socialProviders: {
-    google: {
-      clientId: import.meta.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: import.meta.env.GOOGLE_CLIENT_SECRET || "",
-      redirectURI: `${import.meta.env.BETTER_AUTH_URL}/api/auth/callback/google`,
-    },
-    github: {
-      clientId: import.meta.env.GITHUB_CLIENT_ID || "",
-      clientSecret: import.meta.env.GITHUB_CLIENT_SECRET || "",
-      redirectURI: `${import.meta.env.BETTER_AUTH_URL}/api/auth/callback/github`,
-    },
-  },
+  // OAuth providers configuration - empty for client-side
+  // Server-side API routes should use createServerAuth instead
+  socialProviders: {},
 
   // Session configuration
   session: {
@@ -37,7 +31,7 @@ export const auth = betterAuth({
     // Session cookies configuration
     cookie: {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: !isDev,
       sameSite: "strict",
       maxAge: 60 * 60 * 24 * 7, // 7 days in seconds
     },
@@ -57,10 +51,10 @@ export const auth = betterAuth({
   },
 
   // Base URL for OAuth callbacks
-  baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321",
+  baseURL: "http://localhost:4321",
   
-  // Secret for signing sessions
-  secret: import.meta.env.BETTER_AUTH_SECRET || "your-secret-key-here-change-in-production",
+  // Secret for signing sessions - use a static one for client-side
+  secret: "client-side-placeholder-secret",
 
   // User configuration
   user: {
@@ -89,7 +83,7 @@ export const auth = betterAuth({
 
 // Create and export auth client for use in applications
 export const authClient = createAuthClient({
-  baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321"
+  baseURL: "http://localhost:4321"
 });
 
 // Type definitions for authenticated user
