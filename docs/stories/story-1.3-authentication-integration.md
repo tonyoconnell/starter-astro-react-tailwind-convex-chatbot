@@ -609,7 +609,7 @@ Following `docs/architecture/testing-strategy.md`:
   - Session API returns proper user data when authenticated
 - ✅ **Protected Routes**: Automatic redirects functioning
   - `/dashboard`, `/profile`, `/settings` properly protected
-  - Unauthenticated users redirected to `/auth-test`
+  - Unauthenticated users redirected to `/sign-in`
   - Authenticated users can access protected pages
 - ✅ **Environment Configuration**: All OAuth credentials properly loaded
   - Fixed Astro environment variable loading (`import.meta.env` vs `process.env`)

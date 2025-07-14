@@ -93,14 +93,25 @@
       
       async function checkSession() {
         try {
-          const response = await fetch('/api/auth/session');
-          const data = await response.json();
+          // Use BetterAuth session endpoint
+          const response = await fetch('/api/auth/get-session', {
+            method: 'GET',
+            credentials: 'include'
+          });
           
-          if (data.user) {
-            // User is signed in - show sign out options
-            showSignOutForm(data.user);
+          if (response.ok) {
+            const data = await response.json();
+            console.log('Session data:', data);
+            
+            if (data && data.user) {
+              // User is signed in - show sign out options
+              showSignOutForm(data.user);
+            } else {
+              // User is not signed in
+              showNotSignedIn();
+            }
           } else {
-            // User is not signed in
+            console.log('No session found or session check failed');
             showNotSignedIn();
           }
         } catch (error) {
@@ -154,9 +165,9 @@
           `;
           
           try {
-            console.log('Attempting sign out...');
+            console.log('Attempting sign out using BetterAuth sign-out endpoint...');
             
-            // Use the correct BetterAuth sign-out endpoint
+            // Use BetterAuth sign-out endpoint
             const response = await fetch('/api/auth/sign-out', {
               method: 'POST',
               headers: {
@@ -168,31 +179,16 @@
             
             console.log('Sign out response:', {
               status: response.status,
-              statusText: response.statusText,
-              headers: Object.fromEntries(response.headers.entries())
+              statusText: response.statusText
             });
             
-            // BetterAuth sign-out should return a successful response
+            // BetterAuth sign-out typically returns 200 even if no session
             if (response.ok || response.status === 200) {
-              const data = await response.json().catch(() => ({}));
-              console.log('Sign out data:', data);
+              console.log('Sign out request succeeded');
               showSignOutSuccess();
             } else {
               console.error('Sign out failed:', response.status, response.statusText);
-              
-              // Try alternative endpoint as fallback
-              console.log('Trying fallback sign-out method...');
-              const fallbackResponse = await fetch('/api/auth/sign-out', {
-                method: 'GET',
-                credentials: 'include'
-              });
-              
-              if (fallbackResponse.ok) {
-                console.log('Fallback sign-out succeeded');
-                showSignOutSuccess();
-              } else {
-                throw new Error(`Sign out failed: ${response.status}`);
-              }
+              throw new Error(`Sign out failed: ${response.status}`);
             }
           } catch (error) {
             console.error('Sign out error:', error);

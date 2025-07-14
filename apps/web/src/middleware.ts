@@ -34,7 +34,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
       
       if (!hasSession) {
         // Redirect to auth test page for login
-        const loginUrl = new URL("/auth-test", url.origin);
+        const loginUrl = new URL("/sign-in", url.origin);
         loginUrl.searchParams.set("redirect", pathname);
         return redirect(loginUrl.toString());
       }
@@ -45,7 +45,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
       console.error("Authentication check failed:", error);
       
       // Redirect to auth page on error
-      const loginUrl = new URL("/auth-test", url.origin);
+      const loginUrl = new URL("/sign-in", url.origin);
       loginUrl.searchParams.set("redirect", pathname);
       return redirect(loginUrl.toString());
     }

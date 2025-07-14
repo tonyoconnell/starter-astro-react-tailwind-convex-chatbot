@@ -1,67 +1,480 @@
 ---
-// Hello World page for Astro application
+// AI Starter Template - Modern Landing Page
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>AI Starter Template</title>
-	</head>
-	<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-		<main class="text-center">
-			<h1 class="text-4xl font-bold text-gray-800 mb-4">
-				Hello World! 🚀
-			</h1>
-			<p class="text-lg text-gray-600 mb-6">
-				Welcome to your AI-Accelerated Starter Template
-			</p>
-			<div class="bg-white p-6 rounded-lg shadow-md max-w-md mb-6">
-				<h2 class="text-xl font-semibold text-gray-800 mb-2">
-					Tech Stack
-				</h2>
-				<ul class="text-left text-gray-600">
-					<li>✅ Astro + React</li>
-					<li>✅ TailwindCSS</li>
-					<li>✅ TypeScript</li>
-					<li>✅ Turborepo</li>
-					<li>🔄 Convex (Coming Soon)</li>
-				</ul>
-			</div>
-			
-			<div class="bg-blue-50 border border-blue-200 p-6 rounded-lg shadow-md max-w-md mb-4">
-				<h2 class="text-xl font-semibold text-blue-800 mb-3">
-					🧪 Authentication Testing
-				</h2>
-				<div class="space-y-2">
-					<a href="/auth-test" class="block text-green-600 hover:text-green-800 font-bold">
-						🔐 Real OAuth Test
-					</a>
-					<a href="/test" class="block text-blue-600 hover:text-blue-800 font-medium">
-						→ Test Dashboard
-					</a>
-					<a href="/login-simple" class="block text-blue-600 hover:text-blue-800 font-medium">
-						→ Simple Login
-					</a>
-					<a href="/api/auth/session" class="block text-gray-600 hover:text-gray-800 font-medium" target="_blank">
-						→ API Session Check
-					</a>
-				</div>
-				<p class="text-xs text-blue-600 mt-3">
-					OAuth credentials configured - ready for real authentication!
-				</p>
-			</div>
-			
-			<div class="bg-green-50 border border-green-200 p-4 rounded-lg shadow-md max-w-md">
-				<h3 class="text-lg font-semibold text-green-800 mb-2">
-					✅ Ready for Real OAuth
-				</h3>
-				<p class="text-sm text-green-700">
-					Google and GitHub OAuth credentials are configured. Click "Real OAuth Test" to try actual authentication!
-				</p>
-			</div>
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="AI-Accelerated Starter Template with modern authentication, built with Astro, React, and BetterAuth" />
+    <title>AI Starter Template - Ready to Build</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI Starter Template" />
+    <meta property="og:description" content="Modern authentication system with OAuth, email/password, and complete user management" />
+    <meta property="og:url" content={Astro.url} />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              AI Starter
+            </h1>
+          </div>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Features</a>
+            <a href="#auth" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Authentication</a>
+            <a href="#demo" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Demo</a>
+            <a href="/sign-in" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+              Sign In
+            </a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <div class="flex flex-col space-y-2">
+            <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium py-2">Features</a>
+            <a href="#auth" class="text-gray-700 hover:text-blue-600 font-medium py-2">Authentication</a>
+            <a href="#demo" class="text-gray-700 hover:text-blue-600 font-medium py-2">Demo</a>
+            <a href="/sign-in" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-center">
+              Sign In
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+          <div class="mb-8">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+              🚀 Ready to Build
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              AI-Accelerated
+              <span class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Starter Template
+              </span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Modern authentication system with OAuth, email/password, and complete user management. 
+              Built with Astro, React, TailwindCSS, and BetterAuth.
+            </p>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="/sign-up" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
+              Get Started
+            </a>
+            <a href="/sign-in" class="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg border border-gray-300 shadow-lg">
+              Try Demo
+            </a>
+          </div>
+          
+          <!-- Tech Stack -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span class="text-2xl">🚀</span>
+              </div>
+              <p class="text-sm font-medium text-gray-700">Astro</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span class="text-2xl">⚛️</span>
+              </div>
+              <p class="text-sm font-medium text-gray-700">React</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span class="text-2xl">🎨</span>
+              </div>
+              <p class="text-sm font-medium text-gray-700">TailwindCSS</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span class="text-2xl">🔷</span>
+              </div>
+              <p class="text-sm font-medium text-gray-700">TypeScript</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <span class="text-2xl">🔐</span>
+              </div>
+              <p class="text-sm font-medium text-gray-700">BetterAuth</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              A complete authentication system with modern UX patterns and security best practices
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- OAuth Authentication -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+              <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">OAuth Providers</h3>
+              <p class="text-gray-600 mb-4">Sign in with Google, GitHub, and more. Secure, fast, and user-friendly.</p>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>✅ Google OAuth</li>
+                <li>✅ GitHub OAuth</li>
+                <li>🔄 More providers coming</li>
+              </ul>
+            </div>
+            
+            <!-- Email/Password -->
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+              <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.83 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Email & Password</h3>
+              <p class="text-gray-600 mb-4">Traditional authentication with modern security and UX improvements.</p>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>✅ Password strength validation</li>
+                <li>✅ Email verification</li>
+                <li>✅ Password reset flow</li>
+              </ul>
+            </div>
+            
+            <!-- User Management -->
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl">
+              <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">User Management</h3>
+              <p class="text-gray-600 mb-4">Complete user lifecycle management with modern UI components.</p>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>✅ Profile management</li>
+                <li>✅ Session handling</li>
+                <li>✅ Account settings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Authentication Pages Section -->
+      <section id="auth" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Complete Authentication Flow
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Every page you need for a complete authentication experience
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Sign Up -->
+            <a href="/sign-up" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-blue-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-blue-600 group-hover:text-blue-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Sign Up</h3>
+              <p class="text-gray-600 text-sm">Create new account with OAuth or email/password</p>
+            </a>
+            
+            <!-- Sign In -->
+            <a href="/sign-in" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-green-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-green-600 group-hover:text-green-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Sign In</h3>
+              <p class="text-gray-600 text-sm">Access your account with multiple authentication options</p>
+            </a>
+            
+            <!-- Sign Out -->
+            <a href="/sign-out" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-orange-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-orange-600 group-hover:text-orange-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Sign Out</h3>
+              <p class="text-gray-600 text-sm">Safely sign out with session cleanup</p>
+            </a>
+            
+            <!-- Forgot Password -->
+            <a href="/forgot-password" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-purple-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-purple-600 group-hover:text-purple-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Forgot Password</h3>
+              <p class="text-gray-600 text-sm">Request password reset via email</p>
+            </a>
+            
+            <!-- Reset Password -->
+            <a href="/reset-password?token=demo" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-red-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-red-600 group-hover:text-red-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Reset Password</h3>
+              <p class="text-gray-600 text-sm">Set new password with strength validation</p>
+            </a>
+            
+            <!-- Email Verification -->
+            <a href="/verify-email?email=demo@example.com" class="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 hover:border-indigo-300">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.83 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-indigo-600 group-hover:text-indigo-700">→</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Email Verification</h3>
+              <p class="text-gray-600 text-sm">Verify email with resend functionality</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Section -->
+      <section id="demo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Test & Explore
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Try out the authentication system and explore the codebase
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- OAuth Testing -->
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">Live Authentication</h3>
+                  <p class="text-green-700">Real OAuth with Google & GitHub</p>
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Test the complete authentication flow with real OAuth providers. Session management, 
+                sign-out, and user data handling.
+              </p>
+              <a href="/sign-in" class="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+                Try Live Demo
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+            
+            <!-- Development Info -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">Developer Ready</h3>
+                  <p class="text-blue-700">Built with modern best practices</p>
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                TypeScript, component architecture, security best practices, and comprehensive 
+                documentation. Ready for production deployment.
+              </p>
+              <div class="space-y-2">
+                <a href="/dashboard" class="block text-blue-600 hover:text-blue-800 font-medium">
+                  → Dashboard Example
+                </a>
+                <a href="/profile" class="block text-blue-600 hover:text-blue-800 font-medium">
+                  → Profile Management
+                </a>
+                <a href="/settings" class="block text-blue-600 hover:text-blue-800 font-medium">
+                  → Account Settings
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+              AI Starter Template
+            </h3>
+            <p class="text-gray-400 mb-4">
+              A modern, production-ready authentication system built with the latest web technologies. 
+              Perfect starting point for your next application.
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://github.com" class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com" class="text-gray-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Authentication</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="/sign-up" class="hover:text-white transition-colors">Sign Up</a></li>
+              <li><a href="/sign-in" class="hover:text-white transition-colors">Sign In</a></li>
+              <li><a href="/forgot-password" class="hover:text-white transition-colors">Password Reset</a></li>
+              <li><a href="/sign-in" class="hover:text-white transition-colors">OAuth Demo</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Resources</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="/dashboard" class="hover:text-white transition-colors">Dashboard</a></li>
+              <li><a href="/profile" class="hover:text-white transition-colors">Profile</a></li>
+              <li><a href="/settings" class="hover:text-white transition-colors">Settings</a></li>
+              <li><a href="/help" class="hover:text-white transition-colors">Help</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2024 AI Starter Template. Built with ❤️ using modern web technologies.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-32 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+      <div class="absolute -bottom-32 -left-40 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <style>
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      
+      @keyframes blob {
+        0%, 100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    </style>
+
+    <script is:inline>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
