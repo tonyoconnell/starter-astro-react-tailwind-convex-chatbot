@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useStore } from "@nanostores/react";
-import { $user, $isLoading, authActions } from "@starter/lib/auth";
+import { $user, $isLoading } from "@starter/lib/auth";
 
 interface AccountSettingsProps {
   className?: string;

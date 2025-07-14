@@ -21,15 +21,6 @@ interface UserButtonProps {
 }
 
 export function UserButton({
-  showName = true,
-  showEmail = true,
-  menuItems = [
-    { label: 'Profile', href: '/profile' },
-    { label: 'Settings', href: '/settings' },
-    { label: 'API Keys', href: '/settings/api-keys' },
-    { type: 'separator' },
-    { label: 'Sign Out', action: 'signout' },
-  ],
   className,
 }: UserButtonProps) {
   const user = useStore($user);
@@ -40,14 +31,7 @@ export function UserButton({
 
   return (
     <BetterAuthUserButton
-      user={user}
-      showName={showName}
-      showEmail={showEmail}
-      menuItems={menuItems}
       className={className}
-      // Additional Better Auth UI props
-      avatarFallback={user.name?.charAt(0).toUpperCase() || '?'}
-      signOutRedirect="/"
     />
   );
 }

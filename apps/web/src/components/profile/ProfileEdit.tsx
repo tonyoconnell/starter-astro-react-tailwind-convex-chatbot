@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useStore } from "@nanostores/react";
 import { $user, $isLoading, $error, authActions } from "@starter/lib/auth";
-import { AuthLoadingSpinner } from "../auth/AuthLoadingSpinner";
 
 interface ProfileEditProps {
   onSave?: () => void;

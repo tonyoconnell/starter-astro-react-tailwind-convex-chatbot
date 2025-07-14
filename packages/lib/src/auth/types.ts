@@ -2,12 +2,15 @@
 
 export interface User {
   id: string;
+  _id: string; // Legacy/alternate id field
   name: string;
   email?: string;
   image?: string;
   emailVerified: boolean;
   createdAt: Date;
   updatedAt: Date;
+  _creationTime: Date; // Legacy/alternate creation time
+  username?: string; // Optional username field
 }
 
 export interface Session {

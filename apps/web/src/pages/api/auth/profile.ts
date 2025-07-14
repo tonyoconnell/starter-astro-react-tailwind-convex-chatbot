@@ -7,7 +7,7 @@
 
 import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async () => {
   try {
     console.log("Profile GET requested");
     

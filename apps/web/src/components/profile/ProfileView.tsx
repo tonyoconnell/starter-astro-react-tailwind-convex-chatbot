@@ -77,7 +77,7 @@ export function ProfileView({
           )}
           {user._creationTime && (
             <p className="text-sm text-gray-500">
-              Member since {formatDate(user._creationTime)}
+              Member since {formatDate(user._creationTime.getTime())}
             </p>
           )}
         </div>
@@ -133,7 +133,7 @@ export function ProfileView({
             {user._creationTime && (
               <div>
                 <dt className="text-sm font-medium text-gray-500">Joined</dt>
-                <dd className="text-sm text-gray-900">{formatDate(user._creationTime)}</dd>
+                <dd className="text-sm text-gray-900">{formatDate(user._creationTime.getTime())}</dd>
               </div>
             )}
           </dl>

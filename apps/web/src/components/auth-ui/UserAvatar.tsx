@@ -17,8 +17,6 @@ interface UserAvatarProps {
 
 export function UserAvatar({
   size = 'md',
-  editable = false,
-  onUpload,
   className,
 }: UserAvatarProps) {
   const user = useStore($user);
@@ -28,22 +26,17 @@ export function UserAvatar({
   }
 
   const sizeMap = {
-    sm: 32,
-    md: 40,
-    lg: 48,
-    xl: 64,
+    sm: 'sm' as const,
+    md: 'default' as const,
+    lg: 'lg' as const,
+    xl: 'xl' as const,
   };
 
   return (
     <BetterAuthUserAvatar
       user={user}
       size={sizeMap[size]}
-      editable={editable}
-      onUpload={onUpload}
       className={className}
-      // Additional Better Auth UI props
-      fallback={user.name?.charAt(0).toUpperCase() || '?'}
-      showUploadOnHover={editable}
     />
   );
 }
