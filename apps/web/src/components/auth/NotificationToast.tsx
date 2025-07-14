@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { $notifications, notificationActions, type Notification } from "@starter/lib/auth/notifications";
+import { $notifications, notificationActions, type Notification } from "@starter/lib/auth";
 
 interface ToastItemProps {
   notification: Notification;
@@ -50,7 +50,7 @@ function ToastItem({ notification }: ToastItemProps) {
           <p className="text-sm mt-1 opacity-90">{message}</p>
           {actions && actions.length > 0 && (
             <div className="mt-3 flex space-x-2">
-              {actions.map((action, index) => (
+              {actions.map((action: { label: string; onClick: () => void }, index: number) => (
                 <button
                   key={index}
                   onClick={action.onClick}
@@ -84,7 +84,7 @@ export function NotificationToast() {
 
   return (
     <div className="fixed top-4 right-4 z-50 space-y-2">
-      {notifications.map((notification) => (
+      {notifications.map((notification: Notification) => (
         <ToastItem key={notification.id} notification={notification} />
       ))}
     </div>

@@ -25,12 +25,16 @@ vi.mock("convex/browser", () => ({
 // Mock BetterAuth modules
 vi.mock("better-auth", () => ({
   betterAuth: vi.fn().mockImplementation((config) => ({
-    createAuthClient: vi.fn().mockReturnValue({
-      signIn: vi.fn(),
-      signOut: vi.fn(),
+    handler: vi.fn(),
+    api: {
       getSession: vi.fn(),
-    }),
-    config,
+      signOut: vi.fn(),
+    },
+    $Infer: {
+      Session: {} as any,
+      User: {} as any,
+    },
+    options: config,
   })),
 }));
 
@@ -46,13 +50,13 @@ describe("Auth Configuration", () => {
     const { auth } = await import("./config");
     
     expect(auth).toBeDefined();
-    expect(auth.config).toBeDefined();
+    expect(auth.options).toBeDefined();
   });
 
   it("should have Google and GitHub OAuth providers configured", async () => {
     const { auth } = await import("./config");
     
-    expect(auth.config.socialProviders).toEqual(
+    expect(auth.options.socialProviders).toEqual(
       expect.objectContaining({
         google: expect.objectContaining({
           clientId: "test-google-id",
@@ -69,7 +73,7 @@ describe("Auth Configuration", () => {
   it("should have security features enabled", async () => {
     const { auth } = await import("./config");
     
-    expect(auth.config.security).toEqual(
+    expect(auth.options.security).toEqual(
       expect.objectContaining({
         csrf: expect.objectContaining({ enabled: true }),
         rateLimit: expect.objectContaining({ enabled: true }),

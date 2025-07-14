@@ -135,7 +135,7 @@ When deploying to production, update your OAuth applications:
 
 **GitHub OAuth App**:
 - Update Homepage URL: `https://yourdomain.com`
-- Update Authorization callback URL: `https://yourdomain.com/api/auth/callback/github`
+- Update Authorization callback URL: `http://localhost:4321/api/auth/callback/github`
 
 ### 2. Environment Variables for Production
 Update your production environment with:

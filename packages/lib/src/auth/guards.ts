@@ -1,3 +1,4 @@
+import React from "react";
 import type { RouteGuard, User, Session } from "./types";
 
 /**
@@ -66,8 +67,8 @@ export function withAuth<P extends object>(
 
   return function AuthenticatedComponent(props: P) {
     // This will be implemented when we have React components
-    // For now, just return the component
-    return Component(props);
+    // For now, just return the component as a React element
+    return React.createElement(Component, props);
   };
 }
 

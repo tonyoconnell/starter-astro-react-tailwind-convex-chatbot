@@ -1,0 +1,248 @@
+---
+// Better Auth UI Settings Page
+// Uses the new Better Auth UI components for comprehensive account management
+// This page is protected by middleware - User authentication is handled in middleware.ts
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage your account settings, privacy preferences, notifications, and security options." />
+    <title>Settings - AI Starter Template</title>
+    
+    <!-- Prevent indexing of settings page -->
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold text-blue-600">
+              AI Starter
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a 
+              href="/dashboard"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Dashboard
+            </a>
+            <a 
+              href="/profile"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Profile
+            </a>
+            <div id="user-button-container"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <!-- Page Header -->
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">Account Settings</h1>
+        <p class="text-gray-600 mt-2">
+          Manage your account preferences, security settings, and profile information
+        </p>
+      </div>
+
+      <!-- Settings Container -->
+      <div id="settings-container" class="animate-pulse">
+        <!-- Loading skeleton -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div class="lg:col-span-1">
+            <div class="h-64 bg-gray-200 rounded-lg"></div>
+          </div>
+          <div class="lg:col-span-3 space-y-6">
+            <div class="h-48 bg-gray-200 rounded-lg"></div>
+            <div class="h-48 bg-gray-200 rounded-lg"></div>
+            <div class="h-48 bg-gray-200 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- React Mount Point -->
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import { AuthUIProvider } from '/src/components/auth-ui/AuthUIProvider.tsx';
+      import { UserButton } from '/src/components/auth-ui/UserButton.tsx';
+      import {
+        ChangeEmailCard,
+        ChangePasswordCard,
+        UpdateAvatarCard,
+        UpdateUsernameCard,
+        UpdateNameCard,
+        DeleteAccountCard
+      } from '/src/components/auth-ui/settings/index.ts';
+
+      // Tab navigation component
+      function TabNavigation({ activeTab, onTabChange }) {
+        const tabs = [
+          { id: 'profile', label: 'Profile Information', icon: '👤' },
+          { id: 'security', label: 'Security', icon: '🔒' },
+          { id: 'advanced', label: 'Advanced', icon: '⚙️' },
+          { id: 'danger', label: 'Danger Zone', icon: '⚠️', danger: true }
+        ];
+
+        return React.createElement('nav', { className: 'bg-white rounded-lg shadow-md p-4' },
+          React.createElement('h2', { className: 'text-lg font-semibold text-gray-900 mb-4' }, 'Settings'),
+          React.createElement('ul', { className: 'space-y-2' },
+            tabs.map(tab => 
+              React.createElement('li', { key: tab.id },
+                React.createElement('button', {
+                  onClick: () => onTabChange(tab.id),
+                  className: `w-full text-left px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2 ${
+                    activeTab === tab.id 
+                      ? tab.danger 
+                        ? 'bg-red-50 text-red-700 border-l-4 border-red-500' 
+                        : 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                      : tab.danger
+                        ? 'text-red-700 hover:bg-red-50'
+                        : 'text-gray-700 hover:bg-gray-50'
+                  }`
+                },
+                  React.createElement('span', null, tab.icon),
+                  React.createElement('span', null, tab.label)
+                )
+              )
+            )
+          )
+        );
+      }
+
+      // Settings page component
+      function SettingsPage() {
+        const [activeTab, setActiveTab] = React.useState('profile');
+
+        return React.createElement('div', { className: 'grid grid-cols-1 lg:grid-cols-4 gap-8' },
+          // Sidebar
+          React.createElement('div', { className: 'lg:col-span-1' },
+            React.createElement(TabNavigation, { activeTab, onTabChange: setActiveTab })
+          ),
+          
+          // Content
+          React.createElement('div', { className: 'lg:col-span-3' },
+            // Profile Tab
+            activeTab === 'profile' && React.createElement('div', { className: 'space-y-6' },
+              React.createElement('h2', { 
+                className: 'text-2xl font-bold text-gray-900 mb-4' 
+              }, 'Profile Information'),
+              React.createElement(UpdateAvatarCard),
+              React.createElement(UpdateNameCard),
+              React.createElement(UpdateUsernameCard)
+            ),
+            
+            // Security Tab
+            activeTab === 'security' && React.createElement('div', { className: 'space-y-6' },
+              React.createElement('h2', { 
+                className: 'text-2xl font-bold text-gray-900 mb-4' 
+              }, 'Security Settings'),
+              React.createElement(ChangeEmailCard),
+              React.createElement(ChangePasswordCard),
+              
+              // Placeholder for future components
+              React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                React.createElement('h3', { className: 'text-lg font-semibold text-gray-900 mb-2' }, 
+                  '🔐 Two-Factor Authentication'
+                ),
+                React.createElement('p', { className: 'text-gray-600 text-sm' }, 
+                  'Coming soon: Add an extra layer of security to your account with 2FA.'
+                )
+              ),
+              
+              React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                React.createElement('h3', { className: 'text-lg font-semibold text-gray-900 mb-2' }, 
+                  '🔑 Passkeys'
+                ),
+                React.createElement('p', { className: 'text-gray-600 text-sm' }, 
+                  'Coming soon: Use biometric authentication for passwordless sign-in.'
+                )
+              )
+            ),
+            
+            // Advanced Tab
+            activeTab === 'advanced' && React.createElement('div', { className: 'space-y-6' },
+              React.createElement('h2', { 
+                className: 'text-2xl font-bold text-gray-900 mb-4' 
+              }, 'Advanced Settings'),
+              
+              React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                React.createElement('h3', { className: 'text-lg font-semibold text-gray-900 mb-2' }, 
+                  '🔌 API Keys'
+                ),
+                React.createElement('p', { className: 'text-gray-600 text-sm' }, 
+                  'Coming soon: Generate and manage API keys for programmatic access.'
+                )
+              ),
+              
+              React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                React.createElement('h3', { className: 'text-lg font-semibold text-gray-900 mb-2' }, 
+                  '💻 Active Sessions'
+                ),
+                React.createElement('p', { className: 'text-gray-600 text-sm' }, 
+                  'Coming soon: View and manage your active sessions across devices.'
+                )
+              ),
+              
+              React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                React.createElement('h3', { className: 'text-lg font-semibold text-gray-900 mb-2' }, 
+                  '🔗 Connected Accounts'
+                ),
+                React.createElement('p', { className: 'text-gray-600 text-sm' }, 
+                  'Coming soon: Manage your connected social accounts.'
+                )
+              )
+            ),
+            
+            // Danger Zone Tab
+            activeTab === 'danger' && React.createElement('div', { className: 'space-y-6' },
+              React.createElement('h2', { 
+                className: 'text-2xl font-bold text-red-600 mb-4' 
+              }, '⚠️ Danger Zone'),
+              React.createElement('div', { 
+                className: 'bg-red-50 border border-red-200 rounded-lg p-4 mb-4' 
+              },
+                React.createElement('p', { className: 'text-red-800 text-sm' }, 
+                  'Warning: Actions in this section are permanent and cannot be undone. Please proceed with caution.'
+                )
+              ),
+              React.createElement(DeleteAccountCard)
+            )
+          )
+        );
+      }
+
+      // Mount the settings page
+      const container = document.getElementById('settings-container');
+      if (container) {
+        const root = createRoot(container);
+        root.render(
+          React.createElement(AuthUIProvider, null,
+            React.createElement(SettingsPage)
+          )
+        );
+      }
+
+      // Mount the user button
+      const userButtonContainer = document.getElementById('user-button-container');
+      if (userButtonContainer) {
+        const userButtonRoot = createRoot(userButtonContainer);
+        userButtonRoot.render(
+          React.createElement(AuthUIProvider, null,
+            React.createElement(UserButton)
+          )
+        );
+      }
+    </script>
+  </body>
+</html>

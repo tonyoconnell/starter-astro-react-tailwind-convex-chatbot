@@ -1,0 +1,239 @@
+---
+// Better Auth UI Email Verification Page
+// Email verification page using Better Auth UI components
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Verify your email address - Complete your AI Starter Template account setup." />
+    <title>Verify Email - AI Starter Template</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Verify Email - AI Starter Template" />
+    <meta property="og:description" content="Verify your email address to complete your account setup." />
+    <meta property="og:url" content={Astro.url} />
+    
+    <!-- Prevent indexing of auth pages -->
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              AI Starter
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a 
+              href="/sign-in"
+              class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Sign In
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex items-center justify-center min-h-[calc(100vh-4rem)] py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-md w-full">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <div class="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.83 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-2">Check your email</h1>
+          <p class="text-gray-600">
+            We've sent a verification link to your email address
+          </p>
+        </div>
+
+        <!-- Verification Container -->
+        <div id="verify-email-container" class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <!-- Loading skeleton -->
+          <div class="animate-pulse">
+            <div class="space-y-4">
+              <div class="h-10 bg-gray-200 rounded-lg"></div>
+              <div class="h-12 bg-gray-200 rounded-lg"></div>
+              <div class="h-px bg-gray-200"></div>
+              <div class="h-10 bg-gray-200 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="text-center mt-8 space-y-4">
+          <div class="text-sm text-gray-600">
+            Having trouble?{' '}
+            <a href="/contact" class="text-blue-600 hover:text-blue-500 underline">
+              Contact support
+            </a>
+          </div>
+          
+          <div class="flex justify-center space-x-6 text-sm text-gray-500">
+            <a href="/help" class="hover:text-gray-700 transition-colors">Help</a>
+            <a href="/contact" class="hover:text-gray-700 transition-colors">Contact</a>
+            <a href="/about" class="hover:text-gray-700 transition-colors">About</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Email Verification -->
+    <script is:inline>
+      // Get email and token from URL params
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get('email') || '';
+      const token = urlParams.get('token') || '';
+      const container = document.getElementById('verify-email-container');
+
+      if (container) {
+        if (token) {
+          // Auto-verification mode
+          container.innerHTML = `
+            <div class="text-center space-y-4">
+              <div class="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="animate-spin w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900">Verifying your email...</h3>
+              <p class="text-gray-600">Please wait while we verify your email address.</p>
+            </div>
+          `;
+          
+          // Simulate verification
+          setTimeout(() => {
+            container.innerHTML = `
+              <div class="text-center space-y-4">
+                <div class="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900">Email Verified!</h3>
+                <p class="text-gray-600">Your email has been successfully verified. You'll be redirected to your dashboard shortly.</p>
+              </div>
+            `;
+            
+            showNotification('Email verified successfully! Redirecting...', 'success');
+            setTimeout(() => {
+              window.location.href = '/dashboard';
+            }, 2000);
+          }, 2000);
+          
+        } else {
+          // Manual verification or resend mode
+          container.innerHTML = `
+            <div class="text-center space-y-4">
+              <h3 class="text-lg font-semibold text-gray-900">Verify your email address</h3>
+              ${email ? `<p class="text-gray-600">We sent a verification link to <strong>${email}</strong></p>` : ''}
+              <p class="text-sm text-gray-500">Click the link in the email to verify your account. The link will expire in 24 hours.</p>
+              
+              <div class="space-y-3">
+                <div class="text-sm text-gray-600">Didn't receive the email? Check your spam folder or request a new one.</div>
+                ${email ? `
+                  <button id="resend-btn" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                    Resend verification email
+                  </button>
+                ` : ''}
+              </div>
+            </div>
+          `;
+          
+          if (email) {
+            let resendCooldown = 0;
+            const resendBtn = document.getElementById('resend-btn');
+            
+            resendBtn.addEventListener('click', async () => {
+              if (resendCooldown > 0) return;
+              
+              resendBtn.disabled = true;
+              resendBtn.textContent = 'Sending...';
+              
+              try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Set cooldown
+                resendCooldown = 60;
+                showNotification(`Verification email sent to ${email}`, 'success');
+                
+                // Update button with countdown
+                const updateButton = () => {
+                  if (resendCooldown > 0) {
+                    resendBtn.textContent = `Resend in ${resendCooldown}s`;
+                    resendCooldown--;
+                    setTimeout(updateButton, 1000);
+                  } else {
+                    resendBtn.disabled = false;
+                    resendBtn.textContent = 'Resend verification email';
+                  }
+                };
+                updateButton();
+                
+              } catch (error) {
+                showNotification('Failed to resend email. Please try again.', 'error');
+                resendBtn.disabled = false;
+                resendBtn.textContent = 'Resend verification email';
+              }
+            });
+          }
+        }
+      }
+
+      function showNotification(message, type = 'info', duration = 5000) {
+        const notification = document.createElement('div');
+        const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+        notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50`;
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, duration);
+      }
+    </script>
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-40 -right-32 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute -bottom-32 -left-40 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <style>
+      @keyframes blob {
+        0%, 100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    </style>
+  </body>
+</html>

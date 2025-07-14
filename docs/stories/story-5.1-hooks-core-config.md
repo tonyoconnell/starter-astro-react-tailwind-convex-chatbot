@@ -1,7 +1,7 @@
 # Story 5.1: Core Hooks Configuration and Infrastructure
 
 ## Status
-Ready for Review
+Review
 
 ## Story
 **As a** developer,
@@ -61,18 +61,21 @@ Ready for Review
 }
 ```
 
-### Testing Standards
-- Configuration files should be validated with JSON schema
-- Hook commands should be tested in isolation
-- Integration tests should verify hook execution flow
-- Use Vitest for unit tests of hook utilities
-
 ### Relevant Architecture
 - Project uses Bun as runtime
 - Turborepo for monorepo management
 - Commands: `turbo run lint`, `turbo run format`, `turbo run test`
 - Configuration files in `.claude/` directory
 - Logging should integrate with existing error handling patterns
+
+### Testing
+**Testing Standards from Architecture:**
+- Configuration files should be validated with JSON schema
+- Hook commands should be tested in isolation
+- Integration tests should verify hook execution flow
+- Use Vitest for unit tests of hook utilities
+- Test file location: `.claude/__tests__/`
+- Testing frameworks: Vitest for unit tests, integration tests for hook execution flow
 
 ## Change Log
 | Date | Version | Description | Author |

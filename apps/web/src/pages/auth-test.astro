@@ -117,21 +117,12 @@
 
     <!-- Notification Toast Container -->
     <div id="notification-container"></div>
-    
-    <script type="module">
-      import { NotificationToast } from '/src/components/auth/NotificationToast.tsx';
-      import React from 'react';
-      import { createRoot } from 'react-dom/client';
 
-      // Render notification toast
-      const notificationContainer = document.getElementById('notification-container');
-      if (notificationContainer) {
-        const notificationRoot = createRoot(notificationContainer);
-        notificationRoot.render(React.createElement(NotificationToast));
-      }
-    </script>
-
-    <script>
+    <script is:inline>
+      // Extend window interface for TypeScript
+      window.signInWithGoogle = undefined;
+      window.signInWithGitHub = undefined;
+      
       // OAuth signin functions - now working with proper environment variables!
       console.log('Auth-test script loaded');
       
@@ -168,7 +159,7 @@
           
         } catch (error) {
           console.error('Google signin error:', error);
-          alert('Google signin error: ' + error.message);
+          alert('Google signin error: ' + (error instanceof Error ? error.message : String(error)));
         }
       };
       
@@ -205,16 +196,18 @@
           
         } catch (error) {
           console.error('GitHub signin error:', error);
-          alert('GitHub signin error: ' + error.message);
+          alert('GitHub signin error: ' + (error instanceof Error ? error.message : String(error)));
         }
       };
       
       console.log('OAuth functions ready - environment variables loaded successfully!');
     </script>
 
-    <script>
+    <script is:inline>
       async function checkSession() {
         const resultDiv = document.getElementById('session-result');
+        if (!resultDiv) return;
+        
         resultDiv.innerHTML = '<span class="text-blue-600">Checking session...</span>';
         
         try {
@@ -233,12 +226,14 @@
             resultDiv.innerHTML = '<span class="text-gray-600">❌ Not authenticated</span>';
           }
         } catch (error) {
-          resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${error.message}</span>`;
+          resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${error instanceof Error ? error.message : String(error)}</span>`;
         }
       }
       
       async function signOut() {
         const resultDiv = document.getElementById('session-result');
+        if (!resultDiv) return;
+        
         resultDiv.innerHTML = '<span class="text-blue-600">Signing out...</span>';
         
         try {
@@ -255,7 +250,7 @@
             resultDiv.innerHTML = `<span class="text-red-600">❌ Sign out failed: ${data.message}</span>`;
           }
         } catch (error) {
-          resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${error.message}</span>`;
+          resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${error instanceof Error ? error.message : String(error)}</span>`;
         }
       }
       

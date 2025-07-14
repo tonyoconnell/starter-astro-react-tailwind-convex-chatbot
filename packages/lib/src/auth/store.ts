@@ -227,13 +227,13 @@ export const authActions = {
    */
   async syncWithConvex() {
     const currentUser = $user.get();
-    if (!convexClient || !currentUser?.tokenIdentifier) {
+    if (!convexClient || !currentUser?.id) {
       return false;
     }
 
     try {
       const convexUser = await convexClient.query("functions/queries/users:getCurrentUser", {
-        tokenIdentifier: currentUser.tokenIdentifier,
+        userId: currentUser.id,
       });
 
       if (convexUser) {

@@ -9,7 +9,7 @@ import { betterAuth } from "better-auth";
 // Disable prerendering for dynamic auth routes in SSR mode
 export const prerender = false;
 
-// Create auth instance with Astro's environment variables
+// Create auth instance with Astro's environment variables and Better Auth UI features
 const auth = betterAuth({
   socialProviders: {
     google: {
@@ -25,10 +25,75 @@ const auth = betterAuth({
   },
   baseURL: import.meta.env.BETTER_AUTH_URL || "http://localhost:4321",
   secret: import.meta.env.BETTER_AUTH_SECRET || "development-secret",
+  
+  // Email/Password authentication
+  emailAndPassword: {
+    enabled: true,
+    requireEmailVerification: false, // Set to true in production
+    // Email configuration would go here for production
+  },
+  
+  // Two-Factor Authentication
+  twoFactor: {
+    enabled: true,
+    issuer: "AI Starter Template",
+  },
+  
+  // Passkeys/WebAuthn Support
+  passkeys: {
+    enabled: true,
+    rpName: "AI Starter Template",
+    rpID: import.meta.env.BETTER_AUTH_URL?.replace(/^https?:\/\//, '') || "localhost",
+  },
+  
+  // Organizations (optional - enable if needed)
+  organizations: {
+    enabled: false, // Enable when needed
+    allowUserToCreateOrganization: true,
+  },
+  
+  // API Keys Management
+  apiKeys: {
+    enabled: true,
+    prefix: "ast_", // AI Starter Template prefix
+  },
+  
+  // Session configuration
   session: {
     cookieCache: {
       enabled: true,
       maxAge: 60 * 60 * 24 * 7, // 7 days
+    },
+  },
+  
+  // Security configuration
+  security: {
+    csrf: { 
+      enabled: true,
+      sameSite: "strict",
+    },
+    rateLimit: { 
+      enabled: true,
+      window: 15 * 60 * 1000, // 15 minutes
+      max: 100, // 100 requests per window
+    },
+  },
+  
+  // User configuration
+  user: {
+    additionalFields: {
+      name: {
+        type: "string",
+        required: false,
+      },
+      image: {
+        type: "string",
+        required: false,
+      },
+      username: {
+        type: "string",
+        required: false,
+      },
     },
   },
 });
@@ -46,9 +111,15 @@ export const ALL: APIRoute = async ({ request, params }) => {
     // BetterAuth handles all authentication routes internally
     const response = await auth.handler(request);
     
+    // Convert headers to plain object for logging
+    const headersObj: Record<string, string> = {};
+    response.headers.forEach((value, key) => {
+      headersObj[key] = value;
+    });
+    
     console.log("BetterAuth response:", {
       status: response.status,
-      headers: Object.fromEntries(response.headers.entries())
+      headers: headersObj
     });
     
     return response;

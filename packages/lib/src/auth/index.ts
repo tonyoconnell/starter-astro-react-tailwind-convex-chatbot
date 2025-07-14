@@ -23,6 +23,8 @@ export {
   type Notification,
 } from "./notifications";
 
+export { authUIConfig } from "./ui-config";
+
 export {
   AuthGuard,
   withAuth,
