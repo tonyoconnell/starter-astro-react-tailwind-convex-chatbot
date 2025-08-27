@@ -1,6 +1,47 @@
 ---
 // Protected Dashboard Page
-const { user } = Astro.locals;
+// Get user from session cookie
+const cookies = Astro.request.headers.get("cookie") || "";
+console.log("Dashboard cookies received:", cookies);
+
+// Try our custom session cookie first
+let sessionMatch = cookies.match(/better-auth\.session=([^;]+)/);
+console.log("Custom session match:", sessionMatch);
+
+// Fallback to BetterAuth session_data cookie
+if (!sessionMatch) {
+  sessionMatch = cookies.match(/better-auth\.session_data=([^;]+)/);
+  console.log("BetterAuth session_data match:", sessionMatch);
+}
+
+let user = null;
+if (sessionMatch) {
+  try {
+    const rawData = decodeURIComponent(sessionMatch[1]);
+    console.log("Raw session data:", rawData);
+    
+    // Try parsing as our custom format first
+    try {
+      user = JSON.parse(rawData);
+    } catch {
+      // If that fails, try parsing as BetterAuth format
+      const betterAuthData = JSON.parse(atob(rawData));
+      user = betterAuthData.session?.user || betterAuthData.user;
+    }
+    
+    console.log("User from session:", user);
+  } catch (error) {
+    console.error("Session parse error:", error);
+    console.log("Raw session data:", sessionMatch[1]);
+  }
+} else {
+  console.log("No session cookie found in:", cookies);
+}
+
+// Redirect to sign-in if no valid session
+if (!user) {
+  return Astro.redirect('/sign-in');
+}
 ---
 
 <!DOCTYPE html>
@@ -19,10 +60,23 @@ const { user } = Astro.locals;
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
           <a href="/" class="text-2xl font-bold text-blue-600">
-            AI Starter
+            AI Starterd
           </a>
         </div>
         <div class="flex items-center space-x-4">
+          {user && (
+            <div class="flex items-center space-x-2 text-gray-700 bg-gray-50 px-3 py-2 rounded-md">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                <span class="text-white text-sm font-semibold">
+                  {user.name ? user.name.charAt(0).toUpperCase() : user.email?.charAt(0).toUpperCase() || 'U'}
+                </span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm font-medium">{user.name || 'User'}</span>
+                <span class="text-xs text-gray-500">{user.email}</span>
+              </div>
+            </div>
+          )}
           <a 
             href="/profile"
             class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
@@ -36,7 +90,7 @@ const { user } = Astro.locals;
             Settings
           </a>
           <a 
-            href="/sign-in"
+            href="/sign-out"
             class="bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-700"
           >
             Sign Out
@@ -50,10 +104,32 @@ const { user } = Astro.locals;
   <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
     <!-- Page Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
-      <p class="text-gray-600 mt-2">
-        Welcome back{user?.name ? `, ${user.name}` : ''}! Here's your activity overview.
-      </p>
+      <div class="flex items-center space-x-4">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+          <p class="text-gray-600 mt-2">
+            Welcome back {user?.name || 'User'}, you are logged in with {user?.email || 'your account'}.
+          </p>
+        </div>
+        {user && (
+          <div class="ml-auto">
+            <div class="bg-white rounded-lg shadow-sm border p-4 min-w-[200px]">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                  <span class="text-white text-lg font-bold">
+                    {user.name ? user.name.charAt(0).toUpperCase() : user.email?.charAt(0).toUpperCase() || 'U'}
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900">{user.name || 'User'}</h3>
+                  <p class="text-sm text-gray-500">{user.email}</p>
+                  <p class="text-xs text-gray-400 mt-1">ID: {user.id}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
 
     <!-- Authentication Status -->
