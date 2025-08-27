@@ -4,10 +4,10 @@
 const cookies = Astro.request.headers.get("cookie") || "";
 const sessionMatch = cookies.match(/better-auth\.session=([^;]+)/);
 
-let user = null;
+let user: any = null;
 if (sessionMatch) {
   try {
-    user = JSON.parse(decodeURIComponent(sessionMatch[1]));
+    user = JSON.parse(decodeURIComponent(sessionMatch[1]!));
   } catch (error) {
     console.error("Session parse error:", error);
   }

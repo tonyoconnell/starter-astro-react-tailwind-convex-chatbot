@@ -93,10 +93,10 @@ export const createUserSession = mutation({
     expires: v.number(),
   },
   handler: async (ctx, args) => {
-    // Get user from legacy table
+    // Get user from BetterAuth user table
     const user = await ctx.db
-      .query("users")
-      .withIndex("by_token", (q) => q.eq("tokenIdentifier", args.userId))
+      .query("user")
+      .filter((q) => q.eq(q.field("id"), args.userId))
       .first();
 
     if (!user) {

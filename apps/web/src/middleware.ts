@@ -1,6 +1,6 @@
 import { defineMiddleware } from "astro:middleware";
 
-export const onRequest = defineMiddleware(async (context, next) => {
+export const onRequest = defineMiddleware(async (_context, next) => {
   // For now, just pass through - no authentication
   // Real user data will come from BetterAuth cookies/session
   return next();

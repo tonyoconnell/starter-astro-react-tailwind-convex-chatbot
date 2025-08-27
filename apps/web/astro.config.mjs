@@ -11,10 +11,23 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [react(), tailwind()],
+  integrations: [react({
+    experimentalReactChildren: false,
+  }), tailwind()],
   
   // Security configuration
   security: {
     checkOrigin: true,
   },
+  
+  // Vite configuration for polyfills
+  vite: {
+    define: {
+      // Ensure MessageChannel is available during build
+      global: 'globalThis',
+    },
+    ssr: {
+      external: ['react', 'react-dom']
+    }
+  }
 });

@@ -15,7 +15,7 @@ if (!sessionMatch) {
 }
 
 let user = null;
-if (sessionMatch) {
+if (sessionMatch && sessionMatch[1]) {
   try {
     const rawData = decodeURIComponent(sessionMatch[1]);
     console.log("Raw session data:", rawData);
@@ -32,7 +32,7 @@ if (sessionMatch) {
     console.log("User from session:", user);
   } catch (error) {
     console.error("Session parse error:", error);
-    console.log("Raw session data:", sessionMatch[1]);
+    console.log("Raw session data:", sessionMatch?.[1]);
   }
 } else {
   console.log("No session cookie found in:", cookies);

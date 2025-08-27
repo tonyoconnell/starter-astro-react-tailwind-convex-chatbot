@@ -179,7 +179,7 @@ export const ALL: APIRoute = async ({ request, params }) => {
 
             if (userSynced) {
               // Create session in Convex
-              const sessionToken = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+              const sessionToken = `session_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
               const expires = Date.now() + (60 * 60 * 24 * 7 * 1000); // 7 days
 
               const sessionCreated = await createSessionInConvex({
@@ -243,7 +243,7 @@ export const ALL: APIRoute = async ({ request, params }) => {
     
     if (sessionMatch) {
       try {
-        const sessionData = JSON.parse(decodeURIComponent(sessionMatch[1]));
+        const sessionData = JSON.parse(decodeURIComponent(sessionMatch[1]!));
         
         // Verify session with Convex if available
         const convexUrl = import.meta.env.CONVEX_URL;
