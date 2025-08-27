@@ -3,8 +3,6 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main, one]
-  pull_request:
-    branches: [main, one]
 
 jobs:
   deploy:
@@ -14,17 +12,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: bun install
+        run: |
+          cd apps/web
+          npm install
 
-      - name: Build web app
-        working-directory: apps/web
-        run: bun run build
+      - name: Build project
+        run: |
+          cd apps/web
+          npm run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -34,4 +36,3 @@ jobs:
           projectName: astro-convex-ai
           directory: apps/web/dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: '3'
