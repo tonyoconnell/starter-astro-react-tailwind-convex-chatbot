@@ -20,9 +20,10 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
-      - name: Build project
+      - name: Build web app
+        working-directory: apps/web
         run: bun run build
 
       - name: Deploy to Cloudflare Pages
