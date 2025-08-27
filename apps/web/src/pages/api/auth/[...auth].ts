@@ -1,5 +1,5 @@
 /**
- * BetterAuth API endpoints
+ * BetterAuth API endpoints with Convex integration
  * Handles OAuth flows, session management, and authentication operations
  */
 
@@ -7,7 +7,9 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
-// Simple auth handler that sets session cookies
+import { syncUserWithConvex, createSessionInConvex, verifySessionWithConvex } from '../../../lib/convex-client';
+
+// Auth handler with Convex integration
 export const ALL: APIRoute = async ({ request, params }) => {
   const url = new URL(request.url);
   const pathSegments = params.auth;
@@ -26,7 +28,8 @@ export const ALL: APIRoute = async ({ request, params }) => {
       if (provider === 'google') {
         // Create Google OAuth URL
         const googleClientId = import.meta.env.GOOGLE_CLIENT_ID;
-        const redirectUri = `${import.meta.env.BETTER_AUTH_URL || 'http://localhost:4321'}/api/auth/callback/google`;
+        const baseUrl = `${url.protocol}//${url.host}`;
+        const redirectUri = `${baseUrl}/api/auth/callback/google`;
         
         console.log('Google OAuth redirect URI:', redirectUri);
         
@@ -47,7 +50,8 @@ export const ALL: APIRoute = async ({ request, params }) => {
       if (provider === 'github') {
         // Create GitHub OAuth URL
         const githubClientId = import.meta.env.GITHUB_CLIENT_ID;
-        const redirectUri = `${import.meta.env.BETTER_AUTH_URL || 'http://localhost:4321'}/api/auth/callback/github`;
+        const baseUrl = `${url.protocol}//${url.host}`;
+        const redirectUri = `${baseUrl}/api/auth/callback/github`;
         
         const authUrl = `https://github.com/login/oauth/authorize?${new URLSearchParams({
           client_id: githubClientId,
@@ -86,7 +90,8 @@ export const ALL: APIRoute = async ({ request, params }) => {
       
       if (provider === 'google') {
         // Exchange code for access token
-        const redirectUri = `${import.meta.env.BETTER_AUTH_URL || 'http://localhost:4321'}/api/auth/callback/google`;
+        const baseUrl = `${url.protocol}//${url.host}`;
+        const redirectUri = `${baseUrl}/api/auth/callback/google`;
         
         console.log('Google token exchange, redirect_uri:', redirectUri);
         
@@ -160,6 +165,40 @@ export const ALL: APIRoute = async ({ request, params }) => {
       if (userInfo) {
         console.log('Creating session for user:', { id: userInfo.id, email: userInfo.email, provider });
         
+        // Sync user with Convex database
+        const convexUrl = import.meta.env.CONVEX_URL;
+        if (convexUrl) {
+          try {
+            const userSynced = await syncUserWithConvex({
+              id: String(userInfo.id || userInfo.login),
+              name: userInfo.name || userInfo.login || 'Unknown',
+              email: userInfo.email,
+              image: userInfo.picture || userInfo.avatar_url,
+              provider,
+            }, convexUrl);
+
+            if (userSynced) {
+              // Create session in Convex
+              const sessionToken = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+              const expires = Date.now() + (60 * 60 * 24 * 7 * 1000); // 7 days
+
+              const sessionCreated = await createSessionInConvex({
+                userId: String(userInfo.id || userInfo.login),
+                sessionToken,
+                expires,
+              }, convexUrl);
+
+              if (sessionCreated) {
+                console.log('Session created in Convex successfully');
+                // Store session token for cookie
+                userInfo.sessionToken = sessionToken;
+              }
+            }
+          } catch (convexError) {
+            console.error('Failed to sync user with Convex:', convexError);
+          }
+        }
+
         // Create session cookie
         const sessionData = {
           id: userInfo.id || userInfo.login,
@@ -167,7 +206,8 @@ export const ALL: APIRoute = async ({ request, params }) => {
           email: userInfo.email,
           image: userInfo.picture || userInfo.avatar_url,
           provider,
-          createdAt: Date.now()
+          createdAt: Date.now(),
+          sessionToken: userInfo.sessionToken // Include Convex session token
         };
 
         console.log('Session data created:', sessionData);
@@ -204,6 +244,32 @@ export const ALL: APIRoute = async ({ request, params }) => {
     if (sessionMatch) {
       try {
         const sessionData = JSON.parse(decodeURIComponent(sessionMatch[1]));
+        
+        // Verify session with Convex if available
+        const convexUrl = import.meta.env.CONVEX_URL;
+        if (convexUrl && sessionData.sessionToken) {
+          try {
+            const user = await verifySessionWithConvex(sessionData.sessionToken, convexUrl);
+            
+            if (user) {
+              return new Response(JSON.stringify({ 
+                user: {
+                  ...sessionData,
+                  // Merge with fresh data from Convex
+                  name: user.name || sessionData.name,
+                  email: user.email || sessionData.email,
+                  image: user.image || sessionData.image,
+                }
+              }), {
+                headers: { 'Content-Type': 'application/json' }
+              });
+            }
+          } catch (convexError) {
+            console.error("Convex session verification failed:", convexError);
+          }
+        }
+        
+        // Fall back to cookie data if Convex check fails
         return new Response(JSON.stringify({ user: sessionData }), {
           headers: { 'Content-Type': 'application/json' }
         });

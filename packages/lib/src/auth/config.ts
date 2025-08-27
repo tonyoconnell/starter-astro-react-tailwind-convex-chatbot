@@ -1,23 +1,11 @@
 import { betterAuth } from "better-auth";
 import { createAuthClient } from "better-auth/react";
 
-// Note: Commented out Convex imports to avoid initialization errors
-// import { convexAdapter } from "@better-auth-kit/convex";
-// import { ConvexHttpClient } from "convex/browser";
-
-// Initialize Convex client for database adapter (only if URL is provided)
-// const convexUrl = process.env.CONVEX_URL;
-// const convexClient = convexUrl ? new ConvexHttpClient(convexUrl) : null;
-
 // For client-side usage, this config won't have access to server env vars
 // Use createServerAuth in API routes instead
 const isDev = process.env.NODE_ENV !== 'production';
 
 export const auth = betterAuth({
-  // Use in-memory database for development (session storage in memory)
-  // TODO: Add Convex adapter once backend is deployed
-  // database: convexClient ? convexAdapter(convexClient) : undefined,
-  
   // OAuth providers configuration - empty for client-side
   // Server-side API routes should use createServerAuth instead
   socialProviders: {},
