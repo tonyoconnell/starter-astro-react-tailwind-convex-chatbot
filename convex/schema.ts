@@ -8,7 +8,59 @@ const messagePart = v.object({
 });
 
 export default defineSchema({
-  // Users table - managed by BetterAuth integration
+  // BetterAuth required tables
+  user: defineTable({
+    id: v.string(),
+    name: v.string(),
+    email: v.string(),
+    emailVerified: v.optional(v.boolean()),
+    image: v.optional(v.string()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_email", ["email"]),
+    
+  session: defineTable({
+    id: v.string(),
+    userId: v.string(),
+    expiresAt: v.number(),
+    token: v.string(),
+    ipAddress: v.optional(v.string()),
+    userAgent: v.optional(v.string()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_token", ["token"])
+    .index("by_user_id", ["userId"]),
+    
+  account: defineTable({
+    id: v.string(),
+    userId: v.string(),
+    accountId: v.string(),
+    providerId: v.string(),
+    accessToken: v.optional(v.string()),
+    refreshToken: v.optional(v.string()),
+    idToken: v.optional(v.string()),
+    accessTokenExpiresAt: v.optional(v.number()),
+    refreshTokenExpiresAt: v.optional(v.number()),
+    scope: v.optional(v.string()),
+    password: v.optional(v.string()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_user_id", ["userId"]),
+    
+  verification: defineTable({
+    id: v.string(),
+    identifier: v.string(),
+    value: v.string(),
+    expiresAt: v.number(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_identifier", ["identifier"]),
+
+  // App-specific tables (keeping original names for app use)
   users: defineTable({
     name: v.string(),
     email: v.optional(v.string()),
