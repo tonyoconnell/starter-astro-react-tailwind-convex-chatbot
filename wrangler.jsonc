@@ -1,0 +1,22 @@
+{
+	"name": "astro-convex-ai",
+	"compatibility_date": "2024-12-01",
+	"compatibility_flags": ["nodejs_compat_v2"],
+	"main": "./apps/web/dist/_worker.js",
+	"assets": {
+		"directory": "./apps/web/dist",
+		"binding": "ASSETS"
+	},
+	"env": {
+		"production": {
+			"vars": {
+				"ENVIRONMENT": "production"
+			}
+		},
+		"preview": {
+			"vars": {
+				"ENVIRONMENT": "preview"
+			}
+		}
+	}
+}
