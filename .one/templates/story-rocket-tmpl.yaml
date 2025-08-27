@@ -1,0 +1,244 @@
+template:
+  id: story-rocket-template-v1
+  name: R.O.C.K.E.T. Story Document
+  version: 1.0
+  description: Story template using R.O.C.K.E.T. framework for maximum clarity and implementation effectiveness
+  output:
+    format: markdown
+    filename: .one/stories/{{story_id}}.md
+    title: "{{story_title}}"
+
+workflow:
+  mode: interactive
+  framework: rocket
+  elicitation: advanced-elicitation
+
+sections:
+  - id: header
+    title: Story Metadata
+    type: metadata
+    fields:
+      - story_id: "{{story_id}}"
+      - status: "{{status}}"
+      - priority: "{{priority}}"
+      - mission: "{{mission_id}}"
+      - assigned_agent: "{{assigned_agent}}"
+
+  - id: role
+    title: "R - Role Definition"
+    type: text
+    instruction: |
+      Define the expert role and perspective for implementing this story.
+      Specify the exact professional expertise needed and establish credibility.
+    template: |
+      **Expert Role**: {{expert_role}}
+      **Specialization**: {{specialization}}
+      **Key Expertise Areas**: {{expertise_areas}}
+      **Authority Markers**: {{authority_markers}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner, dev-agent]
+
+  - id: objective
+    title: "O - Objective Clarity"
+    type: text
+    instruction: |
+      State the single, specific, measurable goal of this story.
+      Define clear success criteria and deliverables.
+    template: |
+      **Primary Objective**: {{primary_objective}}
+      **Success Criteria**: {{success_criteria}}
+      **Deliverables**: {{deliverables}}
+      **Timeline**: {{timeline}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner]
+
+  - id: context
+    title: "C - Context & Background"
+    type: text
+    instruction: |
+      Provide all relevant background information for implementation.
+      Include mission context, technical constraints, and integration requirements.
+    template: |
+      **Mission Context**: {{mission_context}}
+      **Technical Environment**: {{technical_environment}}
+      **Dependencies**: {{dependencies}}
+      **Constraints**: {{constraints}}
+      **Previous Work**: {{previous_work}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner]
+
+  - id: key-instructions
+    title: "K - Key Instructions"
+    type: numbered-list
+    instruction: |
+      Provide specific, actionable implementation instructions.
+      Break down into clear, sequential steps with quality criteria.
+    template: |
+      1. **{{instruction_1}}**
+         - Quality Criteria: {{quality_1}}
+         - Implementation Notes: {{notes_1}}
+      
+      2. **{{instruction_2}}**
+         - Quality Criteria: {{quality_2}}
+         - Implementation Notes: {{notes_2}}
+      
+      3. **{{instruction_3}}**
+         - Quality Criteria: {{quality_3}}
+         - Implementation Notes: {{notes_3}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner]
+
+  - id: examples
+    title: "E - Examples & References"
+    type: text
+    instruction: |
+      Provide 1-3 examples of desired outputs or reference implementations.
+      Show quality standards and format expectations.
+    template: |
+      **Example 1**: {{example_1}}
+      **Why it works**: {{explanation_1}}
+      
+      **Example 2**: {{example_2}}
+      **Why it works**: {{explanation_2}}
+      
+      **Reference Standards**: {{reference_standards}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner]
+
+  - id: tone-format
+    title: "T - Tone & Format Requirements"
+    type: text
+    instruction: |
+      Explicitly state output tone, style, and format requirements.
+      Include brand voice, technical specifications, and constraints.
+    template: |
+      **Tone Requirements**: {{tone_requirements}}
+      **Brand Voice**: {{brand_voice}}
+      **Format Specifications**: {{format_specs}}
+      **Technical Standards**: {{technical_standards}}
+      **Constraints**: {{format_constraints}}
+    elicit: true
+    owner: story-owner
+    editors: [story-owner]
+
+  # Implementation Section
+  - id: tasks-subtasks
+    title: "Implementation Tasks & Subtasks"
+    type: bullet-list
+    instruction: |
+      Break down the R.O.C.K.E.T. requirements into specific implementation tasks.
+      Reference the Key Instructions and maintain R.O.C.K.E.T. quality standards.
+    template: |
+      - [ ] **Role Implementation**: {{role_tasks}}
+        - [ ] {{role_subtask_1}}
+        - [ ] {{role_subtask_2}}
+      
+      - [ ] **Objective Achievement**: {{objective_tasks}}
+        - [ ] {{objective_subtask_1}}
+        - [ ] {{objective_subtask_2}}
+      
+      - [ ] **Context Integration**: {{context_tasks}}
+        - [ ] {{context_subtask_1}}
+        - [ ] {{context_subtask_2}}
+      
+      - [ ] **Quality Validation**: {{validation_tasks}}
+        - [ ] R.O.C.K.E.T. framework compliance check
+        - [ ] Implementation testing and validation
+    elicit: true
+    owner: story-owner
+    editors: [story-owner, dev-agent]
+
+  # Standard Dev Agent Sections
+  - id: dev-agent-record
+    title: "Dev Agent Record"
+    instruction: "This section is populated by the development agent during implementation"
+    owner: dev-agent
+    editors: [dev-agent]
+    sections:
+      - id: agent-model
+        title: "Agent Model Used"
+        template: "{{agent_model_name_version}}"
+        instruction: "Record the specific AI agent model and version used"
+        
+      - id: rocket-compliance
+        title: "R.O.C.K.E.T. Compliance Check"
+        instruction: "Validate implementation against R.O.C.K.E.T. framework standards"
+        template: |
+          - [ ] **Role**: Expert positioning maintained throughout implementation
+          - [ ] **Objective**: All success criteria met and validated
+          - [ ] **Context**: Background requirements fully integrated
+          - [ ] **Key Instructions**: All instructions followed precisely
+          - [ ] **Examples**: Output quality matches provided examples
+          - [ ] **Tone & Format**: All specifications adhered to
+          
+          **Compliance Score**: ___/6 | **Status**: {{compliance_status}}
+        
+      - id: debug-log-references
+        title: "Debug Log References"
+        instruction: "Reference debug logs or implementation traces"
+        
+      - id: completion-notes
+        title: "Completion Notes List"
+        instruction: "Implementation notes and issue resolution"
+        
+      - id: file-list
+        title: "File List"
+        instruction: "All files created, modified, or affected during implementation"
+
+  - id: quality-validation
+    title: "R.O.C.K.E.T. Quality Gate"
+    instruction: "Quality validation using R.O.C.K.E.T. framework standards"
+    owner: qa-agent
+    editors: [qa-agent]
+    template: |
+      **R - Role Definition**: ___/10
+      - Expert positioning clear and maintained
+      - Authority demonstrated through implementation
+      
+      **O - Objective Achievement**: ___/10  
+      - Success criteria completely met
+      - Deliverables match specifications
+      
+      **C - Context Integration**: ___/10
+      - Background requirements fully integrated
+      - Dependencies and constraints respected
+      
+      **K - Key Instructions**: ___/10
+      - All instructions followed precisely
+      - Quality criteria met for each step
+      
+      **E - Examples Alignment**: ___/10
+      - Output quality matches reference standards
+      - Implementation demonstrates example principles
+      
+      **T - Tone & Format**: ___/10
+      - Brand voice and style requirements met
+      - Technical specifications adhered to
+      
+      **Total Score**: ___/60 | **Average**: ___/10
+      
+      **Quality Gate**: [ ] Pass (7+/10) [ ] Fail (<7/10)
+      **Publication Ready**: [ ] Yes (8+/10) [ ] No (<8/10)
+
+  - id: changelog
+    title: "Change Log"
+    type: table
+    columns: [Date, Version, Description, Author]
+    instruction: "Track all changes to this R.O.C.K.E.T. story document"
+    owner: story-owner
+    editors: [story-owner, dev-agent, qa-agent]
+
+agent_config:
+  editable_sections: 
+    - tasks-subtasks
+    - dev-agent-record
+    - quality-validation
+    - changelog
+  rocket_validation: true
+  minimum_quality_score: 7.0
+  publication_threshold: 8.0

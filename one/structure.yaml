@@ -1,0 +1,158 @@
+# ONE Directory User Workspace Structure  
+# Mission → Story → Task → Agent Cascade System
+
+workspace:
+  name: "ONE Framework Developer Workspace - Cascade System"
+  version: "2.1.0"
+  optimization_date: "2025-08-20"
+  ux_specialist: "Una O'Connor"
+  architecture: "cascade-driven-quality-system"
+
+# PRIMARY DEVELOPER ZONES (MySpace-style customization)
+primary_zones:
+  active_work:
+    description: "Current development focus"
+    directories:
+      - missions/          # Active strategic objectives
+      - stories/           # Current narratives being developed
+      - tasks/             # Immediate work items
+    priority: "immediate"
+    access_pattern: "daily"
+    
+  collaboration:
+    description: "Team coordination (agents now in .claude/agents/)"
+    directories:
+      - teams/             # Cross-functional teams
+      - workflows/         # Orchestration processes (references .one/ and .claude/)
+    priority: "high"
+    access_pattern: "multiple_daily"
+    note: "112+ AI agents now located in .claude/agents/ with root: .one access"
+    
+  content_creation:
+    description: "Content and documentation generation"
+    directories:
+      - templates/         # Document templates
+      - playbooks/         # Generated playbooks
+      - guides/            # How-to documentation
+    priority: "high"
+    access_pattern: "frequent"
+
+# SUPPORTING INFRASTRUCTURE
+support_zones:
+  foundation:
+    description: "Core knowledge and configuration"
+    directories:
+      - data/              # Knowledge base and methodology
+      - ontology/          # System architecture
+      - core-config.yaml   # Main configuration
+    priority: "medium"
+    access_pattern: "reference"
+    
+  quality_assurance:
+    description: "Validation and testing"
+    directories:
+      - checklists/        # Quality validation
+      - tests/             # Automated testing
+      - tools/quality/     # QA tools
+    priority: "medium"
+    access_pattern: "validation"
+    
+  resources:
+    description: "Assets and reference materials"
+    directories:
+      - assets/            # Images, documents, resources
+      - brand/             # Brand guidelines
+      - research/          # Analysis and reports
+    priority: "low"
+    access_pattern: "occasional"
+
+# ARCHIVE AND SPECIALIZED
+archive_zones:
+  historical:
+    description: "Completed work and legacy items"
+    directories:
+      - archive/           # Completed missions/stories
+    priority: "low"
+    access_pattern: "reference_only"
+    
+  advanced:
+    description: "Power user and specialized tooling"
+    directories:
+      - tools/             # Advanced utilities
+      - prompts/           # Prompt library
+      - demonstrations/    # Examples and demos
+    priority: "specialized"
+    access_pattern: "power_users"
+
+# USER EXPERIENCE OPTIMIZATION
+ux_patterns:
+  navigation_flow:
+    primary: "missions → stories → tasks → agents (.claude/agents/)"
+    secondary: "templates (.one/) → guides → workflows (.one/)"
+    emergency: "checklists (.one/) → tools → tests"
+    cascade_flow: "Mission → Story → Task → Agent (quality gates at each level)"
+    
+  workspace_customization:
+    theme_support: true
+    personal_dashboard: true
+    agent_favorites: "top_8_customizable"
+    quick_access: ["missions", "agents", "templates"]
+    
+  cognitive_load_reduction:
+    max_top_level_items: 12
+    categorization: "by_usage_frequency"
+    visual_hierarchy: "priority_based"
+    
+  discoverability:
+    onboarding_path: "missions → stories → agents"
+    help_integration: "contextual_guides"
+    search_optimization: "semantic_and_filename"
+
+# WORKFLOW INTEGRATION
+developer_workflows:
+  daily_routine:
+    entry_point: "missions/"
+    frequent_paths:
+      - "missions/ → stories/ → tasks/"
+      - "agents/ → workflows/ → templates/"
+      - "checklists/ → tests/ → tools/"
+    
+  project_kickoff:
+    sequence:
+      1. "Check missions/ for objectives"
+      2. "Create stories/ for narratives"
+      3. "Break into tasks/ for execution"
+      4. "Assign agents/ for specialization"
+      
+  collaboration:
+    shared_spaces: ["teams/", "workflows/", "playbooks/"]
+    individual_spaces: ["tasks/", "tests/", "tools/"]
+    
+# PERFORMANCE OPTIMIZATION
+access_optimization:
+  hot_paths:
+    - "missions/"
+    - "stories/"
+    - "agents/"
+    - "templates/"
+  
+  cold_storage:
+    - "archive/"
+    - "research/"
+    - "demonstrations/"
+    
+  cache_friendly:
+    frequently_accessed: ["core-config.yaml", "ontology.md", "one.md"]
+    templates: ["templates/", "guides/"]
+
+# FUTURE EXTENSIBILITY
+extensibility:
+  plugin_support: true
+  custom_directories: true
+  user_preferences: true
+  team_configurations: true
+  
+personalization:
+  dashboard_widgets: ["active_missions", "favorite_agents", "recent_templates"]
+  quick_actions: ["create_mission", "summon_agent", "generate_playbook"]
+  workspace_themes: ["developer", "marketer", "executive", "custom"]

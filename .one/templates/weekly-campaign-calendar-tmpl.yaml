@@ -1,0 +1,277 @@
+weekly_campaign_calendar:
+  week_of: "{{WEEK_START_DATE}}"
+  campaign_name: "{{CAMPAIGN_NAME}}"
+  campaign_objective: "{{CAMPAIGN_OBJECTIVE}}"
+  target_audience: "{{TARGET_AUDIENCE}}"
+  campaign_hashtag: "{{CAMPAIGN_HASHTAG}}"
+  
+  weekly_theme: "{{WEEKLY_THEME}}"
+  key_messages:
+    - "{{KEY_MESSAGE_1}}"
+    - "{{KEY_MESSAGE_2}}"
+    - "{{KEY_MESSAGE_3}}"
+    
+  monday:
+    theme: "{{MONDAY_THEME}}"
+    objective: "{{MONDAY_OBJECTIVE}}"
+    
+    social_media:
+      facebook:
+        post_type: "{{MON_FB_POST_TYPE}}"
+        content: "{{MON_FB_CONTENT}}"
+        timing: "{{MON_FB_TIMING}}"
+        cta: "{{MON_FB_CTA}}"
+      instagram:
+        feed: "{{MON_IG_FEED}}"
+        stories: "{{MON_IG_STORIES}}"
+        reels: "{{MON_IG_REELS}}"
+      tiktok:
+        video_concept: "{{MON_TIKTOK_CONCEPT}}"
+        trending_strategy: "{{MON_TIKTOK_STRATEGY}}"
+      linkedin:
+        post_focus: "{{MON_LINKEDIN_FOCUS}}"
+        professional_angle: "{{MON_LINKEDIN_ANGLE}}"
+      twitter:
+        thread_topic: "{{MON_TWITTER_THREAD}}"
+        engagement_strategy: "{{MON_TWITTER_ENGAGEMENT}}"
+        
+    email_marketing:
+      campaign_type: "{{MON_EMAIL_TYPE}}"
+      subject_line: "{{MON_EMAIL_SUBJECT}}"
+      content_focus: "{{MON_EMAIL_CONTENT}}"
+      
+    content_marketing:
+      blog_status: "{{MON_BLOG_STATUS}}"
+      video_content: "{{MON_VIDEO_CONTENT}}"
+      
+    paid_advertising:
+      campaign_focus: "{{MON_ADS_FOCUS}}"
+      budget_allocation: "{{MON_ADS_BUDGET}}"
+      
+  tuesday:
+    theme: "{{TUESDAY_THEME}}"
+    objective: "{{TUESDAY_OBJECTIVE}}"
+    
+    social_media:
+      facebook:
+        post_type: "{{TUE_FB_POST_TYPE}}"
+        content: "{{TUE_FB_CONTENT}}"
+        timing: "{{TUE_FB_TIMING}}"
+        cta: "{{TUE_FB_CTA}}"
+      instagram:
+        feed: "{{TUE_IG_FEED}}"
+        stories: "{{TUE_IG_STORIES}}"
+        reels: "{{TUE_IG_REELS}}"
+      tiktok:
+        video_concept: "{{TUE_TIKTOK_CONCEPT}}"
+        trending_strategy: "{{TUE_TIKTOK_STRATEGY}}"
+      linkedin:
+        post_focus: "{{TUE_LINKEDIN_FOCUS}}"
+        professional_angle: "{{TUE_LINKEDIN_ANGLE}}"
+      twitter:
+        thread_topic: "{{TUE_TWITTER_THREAD}}"
+        engagement_strategy: "{{TUE_TWITTER_ENGAGEMENT}}"
+        
+    email_marketing:
+      campaign_type: "{{TUE_EMAIL_TYPE}}"
+      subject_line: "{{TUE_EMAIL_SUBJECT}}"
+      content_focus: "{{TUE_EMAIL_CONTENT}}"
+      
+    content_marketing:
+      blog_status: "{{TUE_BLOG_STATUS}}"
+      video_content: "{{TUE_VIDEO_CONTENT}}"
+      
+    paid_advertising:
+      campaign_focus: "{{TUE_ADS_FOCUS}}"
+      budget_allocation: "{{TUE_ADS_BUDGET}}"
+      
+  wednesday:
+    theme: "{{WEDNESDAY_THEME}}"
+    objective: "{{WEDNESDAY_OBJECTIVE}}"
+    
+    social_media:
+      facebook:
+        post_type: "{{WED_FB_POST_TYPE}}"
+        content: "{{WED_FB_CONTENT}}"
+        timing: "{{WED_FB_TIMING}}"
+        cta: "{{WED_FB_CTA}}"
+      instagram:
+        feed: "{{WED_IG_FEED}}"
+        stories: "{{WED_IG_STORIES}}"
+        reels: "{{WED_IG_REELS}}"
+      tiktok:
+        video_concept: "{{WED_TIKTOK_CONCEPT}}"
+        trending_strategy: "{{WED_TIKTOK_STRATEGY}}"
+      linkedin:
+        post_focus: "{{WED_LINKEDIN_FOCUS}}"
+        professional_angle: "{{WED_LINKEDIN_ANGLE}}"
+      twitter:
+        thread_topic: "{{WED_TWITTER_THREAD}}"
+        engagement_strategy: "{{WED_TWITTER_ENGAGEMENT}}"
+        
+    email_marketing:
+      campaign_type: "{{WED_EMAIL_TYPE}}"
+      subject_line: "{{WED_EMAIL_SUBJECT}}"
+      content_focus: "{{WED_EMAIL_CONTENT}}"
+      
+    content_marketing:
+      blog_status: "{{WED_BLOG_STATUS}}"
+      video_content: "{{WED_VIDEO_CONTENT}}"
+      
+    paid_advertising:
+      campaign_focus: "{{WED_ADS_FOCUS}}"
+      budget_allocation: "{{WED_ADS_BUDGET}}"
+      
+  thursday:
+    theme: "{{THURSDAY_THEME}}"
+    objective: "{{THURSDAY_OBJECTIVE}}"
+    
+    social_media:
+      facebook:
+        post_type: "{{THU_FB_POST_TYPE}}"
+        content: "{{THU_FB_CONTENT}}"
+        timing: "{{THU_FB_TIMING}}"
+        cta: "{{THU_FB_CTA}}"
+      instagram:
+        feed: "{{THU_IG_FEED}}"
+        stories: "{{THU_IG_STORIES}}"
+        reels: "{{THU_IG_REELS}}"
+      tiktok:
+        video_concept: "{{THU_TIKTOK_CONCEPT}}"
+        trending_strategy: "{{THU_TIKTOK_STRATEGY}}"
+      linkedin:
+        post_focus: "{{THU_LINKEDIN_FOCUS}}"
+        professional_angle: "{{THU_LINKEDIN_ANGLE}}"
+      twitter:
+        thread_topic: "{{THU_TWITTER_THREAD}}"
+        engagement_strategy: "{{THU_TWITTER_ENGAGEMENT}}"
+        
+    email_marketing:
+      campaign_type: "{{THU_EMAIL_TYPE}}"
+      subject_line: "{{THU_EMAIL_SUBJECT}}"
+      content_focus: "{{THU_EMAIL_CONTENT}}"
+      
+    content_marketing:
+      blog_status: "{{THU_BLOG_STATUS}}"
+      video_content: "{{THU_VIDEO_CONTENT}}"
+      
+    paid_advertising:
+      campaign_focus: "{{THU_ADS_FOCUS}}"
+      budget_allocation: "{{THU_ADS_BUDGET}}"
+      
+  friday:
+    theme: "{{FRIDAY_THEME}}"
+    objective: "{{FRIDAY_OBJECTIVE}}"
+    
+    social_media:
+      facebook:
+        post_type: "{{FRI_FB_POST_TYPE}}"
+        content: "{{FRI_FB_CONTENT}}"
+        timing: "{{FRI_FB_TIMING}}"
+        cta: "{{FRI_FB_CTA}}"
+      instagram:
+        feed: "{{FRI_IG_FEED}}"
+        stories: "{{FRI_IG_STORIES}}"
+        reels: "{{FRI_IG_REELS}}"
+      tiktok:
+        video_concept: "{{FRI_TIKTOK_CONCEPT}}"
+        trending_strategy: "{{FRI_TIKTOK_STRATEGY}}"
+      linkedin:
+        post_focus: "{{FRI_LINKEDIN_FOCUS}}"
+        professional_angle: "{{FRI_LINKEDIN_ANGLE}}"
+      twitter:
+        thread_topic: "{{FRI_TWITTER_THREAD}}"
+        engagement_strategy: "{{FRI_TWITTER_ENGAGEMENT}}"
+        
+    email_marketing:
+      campaign_type: "{{FRI_EMAIL_TYPE}}"
+      subject_line: "{{FRI_EMAIL_SUBJECT}}"
+      content_focus: "{{FRI_EMAIL_CONTENT}}"
+      
+    content_marketing:
+      blog_status: "{{FRI_BLOG_STATUS}}"
+      video_content: "{{FRI_VIDEO_CONTENT}}"
+      
+    paid_advertising:
+      campaign_focus: "{{FRI_ADS_FOCUS}}"
+      budget_allocation: "{{FRI_ADS_BUDGET}}"
+      
+  saturday:
+    theme: "{{SATURDAY_THEME}}"
+    objective: "{{SATURDAY_OBJECTIVE}}"
+    content_focus: "{{SAT_CONTENT_FOCUS}}"
+    
+  sunday:
+    theme: "{{SUNDAY_THEME}}"
+    objective: "{{SUNDAY_OBJECTIVE}}"
+    content_focus: "{{SUN_CONTENT_FOCUS}}"
+    
+  cross_channel_coordination:
+    campaign_messaging:
+      core_message: "{{CORE_MESSAGE}}"
+      platform_adaptations:
+        facebook: "{{FB_MESSAGE_ADAPTATION}}"
+        instagram: "{{IG_MESSAGE_ADAPTATION}}"
+        tiktok: "{{TIKTOK_MESSAGE_ADAPTATION}}"
+        linkedin: "{{LINKEDIN_MESSAGE_ADAPTATION}}"
+        twitter: "{{TWITTER_MESSAGE_ADAPTATION}}"
+        email: "{{EMAIL_MESSAGE_ADAPTATION}}"
+        
+    content_repurposing:
+      primary_content: "{{PRIMARY_CONTENT}}"
+      blog_to_social: "{{BLOG_TO_SOCIAL_STRATEGY}}"
+      video_to_clips: "{{VIDEO_TO_CLIPS_STRATEGY}}"
+      email_to_social: "{{EMAIL_TO_SOCIAL_STRATEGY}}"
+      
+    timing_coordination:
+      campaign_launch: "{{CAMPAIGN_LAUNCH_TIME}}"
+      peak_engagement: "{{PEAK_ENGAGEMENT_WINDOWS}}"
+      cross_platform_delays: "{{CROSS_PLATFORM_TIMING}}"
+      
+  performance_tracking:
+    weekly_goals:
+      reach: "{{WEEKLY_REACH_GOAL}}"
+      engagement: "{{WEEKLY_ENGAGEMENT_GOAL}}"
+      conversions: "{{WEEKLY_CONVERSION_GOAL}}"
+      email_growth: "{{WEEKLY_EMAIL_GROWTH_GOAL}}"
+      
+    daily_checkpoints:
+      monday: "{{MON_PERFORMANCE_CHECK}}"
+      tuesday: "{{TUE_PERFORMANCE_CHECK}}"
+      wednesday: "{{WED_PERFORMANCE_CHECK}}"
+      thursday: "{{THU_PERFORMANCE_CHECK}}"
+      friday: "{{FRI_PERFORMANCE_CHECK}}"
+      
+    optimization_triggers:
+      underperforming_content: "{{UNDERPERFORMANCE_TRIGGER}}"
+      high_performing_content: "{{HIGH_PERFORMANCE_AMPLIFICATION}}"
+      budget_reallocation: "{{BUDGET_REALLOCATION_CRITERIA}}"
+      
+  team_responsibilities:
+    content_creation:
+      monday_creator: "{{MON_CONTENT_CREATOR}}"
+      tuesday_creator: "{{TUE_CONTENT_CREATOR}}"
+      wednesday_creator: "{{WED_CONTENT_CREATOR}}"
+      thursday_creator: "{{THU_CONTENT_CREATOR}}"
+      friday_creator: "{{FRI_CONTENT_CREATOR}}"
+      
+    social_media_management:
+      posting_schedule: "{{SMM_POSTING_SCHEDULE}}"
+      engagement_responsibility: "{{SMM_ENGAGEMENT_RESPONSIBILITY}}"
+      monitoring_duties: "{{SMM_MONITORING_DUTIES}}"
+      
+    campaign_coordination:
+      campaign_manager: "{{CAMPAIGN_MANAGER}}"
+      performance_analyst: "{{PERFORMANCE_ANALYST}}"
+      creative_director: "{{CREATIVE_DIRECTOR}}"
+      
+  contingency_planning:
+    backup_content:
+      emergency_posts: "{{EMERGENCY_POST_BANK}}"
+      evergreen_content: "{{EVERGREEN_CONTENT_BANK}}"
+      user_generated_content: "{{UGC_BACKUP_STRATEGY}}"
+      
+    crisis_communication:
+      response_protocol: "{{CRISIS_RESPONSE_PROTOCOL}}"
+      approval_chain: "{{CRISIS_APPROVAL_CHAIN}}"
+      messaging_templates: "{{CRISIS_MESSAGING_TEMPLATES}}"

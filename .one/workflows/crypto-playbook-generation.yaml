@@ -1,0 +1,158 @@
+name: Crypto Playbook Generation
+description: Complete 6-phase workflow for generating crypto marketing playbooks using AI influencer strategies and Diamond Formation Protocol™
+version: "1.0.0"
+agent_orchestrator: crypto-marketing-orchestrator
+
+phases:
+  - name: "Phase 1: Foundation Research & AI Character Development"
+    description: "Consolidate BullStamp research and establish The Bull's character framework"
+    duration: "1 hour with parallex agents"
+    agents:
+      - crypto-marketing-orchestrator
+    tasks:
+      - crypto-foundation-development
+    deliverables:
+      - "BullStamp ontology integration"
+      - "The Bull character framework"
+      - "Token economics validation"
+      - "Target community psychology mapping"
+    quality_gates:
+      - "Foundation clarity score 7+/10"
+      - "Character consistency validation"
+      - "Strategic alignment assessment"
+    
+  - name: "Phase 2: Foundation Chapters Generation (1-5)"
+    description: "Create foundational chapters establishing strategic clarity"
+    duration: "10-12 days"
+    agents:
+      - crypto-architecture-specialist      # Chapter 1: Architecture
+      - crypto-token-analyst               # Chapter 2: Company/Token
+      - crypto-market-researcher           # Chapter 3: Market
+      - crypto-community-psychologist      # Chapter 4: Customer
+      - crypto-strategic-synthesizer       # Chapter 5: Alignment
+    tasks:
+      - crypto-chapter-content-creation
+    deliverables:
+      - "Chapter 1: AI Influencer Framework architecture"
+      - "Chapter 2: Token analysis and The Bull development"
+      - "Chapter 3: Competitive landscape and viral opportunities"
+      - "Chapter 4: Community psychology and diamond hands culture"
+      - "Chapter 5: Strategic synthesis across dimensions"
+    quality_gates:
+      - "Universal 11-section structure compliance"
+      - "8,000-10,000 words per chapter"
+      - "Crypto-native authenticity validation"
+      - "R.O.C.K.E.T. framework score 7+/10"
+
+  - name: "Phase 3: ATTRACT Phase Chapters (6-8)"
+    description: "Create viral content and audience building strategies"
+    duration: "8-10 days"
+    agents:
+      - crypto-viral-content-creator       # Chapter 6: Hook
+      - crypto-airdrop-strategist          # Chapter 7: Gift
+      - crypto-wallet-identification-expert # Chapter 8: Identify
+    tasks:
+      - crypto-chapter-content-creation
+    deliverables:
+      - "Chapter 6: Viral content that spreads like alpha"
+      - "Chapter 7: Strategic airdrops and value demonstration"
+      - "Chapter 8: Anonymous apes to addressable army"
+    quality_gates:
+      - "Viral amplification potential validation"
+      - "Community capture methodology verification"
+      - "Content multiplication system integration"
+
+  - name: "Phase 4: CONVERT Phase Chapters (9-11)"
+    description: "Transform leads into diamond-handed holders"
+    duration: "8-10 days"
+    agents:
+      - crypto-engagement-specialist       # Chapter 9: Engage
+      - crypto-dex-optimization-expert     # Chapter 10: Sell
+      - crypto-diamond-formation-specialist # Chapter 11: Nurture
+    tasks:
+      - crypto-chapter-content-creation
+    deliverables:
+      - "Chapter 9: Trust bridge through real-time AMAs"
+      - "Chapter 10: High-conversion buy environment engineering"
+      - "Chapter 11: Diamond Formation Protocol™ implementation"
+    quality_gates:
+      - "Conversion optimization validation"
+      - "Diamond Formation Protocol™ completeness"
+      - "Crisis management system integration"
+
+  - name: "Phase 5: GROW & REFINE Chapters (12-15)"
+    description: "Maximize holder value and optimize systems"
+    duration: "10-12 days"
+    agents:
+      - crypto-ecosystem-expansion-manager  # Chapter 12: Upsell
+      - crypto-analytics-educator          # Chapter 13: Educate
+      - crypto-network-effect-amplifier    # Chapter 14: Share
+      - crypto-optimization-analyst        # Chapter 15: Optimize
+    tasks:
+      - crypto-chapter-content-creation
+    deliverables:
+      - "Chapter 12: Ecosystem expansion and utility maximization"
+      - "Chapter 13: Holder success through data intelligence"
+      - "Chapter 14: Viral advocacy and exponential growth"
+      - "Chapter 15: Systematic optimization and analytics"
+    quality_gates:
+      - "Value maximization strategy validation"
+      - "Network effect amplification systems"
+      - "Optimization and scaling frameworks"
+
+  - name: "Phase 6: Enhancement & Multi-Format Publishing"
+    description: "Apply BookRewriter transformation and generate outputs"
+    duration: "7-10 days"
+    agents:
+      - crypto-marketing-orchestrator
+    tasks:
+      - crypto-bookwriter-enhancement
+      - crypto-multi-format-publishing
+    deliverables:
+      - "All 15 chapters enhanced using BookRewriter.md"
+      - "Professional book quality narratives"
+      - "Markdown compilation (crypto-marketing-playbook.md)"
+      - "Professional PDF with crypto marketing visuals"
+      - "EPUB format optimized for mobile teams"
+    quality_gates:
+      - "BookRewriter transformation completeness"
+      - "Professional book quality standards"
+      - "Multi-format output validation"
+      - "Final R.O.C.K.E.T. framework compliance 8+/10"
+
+execution_rules:
+  sequential_phases: true
+  quality_gate_requirements:
+    - "Foundation phases must score 7+/10 before ATTRACT progression"
+    - "Each chapter must demonstrate viral potential and retention benefits"
+    - "Character consistency validated across all content"
+    - "BullStamp ontology integration verified at each phase"
+  
+  parallel_execution:
+    - "Foundation chapters (1-5) can be developed in parallel after Phase 1"
+    - "ATTRACT chapters (6-8) can be developed in parallel"
+    - "CONVERT chapters (9-11) can be developed in parallel"
+    - "GROW/REFINE chapters (12-15) can be developed in parallel"
+
+success_metrics:
+  - "Complete 15-chapter crypto marketing playbook"
+  - "150+ pages of professional book quality content"
+  - "Perfect synchronization with BullStamp ontology"
+  - "Diamond Formation Protocol™ integration throughout"
+  - "The Bull character consistency across all chapters"
+  - "Multi-format outputs (MD, PDF, EPUB) delivered"
+  - "R.O.C.K.E.T. framework compliance 8+/10 average"
+
+integration_requirements:
+  ontology_sync: "one/playbooks/clients/bullstamp/ontology.md"
+  epic_reference: "one/epics/epic-3.md"
+  story_validation: "All 15 stories (3.1-3.15) requirements integration"
+  character_consistency: "The Bull personality framework maintained"
+  framework_compliance: "BookChapterStructure.md and BookRewriter.md application"
+
+risk_mitigation:
+  - "Foundation quality gates prevent premature advancement"
+  - "Character consistency validation at each phase"
+  - "Anti-hallucination checks against proven viral strategies"
+  - "Community psychology accuracy validation"
+  - "Implementation feasibility testing of all tactics"

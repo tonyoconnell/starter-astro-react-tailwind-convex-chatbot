@@ -1,0 +1,1055 @@
+template:
+  id: customer-avatar-profile-template-v1
+  name: Customer Avatar Profile - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-customer-avatar-{{avatar_name}}.md"
+    title: "{{avatar_name}} Customer Avatar Profile - {{company_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  custom_elicitation:
+    title: "Customer Avatar Development Actions"
+    sections:
+      - id: demographic-psychographic-discovery
+        options:
+          - "Deep dive demographic analysis - age, income, location, lifestyle patterns"
+          - "Explore psychographic profile - values, interests, personality traits"
+          - "Map social identity - groups they belong to, communities they engage with"
+          - "Analyze digital behavior - platforms used, content consumed, online habits"
+          - "Research professional context - job role, industry, career aspirations"
+          - "Investigate family dynamics - household structure, family priorities"
+          - "Study cultural influences - background, traditions, worldview factors"
+          - "Proceed to next section"
+      - id: behavioral-psychology-analysis
+        options:
+          - "Map decision-making psychology - rational vs emotional triggers"
+          - "Analyze buying behavior patterns - research process, purchase timing"
+          - "Explore trust building factors - what creates confidence and credibility"
+          - "Investigate risk tolerance - what fears hold them back from buying"
+          - "Study social influence patterns - peer effects, authority figures"
+          - "Map cognitive biases - mental shortcuts they use in decisions"
+          - "Analyze communication preferences - channels, tone, frequency"
+          - "Research brand loyalty factors - what creates long-term attachment"
+          - "Proceed to next section"
+      - id: journey-optimization-insights
+        options:
+          - "Map awareness stage triggers - what gets their attention initially"
+          - "Analyze consideration phase behavior - how they evaluate options"
+          - "Study decision moment psychology - final purchase triggers"
+          - "Explore post-purchase experience - onboarding and success factors"
+          - "Investigate advocacy drivers - what motivates referrals and sharing"
+          - "Analyze channel preference evolution - how usage changes over time"
+          - "Map seasonal and cyclical patterns - timing influences on behavior"
+          - "Research competitive switching patterns - why they change providers"
+          - "Proceed to next section"
+
+sections:
+  - id: initial-setup
+    instruction: |
+      Customer Avatar Profile Creation Guide - Customer Avatar Grid Framework
+      
+      This template creates a comprehensive customer avatar using the Elevate Framework Customer Avatar Grid methodology.
+      The systematic 3x3 matrix approach ensures comprehensive customer understanding across:
+      - Observable Reality (Identity & Context, Pain Points & Fears, Goals & Aspirations)
+      - Underlying Drives (Self-Perception & Values, Core Emotions & Fears, Core Needs & Feelings)
+      - Future State (Watering Holes & Behavior, Cost of Inaction, Vision of Success)
+      
+      This includes:
+      - Detailed demographic and psychographic profiling
+      - Behavioral psychology insights for marketing optimization  
+      - Decision-making process mapping for conversion strategy
+      - Journey stage analysis for touchpoint optimization
+      - Communication preferences for channel strategy
+      - Pain point hierarchy for value proposition alignment
+      
+      The avatar serves as the foundation for all customer-centric marketing decisions and campaign development.
+      
+      Output file location: `docs/{{company_name}}-customer-avatar-{{avatar_name}}.md`
+
+  - id: avatar-foundation
+    title: Avatar Foundation & Overview - Customer Avatar Grid Setup
+    instruction: |
+      Establish the core identity and overview of this customer avatar using Customer Avatar Grid methodology.
+      This section provides the foundation for the 3x3 grid analysis that follows.
+      Use variables: customer_pains, customer_goals, customer_beliefs for psychological foundation.
+    sections:
+      - id: avatar-identity
+        title: Avatar Identity
+        template: |
+          **Avatar Name:** {{avatar_name}}
+          **Primary Segment:** {{primary_customer_segment}}
+          **Avatar Type:** {{avatar_classification}}
+          **Market Priority:** {{market_priority_level}}
+          **Revenue Potential:** {{revenue_potential_assessment}}
+          
+          **One-Line Description:**
+          {{avatar_one_line_description}}
+          
+          **Avatar Persona Summary:**
+          {{avatar_persona_summary}}
+      - id: business-context
+        title: Business Context
+        instruction: Adapt context based on B2B vs B2C business model
+        conditional:
+          b2b_business:
+            template: |
+              **Business Model Context:** B2B Focus
+              **Company Size Target:** {{target_company_size}}
+              **Industry Focus:** {{target_industries}}
+              **Role/Title:** {{target_job_roles}}
+              **Decision-Making Authority:** {{decision_authority_level}}
+              **Budget Authority:** {{budget_authority_range}}
+              **Buying Committee Role:** {{buying_committee_position}}
+          b2c_business:
+            template: |
+              **Business Model Context:** B2C Focus
+              **Market Segment:** {{consumer_market_segment}}
+              **Purchase Power:** {{individual_purchase_power}}
+              **Household Role:** {{household_decision_role}}
+              **Influence Network:** {{social_influence_network}}
+              **Purchase Frequency:** {{typical_purchase_frequency}}
+      - id: avatar-importance
+        title: Strategic Importance
+        template: |
+          **Why This Avatar Matters:**
+          {{avatar_strategic_importance}}
+          
+          **Market Share Potential:** {{market_share_potential}}
+          **Customer Lifetime Value:** {{estimated_customer_ltv}}
+          **Acquisition Cost Target:** {{target_customer_acquisition_cost}}
+          **Retention Potential:** {{customer_retention_likelihood}}
+
+  - id: demographic-profile
+    title: Demographic Profile - Observable Reality Row A1
+    instruction: |
+      Build comprehensive demographic foundation using Customer Avatar Grid Row A1 (Identity & Context).
+      This captures observable facts about demographics, role, environment, and info sources.
+      Focus on demographics that directly impact messaging, channels, and positioning.
+    sections:
+      - id: basic-demographics
+        title: Core Demographics
+        template: |
+          **Age Range:** {{age_range}}
+          **Generation:** {{generational_cohort}}
+          **Gender:** {{gender_profile}}
+          **Location:** {{geographic_location}}
+          **Urban/Suburban/Rural:** {{location_type}}
+          
+          **Income Level:** {{income_range}}
+          **Education:** {{education_level}}
+          **Employment Status:** {{employment_status}}
+          **Profession/Industry:** {{professional_context}}
+      - id: lifestyle-demographics
+        title: Lifestyle & Household
+        template: |
+          **Marital Status:** {{marital_status}}
+          **Household Composition:** {{household_structure}}
+          **Parental Status:** {{parenting_status}}
+          **Life Stage:** {{life_stage_description}}
+          
+          **Housing Situation:** {{housing_status}}
+          **Transportation:** {{transportation_preferences}}
+          **Health & Fitness:** {{health_fitness_priorities}}
+          **Recreation & Leisure:** {{leisure_activities}}
+      - id: technology-demographics
+        title: Technology & Digital Profile
+        template: |
+          **Technology Adoption Level:** {{tech_adoption_category}}
+          **Primary Devices:** {{device_preferences}}
+          **Internet Usage:** {{internet_usage_patterns}}
+          **Social Media Presence:** {{social_media_activity}}
+          
+          **Digital Communication Preferences:**
+          - Email: {{email_preference_level}}
+          - Text/SMS: {{sms_preference_level}}
+          - Social Media: {{social_media_communication}}
+          - Phone Calls: {{phone_preference_level}}
+          - Video Calls: {{video_call_preference}}
+
+  - id: psychographic-profile
+    title: Psychographic Profile
+    instruction: |
+      Develop deep psychological understanding using customer_beliefs variable insights.
+      Focus on attitudes, values, and motivations that drive behavior and decision-making.
+    sections:
+      - id: core-values-beliefs
+        title: Core Values & Beliefs
+        instruction: Extract from customer_beliefs variable to understand worldview
+        template: |
+          **Core Values (Top 5):**
+          1. {{core_value_1}} - {{value_1_manifestation}}
+          2. {{core_value_2}} - {{value_2_manifestation}}
+          3. {{core_value_3}} - {{value_3_manifestation}}
+          4. {{core_value_4}} - {{value_4_manifestation}}
+          5. {{core_value_5}} - {{value_5_manifestation}}
+          
+          **Belief System:**
+          - About Success: {{beliefs_about_success}}
+          - About Money: {{beliefs_about_money}}
+          - About Technology: {{beliefs_about_technology}}
+          - About Change: {{beliefs_about_change}}
+          - About Trust: {{beliefs_about_trust}}
+      - id: personality-traits
+        title: Personality Profile
+        template: |
+          **Big Five Personality Traits:**
+          - Openness: {{openness_level}} ({{openness_description}})
+          - Conscientiousness: {{conscientiousness_level}} ({{conscientiousness_description}})
+          - Extraversion: {{extraversion_level}} ({{extraversion_description}})
+          - Agreeableness: {{agreeableness_level}} ({{agreeableness_description}})
+          - Neuroticism: {{neuroticism_level}} ({{neuroticism_description}})
+          
+          **Communication Style:** {{communication_style_preference}}
+          **Learning Style:** {{learning_style_preference}}
+          **Decision-Making Style:** {{decision_making_style}}
+      - id: interests-lifestyle
+        title: Interests & Lifestyle Preferences
+        template: |
+          **Primary Interests:**
+          {{primary_interests_list}}
+          
+          **Media Consumption:**
+          - News Sources: {{news_sources}}
+          - Entertainment: {{entertainment_preferences}}
+          - Content Types: {{content_type_preferences}}
+          - Information Seeking: {{information_seeking_behavior}}
+          
+          **Social & Community:**
+          - Social Groups: {{social_group_participation}}
+          - Community Involvement: {{community_involvement_level}}
+          - Professional Networks: {{professional_network_activity}}
+          - Online Communities: {{online_community_participation}}
+
+  - id: pain-point-analysis
+    title: Pain Point & Frustration Analysis - Observable Reality Row A2
+    instruction: |
+      Map comprehensive pain hierarchy using Customer Avatar Grid Row A2 (Pain Points & Fears) methodology.
+      This captures stated pains and observable challenges at surface level.
+      Use customer_pains variable insights and organize by awareness level and emotional intensity for messaging strategy.
+    sections:
+      - id: pain-hierarchy
+        title: Pain Point Hierarchy
+        instruction: Use four-level pain analysis for marketing psychology application
+        template: |
+          **Level 1: Surface Frustrations (What they complain about)**
+          {{surface_pain_points}}
+          
+          **Level 2: Deeper Problems (What they struggle with)**
+          {{deeper_problem_areas}}
+          
+          **Level 3: Root Causes (What they may not articulate)**
+          {{root_cause_analysis}}
+          
+          **Level 4: Emotional Impact (How unresolved issues affect them)**
+          {{emotional_impact_description}}
+      - id: pain-manifestation
+        title: How Pains Manifest
+        repeatable: true
+        template: |
+          **Pain Point: {{pain_point_name}}**
+          - Manifestation: {{pain_manifestation}}
+          - Emotional Response: {{emotional_response}}
+          - Behavioral Impact: {{behavioral_impact}}
+          - Trigger Situations: {{trigger_situations}}
+          - Current Coping Methods: {{current_coping_strategies}}
+          - Pain Intensity: {{pain_intensity_level}}
+      - id: pain-language
+        title: Pain Point Language & Expression
+        template: |
+          **How They Describe Problems:**
+          - Exact Words/Phrases: {{customer_pain_language}}
+          - Emotional Descriptors: {{emotional_pain_descriptors}}
+          - Symptom Language: {{symptom_description_language}}
+          - Impact Language: {{impact_description_language}}
+          
+          **Pain Point Triggers:**
+          - Situational Triggers: {{situational_pain_triggers}}
+          - Time-Based Triggers: {{time_based_pain_triggers}}
+          - Relationship Triggers: {{relationship_pain_triggers}}
+          - Performance Triggers: {{performance_pain_triggers}}
+
+  - id: goals-aspirations
+    title: Goals & Aspirations Analysis - Observable Reality Row A3
+    instruction: |
+      Map goal hierarchy using Customer Avatar Grid Row A3 (Goals & Aspirations) methodology.
+      This captures stated goals and desired efficiencies at observable level.
+      Use customer_goals variable insights and connect to timeframes and transformation desires for campaign messaging.
+    sections:
+      - id: goal-hierarchy
+        title: Goal Hierarchy & Timeline
+        template: |
+          **Immediate Goals (Right Now):**
+          {{immediate_goals}}
+          
+          **Short-term Goals (3-6 months):**
+          {{short_term_goals}}
+          
+          **Long-term Goals (1-3 years):**
+          {{long_term_goals}}
+          
+          **Transformation Vision (Who they want to become):**
+          {{transformation_aspiration}}
+      - id: goal-categories
+        title: Goal Categories & Motivations
+        sections:
+          - id: professional-goals
+            title: Professional & Career Goals
+            conditional:
+              b2b_context:
+                template: |
+                  **Career Aspirations:**
+                  {{career_advancement_goals}}
+                  
+                  **Professional Recognition:**
+                  {{professional_recognition_desires}}
+                  
+                  **Skill Development:**
+                  {{skill_development_priorities}}
+                  
+                  **Business Impact:**
+                  {{business_impact_aspirations}}
+                  
+                  **Leadership Goals:**
+                  {{leadership_development_goals}}
+              general_context:
+                template: |
+                  **Work-Related Goals:**
+                  {{work_achievement_goals}}
+                  
+                  **Income/Financial:**
+                  {{financial_achievement_goals}}
+                  
+                  **Recognition/Status:**
+                  {{recognition_status_goals}}
+          - id: personal-goals
+            title: Personal & Lifestyle Goals
+            template: |
+              **Health & Wellness:**
+              {{health_wellness_goals}}
+              
+              **Relationships & Family:**
+              {{relationship_family_goals}}
+              
+              **Personal Growth:**
+              {{personal_development_goals}}
+              
+              **Lifestyle & Experiences:**
+              {{lifestyle_experience_goals}}
+              
+              **Financial Security:**
+              {{financial_security_goals}}
+      - id: goal-obstacles
+        title: Goal Achievement Obstacles
+        template: |
+          **Internal Obstacles:**
+          - Skills/Knowledge Gaps: {{skill_knowledge_gaps}}
+          - Confidence Issues: {{confidence_barriers}}
+          - Time Constraints: {{time_constraint_challenges}}
+          - Resource Limitations: {{resource_limitation_barriers}}
+          
+          **External Obstacles:**
+          - Market/Industry Barriers: {{market_industry_barriers}}
+          - Competition/Others: {{competitive_obstacles}}
+          - System/Process Barriers: {{system_process_barriers}}
+          - Economic/Financial: {{economic_financial_barriers}}
+          
+          **Emotional Obstacles:**
+          {{emotional_goal_obstacles}}
+
+  - id: decision-making-psychology
+    title: Decision-Making Psychology
+    instruction: |
+      Map decision psychology for conversion optimization.
+      Include cognitive biases, trust factors, and purchase justification patterns.
+    sections:
+      - id: decision-process
+        title: Decision-Making Process
+        conditional:
+          b2b_decision_process:
+            template: |
+              **B2B Decision Framework:**
+              
+              **Information Gathering:**
+              - Research Methods: {{b2b_research_methods}}
+              - Information Sources: {{b2b_information_sources}}
+              - Evaluation Criteria: {{b2b_evaluation_criteria}}
+              
+              **Stakeholder Involvement:**
+              - Decision Committee: {{b2b_decision_committee}}
+              - Influence Network: {{b2b_influence_network}}
+              - Approval Process: {{b2b_approval_process}}
+              
+              **Vendor Evaluation:**
+              - Selection Criteria: {{b2b_vendor_criteria}}
+              - Due Diligence Process: {{b2b_due_diligence}}
+              - Reference Checks: {{b2b_reference_process}}
+          b2c_decision_process:
+            template: |
+              **B2C Decision Framework:**
+              
+              **Purchase Triggers:**
+              - Emotional Triggers: {{b2c_emotional_triggers}}
+              - Rational Triggers: {{b2c_rational_triggers}}
+              - Social Triggers: {{b2c_social_triggers}}
+              
+              **Research Behavior:**
+              - Research Depth: {{b2c_research_depth}}
+              - Comparison Shopping: {{b2c_comparison_behavior}}
+              - Review Dependency: {{b2c_review_importance}}
+              
+              **Purchase Timing:**
+              - Decision Speed: {{b2c_decision_speed}}
+              - Timing Factors: {{b2c_timing_influences}}
+              - Seasonal Patterns: {{b2c_seasonal_patterns}}
+      - id: psychological-drivers
+        title: Psychological Decision Drivers
+        template: |
+          **Primary Motivation Type:** {{primary_motivation_type}}
+          
+          **Cognitive Biases (Strongest 3):**
+          1. {{cognitive_bias_1}} - {{bias_1_manifestation}}
+          2. {{cognitive_bias_2}} - {{bias_2_manifestation}}
+          3. {{cognitive_bias_3}} - {{bias_3_manifestation}}
+          
+          **System 1 vs System 2 Balance:**
+          - Emotional Decision Weight: {{emotional_decision_weight}}
+          - Rational Decision Weight: {{rational_decision_weight}}
+          - Typical Decision Style: {{typical_decision_approach}}
+          
+          **Trust Building Requirements:**
+          - Competence Signals: {{competence_trust_signals}}
+          - Benevolence Signals: {{benevolence_trust_signals}}
+          - Integrity Signals: {{integrity_trust_signals}}
+      - id: risk-tolerance
+        title: Risk Tolerance & Barriers
+        template: |
+          **Risk Tolerance Level:** {{risk_tolerance_assessment}}
+          
+          **Primary Fears:**
+          - Financial Risk: {{financial_risk_concerns}}
+          - Performance Risk: {{performance_risk_concerns}}
+          - Social Risk: {{social_risk_concerns}}
+          - Time Risk: {{time_investment_risk_concerns}}
+          
+          **Risk Mitigation Needs:**
+          {{risk_mitigation_requirements}}
+          
+          **Confidence Builders:**
+          {{confidence_building_factors}}
+          
+          **Validation Requirements:**
+          {{validation_need_specifics}}
+
+  - id: communication-preferences
+    title: Communication Preferences & Channel Optimization
+    instruction: |
+      Define optimal communication strategy based on preferences, psychology, and behavior patterns.
+      Include channel preferences, timing, tone, and message hierarchy.
+    sections:
+      - id: channel-preferences
+        title: Channel Preferences & Usage
+        template: |
+          **Primary Communication Channels (Ranked):**
+          1. {{primary_channel_1}} - {{channel_1_usage_context}}
+          2. {{primary_channel_2}} - {{channel_2_usage_context}}
+          3. {{primary_channel_3}} - {{channel_3_usage_context}}
+          4. {{primary_channel_4}} - {{channel_4_usage_context}}
+          5. {{primary_channel_5}} - {{channel_5_usage_context}}
+          
+          **Channel-Specific Behavior:**
+          - Email: {{email_behavior_patterns}}
+          - Social Media: {{social_media_usage_patterns}}
+          - Phone/Voice: {{phone_communication_preferences}}
+          - Text/SMS: {{sms_communication_patterns}}
+          - Video: {{video_communication_comfort}}
+          - In-Person: {{in_person_meeting_preferences}}
+      - id: message-optimization
+        title: Message Optimization Framework
+        template: |
+          **Tone Preferences:**
+          - Formality Level: {{communication_formality_preference}}
+          - Personality Match: {{personality_tone_alignment}}
+          - Emotional Resonance: {{emotional_tone_preferences}}
+          
+          **Content Preferences:**
+          - Detail Level: {{information_detail_preference}}
+          - Format Types: {{content_format_preferences}}
+          - Length Preferences: {{content_length_preferences}}
+          - Visual Elements: {{visual_content_preferences}}
+          
+          **Frequency & Timing:**
+          - Contact Frequency: {{communication_frequency_tolerance}}
+          - Best Days: {{optimal_communication_days}}
+          - Best Times: {{optimal_communication_times}}
+          - Timezone Considerations: {{timezone_communication_factors}}
+      - id: persuasion-psychology
+        title: Persuasion Psychology Profile
+        template: |
+          **Most Effective Persuasion Principles:**
+          1. {{persuasion_principle_1}} - {{principle_1_application}}
+          2. {{persuasion_principle_2}} - {{principle_2_application}}
+          3. {{persuasion_principle_3}} - {{principle_3_application}}
+          
+          **Social Proof Preferences:**
+          - Expert Authority: {{expert_authority_influence}}
+          - Peer Social Proof: {{peer_social_proof_influence}}
+          - Wisdom of Crowds: {{crowd_wisdom_influence}}
+          - Celebrity/Influencer: {{celebrity_influence_susceptibility}}
+          
+          **Urgency & Scarcity Response:**
+          - Time Pressure Sensitivity: {{time_pressure_response}}
+          - Scarcity Sensitivity: {{scarcity_response_level}}
+          - FOMO Susceptibility: {{fomo_susceptibility_level}}
+
+  - id: customer-journey-mapping
+    title: Customer Journey Integration
+    instruction: |
+      Map avatar behavior across journey stages for touchpoint optimization.
+      Connect psychology insights to journey stage strategies.
+    sections:
+      - id: journey-stage-behavior
+        title: Journey Stage Behavior Analysis
+        sections:
+          - id: awareness-stage
+            title: Awareness Stage Profile
+            template: |
+              **Awareness Triggers:**
+              {{awareness_stage_triggers}}
+              
+              **Information Seeking Behavior:**
+              {{awareness_information_seeking}}
+              
+              **Content Preferences:**
+              {{awareness_content_preferences}}
+              
+              **Channel Behavior:**
+              {{awareness_channel_behavior}}
+              
+              **Psychology Factors:**
+              - Attention Grabbers: {{awareness_attention_factors}}
+              - Curiosity Drivers: {{awareness_curiosity_drivers}}
+              - Trust Requirements: {{awareness_trust_needs}}
+          - id: consideration-stage
+            title: Consideration Stage Profile
+            template: |
+              **Evaluation Process:**
+              {{consideration_evaluation_process}}
+              
+              **Comparison Behavior:**
+              {{consideration_comparison_behavior}}
+              
+              **Information Needs:**
+              {{consideration_information_needs}}
+              
+              **Influence Factors:**
+              {{consideration_influence_factors}}
+              
+              **Psychology Factors:**
+              - Decision Criteria: {{consideration_decision_criteria}}
+              - Risk Assessment: {{consideration_risk_assessment}}
+              - Validation Needs: {{consideration_validation_needs}}
+          - id: decision-stage
+            title: Decision Stage Profile
+            template: |
+              **Final Decision Triggers:**
+              {{decision_stage_triggers}}
+              
+              **Last-Minute Concerns:**
+              {{decision_stage_concerns}}
+              
+              **Confidence Requirements:**
+              {{decision_confidence_requirements}}
+              
+              **Purchase Process Preferences:**
+              {{decision_purchase_preferences}}
+              
+              **Psychology Factors:**
+              - Urgency Motivators: {{decision_urgency_motivators}}
+              - Trust Confirmations: {{decision_trust_confirmations}}
+              - Risk Mitigation: {{decision_risk_mitigation}}
+      - id: post-purchase-psychology
+        title: Post-Purchase & Advocacy Psychology
+        template: |
+          **Onboarding Expectations:**
+          {{post_purchase_onboarding_expectations}}
+          
+          **Success Definition:**
+          {{post_purchase_success_definition}}
+          
+          **Support Preferences:**
+          {{post_purchase_support_preferences}}
+          
+          **Advocacy Triggers:**
+          - Referral Motivations: {{advocacy_referral_motivations}}
+          - Sharing Behaviors: {{advocacy_sharing_behaviors}}
+          - Community Participation: {{advocacy_community_participation}}
+          
+          **Retention Factors:**
+          {{long_term_retention_factors}}
+
+  - id: segmentation-analysis
+    title: Segmentation & Prioritization Analysis
+    instruction: |
+      Position this avatar within broader market segmentation strategy.
+      Define relationships to other customer segments and prioritization factors.
+    sections:
+      - id: segment-positioning
+        title: Segment Positioning
+        template: |
+          **Primary Segment:** {{primary_market_segment}}
+          **Sub-segment:** {{specific_sub_segment}}
+          **Segment Size:** {{segment_size_estimate}}
+          **Market Share Potential:** {{segment_market_share_potential}}
+          
+          **Segment Characteristics:**
+          {{segment_defining_characteristics}}
+          
+          **Differentiation from Other Segments:**
+          {{segment_differentiation_factors}}
+      - id: avatar-variations
+        title: Avatar Variations & Sub-types
+        repeatable: true
+        template: |
+          **Variation: {{avatar_variation_name}}**
+          - Key Differences: {{variation_key_differences}}
+          - Size Estimate: {{variation_size_estimate}}
+          - Messaging Adaptations: {{variation_messaging_adaptations}}
+          - Channel Preferences: {{variation_channel_differences}}
+      - id: prioritization-framework
+        title: Avatar Prioritization Framework
+        template: |
+          **Business Priority Score:** {{business_priority_score}}/10
+          
+          **Scoring Factors:**
+          - Market Size: {{market_size_score}}/10
+          - Revenue Potential: {{revenue_potential_score}}/10
+          - Acquisition Cost: {{acquisition_cost_score}}/10
+          - Retention Likelihood: {{retention_likelihood_score}}/10
+          - Strategic Fit: {{strategic_fit_score}}/10
+          
+          **Strategic Rationale:**
+          {{avatar_prioritization_rationale}}
+          
+          **Resource Allocation Recommendation:**
+          {{resource_allocation_recommendation}}
+
+  - id: marketing-application
+    title: Marketing Application Framework
+    instruction: |
+      Translate avatar insights into actionable marketing strategies.
+      Connect psychology, preferences, and journey insights to tactical implementation.
+    sections:
+      - id: messaging-strategy
+        title: Messaging Strategy Framework
+        template: |
+          **Core Message Architecture:**
+          - Primary Value Proposition: {{avatar_primary_value_prop}}
+          - Secondary Messages: {{avatar_secondary_messages}}
+          - Proof Points Required: {{avatar_proof_points}}
+          
+          **Language & Tone Guidelines:**
+          - Vocabulary Preferences: {{avatar_vocabulary_preferences}}
+          - Tone Requirements: {{avatar_tone_requirements}}
+          - Emotional Resonance: {{avatar_emotional_messaging}}
+          
+          **Message Testing Priorities:**
+          {{avatar_message_testing_priorities}}
+      - id: content-strategy
+        title: Content Strategy Framework
+        template: |
+          **Content Types by Journey Stage:**
+          - Awareness: {{awareness_content_types}}
+          - Consideration: {{consideration_content_types}}
+          - Decision: {{decision_content_types}}
+          - Post-Purchase: {{post_purchase_content_types}}
+          
+          **Content Format Preferences:**
+          {{avatar_content_format_preferences}}
+          
+          **Content Distribution Strategy:**
+          {{avatar_content_distribution_strategy}}
+      - id: campaign-optimization
+        title: Campaign Optimization Guidelines
+        template: |
+          **Campaign Psychology Applications:**
+          - Primary Psychological Triggers: {{campaign_psychological_triggers}}
+          - Persuasion Principle Focus: {{campaign_persuasion_principles}}
+          - Trust Building Elements: {{campaign_trust_elements}}
+          
+          **Channel Strategy:**
+          - Primary Channels: {{campaign_primary_channels}}
+          - Channel Messaging Adaptations: {{campaign_channel_adaptations}}
+          - Cross-Channel Coordination: {{campaign_cross_channel_approach}}
+          
+          **Testing & Optimization Priorities:**
+          {{campaign_testing_priorities}}
+
+  - id: success-metrics
+    title: Success Metrics & Validation Framework
+    instruction: |
+      Define how to measure avatar accuracy and marketing effectiveness.
+      Include validation methods and optimization indicators.
+    sections:
+      - id: avatar-validation
+        title: Avatar Validation Metrics
+        template: |
+          **Accuracy Validation Methods:**
+          - Customer Interview Validation: {{interview_validation_approach}}
+          - Survey Validation: {{survey_validation_metrics}}
+          - Behavioral Data Validation: {{behavioral_validation_metrics}}
+          - Campaign Performance Validation: {{campaign_validation_approach}}
+          
+          **Validation Schedule:**
+          {{avatar_validation_schedule}}
+          
+          **Update Triggers:**
+          {{avatar_update_triggers}}
+      - id: marketing-effectiveness
+        title: Marketing Effectiveness Metrics
+        template: |
+          **Engagement Metrics:**
+          - Content Engagement: {{content_engagement_targets}}
+          - Channel Performance: {{channel_performance_metrics}}
+          - Message Resonance: {{message_resonance_indicators}}
+          
+          **Conversion Metrics:**
+          - Awareness to Interest: {{awareness_interest_conversion}}
+          - Interest to Consideration: {{interest_consideration_conversion}}
+          - Consideration to Decision: {{consideration_decision_conversion}}
+          
+          **Long-term Value Metrics:**
+          - Customer Lifetime Value: {{customer_ltv_tracking}}
+          - Retention Rates: {{retention_rate_targets}}
+          - Advocacy Generation: {{advocacy_generation_metrics}}
+      - id: optimization-framework
+        title: Continuous Optimization Framework
+        template: |
+          **Regular Review Schedule:**
+          {{avatar_review_schedule}}
+          
+          **Data Collection Systems:**
+          {{avatar_data_collection_systems}}
+          
+          **Optimization Triggers:**
+          {{avatar_optimization_triggers}}
+          
+          **Evolution Strategy:**
+          {{avatar_evolution_strategy}}
+
+  - id: implementation-handoff
+    title: Implementation Handoff Documentation
+    instruction: |
+      Create structured handoff for marketing team avatar implementation.
+      Ensure insights are actionable and immediately applicable.
+    sections:
+      - id: quick-reference
+        title: Avatar Quick Reference Guide
+        template: |
+          **Avatar Summary Card:**
+          - Name: {{avatar_name}}
+          - Key Pain: {{primary_pain_point}}
+          - Key Goal: {{primary_goal}}
+          - Key Belief: {{primary_belief}}
+          - Preferred Channel: {{primary_communication_channel}}
+          - Psychology Trigger: {{primary_psychology_trigger}}
+          
+          **Do's and Don'ts:**
+          
+          **DO:**
+          - {{avatar_messaging_do_1}}
+          - {{avatar_messaging_do_2}}
+          - {{avatar_messaging_do_3}}
+          
+          **DON'T:**
+          - {{avatar_messaging_dont_1}}
+          - {{avatar_messaging_dont_2}}
+          - {{avatar_messaging_dont_3}}
+      - id: immediate-applications
+        title: Immediate Application Opportunities
+        template: |
+          **High-Impact Quick Wins:**
+          1. {{quick_win_opportunity_1}}
+          2. {{quick_win_opportunity_2}}
+          3. {{quick_win_opportunity_3}}
+          
+          **Campaign Modifications:**
+          {{immediate_campaign_modifications}}
+          
+          **Content Adaptations:**
+          {{immediate_content_adaptations}}
+      - id: integration-guidelines
+        title: Team Integration Guidelines
+        template: |
+          **Cross-Team Avatar Usage:**
+          - Marketing: {{marketing_team_avatar_usage}}
+          - Sales: {{sales_team_avatar_usage}}
+          - Customer Success: {{cs_team_avatar_usage}}
+          - Product: {{product_team_avatar_usage}}
+          
+          **Avatar Training Requirements:**
+          {{avatar_training_requirements}}
+          
+          **Consistency Maintenance:**
+          {{avatar_consistency_guidelines}}
+
+  - id: customer-avatar-grid-summary
+    title: Customer Avatar Grid Complete Framework
+    instruction: |
+      Synthesize all Customer Avatar Grid elements into the complete 3x3 framework as defined in the Elevate methodology.
+      This provides the complete customer understanding matrix for strategic reference.
+    sections:
+      - id: complete-avatar-grid
+        title: Complete Customer Avatar Grid
+        template: |
+          ## Customer Avatar Grid: Understanding Your Ideal Customer
+          
+          |                             | **1. Identity & Context (Who/Where They Are)**      | **2. Pain Points & Fears (What Hurts)**             | **3. Goals & Aspirations (What's Wanted)**           |
+          | :-------------------------- | :--------------------------------------------------- | :--------------------------------------------------- | :---------------------------------------------------- |
+          | **A. Observable Reality**   | **Demographics & Role:** {{demographic_summary}}    | **Stated Pains:** {{stated_pain_summary}}           | **Stated Goals:** {{stated_goals_summary}}           |
+          | **B. Underlying Drives**    | **Self-Perception & Values:** {{values_summary}}    | **Core Emotions & Fears:** {{emotional_drivers}}    | **Core Needs & Feelings:** {{deeper_needs_summary}}  |
+          | **C. Future State**         | **Watering Holes:** {{channel_behavior_summary}}    | **Cost of Inaction:** {{negative_future_summary}}   | **Vision of Success:** {{transformation_vision}}     |
+          
+          **Avatar Grid Synthesis:**
+          {{avatar_grid_synthesis_notes}}
+          
+          **Strategic Customer Insights:**
+          - Primary Pain Point: {{primary_pain_insight}}
+          - Primary Goal/Aspiration: {{primary_goal_insight}}
+          - Key Psychological Driver: {{key_psychological_driver}}
+          - Optimal Channel Strategy: {{optimal_channel_approach}}
+          - Core Value Proposition Alignment: {{value_prop_alignment}}
+
+  - id: final-validation
+    instruction: |
+      Final Avatar Review - Ensure comprehensive customer understanding ready for marketing application.
+      Verify psychological insights, journey mapping, and implementation readiness.
+    content: |
+      ---
+      
+      ## Avatar Profile Completion
+      
+      **Avatar Development Completed:** {{completion_date}}
+      **Developed By:** {{developer_name}}
+      **Validated By:** {{validator_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Comprehensiveness Check:**
+      - [ ] Demographic profile complete and specific
+      - [ ] Psychographic insights drive messaging strategy
+      - [ ] Pain point hierarchy enables value proposition alignment
+      - [ ] Goal mapping supports benefit communication
+      - [ ] Decision psychology informs conversion strategy
+      - [ ] Communication preferences optimize channel strategy
+      - [ ] Journey mapping connects to touchpoint optimization
+      - [ ] Marketing applications are immediately actionable
+      
+      **Strategic Validation:**
+      - [ ] Avatar represents significant market opportunity
+      - [ ] Psychological insights are behaviorally accurate
+      - [ ] Preferences align with business capabilities
+      - [ ] Journey mapping supports conversion funnel
+      - [ ] Implementation guidelines are team-ready
+      
+      ---
+      
+      _Avatar Version: 1.0_
+      _Framework: Elevate Marketing Customer Psychology_
+      _Next Review: {{next_review_date}}_
+      _Template: ONE Elevate Marketing Avatar Profile v1.0_
+
+# Advanced template configuration
+variables:
+  customer_pains:
+    type: object
+    properties:
+      surface_pains:
+        type: array
+        description: "Obvious frustrations customers express directly"
+        min_items: 3
+        max_items: 6
+      deeper_pains:
+        type: array
+        description: "Underlying problems driving surface frustrations"
+        min_items: 2
+        max_items: 4
+      root_causes:
+        type: array
+        description: "Fundamental issues customers may not articulate"
+        min_items: 1
+        max_items: 3
+      emotional_impact:
+        type: string
+        description: "How pain affects them emotionally and behaviorally"
+        min_length: 50
+    validation:
+      - pain_hierarchy_logical: "Deeper pains should logically drive surface pains"
+      - emotional_impact_specific: "Emotional impact must be specific and actionable"
+      - pain_language_authentic: "Use customer's actual language and expressions"
+
+  customer_goals:
+    type: object
+    properties:
+      immediate_goals:
+        type: array
+        description: "What they want to accomplish right now"
+        min_items: 2
+        max_items: 5
+      short_term_goals:
+        type: array
+        description: "3-6 month aspirations and objectives"
+        min_items: 2
+        max_items: 4
+      long_term_goals:
+        type: array
+        description: "1-3 year vision and major aspirations"
+        min_items: 1
+        max_items: 3
+      transformation_vision:
+        type: string
+        description: "Who they want to become or how they want to be perceived"
+        min_length: 30
+    validation:
+      - goal_progression_logical: "Goals should build toward transformation vision"
+      - goals_specific_measurable: "Goals should be specific enough to validate"
+      - goal_obstacles_identified: "Include barriers preventing goal achievement"
+
+  customer_beliefs:
+    type: object
+    properties:
+      problem_beliefs:
+        type: array
+        description: "How they understand and frame their challenges"
+        min_items: 2
+        max_items: 4
+      solution_beliefs:
+        type: array
+        description: "What they believe will solve their problems"
+        min_items: 2
+        max_items: 4
+      provider_beliefs:
+        type: array
+        description: "What they believe about service/product providers"
+        min_items: 2
+        max_items: 4
+      self_beliefs:
+        type: array
+        description: "How they see themselves and their capabilities"
+        min_items: 2
+        max_items: 3
+    validation:
+      - beliefs_consistent: "Belief systems should be internally consistent"
+      - beliefs_drive_behavior: "Beliefs should explain observed behaviors"
+      - belief_language_authentic: "Use their actual words and mental models"
+
+industry_adaptations:
+  b2b_saas:
+    demographic_focus:
+      - "Job role and responsibilities"
+      - "Company size and industry"
+      - "Technology stack and systems"
+      - "Team structure and reporting"
+    psychographic_focus:
+      - "Professional identity and career aspirations"
+      - "Innovation vs. stability preferences"
+      - "Risk tolerance in technology adoption"
+      - "Collaboration and communication styles"
+    decision_psychology_focus:
+      - "ROI and business impact evaluation"
+      - "Integration and implementation concerns"
+      - "Stakeholder approval processes"
+      - "Vendor relationship preferences"
+
+  b2b_services:
+    demographic_focus:
+      - "Industry expertise and specialization"
+      - "Client relationship management style"
+      - "Business maturity and growth stage"
+      - "Professional network and referrals"
+    psychographic_focus:
+      - "Expertise positioning and thought leadership"
+      - "Client service philosophy"
+      - "Growth vs. quality balance"
+      - "Professional reputation priorities"
+    decision_psychology_focus:
+      - "Expertise validation requirements"
+      - "Relationship and trust building needs"
+      - "Service delivery expectations"
+      - "Long-term partnership considerations"
+
+  b2c_product:
+    demographic_focus:
+      - "Household composition and roles"
+      - "Lifestyle and life stage factors"
+      - "Income and spending patterns"
+      - "Geographic and cultural influences"
+    psychographic_focus:
+      - "Personal values and lifestyle priorities"
+      - "Brand relationship and loyalty patterns"
+      - "Social influence and peer effects"
+      - "Self-expression and identity needs"
+    decision_psychology_focus:
+      - "Emotional vs. rational purchase drivers"
+      - "Social proof and recommendation dependence"
+      - "Purchase timing and seasonal factors"
+      - "Brand trust and reputation requirements"
+
+quality_validation:
+  psychological_accuracy:
+    - "Avatar behaviors align with stated psychology"
+    - "Decision-making patterns consistent with personality profile"
+    - "Communication preferences match psychographic profile"
+    - "Goal-pain alignment creates logical motivation structure"
+
+  marketing_applicability:
+    - "Insights translate to specific messaging strategies"
+    - "Channel preferences enable campaign optimization"
+    - "Journey mapping supports conversion funnel design"
+    - "Segmentation analysis enables prioritization decisions"
+
+  implementation_readiness:
+    - "Avatar guidance is specific and actionable"
+    - "Team handoff documentation enables immediate application"
+    - "Validation framework supports ongoing optimization"
+    - "Integration guidelines ensure consistent usage"
+
+input_requirements:
+  required_variables:
+    - customer_pains
+    - customer_goals
+    - customer_beliefs
+    - avatar_name
+    - company_name
+    - primary_customer_segment
+    - business_model_type
+    
+  conditional_requirements:
+    business_model:
+      b2b_business: ["target_company_size", "target_job_roles", "decision_authority_level"]
+      b2c_business: ["consumer_market_segment", "household_decision_role", "purchase_frequency"]
+    
+    industry_type:
+      saas: ["tech_adoption_category", "integration_preferences", "feature_priorities"]
+      services: ["expertise_requirements", "relationship_preferences", "service_delivery_expectations"]
+      product: ["brand_relationship_style", "purchase_decision_factors", "usage_patterns"]
+
+  validation_rules:
+    avatar_completeness:
+      - "All four pain levels must be identified with specific examples"
+      - "Goal hierarchy must include immediate, short-term, long-term, and transformation"
+      - "Belief system must cover problem, solution, provider, and self beliefs"
+      - "Decision psychology must include both rational and emotional factors"
+    
+    marketing_readiness:
+      - "Channel preferences must be ranked with usage context"
+      - "Communication style must specify tone, frequency, and format"
+      - "Journey stage behavior must include specific triggers and needs"
+      - "Psychological triggers must be actionable for campaign development"
+    
+    business_alignment:
+      - "Avatar must represent significant business opportunity"
+      - "Preferences must align with company capabilities and positioning"
+      - "Decision process must match sales and marketing approach"
+      - "Implementation requirements must be feasible for team execution"

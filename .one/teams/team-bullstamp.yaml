@@ -1,0 +1,12 @@
+bundle:
+  name: BullStamp Client Team
+  icon: 🐂
+  description: Specialized BullStamp agent team with character-driven marketing, token strategy, platform growth, and community building
+agents:
+  - bullstamp-marketing-orchestrator
+  - the-bull-character-manager
+  - bstp-token-strategist
+  - bulltilt-platform-growth
+  - bullstamp-community-builder
+workflows:
+  - bullstamp-implementation.yaml

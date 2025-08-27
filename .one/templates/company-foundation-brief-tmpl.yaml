@@ -1,0 +1,782 @@
+template:
+  id: company-foundation-brief-template-v2
+  name: Company Foundation Brief
+  version: 2.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-foundation-brief.md"
+    title: "{{company_name}} Company Foundation Brief"
+
+workflow:
+  mode: interactive
+  elicitation: rocket-framework
+  custom_elicitation:
+    title: "R.O.C.K.E.T. Framework Elicitation Actions"
+    sections:
+      - id: research-deepdive
+        options:
+          - "Market Position Analysis - Analyze competitive landscape and market positioning"
+          - "Customer Psychology Review - Deep dive into customer motivations and pain points"
+          - "Brand Archetype Assessment - Explore underlying brand personality patterns"
+          - "Industry Trend Analysis - Review market trends affecting brand positioning"
+          - "Competitive Voice Analysis - Analyze how competitors communicate vs. your approach"
+          - "Customer Language Mining - Extract exact phrases and terminology customers use"
+          - "Proceed to next section"
+      - id: opportunity-validation
+        options:
+          - "Unique Mechanism Validation - Test and refine your differentiation strategy"
+          - "Value Proposition Testing - Validate core value statements with target audience"
+          - "Brand Voice Resonance Check - Ensure voice aligns with customer expectations"
+          - "Market Gap Analysis - Identify unexploited opportunities in messaging"
+          - "Competitive Advantage Assessment - Strengthen unique positioning elements"
+          - "Brand Story Authenticity Review - Ensure authentic and compelling narrative"
+          - "Proceed to next section"
+      - id: clarity-refinement
+        options:
+          - "Message Clarity Audit - Simplify and clarify core messaging"
+          - "Brand Voice Consistency Check - Ensure voice consistency across all touchpoints"
+          - "Value Proposition Simplification - Distill complex benefits into clear statements"
+          - "Unique Mechanism Articulation - Refine explanation of your distinctive approach"
+          - "Brand Story Coherence Review - Ensure narrative flows logically and compellingly"
+          - "Implementation Guideline Development - Create clear usage guidelines"
+          - "Proceed to next section"
+
+sections:
+  - id: initial-setup
+    instruction: |
+      Company Foundation Brief Creation Guide
+      
+      This template creates a comprehensive foundation document that establishes:
+      - Brand voice and personality framework
+      - Unique mechanism and differentiation strategy  
+      - Core offer positioning and value propositions
+      - Implementation guidelines for consistent application
+      
+      The brief serves as the strategic foundation for all marketing activities and ensures brand consistency across all touchpoints.
+      
+      Output file location: `docs/{{company_name}}-foundation-brief.md`
+
+  - id: business-context-discovery
+    title: Business Context Discovery - Company Context Grid Foundation
+    instruction: |
+      Gather essential business context using the Elevate Framework Company Context Grid methodology.
+      This systematic 3x3 matrix approach ensures comprehensive business DNA definition across:
+      - WHAT we offer (Core Essentials, Differentiation, External Expression)
+      - HOW we deliver (Unique Mechanism, Operational Values, Brand Voice)
+      - WHO we are (Mission/Vision, Brand Pillars, Brand Story)
+      
+      Use advanced elicitation to understand industry dynamics, business maturity, and market positioning.
+      Present context questions progressively based on responses.
+    elicit: true
+    custom_elicitation: research-deepdive
+    sections:
+      - id: company-overview
+        title: Company Overview - Core Essentials (Grid Row A)
+        instruction: |
+          This section captures the fundamental "WHAT" of your business - the unshakeable basics that form the foundation of your Company Context Grid (Row A: Core Essentials)
+        template: |
+          **Company Name:** {{company_name}}
+          **Industry:** {{industry}}
+          **Business Stage:** {{business_stage}}
+          **Years in Business:** {{years_in_business}}
+          **Geographic Focus:** {{geographic_scope}}
+          
+          ## Company Context Grid Row A: Core Essentials
+          
+          **A1. Core Products/Services (WHAT We Offer):**
+          {{core_products_services}}
+          
+          **A2. Unique Mechanism - Core Function (HOW We Deliver):**
+          {{unique_mechanism_description}}
+          
+          **A3. Mission/Vision (WHO We Are - Purpose):**
+          {{mission_vision_statement}}
+      - id: business-maturity
+        title: Business Maturity Assessment
+        instruction: Adapt questioning based on business stage - startup vs established company needs different foundation approaches
+        conditional:
+          startup:
+            template: |
+              **Stage:** Early-stage startup ({{stage_details}})
+              **Funding Status:** {{funding_status}}
+              **Team Size:** {{team_size}}
+              **Product Status:** {{product_development_stage}}
+              **Market Validation:** {{market_validation_level}}
+          growth:
+            template: |
+              **Stage:** Growth stage ({{growth_metrics}})
+              **Revenue Scale:** {{revenue_range}}
+              **Market Position:** {{current_market_position}}
+              **Expansion Goals:** {{expansion_objectives}}
+              **Brand Recognition:** {{brand_awareness_level}}
+          established:
+            template: |
+              **Stage:** Established business ({{establishment_details}})
+              **Market Leadership:** {{market_position}}
+              **Brand Evolution:** {{brand_evolution_needs}}
+              **Competitive Pressure:** {{competitive_challenges}}
+              **Differentiation Needs:** {{differentiation_requirements}}
+      - id: industry-dynamics
+        title: Industry Context
+        conditional:
+          b2b_saas:
+            template: |
+              **SaaS Specifics:**
+              - Product Category: {{saas_category}}
+              - Customer Segments: {{customer_segments}}
+              - Sales Cycle: {{sales_cycle_length}}
+              - Integration Complexity: {{integration_requirements}}
+          b2b_services:
+            template: |
+              **Service Business Specifics:**
+              - Service Type: {{service_category}}
+              - Client Relationship Model: {{client_relationship_type}}
+              - Expertise Level: {{expertise_positioning}}
+              - Delivery Method: {{service_delivery_model}}
+          b2c_product:
+            template: |
+              **Consumer Product Specifics:**
+              - Product Category: {{product_category}}
+              - Purchase Behavior: {{purchase_frequency}}
+              - Emotional Drivers: {{emotional_purchase_drivers}}
+              - Distribution Channels: {{distribution_strategy}}
+          professional_services:
+            template: |
+              **Professional Services Specifics:**
+              - Practice Area: {{practice_specialization}}
+              - Client Sophistication: {{client_sophistication_level}}
+              - Relationship Duration: {{typical_engagement_length}}
+              - Expertise Differentiation: {{expertise_differentiators}}
+
+  - id: rocket-brand-voice-discovery
+    title: Brand Voice Discovery - External Expression (Grid Row C)
+    instruction: |
+      Use Company Context Grid Row C methodology to systematically develop External Expression elements.
+      This covers C1 (Offer Presentation), C2 (Brand Voice & Tone), and C3 (Brand Story & Personality).
+      Apply advanced elicitation to explore personality, communication patterns, and voice differentiation.
+      Build voice framework systematically through guided discovery aligned with Grid methodology.
+    elicit: true
+    custom_elicitation: research-deepdive
+    sections:
+      - id: brand-personality-core
+        title: Core Brand Personality
+        instruction: Use personality archetype methodology to identify authentic brand character
+        template: |
+          **Primary Brand Archetype:** {{primary_archetype}}
+          **Secondary Influence:** {{secondary_archetype}}
+          
+          **Personality Foundation (Grid B3 - Brand Pillars/Archetype):**
+          - **Energy Level:** {{energy_level}} ({{energy_description}})
+          - **Communication Style:** {{communication_approach}} ({{style_description}})
+          - **Relationship Approach:** {{relationship_style}} ({{relationship_description}})
+          - **Authority Position:** {{authority_positioning}} ({{authority_description}})
+          
+          **Company Context Grid Integration:**
+          This personality foundation directly informs Grid Cell B3 (Brand Pillars/Archetype) and connects to C2 (Brand Voice & Tone) implementation.
+      - id: voice-adjectives
+        title: Brand Voice Adjectives
+        instruction: Develop 3-5 specific, actionable adjectives that define communication personality
+        repeatable: true
+        template: |
+          **{{adjective}}**
+          - Definition: {{adjective_definition}}
+          - In Practice: {{adjective_application}}
+          - Customer Impact: {{adjective_customer_effect}}
+          - Differentiation: {{adjective_competitive_difference}}
+      - id: voice-examples
+        title: Voice in Action
+        instruction: Provide concrete examples demonstrating voice consistency across communication types
+        template: |
+          **Example Headlines:**
+          1. {{headline_1}} _(demonstrates {{voice_element_1}})_
+          2. {{headline_2}} _(demonstrates {{voice_element_2}})_
+          3. {{headline_3}} _(demonstrates {{voice_element_3}})_
+          
+          **Example Email Opening:**
+          {{email_example}}
+          _(Voice elements: {{email_voice_analysis}})_
+          
+          **Example Social Media Post:**
+          {{social_example}}
+          _(Voice elements: {{social_voice_analysis}})_
+          
+          **Example Customer Support Response:**
+          {{support_example}}
+          _(Voice elements: {{support_voice_analysis}})_
+
+  - id: rocket-opportunity-unique-mechanism
+    title: Unique Mechanism Development - Differentiation & Values (Grid Row B)
+    instruction: |
+      Apply Company Context Grid Row B methodology to systematically develop Differentiation & Values.
+      This covers B1 (Primary Value Proposition), B2 (Operational Values/Process Difference), and B3 (Brand Pillars).
+      Use advanced elicitation to explore competitive advantages, proprietary approaches, and distinctive value creation.
+      Validate mechanism strength and communicability according to Grid framework principles.
+    elicit: true
+    custom_elicitation: opportunity-validation
+    sections:
+      - id: mechanism-discovery
+        title: Unique Mechanism Discovery
+        instruction: Identify the distinctive approach, methodology, or system that creates differentiated value
+        template: |
+          **Mechanism Name (Grid A2):** {{mechanism_name}}
+          
+          **Core Approach (Grid A2 - Unique Mechanism):**
+          {{mechanism_description}}
+          
+          **Key Differentiators (Grid B2 - Operational Values/Process Difference):**
+          1. {{differentiator_1}} - {{differentiator_1_explanation}}
+          2. {{differentiator_2}} - {{differentiator_2_explanation}}
+          3. {{differentiator_3}} - {{differentiator_3_explanation}}
+          
+          **Competitive Context:**
+          While competitors {{competitor_approach}}, we {{our_distinctive_approach}}.
+          
+          **Company Context Grid Integration:**
+          - Grid A2: Fundamental process/technology that makes offering work
+          - Grid B2: How this mechanism achieves superior results through operational values
+          - Grid B1: Customer-facing result/benefit this mechanism enables
+      - id: mechanism-validation
+        title: Mechanism Validation
+        instruction: Provide evidence and proof points that validate the mechanism's effectiveness
+        repeatable: true
+        template: |
+          **Proof Point: {{proof_point_title}}**
+          - Evidence: {{proof_point_evidence}}
+          - Customer Impact: {{proof_point_impact}}
+          - Measurement: {{proof_point_metrics}}
+          - Differentiation: {{proof_point_uniqueness}}
+      - id: mechanism-benefits
+        title: Customer Benefits Framework
+        instruction: Translate mechanism features into specific customer benefits and outcomes
+        template: |
+          **Primary Benefit:** {{primary_benefit}}
+          **Benefit Explanation:** {{primary_benefit_explanation}}
+          
+          **Secondary Benefits:**
+          1. {{secondary_benefit_1}} - {{benefit_1_explanation}}
+          2. {{secondary_benefit_2}} - {{benefit_2_explanation}}
+          3. {{secondary_benefit_3}} - {{benefit_3_explanation}}
+          
+          **Outcome Promises:**
+          - {{outcome_promise_1}}
+          - {{outcome_promise_2}}
+          - {{outcome_promise_3}}
+
+  - id: rocket-clarity-core-offer
+    title: Core Offer Definition (R.O.C.K.E.T. Clarity)
+    instruction: |
+      Apply R.O.C.K.E.T. Clarity methodology to define and position core offering.
+      Use advanced elicitation to clarify value propositions, pricing psychology, and offer positioning.
+      Ensure offer aligns with unique mechanism and brand voice.
+    elicit: true
+    custom_elicitation: clarity-refinement
+    sections:
+      - id: primary-offer
+        title: Primary Offer Definition
+        template: |
+          **Offer Name:** {{core_offer_name}}
+          **Offer Category:** {{offer_category}}
+          
+          **Description:**
+          {{core_offer_description}}
+          
+          **Delivery Method:** {{delivery_method}}
+          **Engagement Model:** {{engagement_structure}}
+          **Investment Level:** {{price_positioning}}
+      - id: offer-features-benefits
+        title: Features and Benefits Architecture
+        instruction: Structure features around unique mechanism, link to specific customer outcomes
+        sections:
+          - id: core-features
+            title: Core Features
+            repeatable: true
+            template: |
+              **Feature: {{feature_name}}**
+              - Description: {{feature_description}}
+              - Unique Mechanism Connection: {{mechanism_connection}}
+              - Customer Benefit: {{customer_benefit}}
+              - Competitive Advantage: {{competitive_advantage}}
+          - id: supporting-features
+            title: Supporting Features
+            repeatable: true
+            template: |
+              **Feature: {{supporting_feature_name}}**
+              - Purpose: {{feature_purpose}}
+              - Customer Value: {{feature_value}}
+      - id: value-proposition-framework
+        title: Value Proposition Framework
+        instruction: Develop layered value propositions for different customer segments and decision-making contexts
+        sections:
+          - id: primary-value-prop
+            title: Primary Value Proposition
+            template: |
+              **Core Promise:** {{primary_value_proposition}}
+              
+              **Supporting Elements:**
+              - Functional Value: {{functional_value}}
+              - Emotional Value: {{emotional_value}}
+              - Social Value: {{social_value}}
+          - id: audience-specific-props
+            title: Audience-Specific Value Propositions
+            conditional:
+              b2b:
+                template: |
+                  **For Decision Makers:**
+                  {{decision_maker_value_prop}}
+                  
+                  **For End Users:**
+                  {{end_user_value_prop}}
+                  
+                  **For Procurement/Finance:**
+                  {{procurement_value_prop}}
+              b2c:
+                template: |
+                  **Rational Benefits:**
+                  {{rational_benefits}}
+                  
+                  **Emotional Benefits:**
+                  {{emotional_benefits}}
+                  
+                  **Self-Expression Benefits:**
+                  {{self_expression_benefits}}
+
+  - id: rocket-kinetic-brand-story
+    title: Brand Story Development (R.O.C.K.E.T. Kinetic)
+    instruction: |
+      Apply R.O.C.K.E.T. Kinetic methodology to develop compelling brand narrative.
+      Create story elements that drive emotional connection and support unique mechanism.
+      Ensure story authenticity and strategic alignment.
+    sections:
+      - id: origin-story
+        title: Authentic Origin Story
+        instruction: Develop genuine founding story that explains why the company exists and what drives its mission
+        template: |
+          **Founding Catalyst:**
+          {{founding_catalyst}}
+          
+          **The Challenge We Discovered:**
+          {{discovered_challenge}}
+          
+          **Our Realization:**
+          {{key_realization}}
+          
+          **The Solution We Created:**
+          {{solution_creation}}
+          
+          **Why This Matters:**
+          {{mission_importance}}
+      - id: mission-vision-values
+        title: Mission, Vision, and Values Framework
+        sections:
+          - id: mission-statement
+            title: Mission Statement
+            template: |
+              **Mission:**
+              {{mission_statement}}
+              
+              **Mission Explanation:**
+              {{mission_explanation}}
+          - id: vision-statement
+            title: Vision Statement
+            template: |
+              **Vision:**
+              {{vision_statement}}
+              
+              **Vision Impact:**
+              {{vision_impact_description}}
+          - id: core-values
+            title: Core Values
+            repeatable: true
+            template: |
+              **{{value_name}}**
+              - Definition: {{value_definition}}
+              - In Action: {{value_application}}
+              - Customer Impact: {{value_customer_benefit}}
+      - id: brand-personality-profile
+        title: Detailed Brand Personality
+        instruction: Create comprehensive personality profile that guides all brand interactions
+        template: |
+          **Brand Persona Overview:**
+          If our brand were a person, they would be {{persona_overview}}.
+          
+          **Personality Traits:**
+          - **Communication Style:** {{communication_personality}}
+          - **Relationship Approach:** {{relationship_personality}}
+          - **Problem-Solving Style:** {{problem_solving_personality}}
+          - **Leadership Style:** {{leadership_personality}}
+          
+          **Values and Beliefs:**
+          {{personality_values_beliefs}}
+          
+          **Aspirations:**
+          {{personality_aspirations}}
+
+  - id: rocket-engagement-implementation
+    title: Implementation Framework (R.O.C.K.E.T. Engagement)
+    instruction: |
+      Apply R.O.C.K.E.T. Engagement methodology to create actionable implementation guidelines.
+      Develop practical frameworks for consistent brand application across all touchpoints.
+      Include quality control mechanisms and evolution strategies.
+    sections:
+      - id: brand-application-guidelines
+        title: Brand Application Guidelines
+        sections:
+          - id: voice-implementation
+            title: Voice Implementation Checklist
+            template: |
+              **Before any communication goes live, ensure it:**
+              
+              - [ ] Reflects our {{primary_voice_adjective}} personality
+              - [ ] Demonstrates our {{secondary_voice_adjective}} approach  
+              - [ ] Maintains our {{tertiary_voice_adjective}} tone
+              - [ ] References or implies our unique mechanism
+              - [ ] Reinforces our primary value proposition
+              - [ ] Aligns with our brand values
+              - [ ] Serves our mission
+          - id: messaging-framework
+            title: Core Messaging Framework
+            template: |
+              **Elevator Pitch (30 seconds):**
+              {{elevator_pitch}}
+              
+              **One-Liner:**
+              {{one_liner}}
+              
+              **Tagline:**
+              {{tagline}}
+              
+              **Core Headlines:**
+              1. {{core_headline_1}}
+              2. {{core_headline_2}}
+              3. {{core_headline_3}}
+          - id: dos-and-donts
+            title: Brand Do's and Don'ts
+            template: |
+              **DO:**
+              - {{brand_do_1}}
+              - {{brand_do_2}}
+              - {{brand_do_3}}
+              - {{brand_do_4}}
+              
+              **DON'T:**
+              - {{brand_dont_1}}
+              - {{brand_dont_2}}
+              - {{brand_dont_3}}
+              - {{brand_dont_4}}
+      - id: competitive-positioning
+        title: Competitive Positioning Strategy
+        template: |
+          **What We Are NOT:**
+          
+          We explicitly differentiate ourselves from:
+          1. {{not_competitor_type_1}} - {{not_explanation_1}}
+          2. {{not_competitor_type_2}} - {{not_explanation_2}}
+          3. {{not_competitor_type_3}} - {{not_explanation_3}}
+          
+          **Our Stance vs. Competitors:**
+          
+          While competitors focus on {{competitor_focus}}, we believe in {{our_belief_focus}}.
+          
+          **Competitive Advantages:**
+          1. {{competitive_advantage_1}}
+          2. {{competitive_advantage_2}}
+          3. {{competitive_advantage_3}}
+
+  - id: rocket-tracking-evolution
+    title: Foundation Evolution Strategy (R.O.C.K.E.T. Tracking)
+    instruction: |
+      Apply R.O.C.K.E.T. Tracking methodology to establish foundation monitoring and evolution framework.
+      Create systems for maintaining brand consistency while enabling strategic growth.
+      Include review cycles and adaptation triggers.
+    sections:
+      - id: consistency-monitoring
+        title: Brand Consistency Monitoring
+        template: |
+          **Monthly Brand Health Checks:**
+          1. Voice consistency across all new content
+          2. Unique mechanism prominence in messaging
+          3. Value proposition clarity and relevance
+          4. Customer feedback alignment with brand promise
+          
+          **Quarterly Foundation Reviews:**
+          1. Are our voice adjectives still accurate and effective?
+          2. Is our unique mechanism still truly unique?
+          3. Do our value propositions resonate with current customers?
+          4. How has our competitive landscape changed?
+          5. What brand elements need evolution vs. preservation?
+      - id: growth-adaptation
+        title: Foundation Adaptation for Growth
+        template: |
+          **Scaling Considerations:**
+          {{scaling_brand_considerations}}
+          
+          **Evolution Triggers:**
+          - Market expansion: {{market_expansion_adaptations}}
+          - Product evolution: {{product_evolution_adaptations}}
+          - Competitive pressure: {{competitive_adaptation_strategy}}
+          - Customer feedback: {{customer_feedback_integration}}
+          
+          **Consistency vs. Evolution Balance:**
+          {{consistency_evolution_approach}}
+      - id: implementation-success-metrics
+        title: Implementation Success Metrics
+        template: |
+          **Brand Recognition Metrics:**
+          - {{brand_recognition_metric_1}}
+          - {{brand_recognition_metric_2}}
+          - {{brand_recognition_metric_3}}
+          
+          **Voice Consistency Metrics:**
+          - {{voice_consistency_metric_1}}
+          - {{voice_consistency_metric_2}}
+          - {{voice_consistency_metric_3}}
+          
+          **Differentiation Effectiveness:**
+          - {{differentiation_metric_1}}
+          - {{differentiation_metric_2}}
+          - {{differentiation_metric_3}}
+
+  - id: validation-quality-check
+    title: Foundation Quality Validation
+    instruction: |
+      Comprehensive validation of foundation elements for completeness, consistency, and strategic alignment.
+      Use foundation-completeness-checklist for systematic review.
+    sections:
+      - id: foundation-audit
+        title: Foundation Completeness Audit
+        content: |
+          This foundation brief will be validated using the comprehensive `foundation-completeness-checklist.md`. 
+          The checklist ensures:
+          
+          - Brand voice is specific, authentic, and differentiated
+          - Unique mechanism is clearly articulated and provable
+          - Core offer aligns with mechanism and brand promise
+          - Implementation guidelines are practical and complete
+          - Foundation supports long-term brand building
+      - id: strategic-alignment-check
+        title: Strategic Alignment Verification
+        template: |
+          **Business Strategy Alignment:**
+          - Foundation supports business objectives: {{business_alignment_verification}}
+          - Brand positioning enables growth goals: {{growth_alignment_verification}}
+          - Unique mechanism sustainable long-term: {{sustainability_verification}}
+          
+          **Market Positioning Alignment:**
+          - Differentiation is meaningful to customers: {{customer_relevance_verification}}
+          - Brand voice resonates with target audience: {{audience_resonance_verification}}
+          - Value propositions address real customer needs: {{value_relevance_verification}}
+      - id: implementation-readiness
+        title: Implementation Readiness Assessment
+        template: |
+          **Team Readiness:**
+          - Team understanding of brand voice: {{team_understanding_level}}
+          - Team ability to apply guidelines: {{application_capability_level}}
+          - Training needs identified: {{training_requirements}}
+          
+          **Systems Readiness:**
+          - Brand guidelines accessibility: {{guidelines_accessibility}}
+          - Review processes established: {{review_process_status}}
+          - Feedback mechanisms in place: {{feedback_system_status}}
+
+  - id: handoff-documentation
+    title: Foundation Implementation Handoff
+    instruction: |
+      Create structured handoff documentation for marketing team implementation.
+      Ensure foundation elements are ready for immediate tactical application.
+    sections:
+      - id: immediate-applications
+        title: Immediate Application Opportunities
+        template: |
+          **Priority Implementation Areas:**
+          1. {{implementation_priority_1}} - {{priority_1_timeline}}
+          2. {{implementation_priority_2}} - {{priority_2_timeline}}
+          3. {{implementation_priority_3}} - {{priority_3_timeline}}
+          
+          **Quick Wins:**
+          - {{quick_win_1}}
+          - {{quick_win_2}}
+          - {{quick_win_3}}
+      - id: content-creation-brief
+        title: Content Creation Brief
+        template: |
+          **Content Voice Requirements:**
+          {{content_voice_requirements}}
+          
+          **Unique Mechanism Integration:**
+          {{content_mechanism_integration}}
+          
+          **Value Proposition Emphasis:**
+          {{content_value_prop_emphasis}}
+          
+          **Brand Story Elements:**
+          {{content_story_elements}}
+      - id: campaign-integration
+        title: Campaign Integration Guidelines
+        template: |
+          **Campaign Voice Application:**
+          {{campaign_voice_guidelines}}
+          
+          **Unique Mechanism Showcase:**
+          {{campaign_mechanism_showcase}}
+          
+          **Value Proposition Hierarchy:**
+          {{campaign_value_prop_hierarchy}}
+          
+          **Brand Consistency Checks:**
+          {{campaign_consistency_requirements}}
+
+  - id: company-context-grid-summary
+    title: Company Context Grid Complete Framework
+    instruction: |
+      Synthesize all Company Context Grid elements into the complete 3x3 framework as defined in the Elevate methodology.
+      This provides the complete business DNA definition for strategic reference.
+    sections:
+      - id: complete-grid-synthesis
+        title: Complete Company Context Grid
+        template: |
+          ## Company Context Grid: Defining Your Business DNA
+          
+          |                                | **1. WHAT We Offer (Tangibles & Proposition)**     | **2. HOW We Deliver (Mechanism & Operations)**        | **3. WHO We Are (Identity & Purpose)**                    |
+          | :----------------------------- | :-------------------------------------------------- | :----------------------------------------------------- | :-------------------------------------------------------- |
+          | **A. CORE ESSENTIALS (The Basics)**  | **Core Products/Services:** {{core_products_services}} | **Unique Mechanism:** {{unique_mechanism_description}} | **Mission/Vision:** {{mission_vision_statement}}          |
+          | **B. DIFFERENTIATION & VALUES** | **Primary Value Proposition:** {{primary_value_proposition}} | **Operational Values:** {{operational_values_description}} | **Brand Pillars:** {{brand_pillars_summary}}              |
+          | **C. EXTERNAL EXPRESSION**     | **Offer Positioning:** {{offer_positioning_summary}} | **Brand Voice & Tone:** {{brand_voice_summary}}       | **Brand Story & Personality:** {{brand_story_summary}}    |
+          
+          **Grid Synthesis Notes:**
+          {{grid_synthesis_notes}}
+          
+          **Strategic Coherence Validation:**
+          - Column 1 (WHAT) Alignment: {{what_column_alignment}}
+          - Column 2 (HOW) Alignment: {{how_column_alignment}}  
+          - Column 3 (WHO) Alignment: {{who_column_alignment}}
+          - Overall Grid Coherence: {{overall_grid_coherence}}
+
+  - id: final-review
+    instruction: |
+      Final Foundation Review - Ensure all R.O.C.K.E.T. elements are complete and strategic.
+      Verify foundation provides clear guidance for all marketing activities.
+      Confirm alignment with business objectives and market positioning.
+    content: |
+      ---
+      
+      ## Foundation Approval
+      
+      **Foundation Review Completed:** {{review_completion_date}}
+      **Reviewed By:** {{reviewer_name}}
+      **Approved By:** {{approver_name}}
+      **Implementation Start Date:** {{implementation_start_date}}
+      
+      **Strategic Validation:**
+      - [ ] Brand voice is distinctive and authentic
+      - [ ] Unique mechanism is clearly differentiated
+      - [ ] Core offer aligns with brand promise
+      - [ ] Value propositions are customer-focused
+      - [ ] Implementation guidelines are actionable
+      - [ ] Foundation supports business growth
+      
+      ---
+      
+      _Document Version: 2.0_
+      _Created Using: R.O.C.K.E.T. Framework_
+      _Next Review: {{next_review_date}}_
+      _Template: ONE Elevate Marketing Foundation Brief v2.0_
+
+# Advanced template features and validation
+variables:
+  brand_voice:
+    type: object
+    properties:
+      adjectives: 
+        type: array
+        min_items: 3
+        max_items: 5
+      examples:
+        type: object
+        required: ["headlines", "email", "social"]
+    validation:
+      - adjectives_are_specific: "Each adjective must be specific and actionable, not generic"
+      - examples_demonstrate_consistency: "Examples must clearly demonstrate voice adjectives"
+  
+  unique_mechanism:
+    type: object
+    properties:
+      name: 
+        type: string
+        min_length: 3
+      description:
+        type: string
+        min_length: 50
+      proof_points:
+        type: array
+        min_items: 2
+    validation:
+      - mechanism_is_differentiated: "Mechanism must be clearly different from competitors"
+      - mechanism_is_provable: "Claims must be supported by evidence"
+  
+  core_offer:
+    type: object
+    properties:
+      name:
+        type: string
+        min_length: 3
+      description:
+        type: string
+        min_length: 30
+      features:
+        type: array
+        min_items: 3
+    validation:
+      - offer_aligns_with_mechanism: "Core offer must leverage unique mechanism"
+      - features_support_value_props: "Features must clearly connect to customer benefits"
+
+quality_checks:
+  completeness:
+    - all_required_sections_completed: "All template sections must be completed"
+    - examples_provided: "Concrete examples must be provided for voice and messaging"
+    - implementation_guidelines_clear: "Implementation guidelines must be specific and actionable"
+  
+  consistency:
+    - voice_consistent_across_examples: "Brand voice must be consistent across all examples"
+    - mechanism_reinforced_throughout: "Unique mechanism should be reinforced throughout document"
+    - value_props_align_with_offer: "Value propositions must align with core offer capabilities"
+  
+  strategic_alignment:
+    - differentiation_meaningful: "Differentiation must be meaningful to target customers"
+    - foundation_supports_growth: "Foundation must support stated business growth objectives"
+    - implementation_feasible: "Implementation guidelines must be feasible for team to execute"
+
+input_validation:
+  required_fields:
+    - company_name
+    - industry
+    - business_stage
+    - primary_voice_adjective
+    - secondary_voice_adjective
+    - tertiary_voice_adjective
+    - mechanism_name
+    - core_offer_name
+    - primary_value_proposition
+    - mission_statement
+    - elevator_pitch
+  
+  conditional_requirements:
+    business_stage:
+      startup: ["funding_status", "product_development_stage"]
+      growth: ["revenue_range", "expansion_objectives"]
+      established: ["market_position", "brand_evolution_needs"]
+  
+  quality_criteria:
+    voice_adjectives:
+      - must_be_specific: "Avoid generic adjectives like 'professional' or 'innovative'"
+      - must_be_actionable: "Each adjective must provide clear communication guidance"
+      - must_be_differentiated: "Adjectives should distinguish from competitors"
+    
+    unique_mechanism:
+      - must_be_unique: "Mechanism must be genuinely different from competitors"
+      - must_be_communicable: "Must be explainable in simple terms"
+      - must_be_provable: "Claims must be supported by evidence"
+    
+    value_propositions:
+      - must_be_customer_focused: "Focus on customer outcomes, not company features"
+      - must_be_specific: "Avoid vague promises like 'better results'"
+      - must_be_measurable: "Include specific, measurable benefits where possible"

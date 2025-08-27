@@ -1,0 +1,1094 @@
+template:
+  id: sales-optimization-audit-template-v1
+  name: Sales Optimization Audit Template
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-sales-optimization-audit.md"
+    title: "{{company_name}} Sales Environment Optimization Audit"
+
+workflow:
+  mode: interactive
+  elicitation: conversion-optimization
+  custom_elicitation:
+    title: "Conversion Optimization Audit Framework"
+    sections:
+      - id: conversion-analysis
+        options:
+          - "Sales Page Performance Analysis - Evaluate conversion elements using Hormozi's Value Equation (DO*PL/TD*ES)"
+          - "Checkout Flow Audit - Identify friction points using Elevate Framework ES (Effort/Sacrifice) reduction principles"
+          - "Mobile Commerce Review - Assess mobile buying experience with focus on frictionless purchase flow"
+          - "Trust Building Assessment - Review credibility indicators and PL (Perceived Likelihood) boosting elements"
+          - "Pricing Psychology Evaluation - Analyze value communication using Dream Outcome amplification"
+          - "Revenue Optimization Analysis - Identify upsell opportunities and AOV improvement using Elevate principles"
+          - "Proceed to testing strategy"
+      - id: testing-prioritization
+        options:
+          - "High-Impact Test Identification - Prioritize tests with maximum revenue potential"
+          - "A/B Testing Framework Setup - Design testing methodology and success metrics"
+          - "Performance Baseline Establishment - Document current performance benchmarks"
+          - "Mobile vs Desktop Optimization - Address platform-specific conversion issues"
+          - "Trust Signal Enhancement - Strengthen credibility and social proof elements"
+          - "Urgency and Scarcity Integration - Add ethical pressure tactics for action"
+          - "Proceed to implementation planning"
+      - id: implementation-strategy
+        options:
+          - "Quick Win Identification - Find immediate optimization opportunities"
+          - "Technical Implementation Planning - Plan development and deployment sequence"
+          - "Performance Monitoring Setup - Configure tracking and measurement systems"
+          - "Revenue Impact Projection - Estimate optimization value and ROI"
+          - "Risk Mitigation Planning - Identify and plan for potential issues"
+          - "Long-term Optimization Roadmap - Plan ongoing improvement strategy"
+          - "Complete audit recommendations"
+
+sections:
+  - id: audit-overview
+    title: Sales Environment Optimization Audit Overview
+    instruction: |
+      This Sales Optimization Audit systematically evaluates and optimizes every revenue-generating element of your sales environment using proven Elevate Framework methodologies.
+      
+      The audit covers:
+      - Sales page conversion psychology using Hormozi's Value Equation (Maximize DO*PL, Minimize TD*ES)
+      - Checkout flow friction reduction and trust building with Elevate Framework principles
+      - Mobile commerce experience enhancement for seamless purchase completion
+      - Pricing psychology and value communication emphasizing Dream Outcome achievement
+      - Revenue maximization through strategic upsells and AOV optimization
+      - A/B testing strategy for continuous improvement using systematic testing methodology
+      
+      Output file location: `docs/{{company_name}}-sales-optimization-audit.md`
+
+  - id: current-performance-baseline
+    title: Current Performance Baseline & Analytics
+    instruction: |
+      Establish comprehensive baseline metrics for sales environment performance.
+      Document current conversion rates, revenue metrics, and customer behavior patterns.
+      Identify data gaps and measurement opportunities.
+    elicit: true
+    custom_elicitation: conversion-analysis
+    sections:
+      - id: conversion-metrics
+        title: Conversion Rate Performance
+        variables:
+          - conversion_metrics
+        template: |
+          **Current Conversion Rates:**
+          - Overall Sales Page Conversion: {{overall_conversion_rate}}%
+          - Mobile Conversion Rate: {{mobile_conversion_rate}}%
+          - Desktop Conversion Rate: {{desktop_conversion_rate}}%
+          - Checkout Completion Rate: {{checkout_completion_rate}}%
+          - Cart Abandonment Rate: {{cart_abandonment_rate}}%
+          
+          **Revenue Metrics:**
+          - Average Order Value: ${{average_order_value}}
+          - Revenue Per Visitor: ${{revenue_per_visitor}}
+          - Customer Lifetime Value: ${{customer_lifetime_value}}
+          - Monthly Recurring Revenue: ${{monthly_recurring_revenue}}
+          
+          **Traffic and Engagement:**
+          - Monthly Unique Visitors: {{monthly_unique_visitors}}
+          - Average Session Duration: {{average_session_duration}}
+          - Bounce Rate: {{bounce_rate}}%
+          - Pages Per Session: {{pages_per_session}}
+      
+      - id: performance-benchmarks
+        title: Industry Benchmarks & Competitive Analysis
+        template: |
+          **Industry Performance Benchmarks:**
+          - Industry Average Conversion Rate: {{industry_avg_conversion}}%
+          - Target Conversion Rate Goal: {{target_conversion_rate}}%
+          - Industry Average AOV: ${{industry_avg_aov}}
+          - Competitive Conversion Estimate: {{competitive_conversion_range}}%
+          
+          **Performance Gap Analysis:**
+          {{performance_gap_analysis}}
+          
+          **Improvement Opportunity Score:** {{improvement_opportunity_score}}/10
+          
+          **Primary Performance Challenges:**
+          1. {{primary_challenge_1}}
+          2. {{primary_challenge_2}}
+          3. {{primary_challenge_3}}
+
+  - id: sales-page-optimization-audit
+    title: Sales Page Conversion Optimization
+    instruction: |
+      Comprehensive audit of sales page elements for maximum conversion impact.
+      Analyze persuasion psychology, copy effectiveness, design elements, and user experience.
+      Identify optimization opportunities across all conversion elements.
+    elicit: true
+    custom_elicitation: conversion-analysis
+    conditional:
+      product:
+        sections:
+          - id: product-sales-page-elements
+            title: Product Sales Page Analysis
+            template: |
+              **Above-the-Fold Assessment (Elevate Framework - Dream Outcome Focus):**
+              - **Headline Effectiveness:** {{headline_effectiveness_score}}/10
+                - Current Headline: "{{current_headline}}"
+                - DO (Dream Outcome) Clarity: {{headline_dream_outcome_clarity}}
+                - Transformation Promise: {{headline_transformation_assessment}}
+                - Benefit vs Feature Focus: {{headline_benefit_focus_score}}/10
+                - Improvement Opportunity: {{headline_improvement_notes}}
+              
+              - **Value Proposition Clarity:** {{value_prop_clarity_score}}/10
+                - Current Value Prop: {{current_value_proposition}}
+                - Value Equation Analysis: Maximize DO*PL while minimizing TD*ES
+                - Dream Outcome Articulation: {{dream_outcome_clarity_score}}/10
+                - Perceived Likelihood Boosting: {{pl_boosting_elements_score}}/10
+                - Time Delay Minimization: {{time_delay_reduction_score}}/10
+                - Effort/Sacrifice Reduction: {{effort_sacrifice_reduction_score}}/10
+                - Optimization Notes: {{value_prop_optimization}}
+              
+              - **Hero Section Performance:** {{hero_section_score}}/10
+                - Visual Impact: {{visual_impact_assessment}}
+                - Call-to-Action Visibility: {{cta_visibility_score}}/10
+              
+              **Product Presentation:**
+              - **Product Imagery Quality:** {{product_imagery_score}}/10
+              - **Feature-Benefit Translation:** {{feature_benefit_score}}/10
+              - **Social Proof Integration:** {{social_proof_score}}/10
+              - **Price Presentation:** {{price_presentation_score}}/10
+              
+              **Conversion Elements (Hormozi Value Equation Implementation):**
+              
+              **Dream Outcome (DO) Maximization:**
+              - **Outcome Visualization:** {{outcome_visualization_score}}/10 (Paint picture of desirable future state)
+              - **Transformation Promise:** {{transformation_promise_score}}/10 (Connect features to ultimate benefits)
+              - **Benefit Amplification:** {{benefit_amplification_score}}/10 (Don't just sell drill, sell perfectly hung picture)
+              
+              **Perceived Likelihood (PL) Boosting:**
+              - **Social Proof Strength:** {{social_proof_strength_score}}/10 (Testimonials, reviews, user counts)
+              - **Guarantee Visibility:** {{guarantee_visibility_score}}/10 (Bold, clear guarantee impossible to miss)
+              - **Authority Indicators:** {{authority_indicators_score}}/10 (Credentials, expertise, media mentions)
+              - **Unique Mechanism Explanation:** {{unique_mechanism_explanation_score}}/10 (Why this works reliably)
+              
+              **Time Delay (TD) Minimization:**
+              - **Speed Emphasis:** {{speed_emphasis_score}}/10 (Instant access, ships 24hrs, results in X weeks)
+              - **Implementation Ease:** {{implementation_ease_score}}/10 (Get started in minutes messaging)
+              - **System Clarity:** {{system_clarity_score}}/10 (Structured process reduces typical delays)
+              
+              **Effort & Sacrifice (ES) Reduction:**
+              - **Price Justification:** {{price_justification_score}}/10 (ROI, cost of inaction, payment plans)
+              - **Ease of Use Emphasis:** {{ease_emphasis_score}}/10 (Simple setup, removes hassle)
+              - **Risk Reversal Strength:** {{risk_reversal_strength_score}}/10 (Guarantee impossible to miss)
+              - **Objection Pre-Handling:** {{objection_prehandling_score}}/10 (Address price, time, complexity concerns)
+      service:
+        sections:
+          - id: service-sales-page-elements
+            title: Service Sales Page Analysis
+            template: |
+              **Authority and Credibility:**
+              - **Personal Branding Strength:** {{personal_branding_score}}/10
+              - **Credentials Display:** {{credentials_display_score}}/10
+              - **Success Stories Integration:** {{success_stories_score}}/10
+              - **Media Mentions/Awards:** {{media_mentions_score}}/10
+              
+              **Service Presentation:**
+              - **Problem Agitation:** {{problem_agitation_score}}/10
+              - **Solution Differentiation:** {{solution_differentiation_score}}/10
+              - **Process Explanation:** {{process_explanation_score}}/10
+              - **Outcome Visualization:** {{outcome_visualization_score}}/10
+              
+              **Trust Building Elements:**
+              - **Client Testimonials Quality:** {{testimonials_quality_score}}/10
+              - **Case Study Depth:** {{case_study_depth_score}}/10
+              - **Guarantee Strength:** {{guarantee_strength_score}}/10
+              - **Contact Information Visibility:** {{contact_visibility_score}}/10
+      - id: sales-page-structure-audit
+        title: Sales Page Structure & Flow Analysis (Elevate Framework)
+        template: |
+          **Sales Page Structure Assessment (Based on Elevate Sell Chapter):**
+          
+          **Core Sales Page Components Analysis:**
+          
+          **Product Detail Pages (PDPs) Optimization:**
+          - **High-Quality Imagery/Video:** {{product_imagery_quality_score}}/10
+          - **Benefit-Focused Description:** {{benefit_focused_description_score}}/10 (More than just specs)
+          - **Prominent Pricing & CTA:** {{pricing_cta_prominence_score}}/10
+          - **Social Proof Integration:** {{social_proof_pdp_score}}/10 (Reviews/ratings visible)
+          - **Key Info Accessibility:** {{key_info_access_score}}/10 (Shipping, returns, specs)
+          
+          **Long-Form Sales Pages Structure:**
+          - **Hook/Problem Introduction:** {{hook_problem_score}}/10
+          - **Solution Presentation:** {{solution_presentation_score}}/10
+          - **Benefits Articulation:** {{benefits_articulation_score}}/10
+          - **Mechanism Explanation:** {{mechanism_explanation_score}}/10
+          - **Proof Integration:** {{proof_integration_score}}/10
+          - **Offer Presentation:** {{offer_presentation_score}}/10
+          - **Guarantee Prominence:** {{guarantee_prominence_score}}/10
+          - **CTA Optimization:** {{cta_optimization_score}}/10
+          
+          **Persuasive Flow Assessment:**
+          - **Logical Information Progression:** {{logical_progression_score}}/10
+          - **Value Demonstration Clarity:** {{value_demonstration_score}}/10
+          - **Trust Building Throughout:** {{trust_building_flow_score}}/10
+          - **Objection Handling Integration:** {{objection_handling_integration_score}}/10
+          
+          **Mobile Sales Experience:**
+          - **Mobile Layout Optimization:** {{mobile_layout_score}}/10
+          - **Touch-Friendly Elements:** {{touch_friendly_score}}/10
+          - **Mobile Loading Speed:** {{mobile_speed_score}}/10
+          - **Mobile Conversion Flow:** {{mobile_conversion_flow_score}}/10
+          
+          **Sales Page Psychology Implementation:**
+          - **Buyer Motivation Alignment:** {{buyer_motivation_score}}/10
+          - **Risk Aversion Addressing:** {{risk_aversion_score}}/10
+          - **Trust Building Elements:** {{trust_building_elements_score}}/10
+          - **Decision Facilitation:** {{decision_facilitation_score}}/10
+
+  - id: checkout-flow-optimization
+    title: Checkout Flow & Payment Optimization
+    instruction: |
+      Analyze entire checkout process from cart to completion.
+      Identify friction points, trust barriers, and abandonment causes.
+      Optimize for mobile commerce and multiple payment methods.
+    elicit: true
+    custom_elicitation: conversion-analysis
+    variables:
+      - optimization_opportunities
+    sections:
+      - id: checkout-flow-analysis
+        title: Checkout Process Analysis
+        template: |
+          **Checkout Flow Structure (ES Reduction Focus):**
+          - **Number of Steps:** {{checkout_steps_count}} (Elevate Principle: Minimize steps for ES reduction)
+          - **Form Field Count:** {{form_field_count}} (Target: Essential fields only)
+          - **Guest Checkout Available:** {{guest_checkout_available}} (Critical for friction reduction)
+          - **Progress Indicators Present:** {{progress_indicators_present}} (Reduces uncertainty and ES)
+          
+          **Friction Points Identified:**
+          1. {{friction_point_1}} - Impact: {{friction_1_impact}}/10
+          2. {{friction_point_2}} - Impact: {{friction_2_impact}}/10
+          3. {{friction_point_3}} - Impact: {{friction_3_impact}}/10
+          
+          **Trust Elements Assessment:**
+          - **Security Badges Visible:** {{security_badges_score}}/10
+          - **Payment Security Display:** {{payment_security_score}}/10
+          - **SSL Certificate Visibility:** {{ssl_visibility_score}}/10
+          - **Privacy Policy Access:** {{privacy_policy_score}}/10
+          
+          **Mobile Checkout Performance:**
+          - **Mobile Usability Score:** {{mobile_usability_score}}/10
+          - **Touch Target Size:** {{touch_target_score}}/10
+          - **Form Optimization:** {{mobile_form_score}}/10
+          - **Payment Method Support:** {{mobile_payment_score}}/10
+
+      - id: payment-optimization
+        title: Payment Method & Processing Optimization
+        template: |
+          **Payment Options Available:**
+          - Credit/Debit Cards: {{credit_cards_supported}}
+          - PayPal: {{paypal_available}}
+          - Digital Wallets: {{digital_wallets_list}}
+          - Buy Now, Pay Later: {{bnpl_options}}
+          - Cryptocurrency: {{crypto_accepted}}
+          
+          **Payment Experience:**
+          - **One-Click Payment:** {{one_click_payment_score}}/10
+          - **Auto-Fill Capability:** {{auto_fill_score}}/10
+          - **Error Handling:** {{error_handling_score}}/10
+          - **Processing Speed:** {{processing_speed_score}}/10
+          
+          **International Support:**
+          - **Multi-Currency Support:** {{multi_currency_score}}/10
+          - **Global Payment Methods:** {{global_payments_score}}/10
+          - **Tax Calculation:** {{tax_calculation_score}}/10
+
+  - id: trust-credibility-audit
+    title: Trust Building & Credibility Assessment
+    instruction: |
+      Evaluate trust signals, social proof, and credibility indicators throughout sales environment.
+      Assess risk reversal mechanisms and objection handling effectiveness.
+      Identify opportunities to strengthen buyer confidence.
+    sections:
+      - id: trust-signals-assessment
+        title: Trust Signals & Social Proof Analysis
+        template: |
+          **Social Proof Elements:**
+          - **Customer Testimonials:** {{testimonials_quality}}/10
+            - Quantity: {{testimonials_count}}
+            - Specificity: {{testimonials_specificity_score}}/10
+            - Credibility: {{testimonials_credibility_score}}/10
+          
+          - **Case Studies:** {{case_studies_score}}/10
+            - Number Available: {{case_studies_count}}
+            - Result Specificity: {{case_study_specificity}}/10
+            - Visual Evidence: {{case_study_visuals_score}}/10
+          
+          - **User-Generated Content:** {{ugc_score}}/10
+          - **Media Mentions:** {{media_mentions_strength}}/10
+          - **Industry Recognition:** {{industry_recognition_score}}/10
+          
+          **Authority Indicators:**
+          - **Professional Credentials:** {{credentials_score}}/10
+          - **Years of Experience:** {{experience_display_score}}/10
+          - **Client Portfolio Quality:** {{portfolio_score}}/10
+          - **Industry Awards/Recognition:** {{awards_score}}/10
+
+      - id: risk-reversal-analysis
+        title: Risk Reversal & Objection Handling
+        template: |
+          **Guarantee Assessment (Risk Reversal for ES Minimization):**
+          - **Money-Back Guarantee:** {{money_back_guarantee}}
+          - **Guarantee Duration:** {{guarantee_duration}}
+          - **Guarantee Visibility:** {{guarantee_visibility_score}}/10 (Must be impossible to miss)
+          - **Terms Clarity:** {{guarantee_clarity_score}}/10
+          - **PL Boosting Power:** {{guarantee_pl_boosting_score}}/10
+          - **ES Reduction Impact:** {{guarantee_es_reduction_score}}/10
+          
+          **Objection Handling (Elevate Framework Pre-Handling):**
+          - **FAQ Section Quality:** {{faq_quality_score}}/10
+          - **Common Objections Addressed:** {{objections_addressed_count}}/10
+          - **Price Objection Handling:** {{price_objection_handling_score}}/10 (ROI emphasis, cost of inaction)
+          - **Time/Complexity Objections:** {{time_complexity_objection_score}}/10 (Ease of use, systematic approach)
+          - **Trust/Skepticism Objections:** {{trust_objection_handling_score}}/10 (Proof, guarantees, testimonials)
+          - **Objection Response Quality:** {{objection_response_score}}/10
+          - **Proactive vs Reactive Handling:** {{proactive_objection_score}}/10 (Addressed within copy vs FAQ only)
+          
+          **Support and Security:**
+          - **Customer Support Visibility:** {{support_visibility_score}}/10
+          - **Contact Information Access:** {{contact_access_score}}/10
+          - **Response Time Promises:** {{response_time_promises}}
+          - **Security Certifications:** {{security_certifications_score}}/10
+
+  - id: pricing-psychology-optimization
+    title: Pricing Psychology & Value Communication
+    instruction: |
+      Analyze pricing presentation, value communication, and psychological pricing tactics.
+      Evaluate price anchoring, bundling strategies, and payment plan effectiveness.
+      Optimize for perceived value and purchase justification.
+    variables:
+      - testing_priorities
+    sections:
+      - id: pricing-strategy-analysis
+        title: Pricing Strategy & Presentation Analysis
+        template: |
+          **Current Pricing Strategy (Value Equation Analysis):**
+          - **Primary Price Point:** ${{primary_price_point}}
+          - **Pricing Model:** {{pricing_model_type}}
+          - **Payment Options:** {{payment_options_available}}
+          - **Value-to-Price Ratio:** {{value_to_price_assessment}}
+          - **ES (Effort/Sacrifice) Minimization:** {{es_minimization_tactics}}
+          
+          **Price Presentation Assessment (Value Equation Focus):**
+          - **Price Anchoring Use:** {{price_anchoring_score}}/10
+          - **Value Justification (DO Emphasis):** {{value_justification_score}}/10
+          - **Comparison Framework:** {{price_comparison_score}}/10
+          - **Bundle Presentation:** {{bundle_presentation_score}}/10
+          - **ROI/Cost of Inaction Communication:** {{roi_communication_score}}/10
+          - **TD (Time Delay) Minimization:** {{time_delay_reduction_score}}/10
+          
+          **Psychological Pricing Elements:**
+          - **Charm Pricing Usage:** {{charm_pricing_score}}/10
+          - **Decoy Effect Implementation:** {{decoy_effect_score}}/10
+          - **Loss Aversion Tactics:** {{loss_aversion_score}}/10
+          - **Social Proof Pricing:** {{social_proof_pricing_score}}/10
+          
+          **Value Communication (Hormozi Framework):**
+          - **Dream Outcome (DO) Amplification:** {{dream_outcome_amplification_score}}/10
+          - **Perceived Likelihood (PL) Boosting:** {{perceived_likelihood_score}}/10
+          - **ROI Demonstration:** {{roi_demonstration_score}}/10
+          - **Cost-Benefit Analysis:** {{cost_benefit_score}}/10
+          - **Transformation Promise:** {{transformation_promise_score}}/10
+          - **Unique Mechanism Explanation:** {{unique_mechanism_explanation_score}}/10
+
+      - id: revenue-optimization-opportunities
+        title: Revenue Optimization & AOV Strategies
+        template: |
+          **Current Revenue Metrics:**
+          - **Average Order Value:** ${{current_aov}}
+          - **Upsell Conversion Rate:** {{upsell_conversion_rate}}%
+          - **Cross-sell Success Rate:** {{cross_sell_rate}}%
+          
+          **AOV Optimization Opportunities:**
+          1. **Opportunity:** {{aov_opportunity_1}}
+             - **Implementation:** {{aov_implementation_1}}
+             - **Expected Impact:** {{aov_impact_1}}
+             - **Effort Level:** {{aov_effort_1}}
+          
+          2. **Opportunity:** {{aov_opportunity_2}}
+             - **Implementation:** {{aov_implementation_2}}
+             - **Expected Impact:** {{aov_impact_2}}
+             - **Effort Level:** {{aov_effort_2}}
+          
+          3. **Opportunity:** {{aov_opportunity_3}}
+             - **Implementation:** {{aov_implementation_3}}
+             - **Expected Impact:** {{aov_impact_3}}
+             - **Effort Level:** {{aov_effort_3}}
+          
+          **Bundle Strategy Assessment:**
+          - **Current Bundle Effectiveness:** {{bundle_effectiveness_score}}/10
+          - **Bundle Value Communication:** {{bundle_value_score}}/10
+          - **Bundle Pricing Strategy:** {{bundle_pricing_score}}/10
+
+  - id: mobile-commerce-optimization
+    title: Mobile Commerce Experience Optimization
+    instruction: |
+      Comprehensive mobile commerce audit covering user experience, performance, and conversion optimization.
+      Address mobile-specific behavior patterns and technical requirements.
+      Optimize for thumb navigation and one-handed operation.
+    sections:
+      - id: mobile-ux-analysis
+        title: Mobile User Experience Analysis
+        template: |
+          **Mobile Performance Metrics:**
+          - **Mobile Conversion Rate:** {{mobile_conversion_current}}%
+          - **Mobile vs Desktop Gap:** {{mobile_desktop_gap}}%
+          - **Mobile Page Load Time:** {{mobile_load_time}} seconds
+          - **Mobile Bounce Rate:** {{mobile_bounce_rate}}%
+          
+          **Mobile UX Assessment:**
+          - **Touch Target Size:** {{touch_target_size_score}}/10
+          - **Thumb Navigation:** {{thumb_navigation_score}}/10
+          - **Button Placement:** {{button_placement_score}}/10
+          - **Text Readability:** {{text_readability_score}}/10
+          
+          **Mobile Checkout Experience:**
+          - **Form Usability:** {{mobile_form_usability}}/10
+          - **Auto-Fill Support:** {{mobile_autofill_score}}/10
+          - **Payment Method Access:** {{mobile_payment_access}}/10
+          - **Guest Checkout Mobile:** {{mobile_guest_checkout_score}}/10
+          
+          **Mobile-Specific Features:**
+          - **Apple Pay Integration:** {{apple_pay_score}}/10
+          - **Google Pay Support:** {{google_pay_score}}/10
+          - **SMS Verification:** {{sms_verification_score}}/10
+          - **App Download Prompts:** {{app_prompts_score}}/10
+
+      - id: mobile-technical-optimization
+        title: Mobile Technical Performance
+        template: |
+          **Core Web Vitals (Mobile):**
+          - **Largest Contentful Paint:** {{mobile_lcp}} seconds
+          - **First Input Delay:** {{mobile_fid}} milliseconds
+          - **Cumulative Layout Shift:** {{mobile_cls}}
+          - **Core Web Vitals Score:** {{mobile_cwv_score}}/100
+          
+          **Mobile Performance Issues:**
+          1. {{mobile_issue_1}} - Impact: {{mobile_issue_1_impact}}/10
+          2. {{mobile_issue_2}} - Impact: {{mobile_issue_2_impact}}/10
+          3. {{mobile_issue_3}} - Impact: {{mobile_issue_3_impact}}/10
+          
+          **Optimization Recommendations:**
+          - **Image Optimization:** {{image_optimization_needs}}
+          - **Script Optimization:** {{script_optimization_needs}}
+          - **Caching Strategy:** {{caching_strategy_assessment}}
+          - **CDN Implementation:** {{cdn_implementation_score}}/10
+
+  - id: ab-testing-framework
+    title: A/B Testing Strategy & Implementation Framework
+    instruction: |
+      Develop comprehensive A/B testing strategy for continuous optimization.
+      Prioritize testing opportunities by impact and implementation effort.
+      Create testing methodology and success metrics framework.
+    elicit: true
+    custom_elicitation: testing-prioritization
+    sections:
+      - id: testing-priorities-matrix
+        title: Testing Priorities & Impact Assessment
+        repeatable: true
+        template: |
+          **Test Priority {{test_priority_number}}: {{test_element_name}}**
+          
+          **Test Hypothesis:**
+          {{test_hypothesis}}
+          
+          **Expected Impact:** {{expected_impact_percentage}}% conversion increase
+          **Implementation Effort:** {{implementation_effort_level}}
+          **Test Duration:** {{test_duration_weeks}} weeks
+          
+          **Success Metrics:**
+          - Primary: {{primary_success_metric}}
+          - Secondary: {{secondary_success_metric}}
+          - Revenue Impact: {{revenue_impact_projection}}
+          
+          **Test Variations:**
+          - Control: {{control_description}}
+          - Variant A: {{variant_a_description}}
+          - Variant B: {{variant_b_description}}
+          
+          **Sample Size Required:** {{sample_size_required}}
+          **Statistical Significance Target:** {{significance_target}}%
+
+      - id: testing-methodology
+        title: Testing Methodology & Standards
+        template: |
+          **Testing Platform:** {{testing_platform}}
+          **Traffic Allocation:** {{traffic_allocation_strategy}}
+          **Test Duration Standards:** {{test_duration_standards}}
+          
+          **Quality Assurance Protocol:**
+          - [ ] Test implementation verified
+          - [ ] Mobile and desktop compatibility confirmed
+          - [ ] Analytics tracking validated
+          - [ ] Sample size calculations verified
+          - [ ] Statistical significance thresholds set
+          
+          **Review and Decision Framework:**
+          {{testing_decision_framework}}
+          
+          **Knowledge Management:**
+          {{testing_knowledge_management}}
+
+  - id: conversion-optimization-roadmap
+    title: Conversion Optimization Implementation Roadmap
+    instruction: |
+      Create phased implementation plan for all optimization recommendations.
+      Prioritize quick wins and high-impact improvements.
+      Establish timeline, resource requirements, and success metrics.
+    elicit: true
+    custom_elicitation: implementation-strategy
+    sections:
+      - id: quick-wins-implementation
+        title: Quick Wins & Immediate Optimizations (30 Days)
+        template: |
+          **Priority Quick Wins:**
+          1. **Optimization:** {{quick_win_1}}
+             - **Implementation Time:** {{quick_win_1_time}}
+             - **Expected Impact:** {{quick_win_1_impact}}
+             - **Resources Required:** {{quick_win_1_resources}}
+          
+          2. **Optimization:** {{quick_win_2}}
+             - **Implementation Time:** {{quick_win_2_time}}
+             - **Expected Impact:** {{quick_win_2_impact}}
+             - **Resources Required:** {{quick_win_2_resources}}
+          
+          3. **Optimization:** {{quick_win_3}}
+             - **Implementation Time:** {{quick_win_3_time}}
+             - **Expected Impact:** {{quick_win_3_impact}}
+             - **Resources Required:** {{quick_win_3_resources}}
+          
+          **Week 1 Actions:**
+          {{week_1_action_plan}}
+          
+          **Week 2-4 Actions:**
+          {{week_2_4_action_plan}}
+
+      - id: medium-term-optimizations
+        title: Medium-Term Optimizations (60-90 Days)
+        template: |
+          **Major Optimization Projects:**
+          1. **Project:** {{medium_term_project_1}}
+             - **Timeline:** {{project_1_timeline}}
+             - **Resources:** {{project_1_resources}}
+             - **Dependencies:** {{project_1_dependencies}}
+             - **Success Criteria:** {{project_1_success_criteria}}
+          
+          2. **Project:** {{medium_term_project_2}}
+             - **Timeline:** {{project_2_timeline}}
+             - **Resources:** {{project_2_resources}}
+             - **Dependencies:** {{project_2_dependencies}}
+             - **Success Criteria:** {{project_2_success_criteria}}
+          
+          **Development Requirements:**
+          {{development_requirements}}
+          
+          **Testing Schedule:**
+          {{testing_schedule_plan}}
+
+      - id: long-term-optimization-strategy
+        title: Long-Term Optimization Strategy (6+ Months)
+        template: |
+          **Strategic Optimization Goals:**
+          {{long_term_optimization_goals}}
+          
+          **Advanced Testing Program:**
+          - **Personalization Implementation:** {{personalization_strategy}}
+          - **AI/ML Optimization:** {{ai_ml_integration}}
+          - **Predictive Analytics:** {{predictive_analytics_plan}}
+          
+          **Continuous Improvement Framework:**
+          {{continuous_improvement_framework}}
+          
+          **ROI Projection and Targets:**
+          - **Year 1 Revenue Impact:** {{year_1_revenue_impact}}
+          - **Conversion Rate Target:** {{conversion_rate_target}}
+          - **AOV Improvement Goal:** {{aov_improvement_goal}}
+
+  - id: performance-monitoring-framework
+    title: Performance Monitoring & Analytics Framework
+    instruction: |
+      Establish comprehensive monitoring system for tracking optimization performance.
+      Define KPIs, reporting cadence, and decision-making triggers.
+      Create dashboard and alert systems for proactive optimization.
+    sections:
+      - id: kpi-framework
+        title: Key Performance Indicators & Metrics
+        template: |
+          **Primary Conversion Metrics:**
+          - **Overall Conversion Rate:** Target: {{conversion_rate_target}}%
+          - **Mobile Conversion Rate:** Target: {{mobile_conversion_target}}%
+          - **Checkout Completion Rate:** Target: {{checkout_completion_target}}%
+          - **Cart Abandonment Rate:** Target: {{cart_abandonment_target}}%
+          
+          **Revenue Metrics:**
+          - **Average Order Value:** Target: ${{aov_target}}
+          - **Revenue Per Visitor:** Target: ${{rpv_target}}
+          - **Customer Lifetime Value:** Target: ${{clv_target}}
+          
+          **Engagement Metrics:**
+          - **Time on Sales Page:** Target: {{time_on_page_target}}
+          - **Scroll Depth:** Target: {{scroll_depth_target}}%
+          - **CTA Click Rate:** Target: {{cta_click_rate_target}}%
+          
+          **Technical Performance:**
+          - **Page Load Time:** Target: <{{load_time_target}} seconds
+          - **Core Web Vitals:** Target: All green scores
+          - **Uptime:** Target: {{uptime_target}}%
+
+      - id: monitoring-dashboard
+        title: Monitoring Dashboard & Reporting
+        template: |
+          **Dashboard Components:**
+          - **Real-time Conversion Tracking:** {{realtime_tracking_setup}}
+          - **Revenue Performance:** {{revenue_dashboard_config}}
+          - **Mobile vs Desktop Analysis:** {{platform_analysis_config}}
+          - **Funnel Performance:** {{funnel_tracking_setup}}
+          
+          **Automated Reporting:**
+          - **Daily Revenue Summary:** {{daily_reporting_config}}
+          - **Weekly Performance Report:** {{weekly_reporting_config}}
+          - **Monthly Optimization Summary:** {{monthly_reporting_config}}
+          
+          **Alert System:**
+          - **Conversion Rate Drops:** {{conversion_alert_thresholds}}
+          - **Technical Issues:** {{technical_alert_setup}}
+          - **Revenue Anomalies:** {{revenue_alert_config}}
+
+  - id: roi-projection-analysis
+    title: ROI Projection & Business Impact Analysis
+    instruction: |
+      Calculate expected return on investment for optimization efforts.
+      Project revenue impact and cost-benefit analysis.
+      Establish success criteria and measurement framework.
+    sections:
+      - id: revenue-impact-projection
+        title: Revenue Impact Projections
+        template: |
+          **Current Performance Baseline:**
+          - **Monthly Revenue:** ${{current_monthly_revenue}}
+          - **Current Conversion Rate:** {{current_conversion_rate}}%
+          - **Current AOV:** ${{current_aov}}
+          - **Monthly Visitors:** {{monthly_visitors}}
+          
+          **Optimization Impact Projections:**
+          
+          **Conservative Scenario (25% improvement):**
+          - **New Conversion Rate:** {{conservative_conversion_rate}}%
+          - **New AOV:** ${{conservative_aov}}
+          - **Projected Monthly Revenue:** ${{conservative_monthly_revenue}}
+          - **Monthly Revenue Increase:** ${{conservative_revenue_increase}}
+          
+          **Realistic Scenario (50% improvement):**
+          - **New Conversion Rate:** {{realistic_conversion_rate}}%
+          - **New AOV:** ${{realistic_aov}}
+          - **Projected Monthly Revenue:** ${{realistic_monthly_revenue}}
+          - **Monthly Revenue Increase:** ${{realistic_revenue_increase}}
+          
+          **Optimistic Scenario (100% improvement):**
+          - **New Conversion Rate:** {{optimistic_conversion_rate}}%
+          - **New AOV:** ${{optimistic_aov}}
+          - **Projected Monthly Revenue:** ${{optimistic_monthly_revenue}}
+          - **Monthly Revenue Increase:** ${{optimistic_revenue_increase}}
+
+      - id: cost-benefit-analysis
+        title: Cost-Benefit Analysis & ROI Calculation
+        template: |
+          **Implementation Costs:**
+          - **Development Costs:** ${{development_costs}}
+          - **Testing Platform Costs:** ${{testing_platform_costs}}
+          - **Design and UX Costs:** ${{design_costs}}
+          - **Project Management:** ${{project_management_costs}}
+          - **Total Investment:** ${{total_implementation_costs}}
+          
+          **Ongoing Costs:**
+          - **Monthly Tool Costs:** ${{monthly_tool_costs}}
+          - **Maintenance and Updates:** ${{maintenance_costs}}
+          - **Performance Monitoring:** ${{monitoring_costs}}
+          
+          **ROI Projections:**
+          - **3-Month ROI:** {{three_month_roi}}%
+          - **6-Month ROI:** {{six_month_roi}}%
+          - **12-Month ROI:** {{twelve_month_roi}}%
+          - **Break-even Timeline:** {{breakeven_timeline}}
+          
+          **Risk-Adjusted Returns:**
+          {{risk_adjusted_roi_analysis}}
+
+  - id: ai-optimization-framework
+    title: AI-Powered Sales Optimization Framework (SellPrompts Integration)
+    instruction: |
+      Leverage AI prompt frameworks from SellPrompts.md for systematic optimization.
+      Apply ROCKET methodology for copy generation and testing.
+    sections:
+      - id: ai-copy-optimization
+        title: AI-Powered Copy Generation & Testing
+        template: |
+          **ROCKET Prompt Framework for Sales Copy:**
+          
+          **R.O.C.K.E.T. Methodology Application:**
+          - **ROLE:** Act as expert Conversion Copywriter specializing in high-impact sales pages
+          - **OBJECTIVE:** Generate compelling copy focusing on customer's Dream Outcome (DO)
+          - **CONTEXT:** Company/Market/Customer Avatar context from Foundation Blueprint
+          - **KEY INSTRUCTIONS:** Apply Hormozi's Value Equation (maximize DO*PL, minimize TD*ES)
+          - **EXAMPLES:** Structure templates like "[Achieve DESIRED OUTCOME] Without [Effort/Sacrifice]"
+          - **TONE & FORMAT:** Persuasive, benefit-driven, confident, aspirational
+          
+          **AI Copy Generation Categories:**
+          
+          **1. Headline Generation (S1 Framework):**
+          - Generate 5 headline options focusing on Dream Outcome achievement
+          - Emphasize transformation benefits over features
+          - Apply brand voice while maximizing impact
+          - Test variations for different customer segments
+          
+          **2. Benefit Bullets (S2 Framework):**
+          - Translate features into tangible customer outcomes
+          - Connect each feature to Dream Outcome or pain relief
+          - Use action verbs and benefit-oriented language
+          - Emphasize value delivery and transformation
+          
+          **3. Product Descriptions (S3 Framework):**
+          - Start with pain/goal resonance hook
+          - Focus on benefits and transformation delivery
+          - Integrate unique mechanism as credibility builder
+          - End with soft call towards purchase consideration
+          
+          **4. Objection Handling (S4 Framework):**
+          - Address price objections with ROI and value emphasis
+          - Handle "will it work?" concerns with proof and mechanism explanation
+          - Counter complexity fears with ease-of-use messaging
+          - Integrate guarantee for risk reversal
+          
+          **5. Call-to-Action Optimization (S5 Framework):**
+          - Create urgency without damaging trust
+          - Emphasize value and outcome achievement
+          - Include guarantee and risk reversal messaging
+          - Test multiple CTA variations for different segments
+          
+          **AI Optimization Process:**
+          {{ai_copy_optimization_process}}
+          
+          **Performance Tracking:**
+          {{ai_copy_performance_tracking}}
+
+  - id: final-recommendations
+    title: Executive Summary & Implementation Recommendations
+    instruction: |
+      Synthesize all audit findings into actionable recommendations.
+      Prioritize optimization opportunities and create clear next steps.
+      Provide executive summary for decision-making.
+    content: |
+      ## Sales Optimization Audit Executive Summary
+      
+      **Audit Completion Date:** {{audit_completion_date}}
+      **Current Performance Status:** {{current_performance_status}}
+      **Optimization Potential Score:** {{optimization_potential_score}}/10
+      
+      ### Key Findings Summary
+      
+      **Top 3 Optimization Opportunities:**
+      1. **{{top_opportunity_1}}** - Revenue Impact: {{opportunity_1_revenue_impact}}
+      2. **{{top_opportunity_2}}** - Revenue Impact: {{opportunity_2_revenue_impact}}
+      3. **{{top_opportunity_3}}** - Revenue Impact: {{opportunity_3_revenue_impact}}
+      
+      **Critical Issues Identified:**
+      - {{critical_issue_1}}
+      - {{critical_issue_2}}
+      - {{critical_issue_3}}
+      
+      ### Revenue Impact Projection
+      
+      **Expected Revenue Increase:** {{expected_revenue_increase_percentage}}%
+      **Monthly Revenue Impact:** ${{monthly_revenue_impact}}
+      **Annual Revenue Potential:** ${{annual_revenue_potential}}
+      **ROI Timeline:** {{roi_timeline}}
+      
+      ### Implementation Priorities
+      
+      **Phase 1 (Immediate - 30 days):**
+      1. {{phase_1_priority_1}} - Impact: {{phase_1_impact_1}}
+      2. {{phase_1_priority_2}} - Impact: {{phase_1_impact_2}}
+      3. {{phase_1_priority_3}} - Impact: {{phase_1_impact_3}}
+      
+      **Phase 2 (Short-term - 60-90 days):**
+      1. {{phase_2_priority_1}} - Impact: {{phase_2_impact_1}}
+      2. {{phase_2_priority_2}} - Impact: {{phase_2_impact_2}}
+      
+      **Phase 3 (Long-term - 6+ months):**
+      {{phase_3_priorities}}
+      
+      ### Resource Requirements
+      
+      **Total Investment Required:** ${{total_investment_required}}
+      **Team Resources Needed:** {{team_resources_needed}}
+      **External Support Required:** {{external_support_required}}
+      **Timeline for Full Implementation:** {{full_implementation_timeline}}
+      
+      ### Success Metrics & Targets
+      
+      **3-Month Targets:**
+      - Conversion Rate: {{three_month_conversion_target}}%
+      - AOV: ${{three_month_aov_target}}
+      - Revenue: ${{three_month_revenue_target}}
+      
+      **6-Month Targets:**
+      - Conversion Rate: {{six_month_conversion_target}}%
+      - AOV: ${{six_month_aov_target}}
+      - Revenue: ${{six_month_revenue_target}}
+      
+      **12-Month Targets:**
+      - Conversion Rate: {{twelve_month_conversion_target}}%
+      - AOV: ${{twelve_month_aov_target}}
+      - Revenue: ${{twelve_month_revenue_target}}
+      
+      ### Next Steps
+      
+      **Immediate Actions (This Week):**
+      1. {{immediate_action_1}} - Owner: {{action_1_owner}}
+      2. {{immediate_action_2}} - Owner: {{action_2_owner}}
+      3. {{immediate_action_3}} - Owner: {{action_3_owner}}
+      
+      **Project Kickoff:** {{project_kickoff_date}}
+      **First Progress Review:** {{first_review_date}}
+      **Expected Results Timeline:** {{results_timeline}}
+      
+      ---
+      
+      ## Audit Validation Checklist
+      
+      **Technical Assessment:**
+      - [ ] All sales pages audited for conversion elements
+      - [ ] Checkout flow friction points identified
+      - [ ] Mobile commerce experience evaluated
+      - [ ] Trust and credibility indicators assessed
+      - [ ] Pricing psychology optimization identified
+      - [ ] A/B testing framework established
+      
+      **Business Impact Assessment:**
+      - [ ] Revenue projections calculated and validated
+      - [ ] ROI analysis completed with realistic assumptions
+      - [ ] Implementation timeline is achievable
+      - [ ] Resource requirements are clearly defined
+      - [ ] Success metrics are measurable and trackable
+      - [ ] Risk factors identified and mitigation planned
+      
+      **Implementation Readiness:**
+      - [ ] Quick wins identified for immediate implementation
+      - [ ] Development requirements specified
+      - [ ] Testing priorities established
+      - [ ] Monitoring framework defined
+      - [ ] Team roles and responsibilities assigned
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Sales Optimization_
+      _Next Review: {{next_review_date}}_
+      _Template: Sales Optimization Audit v1.0_
+
+# Advanced template features and validation
+variables:
+  conversion_metrics:
+    type: object
+    properties:
+      overall_conversion_rate:
+        type: number
+        min: 0
+        max: 100
+        validation:
+          - realistic_range: "Conversion rate should be within realistic industry ranges"
+      mobile_conversion_rate:
+        type: number
+        min: 0
+        max: 100
+      desktop_conversion_rate:
+        type: number
+        min: 0
+        max: 100
+      revenue_per_visitor:
+        type: number
+        min: 0
+      average_order_value:
+        type: number
+        min: 0
+    validation:
+      - mobile_desktop_comparison: "Mobile and desktop rates should be compared for gaps"
+      - baseline_establishment: "Current metrics must establish clear baseline"
+      - measurement_consistency: "All metrics must use consistent time periods"
+
+  optimization_opportunities:
+    type: array
+    min_items: 3
+    max_items: 10
+    items:
+      type: object
+      properties:
+        opportunity_name:
+          type: string
+          min_length: 10
+        implementation_effort:
+          type: string
+          enum: ["low", "medium", "high"]
+        expected_impact:
+          type: string
+          enum: ["low", "medium", "high", "very_high"]
+        revenue_impact:
+          type: string
+          min_length: 10
+        timeline:
+          type: string
+          min_length: 5
+    validation:
+      - impact_justification: "Each opportunity must have clear impact justification"
+      - implementation_realism: "Implementation effort must be realistic"
+      - prioritization_logic: "Opportunities must be prioritized by impact/effort ratio"
+
+  testing_priorities:
+    type: array
+    min_items: 5
+    max_items: 15
+    items:
+      type: object
+      properties:
+        test_name:
+          type: string
+          min_length: 10
+        hypothesis:
+          type: string
+          min_length: 20
+        expected_impact:
+          type: number
+          min: 1
+          max: 100
+        implementation_effort:
+          type: string
+          enum: ["low", "medium", "high"]
+        test_duration:
+          type: number
+          min: 1
+          max: 12
+      required: ["test_name", "hypothesis", "expected_impact", "implementation_effort"]
+    validation:
+      - hypothesis_quality: "Hypotheses must be specific and testable"
+      - impact_measurement: "Expected impact must be measurable"
+      - test_feasibility: "Tests must be technically feasible"
+
+quality_checks:
+  conversion_analysis:
+    - comprehensive_audit: "Must audit all major conversion elements"
+    - mobile_optimization: "Must address mobile commerce specifically"
+    - trust_building: "Must evaluate and improve trust indicators"
+    - pricing_psychology: "Must analyze pricing presentation and psychology"
+    - checkout_optimization: "Must identify and address checkout friction"
+
+  technical_assessment:
+    - performance_evaluation: "Must assess technical performance impact"
+    - mobile_compatibility: "Must ensure mobile-first optimization approach"
+    - security_compliance: "Must verify security and compliance requirements"
+    - analytics_tracking: "Must establish proper tracking and measurement"
+
+  business_impact:
+    - roi_calculation: "Must provide realistic ROI projections"
+    - revenue_projection: "Must project revenue impact with scenarios"
+    - implementation_timeline: "Must provide achievable implementation timeline"
+    - resource_planning: "Must define resource requirements clearly"
+
+  testing_framework:
+    - testing_prioritization: "Must prioritize tests by impact and effort"
+    - hypothesis_formation: "Must create specific, testable hypotheses"
+    - measurement_framework: "Must define clear success metrics"
+    - continuous_optimization: "Must establish ongoing optimization process"
+
+conditional_logic:
+  business_type:
+    product:
+      focus_areas: ["product_presentation", "feature_benefits", "image_optimization"]
+      optimization_priorities: ["product_gallery", "feature_comparison", "specification_display"]
+    service:
+      focus_areas: ["authority_building", "case_studies", "consultation_booking"]
+      optimization_priorities: ["testimonials", "credentials", "process_explanation"]
+    
+  traffic_volume:
+    low:
+      testing_approach: ["qualitative_research", "user_feedback", "heatmap_analysis"]
+      optimization_focus: ["major_changes", "layout_overhauls", "messaging_improvements"]
+    medium:
+      testing_approach: ["structured_ab_tests", "multivariate_testing", "funnel_analysis"]
+      optimization_focus: ["systematic_testing", "element_optimization", "flow_improvement"]
+    high:
+      testing_approach: ["rapid_testing", "micro_optimizations", "personalization"]
+      optimization_focus: ["continuous_testing", "granular_optimization", "ai_driven_testing"]
+
+  industry_type:
+    ecommerce:
+      key_metrics: ["cart_abandonment", "product_page_conversion", "checkout_completion"]
+      optimization_focus: ["product_discovery", "cart_optimization", "payment_flow"]
+    saas:
+      key_metrics: ["trial_conversion", "signup_completion", "upgrade_rates"]
+      optimization_focus: ["trial_experience", "onboarding_flow", "upgrade_messaging"]
+    services:
+      key_metrics: ["consultation_bookings", "quote_requests", "contact_conversions"]
+      optimization_focus: ["credibility_building", "consultation_process", "trust_signals"]
+
+input_validation:
+  required_fields:
+    - company_name
+    - current_conversion_rate
+    - current_monthly_revenue
+    - primary_traffic_sources
+    - target_audience
+    - business_type
+    - optimization_budget
+    - implementation_timeline
+
+  performance_data:
+    - conversion_rates: "Must provide current conversion rate data"
+    - traffic_volume: "Must specify monthly traffic volume"
+    - revenue_data: "Must provide revenue and AOV data"
+    - mobile_analytics: "Must include mobile-specific performance data"
+
+  technical_requirements:
+    - current_platform: "Must specify current e-commerce/website platform"
+    - analytics_setup: "Must describe current analytics implementation"
+    - testing_capabilities: "Must specify A/B testing platform availability"
+    - development_resources: "Must clarify available development resources"
+
+validation_rules:
+  data_quality:
+    - metrics_accuracy: "All metrics must be verified and accurate"
+    - baseline_establishment: "Clear baseline must be established for all KPIs"
+    - measurement_consistency: "All measurements must use consistent time periods"
+    - benchmark_comparison: "Performance must be compared to industry benchmarks"
+
+  optimization_quality:
+    - impact_prioritization: "Optimizations must be prioritized by potential impact"
+    - implementation_feasibility: "All recommendations must be implementable"
+    - resource_alignment: "Recommendations must align with available resources"
+    - timeline_realism: "Implementation timelines must be realistic and achievable"
+
+  testing_quality:
+    - hypothesis_specificity: "Test hypotheses must be specific and measurable"
+    - sample_size_adequacy: "Tests must have adequate sample sizes for significance"
+    - success_criteria_clarity: "Success criteria must be clearly defined"
+    - testing_methodology: "Testing approach must follow statistical best practices"
+
+business_impact_assessment:
+  revenue_optimization:
+    - conversion_improvement: "Primary focus on conversion rate optimization"
+    - aov_enhancement: "Strategies for increasing average order value"
+    - customer_lifetime_value: "Long-term customer value optimization"
+    - revenue_per_visitor: "Overall revenue efficiency improvement"
+
+  competitive_advantage:
+    - user_experience: "Superior user experience compared to competitors"
+    - conversion_efficiency: "Higher conversion rates than industry average"
+    - mobile_optimization: "Best-in-class mobile commerce experience"
+    - trust_credibility: "Stronger trust signals and credibility indicators"
+
+  scalability_factors:
+    - testing_infrastructure: "Scalable A/B testing and optimization framework"
+    - performance_monitoring: "Comprehensive performance monitoring system"
+    - continuous_improvement: "Ongoing optimization and improvement processes"
+    - team_capability: "Team capabilities for sustained optimization efforts"

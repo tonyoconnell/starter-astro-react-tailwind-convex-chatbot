@@ -1,0 +1,1498 @@
+template:
+  id: capture-page-template-v1
+  name: Lead Capture Page Template - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-{{page_name}}-capture-page.md"
+    title: "{{page_name}} - High-Converting Capture Page Blueprint"
+
+workflow:
+  mode: interactive
+  elicitation: rocket-framework
+  custom_elicitation:
+    title: "R.O.C.K.E.T. Framework Capture Page Optimization"
+    sections:
+      - id: research-conversion-psychology
+        options:
+          - "Audience psychology deep dive - behavior patterns, motivations, friction points"
+          - "Conversion barrier analysis - technical, emotional, and cognitive obstacles"
+          - "Trust and credibility requirements - what builds immediate confidence"
+          - "Mobile behavior analysis - touch patterns, attention spans, device preferences"
+          - "Value perception research - how audience evaluates offers and commitments"
+          - "Decision trigger analysis - what prompts immediate action vs hesitation"
+          - "Competitive landscape review - what others are doing and gaps in market"
+          - "Proceed to opportunity optimization"
+      - id: opportunity-page-optimization
+        options:
+          - "Headline optimization testing - benefit vs curiosity vs problem-focused approaches"
+          - "Form field optimization - minimal capture vs progressive profiling strategies"
+          - "Layout and flow optimization - single column vs multi-column effectiveness"
+          - "Social proof optimization - testimonials, numbers, authority positioning"
+          - "Trust element optimization - security badges, privacy assurances, guarantees"
+          - "Call-to-action optimization - button copy, color, placement, urgency"
+          - "Mobile experience optimization - thumb-friendly design, load speed, simplicity"
+          - "Proceed to clarity refinement"
+      - id: clarity-messaging-optimization
+        options:
+          - "Value proposition clarity - ensuring immediate understanding of benefit"
+          - "Copy simplification - reducing cognitive load while maintaining persuasion"
+          - "Visual hierarchy optimization - guiding eye movement toward conversion"
+          - "Error handling clarity - making form completion effortless"
+          - "Microcopy optimization - field labels, button text, privacy notes"
+          - "Progress indication clarity - setting expectations for multi-step processes"
+          - "Success confirmation optimization - celebrating conversion and next steps"
+          - "Proceed to implementation planning"
+
+sections:
+  - id: template-overview
+    title: Capture Page Template Overview (Elevate Framework IDENTIFY Step)
+    instruction: |
+      This template creates high-converting landing pages optimized for the IDENTIFY step of the Elevate Framework,
+      facilitating the crucial transition from interest to known lead through ethical, low-friction contact capture.
+      
+      The template leverages the IDENTIFY methodology principles:
+      - Value proposition reinforcement (remind WHY they're providing information)
+      - Friction minimization (ridiculously easy opt-in process)
+      - Trust building and security assurance (earn the right to communicate)
+      - Expectation management (immediate GIFT delivery fulfillment)
+      - Strategic tagging for nurture sequence optimization
+      - Psychological transition from anonymous visitor to identified prospect
+      
+      Key Principle: This isn't merely technical data collection—it's a delicate psychological transition
+      where you earn the right to enter their communication sphere by making the exchange feel fair, easy, and secure.
+      
+      The template includes:
+      - Conversion-optimized page layouts with mobile-first design
+      - Foundation Blueprint integration for avatar-specific optimization
+      - Psychological trigger integration for maximum persuasion
+      - Form optimization strategies for minimal friction
+      - Trust-building elements and social proof frameworks
+      - Value equation reinforcement throughout the experience
+      - A/B testing protocols for continuous improvement
+      - Technical optimization for speed and accessibility
+      
+      Output file location: `docs/{{company_name}}-{{page_name}}-capture-page.md`
+
+  - id: strategic-foundation
+    title: Strategic Foundation & Campaign Alignment
+    instruction: |
+      Establish capture page strategy aligned with company foundation and campaign objectives.
+      Ensure page reinforces unique mechanism and brand voice while maximizing conversions.
+    elicit: true
+    custom_elicitation: research-conversion-psychology
+    sections:
+      - id: campaign-context
+        title: Campaign Context & Traffic Sources
+        template: |
+          **Campaign Overview:**
+          - Campaign Name: {{campaign_name}}
+          - Primary Objective: {{primary_conversion_objective}}
+          - Traffic Sources: {{traffic_source_mix}}
+          - Expected Volume: {{expected_traffic_volume}}
+          
+          **Traffic Source Analysis:**
+          
+          **Source 1: {{traffic_source_1}}**
+          - Expected Volume: {{source_1_volume}}
+          - Audience Intent: {{source_1_intent_level}}
+          - Message Match: {{source_1_message_alignment}}
+          - Conversion Expectation: {{source_1_conversion_rate}}
+          
+          **Source 2: {{traffic_source_2}}**
+          - Expected Volume: {{source_2_volume}}
+          - Audience Intent: {{source_2_intent_level}}
+          - Message Match: {{source_2_message_alignment}}
+          - Conversion Expectation: {{source_2_conversion_rate}}
+          
+          **Source 3: {{traffic_source_3}}**
+          - Expected Volume: {{source_3_volume}}
+          - Audience Intent: {{source_3_intent_level}}
+          - Message Match: {{source_3_message_alignment}}
+          - Conversion Expectation: {{source_3_conversion_rate}}
+          
+          **Cross-Source Optimization:**
+          {{cross_source_optimization_strategy}}
+
+      - id: brand-foundation-alignment
+        title: Brand Foundation Integration
+        template: |
+          **Brand Voice Integration:**
+          - Primary Voice Attributes: {{brand_voice_attributes}}
+          - Tone for Capture Pages: {{capture_page_tone}}
+          - Language Style: {{language_style_preferences}}
+          - Voice Consistency Requirements: {{voice_consistency_guidelines}}
+          
+          **Unique Mechanism Leverage:**
+          - Core Mechanism: {{unique_mechanism_name}}
+          - Mechanism Preview Strategy: {{mechanism_preview_approach}}
+          - Differentiation Emphasis: {{differentiation_highlighting}}
+          - Competitive Advantage: {{competitive_advantage_messaging}}
+          
+          **Value Proposition Alignment:**
+          - Primary Value Proposition: {{primary_value_proposition}}
+          - Capture Page Value Connection: {{value_connection_strategy}}
+          - Promise-to-Delivery Bridge: {{promise_delivery_alignment}}
+          - Brand Promise Reinforcement: {{brand_promise_integration}}
+
+      - id: audience-psychology-mapping
+        title: Target Audience Psychology & Motivation
+        template: |
+          **Primary Avatar Analysis:**
+          - Target Avatar: {{primary_avatar_name}}
+          - Pain Points: {{avatar_primary_pain_points}}
+          - Desired Outcomes: {{avatar_desired_outcomes}}
+          - Motivational Triggers: {{avatar_motivational_triggers}}
+          - Decision-Making Patterns: {{avatar_decision_patterns}}
+          
+          **Conversion Psychology Profile:**
+          - Trust Requirements: {{trust_requirements_analysis}}
+          - Friction Sensitivities: {{friction_sensitivity_points}}
+          - Social Proof Preferences: {{social_proof_preferences}}
+          - Urgency Responsiveness: {{urgency_responsiveness_level}}
+          - Risk Perception: {{risk_perception_factors}}
+          
+          **Behavioral Patterns:**
+          - Device Usage: {{device_usage_patterns}}
+          - Attention Span: {{attention_span_characteristics}}
+          - Information Processing: {{information_processing_style}}
+          - Form Behavior: {{form_completion_preferences}}
+          - Follow-Through Patterns: {{follow_through_tendencies}}
+
+  - id: page-architecture-optimization
+    title: Page Architecture & Layout Optimization
+    instruction: |
+      Design page architecture optimized for conversion using proven layout patterns.
+      Apply conversion psychology and UX principles for maximum effectiveness.
+    elicit: true
+    custom_elicitation: opportunity-page-optimization
+    sections:
+      - id: layout-strategy
+        title: Page Layout Strategy & Visual Hierarchy
+        conditional:
+          simple_capture:
+            template: |
+              **Simple Capture Layout Strategy:**
+              
+              **Layout Type:** Single Column, Minimal Distraction
+              **Optimal For:** High-intent traffic, simple offers, mobile-first experience
+              
+              **Visual Hierarchy Flow:**
+              1. **Attention Grabber (0-3 seconds)**
+                 - Headline: {{headline_primary}}
+                 - Visual Hook: {{visual_hook_element}}
+                 - Immediate Value: {{immediate_value_preview}}
+              
+              2. **Value Communication (3-10 seconds)**
+                 - Subheadline: {{subheadline_copy}}
+                 - Benefit Bullets: {{benefit_bullet_points}}
+                 - Social Proof Indicator: {{social_proof_element}}
+              
+              3. **Conversion Focus (10-30 seconds)**
+                 - Form Fields: {{form_field_configuration}}
+                 - Submit Button: {{submit_button_design}}
+                 - Trust Indicators: {{trust_element_placement}}
+              
+              **Content Hierarchy:**
+              ```
+              [Logo] ← Minimal branding
+              
+              [Headline - 48px+] ← Primary attention
+              [Subheadline - 24px] ← Value clarification
+              
+              [Hero Visual/Preview] ← Tangible representation
+              
+              [Benefit Bullets] ← Quick value scan
+              • {{benefit_1}}
+              • {{benefit_2}}
+              • {{benefit_3}}
+              
+              [Social Proof Bar] ← Validation
+              
+              [Form Section]
+              {{form_headline}}
+              [Email Field]
+              [Optional Field]
+              [Submit Button]
+              🔒 {{privacy_assurance}}
+              
+              [Secondary Trust Elements]
+              ```
+          multi_step_capture:
+            template: |
+              **Multi-Step Capture Layout Strategy:**
+              
+              **Layout Type:** Progressive Disclosure, Guided Experience
+              **Optimal For:** High-value offers, qualification needed, complex products
+              
+              **Step Progression Framework:**
+              
+              **Step 1: Value & Engagement**
+              - Headline: {{step_1_headline}}
+              - Value Proposition: {{step_1_value_prop}}
+              - Engagement Mechanism: {{step_1_engagement}}
+              - Progress Indicator: {{step_1_progress}}
+              
+              **Step 2: Basic Information**
+              - Mini-headline: {{step_2_headline}}
+              - Form Fields: {{step_2_fields}}
+              - Progress Indicator: {{step_2_progress}}
+              - Back Option: {{step_2_back_option}}
+              
+              **Step 3: Qualification/Personalization**
+              - Context Headline: {{step_3_headline}}
+              - Qualification Questions: {{step_3_questions}}
+              - Progress Indicator: {{step_3_progress}}
+              - Skip Option: {{step_3_skip_option}}
+              
+              **Step 4: Confirmation & Delivery**
+              - Success Message: {{step_4_success_message}}
+              - Next Steps: {{step_4_next_steps}}
+              - Additional Offers: {{step_4_additional_offers}}
+              - Community/Social Links: {{step_4_social_elements}}
+              
+              **Conversion Psychology Integration:**
+              - Commitment Escalation: {{commitment_escalation_strategy}}
+              - Progress Momentum: {{progress_momentum_techniques}}
+              - Abandonment Prevention: {{abandonment_prevention_methods}}
+
+      - id: headline-optimization-framework
+        title: Headline & Copy Optimization Framework
+        template: |
+          **Primary Headline Strategy:**
+          - Formula Used: {{headline_formula_choice}}
+          - Primary Headline: {{primary_headline}}
+          - Headline Variants for Testing: 
+            1. {{headline_variant_1}}
+            2. {{headline_variant_2}}
+            3. {{headline_variant_3}}
+          
+          **Subheadline Framework:**
+          - Supporting Message: {{subheadline_primary}}
+          - Objection Addressing: {{objection_addressing_copy}}
+          - Urgency/Scarcity Element: {{urgency_scarcity_element}}
+          
+          **Copy Formula Templates:**
+          
+          **Benefit-Driven Formula:**
+          ```
+          [Get/Discover/Learn] [Specific Outcome] [Time Frame/Method]
+          
+          Current Application:
+          Headline: {{benefit_driven_headline}}
+          Subheadline: {{benefit_driven_subheadline}}
+          Supporting Copy: {{benefit_driven_copy}}
+          ```
+          
+          **Problem-Solution Formula:**
+          ```
+          [Problem Agitation] + [Solution Introduction] + [Proof Element]
+          
+          Current Application:
+          Headline: {{problem_solution_headline}}
+          Subheadline: {{problem_solution_subheadline}}
+          Supporting Copy: {{problem_solution_copy}}
+          ```
+          
+          **Curiosity Gap Formula:**
+          ```
+          [Intriguing Statement] + [Partial Reveal] + [Access Promise]
+          
+          Current Application:
+          Headline: {{curiosity_gap_headline}}
+          Subheadline: {{curiosity_gap_subheadline}}
+          Supporting Copy: {{curiosity_gap_copy}}
+          ```
+          
+          **Copy Optimization Elements:**
+          - Reading Level: {{target_reading_level}}
+          - Emotional Triggers: {{emotional_trigger_words}}
+          - Power Words: {{power_words_integration}}
+          - Call-to-Action Language: {{cta_language_strategy}}
+
+      - id: form-optimization-strategy
+        title: Form Field Optimization & Friction Minimization (IDENTIFY Principles)
+        template: |
+          **Form Strategy Overview (IDENTIFY Framework):**
+          - Capture Approach: {{form_capture_approach}}
+          - Field Minimization: {{field_minimization_strategy}}
+          - Progressive Profiling: {{progressive_profiling_plan}}
+          - Conversion vs Data Trade-off: {{conversion_data_balance}}
+          
+          **IDENTIFY Key Principles Integration:**
+          
+          **1. Minimize Friction (Crucial for IDENTIFY Success):**
+          - **Fewest Possible Fields:** Ask only for what's absolutely essential (usually just email)
+          - **Clear Instructions:** Make it obvious what information goes where
+          - **Seamless Flow:** Immediate, logical transition from GIFT interest to information request
+          - **Ridiculously Easy:** Every extra click/field dramatically increases drop-off
+          
+          **2. Value Proposition Reinforcement:**
+          - **Benefit Reminder:** Subtly remind why they're providing information
+          - **GIFT Value Emphasis:** Clear connection between email and receiving valuable GIFT
+          - **Fair Exchange:** Perceived benefit must clearly outweigh perceived "cost"
+          
+          **3. Trust & Security Assurance:**
+          - **Privacy Policy Link:** Essential for building trust
+          - **Data Security Indicators:** Reassure users their data is safe
+          - **Usage Transparency:** Clear indication of how information will be used
+          
+          **Primary Form Configuration:**
+          
+          **Stage 1: Initial Capture (IDENTIFY Optimized)**
+          - **Primary Field:** Email Address (Required)
+          - **Optional Field:** First Name ({{first_name_inclusion_decision}})
+          - **Field Justification:** {{field_inclusion_rationale}}
+          - **Submit Button Text:** {{submit_button_text}}
+          
+          **Form Copy Optimization (IDENTIFY Framework):**
+          - **Form Headline:** "{{form_headline_gift_connection}}"
+          - **Value Reinforcement:** "{{value_reinforcement_copy}}"
+          - **Privacy Assurance:** "{{privacy_assurance_microcopy}}"
+          - **Call-to-Action:** "{{optimized_cta_copy}}"
+          
+          **Form Design Specifications:**
+          - Form Width: {{form_width_specification}}
+          - Field Height: {{field_height_specification}}
+          - Font Size: {{form_font_size}}
+          - Input Type Optimization: {{input_type_optimization}}
+          - Placeholder Strategy: {{placeholder_text_strategy}}
+          
+          **Validation & Error Handling:**
+          - Inline Validation: {{inline_validation_approach}}
+          - Error Messages: {{error_message_strategy}}
+          - Success Feedback: {{success_feedback_approach}}
+          - Auto-complete Support: {{autocomplete_configuration}}
+          
+          **Trust Building Elements:**
+          - **Security Indicators:** {{security_indicator_placement}}
+          - **Privacy Statement:** {{privacy_statement_positioning}}
+          - **Data Usage Clarity:** {{data_usage_explanation}}
+          - **Unsubscribe Freedom:** {{unsubscribe_assurance}}
+          
+          **Progressive Enhancement:**
+          
+          **Stage 2: Follow-up Profiling (Post-IDENTIFY)**
+          - Additional Fields: {{stage_2_additional_fields}}
+          - Trigger Conditions: {{stage_2_trigger_conditions}}
+          - Collection Method: {{stage_2_collection_method}}
+          - Value Exchange: {{stage_2_value_exchange}}
+          
+          **Mobile Form Optimization:**
+          - Touch Target Size: {{mobile_touch_target_size}}
+          - Keyboard Optimization: {{mobile_keyboard_optimization}}
+          - Single Column Layout: {{mobile_layout_considerations}}
+          - Thumb-Friendly Spacing: {{mobile_spacing_requirements}}
+
+  - id: identify-system-integration
+    title: IDENTIFY System Integration & Automation
+    instruction: |
+      Implement system integration and automation for seamless IDENTIFY process.
+      Ensure captured data flows into proper systems with appropriate tagging for nurture sequences.
+    sections:
+      - id: capture-mechanism-optimization
+        title: Capture Mechanism Design & Optimization
+        template: |
+          **Capture Mechanism Selection:**
+          
+          **Standard Inline Form (Recommended for Most Cases):**
+          - **Placement:** Directly on GIFT landing page
+          - **Benefits:** Simple, clear, effective
+          - **Optimization:** Keep brief and focused
+          - **Best For:** {{inline_form_best_use_cases}}
+          
+          **Two-Step Opt-in (Button → Popup):**
+          - **Process:** Button reveals form in popup/modal
+          - **Benefits:** Higher initial engagement
+          - **Considerations:** Adds step, ensure popup is dismissible
+          - **Best For:** {{two_step_best_use_cases}}
+          
+          **Chatbot Interaction:**
+          - **Process:** Conversational flow leading to email request
+          - **Benefits:** Natural feel, high engagement
+          - **Integration:** "Where can I send your results?"
+          - **Best For:** {{chatbot_best_use_cases}}
+          
+          **Selected Mechanism:** {{selected_capture_mechanism}}
+          **Selection Rationale:** {{mechanism_selection_rationale}}
+          
+          **Ask Copy Optimization:**
+          
+          **Clear & Concise Options:**
+          - "Enter your email to get the {{gift_name}}"
+          - "Get instant access to {{gift_name}} by entering your email below"
+          - "Where should I send your {{gift_name}}?"
+          - "Send me the {{gift_name}} → [Email Field]"
+          
+          **Selected Ask Copy:** "{{selected_ask_copy}}"
+          
+          **Trust Building Micro-Copy:**
+          - Privacy Assurance: "{{privacy_micro_copy}}"
+          - Spam Prevention: "{{spam_prevention_copy}}"
+          - Unsubscribe Freedom: "{{unsubscribe_freedom_copy}}"
+      - id: system-integration-framework
+        title: System Integration & Data Flow
+        template: |
+          **ESP/CRM Connection Strategy:**
+          
+          **Email Service Provider Integration:**
+          - **Platform:** {{email_platform_selection}}
+          - **Connection Method:** {{esp_connection_method}}
+          - **Reliability Requirements:** {{esp_reliability_standards}}
+          - **Backup Systems:** {{esp_backup_strategy}}
+          
+          **CRM Integration (if applicable):**
+          - **CRM Platform:** {{crm_platform_selection}}
+          - **Data Mapping:** {{crm_data_mapping_strategy}}
+          - **Lead Routing:** {{crm_lead_routing_setup}}
+          - **Duplicate Handling:** {{crm_duplicate_prevention}}
+          
+          **Strategic Tagging Framework (Critical for NURTURE):**
+          
+          **Tag Structure Strategy:**
+          - **GIFT Source Tag:** `{{gift_source_tag_format}}`
+          - **Campaign Tag:** `{{campaign_tag_format}}`
+          - **Channel Tag:** `{{channel_tag_format}}`
+          - **Avatar Segment Tag:** `{{avatar_segment_tag}}`
+          
+          **Example Tagging:**
+          ```
+          Lead Source: GIFT_ConversionChecklist_Facebook_2024Q1
+          Avatar: BusyEcomOwner
+          Campaign: Q1_LeadGen_Campaign
+          Channel: Facebook_Ads
+          ```
+          
+          **Immediate Delivery/Welcome Automation:**
+          
+          **Welcome Email Configuration:**
+          - **Trigger:** Immediate upon successful opt-in
+          - **Subject Line Options:**
+            - "{{welcome_subject_option_1}}"
+            - "{{welcome_subject_option_2}}"
+          - **Content Requirements:**
+            - Warm welcome message
+            - GIFT delivery (link or access)
+            - Future communication expectations
+          
+          **Delivery Process:**
+          1. **Form Submission** → **ESP/CRM Addition** → **Tagging Applied** → **Welcome Email Triggered**
+          2. **Immediate Access:** {{immediate_access_method}}
+          3. **Backup Delivery:** {{backup_delivery_strategy}}
+      - id: tracking-compliance-framework
+        title: Tracking, Analytics & Compliance
+        template: |
+          **Conversion Tracking Setup:**
+          
+          **Analytics Configuration:**
+          - **Google Analytics 4:** {{ga4_conversion_setup}}
+          - **Facebook Pixel:** {{facebook_pixel_lead_event}}
+          - **Google Ads:** {{google_ads_conversion_tracking}}
+          - **Custom Tracking:** {{custom_tracking_requirements}}
+          
+          **Lead Event Tracking:**
+          - **Event Name:** {{lead_event_name}}
+          - **Event Parameters:** {{lead_event_parameters}}
+          - **Attribution Model:** {{attribution_model_selection}}
+          - **Retargeting Audiences:** {{retargeting_audience_creation}}
+          
+          **Compliance Framework:**
+          
+          **Data Privacy Compliance:**
+          - **GDPR Requirements:** {{gdpr_compliance_measures}}
+          - **CCPA Requirements:** {{ccpa_compliance_measures}}
+          - **Regional Compliance:** {{regional_compliance_needs}}
+          
+          **Consent Management:**
+          - **Consent Language:** {{consent_language_requirements}}
+          - **Opt-in Method:** {{opt_in_method_specification}}
+          - **Privacy Policy Link:** {{privacy_policy_requirements}}
+          - **Legal Consultation:** {{legal_consultation_recommendation}}
+          
+          **Testing & Validation Protocol:**
+          
+          **Pre-Launch Testing Checklist:**
+          - [ ] Form submits correctly
+          - [ ] Lead appears in ESP/CRM with correct tags
+          - [ ] Automated delivery email sends immediately
+          - [ ] GIFT link/access works properly
+          - [ ] Tracking pixels fire correctly
+          - [ ] Mobile experience tested
+          - [ ] Error handling functional
+          - [ ] Thank you page displays properly
+          
+          **Post-Launch Monitoring:**
+          - **Form Completion Rate:** {{form_completion_monitoring}}
+          - **Email Delivery Rate:** {{email_delivery_monitoring}}
+          - **GIFT Access Rate:** {{gift_access_monitoring}}
+          - **System Integration Status:** {{system_integration_monitoring}}
+
+  - id: conversion-psychology-integration
+    title: Conversion Psychology & Persuasion Elements
+    instruction: |
+      Integrate proven psychological triggers and persuasion principles.
+      Apply ethical influence techniques to maximize conversion while building trust.
+    elicit: true
+    custom_elicitation: clarity-messaging-optimization
+    sections:
+      - id: trust-credibility-framework
+        title: Trust & Credibility Building Framework
+        template: |
+          **Trust Element Hierarchy:**
+          
+          **Primary Trust Builders (Above Fold):**
+          1. **Security Assurance**
+             - SSL Badge: {{ssl_badge_placement}}
+             - Privacy Promise: {{privacy_promise_copy}}
+             - Data Protection: {{data_protection_messaging}}
+          
+          2. **Social Proof**
+             - Customer Count: {{customer_count_display}}
+             - Testimonial Preview: {{testimonial_preview_strategy}}
+             - Logo Bar: {{logo_bar_configuration}}
+          
+          3. **Authority Indicators**
+             - Credentials: {{authority_credentials_display}}
+             - Media Mentions: {{media_mention_integration}}
+             - Industry Recognition: {{industry_recognition_display}}
+          
+          **Secondary Trust Builders (Throughout Page):**
+          - Risk Reversal: {{risk_reversal_elements}}
+          - Guarantee Messaging: {{guarantee_messaging_strategy}}
+          - Contact Information: {{contact_info_display}}
+          - About Company Link: {{about_company_integration}}
+          
+          **Trust-Building Copy Elements:**
+          - No Spam Promise: "{{no_spam_copy}}"
+          - Unsubscribe Freedom: "{{unsubscribe_copy}}"
+          - Data Usage Transparency: "{{data_usage_copy}}"
+          - Community Size: "{{community_size_copy}}"
+
+      - id: social-proof-integration
+        title: Social Proof Integration Strategy
+        template: |
+          **Social Proof Elements:**
+          
+          **Testimonial Strategy:**
+          - Primary Testimonial: {{primary_testimonial}}
+          - Testimonial Source: {{testimonial_source_details}}
+          - Testimonial Placement: {{testimonial_placement_strategy}}
+          - Visual Elements: {{testimonial_visual_elements}}
+          
+          **Additional Social Proof:**
+          
+          **Customer Statistics:**
+          - Total Users: {{total_user_count}}
+          - Success Metrics: {{success_metrics_display}}
+          - Growth Rate: {{growth_rate_display}}
+          - Geographic Spread: {{geographic_proof_elements}}
+          
+          **Authority Proof:**
+          - Expert Endorsements: {{expert_endorsement_strategy}}
+          - Media Coverage: {{media_coverage_integration}}
+          - Industry Partnerships: {{partnership_display}}
+          - Certification Badges: {{certification_badge_strategy}}
+          
+          **Real-Time Social Proof:**
+          - Recent Activity: {{recent_activity_display}}
+          - Live Counter: {{live_counter_implementation}}
+          - Geographic Activity: {{geographic_activity_display}}
+          - Time-Based Proof: {{time_based_proof_strategy}}
+
+      - id: urgency-scarcity-elements
+        title: Urgency & Scarcity Implementation
+        template: |
+          **Urgency Creation Strategy:**
+          - Urgency Type: {{urgency_type_selection}}
+          - Time-Based Elements: {{time_based_urgency}}
+          - Deadline Communication: {{deadline_communication_strategy}}
+          - Countdown Integration: {{countdown_timer_strategy}}
+          
+          **Scarcity Implementation:**
+          - Scarcity Type: {{scarcity_type_selection}}
+          - Quantity Limitations: {{quantity_limitation_messaging}}
+          - Exclusive Access: {{exclusive_access_positioning}}
+          - Availability Communication: {{availability_communication}}
+          
+          **Ethical Urgency Guidelines:**
+          - Authenticity Requirements: {{authenticity_requirements}}
+          - Truthfulness Standards: {{truthfulness_standards}}
+          - Customer Benefit Focus: {{customer_benefit_emphasis}}
+          - Long-term Relationship Priority: {{relationship_priority_guidelines}}
+          
+          **Urgency/Scarcity Copy Examples:**
+          - Primary Urgency Message: "{{primary_urgency_copy}}"
+          - Scarcity Indicator: "{{scarcity_indicator_copy}}"
+          - Consequence Communication: "{{consequence_communication_copy}}"
+          - Action Motivation: "{{action_motivation_copy}}"
+
+      - id: cognitive-bias-integration
+        title: Cognitive Bias Integration
+        template: |
+          **Primary Cognitive Biases Leveraged:**
+          
+          **Loss Aversion:**
+          - Current State Problems: {{current_state_problems}}
+          - Cost of Inaction: {{cost_of_inaction_messaging}}
+          - Missed Opportunity Framing: {{missed_opportunity_framing}}
+          
+          **Social Proof Bias:**
+          - Peer Validation: {{peer_validation_strategy}}
+          - Conformity Triggers: {{conformity_trigger_implementation}}
+          - Bandwagon Effects: {{bandwagon_effect_integration}}
+          
+          **Authority Bias:**
+          - Expert Positioning: {{expert_positioning_strategy}}
+          - Credibility Indicators: {{credibility_indicator_display}}
+          - Third-Party Validation: {{third_party_validation}}
+          
+          **Reciprocity Principle:**
+          - Value-First Approach: {{value_first_implementation}}
+          - Free Gift Positioning: {{free_gift_positioning}}
+          - Obligation Creation: {{obligation_creation_strategy}}
+          
+          **Commitment Consistency:**
+          - Small Yes Strategy: {{small_yes_implementation}}
+          - Progressive Commitment: {{progressive_commitment_design}}
+          - Identity Alignment: {{identity_alignment_messaging}}
+
+  - id: mobile-optimization-strategy
+    title: Mobile Optimization Strategy
+    instruction: |
+      Create mobile-first experience optimized for touch interaction and mobile behavior patterns.
+      Ensure seamless experience across all device types and screen sizes.
+    sections:
+      - id: mobile-first-design
+        title: Mobile-First Design Principles
+        template: |
+          **Mobile Design Specifications:**
+          
+          **Layout Adaptations:**
+          - Single Column Layout: {{mobile_single_column_strategy}}
+          - Touch Target Size: {{mobile_touch_target_specs}}
+          - Spacing Requirements: {{mobile_spacing_specifications}}
+          - Font Size Optimization: {{mobile_font_size_strategy}}
+          
+          **Thumb-Friendly Design:**
+          - Button Placement: {{thumb_friendly_button_placement}}
+          - Navigation Elements: {{mobile_navigation_optimization}}
+          - Form Interaction: {{mobile_form_interaction_design}}
+          - Scroll Behavior: {{mobile_scroll_optimization}}
+          
+          **Performance Optimization:**
+          - Image Compression: {{mobile_image_optimization}}
+          - CSS/JS Minification: {{mobile_code_optimization}}
+          - Lazy Loading: {{mobile_lazy_loading_strategy}}
+          - CDN Implementation: {{mobile_cdn_strategy}}
+          
+          **Mobile-Specific Features:**
+          - Click-to-Call: {{click_to_call_implementation}}
+          - Touch Gestures: {{touch_gesture_optimization}}
+          - Native Input Types: {{native_input_type_usage}}
+          - App-Like Experience: {{app_like_experience_elements}}
+
+      - id: responsive-breakpoints
+        title: Responsive Design Breakpoints
+        template: |
+          **Breakpoint Strategy:**
+          
+          **Mobile (0-768px):**
+          - Layout: {{mobile_layout_configuration}}
+          - Font Sizes: {{mobile_font_size_scale}}
+          - Button Sizes: {{mobile_button_dimensions}}
+          - Form Configuration: {{mobile_form_layout}}
+          
+          **Tablet (768-1024px):**
+          - Layout: {{tablet_layout_configuration}}
+          - Font Sizes: {{tablet_font_size_scale}}
+          - Form Configuration: {{tablet_form_layout}}
+          - Navigation: {{tablet_navigation_design}}
+          
+          **Desktop (1024px+):**
+          - Layout: {{desktop_layout_configuration}}
+          - Font Sizes: {{desktop_font_size_scale}}
+          - Form Configuration: {{desktop_form_layout}}
+          - Enhancement Features: {{desktop_enhancement_features}}
+          
+          **Cross-Device Consistency:**
+          - Brand Elements: {{cross_device_brand_consistency}}
+          - User Experience: {{cross_device_ux_consistency}}
+          - Functionality: {{cross_device_functionality_parity}}
+          - Performance: {{cross_device_performance_standards}}
+
+      - id: mobile-conversion-optimization
+        title: Mobile Conversion Optimization
+        template: |
+          **Mobile Conversion Factors:**
+          
+          **Attention Management:**
+          - First Screen Content: {{mobile_first_screen_strategy}}
+          - Scroll Encouragement: {{mobile_scroll_encouragement}}
+          - Distraction Elimination: {{mobile_distraction_removal}}
+          - Focus Direction: {{mobile_focus_direction_strategy}}
+          
+          **Form Optimization for Mobile:**
+          - Single Column Forms: {{mobile_single_column_forms}}
+          - Large Input Fields: {{mobile_large_input_strategy}}
+          - Minimal Required Fields: {{mobile_minimal_fields}}
+          - Smart Keyboard Display: {{mobile_keyboard_optimization}}
+          
+          **Trust Building on Mobile:**
+          - Security Indicators: {{mobile_security_display}}
+          - Social Proof: {{mobile_social_proof_strategy}}
+          - Contact Information: {{mobile_contact_display}}
+          - Privacy Assurance: {{mobile_privacy_communication}}
+          
+          **Mobile-Specific Testing:**
+          - Device Coverage: {{mobile_device_testing_strategy}}
+          - Network Conditions: {{mobile_network_testing}}
+          - OS Versions: {{mobile_os_testing_coverage}}
+          - Browser Testing: {{mobile_browser_testing_plan}}
+
+  - id: ab-testing-framework
+    title: A/B Testing & Optimization Framework
+    instruction: |
+      Create systematic testing framework for continuous conversion rate improvement.
+      Establish testing protocols, metrics, and iteration cycles.
+    sections:
+      - id: testing-priority-matrix
+        title: Testing Priority Matrix & Strategy
+        template: |
+          **Testing Roadmap:**
+          
+          **Phase 1: High-Impact, Low-Effort Tests**
+          
+          **Test 1: Headline Optimization**
+          - Current: {{current_headline}}
+          - Variant A: {{headline_variant_a}}
+          - Variant B: {{headline_variant_b}}
+          - Expected Impact: {{headline_test_impact_prediction}}
+          - Duration: {{headline_test_duration}}
+          
+          **Test 2: Form Field Reduction**
+          - Current: {{current_form_fields}}
+          - Variant: {{reduced_form_fields}}
+          - Expected Impact: {{form_test_impact_prediction}}
+          - Duration: {{form_test_duration}}
+          
+          **Test 3: Button Copy/Color**
+          - Current: {{current_button_design}}
+          - Variant A: {{button_variant_a}}
+          - Variant B: {{button_variant_b}}
+          - Expected Impact: {{button_test_impact_prediction}}
+          - Duration: {{button_test_duration}}
+          
+          **Phase 2: Medium-Impact Tests**
+          - Social Proof Placement: {{social_proof_testing_plan}}
+          - Page Layout: {{layout_testing_strategy}}
+          - Trust Elements: {{trust_element_testing_plan}}
+          - Mobile Optimization: {{mobile_testing_priorities}}
+          
+          **Phase 3: Advanced Testing**
+          - Dynamic Personalization: {{personalization_testing_plan}}
+          - Multi-Step vs Single-Step: {{form_strategy_testing}}
+          - Video Integration: {{video_integration_testing}}
+          - Exit-Intent Optimization: {{exit_intent_testing_plan}}
+
+      - id: testing-methodology
+        title: Testing Methodology & Statistical Framework
+        template: |
+          **Statistical Framework:**
+          
+          **Sample Size Calculation:**
+          - Current Conversion Rate: {{current_conversion_rate}}
+          - Minimum Detectable Effect: {{minimum_detectable_effect}}
+          - Statistical Power: {{statistical_power_target}}
+          - Confidence Level: {{confidence_level_requirement}}
+          - Required Sample Size: {{calculated_sample_size}}
+          
+          **Test Duration Planning:**
+          - Traffic Volume: {{daily_traffic_volume}}
+          - Business Cycles: {{business_cycle_considerations}}
+          - Minimum Test Duration: {{minimum_test_duration}}
+          - Maximum Test Duration: {{maximum_test_duration}}
+          
+          **Test Validity Requirements:**
+          - Traffic Quality: {{traffic_quality_requirements}}
+          - Device Mix: {{device_mix_considerations}}
+          - Time of Day: {{time_based_traffic_patterns}}
+          - Seasonal Factors: {{seasonal_testing_considerations}}
+          
+          **Decision Framework:**
+          - Winner Selection Criteria: {{winner_selection_criteria}}
+          - Early Stopping Rules: {{early_stopping_protocols}}
+          - Inconclusive Results: {{inconclusive_result_protocols}}
+          - Learning Documentation: {{learning_documentation_process}}
+
+      - id: performance-tracking
+        title: Performance Tracking & Analytics
+        template: |
+          **Key Performance Indicators:**
+          
+          **Primary Metrics:**
+          - Conversion Rate: {{primary_conversion_rate_tracking}}
+          - Cost Per Lead: {{cost_per_lead_tracking}}
+          - Lead Quality Score: {{lead_quality_measurement}}
+          - Return on Ad Spend: {{roas_tracking_methodology}}
+          
+          **Secondary Metrics:**
+          - Bounce Rate: {{bounce_rate_monitoring}}
+          - Time on Page: {{time_on_page_tracking}}
+          - Scroll Depth: {{scroll_depth_analysis}}
+          - Form Abandonment: {{form_abandonment_tracking}}
+          
+          **Technical Metrics:**
+          - Page Load Speed: {{page_speed_monitoring}}
+          - Mobile Performance: {{mobile_performance_tracking}}
+          - Error Rates: {{error_rate_monitoring}}
+          - Browser Compatibility: {{browser_compatibility_tracking}}
+          
+          **Analytics Setup:**
+          - Google Analytics: {{ga_setup_requirements}}
+          - Conversion Tracking: {{conversion_tracking_setup}}
+          - Heatmap Tools: {{heatmap_tool_implementation}}
+          - Session Recording: {{session_recording_setup}}
+          
+          **Reporting Framework:**
+          - Daily Monitoring: {{daily_monitoring_dashboard}}
+          - Weekly Reports: {{weekly_reporting_structure}}
+          - Monthly Analysis: {{monthly_analysis_framework}}
+          - Quarterly Reviews: {{quarterly_review_process}}
+
+  - id: technical-implementation
+    title: Technical Implementation & Setup
+    instruction: |
+      Define technical requirements and implementation specifications.
+      Ensure proper tracking, integration, and performance optimization.
+    sections:
+      - id: technical-specifications
+        title: Technical Specifications & Requirements
+        template: |
+          **Platform Requirements:**
+          - Hosting Platform: {{hosting_platform_choice}}
+          - CMS/Framework: {{cms_framework_selection}}
+          - Database Requirements: {{database_requirements}}
+          - Third-Party Integrations: {{third_party_integrations}}
+          
+          **Performance Specifications:**
+          - Page Load Time Target: {{page_load_time_target}}
+          - Core Web Vitals: {{core_web_vitals_requirements}}
+          - Mobile Performance: {{mobile_performance_targets}}
+          - Accessibility Compliance: {{accessibility_compliance_level}}
+          
+          **Security Requirements:**
+          - SSL Implementation: {{ssl_implementation_requirements}}
+          - Data Protection: {{data_protection_measures}}
+          - Form Security: {{form_security_implementation}}
+          - Privacy Compliance: {{privacy_compliance_requirements}}
+          
+          **Browser Support:**
+          - Supported Browsers: {{browser_support_matrix}}
+          - Fallback Strategies: {{browser_fallback_strategies}}
+          - Progressive Enhancement: {{progressive_enhancement_approach}}
+          - Polyfill Requirements: {{polyfill_implementation}}
+
+      - id: integration-setup
+        title: Integration Setup & Automation
+        template: |
+          **Email Marketing Integration:**
+          - Platform: {{email_platform_selection}}
+          - List Setup: {{email_list_configuration}}
+          - Automation Triggers: {{email_automation_triggers}}
+          - Segmentation Rules: {{email_segmentation_setup}}
+          
+          **CRM Integration:**
+          - CRM Platform: {{crm_platform_choice}}
+          - Lead Routing: {{lead_routing_configuration}}
+          - Data Mapping: {{crm_data_mapping}}
+          - Duplicate Handling: {{duplicate_lead_handling}}
+          
+          **Analytics Integration:**
+          - Google Analytics: {{ga_integration_setup}}
+          - Facebook Pixel: {{facebook_pixel_setup}}
+          - Google Ads: {{google_ads_tracking_setup}}
+          - Custom Tracking: {{custom_tracking_requirements}}
+          
+          **Marketing Automation:**
+          - Welcome Sequence: {{welcome_sequence_setup}}
+          - Lead Scoring: {{lead_scoring_configuration}}
+          - Behavioral Triggers: {{behavioral_trigger_setup}}
+          - Follow-up Campaigns: {{followup_campaign_integration}}
+
+      - id: quality-assurance-checklist
+        title: Quality Assurance & Launch Checklist
+        template: |
+          **Pre-Launch Testing Checklist:**
+          
+          **Functionality Testing:**
+          - [ ] Form submission works correctly
+          - [ ] Email delivery functioning
+          - [ ] CRM integration active
+          - [ ] Thank you page displays
+          - [ ] Error handling functional
+          - [ ] Mobile responsiveness confirmed
+          - [ ] Cross-browser compatibility verified
+          - [ ] Analytics tracking active
+          
+          **Content Review:**
+          - [ ] Headlines compelling and clear
+          - [ ] Copy free of errors
+          - [ ] Images optimized and loading
+          - [ ] Links functional and correct
+          - [ ] Contact information accurate
+          - [ ] Legal pages linked (Privacy, Terms)
+          - [ ] Social proof elements verified
+          - [ ] Trust badges current
+          
+          **Performance Validation:**
+          - [ ] Page load speed under 3 seconds
+          - [ ] Mobile performance optimized
+          - [ ] Core Web Vitals passing
+          - [ ] Accessibility standards met
+          - [ ] SEO basics implemented
+          - [ ] Security measures active
+          
+          **Go-Live Checklist:**
+          - [ ] DNS settings configured
+          - [ ] SSL certificate active
+          - [ ] Backup systems in place
+          - [ ] Monitoring tools active
+          - [ ] Team training completed
+          - [ ] Launch plan communicated
+
+  - id: optimization-playbook
+    title: Conversion Optimization Playbook
+    instruction: |
+      Create systematic approach for ongoing optimization and improvement.
+      Include optimization tactics, testing protocols, and scaling strategies.
+    sections:
+      - id: conversion-optimization-tactics
+        title: Advanced Conversion Optimization Tactics
+        template: |
+          **Psychological Optimization Tactics:**
+          
+          **Cognitive Load Reduction:**
+          - Information Hierarchy: {{information_hierarchy_optimization}}
+          - Decision Simplification: {{decision_simplification_strategy}}
+          - Progressive Disclosure: {{progressive_disclosure_implementation}}
+          - Cognitive Ease: {{cognitive_ease_techniques}}
+          
+          **Emotional Engagement:**
+          - Emotional Triggers: {{emotional_trigger_optimization}}
+          - Story Integration: {{story_integration_strategy}}
+          - Visual Emotion: {{visual_emotion_optimization}}
+          - Empathy Building: {{empathy_building_techniques}}
+          
+          **Behavior Design:**
+          - Nudge Techniques: {{nudge_technique_implementation}}
+          - Habit Formation: {{habit_formation_strategies}}
+          - Friction Removal: {{friction_removal_tactics}}
+          - Flow State Creation: {{flow_state_optimization}}
+          
+          **Personalization Strategies:**
+          - Dynamic Content: {{dynamic_content_implementation}}
+          - Behavioral Targeting: {{behavioral_targeting_setup}}
+          - Geographic Customization: {{geographic_customization}}
+          - Device Optimization: {{device_specific_optimization}}
+
+      - id: advanced-testing-strategies
+        title: Advanced Testing & Experimentation
+        template: |
+          **Multivariate Testing:**
+          - Element Combinations: {{multivariate_testing_strategy}}
+          - Interaction Effects: {{interaction_effect_analysis}}
+          - Complex Hypotheses: {{complex_hypothesis_testing}}
+          - Advanced Analytics: {{advanced_analytics_implementation}}
+          
+          **Personalization Testing:**
+          - Segment-Based Testing: {{segment_based_testing_approach}}
+          - AI-Driven Optimization: {{ai_optimization_implementation}}
+          - Real-Time Adaptation: {{realtime_adaptation_strategy}}
+          - Predictive Optimization: {{predictive_optimization_approach}}
+          
+          **Advanced Metrics:**
+          - Micro-Conversions: {{micro_conversion_tracking}}
+          - Lifetime Value Impact: {{ltv_impact_measurement}}
+          - Attribution Modeling: {{attribution_modeling_setup}}
+          - Cohort Analysis: {{cohort_analysis_implementation}}
+          
+          **Innovation Testing:**
+          - Emerging Technologies: {{emerging_tech_testing}}
+          - New Interaction Patterns: {{new_interaction_testing}}
+          - Experimental Formats: {{experimental_format_testing}}
+          - Future-Proofing: {{future_proofing_strategies}}
+
+      - id: scaling-optimization
+        title: Scaling & Growth Optimization
+        template: |
+          **Scaling Framework:**
+          
+          **Horizontal Scaling:**
+          - Multiple Page Variants: {{multiple_page_scaling}}
+          - Campaign-Specific Pages: {{campaign_specific_optimization}}
+          - Audience Segmentation: {{audience_segmentation_scaling}}
+          - Geographic Expansion: {{geographic_scaling_strategy}}
+          
+          **Vertical Scaling:**
+          - Conversion Rate Improvement: {{conversion_rate_scaling}}
+          - Traffic Volume Increase: {{traffic_volume_scaling}}
+          - Lead Quality Enhancement: {{lead_quality_scaling}}
+          - Value Per Lead Growth: {{value_per_lead_optimization}}
+          
+          **System Optimization:**
+          - Process Automation: {{process_automation_scaling}}
+          - Team Efficiency: {{team_efficiency_optimization}}
+          - Tool Integration: {{tool_integration_scaling}}
+          - Data Management: {{data_management_scaling}}
+          
+          **Innovation Pipeline:**
+          - Emerging Opportunities: {{innovation_opportunity_pipeline}}
+          - Technology Adoption: {{technology_adoption_strategy}}
+          - Market Evolution: {{market_evolution_response}}
+          - Competitive Advantage: {{competitive_advantage_maintenance}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Project Management
+    instruction: |
+      Create detailed implementation timeline with phases, deliverables, and success criteria.
+      Ensure successful launch and ongoing optimization of capture page strategy.
+    sections:
+      - id: project-phases
+        title: Implementation Phases & Timeline
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Start Date:** {{phase_start_date}}
+          **End Date:** {{phase_end_date}}
+          
+          **Phase Objectives:**
+          {{phase_objectives_detailed}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_due_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_due_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_due_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_due_date}}
+          
+          **Success Criteria:**
+          {{phase_success_criteria_detailed}}
+          
+          **Dependencies:**
+          - Internal: {{internal_dependencies}}
+          - External: {{external_dependencies}}
+          - Technical: {{technical_dependencies}}
+          
+          **Risk Factors:**
+          - Risk 1: {{risk_factor_1}} - Mitigation: {{risk_1_mitigation}}
+          - Risk 2: {{risk_factor_2}} - Mitigation: {{risk_2_mitigation}}
+          - Risk 3: {{risk_factor_3}} - Mitigation: {{risk_3_mitigation}}
+          
+          **Quality Gates:**
+          {{phase_quality_gates}}
+
+      - id: resource-allocation
+        title: Resource Allocation & Team Structure
+        template: |
+          **Team Structure:**
+          
+          **Core Team Members:**
+          - Project Manager: {{project_manager_assignment}}
+          - UX/UI Designer: {{designer_assignment}}
+          - Front-End Developer: {{frontend_developer_assignment}}
+          - Back-End Developer: {{backend_developer_assignment}}
+          - Digital Marketer: {{digital_marketer_assignment}}
+          - Analytics Specialist: {{analytics_specialist_assignment}}
+          
+          **Extended Team:**
+          - Copywriter: {{copywriter_assignment}}
+          - Graphic Designer: {{graphic_designer_assignment}}
+          - QA Tester: {{qa_tester_assignment}}
+          - Data Analyst: {{data_analyst_assignment}}
+          
+          **Budget Allocation:**
+          - Design & Development: {{design_development_budget}}
+          - Tools & Software: {{tools_software_budget}}
+          - Testing & Analytics: {{testing_analytics_budget}}
+          - Advertising & Promotion: {{advertising_budget}}
+          - Contingency: {{contingency_budget}}
+          
+          **External Dependencies:**
+          - Third-Party Integrations: {{third_party_dependencies}}
+          - Vendor Relationships: {{vendor_dependencies}}
+          - Legal/Compliance: {{legal_compliance_dependencies}}
+          - Content Creation: {{content_creation_dependencies}}
+
+      - id: launch-strategy
+        title: Launch Strategy & Go-to-Market Plan
+        template: |
+          **Launch Sequence:**
+          
+          **Soft Launch Phase:**
+          - Target Audience: {{soft_launch_audience}}
+          - Traffic Percentage: {{soft_launch_traffic_percentage}}
+          - Duration: {{soft_launch_duration}}
+          - Success Metrics: {{soft_launch_success_metrics}}
+          - Monitoring Intensity: {{soft_launch_monitoring}}
+          
+          **Full Launch Phase:**
+          - Traffic Ramp-Up: {{full_launch_rampup_strategy}}
+          - Performance Thresholds: {{full_launch_thresholds}}
+          - Rollback Plan: {{launch_rollback_plan}}
+          - Communication Plan: {{launch_communication_plan}}
+          
+          **Post-Launch Optimization:**
+          - Initial Analysis Period: {{initial_analysis_duration}}
+          - Quick Win Identification: {{quick_win_strategy}}
+          - Testing Schedule: {{post_launch_testing_schedule}}
+          - Scaling Triggers: {{scaling_trigger_conditions}}
+          
+          **Success Validation:**
+          - Performance Benchmarks: {{performance_benchmark_validation}}
+          - User Feedback: {{user_feedback_collection}}
+          - Stakeholder Review: {{stakeholder_review_process}}
+          - Continuous Improvement: {{continuous_improvement_protocol}}
+
+  - id: success-metrics-framework
+    title: Success Metrics & Performance Framework
+    instruction: |
+      Define comprehensive success metrics and long-term performance optimization strategy.
+      Create measurement framework for continuous improvement and scaling.
+    sections:
+      - id: kpi-definition
+        title: Key Performance Indicators & Benchmarks
+        template: |
+          **Primary KPIs:**
+          
+          **Conversion Metrics:**
+          - Conversion Rate Target: {{conversion_rate_target}}
+          - Conversion Rate Benchmark: {{conversion_rate_benchmark}}
+          - Lead Quality Score: {{lead_quality_score_target}}
+          - Cost Per Lead Target: {{cost_per_lead_target}}
+          
+          **User Experience Metrics:**
+          - Bounce Rate Target: {{bounce_rate_target}}
+          - Time on Page Target: {{time_on_page_target}}
+          - Form Completion Rate: {{form_completion_rate_target}}
+          - Mobile Conversion Parity: {{mobile_conversion_parity_target}}
+          
+          **Technical Performance:**
+          - Page Load Speed: {{page_load_speed_target}}
+          - Core Web Vitals: {{core_web_vitals_targets}}
+          - Uptime Percentage: {{uptime_percentage_target}}
+          - Error Rate: {{error_rate_target}}
+          
+          **Business Impact:**
+          - Return on Investment: {{roi_target}}
+          - Lead-to-Customer Rate: {{lead_to_customer_rate_target}}
+          - Customer Lifetime Value: {{clv_impact_target}}
+          - Payback Period: {{payback_period_target}}
+          
+          **Industry Benchmarks:**
+          - Industry Average Conversion: {{industry_average_conversion}}
+          - Competitive Benchmark: {{competitive_benchmark}}
+          - Best-in-Class Performance: {{best_in_class_benchmark}}
+          - Performance Percentile Goal: {{performance_percentile_goal}}
+
+      - id: measurement-framework
+        title: Measurement & Analytics Framework
+        template: |
+          **Analytics Implementation:**
+          
+          **Tracking Setup:**
+          - Google Analytics 4: {{ga4_implementation_details}}
+          - Conversion Tracking: {{conversion_tracking_setup}}
+          - Event Tracking: {{event_tracking_configuration}}
+          - Custom Dimensions: {{custom_dimensions_setup}}
+          
+          **Data Collection:**
+          - Form Analytics: {{form_analytics_implementation}}
+          - User Behavior: {{user_behavior_tracking}}
+          - Traffic Sources: {{traffic_source_analysis}}
+          - Device Performance: {{device_performance_tracking}}
+          
+          **Reporting Structure:**
+          - Real-Time Dashboard: {{realtime_dashboard_setup}}
+          - Daily Reports: {{daily_reporting_structure}}
+          - Weekly Analysis: {{weekly_analysis_framework}}
+          - Monthly Reviews: {{monthly_review_process}}
+          
+          **Data Quality:**
+          - Data Validation: {{data_validation_processes}}
+          - Bot Filtering: {{bot_filtering_implementation}}
+          - Privacy Compliance: {{privacy_compliant_tracking}}
+          - Data Retention: {{data_retention_policies}}
+
+      - id: optimization-cycles
+        title: Continuous Optimization Cycles
+        template: |
+          **Optimization Methodology:**
+          
+          **Weekly Optimization Cycle:**
+          - Monday: {{monday_optimization_activities}}
+          - Tuesday: {{tuesday_optimization_activities}}
+          - Wednesday: {{wednesday_optimization_activities}}
+          - Thursday: {{thursday_optimization_activities}}
+          - Friday: {{friday_optimization_activities}}
+          
+          **Monthly Deep Dives:**
+          - Performance Analysis: {{monthly_performance_analysis}}
+          - Competitive Review: {{monthly_competitive_review}}
+          - Technology Updates: {{monthly_technology_review}}
+          - Strategy Refinement: {{monthly_strategy_refinement}}
+          
+          **Quarterly Strategy Reviews:**
+          - Market Evolution: {{quarterly_market_analysis}}
+          - Technology Advancement: {{quarterly_tech_advancement}}
+          - Performance Benchmarking: {{quarterly_benchmarking}}
+          - Strategic Pivots: {{quarterly_strategic_adjustments}}
+          
+          **Annual Framework Updates:**
+          - Methodology Evolution: {{annual_methodology_updates}}
+          - Tool Stack Review: {{annual_toolstack_review}}
+          - Team Development: {{annual_team_development}}
+          - Innovation Integration: {{annual_innovation_integration}}
+
+  - id: template-completion
+    title: Template Completion & Implementation Ready
+    instruction: |
+      Final validation of capture page template ensuring comprehensive coverage of conversion optimization strategies.
+      Confirm all elements are actionable and aligned with performance goals.
+    content: |
+      ## Capture Page Template Completion
+      
+      **Template Development Completed:** {{completion_date}}
+      **Page Name:** {{page_name}}
+      **Campaign Focus:** {{campaign_focus}}
+      **Implementation Target Date:** {{implementation_target_date}}
+      
+      **Template Components Validated:**
+      - [ ] Strategic foundation aligned with company brand and unique mechanism
+      - [ ] Page architecture optimized for conversion psychology
+      - [ ] Mobile-first design with responsive breakpoints
+      - [ ] Form optimization with progressive profiling strategy
+      - [ ] Trust and credibility elements comprehensively integrated
+      - [ ] A/B testing framework with statistical rigor
+      - [ ] Technical implementation specifications detailed
+      - [ ] Performance tracking and analytics framework established
+      
+      **Conversion Optimization Elements:**
+      - [ ] Headline formulas with psychological triggers
+      - [ ] Form field minimization with data collection strategy
+      - [ ] Social proof integration with authenticity verification
+      - [ ] Urgency and scarcity elements ethically implemented
+      - [ ] Mobile optimization for thumb-friendly interaction
+      - [ ] Trust building elements above and below fold
+      - [ ] Error handling and user feedback optimization
+      - [ ] Performance optimization for sub-3-second load times
+      
+      **Implementation Readiness:**
+      - [ ] Technical specifications documented and feasible
+      - [ ] Resource requirements identified and allocated
+      - [ ] Timeline realistic with clear phase gates
+      - [ ] Success metrics defined and measurable
+      - [ ] Risk mitigation strategies established
+      - [ ] Team roles and responsibilities assigned
+      - [ ] Quality assurance checklist comprehensive
+      - [ ] Launch strategy with rollback contingencies
+      
+      **Expected Performance Targets:**
+      - Conversion Rate Target: {{expected_conversion_rate}}
+      - Lead Quality Score: {{expected_lead_quality}}
+      - Mobile Conversion Parity: {{expected_mobile_parity}}
+      - Page Load Speed: {{expected_load_speed}}
+      - ROI Projection: {{expected_roi}}
+      
+      ---
+      
+      _Template Version: 1.0_
+      _Framework: Elevate Marketing Capture Page Optimization_
+      _Next Review Date: {{next_review_date}}_
+      _Template ID: one Capture Page Template v1.0_
+
+# Advanced template configuration and validation
+variables:
+  headline_variants:
+    type: array
+    min_items: 3
+    max_items: 5
+    description: "Multiple headline variations for A/B testing"
+    validation:
+      - benefit_clarity: "Each headline must clearly communicate primary benefit"
+      - psychological_trigger: "Must include psychological trigger (curiosity, fear, aspiration, etc.)"
+      - target_audience_focus: "Must speak directly to target avatar language and needs"
+      - measurable_outcome: "Should include specific, measurable outcomes when possible"
+
+  form_fields:
+    type: object
+    properties:
+      primary_fields:
+        type: array
+        max_items: 3
+        description: "Essential fields for initial capture"
+      progressive_fields:
+        type: array
+        max_items: 5
+        description: "Additional fields for progressive profiling"
+      field_specifications:
+        type: object
+        description: "Technical and UX specifications for each field"
+    validation:
+      - conversion_optimization: "Primary fields must be minimized for maximum conversion"
+      - progressive_strategy: "Progressive profiling must provide value exchange"
+      - mobile_optimization: "All fields must be mobile-friendly and thumb-accessible"
+
+  social_proof:
+    type: object
+    properties:
+      testimonials:
+        type: array
+        min_items: 2
+        description: "Customer testimonials with results and attribution"
+      statistics:
+        type: object
+        description: "Quantified social proof (user counts, success rates, etc.)"
+      authority_indicators:
+        type: array
+        description: "Credibility signals (media mentions, certifications, etc.)"
+    validation:
+      - authenticity_verification: "All social proof must be genuine and verifiable"
+      - relevance_alignment: "Social proof must be relevant to target audience"
+      - visual_integration: "Must integrate naturally with page design"
+
+  mobile_optimization:
+    type: object
+    properties:
+      touch_targets:
+        type: object
+        description: "Touch target sizes and spacing for mobile interaction"
+      performance_specs:
+        type: object
+        description: "Mobile performance requirements and optimization"
+      ux_adaptations:
+        type: object
+        description: "Mobile-specific UX adaptations and enhancements"
+    validation:
+      - thumb_friendly_design: "All interactive elements must be thumb-accessible"
+      - performance_standards: "Must meet mobile performance benchmarks"
+      - cross_device_consistency: "Experience must be consistent across devices"
+
+  conversion_psychology:
+    type: object
+    properties:
+      cognitive_biases:
+        type: array
+        min_items: 3
+        description: "Cognitive biases leveraged for conversion optimization"
+      emotional_triggers:
+        type: array
+        min_items: 2
+        description: "Emotional triggers integrated into copy and design"
+      persuasion_principles:
+        type: array
+        min_items: 4
+        description: "Cialdini principles and other persuasion techniques"
+    validation:
+      - ethical_application: "All psychological techniques must be applied ethically"
+      - audience_alignment: "Triggers must align with target audience psychology"
+      - brand_consistency: "Psychological elements must align with brand voice"
+
+quality_validation:
+  conversion_optimization:
+    - headline_effectiveness: "Headlines must include proven psychological triggers"
+    - form_optimization: "Forms must minimize friction while collecting necessary data"
+    - trust_building: "Trust elements must be prominently displayed and authentic"
+    - mobile_first: "Design must prioritize mobile experience and performance"
+    - testing_framework: "A/B testing must be statistically rigorous and actionable"
+
+  user_experience:
+    - clarity_focus: "Value proposition must be immediately clear"
+    - friction_elimination: "All unnecessary friction points must be removed"
+    - accessibility_compliance: "Must meet WCAG accessibility standards"
+    - performance_optimization: "Page must load in under 3 seconds on mobile"
+    - error_handling: "Error states must be helpful and recovery-focused"
+
+  technical_excellence:
+    - responsive_design: "Must work seamlessly across all device types"
+    - performance_standards: "Must meet Core Web Vitals requirements"
+    - security_implementation: "Must include proper security measures"
+    - analytics_integration: "Must enable comprehensive tracking and analysis"
+    - scalability_planning: "Architecture must support future growth and optimization"
+
+  business_alignment:
+    - roi_optimization: "Must demonstrate clear path to positive ROI"
+    - lead_quality_focus: "Must balance conversion rate with lead quality"
+    - brand_reinforcement: "Must strengthen brand positioning and trust"
+    - scalability_potential: "Must be scalable across campaigns and audiences"
+    - competitive_advantage: "Must provide differentiation from competitors"
+
+conditional_templates:
+  capture_approach:
+    simple_single_step:
+      form_strategy: "Minimal fields, maximum conversion focus"
+      psychology_emphasis: "Immediate value, reduced commitment fear"
+      design_approach: "Clean, distraction-free, mobile-optimized"
+    progressive_multi_step:
+      form_strategy: "Gradual information collection with value exchange"
+      psychology_emphasis: "Commitment escalation, qualification focus"
+      design_approach: "Guided experience with progress indicators"
+    assessment_based:
+      form_strategy: "Interactive engagement before email capture"
+      psychology_emphasis: "Curiosity gap, personalized value"
+      design_approach: "Interactive elements with results-driven conversion"
+
+  traffic_source:
+    paid_advertising:
+      message_match_priority: "High message match between ad and page"
+      conversion_optimization: "Aggressive conversion optimization"
+      tracking_requirements: "Detailed attribution and ROI tracking"
+    organic_search:
+      seo_optimization: "Search-friendly content and structure"
+      trust_building: "Enhanced credibility and authority signals"
+      information_hierarchy: "Clear value proposition and next steps"
+    social_media:
+      visual_engagement: "Strong visual elements and social proof"
+      mobile_optimization: "Mobile-first design and interaction"
+      sharing_integration: "Social sharing and virality elements"
+    email_marketing:
+      audience_warm_up: "Leverage existing relationship and trust"
+      segmentation_optimization: "Personalized messaging based on segments"
+      cross_sell_opportunities: "Strategic upsell and cross-sell integration"
+
+input_requirements:
+  required_variables:
+    - company_name
+    - page_name
+    - campaign_name
+    - primary_conversion_objective
+    - target_avatar_name
+    - unique_mechanism_name
+    - primary_value_proposition
+    - traffic_source_mix
+    - headline_variants
+    - form_fields
+    - social_proof
+
+  conditional_requirements:
+    capture_approach:
+      simple_single_step: ["minimal_form_fields", "immediate_value_elements"]
+      progressive_multi_step: ["step_progression_strategy", "value_exchange_framework"]
+      assessment_based: ["assessment_design", "results_personalization"]
+
+    traffic_source_focus:
+      paid_advertising: ["ad_message_alignment", "landing_page_relevance"]
+      organic_search: ["keyword_optimization", "seo_requirements"]
+      social_media: ["platform_specific_optimization", "visual_engagement_strategy"]
+
+  validation_requirements:
+    conversion_focus:
+      - "All elements must contribute to conversion optimization"
+      - "Mobile experience must be prioritized and optimized"
+      - "Trust building must be comprehensive and authentic"
+      - "Testing framework must be statistically sound"
+
+    brand_alignment:
+      - "Must reinforce company unique mechanism and brand voice"
+      - "Value proposition must align with overall brand positioning"
+      - "Visual design must follow brand guidelines and standards"
+      - "Copy must maintain brand voice and messaging consistency"

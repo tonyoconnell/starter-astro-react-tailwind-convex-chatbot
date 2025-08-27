@@ -1,0 +1,21 @@
+bundle:
+  name: Marketing Team
+  icon: 📈
+  description: Complete Elevate Marketing Framework team with specialists for each phase
+agents:
+  - one-orchestrator
+  - brand-identity-specialist
+  - market-research-analyst
+  - customer-journey-designer
+  - content-hook-specialist
+  - lead-magnet-creator
+  - lead-capture-expert
+  - engagement-specialist
+  - sales-environment-optimizer
+  - nurture-campaign-manager
+  - upsell-strategist
+  - customer-success-manager
+  - advocacy-campaign-designer
+workflows:
+  - elevate-greenfield-workflow.yaml
+  - elevate-brownfield-workflow.yaml

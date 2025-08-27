@@ -1,0 +1,372 @@
+# Elevate Marketing Brownfield Workflow
+# Optimized workflow for existing businesses/campaigns with some marketing assets
+
+name: elevate-brownfield-workflow
+version: 1.0.0
+description: |
+  Accelerated workflow for implementing the Elevate Framework in existing businesses.
+  Designed for companies with existing marketing assets, established brands, or 
+  partial campaign implementations that need optimization and expansion.
+
+# Workflow Configuration
+workflow:
+  type: adaptive
+  validation_required: true
+  quality_gates: true
+  asset_assessment: true
+  rollback_enabled: true
+
+# Pre-Implementation Assessment
+pre_assessment:
+  name: "Existing Asset Evaluation"
+  duration: "1 week"
+  agent: elevate-marketing-orchestrator
+  
+  evaluation_areas:
+    brand_foundation:
+      checklist:
+        - brand_voice_documented: boolean
+        - unique_mechanism_defined: boolean
+        - core_offer_clear: boolean
+        - messaging_consistent: boolean
+      scoring: "1-5 scale"
+      
+    market_position:
+      checklist:
+        - competitor_analysis_current: boolean
+        - market_trends_understood: boolean
+        - positioning_validated: boolean
+        - differentiation_clear: boolean
+      scoring: "1-5 scale"
+      
+    customer_understanding:
+      checklist:
+        - customer_avatars_defined: boolean
+        - journey_mapped: boolean
+        - pain_points_prioritized: boolean
+        - feedback_systems_active: boolean
+      scoring: "1-5 scale"
+      
+    attract_assets:
+      checklist:
+        - hooks_performing: boolean
+        - lead_magnets_converting: boolean
+        - capture_pages_optimized: boolean
+        - traffic_sources_diversified: boolean
+      scoring: "1-5 scale"
+      
+    convert_systems:
+      checklist:
+        - engagement_sequences_active: boolean
+        - sales_pages_converting: boolean
+        - nurture_campaigns_effective: boolean
+        - conversion_tracking_complete: boolean
+      scoring: "1-5 scale"
+      
+    grow_infrastructure:
+      checklist:
+        - upsell_offers_available: boolean
+        - customer_success_program: boolean
+        - referral_system_active: boolean
+        - advocacy_campaigns_running: boolean
+      scoring: "1-5 scale"
+  
+  output:
+    assessment_report: "Current state analysis with improvement priorities"
+    optimization_roadmap: "Phased approach based on existing assets"
+    resource_requirements: "Team and budget needs for implementation"
+
+# Adaptive Phase Planning
+phase_planning:
+  foundation_optimization:
+    trigger: "Any foundation area scoring < 4"
+    duration: "2-4 weeks"
+    focus: "Fill gaps and strengthen weak areas"
+    
+  attract_enhancement:
+    trigger: "Attract assets scoring < 3.5 OR lead generation goals unmet"
+    duration: "2-3 weeks"
+    focus: "Optimize existing campaigns and add missing components"
+    
+  convert_improvement:
+    trigger: "Convert systems scoring < 3.5 OR conversion rates below target"
+    duration: "3-4 weeks"
+    focus: "Enhance sales process and nurture sequences"
+    
+  grow_expansion:
+    trigger: "Grow infrastructure scoring < 3 OR LTV goals unmet"
+    duration: "2-4 weeks"
+    focus: "Build revenue expansion and advocacy systems"
+
+# Phase Definitions (Conditional)
+phases:
+  
+  # PHASE 0: FOUNDATION OPTIMIZATION (0-4 weeks)
+  foundation_optimization:
+    name: "Foundation Gap Analysis & Optimization"
+    duration: "2-4 weeks (conditional)"
+    trigger_condition: "foundation_score < 4.0"
+    parallel_execution: true
+    
+    conditional_steps:
+      company_optimization:
+        condition: "brand_foundation_score < 4"
+        agent: brand-identity-specialist
+        task: company-context-workshop
+        template: company-foundation-brief-tmpl.yaml
+        duration: "1-2 weeks"
+        focus: "Strengthen brand voice, unique mechanism, core offer"
+        
+      market_refresh:
+        condition: "market_position_score < 4"
+        agent: market-research-analyst
+        task: market-intelligence-research
+        template: market-analysis-report-tmpl.yaml
+        duration: "1-2 weeks"
+        focus: "Update competitive analysis and positioning"
+        
+      customer_refinement:
+        condition: "customer_understanding_score < 4"
+        agent: customer-journey-designer
+        task: customer-avatar-development
+        template: customer-avatar-profile-tmpl.yaml
+        duration: "1 week"
+        focus: "Refine avatars and update journey mapping"
+        
+    synthesis:
+      agent: elevate-marketing-orchestrator
+      task: strategic-alignment-synthesis
+      template: strategic-alignment-blueprint-tmpl.yaml
+      duration: "1 week"
+      focus: "Integrate improvements with existing strategy"
+      
+    validation:
+      checklist: foundation-completeness-checklist.md
+      minimum_score: 4
+      
+  # PHASE 1: ATTRACT ENHANCEMENT (0-3 weeks)
+  attract_enhancement:
+    name: "ATTRACT Campaign Optimization"
+    duration: "2-3 weeks (conditional)"
+    trigger_condition: "attract_score < 3.5 OR lead_goals_unmet"
+    parallel_execution: true
+    
+    conditional_steps:
+      hook_optimization:
+        condition: "hooks_underperforming OR new_channels_needed"
+        agent: content-hook-specialist
+        task: hook-content-creation
+        template: hook-content-framework-tmpl.yaml
+        duration: "1-2 weeks"
+        focus: "Optimize existing hooks and create new variants"
+        
+      gift_enhancement:
+        condition: "lead_magnets_converting < 3% OR value_perception_low"
+        agent: lead-magnet-creator
+        task: lead-magnet-development
+        template: lead-magnet-blueprint-tmpl.yaml
+        duration: "2 weeks"
+        focus: "Improve existing magnets or create higher-value alternatives"
+        
+      capture_optimization:
+        condition: "capture_rate < 15% OR form_abandonment_high"
+        agent: lead-capture-expert
+        task: capture-page-optimization
+        template: capture-page-template-tmpl.yaml
+        duration: "1 week"
+        focus: "A/B test pages and optimize conversion elements"
+        
+    validation:
+      checklist: attract-campaign-checklist.md
+      minimum_score: 4
+      
+  # PHASE 2: CONVERT IMPROVEMENT (0-4 weeks)
+  convert_improvement:
+    name: "CONVERT System Enhancement"
+    duration: "3-4 weeks (conditional)"
+    trigger_condition: "convert_score < 3.5 OR conversion_targets_unmet"
+    parallel_execution: true
+    
+    conditional_steps:
+      engagement_optimization:
+        condition: "engagement_rate < 25% OR response_time_slow"
+        agent: engagement-specialist
+        task: engagement-sequence-design
+        template: engagement-sequence-plan-tmpl.yaml
+        duration: "2 weeks"
+        focus: "Improve real-time engagement and qualification"
+        
+      sales_enhancement:
+        condition: "sales_conversion < 2% OR cart_abandonment > 70%"
+        agent: sales-environment-optimizer
+        task: sales-environment-audit
+        template: sales-optimization-audit-tmpl.yaml
+        duration: "2-3 weeks"
+        focus: "Optimize sales pages and checkout process"
+        
+      nurture_improvement:
+        condition: "email_engagement < 20% OR long_term_conversion < 10%"
+        agent: nurture-campaign-manager
+        task: nurture-campaign-creation
+        template: nurture-campaign-architecture-tmpl.yaml
+        duration: "3 weeks"
+        focus: "Enhance email sequences and relationship building"
+        
+    validation:
+      checklist: convert-campaign-checklist.md
+      minimum_score: 4
+      
+  # PHASE 3: GROW EXPANSION (0-4 weeks)
+  grow_expansion:
+    name: "GROW System Development"
+    duration: "2-4 weeks (conditional)"
+    trigger_condition: "grow_score < 3 OR ltv_targets_unmet"
+    parallel_execution: true
+    
+    conditional_steps:
+      upsell_development:
+        condition: "upsell_rate < 10% OR aov_below_target"
+        agent: upsell-strategist
+        task: upsell-strategy-development
+        template: upsell-strategy-framework-tmpl.yaml
+        duration: "2-3 weeks"
+        focus: "Create or optimize upsell offers and timing"
+        
+      customer_success_enhancement:
+        condition: "retention_rate < 80% OR nps_score < 50"
+        agent: customer-success-manager
+        task: customer-success-program
+        template: customer-success-program-tmpl.yaml
+        duration: "2-3 weeks"
+        focus: "Improve customer success and feedback systems"
+        
+      advocacy_activation:
+        condition: "referral_rate < 5% OR viral_coefficient < 1.1"
+        agent: advocacy-campaign-designer
+        task: advocacy-system-design
+        template: advocacy-campaign-blueprint-tmpl.yaml
+        duration: "2-3 weeks"
+        focus: "Build or enhance referral and advocacy programs"
+        
+    validation:
+      checklist: grow-campaign-checklist.md
+      requirement: ready
+
+# Optimization Sprints
+optimization_sprints:
+  weekly_performance_review:
+    frequency: "weekly"
+    duration: "2 hours"
+    participants: ["all_active_agents"]
+    agenda:
+      - performance_metrics_review
+      - bottleneck_identification
+      - optimization_priorities
+      - resource_reallocation
+      
+  monthly_strategic_alignment:
+    frequency: "monthly"
+    duration: "4 hours"
+    participants: ["orchestrator", "key_stakeholders"]
+    agenda:
+      - strategic_goal_progress
+      - market_condition_updates
+      - resource_optimization
+      - roadmap_adjustments
+      
+  quarterly_comprehensive_audit:
+    frequency: "quarterly"
+    duration: "1 week"
+    scope: "complete_system_assessment"
+    deliverable: "optimization_roadmap_update"
+
+# Success Metrics (Adaptive)
+success_metrics:
+  foundation_metrics:
+    brand_consistency_score: ">= 4.0"
+    strategic_alignment_score: ">= 4.0"
+    
+  attract_metrics:
+    lead_conversion_improvement: ">= 25%"
+    cost_per_lead_reduction: ">= 15%"
+    lead_quality_increase: ">= 0.5 points"
+    
+  convert_metrics:
+    conversion_rate_improvement: ">= 20%"
+    sales_cycle_reduction: ">= 15%"
+    customer_acquisition_cost_reduction: ">= 10%"
+    
+  grow_metrics:
+    ltv_increase: ">= 30%"
+    upsell_rate_improvement: ">= 50%"
+    referral_rate_increase: ">= 100%"
+    nps_improvement: ">= 10 points"
+
+# Risk Management
+risk_management:
+  asset_preservation:
+    - backup_existing_campaigns
+    - gradual_rollout_strategy
+    - performance_monitoring
+    - rollback_procedures
+    
+  revenue_protection:
+    - maintain_current_revenue_streams
+    - test_optimizations_incrementally
+    - monitor_customer_feedback
+    - preserve_high_performing_assets
+    
+  change_management:
+    - stakeholder_communication_plan
+    - team_training_program
+    - gradual_responsibility_transfer
+    - documentation_updates
+
+# Implementation Approach
+implementation_approach:
+  assessment_driven: "Start with comprehensive assessment"
+  priority_based: "Focus on highest-impact, lowest-risk improvements"
+  incremental: "Implement changes gradually to minimize disruption"
+  data_driven: "Base decisions on performance metrics and feedback"
+  reversible: "Ensure all changes can be rolled back if needed"
+
+# Timeline Estimation
+timeline_estimation:
+  assessment_phase: "1 week"
+  
+  conditional_phases:
+    foundation_only: "2-4 weeks"
+    attract_only: "2-3 weeks"
+    convert_only: "3-4 weeks"
+    grow_only: "2-4 weeks"
+    
+  typical_combinations:
+    foundation_attract: "4-6 weeks"
+    attract_convert: "5-7 weeks"
+    convert_grow: "5-8 weeks"
+    comprehensive: "8-12 weeks"
+    
+  minimum_viable_improvement: "3-4 weeks"
+  maximum_comprehensive_overhaul: "12-15 weeks"
+
+# Quality Assurance
+quality_assurance:
+  continuous_monitoring: true
+  performance_benchmarking: true
+  customer_feedback_loops: true
+  competitive_tracking: true
+  
+  validation_checkpoints:
+    - weekly_performance_reviews
+    - monthly_goal_assessments
+    - quarterly_strategic_audits
+    - annual_comprehensive_evaluations
+
+# Notes
+notes: |
+  Brownfield workflow is optimized for speed and minimal disruption.
+  Assessment phase is critical - invest time upfront to save time later.
+  Not all phases may be needed - customize based on assessment results.
+  Preserve existing high-performing assets while optimizing weak areas.
+  Regular monitoring ensures improvements don't negatively impact performance.
+  Focus on incremental improvements rather than revolutionary changes.

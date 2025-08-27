@@ -1,0 +1,319 @@
+content_theme_planning:
+  theme_name: "{{THEME_NAME}}"
+  theme_duration: "{{THEME_DURATION}}"
+  strategic_objective: "{{STRATEGIC_OBJECTIVE}}"
+  target_audience: "{{TARGET_AUDIENCE}}"
+  
+  theme_overview:
+    core_message: "{{CORE_MESSAGE}}"
+    key_pillars:
+      - "{{PILLAR_1}}"
+      - "{{PILLAR_2}}"
+      - "{{PILLAR_3}}"
+    supporting_messages:
+      - "{{SUPPORTING_MESSAGE_1}}"
+      - "{{SUPPORTING_MESSAGE_2}}"
+      - "{{SUPPORTING_MESSAGE_3}}"
+      
+  content_calendar_themes:
+    monday_motivation:
+      theme_name: "Motivational Monday"
+      description: "{{MONDAY_DESCRIPTION}}"
+      content_focus: "{{MONDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{MONDAY_MESSAGE_1}}"
+        - "{{MONDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{MONDAY_FB_ADAPTATION}}"
+        instagram: "{{MONDAY_IG_ADAPTATION}}"
+        tiktok: "{{MONDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{MONDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{MONDAY_TWITTER_ADAPTATION}}"
+        
+    transformation_tuesday:
+      theme_name: "Transformation Tuesday"
+      description: "{{TUESDAY_DESCRIPTION}}"
+      content_focus: "{{TUESDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{TUESDAY_MESSAGE_1}}"
+        - "{{TUESDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{TUESDAY_FB_ADAPTATION}}"
+        instagram: "{{TUESDAY_IG_ADAPTATION}}"
+        tiktok: "{{TUESDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{TUESDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{TUESDAY_TWITTER_ADAPTATION}}"
+        
+    wisdom_wednesday:
+      theme_name: "Wisdom Wednesday"
+      description: "{{WEDNESDAY_DESCRIPTION}}"
+      content_focus: "{{WEDNESDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{WEDNESDAY_MESSAGE_1}}"
+        - "{{WEDNESDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{WEDNESDAY_FB_ADAPTATION}}"
+        instagram: "{{WEDNESDAY_IG_ADAPTATION}}"
+        tiktok: "{{WEDNESDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{WEDNESDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{WEDNESDAY_TWITTER_ADAPTATION}}"
+        
+    throwback_thursday:
+      theme_name: "Throwback Thursday"
+      description: "{{THURSDAY_DESCRIPTION}}"
+      content_focus: "{{THURSDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{THURSDAY_MESSAGE_1}}"
+        - "{{THURSDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{THURSDAY_FB_ADAPTATION}}"
+        instagram: "{{THURSDAY_IG_ADAPTATION}}"
+        tiktok: "{{THURSDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{THURSDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{THURSDAY_TWITTER_ADAPTATION}}"
+        
+    feature_friday:
+      theme_name: "Feature Friday"
+      description: "{{FRIDAY_DESCRIPTION}}"
+      content_focus: "{{FRIDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{FRIDAY_MESSAGE_1}}"
+        - "{{FRIDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{FRIDAY_FB_ADAPTATION}}"
+        instagram: "{{FRIDAY_IG_ADAPTATION}}"
+        tiktok: "{{FRIDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{FRIDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{FRIDAY_TWITTER_ADAPTATION}}"
+        
+    social_saturday:
+      theme_name: "Social Saturday"
+      description: "{{SATURDAY_DESCRIPTION}}"
+      content_focus: "{{SATURDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{SATURDAY_MESSAGE_1}}"
+        - "{{SATURDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{SATURDAY_FB_ADAPTATION}}"
+        instagram: "{{SATURDAY_IG_ADAPTATION}}"
+        tiktok: "{{SATURDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{SATURDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{SATURDAY_TWITTER_ADAPTATION}}"
+        
+    sunday_stories:
+      theme_name: "Sunday Stories"
+      description: "{{SUNDAY_DESCRIPTION}}"
+      content_focus: "{{SUNDAY_CONTENT_FOCUS}}"
+      key_messages:
+        - "{{SUNDAY_MESSAGE_1}}"
+        - "{{SUNDAY_MESSAGE_2}}"
+      platform_adaptations:
+        facebook: "{{SUNDAY_FB_ADAPTATION}}"
+        instagram: "{{SUNDAY_IG_ADAPTATION}}"
+        tiktok: "{{SUNDAY_TIKTOK_ADAPTATION}}"
+        linkedin: "{{SUNDAY_LINKEDIN_ADAPTATION}}"
+        twitter: "{{SUNDAY_TWITTER_ADAPTATION}}"
+        
+  monthly_themes:
+    january:
+      theme: "{{JANUARY_THEME}}"
+      focus: "{{JANUARY_FOCUS}}"
+      campaigns: "{{JANUARY_CAMPAIGNS}}"
+      content_pillars:
+        - "{{JANUARY_PILLAR_1}}"
+        - "{{JANUARY_PILLAR_2}}"
+        - "{{JANUARY_PILLAR_3}}"
+        
+    february:
+      theme: "{{FEBRUARY_THEME}}"
+      focus: "{{FEBRUARY_FOCUS}}"
+      campaigns: "{{FEBRUARY_CAMPAIGNS}}"
+      content_pillars:
+        - "{{FEBRUARY_PILLAR_1}}"
+        - "{{FEBRUARY_PILLAR_2}}"
+        - "{{FEBRUARY_PILLAR_3}}"
+        
+    march:
+      theme: "{{MARCH_THEME}}"
+      focus: "{{MARCH_FOCUS}}"
+      campaigns: "{{MARCH_CAMPAIGNS}}"
+      content_pillars:
+        - "{{MARCH_PILLAR_1}}"
+        - "{{MARCH_PILLAR_2}}"
+        - "{{MARCH_PILLAR_3}}"
+        
+    april:
+      theme: "{{APRIL_THEME}}"
+      focus: "{{APRIL_FOCUS}}"
+      campaigns: "{{APRIL_CAMPAIGNS}}"
+      content_pillars:
+        - "{{APRIL_PILLAR_1}}"
+        - "{{APRIL_PILLAR_2}}"
+        - "{{APRIL_PILLAR_3}}"
+        
+    may:
+      theme: "{{MAY_THEME}}"
+      focus: "{{MAY_FOCUS}}"
+      campaigns: "{{MAY_CAMPAIGNS}}"
+      content_pillars:
+        - "{{MAY_PILLAR_1}}"
+        - "{{MAY_PILLAR_2}}"
+        - "{{MAY_PILLAR_3}}"
+        
+    june:
+      theme: "{{JUNE_THEME}}"
+      focus: "{{JUNE_FOCUS}}"
+      campaigns: "{{JUNE_CAMPAIGNS}}"
+      content_pillars:
+        - "{{JUNE_PILLAR_1}}"
+        - "{{JUNE_PILLAR_2}}"
+        - "{{JUNE_PILLAR_3}}"
+        
+    july:
+      theme: "{{JULY_THEME}}"
+      focus: "{{JULY_FOCUS}}"
+      campaigns: "{{JULY_CAMPAIGNS}}"
+      content_pillars:
+        - "{{JULY_PILLAR_1}}"
+        - "{{JULY_PILLAR_2}}"
+        - "{{JULY_PILLAR_3}}"
+        
+    august:
+      theme: "{{AUGUST_THEME}}"
+      focus: "{{AUGUST_FOCUS}}"
+      campaigns: "{{AUGUST_CAMPAIGNS}}"
+      content_pillars:
+        - "{{AUGUST_PILLAR_1}}"
+        - "{{AUGUST_PILLAR_2}}"
+        - "{{AUGUST_PILLAR_3}}"
+        
+    september:
+      theme: "{{SEPTEMBER_THEME}}"
+      focus: "{{SEPTEMBER_FOCUS}}"
+      campaigns: "{{SEPTEMBER_CAMPAIGNS}}"
+      content_pillars:
+        - "{{SEPTEMBER_PILLAR_1}}"
+        - "{{SEPTEMBER_PILLAR_2}}"
+        - "{{SEPTEMBER_PILLAR_3}}"
+        
+    october:
+      theme: "{{OCTOBER_THEME}}"
+      focus: "{{OCTOBER_FOCUS}}"
+      campaigns: "{{OCTOBER_CAMPAIGNS}}"
+      content_pillars:
+        - "{{OCTOBER_PILLAR_1}}"
+        - "{{OCTOBER_PILLAR_2}}"
+        - "{{OCTOBER_PILLAR_3}}"
+        
+    november:
+      theme: "{{NOVEMBER_THEME}}"
+      focus: "{{NOVEMBER_FOCUS}}"
+      campaigns: "{{NOVEMBER_CAMPAIGNS}}"
+      content_pillars:
+        - "{{NOVEMBER_PILLAR_1}}"
+        - "{{NOVEMBER_PILLAR_2}}"
+        - "{{NOVEMBER_PILLAR_3}}"
+        
+    december:
+      theme: "{{DECEMBER_THEME}}"
+      focus: "{{DECEMBER_FOCUS}}"
+      campaigns: "{{DECEMBER_CAMPAIGNS}}"
+      content_pillars:
+        - "{{DECEMBER_PILLAR_1}}"
+        - "{{DECEMBER_PILLAR_2}}"
+        - "{{DECEMBER_PILLAR_3}}"
+        
+  seasonal_themes:
+    spring:
+      theme_name: "{{SPRING_THEME_NAME}}"
+      months: "March, April, May"
+      overall_message: "{{SPRING_MESSAGE}}"
+      content_focus: "{{SPRING_CONTENT_FOCUS}}"
+      visual_style: "{{SPRING_VISUAL_STYLE}}"
+      
+    summer:
+      theme_name: "{{SUMMER_THEME_NAME}}"
+      months: "June, July, August"
+      overall_message: "{{SUMMER_MESSAGE}}"
+      content_focus: "{{SUMMER_CONTENT_FOCUS}}"
+      visual_style: "{{SUMMER_VISUAL_STYLE}}"
+      
+    fall:
+      theme_name: "{{FALL_THEME_NAME}}"
+      months: "September, October, November"
+      overall_message: "{{FALL_MESSAGE}}"
+      content_focus: "{{FALL_CONTENT_FOCUS}}"
+      visual_style: "{{FALL_VISUAL_STYLE}}"
+      
+    winter:
+      theme_name: "{{WINTER_THEME_NAME}}"
+      months: "December, January, February"
+      overall_message: "{{WINTER_MESSAGE}}"
+      content_focus: "{{WINTER_CONTENT_FOCUS}}"
+      visual_style: "{{WINTER_VISUAL_STYLE}}"
+      
+  campaign_themes:
+    product_launch:
+      pre_launch: "{{PRELAUNCH_THEME}}"
+      launch_week: "{{LAUNCH_WEEK_THEME}}"
+      post_launch: "{{POSTLAUNCH_THEME}}"
+      
+    seasonal_campaigns:
+      holiday_campaigns: "{{HOLIDAY_CAMPAIGN_THEMES}}"
+      back_to_school: "{{BACK_TO_SCHOOL_THEME}}"
+      black_friday: "{{BLACK_FRIDAY_THEME}}"
+      new_year: "{{NEW_YEAR_THEME}}"
+      
+    educational_campaigns:
+      how_to_series: "{{HOW_TO_SERIES_THEME}}"
+      expert_interviews: "{{EXPERT_INTERVIEW_THEME}}"
+      behind_the_scenes: "{{BTS_THEME}}"
+      
+  visual_identity:
+    color_schemes:
+      primary_colors: "{{PRIMARY_COLORS}}"
+      seasonal_variations: "{{SEASONAL_COLOR_VARIATIONS}}"
+      campaign_specific: "{{CAMPAIGN_SPECIFIC_COLORS}}"
+      
+    typography:
+      headers: "{{HEADER_TYPOGRAPHY}}"
+      body_text: "{{BODY_TEXT_TYPOGRAPHY}}"
+      social_media: "{{SOCIAL_MEDIA_TYPOGRAPHY}}"
+      
+    imagery_style:
+      photography_style: "{{PHOTOGRAPHY_STYLE}}"
+      graphic_elements: "{{GRAPHIC_ELEMENTS}}"
+      brand_consistency: "{{BRAND_CONSISTENCY_GUIDELINES}}"
+      
+  content_execution:
+    content_pillars:
+      educational: "{{EDUCATIONAL_PILLAR_EXECUTION}}"
+      inspirational: "{{INSPIRATIONAL_PILLAR_EXECUTION}}"
+      promotional: "{{PROMOTIONAL_PILLAR_EXECUTION}}"
+      community: "{{COMMUNITY_PILLAR_EXECUTION}}"
+      
+    storytelling_approach:
+      narrative_structure: "{{NARRATIVE_STRUCTURE}}"
+      character_development: "{{CHARACTER_DEVELOPMENT}}"
+      emotional_arc: "{{EMOTIONAL_ARC}}"
+      
+    call_to_action_themes:
+      engagement_ctas: "{{ENGAGEMENT_CTA_THEMES}}"
+      conversion_ctas: "{{CONVERSION_CTA_THEMES}}"
+      community_ctas: "{{COMMUNITY_CTA_THEMES}}"
+      
+  performance_measurement:
+    theme_effectiveness:
+      engagement_metrics: "{{THEME_ENGAGEMENT_METRICS}}"
+      reach_metrics: "{{THEME_REACH_METRICS}}"
+      conversion_metrics: "{{THEME_CONVERSION_METRICS}}"
+      
+    audience_response:
+      sentiment_analysis: "{{THEME_SENTIMENT_ANALYSIS}}"
+      feedback_collection: "{{THEME_FEEDBACK_COLLECTION}}"
+      preference_tracking: "{{THEME_PREFERENCE_TRACKING}}"
+      
+    optimization_strategy:
+      a_b_testing: "{{THEME_AB_TESTING}}"
+      iteration_planning: "{{THEME_ITERATION_PLANNING}}"
+      scaling_successful_themes: "{{THEME_SCALING_STRATEGY}}"

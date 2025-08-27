@@ -1,0 +1,56 @@
+bundle:
+  name: Crypto Marketing Playbook Team
+  icon: 🚀
+  description: Complete 15-agent specialist team for Epic-3 execution - generating comprehensive crypto marketing playbooks using AI influencer strategies and Diamond Formation Protocol™
+agents:
+  # Orchestration & Foundation
+  - crypto-marketing-orchestrator           # Sarah Chen - Epic-3 coordinator, AI influencer methodology
+  
+  # Foundation Phase (Chapters 1-5)
+  - crypto-architecture-specialist          # Chapter 1: AI Influencer Framework architecture
+  - crypto-token-analyst                    # Chapter 2: Token analysis and The Bull character development
+  - crypto-market-researcher                # Chapter 3: Competitive landscape and viral opportunities
+  - crypto-community-psychologist          # Chapter 4: Target community psychology and diamond hands culture
+  - crypto-strategic-synthesizer           # Chapter 5: Strategic alignment between token-market-community
+  
+  # ATTRACT Phase (Chapters 6-8) 
+  - crypto-viral-content-creator           # Chapter 6: Hook - Creating viral content that spreads like alpha
+  - crypto-airdrop-strategist              # Chapter 7: Gift - The based handshake through strategic airdrops
+  - crypto-wallet-identification-expert    # Chapter 8: Identify - Anonymous apes to addressable army
+  
+  # CONVERT Phase (Chapters 9-11)
+  - crypto-engagement-specialist           # Chapter 9: Engage - Trust bridge through real-time AMAs
+  - crypto-dex-optimization-expert         # Chapter 10: Sell - High-conversion buy environment engineering
+  - crypto-diamond-formation-specialist    # Chapter 11: Nurture - Diamond Formation Protocol™ implementation
+  
+  # GROW Phase (Chapters 12-14)
+  - crypto-ecosystem-expansion-manager     # Chapter 12: Upsell - Ecosystem expansion and utility maximization
+  - crypto-analytics-educator              # Chapter 13: Educate - Holder success through data intelligence
+  - crypto-network-effect-amplifier       # Chapter 14: Share - Viral advocacy and exponential growth
+  
+  # REFINE Phase (Chapter 15)
+  - crypto-optimization-analyst            # Chapter 15: Optimize - Systematic optimization and analytics
+
+workflows:
+  - epic-3-crypto-playbook-generation.yaml
+  - crypto-chapter-enhancement-workflow.yaml
+  - diamond-formation-implementation.yaml
+
+templates:
+  - crypto-chapter-structure.yaml
+  - bullstamp-character-integration.yaml
+  - diamond-formation-protocol.yaml
+  - ai-influencer-methodology.yaml
+
+tasks:
+  - crypto-foundation-development
+  - crypto-chapter-content-creation
+  - crypto-bookwriter-enhancement
+  - crypto-quality-validation
+  - crypto-multi-format-publishing
+
+checklists:
+  - crypto-rocket-framework-validation
+  - crypto-diamond-formation-quality
+  - crypto-ai-influencer-consistency
+  - crypto-professional-book-standards

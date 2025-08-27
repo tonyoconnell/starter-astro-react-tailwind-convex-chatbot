@@ -1,0 +1,1052 @@
+template:
+  id: market-analysis-report-template-v2
+  name: Market Analysis Report - Elevate Marketing
+  version: 2.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-market-analysis-report.md"
+    title: "Market Analysis Report: {{company_name}} - {{market_focus}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  custom_elicitation:
+    title: "Strategic Market Intelligence Elicitation Actions"
+    sections:
+      - id: competitive-intelligence
+        options:
+          - "Deep dive competitor pricing and positioning strategies"
+          - "Analyze competitor customer acquisition channels and tactics"
+          - "Map competitor content strategies and messaging frameworks"
+          - "Research competitor funding, partnerships, and strategic moves"
+          - "Evaluate competitor strengths/weaknesses through customer reviews"
+          - "War game competitive responses to your market entry"
+          - "Identify competitor blind spots and vulnerabilities"
+          - "Track competitor product roadmap and feature development"
+          - "Proceed to next section"
+      - id: market-opportunity-analysis
+        options:
+          - "Expand market sizing with sensitivity analysis and scenarios"
+          - "Segment market by customer behavior and willingness to pay"
+          - "Analyze adjacent market expansion opportunities"
+          - "Identify emerging trends and disruption potential"
+          - "Map regulatory/compliance impacts on market dynamics"
+          - "Evaluate seasonal patterns and cyclical market factors"
+          - "Research geographic expansion feasibility"
+          - "Challenge market assumptions with alternative frameworks"
+          - "Proceed to next section"
+      - id: strategic-positioning
+        options:
+          - "Identify blue ocean positioning opportunities"
+          - "Develop differentiation strategies against key competitors"
+          - "Test positioning concepts with target customer insights"
+          - "Map customer journey touchpoints for competitive advantage"
+          - "Analyze pricing strategy positioning options"
+          - "Explore partnership and ecosystem positioning strategies"
+          - "Validate unique value proposition market fit"
+          - "Generate strategic scenario planning (best/base/worst case)"
+          - "Proceed to next section"
+
+sections:
+  - id: executive-summary
+    title: Executive Summary
+    instruction: |
+      Create a compelling executive summary that synthesizes key findings into actionable strategic insights.
+      Focus on market opportunity, competitive positioning, and strategic recommendations.
+      Write this section LAST after completing all analysis sections.
+
+  - id: research-framework
+    title: Research Methodology & Framework - Market Awareness Grid
+    instruction: |
+      This template guides comprehensive market analysis using the Elevate Framework Market Awareness Grid methodology.
+      The systematic 3x3 matrix approach ensures comprehensive external environment scanning across:
+      - Competitive Set (Landscape Mapping, Dynamics & Gaps, Strategic Response)
+      - Market Forces & Trends (Observation, Analysis, Positioning)
+      - Channel & Communication Context (Mapping, Effectiveness, Strategy)
+      
+      The analysis is structured around competitive intelligence, market opportunity assessment, and strategic positioning.
+      Begin by understanding the market intelligence objectives and customize the framework accordingly.
+    sections:
+      - id: analysis-objectives
+        title: Market Analysis Objectives
+        instruction: |
+          Define the primary strategic questions this analysis will answer:
+          - Market entry feasibility and strategy
+          - Competitive positioning and differentiation
+          - Customer acquisition opportunity assessment
+          - Pricing strategy development
+          - Strategic partnership identification
+          - Investment and growth planning support
+      - id: market-scope
+        title: Market Scope Definition
+        template: |
+          **Primary Market:** {{primary_market_definition}}
+          **Geographic Scope:** {{geographic_market_scope}}
+          **Customer Segments:** {{target_customer_segments}}
+          **Time Horizon:** {{analysis_time_horizon}}
+          **Strategic Context:** {{strategic_decision_context}}
+      - id: intelligence-sources
+        title: Intelligence Sources & Methodology
+        instruction: |
+          Document research methodology and confidence levels:
+          - Primary research (surveys, interviews, customer feedback)
+          - Secondary research (industry reports, competitor analysis)
+          - Data analysis (market sizing, trend analysis)
+          - Expert insights and industry intelligence
+          - Assumptions and limitations
+
+  - id: market-landscape-overview
+    title: Market Landscape Overview
+    sections:
+      - id: market-definition-sizing
+        title: Market Definition & Sizing
+        instruction: Use multiple approaches to validate market opportunity and build confidence in sizing estimates
+        sections:
+          - id: market-definition
+            title: Market Definition
+            template: |
+              **Market Category:** {{market_category}}
+              **Problem Space:** {{problem_being_solved}}
+              **Solution Categories:** {{solution_types_included}}
+              **Value Chain Position:** {{value_chain_position}}
+              **Market Boundaries:** {{what_is_excluded_and_why}}
+          - id: tam-sam-som
+            title: Total Addressable Market Analysis
+            instruction: |
+              Calculate market size using multiple methodologies to triangulate realistic estimates.
+              Apply industry-specific approaches based on business model.
+            conditional:
+              b2b_saas:
+                template: |
+                  **TAM (Total Addressable Market):**
+                  - Methodology: {{tam_calculation_method}}
+                  - Size: {{tam_size_estimate}}
+                  - Key Assumptions: {{tam_assumptions}}
+                  
+                  **SAM (Serviceable Addressable Market):**
+                  - Target Segments: {{sam_target_segments}}
+                  - Geographic Constraints: {{sam_geographic_limits}}
+                  - Size: {{sam_size_estimate}}
+                  
+                  **SOM (Serviceable Obtainable Market):**
+                  - 3-Year Target: {{som_3_year_target}}
+                  - Market Share Goal: {{som_market_share_goal}}
+                  - Revenue Potential: {{som_revenue_potential}}
+              b2b_services:
+                template: |
+                  **TAM Analysis:**
+                  - Service Category Size: {{service_market_size}}
+                  - Client Universe: {{total_potential_clients}}
+                  - Average Contract Value: {{average_contract_value}}
+                  - Total Opportunity: {{tam_calculation}}
+                  
+                  **SAM Constraints:**
+                  - Geographic Reach: {{geographic_service_area}}
+                  - Client Size Focus: {{client_size_targeting}}
+                  - Service Specialization: {{service_specialization_limits}}
+                  - Realistic Market: {{sam_estimate}}
+                  
+                  **SOM Projections:**
+                  - Market Penetration Goal: {{penetration_rate_goal}}
+                  - Client Acquisition Capacity: {{client_capacity_limits}}
+                  - Revenue Target: {{som_revenue_target}}
+              b2c_product:
+                template: |
+                  **Consumer Market Analysis:**
+                  - Target Demographics: {{target_demographic_size}}
+                  - Purchase Frequency: {{purchase_frequency_assumptions}}
+                  - Average Order Value: {{average_order_value}}
+                  - Market Potential: {{b2c_market_potential}}
+                  
+                  **Channel Reach Analysis:**
+                  - Online Addressable Market: {{online_market_size}}
+                  - Retail Distribution Potential: {{retail_distribution_reach}}
+                  - Direct-to-Consumer Opportunity: {{dtc_opportunity}}
+                  
+                  **Obtainable Market Share:**
+                  - Customer Acquisition Rate: {{customer_acquisition_rate}}
+                  - Retention Assumptions: {{customer_retention_rate}}
+                  - Growth Trajectory: {{growth_trajectory_projection}}
+      - id: market-trends-dynamics
+        title: Market Trends & Dynamics - Market Awareness Grid Row B
+        instruction: |
+          Analyze market forces using Market Awareness Grid Row B (Market Forces & Trends) methodology.
+          This covers B1 (Relevant Trends), B2 (Market Pains/Needs), and B3 (Leverage or Counter Trends).
+          Apply PESTEL framework and identify trend implications for strategic positioning.
+          Focus on trends that create competitive advantage opportunities.
+        sections:
+          - id: key-market-trends
+            title: Key Market Trends (Grid B1)
+            instruction: |
+              Identify 3-5 major trends using Grid B1 methodology - relevant technological, cultural, economic, behavioral shifts.
+              Focus on trends directly relevant to your specific market and customer.
+            repeatable: true
+            template: |
+              **Trend: {{trend_name}} (Grid B1 Analysis)**
+              - Description: {{trend_description}}
+              - Evidence: {{trend_evidence}}
+              - Timeline: {{trend_timeline}}
+              - Strategic Implication: {{strategic_implication}}
+              - Competitive Advantage Opportunity: {{competitive_opportunity}}
+              - Market Impact Assessment: {{market_impact_assessment}}
+          - id: pestel-analysis
+            title: PESTEL Analysis
+            sections:
+              - id: political-factors
+                title: Political & Regulatory Environment
+                template: |
+                  **Key Factors:**
+                  {{political_regulatory_factors}}
+                  
+                  **Strategic Impact:**
+                  {{political_strategic_impact}}
+              - id: economic-factors
+                title: Economic Environment
+                template: |
+                  **Economic Indicators:**
+                  {{economic_indicators}}
+                  
+                  **Customer Spending Impact:**
+                  {{economic_customer_impact}}
+              - id: social-factors
+                title: Social & Cultural Trends
+                template: |
+                  **Behavioral Shifts:**
+                  {{social_behavioral_shifts}}
+                  
+                  **Customer Expectation Changes:**
+                  {{social_expectation_changes}}
+              - id: technological-factors
+                title: Technology Trends
+                template: |
+                  **Technology Enablers:**
+                  {{technology_enablers}}
+                  
+                  **Disruption Threats:**
+                  {{technology_disruption_threats}}
+              - id: environmental-factors
+                title: Environmental Considerations
+                template: |
+                  **Sustainability Trends:**
+                  {{environmental_trends}}
+                  
+                  **Business Impact:**
+                  {{environmental_business_impact}}
+              - id: legal-factors
+                title: Legal & Compliance Landscape
+                template: |
+                  **Regulatory Requirements:**
+                  {{legal_requirements}}
+                  
+                  **Compliance Opportunities:**
+                  {{compliance_competitive_advantages}}
+
+  - id: competitive-intelligence-analysis
+    title: Competitive Intelligence Analysis - Market Awareness Grid Row A
+    instruction: |
+      Conduct systematic competitive analysis using Market Awareness Grid Row A (Competitive Set) methodology.
+      This covers A1 (Landscape Mapping), A2 (Dynamics & Gaps), and A3 (Strategic Response).
+      Focus on strategic positioning, customer acquisition, and market positioning.
+      Prioritize analysis based on competitive threat level and market overlap.
+    sections:
+      - id: competitive-landscape-mapping
+        title: Competitive Landscape Mapping (Grid A1)
+        instruction: |
+          Map the competitive ecosystem using Grid A1 methodology - identify key competitors and their primary offerings/value propositions.
+          Use variables: competitor_list, positioning_gaps
+        template: |
+          ## Market Awareness Grid A1: Landscape Mapping
+          
+          **Direct Competitors:** {{direct_competitors}}
+          **Indirect Competitors:** {{indirect_competitors}}
+          **Potential Market Entrants:** {{potential_entrants}}
+          **Substitute Solutions:** {{substitute_solutions}}
+          
+          **Competitive Intensity:** {{competitive_intensity_assessment}}
+          **Market Concentration:** {{market_concentration_level}}
+          
+          **Grid A1 Analysis:**
+          - Primary offerings and publicly stated value propositions documented
+          - Competitive ecosystem comprehensively mapped
+          - Market structure and concentration assessed
+      - id: competitor-prioritization
+        title: Competitor Prioritization Matrix
+        instruction: |
+          Create strategic prioritization based on market share, growth rate, and strategic threat level.
+          Focus detailed analysis on Priority 1 and 2 competitors.
+        template: |
+          **Priority 1 (Analyze Deeply):**
+          {{priority_1_competitors}}
+          
+          **Priority 2 (Monitor Closely):**
+          {{priority_2_competitors}}
+          
+          **Priority 3 (Periodic Review):**
+          {{priority_3_competitors}}
+          
+          **Prioritization Criteria:**
+          {{prioritization_methodology}}
+      - id: detailed-competitor-profiles
+        title: Strategic Competitor Profiles
+        instruction: Create comprehensive profiles for Priority 1 competitors focusing on strategic intelligence
+        repeatable: true
+        sections:
+          - id: competitor-profile
+            title: "{{competitor_name}} - Strategic Profile"
+            sections:
+              - id: business-model-strategy
+                title: Business Model & Strategic Positioning
+                template: |
+                  **Core Business Model:** {{business_model}}
+                  **Revenue Streams:** {{revenue_streams}}
+                  **Value Proposition:** {{value_proposition}}
+                  **Strategic Focus:** {{strategic_priorities}}
+                  **Differentiation Strategy:** {{differentiation_approach}}
+              - id: market-position-performance
+                title: Market Position & Performance
+                template: |
+                  **Market Share:** {{market_share_estimate}}
+                  **Growth Rate:** {{growth_trajectory}}
+                  **Customer Base:** {{customer_base_characteristics}}
+                  **Geographic Presence:** {{geographic_coverage}}
+                  **Performance Indicators:** {{key_performance_metrics}}
+              - id: customer-acquisition-strategy
+                title: Customer Acquisition Strategy
+                template: |
+                  **Primary Channels:** {{primary_acquisition_channels}}
+                  **Marketing Strategy:** {{marketing_approach}}
+                  **Sales Process:** {{sales_methodology}}
+                  **Customer Acquisition Cost:** {{cac_estimates}}
+                  **Messaging Framework:** {{key_messaging_themes}}
+              - id: product-service-analysis
+                title: Product/Service Analysis
+                template: |
+                  **Core Offerings:** {{core_product_service_offerings}}
+                  **Feature Differentiation:** {{unique_features}}
+                  **Pricing Strategy:** {{pricing_model_and_positioning}}
+                  **Product Roadmap Signals:** {{roadmap_intelligence}}
+                  **Technology Stack:** {{technology_approach}}
+              - id: strengths-vulnerabilities
+                title: Competitive Strengths & Vulnerabilities
+                sections:
+                  - id: competitive-strengths
+                    title: Key Strengths
+                    instruction: Focus on defensible competitive advantages
+                    repeatable: true
+                    template: |
+                      **Strength: {{strength_name}}**
+                      - Description: {{strength_description}}
+                      - Defensibility: {{strength_defensibility}}
+                      - Customer Impact: {{strength_customer_value}}
+                      - Strategic Threat: {{strength_threat_level}}
+                  - id: competitive-vulnerabilities
+                    title: Key Vulnerabilities
+                    instruction: Identify exploitable weaknesses and gaps
+                    repeatable: true
+                    template: |
+                      **Vulnerability: {{vulnerability_name}}**
+                      - Description: {{vulnerability_description}}
+                      - Evidence: {{vulnerability_evidence}}
+                      - Exploitation Opportunity: {{exploitation_potential}}
+                      - Strategic Approach: {{strategic_response}}
+
+  - id: porter-five-forces-analysis
+    title: Porter's Five Forces Analysis
+    instruction: |
+      Conduct comprehensive industry structure analysis to understand competitive dynamics and identify strategic positioning opportunities.
+      Assess each force's impact on profitability and strategic positioning.
+    sections:
+      - id: supplier-power-analysis
+        title: "Supplier Power: {{supplier_power_level}}"
+        template: |
+          **Power Assessment:** {{supplier_power_assessment}}
+          
+          **Key Factors:**
+          - Supplier Concentration: {{supplier_concentration}}
+          - Switching Costs: {{supplier_switching_costs}}
+          - Differentiation: {{supplier_differentiation}}
+          - Integration Threats: {{supplier_integration_threats}}
+          
+          **Strategic Implications:**
+          {{supplier_power_strategic_implications}}
+          
+          **Mitigation Strategies:**
+          {{supplier_power_mitigation}}
+      - id: buyer-power-analysis
+        title: "Buyer Power: {{buyer_power_level}}"
+        template: |
+          **Power Assessment:** {{buyer_power_assessment}}
+          
+          **Key Factors:**
+          - Buyer Concentration: {{buyer_concentration}}
+          - Price Sensitivity: {{buyer_price_sensitivity}}
+          - Switching Costs: {{buyer_switching_costs}}
+          - Information Access: {{buyer_information_access}}
+          
+          **Strategic Implications:**
+          {{buyer_power_strategic_implications}}
+          
+          **Strategic Response:**
+          {{buyer_power_response}}
+      - id: competitive-rivalry-analysis
+        title: "Competitive Rivalry: {{rivalry_intensity_level}}"
+        template: |
+          **Rivalry Assessment:** {{rivalry_intensity_assessment}}
+          
+          **Key Factors:**
+          - Number of Competitors: {{competitor_count_impact}}
+          - Market Growth: {{market_growth_impact}}
+          - Differentiation: {{differentiation_impact}}
+          - Exit Barriers: {{exit_barriers_impact}}
+          
+          **Strategic Implications:**
+          {{competitive_rivalry_implications}}
+          
+          **Competitive Strategy:**
+          {{competitive_strategy_approach}}
+      - id: new-entrant-threats
+        title: "Threat of New Entry: {{entry_threat_level}}"
+        template: |
+          **Entry Threat Assessment:** {{entry_threat_assessment}}
+          
+          **Barriers to Entry:**
+          - Capital Requirements: {{capital_barriers}}
+          - Technology Barriers: {{technology_barriers}}
+          - Regulatory Barriers: {{regulatory_barriers}}
+          - Brand Loyalty: {{brand_loyalty_barriers}}
+          - Network Effects: {{network_effect_barriers}}
+          
+          **Potential Entrants:**
+          {{potential_new_entrants}}
+          
+          **Strategic Defense:**
+          {{entry_defense_strategy}}
+      - id: substitute-threats
+        title: "Threat of Substitutes: {{substitute_threat_level}}"
+        template: |
+          **Substitute Threat Assessment:** {{substitute_threat_assessment}}
+          
+          **Key Substitutes:**
+          - Alternative Solutions: {{alternative_solutions}}
+          - Price-Performance Trade-offs: {{substitute_tradeoffs}}
+          - Adoption Barriers: {{substitute_adoption_barriers}}
+          
+          **Strategic Implications:**
+          {{substitute_threat_implications}}
+          
+          **Differentiation Strategy:**
+          {{substitute_differentiation_strategy}}
+      - id: forces-synthesis
+        title: Five Forces Strategic Synthesis
+        template: |
+          **Industry Attractiveness:** {{industry_attractiveness_rating}}
+          
+          **Most Significant Forces:**
+          1. {{most_significant_force_1}}
+          2. {{most_significant_force_2}}
+          3. {{most_significant_force_3}}
+          
+          **Strategic Positioning Implications:**
+          {{five_forces_positioning_implications}}
+          
+          **Recommended Strategic Focus:**
+          {{five_forces_strategic_focus}}
+
+  - id: customer-segment-analysis
+    title: Customer Segment Analysis
+    instruction: |
+      Analyze customer segments to identify underserved markets and positioning opportunities.
+      Focus on segments where unique value can be delivered.
+    conditional:
+      b2b_focus:
+        sections:
+          - id: b2b-segment-analysis
+            title: B2B Customer Segment Analysis
+            template: |
+              **Primary Segments:**
+              
+              **Enterprise ({{enterprise_segment_size}}):**
+              - Characteristics: {{enterprise_characteristics}}
+              - Needs: {{enterprise_needs}}
+              - Buying Process: {{enterprise_buying_process}}
+              - Competitive Dynamics: {{enterprise_competition}}
+              
+              **Mid-Market ({{midmarket_segment_size}}):**
+              - Characteristics: {{midmarket_characteristics}}
+              - Needs: {{midmarket_needs}}
+              - Buying Process: {{midmarket_buying_process}}
+              - Competitive Dynamics: {{midmarket_competition}}
+              
+              **SMB ({{smb_segment_size}}):**
+              - Characteristics: {{smb_characteristics}}
+              - Needs: {{smb_needs}}
+              - Buying Process: {{smb_buying_process}}
+              - Competitive Dynamics: {{smb_competition}}
+          - id: b2b-jobs-to-be-done
+            title: B2B Jobs-to-be-Done Analysis
+            sections:
+              - id: functional-jobs
+                title: Functional Jobs
+                template: |
+                  **Primary Functional Jobs:**
+                  {{b2b_functional_jobs}}
+                  
+                  **Underserved Jobs:**
+                  {{b2b_underserved_functional_jobs}}
+              - id: emotional-jobs
+                title: Emotional Jobs
+                template: |
+                  **Decision Maker Emotions:**
+                  {{b2b_decision_maker_emotions}}
+                  
+                  **End User Emotions:**
+                  {{b2b_end_user_emotions}}
+              - id: social-jobs
+                title: Social Jobs
+                template: |
+                  **Professional Reputation:**
+                  {{b2b_professional_reputation_jobs}}
+                  
+                  **Organizational Perception:**
+                  {{b2b_organizational_perception_jobs}}
+      b2c_focus:
+        sections:
+          - id: b2c-segment-analysis
+            title: B2C Customer Segment Analysis
+            template: |
+              **Demographic Segments:**
+              {{b2c_demographic_segments}}
+              
+              **Psychographic Segments:**
+              {{b2c_psychographic_segments}}
+              
+              **Behavioral Segments:**
+              {{b2c_behavioral_segments}}
+              
+              **Value-Based Segments:**
+              {{b2c_value_based_segments}}
+          - id: b2c-customer-journey
+            title: B2C Customer Journey Analysis
+            template: |
+              **Awareness Stage:**
+              - Triggers: {{b2c_awareness_triggers}}
+              - Channels: {{b2c_awareness_channels}}
+              - Competition: {{b2c_awareness_competition}}
+              
+              **Consideration Stage:**
+              - Evaluation Criteria: {{b2c_evaluation_criteria}}
+              - Information Sources: {{b2c_information_sources}}
+              - Decision Factors: {{b2c_decision_factors}}
+              
+              **Purchase Stage:**
+              - Purchase Channels: {{b2c_purchase_channels}}
+              - Purchase Drivers: {{b2c_purchase_drivers}}
+              - Friction Points: {{b2c_friction_points}}
+              
+              **Post-Purchase:**
+              - Experience Expectations: {{b2c_experience_expectations}}
+              - Advocacy Drivers: {{b2c_advocacy_drivers}}
+              - Retention Factors: {{b2c_retention_factors}}
+
+  - id: market-opportunity-assessment
+    title: Market Opportunity Assessment
+    instruction: |
+      Synthesize market analysis into specific strategic opportunities.
+      Use variables: market_trends, positioning_gaps to identify actionable opportunities.
+    sections:
+      - id: opportunity-identification
+        title: Strategic Opportunity Identification
+        instruction: |
+          Identify specific market opportunities based on competitive gaps, unmet needs, and market trends.
+          Prioritize by potential impact and feasibility.
+        repeatable: true
+        sections:
+          - id: market-opportunity
+            title: "Opportunity: {{opportunity_name}}"
+            template: |
+              **Opportunity Description:**
+              {{opportunity_description}}
+              
+              **Market Evidence:**
+              {{opportunity_market_evidence}}
+              
+              **Size & Potential:**
+              - Market Size: {{opportunity_market_size}}
+              - Growth Rate: {{opportunity_growth_rate}}
+              - Revenue Potential: {{opportunity_revenue_potential}}
+              
+              **Competitive Landscape:**
+              {{opportunity_competitive_landscape}}
+              
+              **Customer Need Analysis:**
+              {{opportunity_customer_needs}}
+              
+              **Requirements for Success:**
+              {{opportunity_success_requirements}}
+              
+              **Risk Assessment:**
+              {{opportunity_risk_assessment}}
+              
+              **Strategic Priority:** {{opportunity_priority_level}}
+      - id: positioning-gap-analysis
+        title: Market Positioning Gap Analysis
+        instruction: |
+          Identify gaps in market positioning where unique value can be delivered.
+          Focus on positioning_gaps variable insights.
+        template: |
+          **Identified Positioning Gaps:**
+          
+          **Gap 1: {{positioning_gap_1}}**
+          - Description: {{gap_1_description}}
+          - Evidence: {{gap_1_evidence}}
+          - Opportunity Size: {{gap_1_opportunity_size}}
+          - Competitive Vulnerability: {{gap_1_competitive_weakness}}
+          
+          **Gap 2: {{positioning_gap_2}}**
+          - Description: {{gap_2_description}}
+          - Evidence: {{gap_2_evidence}}
+          - Opportunity Size: {{gap_2_opportunity_size}}
+          - Competitive Vulnerability: {{gap_2_competitive_weakness}}
+          
+          **Gap 3: {{positioning_gap_3}}**
+          - Description: {{gap_3_description}}
+          - Evidence: {{gap_3_evidence}}
+          - Opportunity Size: {{gap_3_opportunity_size}}
+          - Competitive Vulnerability: {{gap_3_competitive_weakness}}
+          
+          **Strategic Positioning Recommendations:**
+          {{positioning_gap_strategic_recommendations}}
+      - id: blue-ocean-analysis
+        title: Blue Ocean Strategy Analysis
+        instruction: |
+          Identify opportunities to create uncontested market space by breaking industry trade-offs.
+          Focus on value innovation opportunities.
+        template: |
+          **Industry Trade-offs Analysis:**
+          {{industry_tradeoffs}}
+          
+          **Value Innovation Opportunities:**
+          
+          **Eliminate:** {{blue_ocean_eliminate}}
+          **Reduce:** {{blue_ocean_reduce}}
+          **Raise:** {{blue_ocean_raise}}
+          **Create:** {{blue_ocean_create}}
+          
+          **New Value Curve:**
+          {{blue_ocean_value_curve}}
+          
+          **Market Creation Potential:**
+          {{blue_ocean_market_creation}}
+
+  - id: strategic-recommendations
+    title: Strategic Recommendations Framework
+    instruction: |
+      Synthesize analysis into actionable strategic recommendations organized by timeframe and strategic priority.
+      Focus on competitive advantage creation and market positioning excellence.
+    sections:
+      - id: positioning-strategy
+        title: Market Positioning Strategy
+        sections:
+          - id: differentiation-strategy
+            title: Differentiation Strategy
+            template: |
+              **Primary Differentiation Focus:**
+              {{primary_differentiation_focus}}
+              
+              **Unique Value Proposition:**
+              {{strategic_value_proposition}}
+              
+              **Competitive Advantages to Leverage:**
+              1. {{competitive_advantage_1}}
+              2. {{competitive_advantage_2}}
+              3. {{competitive_advantage_3}}
+              
+              **Positioning Statement:**
+              {{positioning_statement}}
+              
+              **Key Messages:**
+              {{key_positioning_messages}}
+          - id: target-segment-strategy
+            title: Target Segment Strategy
+            template: |
+              **Primary Target Segment:**
+              {{primary_target_segment}}
+              
+              **Segment Rationale:**
+              {{segment_selection_rationale}}
+              
+              **Secondary Segments:**
+              {{secondary_target_segments}}
+              
+              **Segment-Specific Positioning:**
+              {{segment_specific_positioning}}
+          - id: competitive-strategy
+            title: Competitive Strategy
+            sections:
+              - id: offensive-strategies
+                title: Offensive Competitive Strategies
+                template: |
+                  **Market Share Capture:**
+                  {{market_share_capture_strategy}}
+                  
+                  **Competitor Weakness Exploitation:**
+                  {{competitor_weakness_strategy}}
+                  
+                  **Customer Acquisition from Competitors:**
+                  {{customer_acquisition_strategy}}
+              - id: defensive-strategies
+                title: Defensive Strategies
+                template: |
+                  **Competitive Moat Building:**
+                  {{competitive_moat_strategy}}
+                  
+                  **Customer Retention Strategy:**
+                  {{customer_retention_strategy}}
+                  
+                  **Barrier Creation:**
+                  {{barrier_creation_strategy}}
+      - id: go-to-market-strategy
+        title: Go-to-Market Strategy Framework
+        conditional:
+          b2b_approach:
+            template: |
+              **B2B Go-to-Market Strategy:**
+              
+              **Sales Strategy:**
+              - Sales Model: {{b2b_sales_model}}
+              - Sales Process: {{b2b_sales_process}}
+              - Channel Strategy: {{b2b_channel_strategy}}
+              
+              **Marketing Strategy:**
+              - Demand Generation: {{b2b_demand_generation}}
+              - Content Strategy: {{b2b_content_strategy}}
+              - Lead Qualification: {{b2b_lead_qualification}}
+              
+              **Partnership Strategy:**
+              {{b2b_partnership_strategy}}
+          b2c_approach:
+            template: |
+              **B2C Go-to-Market Strategy:**
+              
+              **Customer Acquisition:**
+              - Primary Channels: {{b2c_primary_channels}}
+              - Acquisition Strategy: {{b2c_acquisition_strategy}}
+              - Conversion Optimization: {{b2c_conversion_strategy}}
+              
+              **Brand Building:**
+              - Brand Positioning: {{b2c_brand_positioning}}
+              - Content Strategy: {{b2c_content_strategy}}
+              - Community Building: {{b2c_community_strategy}}
+              
+              **Distribution Strategy:**
+              {{b2c_distribution_strategy}}
+      - id: pricing-strategy
+        title: Strategic Pricing Recommendations
+        template: |
+          **Pricing Model Recommendation:**
+          {{pricing_model_recommendation}}
+          
+          **Competitive Pricing Position:**
+          {{competitive_pricing_position}}
+          
+          **Value-Based Pricing Rationale:**
+          {{value_based_pricing_rationale}}
+          
+          **Price Testing Strategy:**
+          {{price_testing_approach}}
+          
+          **Pricing Communication Strategy:**
+          {{pricing_communication_strategy}}
+      - id: partnership-ecosystem
+        title: Partnership & Ecosystem Strategy
+        template: |
+          **Strategic Partnership Opportunities:**
+          
+          **Technology Partners:**
+          {{technology_partnership_opportunities}}
+          
+          **Channel Partners:**
+          {{channel_partnership_opportunities}}
+          
+          **Strategic Alliances:**
+          {{strategic_alliance_opportunities}}
+          
+          **Ecosystem Positioning:**
+          {{ecosystem_positioning_strategy}}
+
+  - id: implementation-roadmap
+    title: Strategic Implementation Roadmap
+    instruction: |
+      Create phased implementation plan with specific milestones and success metrics.
+      Organize by immediate, short-term, and long-term strategic priorities.
+    sections:
+      - id: immediate-priorities
+        title: Immediate Actions (0-3 months)
+        template: |
+          **Priority 1 Actions:**
+          1. {{immediate_action_1}} - {{action_1_timeline}}
+          2. {{immediate_action_2}} - {{action_2_timeline}}
+          3. {{immediate_action_3}} - {{action_3_timeline}}
+          
+          **Success Metrics:**
+          {{immediate_success_metrics}}
+          
+          **Resource Requirements:**
+          {{immediate_resource_requirements}}
+      - id: short-term-initiatives
+        title: Short-term Initiatives (3-12 months)
+        template: |
+          **Strategic Initiatives:**
+          1. {{short_term_initiative_1}} - {{initiative_1_timeline}}
+          2. {{short_term_initiative_2}} - {{initiative_2_timeline}}
+          3. {{short_term_initiative_3}} - {{initiative_3_timeline}}
+          
+          **Market Position Goals:**
+          {{short_term_position_goals}}
+          
+          **Investment Requirements:**
+          {{short_term_investment_requirements}}
+      - id: long-term-strategy
+        title: Long-term Strategic Vision (1-3 years)
+        template: |
+          **Strategic Vision:**
+          {{long_term_strategic_vision}}
+          
+          **Market Leadership Goals:**
+          {{long_term_leadership_goals}}
+          
+          **Competitive Position Target:**
+          {{long_term_competitive_position}}
+          
+          **Strategic Milestones:**
+          {{long_term_strategic_milestones}}
+
+  - id: risk-mitigation
+    title: Risk Assessment & Mitigation
+    sections:
+      - id: market-risks
+        title: Market Risk Analysis
+        repeatable: true
+        template: |
+          **Risk: {{market_risk_name}}**
+          - Probability: {{risk_probability}}
+          - Impact: {{risk_impact}}
+          - Description: {{risk_description}}
+          - Mitigation Strategy: {{risk_mitigation_strategy}}
+          - Monitoring Plan: {{risk_monitoring_plan}}
+      - id: competitive-risks
+        title: Competitive Risk Analysis
+        template: |
+          **Primary Competitive Threats:**
+          {{primary_competitive_threats}}
+          
+          **Scenario Planning:**
+          - Best Case: {{competitive_best_case}}
+          - Base Case: {{competitive_base_case}}
+          - Worst Case: {{competitive_worst_case}}
+          
+          **Contingency Plans:**
+          {{competitive_contingency_plans}}
+
+  - id: monitoring-intelligence
+    title: Ongoing Market Intelligence Plan
+    instruction: |
+      Establish systematic market monitoring and competitive intelligence framework for continuous strategic advantage.
+      Include specific metrics, sources, and review cycles.
+    sections:
+      - id: competitive-monitoring
+        title: Competitive Intelligence Monitoring
+        template: |
+          **Priority Competitors to Track:**
+          {{priority_competitors_monitoring}}
+          
+          **Key Metrics to Monitor:**
+          - Market Share Indicators: {{market_share_monitoring}}
+          - Product Development: {{product_development_monitoring}}
+          - Pricing Changes: {{pricing_monitoring}}
+          - Strategic Moves: {{strategic_moves_monitoring}}
+          
+          **Intelligence Sources:**
+          {{intelligence_sources}}
+          
+          **Review Frequency:**
+          {{monitoring_review_frequency}}
+      - id: market-trend-tracking
+        title: Market Trend Tracking
+        template: |
+          **Key Trends to Monitor:**
+          {{market_trends_monitoring}}
+          
+          **Early Warning Indicators:**
+          {{trend_early_warning_indicators}}
+          
+          **Trend Impact Assessment:**
+          {{trend_impact_methodology}}
+      - id: performance-metrics
+        title: Strategic Performance Metrics
+        template: |
+          **Market Position Metrics:**
+          {{market_position_metrics}}
+          
+          **Competitive Advantage Metrics:**
+          {{competitive_advantage_metrics}}
+          
+          **Strategic Goal Progress:**
+          {{strategic_goal_metrics}}
+          
+          **Dashboard & Reporting:**
+          {{metrics_dashboard_approach}}
+
+  - id: market-awareness-grid-summary
+    title: Market Awareness Grid Complete Framework
+    instruction: |
+      Synthesize all Market Awareness Grid elements into the complete 3x3 framework as defined in the Elevate methodology.
+      This provides the complete external environment scan for strategic reference.
+    sections:
+      - id: complete-market-grid
+        title: Complete Market Awareness Grid
+        template: |
+          ## Market Awareness Grid: Understanding Your Competitive Environment
+          
+          |                                        | **1. Landscape Mapping (Observation)**              | **2. Dynamics & Gaps (Analysis)**                   | **3. Strategic Response (Positioning)**                  |
+          | :------------------------------------- | :--------------------------------------------------- | :--------------------------------------------------- | :------------------------------------------------------- |
+          | **A. Competitive Set**                 | **Key Competitors:** {{identified_competitors}}     | **Competitor Weaknesses:** {{competitive_gaps}}     | **Our Differentiation:** {{strategic_differentiation}}  |
+          | **B. Market Forces & Trends**          | **Relevant Trends:** {{key_market_trends}}          | **Market Pains/Needs:** {{unmet_market_needs}}      | **Trend Strategy:** {{trend_positioning_strategy}}      |
+          | **C. Channel & Communication Context** | **Key Channels:** {{primary_customer_channels}}     | **Channel Effectiveness:** {{channel_opportunities}} | **Channel Strategy:** {{optimized_channel_approach}}    |
+          
+          **Market Grid Synthesis:**
+          {{market_grid_synthesis_notes}}
+          
+          **Strategic Market Positioning:**
+          - Competitive Advantage: {{competitive_advantage_summary}}
+          - Market Opportunity: {{market_opportunity_summary}}
+          - Channel Strategy: {{channel_strategy_summary}}
+          - Overall Market Position: {{overall_market_position}}
+
+  - id: appendices
+    title: Appendices
+    sections:
+      - id: data-sources
+        title: A. Research Sources & Methodology
+        instruction: Document all research sources, methodology, and confidence levels
+      - id: competitive-intelligence
+        title: B. Detailed Competitive Intelligence
+        instruction: Include detailed competitor profiles, pricing analysis, and strategic assessments
+      - id: market-calculations
+        title: C. Market Sizing Calculations
+        instruction: Show detailed TAM/SAM/SOM calculations with assumptions
+      - id: strategic-frameworks
+        title: D. Strategic Analysis Frameworks
+        instruction: Include detailed Porter's Five Forces, PESTEL, and other framework analyses
+
+# Advanced template configuration
+variables:
+  competitor_list:
+    type: array
+    description: "List of key competitors to analyze in detail"
+    min_items: 3
+    max_items: 8
+    validation:
+      - "Each competitor should have sufficient market presence to warrant analysis"
+      - "Include mix of direct, indirect, and potential competitors"
+  
+  market_trends:
+    type: array
+    description: "Key market trends affecting competitive dynamics"
+    min_items: 3
+    max_items: 6
+    validation:
+      - "Each trend should have strategic implications for positioning"
+      - "Trends should be supported by evidence and data"
+  
+  positioning_gaps:
+    type: array
+    description: "Identified gaps in market positioning where opportunities exist"
+    min_items: 2
+    max_items: 5
+    validation:
+      - "Each gap should represent a genuine market opportunity"
+      - "Gaps should be actionable and strategically significant"
+
+industry_frameworks:
+  b2b_saas:
+    focus_areas:
+      - "Customer acquisition cost and lifetime value analysis"
+      - "Product-market fit and feature differentiation"
+      - "Sales cycle optimization and conversion analysis"
+      - "Subscription model and pricing strategy analysis"
+    competitive_factors:
+      - "Integration ecosystem and platform strategy"
+      - "Customer success and retention programs"
+      - "Feature velocity and product roadmap"
+      - "Enterprise vs SMB market positioning"
+  
+  b2b_services:
+    focus_areas:
+      - "Expertise positioning and thought leadership"
+      - "Client relationship models and retention"
+      - "Service delivery differentiation"
+      - "Geographic and practice area expansion"
+    competitive_factors:
+      - "Professional reputation and case studies"
+      - "Service quality and delivery excellence"
+      - "Pricing models and value demonstration"
+      - "Partnership and referral networks"
+  
+  b2c_product:
+    focus_areas:
+      - "Brand positioning and emotional connection"
+      - "Distribution channel optimization"
+      - "Customer acquisition and retention"
+      - "Product innovation and lifecycle management"
+    competitive_factors:
+      - "Brand strength and customer loyalty"
+      - "Distribution reach and channel partnerships"
+      - "Marketing efficiency and customer acquisition cost"
+      - "Product quality and customer satisfaction"
+
+quality_validation:
+  completeness:
+    - "All Porter's Five Forces analyzed with evidence"
+    - "Market sizing includes multiple validation approaches"
+    - "Competitive analysis covers strategic, not just tactical elements"
+    - "Strategic recommendations are specific and actionable"
+  
+  strategic_depth:
+    - "Analysis goes beyond surface-level competitive comparison"
+    - "Strategic implications clearly connected to business objectives"
+    - "Positioning recommendations are differentiated and defensible"
+    - "Implementation roadmap is realistic and prioritized"
+  
+  intelligence_quality:
+    - "Competitive intelligence is current and comprehensive"
+    - "Market trends are validated with multiple sources"
+    - "Positioning gaps represent genuine opportunities"
+    - "Risk assessment includes scenario planning"
+
+input_requirements:
+  required_variables:
+    - competitor_list
+    - market_trends
+    - positioning_gaps
+    - company_name
+    - market_focus
+    - primary_market_definition
+    - target_customer_segments
+  
+  conditional_requirements:
+    industry_type:
+      b2b_saas: ["customer_acquisition_cost", "ltv_estimates", "product_roadmap"]
+      b2b_services: ["service_delivery_model", "expertise_areas", "client_segments"]
+      b2c_product: ["distribution_channels", "brand_positioning", "customer_demographics"]
+  
+  validation_rules:
+    competitor_analysis:
+      - "Must include at least 3 direct competitors with detailed profiles"
+      - "Competitive intelligence must be current (within 6 months)"
+      - "Analysis must identify specific competitive advantages and vulnerabilities"
+    
+    market_opportunity:
+      - "Market sizing must use multiple methodologies for validation"
+      - "Opportunities must be quantified with realistic potential assessment"
+      - "Strategic recommendations must be prioritized by impact and feasibility"

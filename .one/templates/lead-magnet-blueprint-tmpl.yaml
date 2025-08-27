@@ -1,0 +1,1051 @@
+template:
+  id: lead-magnet-blueprint-template-v1
+  name: Lead Magnet Blueprint
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-lead-magnet-blueprint.md"
+    title: "{{company_name}} Lead Magnet Blueprint"
+
+workflow:
+  mode: interactive
+  elicitation: rocket-framework
+  custom_elicitation:
+    title: "R.O.C.K.E.T. Framework Lead Magnet Development"
+    sections:
+      - id: research-value-discovery
+        options:
+          - "Customer Pain Point Analysis - Deep dive into specific customer frustrations"
+          - "Value Delivery Investigation - Explore what customers truly value most"
+          - "Content Consumption Preferences - Understand how customers prefer to learn"
+          - "Competitive Lead Magnet Analysis - Review competitor offerings and gaps"
+          - "Customer Language Mining - Extract exact phrases customers use about problems"
+          - "Decision Trigger Research - Identify what prompts customers to seek solutions"
+          - "Proceed to opportunity validation"
+      - id: opportunity-validation
+        options:
+          - "Value Promise Testing - Validate lead magnet value proposition resonance"
+          - "Format Optimization Testing - Test different content formats and delivery methods"
+          - "Timing and Context Validation - Ensure optimal placement in customer journey"
+          - "Competitive Advantage Assessment - Strengthen unique positioning of offer"
+          - "Lead Quality Prediction - Assess likely quality of leads generated"
+          - "Conversion Potential Analysis - Evaluate lead-to-customer conversion likelihood"
+          - "Proceed to clarity optimization"
+      - id: clarity-optimization
+        options:
+          - "Value Promise Simplification - Clarify and simplify the core promise"
+          - "Content Structure Optimization - Organize for maximum comprehension and impact"
+          - "Call-to-Action Refinement - Optimize conversion elements and messaging"
+          - "Delivery Method Streamlining - Simplify access and consumption process"
+          - "Follow-up Sequence Clarification - Ensure seamless nurture experience"
+          - "Success Metrics Definition - Clarify measurement and optimization framework"
+          - "Proceed to execution planning"
+
+sections:
+  - id: initial-setup
+    instruction: |
+      Lead Magnet Blueprint Creation Guide (Elevate Framework GIFT Step)
+      
+      This template creates a comprehensive lead magnet strategy based on the Elevate Framework GIFT methodology,
+      designed to build trust through value delivery and facilitate natural progression to the IDENTIFY step.
+      
+      The blueprint leverages:
+      - Psychology of reciprocity and trust-building through genuine value delivery
+      - Value Equation principles (Dream Outcome * Perceived Likelihood / Time Delay * Effort & Sacrifice)
+      - Foundation Blueprint intelligence for Avatar-specific problem solving
+      - Strategic value demonstration before commitment (Intent-Based Branding)
+      - Mini-Dream Outcome delivery for immediate satisfaction and trust building
+      - Natural bridge to core offer through mechanism preview
+      
+      Key Principle: The GIFT is far more than a lead magnet—it's a strategic demonstration of competence,
+      a trust-building mechanism, and a mini-transformation that creates desire for deeper engagement.
+      
+      The blueprint serves as the strategic foundation for lead generation activities and ensures alignment with overall marketing objectives.
+      
+      Output file location: `docs/{{company_name}}-lead-magnet-blueprint.md`
+
+  - id: strategic-context-discovery
+    title: Strategic Context & Foundation Alignment
+    instruction: |
+      Establish connection between lead magnet strategy and company foundation.
+      Ensure all lead generation efforts reinforce unique mechanism and brand voice.
+      Use advanced elicitation to understand strategic positioning requirements.
+    elicit: true
+    custom_elicitation: research-value-discovery
+    sections:
+      - id: foundation-alignment
+        title: Company Foundation Integration
+        template: |
+          **Brand Voice Integration:**
+          - Primary Voice Adjectives: {{primary_voice_adjectives}}
+          - Voice Application in Lead Magnet: {{voice_application_strategy}}
+          - Tone Consistency Requirements: {{tone_consistency_guidelines}}
+
+          **Unique Mechanism Leverage:**
+          - Core Mechanism: {{unique_mechanism_name}}
+          - Mechanism Preview in Lead Magnet: {{mechanism_preview_strategy}}
+          - Differentiation Showcase: {{differentiation_demonstration}}
+
+          **Value Proposition Alignment:**
+          - Primary Value Proposition: {{primary_value_proposition}}
+          - Lead Magnet Value Connection: {{value_connection_strategy}}
+          - Promise-to-Product Bridge: {{promise_product_bridge}}
+
+      - id: customer-avatar-alignment
+        title: Customer Avatar & Journey Integration
+        template: |
+          **Primary Avatar Focus:**
+          - Target Avatar: {{primary_avatar_segment}}
+          - Avatar Pain Points: {{avatar_pain_points}}
+          - Avatar Goals & Aspirations: {{avatar_goals}}
+          - Avatar Content Preferences: {{avatar_content_preferences}}
+
+          **Customer Journey Positioning:**
+          - Journey Stage: {{target_journey_stage}}
+          - Entry Point Strategy: {{journey_entry_strategy}}
+          - Next Step Facilitation: {{next_step_facilitation}}
+          - Long-term Relationship Building: {{relationship_building_approach}}
+
+  - id: rocket-research-problem-discovery
+    title: Problem Discovery & Value Research (R.O.C.K.E.T. Research)
+    instruction: |
+      Apply R.O.C.K.E.T. Research methodology to identify high-value customer problems.
+      Use advanced elicitation to explore pain points, frustrations, and unmet needs.
+      Focus on problems that your unique mechanism can address effectively.
+    elicit: true
+    custom_elicitation: research-value-discovery
+    sections:
+      - id: primary-problem-identification
+        title: Primary Problem Identification
+        template: |
+          **Core Problem Statement:**
+          {{core_problem_statement}}
+
+          **Problem Manifestations:**
+          1. **Symptom:** {{problem_symptom_1}}
+             - **Impact:** {{symptom_1_impact}}
+             - **Frequency:** {{symptom_1_frequency}}
+             - **Cost/Consequence:** {{symptom_1_cost}}
+
+          2. **Symptom:** {{problem_symptom_2}}
+             - **Impact:** {{symptom_2_impact}}
+             - **Frequency:** {{symptom_2_frequency}}
+             - **Cost/Consequence:** {{symptom_2_cost}}
+
+          3. **Symptom:** {{problem_symptom_3}}
+             - **Impact:** {{symptom_3_impact}}
+             - **Frequency:** {{symptom_3_frequency}}
+             - **Cost/Consequence:** {{symptom_3_cost}}
+
+          **Customer Language & Phrases:**
+          - "{{customer_phrase_1}}"
+          - "{{customer_phrase_2}}"
+          - "{{customer_phrase_3}}"
+          - "{{customer_phrase_4}}"
+
+      - id: problem-urgency-analysis
+        title: Problem Urgency & Priority Analysis
+        template: |
+          **Urgency Assessment:**
+          - **Immediate Impact:** {{immediate_impact_description}}
+          - **Time Sensitivity:** {{time_sensitivity_level}}
+          - **Cost of Inaction:** {{inaction_cost_analysis}}
+
+          **Priority Level Indicators:**
+          - **High Priority Signals:** {{high_priority_signals}}
+          - **Medium Priority Signals:** {{medium_priority_signals}}
+          - **Decision Triggers:** {{decision_trigger_events}}
+
+          **Competitive Context:**
+          - **Market Awareness:** {{market_awareness_level}}
+          - **Solution Alternatives:** {{alternative_solutions}}
+          - **Our Advantage:** {{our_solution_advantage}}
+
+      - id: value-opportunity-mapping
+        title: Value Delivery Opportunity Mapping
+        template: |
+          **Primary Value Opportunities:**
+          1. **Opportunity:** {{value_opportunity_1}}
+             - **Customer Benefit:** {{opportunity_1_benefit}}
+             - **Unique Delivery:** {{opportunity_1_unique_delivery}}
+             - **Proof Potential:** {{opportunity_1_proof}}
+
+          2. **Opportunity:** {{value_opportunity_2}}
+             - **Customer Benefit:** {{opportunity_2_benefit}}
+             - **Unique Delivery:** {{opportunity_2_unique_delivery}}
+             - **Proof Potential:** {{opportunity_2_proof}}
+
+          3. **Opportunity:** {{value_opportunity_3}}
+             - **Customer Benefit:** {{opportunity_3_benefit}}
+             - **Unique Delivery:** {{opportunity_3_unique_delivery}}
+             - **Proof Potential:** {{opportunity_3_proof}}
+
+          **Value Delivery Framework:**
+          {{value_delivery_framework}}
+
+  - id: rocket-opportunity-magnet-strategy
+    title: Lead Magnet Strategy Development (R.O.C.K.E.T. Opportunity)
+    instruction: |
+      Apply R.O.C.K.E.T. Opportunity methodology to develop lead magnet strategy.
+      Use advanced elicitation to optimize format, delivery, and positioning.
+      Ensure strategy leverages unique mechanism and maximizes conversion potential.
+    elicit: true
+    custom_elicitation: opportunity-validation
+    sections:
+      - id: magnet-type-selection
+        title: GIFT Format Selection (Value Equation Optimized)
+        template: |
+          **Primary GIFT Format:** {{primary_magnet_type}}
+
+          **Format Selection Strategy (Value Equation Alignment):**
+          
+          **Format Options Evaluation:**
+          
+          **Checklists/Worksheets:**
+          - **Value Delivery:** Actionable auditing/implementation guidance
+          - **Consumption Effort:** Low (quick scan/complete)
+          - **Perceived Value:** High (immediate applicability)
+          - **Avatar Fit:** {{checklist_avatar_fit_assessment}}
+          
+          **Templates/Frameworks:**
+          - **Value Delivery:** Ready-to-use structures (emails, strategies, spreadsheets)
+          - **Time Savings:** Massive (eliminates creation time)
+          - **Implementation Ease:** High (copy-paste-customize)
+          - **Avatar Fit:** {{template_avatar_fit_assessment}}
+          
+          **Short Guides/Reports (10-15 pages max):**
+          - **Value Delivery:** Focused insights, data, or how-to instructions
+          - **Consumption Time:** 10-15 minutes maximum
+          - **Credibility Building:** High (demonstrates expertise)
+          - **Avatar Fit:** {{guide_avatar_fit_assessment}}
+          
+          **Interactive Tools (Calculators/Quizzes):**
+          - **Value Delivery:** Personalized feedback and insights
+          - **Engagement Level:** Very high (interactive experience)
+          - **Technical Requirements:** Higher (development needed)
+          - **Avatar Fit:** {{interactive_avatar_fit_assessment}}
+          
+          **Video Tutorials (Short <10 min):**
+          - **Value Delivery:** Visual learning and demonstration
+          - **Trust Building:** High (face-to-face connection)
+          - **Consumption Effort:** Low (passive watching)
+          - **Avatar Fit:** {{video_avatar_fit_assessment}}
+          
+          **AI Chatbot Diagnostics:**
+          - **Value Delivery:** Instant, personalized advice
+          - **AI Capability Showcase:** Direct demonstration
+          - **Engagement:** Very high (conversation-based)
+          - **Avatar Fit:** {{chatbot_avatar_fit_assessment}}
+
+          **Selected Format Justification:**
+          {{format_selection_rationale}}
+          
+          **Value Equation Optimization:**
+          - **Dream Outcome Delivery:** {{do_delivery_method}}
+          - **Perceived Likelihood Enhancement:** {{pl_enhancement_strategy}}
+          - **Time Delay Minimization:** {{td_minimization_approach}}
+          - **Effort Sacrifice Reduction:** {{es_reduction_strategy}}
+
+          **Alternative Formats Considered:**
+          1. {{alternative_format_1}} - Rejected because: {{rejection_reason_1}}
+          2. {{alternative_format_2}} - Rejected because: {{rejection_reason_2}}
+          3. {{alternative_format_3}} - Rejected because: {{rejection_reason_3}}
+
+          **Delivery Method Strategy:**
+          {{delivery_method_strategy}}
+          
+          **Format-Avatar Alignment:**
+          - **Problem-Solution Fit:** {{problem_solution_format_fit}}
+          - **Consumption Preferences:** {{consumption_preference_alignment}}
+          - **Implementation Style:** {{implementation_style_match}}
+          - **Value Perception:** {{value_perception_optimization}}
+
+      - id: value-promise-framework
+        title: Lead Magnet Value Promise Framework (Value Equation Optimized)
+        template: |
+          **Primary Value Promise (Mini-Dream Outcome):**
+          {{primary_value_promise}}
+
+          **Value Equation Optimization (Hormozi Framework):**
+          
+          **Maximize Mini-Dream Outcome (DO):**
+          - **Specific Sub-Problem Solved:** {{specific_sub_problem}}
+          - **Tangible Quick Win:** {{tangible_quick_win}}
+          - **Aha Moment Delivered:** {{aha_moment_description}}
+          - **Progress Feeling Created:** {{progress_feeling}}
+          - **Connection to Core Desire:** {{core_desire_connection}}
+          
+          **Maximize Perceived Likelihood (PL):**
+          - **Professional Presentation:** {{professional_presentation_strategy}}
+          - **Clear Promise Articulation:** {{clear_promise_strategy}}
+          - **Credibility Association:** {{credibility_association_method}}
+          - **Authority Building:** {{authority_building_elements}}
+          - **Social Proof Integration:** {{social_proof_integration}}
+          
+          **Minimize Time Delay (TD):**
+          - **Instant Gratification:** {{instant_gratification_delivery}}
+          - **Immediate Access Method:** {{immediate_access_strategy}}
+          - **Quick Value Realization:** {{quick_value_timeline}}
+          - **Seamless Delivery:** {{seamless_delivery_approach}}
+          
+          **Minimize Effort & Sacrifice (ES):**
+          - **Consumption Effort:** {{consumption_effort_minimization}}
+          - **Acquisition Effort:** {{acquisition_effort_reduction}}
+          - **Implementation Barrier Removal:** {{implementation_barrier_strategy}}
+          - **Cognitive Load Reduction:** {{cognitive_load_strategy}}
+
+          **Promise Breakdown:**
+          - **Functional Value:** {{functional_value_delivery}}
+          - **Emotional Value:** {{emotional_value_delivery}}
+          - **Time Value:** {{time_value_delivery}}
+          - **Social Value:** {{social_value_delivery}}
+
+          **Outcome Specification:**
+          - **Immediate Outcome:** {{immediate_outcome}}
+          - **Short-term Outcome:** {{short_term_outcome}}
+          - **Long-term Connection:** {{long_term_connection}}
+
+          **Trust & Reciprocity Elements:**
+          - **Reciprocity Trigger:** {{reciprocity_trigger_strategy}}
+          - **Trust Building Method:** {{trust_building_approach}}
+          - **Risk Reduction:** {{risk_reduction_elements}}
+          - **Value Anchoring:** {{value_anchoring_strategy}}
+
+          **Proof Elements:**
+          - **Competence Demonstration:** {{competence_demonstration}}
+          - **Authority Proof:** {{authority_proof_elements}}
+          - **Social Proof Element:** {{social_proof_element}}
+          - **Results Preview:** {{results_preview_strategy}}
+
+      - id: positioning-differentiation
+        title: Competitive Positioning & Differentiation
+        template: |
+          **Unique Positioning Statement:**
+          {{unique_positioning_statement}}
+
+          **Differentiation Elements:**
+          1. **Unique Approach:** {{unique_approach}}
+          2. **Exclusive Insight:** {{exclusive_insight}}
+          3. **Proprietary Method:** {{proprietary_method}}
+          4. **Superior Delivery:** {{superior_delivery}}
+
+          **Competitive Advantages:**
+          - **vs. Competitor Type 1:** {{advantage_vs_competitor_1}}
+          - **vs. Competitor Type 2:** {{advantage_vs_competitor_2}}
+          - **vs. DIY Approaches:** {{advantage_vs_diy}}
+
+          **"Only We" Statement:**
+          {{only_we_statement}}
+
+  - id: rocket-clarity-content-optimization
+    title: Content Development & Optimization (R.O.C.K.E.T. Clarity)
+    instruction: |
+      Apply R.O.C.K.E.T. Clarity methodology to develop high-impact content.
+      Use advanced elicitation to optimize structure, messaging, and conversion elements.
+      Ensure content demonstrates unique mechanism and builds toward core offer.
+    elicit: true
+    custom_elicitation: clarity-optimization
+    sections:
+      - id: content-structure-framework
+        title: Content Structure & Flow Framework
+        conditional:
+          digital:
+            template: |
+              **Digital Lead Magnet Structure:**
+
+              **Title & Headline:**
+              - **Main Title:** {{main_title}}
+              - **Subtitle:** {{subtitle}}
+              - **Benefit-Driven Headline:** {{benefit_headline}}
+
+              **Content Architecture:**
+              1. **Opening Hook ({{hook_word_count}} words)**
+                 - Problem agitation: {{problem_agitation}}
+                 - Promise preview: {{promise_preview}}
+                 - Credibility establishment: {{credibility_hook}}
+
+              2. **Core Content Sections:**
+                 - **Section 1:** {{section_1_title}} ({{section_1_content_type}})
+                 - **Section 2:** {{section_2_title}} ({{section_2_content_type}})
+                 - **Section 3:** {{section_3_title}} ({{section_3_content_type}})
+                 - **Section 4:** {{section_4_title}} ({{section_4_content_type}})
+
+              3. **Unique Mechanism Integration:**
+                 {{mechanism_integration_strategy}}
+
+              4. **Transition to Next Step:**
+                 {{transition_strategy}}
+
+              **Visual Elements:**
+              - **Charts/Graphs:** {{visual_elements_charts}}
+              - **Worksheets/Templates:** {{visual_elements_worksheets}}
+              - **Infographics:** {{visual_elements_infographics}}
+          physical:
+            template: |
+              **Physical Lead Magnet Structure:**
+
+              **Physical Format:** {{physical_format}}
+              **Packaging Strategy:** {{packaging_approach}}
+
+              **Content Components:**
+              1. **Primary Component:** {{primary_component}}
+                 - Purpose: {{primary_component_purpose}}
+                 - User interaction: {{primary_interaction}}
+
+              2. **Supporting Components:**
+                 - **Component A:** {{supporting_component_a}}
+                 - **Component B:** {{supporting_component_b}}
+                 - **Component C:** {{supporting_component_c}}
+
+              **Unique Mechanism Demonstration:**
+              {{physical_mechanism_demonstration}}
+
+              **Digital Integration:**
+              {{digital_integration_strategy}}
+
+      - id: messaging-optimization
+        title: Messaging & Copy Optimization
+        template: |
+          **Core Messages:**
+          1. **Primary Message:** {{primary_message}}
+          2. **Supporting Message 1:** {{supporting_message_1}}
+          3. **Supporting Message 2:** {{supporting_message_2}}
+          4. **Supporting Message 3:** {{supporting_message_3}}
+
+          **Voice Integration Examples:**
+          - **Opening Paragraph:** {{opening_paragraph_example}}
+          - **Key Section Intro:** {{section_intro_example}}
+          - **Transition Phrases:** {{transition_phrase_examples}}
+          - **Call-to-Action Language:** {{cta_language_examples}}
+
+          **Emotional Trigger Points:**
+          - **Pain Amplification:** {{pain_amplification_messaging}}
+          - **Desire Enhancement:** {{desire_enhancement_messaging}}
+          - **Urgency Creation:** {{urgency_creation_messaging}}
+          - **Trust Building:** {{trust_building_messaging}}
+
+      - id: conversion-optimization
+        title: Conversion Elements & Optimization
+        template: |
+          **Primary Call-to-Action:**
+          - **CTA Text:** {{primary_cta_text}}
+          - **CTA Placement:** {{cta_placement_strategy}}
+          - **CTA Design:** {{cta_design_requirements}}
+
+          **Secondary CTAs:**
+          1. {{secondary_cta_1}} - Placement: {{secondary_cta_1_placement}}
+          2. {{secondary_cta_2}} - Placement: {{secondary_cta_2_placement}}
+
+          **Conversion Path Optimization:**
+          - **Landing Page Elements:** {{landing_page_elements}}
+          - **Form Optimization:** {{form_optimization_strategy}}
+          - **Thank You Page Strategy:** {{thank_you_page_strategy}}
+
+          **Urgency & Scarcity Elements:**
+          {{urgency_scarcity_strategy}}
+
+  - id: rocket-kinetic-delivery-optimization
+    title: Delivery & Experience Optimization (R.O.C.K.E.T. Kinetic)
+    instruction: |
+      Apply R.O.C.K.E.T. Kinetic methodology to optimize delivery experience.
+      Create seamless, value-driven experience that builds momentum toward core offer.
+      Ensure delivery reinforces unique mechanism and brand promise.
+    sections:
+      - id: delivery-method-strategy
+        title: Delivery Method & Access Strategy
+        conditional:
+          digital:
+            template: |
+              **Digital Delivery Strategy:**
+
+              **Primary Delivery Method:** {{digital_delivery_method}}
+              - **Access Method:** {{access_method}}
+              - **Download/Viewing Experience:** {{viewing_experience}}
+              - **Mobile Optimization:** {{mobile_optimization}}
+
+              **Delivery Sequence:**
+              1. **Immediate Access:** {{immediate_access_elements}}
+              2. **Follow-up Delivery:** {{follow_up_delivery_timeline}}
+              3. **Bonus Content:** {{bonus_content_strategy}}
+
+              **Technical Requirements:**
+              - **File Formats:** {{file_formats}}
+              - **Platform Integration:** {{platform_integration}}
+              - **Tracking Implementation:** {{tracking_requirements}}
+          physical:
+            template: |
+              **Physical Delivery Strategy:**
+
+              **Shipping Method:** {{shipping_method}}
+              **Packaging Experience:** {{packaging_experience}}
+              **Delivery Timeline:** {{delivery_timeline}}
+
+              **Quality Control:**
+              - **Production Standards:** {{production_standards}}
+              - **Quality Assurance:** {{quality_assurance_process}}
+              - **Damage Prevention:** {{damage_prevention_measures}}
+
+              **Digital Companion:**
+              {{digital_companion_strategy}}
+
+      - id: follow_up_sequence_design
+        title: Follow-up Sequence & Nurture Strategy
+        template: |
+          **Sequence Overview:**
+          - **Sequence Duration:** {{sequence_duration}}
+          - **Total Touchpoints:** {{total_touchpoints}}
+          - **Primary Objective:** {{sequence_primary_objective}}
+
+          **Email Sequence Framework:**
+          1. **Email 1 (Immediate):** {{email_1_purpose}}
+             - **Subject:** {{email_1_subject}}
+             - **Key Message:** {{email_1_key_message}}
+             - **CTA:** {{email_1_cta}}
+
+          2. **Email 2 ({{email_2_timing}}):** {{email_2_purpose}}
+             - **Subject:** {{email_2_subject}}
+             - **Key Message:** {{email_2_key_message}}
+             - **CTA:** {{email_2_cta}}
+
+          3. **Email 3 ({{email_3_timing}}):** {{email_3_purpose}}
+             - **Subject:** {{email_3_subject}}
+             - **Key Message:** {{email_3_key_message}}
+             - **CTA:** {{email_3_cta}}
+
+          4. **Email 4 ({{email_4_timing}}):** {{email_4_purpose}}
+             - **Subject:** {{email_4_subject}}
+             - **Key Message:** {{email_4_key_message}}
+             - **CTA:** {{email_4_cta}}
+
+          5. **Email 5 ({{email_5_timing}}):** {{email_5_purpose}}
+             - **Subject:** {{email_5_subject}}
+             - **Key Message:** {{email_5_key_message}}
+             - **CTA:** {{email_5_cta}}
+
+          **Sequence Progression Strategy:**
+          {{sequence_progression_strategy}}
+
+      - id: engagement-optimization
+        title: Engagement & Interaction Optimization
+        template: |
+          **Engagement Mechanisms:**
+          - **Interactive Elements:** {{interactive_elements}}
+          - **Community Integration:** {{community_integration}}
+          - **Feedback Collection:** {{feedback_collection_method}}
+
+          **Consumption Optimization:**
+          - **Consumption Guidance:** {{consumption_guidance}}
+          - **Progress Tracking:** {{progress_tracking_method}}
+          - **Completion Incentives:** {{completion_incentives}}
+
+          **Social Sharing Strategy:**
+          - **Shareable Elements:** {{shareable_elements}}
+          - **Sharing Incentives:** {{sharing_incentives}}
+          - **Viral Potential:** {{viral_potential_elements}}
+
+  - id: rocket-engagement-promotion-strategy
+    title: Promotion & Distribution Strategy (R.O.C.K.E.T. Engagement)
+    instruction: |
+      Apply R.O.C.K.E.T. Engagement methodology to develop promotion strategy.
+      Create multi-channel approach that maximizes reach and conversion.
+      Ensure promotion aligns with brand voice and unique positioning.
+    sections:
+      - id: channel-strategy
+        title: Distribution Channel Strategy
+        template: |
+          **Primary Channels:**
+          1. **Channel:** {{primary_channel_1}}
+             - **Strategy:** {{channel_1_strategy}}
+             - **Expected Volume:** {{channel_1_volume}}
+             - **Conversion Rate:** {{channel_1_conversion_rate}}
+
+          2. **Channel:** {{primary_channel_2}}
+             - **Strategy:** {{channel_2_strategy}}
+             - **Expected Volume:** {{channel_2_volume}}
+             - **Conversion Rate:** {{channel_2_conversion_rate}}
+
+          3. **Channel:** {{primary_channel_3}}
+             - **Strategy:** {{channel_3_strategy}}
+             - **Expected Volume:** {{channel_3_volume}}
+             - **Conversion Rate:** {{channel_3_conversion_rate}}
+
+          **Secondary Channels:**
+          {{secondary_channels_strategy}}
+
+          **Channel Integration:**
+          {{channel_integration_approach}}
+
+      - id: content-marketing-integration
+        title: Content Marketing Integration
+        template: |
+          **Blog Content Strategy:**
+          - **Supporting Blog Posts:** {{supporting_blog_posts}}
+          - **SEO Integration:** {{seo_integration_strategy}}
+          - **Content Calendar:** {{content_calendar_integration}}
+
+          **Social Media Strategy:**
+          - **Platform Focus:** {{social_platform_focus}}
+          - **Content Types:** {{social_content_types}}
+          - **Posting Schedule:** {{social_posting_schedule}}
+
+          **Email Marketing Integration:**
+          - **List Segmentation:** {{list_segmentation_strategy}}
+          - **Announcement Strategy:** {{announcement_strategy}}
+          - **Cross-promotion:** {{cross_promotion_approach}}
+
+      - id: paid_promotion_strategy
+        title: Paid Promotion & Advertising Strategy
+        template: |
+          **Paid Channel Strategy:**
+          - **Primary Paid Channel:** {{primary_paid_channel}}
+          - **Budget Allocation:** {{budget_allocation_strategy}}
+          - **Target Audience:** {{paid_target_audience}}
+
+          **Ad Creative Strategy:**
+          - **Ad Formats:** {{ad_formats}}
+          - **Messaging Variants:** {{messaging_variants}}
+          - **Visual Elements:** {{visual_elements_strategy}}
+
+          **Landing Page Optimization:**
+          - **Landing Page Variants:** {{landing_page_variants}}
+          - **A/B Test Elements:** {{ab_test_elements}}
+          - **Conversion Optimization:** {{conversion_optimization_focus}}
+
+  - id: rocket-tracking-analytics-framework
+    title: Analytics & Optimization Framework (R.O.C.K.E.T. Tracking)
+    instruction: |
+      Apply R.O.C.K.E.T. Tracking methodology to establish measurement and optimization.
+      Create comprehensive analytics framework for continuous improvement.
+      Ensure tracking enables data-driven optimization decisions.
+    sections:
+      - id: success-metrics-definition
+        title: Success Metrics & KPI Definition
+        template: |
+          **Primary Success Metrics:**
+          1. **Lead Generation Volume**
+             - **Target:** {{lead_volume_target}}
+             - **Measurement:** {{lead_volume_measurement}}
+             - **Tracking Method:** {{lead_volume_tracking}}
+
+          2. **Lead Quality Score**
+             - **Target:** {{lead_quality_target}}
+             - **Measurement:** {{lead_quality_measurement}}
+             - **Scoring Criteria:** {{lead_quality_criteria}}
+
+          3. **Conversion Rate to Core Offer**
+             - **Target:** {{conversion_rate_target}}
+             - **Measurement:** {{conversion_rate_measurement}}
+             - **Tracking Period:** {{conversion_tracking_period}}
+
+          **Secondary Metrics:**
+          - **Cost Per Lead:** {{cost_per_lead_target}}
+          - **Engagement Rate:** {{engagement_rate_target}}
+          - **Social Sharing Rate:** {{sharing_rate_target}}
+          - **Email Open/Click Rates:** {{email_performance_targets}}
+
+      - id: tracking-implementation
+        title: Tracking & Analytics Implementation
+        template: |
+          **Analytics Platform Setup:**
+          - **Primary Platform:** {{primary_analytics_platform}}
+          - **Event Tracking:** {{event_tracking_setup}}
+          - **Goal Configuration:** {{goal_configuration}}
+
+          **Lead Tracking System:**
+          - **Lead Source Attribution:** {{lead_source_attribution}}
+          - **Lead Scoring Setup:** {{lead_scoring_setup}}
+          - **CRM Integration:** {{crm_integration_requirements}}
+
+          **Content Performance Tracking:**
+          - **Engagement Metrics:** {{engagement_metrics_tracking}}
+          - **Consumption Analytics:** {{consumption_analytics}}
+          - **Drop-off Analysis:** {{drop_off_analysis_setup}}
+
+      - id: optimization-framework
+        title: Continuous Optimization Framework
+        template: |
+          **Testing Strategy:**
+          - **A/B Test Elements:** {{ab_test_priority_elements}}
+          - **Testing Schedule:** {{testing_schedule}}
+          - **Sample Size Requirements:** {{sample_size_requirements}}
+
+          **Optimization Priorities:**
+          1. **Priority 1:** {{optimization_priority_1}}
+          2. **Priority 2:** {{optimization_priority_2}}
+          3. **Priority 3:** {{optimization_priority_3}}
+
+          **Review & Iteration Cycle:**
+          - **Daily Monitoring:** {{daily_monitoring_focus}}
+          - **Weekly Analysis:** {{weekly_analysis_focus}}
+          - **Monthly Optimization:** {{monthly_optimization_focus}}
+          - **Quarterly Strategy Review:** {{quarterly_review_focus}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Project Plan
+    instruction: |
+      Create detailed implementation roadmap with phases, timelines, and responsibilities.
+      Ensure successful launch and ongoing optimization of lead magnet strategy.
+    sections:
+      - id: phase-planning
+        title: Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Start Date:** {{phase_start_date}}
+
+          **Phase Objectives:**
+          {{phase_objectives}}
+
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}}
+
+          **Success Criteria:**
+          {{phase_success_criteria}}
+
+          **Dependencies:**
+          {{phase_dependencies}}
+
+          **Risk Factors:**
+          {{phase_risk_factors}}
+
+      - id: resource-requirements
+        title: Resource Requirements & Allocation
+        template: |
+          **Team Requirements:**
+          - **Content Creation:** {{content_creation_resources}}
+          - **Design & Visual:** {{design_resources}}
+          - **Technical Development:** {{technical_resources}}
+          - **Marketing & Promotion:** {{marketing_resources}}
+
+          **Budget Allocation:**
+          - **Content Development:** {{content_budget}}
+          - **Design & Production:** {{design_budget}}
+          - **Technology & Tools:** {{technology_budget}}
+          - **Promotion & Advertising:** {{promotion_budget}}
+          - **Contingency:** {{contingency_budget}}
+
+          **External Dependencies:**
+          {{external_dependencies}}
+
+      - id: launch-strategy
+        title: Launch Strategy & Go-to-Market Plan
+        template: |
+          **Pre-Launch Checklist:**
+          - [ ] Content development complete
+          - [ ] Design and visuals finalized
+          - [ ] Technical setup and testing complete
+          - [ ] Analytics and tracking implemented
+          - [ ] Follow-up sequences configured
+          - [ ] Promotion materials prepared
+          - [ ] Team training completed
+
+          **Launch Sequence:**
+          - **Soft Launch:** {{soft_launch_strategy}}
+          - **Full Launch:** {{full_launch_strategy}}
+          - **Post-Launch Amplification:** {{post_launch_amplification}}
+
+          **Success Validation:**
+          {{launch_success_validation}}
+
+  - id: risk-management
+    title: Risk Assessment & Mitigation Strategy
+    instruction: |
+      Identify potential risks and develop mitigation strategies.
+      Ensure successful lead magnet performance and ROI achievement.
+    sections:
+      - id: risk-assessment
+        title: Risk Identification & Assessment
+        repeatable: true
+        template: |
+          **Risk: {{risk_name}}**
+          **Category:** {{risk_category}}
+          **Probability:** {{risk_probability}}/5
+          **Impact:** {{risk_impact}}/5
+          **Risk Score:** {{risk_score}}/25
+
+          **Risk Description:**
+          {{risk_description}}
+
+          **Potential Consequences:**
+          {{risk_consequences}}
+
+          **Early Warning Indicators:**
+          {{risk_warning_indicators}}
+
+          **Mitigation Strategy:**
+          {{risk_mitigation_strategy}}
+
+          **Contingency Plan:**
+          {{risk_contingency_plan}}
+
+      - id: quality_assurance
+        title: Quality Assurance & Brand Protection
+        template: |
+          **Content Quality Standards:**
+          {{content_quality_standards}}
+
+          **Brand Consistency Checks:**
+          - [ ] Brand voice alignment verified
+          - [ ] Visual brand guidelines followed
+          - [ ] Message consistency maintained
+          - [ ] Unique mechanism properly represented
+
+          **Legal & Compliance Review:**
+          {{legal_compliance_requirements}}
+
+          **Customer Experience Protection:**
+          {{customer_experience_protection}}
+
+  - id: success-optimization
+    title: Success Metrics & Long-term Optimization
+    instruction: |
+      Define success criteria and long-term optimization strategy.
+      Create framework for scaling and improving lead magnet performance.
+    sections:
+      - id: success_criteria_definition
+        title: Success Criteria & Benchmarks
+        template: |
+          **Success Thresholds:**
+          - **Minimum Viable Success:** {{minimum_success_criteria}}
+          - **Target Success:** {{target_success_criteria}}
+          - **Exceptional Success:** {{exceptional_success_criteria}}
+
+          **Performance Benchmarks:**
+          - **Industry Benchmarks:** {{industry_benchmark_comparison}}
+          - **Internal Benchmarks:** {{internal_benchmark_comparison}}
+          - **Competitor Benchmarks:** {{competitor_benchmark_comparison}}
+
+          **ROI Calculation:**
+          {{roi_calculation_framework}}
+
+      - id: scaling_strategy
+        title: Scaling & Evolution Strategy
+        template: |
+          **Scaling Triggers:**
+          {{scaling_trigger_conditions}}
+
+          **Scaling Strategies:**
+          - **Horizontal Scaling:** {{horizontal_scaling_approach}}
+          - **Vertical Scaling:** {{vertical_scaling_approach}}
+          - **Channel Expansion:** {{channel_expansion_strategy}}
+
+          **Evolution Framework:**
+          - **Version 2.0 Planning:** {{version_2_planning}}
+          - **Complementary Magnets:** {{complementary_magnet_strategy}}
+          - **Series Development:** {{series_development_approach}}
+
+      - id: long_term_integration
+        title: Long-term Marketing Integration
+        template: |
+          **Marketing Ecosystem Integration:**
+          {{marketing_ecosystem_integration}}
+
+          **Customer Journey Enhancement:**
+          {{customer_journey_enhancement}}
+
+          **Brand Building Contribution:**
+          {{brand_building_contribution}}
+
+          **Business Growth Impact:**
+          {{business_growth_impact}}
+
+  - id: final-review-validation
+    title: Blueprint Validation & Approval
+    instruction: |
+      Final comprehensive review of lead magnet blueprint.
+      Ensure all elements align with strategic objectives and brand requirements.
+    content: |
+      ## Lead Magnet Blueprint Approval
+
+      **Blueprint Review Completed:** {{review_completion_date}}
+      **Reviewed By:** {{reviewer_name}}
+      **Approved By:** {{approver_name}}
+      **Implementation Start Date:** {{implementation_start_date}}
+
+      **Strategic Validation:**
+      - [ ] Aligns with company foundation and unique mechanism
+      - [ ] Addresses high-value customer problems
+      - [ ] Delivers meaningful value and builds trust
+      - [ ] Integrates seamlessly with brand voice and messaging
+      - [ ] Includes comprehensive follow-up and nurture strategy
+      - [ ] Has clear success metrics and optimization framework
+      - [ ] Implementation plan is realistic and achievable
+
+      **Quality Assurance:**
+      - [ ] Content strategy is comprehensive and actionable
+      - [ ] Delivery method optimizes user experience
+      - [ ] Promotion strategy maximizes reach and conversion
+      - [ ] Analytics framework enables continuous improvement
+      - [ ] Risk mitigation strategies are adequate
+      - [ ] Resource requirements are clearly defined
+
+      **ROI Projection:**
+      {{roi_projection_summary}}
+
+      **Expected Outcomes:**
+      - **Lead Volume:** {{expected_lead_volume}}
+      - **Lead Quality:** {{expected_lead_quality}}
+      - **Conversion Rate:** {{expected_conversion_rate}}
+      - **Business Impact:** {{expected_business_impact}}
+
+      ---
+
+      _Document Version: 1.0_
+      _Created Using: R.O.C.K.E.T. Framework_
+      _Next Review: {{next_review_date}}_
+      _Template: ONE Elevate Marketing Lead Magnet Blueprint v1.0_
+
+# Advanced template features and validation
+variables:
+  value_promise:
+    type: string
+    min_length: 20
+    max_length: 100
+    validation:
+      - specific_outcome_focused: "Value promise must focus on specific, achievable outcomes"
+      - customer_language: "Must use customer language, not industry jargon"
+      - unique_differentiation: "Must highlight unique approach or insight"
+
+  delivery_method:
+    type: string
+    enum: ["digital_download", "email_course", "video_series", "webinar", "physical_kit", "interactive_tool", "assessment", "template_package"]
+    validation:
+      - audience_alignment: "Delivery method must match target audience preferences"
+      - value_optimization: "Method must optimize value delivery and consumption"
+      - conversion_optimization: "Must facilitate natural progression to core offer"
+
+  follow_up_sequence:
+    type: object
+    properties:
+      sequence_length:
+        type: number
+        min: 3
+        max: 10
+      email_subjects:
+        type: array
+        min_items: 3
+      progression_strategy:
+        type: string
+        min_length: 50
+    validation:
+      - value_building: "Each touchpoint must build additional value"
+      - natural_progression: "Sequence must create natural progression to core offer"
+      - engagement_optimization: "Must maintain and increase engagement over time"
+
+  success_metrics:
+    type: object
+    properties:
+      lead_volume_target:
+        type: number
+        min: 1
+      lead_quality_criteria:
+        type: array
+        min_items: 3
+      conversion_rate_target:
+        type: number
+        min: 0.01
+        max: 1.0
+      roi_projection:
+        type: object
+        required: ["cost_per_lead", "lifetime_value", "payback_period"]
+    validation:
+      - realistic_targets: "Targets must be realistic based on industry benchmarks"
+      - measurable_criteria: "All criteria must be clearly measurable"
+      - business_alignment: "Metrics must align with business objectives"
+
+quality_checks:
+  strategic_alignment:
+    - foundation_integration: "Must integrate company foundation elements throughout"
+    - unique_mechanism_leverage: "Must clearly leverage and preview unique mechanism"
+    - brand_voice_consistency: "Must maintain brand voice consistency"
+    - value_proposition_alignment: "Must align with and support core value propositions"
+
+  customer_value:
+    - problem_solution_fit: "Must address real, significant customer problems"
+    - value_delivery_optimization: "Must optimize value delivery for target audience"
+    - outcome_achievement: "Must enable customers to achieve meaningful outcomes"
+    - engagement_facilitation: "Must facilitate natural engagement and progression"
+
+  conversion_optimization:
+    - clear_value_promise: "Value promise must be clear and compelling"
+    - friction_minimization: "Must minimize friction in access and consumption"
+    - natural_progression: "Must create natural progression to core offer"
+    - multiple_conversion_points: "Must include multiple engagement and conversion opportunities"
+
+  implementation_feasibility:
+    - resource_realism: "Resource requirements must be realistic and achievable"
+    - timeline_feasibility: "Implementation timeline must be feasible"
+    - skill_alignment: "Must align with team skills and capabilities"
+    - roi_viability: "Must demonstrate clear path to positive ROI"
+
+conditional_logic:
+  delivery_method:
+    digital_download:
+      format_requirements: ["pdf_optimization", "mobile_friendly", "printable_option"]
+      engagement_strategy: ["email_sequence", "bonus_content", "community_access"]
+    email_course:
+      format_requirements: ["sequential_delivery", "action_items", "progress_tracking"]
+      engagement_strategy: ["daily_emails", "worksheet_integration", "milestone_rewards"]
+    video_series:
+      format_requirements: ["video_quality", "accessibility", "download_options"]
+      engagement_strategy: ["community_discussion", "implementation_support", "live_sessions"]
+    physical_kit:
+      format_requirements: ["quality_materials", "packaging_experience", "durability"]
+      engagement_strategy: ["unboxing_experience", "digital_companion", "community_sharing"]
+    interactive_tool:
+      format_requirements: ["user_experience", "mobile_responsive", "data_privacy"]
+      engagement_strategy: ["results_sharing", "improvement_tracking", "expert_interpretation"]
+
+  target_audience:
+    b2b_executives:
+      content_preferences: ["executive_summary", "strategic_insights", "roi_focus"]
+      delivery_optimization: ["mobile_friendly", "time_efficient", "actionable_insights"]
+    b2b_practitioners:
+      content_preferences: ["detailed_instructions", "templates", "case_studies"]
+      delivery_optimization: ["comprehensive_guides", "implementation_support", "peer_community"]
+    b2c_consumers:
+      content_preferences: ["visual_appeal", "entertainment_value", "personal_relevance"]
+      delivery_optimization: ["social_sharing", "emotional_connection", "lifestyle_integration"]
+
+input_validation:
+  required_fields:
+    - company_name
+    - unique_mechanism_name
+    - primary_value_proposition
+    - target_avatar_segment
+    - core_problem_statement
+    - primary_value_promise
+    - primary_magnet_type
+    - delivery_method_strategy
+    - follow_up_sequence_duration
+    - lead_volume_target
+
+  conditional_requirements:
+    delivery_method:
+      digital_download: ["file_formats", "download_experience", "mobile_optimization"]
+      email_course: ["sequence_length", "email_frequency", "content_progression"]
+      video_series: ["video_length", "production_quality", "hosting_platform"]
+      physical_kit: ["shipping_method", "packaging_design", "production_standards"]
+      interactive_tool: ["technology_platform", "user_experience", "data_handling"]
+
+  quality_criteria:
+    value_promise:
+      - outcome_specific: "Must specify clear, achievable outcomes"
+      - time_bound: "Should include timeframe for value realization"
+      - unique_angle: "Must include unique approach or insight"
+      - customer_focused: "Must focus on customer benefits, not company features"
+
+    content_strategy:
+      - value_dense: "Content must be genuinely valuable and actionable"
+      - mechanism_preview: "Must preview unique mechanism without giving everything away"
+      - natural_progression: "Must create natural desire for deeper engagement"
+      - brand_reinforcement: "Must reinforce brand voice and positioning"
+
+    conversion_strategy:
+      - friction_free: "Must minimize barriers to access and consumption"
+      - value_first: "Must lead with value before asking for commitment"
+      - multiple_touchpoints: "Must include multiple engagement opportunities"
+      - clear_next_steps: "Must provide clear path to deeper engagement"

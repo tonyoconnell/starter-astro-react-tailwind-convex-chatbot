@@ -1,0 +1,169 @@
+daily_content_calendar:
+  date: "{{DATE}}"
+  theme: "{{DAILY_THEME}}"
+  campaign_alignment: "{{CAMPAIGN_NAME}}"
+  
+  social_media:
+    facebook:
+      post_time: "{{FB_POST_TIME}}"
+      content_type: "{{FB_CONTENT_TYPE}}"
+      post_copy: "{{FB_POST_COPY}}"
+      visual_assets: "{{FB_VISUAL_ASSETS}}"
+      hashtags: "{{FB_HASHTAGS}}"
+      call_to_action: "{{FB_CTA}}"
+      objective: "{{FB_OBJECTIVE}}"
+      
+    instagram:
+      feed_post:
+        time: "{{IG_FEED_TIME}}"
+        content: "{{IG_FEED_CONTENT}}"
+        caption: "{{IG_FEED_CAPTION}}"
+        hashtags: "{{IG_FEED_HASHTAGS}}"
+      stories:
+        count: "{{IG_STORIES_COUNT}}"
+        content: "{{IG_STORIES_CONTENT}}"
+        interactive_elements: "{{IG_STORIES_INTERACTIVE}}"
+      reels:
+        time: "{{IG_REELS_TIME}}"
+        concept: "{{IG_REELS_CONCEPT}}"
+        trending_audio: "{{IG_REELS_AUDIO}}"
+        
+    tiktok:
+      post_time: "{{TIKTOK_POST_TIME}}"
+      video_concept: "{{TIKTOK_CONCEPT}}"
+      trending_hashtags: "{{TIKTOK_HASHTAGS}}"
+      music_choice: "{{TIKTOK_MUSIC}}"
+      hook_strategy: "{{TIKTOK_HOOK}}"
+      
+    linkedin:
+      post_time: "{{LINKEDIN_POST_TIME}}"
+      content_type: "{{LINKEDIN_CONTENT_TYPE}}"
+      post_copy: "{{LINKEDIN_POST_COPY}}"
+      professional_focus: "{{LINKEDIN_FOCUS}}"
+      engagement_strategy: "{{LINKEDIN_ENGAGEMENT}}"
+      
+    twitter:
+      posts:
+        - time: "{{TWITTER_POST1_TIME}}"
+          content: "{{TWITTER_POST1_CONTENT}}"
+          hashtags: "{{TWITTER_POST1_HASHTAGS}}"
+        - time: "{{TWITTER_POST2_TIME}}"
+          content: "{{TWITTER_POST2_CONTENT}}"
+          hashtags: "{{TWITTER_POST2_HASHTAGS}}"
+        - time: "{{TWITTER_POST3_TIME}}"
+          content: "{{TWITTER_POST3_CONTENT}}"
+          hashtags: "{{TWITTER_POST3_HASHTAGS}}"
+          
+  email_marketing:
+    newsletter:
+      status: "{{EMAIL_NEWSLETTER_STATUS}}"
+      subject_line: "{{EMAIL_SUBJECT}}"
+      preview_text: "{{EMAIL_PREVIEW}}"
+      send_time: "{{EMAIL_SEND_TIME}}"
+      
+    nurture_sequences:
+      new_subscribers:
+        day: "{{NURTURE_DAY}}"
+        email_topic: "{{NURTURE_TOPIC}}"
+        objective: "{{NURTURE_OBJECTIVE}}"
+      customer_onboarding:
+        day: "{{ONBOARDING_DAY}}"
+        email_topic: "{{ONBOARDING_TOPIC}}"
+        objective: "{{ONBOARDING_OBJECTIVE}}"
+        
+  content_marketing:
+    blog:
+      status: "{{BLOG_STATUS}}"
+      title: "{{BLOG_TITLE}}"
+      publish_time: "{{BLOG_PUBLISH_TIME}}"
+      seo_keywords: "{{BLOG_KEYWORDS}}"
+      
+    youtube:
+      status: "{{YOUTUBE_STATUS}}"
+      video_title: "{{YOUTUBE_TITLE}}"
+      upload_time: "{{YOUTUBE_UPLOAD_TIME}}"
+      video_description: "{{YOUTUBE_DESCRIPTION}}"
+      
+    podcast:
+      status: "{{PODCAST_STATUS}}"
+      episode_title: "{{PODCAST_TITLE}}"
+      guest: "{{PODCAST_GUEST}}"
+      publish_time: "{{PODCAST_PUBLISH_TIME}}"
+      
+  paid_advertising:
+    google_ads:
+      campaigns_active: "{{GOOGLE_ADS_CAMPAIGNS}}"
+      optimization_focus: "{{GOOGLE_ADS_OPTIMIZATION}}"
+      budget_allocation: "{{GOOGLE_ADS_BUDGET}}"
+      
+    facebook_ads:
+      campaigns_active: "{{FB_ADS_CAMPAIGNS}}"
+      creative_testing: "{{FB_ADS_CREATIVE_TESTING}}"
+      audience_targeting: "{{FB_ADS_AUDIENCE}}"
+      
+  daily_schedule:
+    morning_review:
+      time: "8:00 AM"
+      activities:
+        - "Review overnight performance metrics"
+        - "Check competitor activities and trends"
+        - "Adjust day's content based on current events"
+        - "Confirm posting schedule and content approvals"
+        
+    content_creation:
+      time: "9:00 AM - 12:00 PM"
+      activities:
+        - "Create and schedule social media posts"
+        - "Write email newsletter content"
+        - "Produce video/visual content"
+        - "Optimize content for SEO and engagement"
+        
+    engagement_window:
+      time: "12:00 PM - 2:00 PM"
+      activities:
+        - "Active social media engagement"
+        - "Respond to comments and messages"
+        - "Monitor real-time campaign performance"
+        - "Community management and customer service"
+        
+    afternoon_optimization:
+      time: "3:00 PM - 5:00 PM"
+      activities:
+        - "Analyze post performance and engagement"
+        - "Adjust ad campaigns and budgets"
+        - "Plan content for next day"
+        - "Coordinate with team on upcoming campaigns"
+        
+    evening_analysis:
+      time: "6:00 PM - 7:00 PM"
+      activities:
+        - "Daily performance report compilation"
+        - "Identify top-performing content"
+        - "Plan optimization strategies"
+        - "Prepare next day's content calendar"
+        
+  performance_tracking:
+    key_metrics:
+      engagement_rate: "{{ENGAGEMENT_RATE_TARGET}}"
+      reach: "{{REACH_TARGET}}"
+      website_traffic: "{{TRAFFIC_TARGET}}"
+      email_opens: "{{EMAIL_OPEN_TARGET}}"
+      conversions: "{{CONVERSION_TARGET}}"
+      
+    optimization_notes:
+      what_worked: "{{OPTIMIZATION_WHAT_WORKED}}"
+      what_to_improve: "{{OPTIMIZATION_IMPROVEMENTS}}"
+      tomorrow_adjustments: "{{TOMORROW_ADJUSTMENTS}}"
+      
+  team_coordination:
+    content_creator: "{{CONTENT_CREATOR_TASKS}}"
+    social_media_manager: "{{SMM_TASKS}}"
+    email_marketer: "{{EMAIL_MARKETER_TASKS}}"
+    paid_ads_specialist: "{{ADS_SPECIALIST_TASKS}}"
+    community_manager: "{{COMMUNITY_MANAGER_TASKS}}"
+    
+  approval_workflow:
+    content_review: "{{CONTENT_REVIEW_STATUS}}"
+    legal_compliance: "{{LEGAL_COMPLIANCE_STATUS}}"
+    brand_guidelines: "{{BRAND_GUIDELINES_STATUS}}"
+    final_approval: "{{FINAL_APPROVAL_STATUS}}"

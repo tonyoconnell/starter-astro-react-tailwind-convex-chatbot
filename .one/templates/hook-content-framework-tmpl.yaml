@@ -1,0 +1,1409 @@
+template:
+  id: hook-content-framework-template-v1
+  name: Hook Content Framework - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-{{platform_name}}-hook-framework.md"
+    title: "Hook Content Framework: {{platform_name}} - {{company_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  custom_elicitation:
+    title: "Hook Content Optimization Actions"
+    sections:
+      - id: platform-psychology-deep-dive
+        options:
+          - "Analyze platform-specific user psychology and behavior patterns"
+          - "Research viral content patterns and psychological triggers"
+          - "Study audience attention patterns and scroll-stopping factors"
+          - "Explore emotional triggers specific to platform culture"
+          - "Investigate platform algorithm preferences and content boosting"
+          - "Map user state-of-mind when consuming content on platform"
+          - "Analyze competitor hook strategies and performance"
+          - "Research trending formats and creative approaches"
+          - "Proceed to next section"
+      - id: hook-formula-development
+        options:
+          - "Develop curiosity gap formulas for maximum engagement"
+          - "Create pattern interrupt techniques for scroll-stopping"
+          - "Design emotional trigger sequences for instant connection"
+          - "Build controversy and polarization hooks (ethical approach)"
+          - "Craft transformation promise hooks with proof elements"
+          - "Develop social proof and FOMO-based hook structures"
+          - "Create problem-agitation hooks with solution tease"
+          - "Design story-based hooks with cliffhanger elements"
+          - "Proceed to next section"
+      - id: testing-optimization-framework
+        options:
+          - "Design A/B testing frameworks for hook variations"
+          - "Create performance tracking metrics and benchmarks"
+          - "Develop iteration protocols based on performance data"
+          - "Build psychological response testing methodologies"
+          - "Design multivariate testing for complex hook elements"
+          - "Create rapid iteration workflows for optimization"
+          - "Develop performance prediction models"
+          - "Build competitive benchmarking systems"
+          - "Proceed to final framework"
+
+sections:
+  - id: framework-overview
+    title: Hook Content Framework Overview
+    instruction: |
+      This framework creates platform-optimized hook content strategies based on the Elevate Framework HOOK methodology.
+      Leverages Foundation Blueprint intelligence to create precision-guided attention capture that resonates with specific avatars.
+      
+      The framework includes:
+      - Foundation intelligence integration (Avatar Pains/Goals/Beliefs, Unique Mechanism)
+      - Strategic hook angle selection (Pain-Focused, Benefit-Focused, Unique/Intrigue-Focused)
+      - Platform-specific user psychology mapping and optimization
+      - Hook formula library with Foundation-driven variations
+      - Value equation transition strategies for GIFT setup
+      - A/B testing and optimization protocols
+      - Performance tracking and iteration systems
+      - Channel adaptation and testing methodologies
+      
+      Key Principle: Move beyond generic messaging to leverage deep Foundation intelligence for targeted,
+      context-aware hooks designed to capture the specific attention of ideal prospects on prioritized channels.
+      
+      Output file location: `docs/{{company_name}}-{{platform_name}}-hook-framework.md`
+
+  - id: foundation-blueprint-integration
+    title: Foundation Blueprint Integration & Strategic Alignment
+    instruction: |
+      Integrate Foundation Blueprint intelligence to create precision-guided hooks.
+      Use avatar insights, unique mechanism, and market intelligence for targeted attention capture.
+    sections:
+      - id: foundation-elements-integration
+        title: Foundation Elements Integration
+        template: |
+          **Company Foundation Leverage:**
+          - Unique Mechanism: {{unique_mechanism_preview}}
+          - Unique Mechanism Differentiation: {{unique_mechanism_differentiation}}
+          - Brand Voice Adjectives: {{brand_voice_adjectives}}
+          - Brand Voice Application: {{brand_voice_hook_application}}
+          - Value Proposition: {{value_proposition_integration}}
+          - Market Differentiation: {{market_differentiation_emphasis}}
+          - Market Gaps/Pains: {{market_gaps_addressing}}
+          
+          **Customer Avatar Intelligence (Foundation Grid):**
+          - Primary Avatar: {{primary_avatar_name}}
+          - Avatar Pains/Fears (A2/B2): {{avatar_pains_fears}}
+          - Pain Language Patterns: {{avatar_pain_language}}
+          - Avatar Goals/Dreams (A3/C3): {{avatar_goals_dreams}}
+          - Aspiration Triggers: {{avatar_aspiration_triggers}}
+          - Avatar Beliefs (B1): {{avatar_belief_system}}
+          - Belief Challenges: {{avatar_belief_challenges}}
+          - Avatar Language Patterns: {{avatar_exact_language}}
+          - Underlying Needs/Feelings: {{avatar_underlying_needs}}
+          
+          **Market Intelligence Application:**
+          - FIND Strategy Channels: {{find_strategy_channels}}
+          - Awareness Stages: {{awareness_stage_mapping}}
+          - Channel Context (C1/C3): {{channel_context_analysis}}
+          - Platform Algorithm Factors: {{platform_algorithm_insights}}
+          - User Behavior Patterns: {{user_behavior_platform_specific}}
+          - Competitive Landscape: {{competitive_positioning}}
+      - id: strategic-hook-angle-selection
+        title: Strategic Hook Angle Selection Framework
+        template: |
+          **Hook Angle Selection Strategy:**
+          
+          **Pain-Focused Hooks (Powerful for Problem-Aware Prospects):**
+          - **Formula:** [Avatar Pain Language] + [Hidden Cause/Cost] + [Unique Solution Tease]
+          - **Foundation Leverage:** Avatar Pains/Fears (A2/B2), Market Gaps
+          - **Platform Application:** {{pain_focused_platform_strategy}}
+          - **Example Structure:** "Still {{avatar_pain_language}}? {{market_insight}} reveals why {{traditional_solution_failure}}. Here's the {{unique_mechanism_preview}} that {{success_proof}}..."
+          
+          **Benefit/Goal-Focused Hooks (Appeals to Aspiration):**
+          - **Formula:** [Avatar Goals/Dreams] + [Unique Method] + [Proof Element]
+          - **Foundation Leverage:** Avatar Goals/Dreams (A3/C3), Unique Mechanism
+          - **Platform Application:** {{benefit_focused_platform_strategy}}
+          - **Example Structure:** "How to {{avatar_goal}} in {{timeframe}} using {{unique_approach}} (even if {{common_objection}})"
+          
+          **Unique/Intrigue-Focused Hooks (Leverages Differentiation):**
+          - **Formula:** [Belief Challenge] + [Authority/Proof] + [Mechanism Access]
+          - **Foundation Leverage:** Unique Mechanism, Customer Beliefs (B1), Market Intelligence
+          - **Platform Application:** {{intrigue_focused_platform_strategy}}
+          - **Example Structure:** "What if {{common_belief}} is backwards? {{authority_research}} discovered {{counterintuitive_truth}}. The {{unique_mechanism}} behind {{impressive_result}}..."
+          
+          **Selected Hook Angle Justification:**
+          - Primary Angle: {{selected_hook_angle}}
+          - Foundation Rationale: {{hook_angle_foundation_rationale}}
+          - Avatar Alignment: {{hook_angle_avatar_alignment}}
+          - Platform Optimization: {{hook_angle_platform_optimization}}
+      - id: value-equation-hook-transition
+        title: Value Equation Hook-to-GIFT Transition Strategy
+        template: |
+          **Hook-to-GIFT Bridge Strategy (Elevate Framework):**
+          
+          **Value Equation Transition Principles:**
+          - **Hook agitates pain** → **GIFT provides mini-dream outcome (DO)**
+          - **Hook creates curiosity** → **GIFT satisfies with high perceived likelihood (PL)**
+          - **Hook promises transformation** → **GIFT delivers with minimal time delay (TD)**
+          - **Hook raises urgent question** → **GIFT answers with low effort & sacrifice (ES)**
+          
+          **Mechanism Preview Transition:**
+          - **Hook Strategy:** {{hook_mechanism_preview_strategy}}
+          - **GIFT Connection:** {{gift_mechanism_demonstration}}
+          - **Value Bridge:** {{hook_gift_value_bridge}}
+          - **Natural Progression:** {{hook_gift_natural_progression}}
+          
+          **Psychological CTA Integration:**
+          
+          **Curiosity-Driven CTAs:**
+          - "Discover the {{mechanism_element}} behind {{result_preview}} →"
+          - "See the exact {{method_preview}} that {{outcome_tease}} →"
+          - "Get the {{unique_tool}} {{authority_figure}} uses →"
+          - "Access the {{secret_strategy}} inside →"
+          
+          **Value-Focused CTAs:**
+          - "Get your free {{specific_outcome}} {{tool_guide}} →"
+          - "Download the {{problem_solving}} blueprint →"
+          - "Claim your {{result_oriented}} toolkit →"
+          - "Start your {{transformation}} with this free {{asset}} →"
+          
+          **Selected Transition Strategy:**
+          {{selected_transition_strategy}}
+
+  - id: platform-analysis
+    title: Platform-Specific Analysis & Psychology
+    instruction: |
+      Deep dive into platform-specific user behavior, psychology, and content consumption patterns.
+      Use variables: platform_specs, audience_triggers to customize analysis.
+    sections:
+      - id: platform-characteristics
+        title: Platform Characteristics & User Behavior
+        conditional:
+          social_media_platform:
+            template: |
+              **Platform: {{platform_name}}**
+              **Platform Type:** Social Media
+              
+              **User Psychology Profile:**
+              - Primary User Mindset: {{platform_user_mindset}}
+              - Content Consumption Mode: {{content_consumption_behavior}}
+              - Attention Span: {{average_attention_span}}
+              - Engagement Patterns: {{engagement_behavior_patterns}}
+              
+              **Platform Algorithm Factors:**
+              - Priority Signals: {{algorithm_priority_signals}}
+              - Engagement Metrics: {{key_engagement_metrics}}
+              - Content Boost Factors: {{content_boost_triggers}}
+              - Suppression Factors: {{content_suppression_factors}}
+              
+              **Content Format Specifications:**
+              - Optimal Length: {{optimal_content_length}}
+              - Visual Requirements: {{visual_content_requirements}}
+              - Audio Considerations: {{audio_content_factors}}
+              - Text Overlay Best Practices: {{text_overlay_guidelines}}
+          paid_advertising_platform:
+            template: |
+              **Platform: {{platform_name}}**
+              **Platform Type:** Paid Advertising
+              
+              **Audience Intent Profile:**
+              - User Intent Level: {{user_intent_classification}}
+              - Problem Awareness: {{problem_awareness_stage}}
+              - Solution Awareness: {{solution_awareness_level}}
+              - Purchase Readiness: {{purchase_readiness_indicators}}
+              
+              **Platform Mechanics:**
+              - Ad Placement Options: {{ad_placement_types}}
+              - Targeting Capabilities: {{targeting_granularity}}
+              - Creative Formats: {{available_creative_formats}}
+              - Compliance Requirements: {{platform_compliance_rules}}
+              
+              **Performance Optimization:**
+              - Quality Score Factors: {{quality_score_components}}
+              - Relevance Metrics: {{relevance_measurement}}
+              - Cost Optimization: {{cost_optimization_factors}}
+              - Conversion Tracking: {{conversion_tracking_capabilities}}
+      - id: audience-psychology-mapping
+        title: Audience Psychology & Trigger Mapping
+        instruction: |
+          Map audience psychological triggers specific to platform context.
+          Use audience_triggers variable to identify key activation points.
+        template: |
+          **Primary Audience Segments on {{platform_name}}:**
+          
+          **Segment 1: {{audience_segment_1_name}}**
+          - Demographics: {{segment_1_demographics}}
+          - Psychographics: {{segment_1_psychographics}}
+          - Platform Behavior: {{segment_1_platform_behavior}}
+          - Content Preferences: {{segment_1_content_preferences}}
+          - Trigger Points: {{segment_1_psychological_triggers}}
+          
+          **Segment 2: {{audience_segment_2_name}}**
+          - Demographics: {{segment_2_demographics}}
+          - Psychographics: {{segment_2_psychographics}}
+          - Platform Behavior: {{segment_2_platform_behavior}}
+          - Content Preferences: {{segment_2_content_preferences}}
+          - Trigger Points: {{segment_2_psychological_triggers}}
+          
+          **Universal Psychological Triggers:**
+          1. {{universal_trigger_1}} - {{trigger_1_application}}
+          2. {{universal_trigger_2}} - {{trigger_2_application}}
+          3. {{universal_trigger_3}} - {{trigger_3_application}}
+          4. {{universal_trigger_4}} - {{trigger_4_application}}
+          5. {{universal_trigger_5}} - {{trigger_5_application}}
+      - id: competitive-hook-analysis
+        title: Competitive Hook Analysis
+        template: |
+          **Top Performing Competitor Hooks:**
+          
+          **Competitor 1: {{competitor_1_name}}**
+          - Hook Style: {{competitor_1_hook_style}}
+          - Key Elements: {{competitor_1_hook_elements}}
+          - Performance Metrics: {{competitor_1_performance}}
+          - Psychological Approach: {{competitor_1_psychology}}
+          - Gaps/Opportunities: {{competitor_1_gaps}}
+          
+          **Competitor 2: {{competitor_2_name}}**
+          - Hook Style: {{competitor_2_hook_style}}
+          - Key Elements: {{competitor_2_hook_elements}}
+          - Performance Metrics: {{competitor_2_performance}}
+          - Psychological Approach: {{competitor_2_psychology}}
+          - Gaps/Opportunities: {{competitor_2_gaps}}
+          
+          **Competitive Insights:**
+          - Successful Patterns: {{competitive_success_patterns}}
+          - Avoided Approaches: {{competitive_failure_patterns}}
+          - Differentiation Opportunities: {{differentiation_opportunities}}
+          - Innovation Spaces: {{innovation_opportunities}}
+
+  - id: hook-formula-library
+    title: Hook Formula Library & Templates
+    instruction: |
+      Create comprehensive hook formula library with platform-specific variations.
+      Each formula should include psychological basis, structure, and examples.
+    sections:
+      - id: curiosity-gap-formulas
+        title: Curiosity Gap Hook Formulas
+        sections:
+          - id: foundation-leveraged-problem-hook
+            title: Foundation-Leveraged Problem Hook
+            template: |
+              **Formula Structure:** [Avatar Pain Language] + [Hidden/Underlying Cause] + [Unique Solution Tease]
+              
+              **Foundation Integration:** Avatar Pains + Market Intelligence + Unique Mechanism
+              
+              **Psychological Basis:** Agitates specific customer pain using their exact language while introducing unique solution approach
+              
+              **Formula Application:**
+              ```
+              "Still [Avatar Pain in their words]?
+              [Market insight/data] reveals why [traditional solutions fail].
+              Here's the [Unique Mechanism preview] that [Success proof]..."
+              ```
+              
+              **Platform Variations:**
+              
+              **Social Media Version:**
+              "{{foundation_problem_social_example}}"
+              - Visual: {{problem_hook_visual_strategy}}
+              - Text Overlay: {{problem_hook_text_overlay}}
+              - Call-to-Action: {{problem_hook_social_cta}}
+              
+              **Paid Ad Version:**
+              "{{foundation_problem_paid_example}}"
+              - Headline: {{problem_hook_paid_headline}}
+              - Description: {{problem_hook_paid_description}}
+              - Unique Mechanism Hint: {{problem_hook_mechanism_hint}}
+              
+              **Advanced Example:** "Still losing leads at checkout? Shopify data shows 69% abandon due to 'trust gaps' most stores ignore. Here's the 3-layer trust architecture that added $2.3M to client stores..."
+              
+              **Testing Variables:**
+              - Pain Specificity: {{pain_specificity_variations}}
+              - Market Data Authority: {{market_data_variations}}
+              - Mechanism Preview Depth: {{mechanism_preview_variations}}
+          - id: strategic-curiosity-gap-hook
+            title: Strategic Curiosity Gap Hook
+            template: |
+              **Formula Structure:** [Belief Challenge] + [Authority Validation] + [Exclusive Mechanism Access]
+              
+              **Foundation Integration:** Unique Mechanism + Customer Beliefs + Authority
+              
+              **Psychological Basis:** Challenges conventional wisdom while providing authoritative validation and exclusive access
+              
+              **Formula Application:**
+              ```
+              "What if [Common Belief] is backwards?
+              [Authority/Research] discovered [Counterintuitive Truth].
+              The [Unique Mechanism] behind [Impressive Result]..."
+              ```
+              
+              **Advanced Example:** "What if 'more traffic' is killing your sales? MIT research found high-traffic stores convert 67% worse. The 'Precision Funnel' method that turns fewer visitors into more customers..."
+              
+              **Platform Applications:**
+              - Social Media: {{curiosity_gap_social_approach}}
+              - Paid Ads: {{curiosity_gap_paid_approach}}
+              - Email: {{curiosity_gap_email_approach}}
+              
+              **Authority Sources:**
+              - Research Studies: {{research_authority_integration}}
+              - Expert Insights: {{expert_authority_positioning}}
+              - Data Analysis: {{data_authority_presentation}}
+          - id: authority-mechanism-hook
+            title: Authority-Mechanism Hook
+            template: |
+              **Formula Structure:** [Authority Positioning] + [Unique Insight] + [Mechanism Preview] + [Results Proof]
+              
+              **Foundation Integration:** Brand Voice + Unique Mechanism + Social Proof
+              
+              **Formula Application:**
+              ```
+              "After [Credential/Experience], I discovered [Unique Insight].
+              The [Mechanism Name] that [Specific Result] for [Target Audience].
+              [Proof Element] inside..."
+              ```
+              
+              **Advanced Example:** "After helping 247 SaaS companies scale, I discovered why 'growth hacking' fails. The 'Compound Growth Engine' that 3x'd revenue for 89% of clients. Blueprint inside..."
+              
+              **Authority Building Elements:**
+              - Credibility Establishment: {{authority_credibility_strategy}}
+              - Unique Insight Presentation: {{unique_insight_delivery}}
+              - Mechanism Naming: {{mechanism_naming_strategy}}
+              - Proof Integration: {{authority_proof_strategy}}
+          - id: transformation-bridge-hook
+            title: Transformation Bridge Hook
+            template: |
+              **Formula Structure:** [Current State] → [Unique Method] → [Desired State] + [Social Proof]
+              
+              **Foundation Integration:** Avatar Goals + Unique Mechanism + Proof
+              
+              **Formula Application:**
+              ```
+              "From [Current Frustrating State] to [Desired Outcome] using [Unique Method].
+              [Number] [Target Audience] already achieved [Specific Result].
+              See the exact [Mechanism] inside..."
+              ```
+              
+              **Advanced Example:** "From feast-or-famine freelancing to predictable $15K months using the 'Client Magnet System.' 1,247 freelancers landed premium clients in 90 days. See the exact 5-step system inside..."
+              
+              **Transformation Elements:**
+              - Current State Agitation: {{current_state_pain_amplification}}
+              - Bridge Method: {{transformation_method_preview}}
+              - Desired State Visualization: {{desired_outcome_painting}}
+              - Social Proof Integration: {{transformation_social_proof}}
+          - id: knowledge-gap-hooks
+            title: Knowledge Gap Hooks
+            template: |
+              **Formula Structure:** [Surprising Fact] + [Knowledge Tease] + [Benefit Promise]
+              
+              **Psychological Basis:** {{knowledge_gap_psychology}}
+              
+              **Platform Variations:**
+              
+              **Social Media Version:**
+              "{{social_knowledge_gap_example}}"
+              - Visual: {{social_knowledge_visual}}
+              - Text Overlay: {{social_knowledge_text}}
+              - Call-to-Action: {{social_knowledge_cta}}
+              
+              **Paid Ad Version:**
+              "{{paid_knowledge_gap_example}}"
+              - Headline: {{paid_knowledge_headline}}
+              - Description: {{paid_knowledge_description}}
+              - Display URL: {{paid_knowledge_display}}
+              
+              **Testing Variables:**
+              - Fact Intensity: {{fact_intensity_variations}}
+              - Tease Level: {{tease_level_variations}}
+              - Benefit Clarity: {{benefit_clarity_variations}}
+          - id: information-gap-hooks
+            title: Information Gap Hooks
+            template: |
+              **Formula Structure:** [Incomplete Story] + [Critical Missing Piece] + [Resolution Promise]
+              
+              **Psychological Basis:** {{information_gap_psychology}}
+              
+              **Effective Elements:**
+              - Story Opening: {{story_opening_techniques}}
+              - Gap Creation: {{gap_creation_methods}}
+              - Resolution Tease: {{resolution_tease_approaches}}
+              
+              **Examples by Platform:**
+              {{platform_specific_information_gap_examples}}
+      - id: emotional-trigger-formulas
+        title: Emotional Trigger Hook Formulas
+        sections:
+          - id: fear-based-hooks
+            title: Fear & Loss Aversion Hooks
+            template: |
+              **Formula Structure:** [Problem Identification] + [Consequence Amplification] + [Solution Tease]
+              
+              **Psychological Basis:** {{fear_hook_psychology}}
+              
+              **Ethical Guidelines:**
+              {{ethical_fear_usage_guidelines}}
+              
+              **Platform Applications:**
+              - Social Media: {{social_fear_hook_approach}}
+              - Paid Ads: {{paid_fear_hook_approach}}
+              
+              **Intensity Calibration:**
+              - Low: {{low_intensity_fear_example}}
+              - Medium: {{medium_intensity_fear_example}}
+              - High: {{high_intensity_fear_example}}
+          - id: aspiration-hooks
+            title: Aspiration & Transformation Hooks
+            template: |
+              **Formula Structure:** [Current State] + [Desired State] + [Bridge Method]
+              
+              **Psychological Basis:** {{aspiration_hook_psychology}}
+              
+              **Visual Storytelling:**
+              - Before State: {{before_state_visualization}}
+              - After State: {{after_state_visualization}}
+              - Transformation Process: {{transformation_visualization}}
+              
+              **Copy Variations:**
+              {{aspiration_copy_variations}}
+      - id: social-proof-formulas
+        title: Social Proof Hook Formulas
+        sections:
+          - id: authority-hooks
+            title: Authority & Expert Hooks
+            template: |
+              **Formula Structure:** [Credential/Authority] + [Surprising Insight] + [Accessibility Promise]
+              
+              **Authority Types:**
+              - Traditional Expert: {{traditional_expert_approach}}
+              - Peer Expert: {{peer_expert_approach}}
+              - Data Authority: {{data_authority_approach}}
+              - Experience Authority: {{experience_authority_approach}}
+              
+              **Platform Optimization:**
+              {{authority_platform_optimization}}
+          - id: community-hooks
+            title: Community & Belonging Hooks
+            template: |
+              **Formula Structure:** [Group Identity] + [Shared Experience] + [Inclusion Invitation]
+              
+              **Community Triggers:**
+              - Belonging Need: {{belonging_trigger_application}}
+              - Identity Validation: {{identity_validation_approach}}
+              - Tribal Signaling: {{tribal_signaling_methods}}
+              
+              **Examples:**
+              {{community_hook_examples}}
+      - id: pattern-interrupt-formulas
+        title: Pattern Interrupt Hook Formulas
+        template: |
+          **Core Principle:** {{pattern_interrupt_principle}}
+          
+          **Interrupt Techniques:**
+          
+          **1. Visual Pattern Breaks:**
+          - Unexpected Imagery: {{unexpected_imagery_approach}}
+          - Motion Surprises: {{motion_surprise_techniques}}
+          - Color/Contrast Breaks: {{visual_break_methods}}
+          
+          **2. Cognitive Pattern Breaks:**
+          - Expectation Reversal: {{expectation_reversal_examples}}
+          - Logic Interruption: {{logic_interruption_methods}}
+          - Category Confusion: {{category_confusion_approach}}
+          
+          **3. Emotional Pattern Breaks:**
+          - Mood Whiplash: {{mood_whiplash_technique}}
+          - Unexpected Humor: {{unexpected_humor_approach}}
+          - Sentiment Surprise: {{sentiment_surprise_methods}}
+          
+          **Platform Applications:**
+          {{pattern_interrupt_platform_applications}}
+
+  - id: viral-element-integration
+    title: Viral Element Integration Strategy
+    instruction: |
+      Design viral elements that naturally integrate with hook content.
+      Use viral_elements variable to identify platform-specific viral mechanics.
+    sections:
+      - id: viral-mechanics-analysis
+        title: Platform Viral Mechanics
+        template: |
+          **Viral Mechanics for {{platform_name}}:**
+          
+          **Share Triggers:**
+          1. {{share_trigger_1}} - {{trigger_1_implementation}}
+          2. {{share_trigger_2}} - {{trigger_2_implementation}}
+          3. {{share_trigger_3}} - {{trigger_3_implementation}}
+          
+          **Viral Loops:**
+          - User Generated Content: {{ugc_viral_loop}}
+          - Challenge/Trend Creation: {{challenge_viral_loop}}
+          - Collaborative Content: {{collaborative_viral_loop}}
+          
+          **Amplification Factors:**
+          {{viral_amplification_factors}}
+      - id: shareability-optimization
+        title: Shareability Optimization
+        template: |
+          **Shareability Framework:**
+          
+          **Social Currency Elements:**
+          - Makes Sharer Look Good: {{social_currency_elements}}
+          - Provides Value to Network: {{network_value_elements}}
+          - Enables Self-Expression: {{self_expression_elements}}
+          
+          **Practical Share Optimization:**
+          - Share-Friendly Formats: {{share_friendly_formats}}
+          - Caption Templates: {{share_caption_templates}}
+          - Hashtag Strategy: {{hashtag_optimization}}
+          
+          **Emotional Share Drivers:**
+          {{emotional_share_drivers}}
+      - id: trend-jacking-framework
+        title: Trend-Jacking Framework
+        template: |
+          **Trend Integration Strategy:**
+          
+          **Trend Identification:**
+          - Monitoring Systems: {{trend_monitoring_approach}}
+          - Relevance Filters: {{trend_relevance_criteria}}
+          - Speed-to-Market: {{trend_response_timeline}}
+          
+          **Trend Adaptation:**
+          - Brand Alignment: {{trend_brand_alignment}}
+          - Authentic Integration: {{trend_authenticity_approach}}
+          - Value Addition: {{trend_value_addition}}
+          
+          **Examples:**
+          {{trend_jacking_examples}}
+
+  - id: ab-testing-framework
+    title: A/B Testing & Optimization Framework
+    instruction: |
+      Create systematic testing framework for continuous hook optimization.
+      Include test design, metrics, and iteration protocols.
+    sections:
+      - id: test-design-framework
+        title: Hook Testing Design Framework
+        template: |
+          **Testing Methodology:**
+          
+          **Test Hierarchy:**
+          1. **Macro Tests** (Major Hook Variations)
+             - Test Duration: {{macro_test_duration}}
+             - Sample Size: {{macro_sample_size}}
+             - Success Metrics: {{macro_success_metrics}}
+          
+          2. **Micro Tests** (Element Variations)
+             - Test Duration: {{micro_test_duration}}
+             - Sample Size: {{micro_sample_size}}
+             - Success Metrics: {{micro_success_metrics}}
+          
+          **Testing Variables:**
+          
+          **Primary Variables:**
+          - Hook Type: {{hook_type_variables}}
+          - Opening Line: {{opening_line_variables}}
+          - Visual Element: {{visual_element_variables}}
+          - CTA Placement: {{cta_placement_variables}}
+          
+          **Secondary Variables:**
+          - Color Scheme: {{color_scheme_variables}}
+          - Font Style: {{font_style_variables}}
+          - Audio/Music: {{audio_variables}}
+          - Timing/Pacing: {{timing_variables}}
+      - id: performance-metrics-framework
+        title: Performance Metrics & KPIs
+        conditional:
+          social_media_metrics:
+            template: |
+              **Social Media Hook Metrics:**
+              
+              **Engagement Metrics:**
+              - 3-Second View Rate: {{three_second_benchmark}}
+              - Completion Rate: {{completion_rate_benchmark}}
+              - Engagement Rate: {{engagement_rate_benchmark}}
+              - Share Rate: {{share_rate_benchmark}}
+              - Save Rate: {{save_rate_benchmark}}
+              
+              **Conversion Metrics:**
+              - Click-Through Rate: {{ctr_benchmark}}
+              - Profile Visit Rate: {{profile_visit_benchmark}}
+              - Follow Rate: {{follow_rate_benchmark}}
+              - Link Click Rate: {{link_click_benchmark}}
+              
+              **Quality Metrics:**
+              - Comment Sentiment: {{comment_sentiment_analysis}}
+              - Audience Quality: {{audience_quality_metrics}}
+              - Brand Lift: {{brand_lift_measurement}}
+          paid_advertising_metrics:
+            template: |
+              **Paid Advertising Hook Metrics:**
+              
+              **Performance Metrics:**
+              - Click-Through Rate: {{ctr_benchmarks}}
+              - Conversion Rate: {{conversion_benchmarks}}
+              - Cost Per Click: {{cpc_benchmarks}}
+              - Cost Per Acquisition: {{cpa_benchmarks}}
+              
+              **Quality Metrics:**
+              - Quality Score: {{quality_score_targets}}
+              - Relevance Score: {{relevance_score_targets}}
+              - Landing Page Experience: {{lp_experience_metrics}}
+              
+              **ROI Metrics:**
+              - Return on Ad Spend: {{roas_targets}}
+              - Lifetime Value to CAC: {{ltv_cac_ratio}}
+              - Payback Period: {{payback_period_target}}
+      - id: iteration-protocol
+        title: Optimization Iteration Protocol
+        template: |
+          **Iteration Framework:**
+          
+          **Performance Analysis Cycle:**
+          1. **Daily Review** (First 3 Days)
+             - Metrics Tracked: {{daily_metrics_tracked}}
+             - Decision Criteria: {{daily_decision_criteria}}
+             - Action Triggers: {{daily_action_triggers}}
+          
+          2. **Weekly Optimization**
+             - Deep Dive Analysis: {{weekly_analysis_framework}}
+             - Variation Development: {{weekly_variation_process}}
+             - Test Queue Management: {{test_queue_protocol}}
+          
+          3. **Monthly Evolution**
+             - Trend Analysis: {{monthly_trend_analysis}}
+             - Strategy Refinement: {{monthly_strategy_update}}
+             - Competitive Review: {{monthly_competitive_check}}
+          
+          **Learning Documentation:**
+          - Success Patterns: {{success_pattern_documentation}}
+          - Failure Analysis: {{failure_analysis_framework}}
+          - Insight Repository: {{insight_storage_system}}
+
+  - id: platform-best-practices
+    title: Platform-Specific Best Practices & Guidelines
+    instruction: |
+      Compile platform-specific best practices, technical requirements, and optimization tips.
+      Ensure compliance with platform guidelines while maximizing performance.
+    sections:
+      - id: technical-specifications
+        title: Technical Specifications & Requirements
+        conditional:
+          tiktok_platform:
+            template: |
+              **TikTok Technical Specifications:**
+              
+              **Video Requirements:**
+              - Aspect Ratio: 9:16 (vertical)
+              - Duration: {{tiktok_duration_sweet_spot}}
+              - Resolution: 1080x1920 minimum
+              - File Size: Under 500MB
+              
+              **Hook Optimization:**
+              - First 3 Seconds: {{tiktok_first_3_seconds}}
+              - Sound Selection: {{tiktok_sound_strategy}}
+              - Caption Strategy: {{tiktok_caption_approach}}
+              - Hashtag Mix: {{tiktok_hashtag_strategy}}
+              
+              **Algorithm Optimization:**
+              {{tiktok_algorithm_optimization}}
+          instagram_platform:
+            template: |
+              **Instagram Technical Specifications:**
+              
+              **Format Options:**
+              - Reels: 9:16, up to 90 seconds
+              - Stories: 9:16, 15 seconds per segment
+              - Feed Posts: 1:1 or 4:5
+              - Carousels: Up to 10 slides
+              
+              **Hook Strategies by Format:**
+              - Reels: {{instagram_reels_hook}}
+              - Stories: {{instagram_stories_hook}}
+              - Feed: {{instagram_feed_hook}}
+              - Carousels: {{instagram_carousel_hook}}
+              
+              **Cross-Format Synergy:**
+              {{instagram_cross_format_strategy}}
+          facebook_platform:
+            template: |
+              **Facebook Technical Specifications:**
+              
+              **Ad Formats:**
+              - Video: Multiple ratios supported
+              - Image: 1200x628 recommended
+              - Carousel: 1080x1080 per card
+              - Collection: Mixed media
+              
+              **Audience Considerations:**
+              - Age Demographics: {{facebook_age_considerations}}
+              - Platform Behavior: {{facebook_user_behavior}}
+              - Content Preferences: {{facebook_content_preferences}}
+              
+              **Optimization Tips:**
+              {{facebook_optimization_tips}}
+          youtube_platform:
+            template: |
+              **YouTube Technical Specifications:**
+              
+              **Video Optimization:**
+              - Thumbnail: 1280x720, under 2MB
+              - Title: {{youtube_title_optimization}}
+              - First 15 Seconds: {{youtube_hook_critical}}
+              - End Screen: {{youtube_end_screen_strategy}}
+              
+              **Hook Elements:**
+              - Visual Hook: {{youtube_visual_hook}}
+              - Audio Hook: {{youtube_audio_hook}}
+              - Title/Thumbnail Synergy: {{youtube_synergy}}
+              
+              **Algorithm Factors:**
+              {{youtube_algorithm_optimization}}
+          linkedin_platform:
+            template: |
+              **LinkedIn Technical Specifications:**
+              
+              **Professional Context:**
+              - Tone Requirements: {{linkedin_tone_guidelines}}
+              - Value Proposition: {{linkedin_value_focus}}
+              - Credibility Signals: {{linkedin_credibility}}
+              
+              **Content Formats:**
+              - Native Video: {{linkedin_video_specs}}
+              - Article Posts: {{linkedin_article_approach}}
+              - Document Posts: {{linkedin_document_strategy}}
+              
+              **B2B Hook Optimization:**
+              {{linkedin_b2b_optimization}}
+          google_ads_platform:
+            template: |
+              **Google Ads Specifications:**
+              
+              **Responsive Search Ads:**
+              - Headlines: Up to 15, 30 chars each
+              - Descriptions: Up to 4, 90 chars each
+              - Path Fields: 2 fields, 15 chars each
+              
+              **Hook Optimization:**
+              - Keyword Integration: {{google_keyword_integration}}
+              - Dynamic Insertion: {{google_dynamic_insertion}}
+              - Testing Strategy: {{google_testing_approach}}
+              
+              **Quality Score Optimization:**
+              {{google_quality_optimization}}
+      - id: content-compliance
+        title: Platform Compliance & Guidelines
+        template: |
+          **Platform Compliance Requirements:**
+          
+          **Content Restrictions:**
+          - Prohibited Content: {{platform_prohibited_content}}
+          - Restricted Categories: {{platform_restricted_categories}}
+          - Disclosure Requirements: {{platform_disclosures}}
+          
+          **Best Practice Guidelines:**
+          - Community Standards: {{community_standards_alignment}}
+          - Accessibility: {{accessibility_requirements}}
+          - Cultural Sensitivity: {{cultural_sensitivity_guidelines}}
+          
+          **Risk Mitigation:**
+          {{compliance_risk_mitigation}}
+      - id: platform-specific-tips
+        title: Platform-Specific Optimization Tips
+        template: |
+          **Advanced Platform Optimization:**
+          
+          **{{platform_name}} Power User Tips:**
+          
+          **Algorithm Hacks:**
+          {{platform_algorithm_hacks}}
+          
+          **Engagement Boosters:**
+          {{platform_engagement_boosters}}
+          
+          **Common Mistakes:**
+          {{platform_common_mistakes}}
+          
+          **Emerging Trends:**
+          {{platform_emerging_trends}}
+
+  - id: implementation-toolkit
+    title: Implementation Toolkit & Resources
+    instruction: |
+      Create practical toolkit for immediate implementation of hook strategies.
+      Include templates, checklists, and workflow guides.
+    sections:
+      - id: hook-templates
+        title: Ready-to-Use Hook Templates
+        template: |
+          **Hook Template Library:**
+          
+          **Template 1: {{template_1_name}}**
+          ```
+          {{template_1_structure}}
+          ```
+          Use Case: {{template_1_use_case}}
+          Customization: {{template_1_customization}}
+          
+          **Template 2: {{template_2_name}}**
+          ```
+          {{template_2_structure}}
+          ```
+          Use Case: {{template_2_use_case}}
+          Customization: {{template_2_customization}}
+          
+          **Template 3: {{template_3_name}}**
+          ```
+          {{template_3_structure}}
+          ```
+          Use Case: {{template_3_use_case}}
+          Customization: {{template_3_customization}}
+      - id: testing-checklist
+        title: Hook Testing Checklist
+        template: |
+          **Pre-Launch Testing Checklist:**
+          
+          **Content Review:**
+          - [ ] Hook captures attention in first 3 seconds
+          - [ ] Clear value proposition presented
+          - [ ] Emotional trigger activated
+          - [ ] Visual/audio elements optimized
+          - [ ] CTA clear and compelling
+          - [ ] Platform specifications met
+          - [ ] Compliance requirements satisfied
+          
+          **Technical Review:**
+          - [ ] File specifications correct
+          - [ ] Loading time optimized
+          - [ ] Mobile experience tested
+          - [ ] Accessibility features included
+          - [ ] Tracking pixels installed
+          - [ ] UTM parameters configured
+          
+          **Testing Setup:**
+          - [ ] Test audiences defined
+          - [ ] Budget allocated appropriately
+          - [ ] Success metrics established
+          - [ ] Tracking systems configured
+          - [ ] Reporting dashboard ready
+          - [ ] Iteration timeline set
+      - id: workflow-guide
+        title: Hook Creation Workflow Guide
+        template: |
+          **Hook Development Workflow:**
+          
+          **Phase 1: Research & Ideation (Day 1-2)**
+          1. Audience research review
+          2. Competitor hook analysis
+          3. Platform trend monitoring
+          4. Hook concept brainstorming
+          5. Initial concept selection
+          
+          **Phase 2: Development (Day 3-4)**
+          1. Hook script/copy writing
+          2. Visual asset creation
+          3. Audio element selection
+          4. Initial internal review
+          5. Refinement based on feedback
+          
+          **Phase 3: Testing Prep (Day 5)**
+          1. Technical specification check
+          2. Platform compliance review
+          3. Tracking setup
+          4. Test audience configuration
+          5. Budget allocation
+          
+          **Phase 4: Launch & Monitor (Day 6+)**
+          1. Content deployment
+          2. Real-time monitoring
+          3. Initial performance assessment
+          4. Quick optimization tweaks
+          5. Data collection for analysis
+          
+          **Phase 5: Optimize & Scale (Week 2+)**
+          1. Performance analysis
+          2. Winning variant identification
+          3. Scale budget to winners
+          4. New variant development
+          5. Continuous iteration
+
+  - id: performance-optimization
+    title: Performance Optimization Guidelines
+    instruction: |
+      Create framework for ongoing performance optimization and scaling successful hooks.
+      Include escalation protocols and scale strategies.
+    sections:
+      - id: optimization-framework
+        title: Continuous Optimization Framework
+        template: |
+          **Optimization Methodology:**
+          
+          **Performance Tiers:**
+          
+          **Tier 1: High Performers (Top 20%)**
+          - Action: Scale aggressively
+          - Budget Allocation: 50-60%
+          - Optimization Focus: Audience expansion
+          - Testing Priority: Incremental improvements
+          
+          **Tier 2: Average Performers (Middle 60%)**
+          - Action: Optimize for improvement
+          - Budget Allocation: 30-40%
+          - Optimization Focus: Element testing
+          - Testing Priority: Major variations
+          
+          **Tier 3: Under Performers (Bottom 20%)**
+          - Action: Pause or radical revision
+          - Budget Allocation: 10%
+          - Optimization Focus: Complete rework
+          - Testing Priority: New concepts
+          
+          **Optimization Levers:**
+          {{optimization_lever_framework}}
+      - id: scaling-strategy
+        title: Scaling Strategy for Winning Hooks
+        template: |
+          **Scaling Framework:**
+          
+          **Horizontal Scaling:**
+          - Audience Expansion: {{audience_scaling_strategy}}
+          - Geographic Expansion: {{geographic_scaling}}
+          - Platform Expansion: {{cross_platform_scaling}}
+          
+          **Vertical Scaling:**
+          - Budget Increase Protocol: {{budget_scaling_protocol}}
+          - Frequency Optimization: {{frequency_optimization}}
+          - Placement Expansion: {{placement_scaling}}
+          
+          **Creative Scaling:**
+          - Variation Development: {{creative_variation_strategy}}
+          - Format Adaptation: {{format_adaptation_approach}}
+          - Seasonal Adjustments: {{seasonal_scaling_strategy}}
+          
+          **Risk Management:**
+          {{scaling_risk_management}}
+      - id: performance-reporting
+        title: Performance Reporting Framework
+        template: |
+          **Reporting Structure:**
+          
+          **Daily Dashboard:**
+          - Key Metrics: {{daily_key_metrics}}
+          - Alert Thresholds: {{daily_alert_thresholds}}
+          - Action Items: {{daily_action_items}}
+          
+          **Weekly Report:**
+          - Performance Summary: {{weekly_performance_summary}}
+          - Test Results: {{weekly_test_results}}
+          - Optimization Wins: {{weekly_optimization_wins}}
+          - Next Week Plan: {{weekly_forward_plan}}
+          
+          **Monthly Analysis:**
+          - Trend Analysis: {{monthly_trend_analysis}}
+          - ROI Assessment: {{monthly_roi_assessment}}
+          - Strategic Insights: {{monthly_strategic_insights}}
+          - Quarterly Planning: {{quarterly_planning_input}}
+
+  - id: advanced-strategies
+    title: Advanced Hook Strategies & Innovation
+    instruction: |
+      Explore cutting-edge hook strategies and emerging trends.
+      Focus on innovation and competitive differentiation.
+    sections:
+      - id: ai-personalization
+        title: AI-Powered Personalization
+        template: |
+          **AI Personalization Framework:**
+          
+          **Dynamic Content Generation:**
+          - Personalization Variables: {{ai_personalization_variables}}
+          - Content Variations: {{ai_content_variations}}
+          - Real-time Optimization: {{ai_realtime_optimization}}
+          
+          **Predictive Performance:**
+          - Performance Prediction Models: {{ai_performance_prediction}}
+          - Audience Matching: {{ai_audience_matching}}
+          - Creative Optimization: {{ai_creative_optimization}}
+          
+          **Implementation Approach:**
+          {{ai_implementation_framework}}
+      - id: interactive-hooks
+        title: Interactive & Immersive Hooks
+        template: |
+          **Interactive Hook Strategies:**
+          
+          **Engagement Mechanics:**
+          - Poll/Quiz Integration: {{poll_quiz_hooks}}
+          - Swipe/Tap Interactions: {{gesture_based_hooks}}
+          - AR/Filter Hooks: {{ar_filter_hooks}}
+          
+          **Gamification Elements:**
+          - Challenge Creation: {{challenge_hook_mechanics}}
+          - Reward Systems: {{reward_based_hooks}}
+          - Progress Tracking: {{progress_hook_elements}}
+          
+          **Implementation Guide:**
+          {{interactive_implementation_guide}}
+      - id: emerging-trends
+        title: Emerging Trends & Future-Proofing
+        template: |
+          **Trend Forecast & Adaptation:**
+          
+          **Emerging Platforms:**
+          {{emerging_platform_opportunities}}
+          
+          **New Format Innovations:**
+          {{format_innovation_trends}}
+          
+          **Technology Integration:**
+          {{technology_integration_opportunities}}
+          
+          **Future-Proofing Strategy:**
+          {{future_proofing_approach}}
+
+  - id: implementation-summary
+    title: Implementation Summary & Action Plan
+    instruction: |
+      Create actionable implementation summary with clear next steps and success metrics.
+      Ensure framework is immediately actionable for content teams.
+    sections:
+      - id: quick-start-guide
+        title: Quick Start Implementation Guide
+        template: |
+          **30-Day Implementation Plan:**
+          
+          **Week 1: Foundation & Setup**
+          - Day 1-2: Platform analysis and audience research
+          - Day 3-4: Hook formula selection and customization
+          - Day 5-7: Initial hook creation and internal testing
+          
+          **Week 2: Testing & Learning**
+          - Day 8-10: Launch initial A/B tests
+          - Day 11-12: Monitor and collect data
+          - Day 13-14: Analyze results and identify patterns
+          
+          **Week 3: Optimization & Scaling**
+          - Day 15-17: Optimize based on learnings
+          - Day 18-19: Scale successful variants
+          - Day 20-21: Develop new test variants
+          
+          **Week 4: Systematization**
+          - Day 22-24: Document successful patterns
+          - Day 25-26: Create team playbooks
+          - Day 27-28: Set up ongoing processes
+          - Day 29-30: Plan next month's strategy
+      - id: success-metrics
+        title: Success Metrics & KPIs
+        template: |
+          **Key Performance Indicators:**
+          
+          **Engagement KPIs:**
+          - Hook Rate: {{hook_rate_target}}
+          - Engagement Rate: {{engagement_rate_target}}
+          - Completion Rate: {{completion_rate_target}}
+          - Share Rate: {{share_rate_target}}
+          
+          **Conversion KPIs:**
+          - Click-Through Rate: {{ctr_target}}
+          - Conversion Rate: {{conversion_rate_target}}
+          - Cost Per Acquisition: {{cpa_target}}
+          - Return on Ad Spend: {{roas_target}}
+          
+          **Quality KPIs:**
+          - Brand Sentiment: {{brand_sentiment_target}}
+          - Audience Quality Score: {{audience_quality_target}}
+          - Content Relevance Score: {{relevance_score_target}}
+      - id: team-enablement
+        title: Team Enablement Resources
+        template: |
+          **Team Training & Resources:**
+          
+          **Training Modules:**
+          1. Platform Psychology Deep Dive
+          2. Hook Formula Mastery Workshop
+          3. A/B Testing Best Practices
+          4. Performance Analysis Training
+          
+          **Resource Library:**
+          - Hook Template Database
+          - Testing Framework Guides
+          - Platform Cheat Sheets
+          - Performance Benchmarks
+          
+          **Ongoing Support:**
+          - Weekly Hook Review Sessions
+          - Monthly Strategy Updates
+          - Quarterly Trend Briefings
+          - Annual Framework Review
+
+  - id: framework-completion
+    instruction: |
+      Final Hook Content Framework validation ensuring comprehensive coverage of platform-specific optimization strategies.
+      Confirm all elements are actionable and aligned with performance goals.
+    content: |
+      ---
+      
+      ## Hook Content Framework Completion
+      
+      **Framework Development Completed:** {{completion_date}}
+      **Platform Focus:** {{platform_name}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Framework Components:**
+      - [ ] Platform-specific psychology analysis complete
+      - [ ] Hook formula library comprehensive and tested
+      - [ ] A/B testing framework established
+      - [ ] Performance metrics and KPIs defined
+      - [ ] Platform best practices documented
+      - [ ] Implementation toolkit ready for deployment
+      - [ ] Team enablement resources prepared
+      
+      **Quality Validation:**
+      - [ ] All hook formulas include psychological basis
+      - [ ] Platform specifications technically accurate
+      - [ ] Testing frameworks are measurable and actionable
+      - [ ] Compliance guidelines thoroughly addressed
+      - [ ] Scalability strategies clearly defined
+      
+      ---
+      
+      _Framework Version: 1.0_
+      _Methodology: Elevate Marketing Hook Optimization_
+      _Next Review: {{next_review_date}}_
+      _Template: one Hook Content Framework v1.0_
+
+# Advanced template configuration
+variables:
+  platform_specs:
+    type: object
+    properties:
+      platform_name:
+        type: string
+        description: "Name of the platform (TikTok, Instagram, Facebook, YouTube, LinkedIn, Google Ads)"
+        required: true
+      platform_type:
+        type: string
+        enum: ["social_media", "paid_advertising", "video_platform", "professional_network"]
+        description: "Category of platform for conditional content"
+      user_demographics:
+        type: object
+        description: "Platform-specific user demographics and behaviors"
+      algorithm_factors:
+        type: array
+        description: "Key algorithm optimization factors for the platform"
+      content_formats:
+        type: array
+        description: "Available content formats and specifications"
+    validation:
+      - platform_analysis_comprehensive: "Platform analysis must include user psychology and behavior patterns"
+      - algorithm_understanding_current: "Algorithm factors must be based on current platform mechanics"
+      - format_specifications_accurate: "Technical specifications must be accurate and up-to-date"
+
+  audience_triggers:
+    type: object
+    properties:
+      emotional_triggers:
+        type: array
+        description: "Primary emotional triggers that drive audience action"
+        min_items: 3
+        max_items: 7
+      cognitive_biases:
+        type: array
+        description: "Cognitive biases to leverage in hook creation"
+        min_items: 3
+        max_items: 5
+      social_drivers:
+        type: array
+        description: "Social psychology factors that influence sharing and engagement"
+        min_items: 2
+        max_items: 4
+      platform_behaviors:
+        type: object
+        description: "Platform-specific behavioral patterns and preferences"
+    validation:
+      - triggers_evidence_based: "All triggers must be based on psychological research or data"
+      - platform_alignment: "Triggers must align with platform user behavior"
+      - ethical_consideration: "Triggers must be ethically applied without manipulation"
+
+  viral_elements:
+    type: object
+    properties:
+      share_mechanics:
+        type: array
+        description: "Elements that drive sharing behavior"
+        min_items: 3
+      viral_loops:
+        type: array
+        description: "Self-reinforcing viral mechanics"
+        min_items: 2
+      trend_patterns:
+        type: array
+        description: "Platform-specific viral trend patterns"
+      amplification_factors:
+        type: object
+        description: "Factors that amplify content reach"
+    validation:
+      - viral_authenticity: "Viral elements must feel authentic to platform culture"
+      - sustainable_virality: "Viral mechanics should be sustainable, not one-time gimmicks"
+      - brand_alignment: "Viral elements must align with brand values and messaging"
+
+hook_formula_categories:
+  curiosity_gap:
+    psychological_basis: "Leverages information gap theory and cognitive closure need"
+    subtypes:
+      - knowledge_gap: "Reveals partial information to create knowledge seeking behavior"
+      - story_gap: "Starts narrative without resolution to drive completion desire"
+      - mystery_gap: "Presents puzzle or unexplained phenomenon"
+    effectiveness: "High engagement, particularly for educational and entertainment content"
+  
+  emotional_trigger:
+    psychological_basis: "Activates limbic system for immediate emotional response"
+    subtypes:
+      - fear_loss: "Triggers loss aversion and protective instincts"
+      - aspiration_gain: "Activates achievement motivation and future-self visualization"
+      - empathy_connection: "Creates emotional resonance through shared experience"
+    effectiveness: "Strong for conversion but requires ethical application"
+  
+  social_proof:
+    psychological_basis: "Leverages conformity bias and social validation needs"
+    subtypes:
+      - authority_proof: "Expert or celebrity endorsement"
+      - peer_proof: "Similar people success stories"
+      - wisdom_crowds: "Large numbers as validation"
+    effectiveness: "Builds trust and reduces decision friction"
+  
+  pattern_interrupt:
+    psychological_basis: "Disrupts automatic processing to capture conscious attention"
+    subtypes:
+      - visual_interrupt: "Unexpected imagery or motion"
+      - cognitive_interrupt: "Logic defying or surprising information"
+      - sensory_interrupt: "Unusual sounds or visual effects"
+    effectiveness: "Excellent for scroll-stopping but must deliver value post-interrupt"
+
+testing_framework_components:
+  test_design:
+    hypothesis_formation: "Clear hypothesis with expected outcome"
+    variable_isolation: "Test one primary variable at a time"
+    sample_calculation: "Statistically significant sample sizes"
+    duration_planning: "Adequate time for reliable results"
+  
+  metrics_framework:
+    leading_indicators:
+      - view_rate: "Initial hook effectiveness"
+      - engagement_rate: "Content quality signal"
+      - completion_rate: "Full message delivery"
+    lagging_indicators:
+      - conversion_rate: "Business impact"
+      - cost_efficiency: "ROI optimization"
+      - brand_metrics: "Long-term brand health"
+  
+  iteration_protocol:
+    analysis_frequency: "Daily, weekly, monthly review cycles"
+    decision_framework: "Clear criteria for winner selection"
+    learning_documentation: "Systematic insight capture"
+    scaling_triggers: "Performance thresholds for scaling"
+
+platform_optimization_priorities:
+  tiktok:
+    priority_elements:
+      - "First 3 seconds hook critical"
+      - "Sound selection and trends"
+      - "Native creator style"
+      - "Loop-worthy content"
+    algorithm_optimization:
+      - "Completion rate focus"
+      - "Share and save signals"
+      - "Comment engagement"
+  
+  instagram:
+    priority_elements:
+      - "Visual aesthetic quality"
+      - "Multi-format strategy"
+      - "Story-to-feed funnel"
+      - "Hashtag optimization"
+    algorithm_optimization:
+      - "Engagement velocity"
+      - "Relationship signals"
+      - "Time spent metrics"
+  
+  youtube:
+    priority_elements:
+      - "Thumbnail-title synergy"
+      - "First 15 seconds retention"
+      - "Chapter optimization"
+      - "End screen strategy"
+    algorithm_optimization:
+      - "Watch time maximization"
+      - "Session duration"
+      - "Click-through rate"
+  
+  linkedin:
+    priority_elements:
+      - "Professional value focus"
+      - "Thought leadership angle"
+      - "Native video priority"
+      - "Document carousel strategy"
+    algorithm_optimization:
+      - "Dwell time importance"
+      - "Professional relevance"
+      - "Network amplification"
+
+quality_validation:
+  psychological_accuracy:
+    - "Hook formulas based on established psychological principles"
+    - "Audience triggers validated through research or testing"
+    - "Emotional appeals ethically applied"
+    - "Cognitive biases used responsibly"
+  
+  platform_alignment:
+    - "Technical specifications accurate and current"
+    - "Algorithm factors based on latest platform updates"
+    - "Best practices aligned with platform culture"
+    - "Compliance guidelines thoroughly addressed"
+  
+  performance_orientation:
+    - "All strategies tied to measurable outcomes"
+    - "Testing frameworks statistically sound"
+    - "Optimization protocols clearly defined"
+    - "Success metrics aligned with business goals"
+  
+  implementation_readiness:
+    - "Templates immediately usable"
+    - "Workflows clearly documented"
+    - "Tools and resources accessible"
+    - "Team enablement materials comprehensive"
+
+input_requirements:
+  required_variables:
+    - platform_specs
+    - audience_triggers
+    - viral_elements
+    - company_name
+    - platform_name
+    - target_audience_segments
+    - primary_marketing_goals
+    - brand_guidelines
+  
+  conditional_requirements:
+    platform_type:
+      social_media: ["content_style_preferences", "creator_vs_brand_approach", "community_guidelines"]
+      paid_advertising: ["budget_parameters", "conversion_goals", "landing_page_strategy"]
+      video_platform: ["content_duration_preferences", "series_vs_standalone", "subscriber_goals"]
+    
+    business_model:
+      b2b: ["decision_maker_targeting", "linkedin_strategy", "thought_leadership_angle"]
+      b2c: ["emotional_connection_priority", "lifestyle_positioning", "influencer_strategy"]
+      saas: ["feature_demonstration_needs", "trial_conversion_focus", "competitor_differentiation"]
+  
+  validation_rules:
+    platform_specificity:
+      - "Platform must be clearly identified with current specifications"
+      - "Audience analysis must be platform-specific"
+      - "Technical requirements must match platform guidelines"
+    
+    psychological_grounding:
+      - "All hook formulas must have psychological basis"
+      - "Audience triggers must be research-validated"
+      - "Viral elements must align with platform culture"
+    
+    performance_focus:
+      - "Success metrics must be defined and measurable"
+      - "Testing framework must be actionable"
+      - "Optimization protocols must be systematic"

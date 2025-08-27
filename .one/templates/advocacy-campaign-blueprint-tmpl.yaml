@@ -1,0 +1,1400 @@
+template:
+  id: advocacy-campaign-blueprint-template-v1
+  name: Advocacy Campaign Blueprint - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-{{campaign_type}}-advocacy-blueprint.md"
+    title: "{{campaign_type}} Advocacy Campaign Blueprint - {{company_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  llm_assistance:
+    real_time_guidance: true
+    decision_support: true
+    optimization_suggestions: true
+    viral_mechanics_optimization: true
+    community_building_focus: true
+  custom_elicitation:
+    title: "Advocacy Campaign Development Actions"
+    sections:
+      - id: advocacy-strategy-development
+        options:
+          - "Analyze customer advocacy potential and readiness indicators"
+          - "Map advocacy touchpoints across customer success journey"
+          - "Design advocate identification and segmentation strategies"
+          - "Research advocacy motivation factors and reward psychology"
+          - "Study viral trigger events and natural sharing moments"
+          - "Explore community building opportunities and engagement tactics"
+          - "Analyze competitive advocacy programs and differentiation"
+          - "Design advocacy activation campaigns and recruitment funnels"
+          - "Proceed to next section"
+      - id: referral-system-architecture
+        options:
+          - "Design referral program mechanics and reward structures"
+          - "Map referral journey from identification to conversion"
+          - "Analyze optimal incentive models for target segments"
+          - "Research friction reduction strategies for sharing"
+          - "Study attribution tracking and performance measurement"
+          - "Explore multi-tier reward systems and gamification"
+          - "Design referral onboarding and activation sequences"
+          - "Map referral lifecycle management and re-engagement"
+          - "Proceed to next section"
+      - id: viral-mechanics-design
+        options:
+          - "Design viral triggers and natural sharing moments"
+          - "Map social currency creation and status enhancement"
+          - "Analyze viral coefficient optimization strategies"
+          - "Research network effects and exponential growth tactics"
+          - "Study emotional amplification and sharing psychology"
+          - "Explore content virality and shareability optimization"
+          - "Design viral loops and self-reinforcing mechanisms"
+          - "Map viral growth tracking and measurement systems"
+          - "Proceed to next section"
+      - id: community-ecosystem-design
+        options:
+          - "Design community platform and engagement architecture"
+          - "Map community roles and hierarchy systems"
+          - "Analyze community content strategy and programming"
+          - "Research peer-to-peer advocacy and influence networks"
+          - "Study community moderation and quality maintenance"
+          - "Explore community events and exclusive experiences"
+          - "Design community growth and scaling strategies"
+          - "Map community value creation and member benefits"
+          - "Proceed to campaign blueprint completion"
+
+sections:
+  - id: campaign-overview
+    title: Advocacy Campaign Blueprint Overview
+    instruction: |
+      This advocacy campaign blueprint creates comprehensive referral systems and viral growth mechanisms.
+      Focus on transforming satisfied customers into passionate advocates driving sustainable viral growth.
+      
+      The blueprint includes:
+      - Customer advocacy identification and activation systems
+      - Referral program architecture with optimized incentive structures
+      - Viral mechanics design for exponential growth amplification
+      - Community building frameworks for sustained engagement
+      - Performance tracking and viral coefficient optimization
+      - Conditional approaches for incentivized vs organic advocacy
+      
+      Output file location: `docs/{{company_name}}-{{campaign_type}}-advocacy-blueprint.md`
+
+  - id: advocacy-foundation-framework
+    title: Advocacy Foundation & Customer Transformation Strategy
+    instruction: |
+      Design comprehensive customer-to-advocate transformation framework with LLM assistance.
+      Focus on identifying, activating, and nurturing customer advocates for sustainable growth.
+    variables:
+      - advocacy_goals
+      - customer_segments
+      - transformation_journey
+    sections:
+      - id: advocacy-strategy-foundation
+        title: Advocacy Strategy Foundation
+        template: |
+          **Advocacy Campaign Type:** {{campaign_type}}
+          **Primary Advocacy Objective:** {{primary_advocacy_objective}}
+          **Target Viral Coefficient:** {{target_viral_coefficient}}
+          
+          **Advocacy Philosophy:**
+          {{advocacy_philosophy}}
+          
+          **Customer-to-Advocate Transformation Framework:**
+          
+          **Stage 1: Satisfied Customer ({{stage_1_timeframe}})**
+          - Satisfaction Indicators: {{satisfaction_indicators}}
+          - Success Metrics: {{satisfaction_success_metrics}}
+          - Value Realization: {{satisfaction_value_realization}}
+          - Advocacy Readiness Signals: {{advocacy_readiness_signals}}
+          
+          **Stage 2: Potential Advocate ({{stage_2_timeframe}})**
+          - Identification Criteria: {{potential_advocate_criteria}}
+          - Engagement Strategy: {{potential_advocate_engagement}}
+          - Value Enhancement: {{potential_advocate_value_enhancement}}
+          - Activation Preparation: {{activation_preparation_tactics}}
+          
+          **Stage 3: Active Advocate ({{stage_3_timeframe}})**
+          - Activation Triggers: {{active_advocate_triggers}}
+          - Advocacy Activities: {{active_advocacy_activities}}
+          - Support Systems: {{advocate_support_systems}}
+          - Recognition Programs: {{advocate_recognition_programs}}
+          
+          **Stage 4: Champion Advocate ({{stage_4_timeframe}})**
+          - Champion Criteria: {{champion_advocate_criteria}}
+          - Advanced Programs: {{champion_programs}}
+          - Leadership Opportunities: {{champion_leadership_opportunities}}
+          - Exclusive Benefits: {{champion_exclusive_benefits}}
+          
+          **Stage 5: Brand Ambassador ({{stage_5_timeframe}})**
+          - Ambassador Selection: {{brand_ambassador_selection}}
+          - Official Programs: {{brand_ambassador_programs}}
+          - Co-creation Opportunities: {{ambassador_co_creation}}
+          - Strategic Partnerships: {{ambassador_partnerships}}
+      - id: advocate-identification-system
+        title: Advocate Identification & Segmentation System
+        template: |
+          **Advocate Identification Framework:**
+          
+          **Primary Identification Signals:**
+          
+          **Behavioral Indicators:**
+          - High NPS Scores: {{nps_threshold_criteria}}
+          - Repeat Purchase Behavior: {{repeat_purchase_indicators}}
+          - Product Usage Intensity: {{usage_intensity_metrics}}
+          - Organic Sharing Activity: {{organic_sharing_indicators}}
+          - Community Participation: {{community_participation_signals}}
+          
+          **Engagement Indicators:**
+          - Content Consumption: {{content_consumption_metrics}}
+          - Feature Adoption: {{feature_adoption_signals}}
+          - Support Interaction Quality: {{support_interaction_quality}}
+          - Feedback Contribution: {{feedback_contribution_patterns}}
+          - Event Participation: {{event_participation_indicators}}
+          
+          **Success Story Indicators:**
+          - Measurable Results: {{measurable_results_criteria}}
+          - Transformation Stories: {{transformation_story_indicators}}
+          - Public Success Sharing: {{public_success_sharing}}
+          - Peer Recommendations: {{peer_recommendation_signals}}
+          - Industry Recognition: {{industry_recognition_indicators}}
+          
+          **Advocate Segmentation Framework:**
+          
+          **Segment 1: Super Users**
+          - Profile: {{super_user_profile}}
+          - Advocacy Potential: {{super_user_advocacy_potential}}
+          - Activation Strategy: {{super_user_activation_strategy}}
+          - Incentive Preferences: {{super_user_incentive_preferences}}
+          
+          **Segment 2: Success Stories**
+          - Profile: {{success_story_profile}}
+          - Advocacy Potential: {{success_story_advocacy_potential}}
+          - Activation Strategy: {{success_story_activation_strategy}}
+          - Incentive Preferences: {{success_story_incentive_preferences}}
+          
+          **Segment 3: Community Leaders**
+          - Profile: {{community_leader_profile}}
+          - Advocacy Potential: {{community_leader_advocacy_potential}}
+          - Activation Strategy: {{community_leader_activation_strategy}}
+          - Incentive Preferences: {{community_leader_incentive_preferences}}
+          
+          **Segment 4: Industry Influencers**
+          - Profile: {{industry_influencer_profile}}
+          - Advocacy Potential: {{industry_influencer_advocacy_potential}}
+          - Activation Strategy: {{industry_influencer_activation_strategy}}
+          - Incentive Preferences: {{industry_influencer_incentive_preferences}}
+          
+          **Dynamic Scoring Algorithm:**
+          {{advocate_scoring_algorithm}}
+      - id: advocacy-activation-campaigns
+        title: Advocacy Activation & Recruitment Campaigns
+        template: |
+          **Activation Campaign Strategy:**
+          
+          **Campaign Approach Framework:**
+          
+          **Direct Advocacy Invitation:**
+          - Timing Strategy: {{direct_invitation_timing}}
+          - Personalization Approach: {{direct_invitation_personalization}}
+          - Value Proposition: {{direct_invitation_value_prop}}
+          - Activation Process: {{direct_invitation_process}}
+          - Follow-up Sequence: {{direct_invitation_followup}}
+          
+          **Success Celebration Activation:**
+          - Milestone Triggers: {{success_celebration_triggers}}
+          - Recognition Approach: {{success_celebration_recognition}}
+          - Sharing Encouragement: {{success_celebration_sharing}}
+          - Advocacy Integration: {{success_celebration_advocacy}}
+          - Amplification Strategy: {{success_celebration_amplification}}
+          
+          **Surprise & Delight Activation:**
+          - Unexpected Rewards: {{surprise_delight_rewards}}
+          - Exclusive Access: {{surprise_delight_access}}
+          - Personal Recognition: {{surprise_delight_recognition}}
+          - Special Privileges: {{surprise_delight_privileges}}
+          - Advocacy Invitation: {{surprise_delight_advocacy}}
+          
+          **Peer Influence Activation:**
+          - Social Proof Strategy: {{peer_influence_social_proof}}
+          - Peer Endorsements: {{peer_influence_endorsements}}
+          - Community Showcasing: {{peer_influence_showcasing}}
+          - Network Effects: {{peer_influence_network_effects}}
+          - Viral Amplification: {{peer_influence_viral_amplification}}
+          
+          **Advocacy Onboarding Sequence:**
+          {{advocacy_onboarding_framework}}
+
+  - id: referral-program-architecture
+    title: Referral Program Architecture & Incentive Design
+    instruction: |
+      Create sophisticated referral program with LLM optimization for maximum viral coefficient.
+      Focus on optimal incentive structures, friction reduction, and performance tracking.
+    variables:
+      - referral_incentives
+      - sharing_mechanisms
+      - viral_triggers
+    sections:
+      - id: referral-system-design
+        title: Comprehensive Referral System Design
+        template: |
+          **Referral Program Philosophy:**
+          {{referral_program_philosophy}}
+          
+          **Referral System Architecture:**
+          
+          **Program Structure:**
+          - Program Name: {{referral_program_name}}
+          - Program Positioning: {{referral_program_positioning}}
+          - Target Audience: {{referral_target_audience}}
+          - Eligibility Criteria: {{referral_eligibility_criteria}}
+          
+          **Referral Journey Mapping:**
+          
+          **Phase 1: Awareness & Education ({{referral_phase_1_duration}})**
+          - Awareness Tactics: {{referral_awareness_tactics}}
+          - Educational Content: {{referral_educational_content}}
+          - Value Communication: {{referral_value_communication}}
+          - Initial Engagement: {{referral_initial_engagement}}
+          
+          **Phase 2: Activation & First Share ({{referral_phase_2_duration}})**
+          - Activation Triggers: {{referral_activation_triggers}}
+          - Sharing Tools: {{referral_sharing_tools}}
+          - First Share Support: {{referral_first_share_support}}
+          - Immediate Feedback: {{referral_immediate_feedback}}
+          
+          **Phase 3: Ongoing Participation ({{referral_phase_3_duration}})**
+          - Continued Motivation: {{referral_continued_motivation}}
+          - Performance Tracking: {{referral_performance_tracking}}
+          - Optimization Support: {{referral_optimization_support}}
+          - Community Integration: {{referral_community_integration}}
+          
+          **Phase 4: Champion Development ({{referral_phase_4_duration}})**
+          - Champion Identification: {{referral_champion_identification}}
+          - Advanced Programs: {{referral_advanced_programs}}
+          - Leadership Opportunities: {{referral_leadership_opportunities}}
+          - Strategic Partnerships: {{referral_strategic_partnerships}}
+          
+          **Referral Attribution System:**
+          {{referral_attribution_framework}}
+      - id: incentive-structure-design
+        title: Incentive Structure & Reward Optimization
+        conditional:
+          incentivized_approach:
+            template: |
+              **Incentivized Referral Program:**
+              
+              **Incentive Model Selection:**
+              {{incentive_model_rationale}}
+              
+              **Primary Incentive Structure:**
+              
+              **Two-Sided Rewards Model:**
+              - Referrer Incentive: {{referrer_incentive_structure}}
+              - Referee Incentive: {{referee_incentive_structure}}
+              - Minimum Qualifying Action: {{minimum_qualifying_action}}
+              - Reward Delivery Timeline: {{reward_delivery_timeline}}
+              
+              **Tiered Reward System:**
+              
+              **Tier 1: Getting Started (1-2 referrals)**
+              - Reward Level: {{tier_1_reward_level}}
+              - Incentive Type: {{tier_1_incentive_type}}
+              - Achievement Recognition: {{tier_1_recognition}}
+              - Next Tier Motivation: {{tier_1_motivation}}
+              
+              **Tier 2: Active Advocate (3-5 referrals)**
+              - Reward Level: {{tier_2_reward_level}}
+              - Incentive Type: {{tier_2_incentive_type}}
+              - Achievement Recognition: {{tier_2_recognition}}
+              - Next Tier Motivation: {{tier_2_motivation}}
+              
+              **Tier 3: Champion Advocate (6-10 referrals)**
+              - Reward Level: {{tier_3_reward_level}}
+              - Incentive Type: {{tier_3_incentive_type}}
+              - Achievement Recognition: {{tier_3_recognition}}
+              - Next Tier Motivation: {{tier_3_motivation}}
+              
+              **Tier 4: Brand Ambassador (11+ referrals)**
+              - Reward Level: {{tier_4_reward_level}}
+              - Incentive Type: {{tier_4_incentive_type}}
+              - Achievement Recognition: {{tier_4_recognition}}
+              - Ongoing Benefits: {{tier_4_ongoing_benefits}}
+              
+              **Bonus Incentive Programs:**
+              
+              **Time-Limited Bonuses:**
+              - Launch Bonus: {{launch_bonus_structure}}
+              - Seasonal Bonuses: {{seasonal_bonus_structure}}
+              - Performance Bonuses: {{performance_bonus_structure}}
+              - Milestone Bonuses: {{milestone_bonus_structure}}
+              
+              **Special Achievement Rewards:**
+              - First Referral Bonus: {{first_referral_bonus}}
+              - Conversion Quality Bonus: {{conversion_quality_bonus}}
+              - Rapid Fire Bonus: {{rapid_fire_bonus}}
+              - Long-term Loyalty Bonus: {{loyalty_bonus}}
+              
+              **Non-Monetary Incentives:**
+              - Exclusive Access: {{exclusive_access_incentives}}
+              - Recognition Programs: {{recognition_program_incentives}}
+              - Status Benefits: {{status_benefit_incentives}}
+              - Experience Rewards: {{experience_reward_incentives}}
+              
+              **Incentive Optimization Framework:**
+              {{incentive_optimization_strategy}}
+          organic_approach:
+            template: |
+              **Organic Advocacy Program:**
+              
+              **Organic Motivation Strategy:**
+              {{organic_motivation_philosophy}}
+              
+              **Elevate Framework Intrinsic Motivation:**
+              Organic advocacy leverages intrinsic motivations aligned with the customer's authentic experience and success. This approach creates sustainable, credible advocacy that enhances rather than compromises brand authenticity.
+              
+              **Authentic Success Sharing:**
+              Focus on customers who have genuinely achieved their Dream Outcome and want to help others succeed. This creates powerful, credible advocacy that prospects trust.
+              
+              **Intrinsic Motivation Framework:**
+              
+              **Purpose-Driven Advocacy:**
+              - Mission Alignment: {{mission_alignment_advocacy}}
+              - Values Connection: {{values_connection_advocacy}}
+              - Impact Amplification: {{impact_amplification_advocacy}}
+              - Success Story Sharing: {{success_story_sharing_motivation}}
+              - Peer Helping Motivation: {{peer_helping_motivation}}
+              - Industry Leadership: {{industry_leadership_motivation}}
+              - Community Building: {{community_building_advocacy}}
+              
+              **Social Currency Creation:**
+              - Status Enhancement: {{status_enhancement_strategy}}
+              - Expertise Recognition: {{expertise_recognition_strategy}}
+              - Insider Access: {{insider_access_strategy}}
+              - Thought Leadership: {{thought_leadership_strategy}}
+              
+              **Emotional Satisfaction Drivers:**
+              - Helping Others: {{helping_others_motivation}}
+              - Success Sharing: {{success_sharing_motivation}}
+              - Community Connection: {{community_connection_motivation}}
+              - Brand Pride: {{brand_pride_motivation}}
+              
+              **Recognition & Social Proof:**
+              
+              **Elevate Framework Recognition Programs:**
+              - Success Story Features: {{success_story_features}}
+              - Dream Outcome Showcases: {{dream_outcome_showcases}}
+              - Transformation Spotlights: {{transformation_spotlights}}
+              - Community Spotlights: {{community_spotlights}}
+              - Expert Interviews: {{expert_interviews}}
+              - Case Study Participation: {{case_study_participation}}
+              - Thought Leadership Platforms: {{thought_leadership_platforms}}
+              
+              **Peer Recognition Systems:**
+              - Community Awards: {{community_awards}}
+              - Peer Nominations: {{peer_nominations}}
+              - Success Celebrations: {{success_celebrations}}
+              - Achievement Badges: {{achievement_badges}}
+              
+              **Exclusive Access Programs:**
+              - Beta Testing Access: {{beta_testing_access}}
+              - Executive Roundtables: {{executive_roundtables}}
+              - Product Development Input: {{product_development_input}}
+              - Strategic Advisory Roles: {{strategic_advisory_roles}}
+              
+              **Organic Advocacy Amplification:**
+              {{organic_advocacy_amplification}}
+      - id: sharing-mechanism-optimization
+        title: Sharing Mechanism & Friction Reduction
+        template: |
+          **Sharing Optimization Framework:**
+          
+          **Friction Analysis & Reduction:**
+          
+          **Elevate Framework Friction Principles:**
+          The key to effective advocacy is eliminating every possible barrier to sharing. Customers may be happy but rarely share proactively unless prompted and guided through frictionless processes.
+          
+          **Technical Friction Elimination:**
+          - One-Click Sharing: {{one_click_sharing_implementation}}
+          - Pre-Populated Messages: {{pre_populated_message_strategy}}
+          - Direct Platform Links: {{direct_platform_links}}
+          - Multi-Channel Integration: {{multi_channel_integration}}
+          - Mobile Optimization: {{mobile_optimization_approach}}
+          - Cross-Platform Compatibility: {{cross_platform_compatibility}}
+          
+          **Cognitive Friction Reduction:**
+          - Clear Value Proposition: {{clear_value_prop_sharing}}
+          - Simple Instructions: {{simple_instruction_design}}
+          - Visual Guidance: {{visual_guidance_approach}}
+          - Progress Indicators: {{progress_indicator_system}}
+          - Success Confirmation: {{success_confirmation_feedback}}
+          
+          **Emotional Friction Elimination:**
+          - Trust Building: {{trust_building_for_sharing}}
+          - Risk Mitigation: {{risk_mitigation_sharing}}
+          - Social Proof Integration: {{social_proof_sharing}}
+          - Confidence Building: {{confidence_building_approach}}
+          - Authenticity Assurance: {{authenticity_assurance}}
+          
+          **Sharing Channel Optimization:**
+          
+          **Email Sharing:**
+          - Email Template Quality: {{email_template_quality}}
+          - Subject Line Optimization: {{email_subject_optimization}}
+          - Personalization Options: {{email_personalization_options}}
+          - Mobile Email Optimization: {{mobile_email_optimization}}
+          
+          **Social Media Sharing:**
+          - Platform-Specific Optimization: {{platform_specific_optimization}}
+          - Visual Content Integration: {{visual_content_integration}}
+          - Hashtag Strategy: {{hashtag_strategy_sharing}}
+          - Influencer Integration: {{influencer_integration_sharing}}
+          
+          **Direct Link Sharing:**
+          - Trackable Link Generation: {{trackable_link_generation}}
+          - Link Customization Options: {{link_customization_options}}
+          - Link Performance Analytics: {{link_performance_analytics}}
+          - Link Optimization: {{link_optimization_strategy}}
+          
+          **In-Person Sharing Support:**
+          - Conversation Starters: {{conversation_starter_tools}}
+          - Digital Business Cards: {{digital_business_cards}}
+          - QR Code Integration: {{qr_code_integration}}
+          - Offline-to-Online Bridge: {{offline_online_bridge}}
+          
+          **Sharing Analytics Framework:**
+          {{sharing_analytics_optimization}}
+
+  - id: viral-mechanics-framework
+    title: Viral Mechanics & Growth Amplification Design
+    instruction: |
+      Design sophisticated viral mechanics with LLM assistance for exponential growth.
+      Focus on viral triggers, network effects, and self-reinforcing growth loops.
+    variables:
+      - viral_triggers
+      - network_effects
+      - growth_loops
+    sections:
+      - id: viral-trigger-system
+        title: Viral Trigger Events & Natural Sharing Moments
+        instruction: Define comprehensive viral trigger framework with psychological amplification
+        repeatable: true
+        template: |
+          **Viral Trigger: {{viral_trigger_name}}**
+          **Category:** {{viral_trigger_category}}
+          **Viral Potential Score:** {{viral_potential_score}}/10
+          **Implementation Complexity:** {{implementation_complexity}}
+          
+          **Trigger Psychology:**
+          - Emotional Driver: {{trigger_emotional_driver}}
+          - Social Currency Value: {{trigger_social_currency}}
+          - Sharing Motivation: {{trigger_sharing_motivation}}
+          - Authenticity Level: {{trigger_authenticity_level}}
+          
+          **Trigger Activation Conditions:**
+          - Primary Condition: {{trigger_primary_condition}}
+          - Supporting Conditions: {{trigger_supporting_conditions}}
+          - Timing Requirements: {{trigger_timing_requirements}}
+          - Context Prerequisites: {{trigger_context_prerequisites}}
+          
+          **Viral Amplification Strategy:**
+          - Message Optimization: {{trigger_message_optimization}}
+          - Visual Enhancement: {{trigger_visual_enhancement}}
+          - Social Proof Integration: {{trigger_social_proof}}
+          - Urgency Creation: {{trigger_urgency_creation}}
+          
+          **Network Effect Potential:**
+          - Direct Network Impact: {{trigger_direct_network_impact}}
+          - Indirect Network Effects: {{trigger_indirect_network_effects}}
+          - Exponential Growth Potential: {{trigger_exponential_potential}}
+          - Sustained Virality: {{trigger_sustained_virality}}
+          
+          **Measurement & Optimization:**
+          - Viral Coefficient Impact: {{trigger_viral_coefficient_impact}}
+          - Sharing Rate Metrics: {{trigger_sharing_rate_metrics}}
+          - Conversion Quality: {{trigger_conversion_quality}}
+          - Long-term Value: {{trigger_long_term_value}}
+      - id: viral-loop-architecture
+        title: Viral Loop Design & Self-Reinforcing Mechanisms
+        template: |
+          **Viral Loop Philosophy:**
+          {{viral_loop_philosophy}}
+          
+          **Elevate Framework Growth Loop Integration:**
+          Viral loops transform the linear Elevate Framework into a cyclical growth engine where SHARE directly feeds back into ATTRACT (social proof) and CONVERT (increased trust and credibility), creating sustainable, self-reinforcing growth.
+          
+          **Social Proof Amplification:**
+          Generated advocacy becomes powerful social proof that increases Perceived Likelihood for new prospects, enhancing conversion rates across the entire framework.
+          
+          **Primary Viral Loops:**
+          
+          **Loop 1: Success Story Amplification**
+          - Trigger Event: {{success_story_trigger}}
+          - Sharing Mechanism: {{success_story_sharing}}
+          - Network Exposure: {{success_story_exposure}}
+          - Conversion Path: {{success_story_conversion}}
+          - Loop Reinforcement: {{success_story_reinforcement}}
+          - Viral Coefficient: {{success_story_viral_coefficient}}
+          
+          **Loop 2: Social Proof Cascade**
+          - Trigger Event: {{social_proof_trigger}}
+          - Sharing Mechanism: {{social_proof_sharing}}
+          - Network Exposure: {{social_proof_exposure}}
+          - Conversion Path: {{social_proof_conversion}}
+          - Loop Reinforcement: {{social_proof_reinforcement}}
+          - Viral Coefficient: {{social_proof_viral_coefficient}}
+          
+          **Loop 3: Community Growth Spiral**
+          - Trigger Event: {{community_growth_trigger}}
+          - Sharing Mechanism: {{community_growth_sharing}}
+          - Network Exposure: {{community_growth_exposure}}
+          - Conversion Path: {{community_growth_conversion}}
+          - Loop Reinforcement: {{community_growth_reinforcement}}
+          - Viral Coefficient: {{community_growth_viral_coefficient}}
+          
+          **Loop 4: Value Demonstration Chain**
+          - Trigger Event: {{value_demo_trigger}}
+          - Sharing Mechanism: {{value_demo_sharing}}
+          - Network Exposure: {{value_demo_exposure}}
+          - Conversion Path: {{value_demo_conversion}}
+          - Loop Reinforcement: {{value_demo_reinforcement}}
+          - Viral Coefficient: {{value_demo_viral_coefficient}}
+          
+          **Viral Loop Optimization:**
+          
+          **Loop Performance Metrics:**
+          - Loop Completion Rate: {{loop_completion_rate}}
+          - Amplification Factor: {{loop_amplification_factor}}
+          - Decay Rate: {{loop_decay_rate}}
+          - Reinforcement Strength: {{loop_reinforcement_strength}}
+          
+          **Loop Enhancement Strategies:**
+          - Friction Reduction: {{loop_friction_reduction}}
+          - Motivation Amplification: {{loop_motivation_amplification}}
+          - Social Currency Enhancement: {{loop_social_currency}}
+          - Network Effect Maximization: {{loop_network_effect_max}}
+          
+          **Cross-Loop Synergies:**
+          {{cross_loop_synergy_framework}}
+      - id: viral-coefficient-optimization
+        title: Viral Coefficient Optimization & Growth Acceleration
+        template: |
+          **Viral Coefficient Strategy:**
+          
+          **Viral Coefficient Formula:**
+          ```
+          Viral Coefficient = (Number of Invites Sent per User) × (Conversion Rate of Invites)
+          
+          Target Viral Coefficient: {{target_viral_coefficient}}
+          Current Baseline: {{current_viral_coefficient}}
+          Growth Target: {{viral_coefficient_growth_target}}
+          ```
+          
+          **Coefficient Component Optimization:**
+          
+          **Invite Volume Optimization:**
+          - Average Invites per User: {{avg_invites_per_user}}
+          - Invite Volume Drivers: {{invite_volume_drivers}}
+          - Volume Increase Strategies: {{volume_increase_strategies}}
+          - Seasonal Volume Patterns: {{seasonal_volume_patterns}}
+          
+          **Conversion Rate Optimization:**
+          - Current Invite Conversion Rate: {{current_invite_conversion}}
+          - Conversion Rate Drivers: {{conversion_rate_drivers}}
+          - Conversion Improvement Strategies: {{conversion_improvement_strategies}}
+          - Quality vs Quantity Balance: {{quality_quantity_balance}}
+          
+          **Network Effect Amplification:**
+          - Network Size Impact: {{network_size_impact}}
+          - Network Density Optimization: {{network_density_optimization}}
+          - Cross-Network Connections: {{cross_network_connections}}
+          - Network Value Enhancement: {{network_value_enhancement}}
+          
+          **Viral Velocity Acceleration:**
+          - Time to First Share: {{time_to_first_share}}
+          - Sharing Frequency: {{sharing_frequency_optimization}}
+          - Viral Spread Speed: {{viral_spread_speed}}
+          - Momentum Maintenance: {{momentum_maintenance_strategy}}
+          
+          **Compound Growth Mechanisms:**
+          {{compound_growth_framework}}
+
+  - id: community-building-framework
+    title: Community Building & Engagement Ecosystem
+    instruction: |
+      Create comprehensive community building strategy with LLM guidance for sustained engagement.
+      Focus on community architecture, member journey, and value creation systems.
+    sections:
+      - id: community-architecture-design
+        title: Community Platform & Engagement Architecture
+        template: |
+          **Community Vision & Strategy:**
+          {{community_vision_strategy}}
+          
+          **Community Platform Architecture:**
+          
+          **Platform Selection & Design:**
+          - Primary Platform: {{primary_community_platform}}
+          - Platform Rationale: {{platform_selection_rationale}}
+          - Integration Strategy: {{platform_integration_strategy}}
+          - Scalability Considerations: {{platform_scalability}}
+          
+          **Community Structure:**
+          
+          **Core Community Areas:**
+          - Welcome & Onboarding: {{welcome_area_design}}
+          - General Discussion: {{general_discussion_structure}}
+          - Success Stories: {{success_stories_area}}
+          - Q&A Support: {{qa_support_structure}}
+          - Resource Library: {{resource_library_organization}}
+          
+          **Specialized Communities:**
+          - Expert Circles: {{expert_circles_design}}
+          - Industry Groups: {{industry_groups_structure}}
+          - Use Case Forums: {{use_case_forums_organization}}
+          - Beta Testing Groups: {{beta_testing_groups}}
+          - VIP Member Areas: {{vip_member_areas}}
+          
+          **Member Hierarchy & Roles:**
+          
+          **Member Role Structure:**
+          - New Members: {{new_member_role_definition}}
+          - Active Members: {{active_member_role_definition}}
+          - Trusted Members: {{trusted_member_role_definition}}
+          - Community Champions: {{community_champion_role}}
+          - Moderators: {{moderator_role_definition}}
+          - Community Leaders: {{community_leader_role}}
+          
+          **Role Progression Framework:**
+          - Advancement Criteria: {{role_advancement_criteria}}
+          - Benefits by Level: {{role_benefits_structure}}
+          - Recognition Systems: {{role_recognition_systems}}
+          - Responsibility Growth: {{role_responsibility_growth}}
+          
+          **Community Engagement Systems:**
+          {{community_engagement_framework}}
+      - id: community-programming-strategy
+        title: Community Programming & Content Strategy
+        template: |
+          **Community Programming Philosophy:**
+          {{community_programming_philosophy}}
+          
+          **Regular Programming Schedule:**
+          
+          **Daily Activities:**
+          - Welcome New Members: {{daily_welcome_process}}
+          - Daily Discussion Topics: {{daily_discussion_topics}}
+          - Success Story Highlights: {{daily_success_highlights}}
+          - Q&A Responses: {{daily_qa_responses}}
+          
+          **Weekly Programming:**
+          - Weekly Challenges: {{weekly_challenge_program}}
+          - Expert AMAs: {{weekly_ama_program}}
+          - Success Spotlights: {{weekly_success_spotlights}}
+          - Educational Workshops: {{weekly_educational_workshops}}
+          
+          **Monthly Events:**
+          - Community Calls: {{monthly_community_calls}}
+          - Expert Interviews: {{monthly_expert_interviews}}
+          - Member Showcases: {{monthly_member_showcases}}
+          - Strategy Sessions: {{monthly_strategy_sessions}}
+          
+          **Quarterly Celebrations:**
+          - Quarterly Awards: {{quarterly_awards_program}}
+          - Major Announcements: {{quarterly_announcements}}
+          - Community Surveys: {{quarterly_community_surveys}}
+          - Strategic Planning: {{quarterly_strategic_planning}}
+          
+          **Annual Signature Events:**
+          - Annual Conference: {{annual_conference_strategy}}
+          - Awards Ceremony: {{annual_awards_ceremony}}
+          - Member Meetups: {{annual_member_meetups}}
+          - Strategic Retreats: {{annual_strategic_retreats}}
+          
+          **Content Strategy Framework:**
+          
+          **User-Generated Content:**
+          - Success Story Collection: {{ugc_success_story_strategy}}
+          - Best Practice Sharing: {{ugc_best_practice_strategy}}
+          - Creative Challenges: {{ugc_creative_challenge_strategy}}
+          - Peer-to-Peer Learning: {{ugc_peer_learning_strategy}}
+          
+          **Expert-Generated Content:**
+          - Thought Leadership: {{expert_thought_leadership}}
+          - Educational Content: {{expert_educational_content}}
+          - Industry Insights: {{expert_industry_insights}}
+          - Best Practice Guides: {{expert_best_practice_guides}}
+          
+          **Community-Driven Content:**
+          - Collaborative Projects: {{community_collaborative_projects}}
+          - Collective Wisdom: {{community_collective_wisdom}}
+          - Peer Mentorship: {{community_peer_mentorship}}
+          - Knowledge Base Building: {{community_knowledge_base}}
+          
+          **Content Amplification Strategy:**
+          {{content_amplification_framework}}
+      - id: peer-to-peer-advocacy
+        title: Peer-to-Peer Advocacy & Influence Networks
+        template: |
+          **Peer Advocacy Framework:**
+          
+          **Peer Influence Mapping:**
+          - Influence Network Analysis: {{influence_network_analysis}}
+          - Key Influencer Identification: {{key_influencer_identification}}
+          - Influence Pathway Mapping: {{influence_pathway_mapping}}
+          - Network Effect Amplification: {{network_effect_amplification}}
+          
+          **Peer Advocacy Programs:**
+          
+          **Mentor-Mentee Networks:**
+          - Matching System: {{mentor_mentee_matching}}
+          - Program Structure: {{mentor_mentee_structure}}
+          - Success Tracking: {{mentor_mentee_tracking}}
+          - Recognition Programs: {{mentor_mentee_recognition}}
+          
+          **Peer Success Partnerships:**
+          - Partnership Formation: {{peer_partnership_formation}}
+          - Collaborative Goals: {{peer_collaborative_goals}}
+          - Success Sharing: {{peer_success_sharing}}
+          - Mutual Advocacy: {{peer_mutual_advocacy}}
+          
+          **Industry Expert Networks:**
+          - Expert Recruitment: {{industry_expert_recruitment}}
+          - Expert Engagement: {{industry_expert_engagement}}
+          - Knowledge Sharing: {{expert_knowledge_sharing}}
+          - Authority Building: {{expert_authority_building}}
+          
+          **Customer Advisory Boards:**
+          - Board Formation: {{advisory_board_formation}}
+          - Strategic Input: {{advisory_strategic_input}}
+          - Product Development: {{advisory_product_development}}
+          - Advocacy Amplification: {{advisory_advocacy_amplification}}
+          
+          **Peer Advocacy Amplification:**
+          {{peer_advocacy_amplification_strategy}}
+
+  - id: performance-tracking-framework
+    title: Performance Tracking & Viral Coefficient Optimization
+    instruction: |
+      Create comprehensive tracking system with LLM assistance for performance optimization.
+      Focus on viral metrics, advocacy effectiveness, and continuous improvement.
+    sections:
+      - id: advocacy-metrics-architecture
+        title: Advocacy Performance Metrics Architecture
+        template: |
+          **Metrics Philosophy:**
+          {{advocacy_metrics_philosophy}}
+          
+          **Elevate Framework Advocacy Measurement:**
+          Advocacy metrics must track both the generation of social proof and its impact on the broader customer acquisition and conversion ecosystem. This includes measuring how advocacy improves trust, reduces acquisition costs, and creates sustainable growth loops.
+          
+          **Growth Loop Impact Tracking:**
+          - Social Proof Integration Effectiveness: How well advocacy assets improve conversion rates in ATTRACT and CONVERT levels
+          - Trust Building Measurement: Impact of customer advocacy on prospect confidence and Perceived Likelihood
+          - Sustainable Growth Assessment: Long-term impact of advocacy on Customer Acquisition Cost and Customer Lifetime Value
+          
+          **Core Advocacy Metrics:**
+          
+          **Advocacy Health Metrics:**
+          - Advocate Activation Rate: {{advocate_activation_rate}} - Target: {{advocate_activation_target}}
+          - Advocacy Participation Rate: {{advocacy_participation_rate}} - Target: {{advocacy_participation_target}}
+          - Advocate Satisfaction Score: {{advocate_satisfaction_score}} - Target: {{advocate_satisfaction_target}}
+          - Advocate Retention Rate: {{advocate_retention_rate}} - Target: {{advocate_retention_target}}
+          
+          **Referral Performance Metrics:**
+          - Referral Generation Rate: {{referral_generation_rate}} - Target: {{referral_generation_target}}
+          - Referral Conversion Rate: {{referral_conversion_rate}} - Target: {{referral_conversion_target}}
+          - Referral Quality Score: {{referral_quality_score}} - Target: {{referral_quality_target}}
+          - Average Referrals per Advocate: {{avg_referrals_per_advocate}} - Target: {{avg_referrals_target}}
+          
+          **Viral Growth Metrics:**
+          - Viral Coefficient: {{viral_coefficient_current}} - Target: {{viral_coefficient_target}}
+          - Viral Cycle Time: {{viral_cycle_time}} - Target: {{viral_cycle_target}}
+          - Network Growth Rate: {{network_growth_rate}} - Target: {{network_growth_target}}
+          - Organic Reach Amplification: {{organic_reach_amplification}} - Target: {{organic_reach_target}}
+          
+          **Community Engagement Metrics:**
+          - Community Growth Rate: {{community_growth_rate}} - Target: {{community_growth_target}}
+          - Member Engagement Score: {{member_engagement_score}} - Target: {{member_engagement_target}}
+          - Peer-to-Peer Interaction Rate: {{peer_interaction_rate}} - Target: {{peer_interaction_target}}
+          - Community Advocacy Rate: {{community_advocacy_rate}} - Target: {{community_advocacy_target}}
+          
+          **Business Impact Metrics:**
+          - Customer Acquisition Cost (Referral): {{cac_referral}} - Target: {{cac_referral_target}}
+          - Customer Lifetime Value (Referred): {{ltv_referred}} - Target: {{ltv_referred_target}}
+          - Advocacy ROI: {{advocacy_roi}} - Target: {{advocacy_roi_target}}
+          - Revenue from Advocacy: {{revenue_from_advocacy}} - Target: {{advocacy_revenue_target}}
+          
+          **Metrics Collection Framework:**
+          {{metrics_collection_framework}}
+      - id: viral-coefficient-tracking
+        title: Viral Coefficient Tracking & Optimization
+        template: |
+          **Viral Coefficient Monitoring:**
+          
+          **Real-Time Tracking System:**
+          - Current Viral Coefficient: {{current_viral_coefficient}}
+          - 7-Day Moving Average: {{viral_coefficient_7_day}}
+          - 30-Day Trend: {{viral_coefficient_30_day}}
+          - Growth Trajectory: {{viral_coefficient_trajectory}}
+          
+          **Coefficient Component Analysis:**
+          
+          **Invitation Volume Tracking:**
+          - Invites Sent per User: {{invites_per_user_current}}
+          - Invitation Rate Trends: {{invitation_rate_trends}}
+          - Channel Performance: {{invitation_channel_performance}}
+          - Seasonal Patterns: {{invitation_seasonal_patterns}}
+          
+          **Conversion Rate Analysis:**
+          - Overall Conversion Rate: {{overall_conversion_rate}}
+          - Channel-Specific Conversion: {{channel_specific_conversion}}
+          - Time-to-Conversion: {{time_to_conversion_analysis}}
+          - Conversion Quality Metrics: {{conversion_quality_metrics}}
+          
+          **Network Effect Measurement:**
+          - Network Density: {{network_density_measurement}}
+          - Network Value per Node: {{network_value_per_node}}
+          - Cross-Connection Rate: {{cross_connection_rate}}
+          - Network Growth Velocity: {{network_growth_velocity}}
+          
+          **Viral Velocity Tracking:**
+          - Viral Spread Speed: {{viral_spread_speed}}
+          - Momentum Sustainability: {{momentum_sustainability}}
+          - Decay Rate Analysis: {{decay_rate_analysis}}
+          - Re-activation Patterns: {{reactivation_patterns}}
+          
+          **Optimization Opportunity Identification:**
+          {{optimization_opportunity_framework}}
+      - id: advocacy-attribution-analytics
+        title: Advocacy Attribution & Performance Analytics
+        template: |
+          **Attribution Framework:**
+          
+          **Multi-Touch Attribution Model:**
+          - Attribution Method: {{advocacy_attribution_method}}
+          - Touch Point Weighting: {{advocacy_touchpoint_weighting}}
+          - Time Decay Model: {{advocacy_time_decay}}
+          - Channel Credit Assignment: {{advocacy_channel_credit}}
+          
+          **Advocacy Journey Tracking:**
+          - Advocate Identification: {{advocate_identification_tracking}}
+          - Activation Touchpoints: {{activation_touchpoint_tracking}}
+          - Referral Generation: {{referral_generation_tracking}}
+          - Conversion Attribution: {{conversion_attribution_tracking}}
+          
+          **Performance Analytics Dashboard:**
+          
+          **Real-Time Advocacy Dashboard:**
+          - Live Advocacy Metrics: {{live_advocacy_metrics}}
+          - Alert Systems: {{advocacy_alert_systems}}
+          - Performance Thresholds: {{advocacy_performance_thresholds}}
+          - Immediate Action Items: {{advocacy_action_items}}
+          
+          **Analytical Reporting System:**
+          - Daily Performance Reports: {{daily_advocacy_reports}}
+          - Weekly Trend Analysis: {{weekly_advocacy_trends}}
+          - Monthly Strategic Reviews: {{monthly_advocacy_reviews}}
+          - Quarterly Business Impact: {{quarterly_advocacy_impact}}
+          
+          **Predictive Analytics Integration:**
+          - Advocacy Potential Scoring: {{advocacy_potential_scoring}}
+          - Viral Growth Prediction: {{viral_growth_prediction}}
+          - Churn Risk Assessment: {{advocacy_churn_prediction}}
+          - Optimization Recommendations: {{advocacy_optimization_recommendations}}
+          
+          **Advanced Analytics Framework:**
+          {{advanced_analytics_framework}}
+
+  - id: technology-integration-framework
+    title: Technology Integration & Platform Requirements
+    instruction: |
+      Define comprehensive technology requirements for advocacy campaign implementation.
+      Include platform integrations, tracking systems, and scalability considerations.
+    sections:
+      - id: advocacy-platform-requirements
+        title: Advocacy Platform & Technology Stack
+        template: |
+          **Technology Architecture:**
+          
+          **Core Platform Requirements:**
+          - Referral Management Platform: {{referral_platform_requirements}}
+          - Community Platform: {{community_platform_requirements}}
+          - CRM Integration: {{crm_integration_requirements}}
+          - Analytics Platform: {{analytics_platform_requirements}}
+          
+          **Referral Technology Stack:**
+          - Referral Tracking System: {{referral_tracking_system}}
+          - Attribution Technology: {{attribution_technology}}
+          - Reward Management: {{reward_management_system}}
+          - Link Generation & Tracking: {{link_tracking_technology}}
+          
+          **Community Technology Requirements:**
+          - Community Platform: {{community_platform_technology}}
+          - Member Management: {{member_management_system}}
+          - Content Management: {{community_content_management}}
+          - Engagement Analytics: {{community_engagement_analytics}}
+          
+          **Integration Requirements:**
+          - API Integrations: {{api_integration_requirements}}
+          - Data Synchronization: {{data_sync_requirements}}
+          - Real-time Processing: {{realtime_processing_requirements}}
+          - Security Requirements: {{security_integration_requirements}}
+          
+          **Scalability & Performance:**
+          - Load Handling: {{load_handling_requirements}}
+          - Growth Accommodation: {{growth_accommodation_requirements}}
+          - Performance Benchmarks: {{performance_benchmark_requirements}}
+          - Disaster Recovery: {{disaster_recovery_requirements}}
+          
+          **Technology Implementation Timeline:**
+          {{technology_implementation_timeline}}
+      - id: tracking-attribution-systems
+        title: Tracking & Attribution Technology Systems
+        template: |
+          **Tracking Technology Framework:**
+          
+          **Attribution Tracking Systems:**
+          - Multi-Channel Attribution: {{multi_channel_attribution_tech}}
+          - Cross-Device Tracking: {{cross_device_tracking_tech}}
+          - Offline-to-Online Attribution: {{offline_online_attribution}}
+          - Long-Term Attribution: {{long_term_attribution_tech}}
+          
+          **Performance Monitoring Technology:**
+          - Real-Time Analytics: {{realtime_analytics_tech}}
+          - Predictive Analytics: {{predictive_analytics_tech}}
+          - Behavioral Analytics: {{behavioral_analytics_tech}}
+          - Custom Reporting: {{custom_reporting_tech}}
+          
+          **Data Management Platform:**
+          - Customer Data Platform: {{cdp_requirements}}
+          - Data Lake Architecture: {{data_lake_requirements}}
+          - Privacy Compliance: {{privacy_compliance_tech}}
+          - Data Quality Management: {{data_quality_tech}}
+          
+          **Automation Technology:**
+          - Workflow Automation: {{workflow_automation_tech}}
+          - Campaign Automation: {{campaign_automation_tech}}
+          - Response Automation: {{response_automation_tech}}
+          - Optimization Automation: {{optimization_automation_tech}}
+          
+          **Technology Integration Map:**
+          {{technology_integration_map}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Success Framework
+    instruction: |
+      Create comprehensive implementation plan with clear phases, milestones, and success criteria.
+      Include team requirements, technology deployment, and performance benchmarks.
+    sections:
+      - id: implementation-phases
+        title: Advocacy Campaign Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Team Size:** {{phase_team_size}}
+          **Budget:** {{phase_budget}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_date}}
+          
+          **Success Criteria:**
+          - Primary Metric: {{phase_primary_metric}} - Target: {{phase_primary_target}}
+          - Secondary Metric: {{phase_secondary_metric}} - Target: {{phase_secondary_target}}
+          - Viral Coefficient: {{phase_viral_coefficient}} - Target: {{phase_viral_target}}
+          
+          **Technology Milestones:**
+          {{phase_technology_milestones}}
+          
+          **Risk Mitigation:**
+          {{phase_risk_mitigation}}
+      - id: quick-wins-strategy
+        title: Quick Wins & Early Momentum Building
+        template: |
+          **Quick Wins Implementation:**
+          
+          **30-Day Quick Wins:**
+          
+          **Week 1: Foundation & Identification**
+          - Advocate Identification: {{week_1_advocate_identification}}
+          - Initial Outreach: {{week_1_initial_outreach}}
+          - Platform Setup: {{week_1_platform_setup}}
+          - Baseline Measurement: {{week_1_baseline_measurement}}
+          
+          **Week 2: Activation & Testing**
+          - Pilot Program Launch: {{week_2_pilot_launch}}
+          - Initial Referrals: {{week_2_initial_referrals}}
+          - Feedback Collection: {{week_2_feedback_collection}}
+          - Process Refinement: {{week_2_process_refinement}}
+          
+          **Week 3: Optimization & Scaling**
+          - Performance Analysis: {{week_3_performance_analysis}}
+          - Program Optimization: {{week_3_optimization}}
+          - Advocate Expansion: {{week_3_advocate_expansion}}
+          - Success Documentation: {{week_3_success_documentation}}
+          
+          **Week 4: Momentum & Systematization**
+          - System Automation: {{week_4_automation}}
+          - Success Amplification: {{week_4_success_amplification}}
+          - Community Building: {{week_4_community_building}}
+          - Growth Planning: {{week_4_growth_planning}}
+          
+          **Early Success Metrics:**
+          - 30-Day Advocate Activation: {{thirty_day_advocate_activation}}
+          - Initial Viral Coefficient: {{initial_viral_coefficient}}
+          - Referral Generation Rate: {{initial_referral_rate}}
+          - Community Engagement: {{initial_community_engagement}}
+          
+          **Momentum Building Strategy:**
+          {{momentum_building_framework}}
+      - id: team-enablement-advocacy
+        title: Team Enablement & Advocacy Program Training
+        template: |
+          **Team Enablement Strategy:**
+          
+          **Role-Specific Training:**
+          
+          **Advocacy Program Manager:**
+          - Core Competencies: {{advocacy_manager_competencies}}
+          - Training Modules: {{advocacy_manager_training}}
+          - Certification Requirements: {{advocacy_manager_certifications}}
+          - Performance Standards: {{advocacy_manager_standards}}
+          
+          **Community Managers:**
+          - Core Competencies: {{community_manager_competencies}}
+          - Training Modules: {{community_manager_training}}
+          - Certification Requirements: {{community_manager_certifications}}
+          - Performance Standards: {{community_manager_standards}}
+          
+          **Customer Success Team:**
+          - Advocacy Integration Training: {{cs_advocacy_training}}
+          - Advocate Identification: {{cs_advocate_identification}}
+          - Handoff Procedures: {{cs_handoff_procedures}}
+          - Success Amplification: {{cs_success_amplification}}
+          
+          **Sales Team Integration:**
+          - Referral Program Training: {{sales_referral_training}}
+          - Advocate Partnership: {{sales_advocate_partnership}}
+          - Social Selling Integration: {{sales_social_selling}}
+          - Success Story Utilization: {{sales_success_stories}}
+          
+          **Training Resources:**
+          - Training Materials: {{advocacy_training_materials}}
+          - Certification Programs: {{advocacy_certification_programs}}
+          - Ongoing Education: {{advocacy_ongoing_education}}
+          - Performance Support: {{advocacy_performance_support}}
+          
+          **Team Success Framework:**
+          {{team_success_framework}}
+
+  - id: campaign-completion-framework
+    title: Advocacy Campaign Blueprint Completion & Validation
+    instruction: |
+      Final validation of advocacy campaign blueprint ensuring comprehensive coverage and implementation readiness.
+      Include viral coefficient targets, success metrics, and deployment preparation.
+    content: |
+      ---
+      
+      ## Advocacy Campaign Blueprint Completion
+      
+      **Blueprint Development Completed:** {{completion_date}}
+      **Campaign Type:** {{campaign_type}}
+      **Company:** {{company_name}}
+      **Target Viral Coefficient:** {{target_viral_coefficient}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Blueprint Components:**
+      - [ ] Advocacy foundation with customer transformation framework
+      - [ ] Referral program architecture with optimized incentive structures
+      - [ ] Viral mechanics design with growth amplification systems
+      - [ ] Community building framework with engagement ecosystem
+      - [ ] Performance tracking with viral coefficient optimization
+      - [ ] Technology integration with platform requirements
+      - [ ] Implementation roadmap with team enablement
+      
+      **Quality Validation:**
+      - [ ] Advocacy strategy transforms customers into passionate advocates
+      - [ ] Referral program incentives are optimized for target segments
+      - [ ] Viral mechanics create self-reinforcing growth loops
+      - [ ] Community framework sustains long-term engagement
+      - [ ] Performance metrics track viral coefficient and business impact
+      - [ ] Technology requirements support scalable growth
+      - [ ] Implementation plan is realistic and well-resourced
+      
+      **Viral Growth Validation:**
+      - [ ] Viral triggers are psychologically compelling and authentic
+      - [ ] Sharing mechanisms eliminate friction and maximize reach
+      - [ ] Network effects create exponential growth potential
+      - [ ] Community ecosystem drives sustained advocacy behavior
+      - [ ] Attribution systems accurately track advocacy impact
+      
+      **Business Impact Projection:**
+      - Expected Viral Coefficient Achievement: {{expected_viral_coefficient}}
+      - Projected Customer Acquisition Cost Reduction: {{projected_cac_reduction}}%
+      - Estimated Community Growth Rate: {{estimated_community_growth}}%
+      - Predicted Advocate Conversion Rate: {{predicted_advocate_conversion}}%
+      
+      **Next Steps:**
+      1. {{next_step_1}} - Owner: {{next_step_1_owner}} - Due: {{next_step_1_date}}
+      2. {{next_step_2}} - Owner: {{next_step_2_owner}} - Due: {{next_step_2_date}}
+      3. {{next_step_3}} - Owner: {{next_step_3_owner}} - Due: {{next_step_3_date}}
+      
+      **First Viral Coefficient Review:** {{first_viral_review_date}}
+      
+      ---
+      
+      ## Advocacy Campaign Certification
+      
+      **Blueprint Approved:** {{approval_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Implementation Readiness:**
+      - [ ] Team trained on advocacy program management
+      - [ ] Technology stack configured and tested
+      - [ ] Advocate identification systems operational
+      - [ ] Incentive structures approved and funded
+      - [ ] Community platform deployed and configured
+      - [ ] Tracking systems capturing viral metrics
+      - [ ] Launch campaign prepared and scheduled
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Advocacy Campaign Blueprint_
+      _Status: Ready for Implementation_
+      _Template: Advocacy Campaign Blueprint v1.0_
+
+# Advanced template configuration and validation
+variables:
+  referral_incentives:
+    type: object
+    properties:
+      incentive_model:
+        type: string
+        enum: ["two_sided", "tiered", "points_based", "exclusive_access", "organic"]
+        description: "Primary incentive model for referral program"
+      reward_structure:
+        type: object
+        description: "Detailed reward structure and mechanics"
+      motivation_drivers:
+        type: array
+        description: "Primary motivation drivers for advocacy behavior"
+        min_items: 3
+    validation:
+      - incentive_alignment: "Incentives must align with target customer psychology"
+      - reward_sustainability: "Reward structure must be economically sustainable"
+      - motivation_authenticity: "Motivation drivers must feel authentic and valuable"
+
+  sharing_mechanisms:
+    type: array
+    description: "Optimized sharing mechanisms across channels"
+    min_items: 4
+    max_items: 10
+    items:
+      type: object
+      properties:
+        mechanism_name:
+          type: string
+          min_length: 5
+        channel_type:
+          type: string
+          enum: ["email", "social", "direct_link", "in_person", "mobile", "content"]
+        friction_level:
+          type: number
+          min: 1
+          max: 5
+          description: "Friction level (1=frictionless, 5=high friction)"
+        viral_potential:
+          type: number
+          min: 1
+          max: 10
+          description: "Viral potential score"
+    validation:
+      - friction_minimization: "All mechanisms must minimize sharing friction"
+      - channel_optimization: "Each mechanism must be optimized for its channel"
+      - viral_potential: "Mechanisms must have measurable viral potential"
+
+  viral_triggers:
+    type: array
+    description: "Viral trigger events and psychological amplifiers"
+    min_items: 5
+    max_items: 15
+    items:
+      type: object
+      properties:
+        trigger_name:
+          type: string
+          min_length: 5
+        emotional_driver:
+          type: string
+          enum: ["achievement", "pride", "helping", "status", "belonging", "surprise"]
+        viral_potential:
+          type: number
+          min: 1
+          max: 10
+        implementation_complexity:
+          type: string
+          enum: ["low", "medium", "high"]
+    validation:
+      - emotional_authenticity: "Triggers must feel emotionally authentic"
+      - viral_amplification: "Triggers must create natural sharing motivation"
+      - implementation_feasibility: "Triggers must be implementable within constraints"
+
+advocacy_campaign_types:
+  referral_focused:
+    characteristics: ["incentive_driven", "performance_tracked", "scalable_rewards"]
+    key_metrics: ["viral_coefficient", "referral_conversion", "advocate_retention"]
+    optimization_focus: ["incentive_optimization", "friction_reduction", "attribution_accuracy"]
+  
+  community_driven:
+    characteristics: ["relationship_focused", "peer_influence", "long_term_engagement"]
+    key_metrics: ["community_growth", "engagement_depth", "peer_advocacy_rate"]
+    optimization_focus: ["community_health", "member_value", "peer_connections"]
+  
+  viral_growth:
+    characteristics: ["exponential_focus", "network_effects", "rapid_scaling"]
+    key_metrics: ["viral_coefficient", "growth_velocity", "network_density"]
+    optimization_focus: ["viral_loop_optimization", "growth_acceleration", "momentum_maintenance"]
+  
+  organic_advocacy:
+    characteristics: ["authentic_motivation", "intrinsic_rewards", "sustainable_growth"]
+    key_metrics: ["advocate_satisfaction", "organic_sharing", "long_term_value"]
+    optimization_focus: ["authentic_value", "natural_sharing", "relationship_depth"]
+
+viral_mechanics_framework:
+  trigger_categories:
+    achievement_moments:
+      examples: ["first_success", "milestone_reached", "goal_accomplished", "result_achieved"]
+      optimization: ["timing_precision", "celebration_amplification", "social_currency"]
+    
+    social_currency:
+      examples: ["expertise_demonstration", "insider_access", "status_enhancement", "value_sharing"]
+      optimization: ["status_value", "shareability", "authenticity", "peer_recognition"]
+    
+    emotional_peaks:
+      examples: ["surprise_delight", "exceeded_expectations", "exclusive_access", "personal_recognition"]
+      optimization: ["emotional_intensity", "sharing_motivation", "positive_association", "memorable_experience"]
+    
+    community_wins:
+      examples: ["group_achievement", "collective_success", "shared_celebration", "peer_recognition"]
+      optimization: ["collective_pride", "shared_identity", "group_dynamics", "amplification_effect"]
+
+referral_program_models:
+  two_sided_rewards:
+    structure: "Both referrer and referee receive benefits"
+    benefits: ["mutual_value", "reduced_acquisition_cost", "higher_conversion"]
+    considerations: ["cost_structure", "value_perception", "program_simplicity"]
+  
+  tiered_rewards:
+    structure: "Increasing rewards based on referral volume or quality"
+    benefits: ["advocate_motivation", "performance_optimization", "loyalty_building"]
+    considerations: ["complexity_management", "tier_thresholds", "reward_escalation"]
+  
+  points_gamification:
+    structure: "Point-based system with multiple redemption options"
+    benefits: ["flexibility", "engagement", "multiple_touchpoints", "gamification"]
+    considerations: ["point_value", "redemption_options", "system_complexity"]
+  
+  exclusive_access:
+    structure: "Non-monetary rewards and exclusive benefits"
+    benefits: ["premium_positioning", "brand_loyalty", "sustainable_economics"]
+    considerations: ["perceived_value", "exclusivity_maintenance", "benefit_differentiation"]
+
+community_building_strategies:
+  platform_selection:
+    owned_platforms:
+      advantages: ["full_control", "customization", "data_ownership", "brand_alignment"]
+      considerations: ["development_cost", "maintenance_overhead", "adoption_barriers"]
+    
+    social_platforms:
+      advantages: ["existing_user_base", "built_in_features", "network_effects", "low_barrier"]
+      considerations: ["platform_dependence", "limited_customization", "algorithm_changes"]
+    
+    hybrid_approach:
+      advantages: ["best_of_both", "risk_mitigation", "audience_diversity", "feature_optimization"]
+      considerations: ["complexity_management", "resource_requirements", "message_consistency"]
+
+viral_coefficient_optimization:
+  coefficient_factors:
+    invitation_volume:
+      drivers: ["program_awareness", "sharing_motivation", "friction_reduction", "timing_optimization"]
+      optimization: ["trigger_optimization", "incentive_alignment", "tool_improvement"]
+    
+    conversion_rate:
+      drivers: ["value_proposition", "trust_signals", "onboarding_experience", "social_proof"]
+      optimization: ["message_optimization", "landing_page_improvement", "trust_building"]
+    
+    network_effects:
+      drivers: ["network_value", "connection_density", "cross_pollination", "value_amplification"]
+      optimization: ["network_building", "connection_facilitation", "value_enhancement"]
+
+quality_validation_framework:
+  viral_mechanics:
+    - authentic_triggers: "Viral triggers must feel natural and authentic"
+    - sustainable_growth: "Growth mechanisms must be sustainable long-term"
+    - positive_experience: "All advocacy experiences must be positive"
+    - brand_alignment: "Viral mechanisms must align with brand values"
+  
+  referral_program:
+    - fair_incentives: "Incentive structure must be fair to all parties"
+    - clear_tracking: "Attribution and tracking must be transparent"
+    - fraud_prevention: "System must prevent fraud and gaming"
+    - scalable_economics: "Program economics must scale sustainably"
+  
+  community_building:
+    - member_value: "Community must provide clear value to members"
+    - engagement_sustainability: "Engagement mechanisms must be sustainable"
+    - moderation_quality: "Community moderation must maintain quality"
+    - growth_management: "Community growth must be manageable"
+
+conditional_logic:
+  campaign_approach:
+    incentivized:
+      focus_areas: ["reward_optimization", "attribution_accuracy", "fraud_prevention", "roi_tracking"]
+      considerations: ["incentive_costs", "gaming_prevention", "reward_sustainability", "motivation_balance"]
+    
+    organic:
+      focus_areas: ["authentic_value", "intrinsic_motivation", "relationship_building", "trust_development"]
+      considerations: ["value_creation", "emotional_connection", "long_term_sustainability", "natural_sharing"]
+  
+  business_model:
+    high_ltv:
+      strategies: ["premium_incentives", "exclusive_access", "personalized_experiences", "vip_treatment"]
+      metrics: ["ltv_amplification", "retention_improvement", "upsell_opportunities"]
+    
+    volume_focused:
+      strategies: ["simple_mechanics", "broad_appeal", "easy_sharing", "viral_optimization"]
+      metrics: ["viral_coefficient", "acquisition_cost", "conversion_volume"]
+
+integration_requirements:
+  technology_stack:
+    referral_management: ["tracking_accuracy", "attribution_modeling", "reward_automation", "fraud_detection"]
+    community_platform: ["engagement_tools", "member_management", "content_systems", "analytics"]
+    analytics_platform: ["viral_metrics", "attribution_analysis", "performance_tracking", "optimization_insights"]
+  
+  data_requirements:
+    customer_data: ["satisfaction_scores", "usage_patterns", "success_indicators", "relationship_history"]
+    engagement_data: ["sharing_behavior", "community_participation", "content_interaction", "peer_connections"]
+    performance_data: ["viral_metrics", "conversion_rates", "program_effectiveness", "roi_analysis"]
+
+privacy_compliance_advocacy:
+  data_governance:
+    collection: ["consent_based", "purpose_specific", "minimal_collection", "transparent_usage"]
+    sharing: ["permission_based", "opt_in_required", "control_provided", "privacy_respected"]
+    storage: ["secure_systems", "retention_limits", "access_controls", "deletion_rights"]
+  
+  trust_preservation:
+    transparency: ["clear_communication", "honest_positioning", "expectation_setting", "process_explanation"]
+    control: ["opt_out_options", "preference_management", "data_control", "sharing_control"]
+    value_exchange: ["fair_value", "mutual_benefit", "clear_benefits", "respect_privacy"]

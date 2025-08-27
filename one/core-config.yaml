@@ -1,0 +1,101 @@
+# Core Configuration for ONE System Development
+
+project:
+  name: "ONE System - Viral Growth Engine"
+  version: "3.0.0"
+  description: "AI-powered viral content multiplication infrastructure"
+
+development:
+  node_version: ">=20.0.0"
+  package_manager: "npm"
+  test_framework: "vitest"
+  linting: "eslint"
+  formatting: "prettier"
+
+devLoadAlwaysFiles:
+  - "one/ontology.md"
+  - "one/data/elevate-methodology.md"
+  - "one/workflows/elevate-greenfield-workflow.yaml"
+
+architecture:
+  type: "modular_ai_agents"
+  pattern: "orchestrator_specialist"
+  scaling: "horizontal_vertical"
+  
+viral_infrastructure:
+  content_multiplication:
+    base_cost: 0.01
+    variation_cost: 0.10
+    adaptation_cost: 1.00
+    personalization_cost: 10.00
+  
+  metrics:
+    k_factor_target: 1.5
+    viral_cycle_target: 24 # hours
+    amplification_target: 100
+    share_velocity_target: 10 # per hour
+    
+  agents:
+    viral_growth_orchestrator: "coordinates viral activities"
+    content_multiplication_engine: "scales content 1:1000"
+    share_optimization_specialist: "maximizes viral coefficients"
+    network_effect_analyst: "measures network growth"
+    advocacy_activation_manager: "converts customers to promoters"
+
+tech_stack:
+  runtime: "node.js"
+  ai_processing: "natural_language_processing"
+  personalization: "user_profiling"
+  distribution: "multi_channel_api"
+  analytics: "real_time_streaming"
+
+directories:
+  missions: "one/missions"
+  stories: "one/stories"
+  agents: "one/agents"
+  agent_teams: "one/agent-teams"
+  checklists: "one/checklists"
+  tools: "one/tools"
+  tests: "one/tests"
+  templates: "one/templates"
+  workflows: "one/workflows"
+  tasks: "one/tasks"
+  data: "one/data"
+  playbooks: "one/playbooks"
+
+testing:
+  unit_tests: "vitest"
+  integration_tests: "vitest"
+  load_tests: "custom"
+  viral_tests: "ab_testing"
+  coverage_minimum: 80
+
+deployment:
+  environment: "node"
+  scaling: "horizontal"
+  monitoring: "real_time_metrics"
+  
+quality_standards:
+  code_style: "prettier"
+  documentation: "inline_jsdoc"
+  security: "input_validation"
+  performance: "10000_content_pieces_per_day"
+
+viral_mechanics:
+  triggers:
+    emotional_resonance: 0.8
+    practical_value: 0.7
+    social_currency: 0.6
+  
+  formats:
+    - "micro_content"
+    - "visual_stories"
+    - "mini_tools"
+    - "social_proof"
+    - "knowledge_nuggets"
+    
+  channels:
+    - "blog_to_social"
+    - "email_to_sms"
+    - "video_to_gif"
+    - "podcast_to_snippet"

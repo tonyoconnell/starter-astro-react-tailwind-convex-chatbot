@@ -1,0 +1,1274 @@
+template:
+  id: upsell-strategy-framework-template-v1
+  name: Upsell Strategy Framework - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-upsell-strategy-framework.md"
+    title: "{{company_name}} Upsell Strategy Framework"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  llm_assistance:
+    real_time_guidance: true
+    revenue_optimization: true
+    customer_value_maximization: true
+    relationship_preservation_focus: true
+    timing_optimization: true
+    value_communication_enhancement: true
+  custom_elicitation:
+    title: "Upsell Strategy Development Actions"
+    sections:
+      - id: revenue-optimization-analysis
+        options:
+          - "Analyze customer lifetime value and expansion opportunities across segments"
+          - "Map revenue optimization pathways with minimal customer friction"
+          - "Research upsell timing patterns and readiness indicators"
+          - "Study customer success correlation with expansion acceptance"
+          - "Explore value stacking opportunities for premium offerings"
+          - "Analyze competitive upselling strategies and market positioning"
+          - "Design revenue milestone triggers and expansion sequences"
+          - "Map customer journey touchpoints for natural upsell integration"
+          - "Proceed to next section"
+      - id: customer-value-strategy
+        options:
+          - "Design value-first upselling approaches that enhance customer success"
+          - "Map customer outcome improvement through expanded offerings"
+          - "Research customer pain point resolution via premium features"
+          - "Study customer success indicators for expansion readiness"
+          - "Explore educational content for value demonstration"
+          - "Analyze customer feedback for upsell opportunity identification"
+          - "Design value communication frameworks for complex offerings"
+          - "Create customer success-driven expansion narratives"
+          - "Proceed to next section"
+      - id: timing-trigger-optimization
+        options:
+          - "Map optimal timing patterns for different upsell types"
+          - "Design behavioral trigger systems for expansion opportunities"
+          - "Research customer lifecycle stages for natural expansion points"
+          - "Study usage pattern indicators for readiness assessment"
+          - "Explore milestone-based upselling opportunities"
+          - "Analyze seasonal and contextual timing factors"
+          - "Design predictive models for upsell timing optimization"
+          - "Create trigger scoring systems for prioritization"
+          - "Proceed to strategy completion"
+
+sections:
+  - id: strategy-overview
+    title: Upsell Strategy Framework Overview
+    instruction: |
+      This upsell strategy framework creates comprehensive revenue expansion systems focused on customer value maximization and relationship preservation.
+      
+      The framework includes:
+      - Revenue optimization strategies with customer-centric approaches
+      - Conditional frameworks for product-based vs service-based upselling
+      - Timing and trigger optimization for maximum acceptance rates
+      - Value communication and packaging strategies
+      - Customer success-driven upselling methodologies
+      - Performance tracking for revenue and relationship optimization
+      
+      Output file location: `docs/{{company_name}}-upsell-strategy-framework.md`
+
+  - id: revenue-optimization-framework
+    title: Revenue Optimization & Customer Value Maximization
+    instruction: |
+      Design comprehensive revenue optimization strategies with LLM assistance for maximum expansion potential.
+      Focus on sustainable revenue growth through enhanced customer value delivery.
+    variables:
+      - upsell_offers
+      - revenue_targets
+      - customer_segments
+    sections:
+      - id: revenue-strategy-architecture
+        title: Revenue Expansion Strategy Architecture
+        template: |
+          **Revenue Optimization Philosophy:**
+          {{revenue_optimization_philosophy}}
+          
+          **Elevate Framework Integration:**
+          This framework implements Step 7: UPSELL from the Elevate Ecommerce Framework, focusing on maximizing Average Order Value (AOV) and immediate profitability by presenting relevant, compelling upsell offers at the point of maximum buyer enthusiasm and commitment - typically on the post-purchase thank you page or within initial confirmation emails.
+          
+          **Core Elevate Principles:**
+          - **Peak Commitment Psychology**: Leverage the height of buyer commitment immediately post-purchase when customers are psychologically inclined to consistency and experiencing peak enthusiasm
+          - **Relevance First**: Upsells must be highly relevant to the initial purchase, logically complementing, enhancing, or accelerating the results customers seek
+          - **Value Equation Application**: Apply mini-Hormozi principles to articulate how upsells enhance Dream Outcome, increase Perceived Likelihood, save Time, or reduce Effort/Sacrifice
+          - **Friction Elimination**: Make upsell acceptance extremely simple - ideally single-click without re-entering payment details
+          - **Ethical Enhancement**: Focus on genuine value addition that enhances customer satisfaction rather than extracting maximum revenue
+          
+          **Customer Value Maximization Framework:**
+          {{customer_value_maximization_approach}}
+          
+          **Revenue Expansion Categories:**
+          
+          **Tier Advancement Upsells:**
+          - Strategy Focus: {{tier_advancement_strategy}}
+          - Value Proposition: {{tier_advancement_value_prop}}
+          - Elevate Relevance Check: How does this enhance their original Dream Outcome?
+          - Hormozi Value Enhancement: {{tier_advancement_value_enhancement}}
+          - Average Revenue Impact: {{tier_advancement_revenue_impact}}
+          - Customer Success Correlation: {{tier_advancement_success_correlation}}
+          - Implementation Timeline: {{tier_advancement_timeline}}
+          - Post-Purchase Timing: {{tier_advancement_timing_strategy}}
+          
+          **Feature/Module Expansion:**
+          - Strategy Focus: {{feature_expansion_strategy}}
+          - Value Proposition: {{feature_expansion_value_prop}}
+          - Complementary Value Logic: {{feature_expansion_complementary_logic}}
+          - Next-Step Goal Alignment: How does this solve the next logical need after using the initial product?
+          - Perceived Likelihood Boost: {{feature_expansion_pl_boost}}
+          - Average Revenue Impact: {{feature_expansion_revenue_impact}}
+          - Customer Success Correlation: {{feature_expansion_success_correlation}}
+          - Implementation Timeline: {{feature_expansion_timeline}}
+          
+          **Usage/Volume Scaling:**
+          - Strategy Focus: {{usage_scaling_strategy}}
+          - Value Proposition: {{usage_scaling_value_prop}}
+          - Average Revenue Impact: {{usage_scaling_revenue_impact}}
+          - Customer Success Correlation: {{usage_scaling_success_correlation}}
+          - Implementation Timeline: {{usage_scaling_timeline}}
+          
+          **Premium Services Addition:**
+          - Strategy Focus: {{premium_services_strategy}}
+          - Value Proposition: {{premium_services_value_prop}}
+          - Average Revenue Impact: {{premium_services_revenue_impact}}
+          - Customer Success Correlation: {{premium_services_success_correlation}}
+          - Implementation Timeline: {{premium_services_timeline}}
+          
+          **Cross-Sell Integration:**
+          - Strategy Focus: {{cross_sell_integration_strategy}}
+          - Value Proposition: {{cross_sell_value_prop}}
+          - Average Revenue Impact: {{cross_sell_revenue_impact}}
+          - Customer Success Correlation: {{cross_sell_success_correlation}}
+          - Implementation Timeline: {{cross_sell_timeline}}
+      - id: customer-lifetime-value-optimization
+        title: Customer Lifetime Value Optimization Framework
+        template: |
+          **LTV Optimization Strategy:**
+          
+          **Current LTV Analysis:**
+          - Average Customer LTV: {{current_average_ltv}}
+          - LTV by Segment: {{ltv_by_segment_breakdown}}
+          - LTV Growth Potential: {{ltv_growth_potential_percentage}}%
+          - Expansion Revenue Contribution: {{expansion_revenue_contribution}}%
+          
+          **LTV Enhancement Pathways:**
+          
+          **Revenue Per Customer Increase:**
+          - Current ARPC: {{current_arpc}}
+          - Target ARPC: {{target_arpc}}
+          - Growth Strategy: {{arpc_growth_strategy}}
+          - Timeline: {{arpc_growth_timeline}}
+          
+          **Retention Rate Improvement:**
+          - Current Retention: {{current_retention_rate}}%
+          - Target Retention: {{target_retention_rate}}%
+          - Improvement Strategy: {{retention_improvement_strategy}}
+          - Upsell Impact on Retention: {{upsell_retention_impact}}
+          
+          **Purchase Frequency Optimization:**
+          - Current Frequency: {{current_purchase_frequency}}
+          - Target Frequency: {{target_purchase_frequency}}
+          - Frequency Enhancement Strategy: {{frequency_enhancement_strategy}}
+          - Upsell Role in Frequency: {{upsell_frequency_role}}
+          
+          **Customer Success Investment:**
+          - Success Program Enhancement: {{success_program_enhancement}}
+          - Expansion-Focused Success Metrics: {{expansion_success_metrics}}
+          - Success Team Upsell Training: {{success_team_training_approach}}
+          - Success-Driven Expansion Process: {{success_driven_expansion_process}}
+          
+          **LTV Measurement & Tracking:**
+          {{ltv_measurement_framework}}
+      - id: segment-specific-revenue-strategies
+        title: Segment-Specific Revenue Expansion Strategies
+        instruction: Create tailored revenue expansion strategies for different customer segments
+        repeatable: true
+        template: |
+          **Customer Segment: {{segment_name}}**
+          **Current Revenue Contribution:** {{segment_revenue_percentage}}%
+          **Expansion Potential Score:** {{expansion_potential_score}}/10
+          **Priority Level:** {{segment_priority_level}}
+          
+          **Segment Characteristics:**
+          - Current Spend Range: {{segment_spend_range}}
+          - Usage Patterns: {{segment_usage_patterns}}
+          - Success Indicators: {{segment_success_indicators}}
+          - Expansion Barriers: {{segment_expansion_barriers}}
+          
+          **Tailored Expansion Strategy:**
+          
+          **Primary Upsell Opportunities:**
+          1. {{primary_upsell_1}} - Revenue Impact: {{upsell_1_revenue}}
+          2. {{primary_upsell_2}} - Revenue Impact: {{upsell_2_revenue}}
+          3. {{primary_upsell_3}} - Revenue Impact: {{upsell_3_revenue}}
+          
+          **Segment-Specific Value Propositions:**
+          - Value Driver 1: {{segment_value_driver_1}}
+          - Value Driver 2: {{segment_value_driver_2}}
+          - Value Driver 3: {{segment_value_driver_3}}
+          
+          **Expansion Approach Strategy:**
+          - Communication Style: {{segment_communication_style}}
+          - Decision Process: {{segment_decision_process}}
+          - Approval Requirements: {{segment_approval_requirements}}
+          - Implementation Support: {{segment_implementation_support}}
+          
+          **Success Metrics:**
+          - Expansion Rate Target: {{segment_expansion_rate_target}}%
+          - Revenue Growth Target: {{segment_revenue_growth_target}}%
+          - Customer Satisfaction Target: {{segment_satisfaction_target}}
+          - Time to Value Target: {{segment_time_to_value_target}}
+
+  - id: conditional-upsell-approaches
+    title: Product vs Service-Based Upselling Strategies
+    instruction: |
+      Create conditional upselling approaches with LLM optimization for different business models.
+      Design specialized strategies for product companies vs service-based businesses.
+    sections:
+      - id: product-based-upselling
+        title: Product-Based Upselling Strategy
+        conditional:
+          product_based:
+            template: |
+              **Product-Based Upselling Framework:**
+              
+              **Elevate Framework Application for Products:**
+              Products require specific timing and presentation strategies to maximize the post-purchase commitment window while ensuring relevance and value enhancement.
+              
+              **Product Expansion Categories:**
+              
+              **Feature Tier Upgrades:**
+              - Basic to Pro Strategy: {{basic_to_pro_strategy}}
+              - Pro to Enterprise Strategy: {{pro_to_enterprise_strategy}}
+              - Feature Gating Approach: {{feature_gating_approach}}
+              - Value Demonstration Method: {{feature_value_demonstration}}
+              
+              **Add-On Product Modules:**
+              - Core Product Integration: {{addon_integration_strategy}}
+              - Module Selection Logic: {{module_selection_logic}}
+              - Bundle Optimization: {{bundle_optimization_approach}}
+              - Cross-Product Synergies: {{cross_product_synergies}}
+              
+              **Usage/Capacity Expansion:**
+              - Usage Monitoring Strategy: {{usage_monitoring_strategy}}
+              - Capacity Planning Assistance: {{capacity_planning_approach}}
+              - Scaling Communication: {{scaling_communication_method}}
+              - Growth Anticipation Framework: {{growth_anticipation_framework}}
+              
+              **Product Ecosystem Expansion:**
+              - Ecosystem Mapping: {{ecosystem_mapping_strategy}}
+              - Integration Pathways: {{integration_pathway_design}}
+              - Platform Extension Strategy: {{platform_extension_approach}}
+              - Third-Party Integration Upsells: {{third_party_integration_upsells}}
+              
+              **Product Upsell Tactics:**
+              
+              **In-App Upselling:**
+              - Contextual Upgrade Prompts: {{contextual_upgrade_prompts}}
+              - Feature Preview Strategy: {{feature_preview_strategy}}
+              - Usage Limit Notifications: {{usage_limit_notifications}}
+              - Success Milestone Celebrations: {{success_milestone_celebrations}}
+              - Peak Engagement Moments: {{peak_engagement_upsell_moments}}
+              - Value Realization Triggers: {{value_realization_upsell_triggers}}
+              
+              **Trial Extension & Conversion:**
+              - Trial Experience Optimization: {{trial_experience_optimization}}
+              - Conversion Point Identification: {{conversion_point_identification}}
+              - Extended Trial Strategies: {{extended_trial_strategies}}
+              - Trial to Paid Upsell Bridge: {{trial_to_paid_bridge}}
+              
+              **Product Performance Metrics:**
+              - Feature Adoption Tracking: {{feature_adoption_tracking}}
+              - Usage Pattern Analysis: {{usage_pattern_analysis}}
+              - Upgrade Trigger Identification: {{upgrade_trigger_identification}}
+              - Product Revenue Attribution: {{product_revenue_attribution}}
+              
+              **Technical Implementation:**
+              {{product_technical_implementation}}
+      - id: service-based-upselling
+        title: Service-Based Upselling Strategy
+        conditional:
+          service_based:
+            template: |
+              **Service-Based Upselling Framework:**
+              
+              **Elevate Framework Application for Services:**
+              Service businesses leverage relationship depth and outcome achievement to identify natural expansion opportunities aligned with enhanced value delivery.
+              
+              **Service Expansion Categories:**
+              
+              **Service Tier Advancement:**
+              - Basic to Premium Services: {{basic_to_premium_services}}
+              - Premium to Enterprise Services: {{premium_to_enterprise_services}}
+              - Service Level Enhancement: {{service_level_enhancement}}
+              - Dedicated Support Upgrades: {{dedicated_support_upgrades}}
+              
+              **Scope Expansion Services:**
+              - Additional Service Lines: {{additional_service_lines}}
+              - Project Scope Extensions: {{project_scope_extensions}}
+              - Ongoing Service Additions: {{ongoing_service_additions}}
+              - Specialized Expertise Upsells: {{specialized_expertise_upsells}}
+              
+              **Frequency/Volume Increases:**
+              - Service Frequency Optimization: {{service_frequency_optimization}}
+              - Volume-Based Scaling: {{volume_based_scaling}}
+              - Retainer Expansion Strategy: {{retainer_expansion_strategy}}
+              - Recurring Service Growth: {{recurring_service_growth}}
+              
+              **Value-Added Services:**
+              - Consulting Additions: {{consulting_additions}}
+              - Training & Education Services: {{training_education_services}}
+              - Strategic Advisory Upsells: {{strategic_advisory_upsells}}
+              - Implementation Support Services: {{implementation_support_services}}
+              
+              **Service Upsell Tactics:**
+              
+              **Results-Based Upselling:**
+              - Success Metric Leveraging: {{success_metric_leveraging}}
+              - ROI Demonstration Strategy: {{roi_demonstration_strategy}}
+              - Outcome Improvement Proposals: {{outcome_improvement_proposals}}
+              - Performance Gap Analysis: {{performance_gap_analysis}}
+              - Dream Outcome Amplification: {{dream_outcome_amplification}}
+              - Next-Level Goal Identification: {{next_level_goal_identification}}
+              
+              **Relationship-Driven Expansion:**
+              - Trust-Building Strategies: {{trust_building_strategies}}
+              - Strategic Partnership Development: {{strategic_partnership_development}}
+              - Executive Relationship Cultivation: {{executive_relationship_cultivation}}
+              - Long-term Vision Alignment: {{long_term_vision_alignment}}
+              
+              **Project-Based Opportunities:**
+              - Project Success Leveraging: {{project_success_leveraging}}
+              - Natural Extension Identification: {{natural_extension_identification}}
+              - Phase-Based Expansion Planning: {{phase_based_expansion_planning}}
+              - Implementation Gap Analysis: {{implementation_gap_analysis}}
+              
+              **Service Performance Metrics:**
+              - Service Utilization Tracking: {{service_utilization_tracking}}
+              - Client Satisfaction Correlation: {{client_satisfaction_correlation}}
+              - Service ROI Measurement: {{service_roi_measurement}}
+              - Expansion Opportunity Scoring: {{expansion_opportunity_scoring}}
+              
+              **Service Delivery Excellence:**
+              {{service_delivery_excellence_framework}}
+
+  - id: timing-trigger-optimization
+    title: Timing & Trigger Optimization Framework
+    instruction: |
+      Create sophisticated timing and trigger systems with LLM assistance for optimal upsell acceptance.
+      Focus on behavioral indicators, customer journey stages, and contextual timing.
+    variables:
+      - timing_triggers
+      - behavioral_indicators
+    sections:
+      - id: timing-optimization-strategy
+        title: Upsell Timing Optimization Strategy
+        template: |
+          **Timing Optimization Philosophy:**
+          {{timing_optimization_philosophy}}
+          
+          **Elevate Framework Peak Commitment Windows:**
+          The moments immediately following a purchase decision represent a peak in buyer psychology when commitment & consistency, peak enthusiasm ("buyer's high"), and reduced friction create optimal upsell conditions.
+          
+          **Post-Purchase Psychology Optimization:**
+          - **Immediate Post-Purchase (0-5 minutes)**: Highest conversion window leveraging peak dopamine and commitment consistency
+          - **Thank You Page Placement**: Primary optimal placement for relevant add-on offers
+          - **Confirmation Email Integration**: Secondary window within first transactional emails
+          - **One-Click Upsell Flows**: Advanced implementation for pre-final-confirmation offers
+          
+          **Optimal Timing Framework:**
+          
+          **Customer Lifecycle Timing:**
+          
+          **Onboarding Phase (Days 1-30):**
+          - Timing Strategy: {{onboarding_timing_strategy}}
+          - Upsell Focus: {{onboarding_upsell_focus}}
+          - Success Indicators: {{onboarding_success_indicators}}
+          - Timing Windows: {{onboarding_timing_windows}}
+          - Peak Enthusiasm Moments: {{onboarding_peak_moments}}
+          - Commitment Consistency Leverage: {{onboarding_consistency_leverage}}
+          
+          **Adoption Phase (Days 31-90):**
+          - Timing Strategy: {{adoption_timing_strategy}}
+          - Upsell Focus: {{adoption_upsell_focus}}
+          - Success Indicators: {{adoption_success_indicators}}
+          - Timing Windows: {{adoption_timing_windows}}
+          
+          **Growth Phase (Days 91-365):**
+          - Timing Strategy: {{growth_timing_strategy}}
+          - Upsell Focus: {{growth_upsell_focus}}
+          - Success Indicators: {{growth_success_indicators}}
+          - Timing Windows: {{growth_timing_windows}}
+          
+          **Maturity Phase (365+ Days):**
+          - Timing Strategy: {{maturity_timing_strategy}}
+          - Upsell Focus: {{maturity_upsell_focus}}
+          - Success Indicators: {{maturity_success_indicators}}
+          - Timing Windows: {{maturity_timing_windows}}
+          
+          **Renewal Cycle Timing:**
+          - Pre-Renewal Strategy: {{pre_renewal_timing_strategy}}
+          - Renewal Moment Optimization: {{renewal_moment_optimization}}
+          - Post-Renewal Expansion: {{post_renewal_expansion_timing}}
+          - Contract Term Optimization: {{contract_term_optimization}}
+          
+          **Seasonal & Contextual Timing:**
+          - Industry Seasonal Patterns: {{industry_seasonal_patterns}}
+          - Budget Cycle Alignment: {{budget_cycle_alignment}}
+          - Business Calendar Events: {{business_calendar_events}}
+          - Market Timing Factors: {{market_timing_factors}}
+      - id: behavioral-trigger-system
+        title: Behavioral Trigger Detection & Scoring System
+        instruction: Define comprehensive behavioral trigger system with scoring and response protocols
+        repeatable: true
+        template: |
+          **Trigger: {{trigger_name}}**
+          **Category:** {{trigger_category}}
+          **Upsell Readiness Score:** {{upsell_readiness_score}}/10
+          **Revenue Potential:** {{revenue_potential_assessment}}
+          
+          **Trigger Identification Criteria:**
+          - Behavioral Signals: {{behavioral_trigger_signals}}
+          - Usage Pattern Changes: {{usage_pattern_changes}}
+          - Engagement Level Shifts: {{engagement_level_shifts}}
+          - Success Metric Improvements: {{success_metric_improvements}}
+          
+          **Trigger Scoring Algorithm:**
+          - Intent Strength: {{intent_strength_score}}/10
+          - Urgency Level: {{urgency_level_score}}/10
+          - Budget Readiness: {{budget_readiness_score}}/10
+          - Implementation Capacity: {{implementation_capacity_score}}/10
+          - **Total Trigger Score: {{total_trigger_score}}/40**
+          
+          **Response Strategy by Score:**
+          - High Priority (30-40): {{high_priority_response_strategy}}
+          - Medium Priority (20-29): {{medium_priority_response_strategy}}
+          - Low Priority (10-19): {{low_priority_response_strategy}}
+          - Nurture Track (0-9): {{nurture_track_strategy}}
+          
+          **Trigger Activation Protocol:**
+          {{trigger_activation_steps}}
+          
+          **Success Measurement:**
+          - Trigger Accuracy Rate: {{trigger_accuracy_rate}}%
+          - Conversion Rate: {{trigger_conversion_rate}}%
+          - Revenue Impact: {{trigger_revenue_impact}}
+          - Customer Satisfaction: {{trigger_satisfaction_score}}
+      - id: predictive-timing-models
+        title: Predictive Timing Models & AI Optimization
+        template: |
+          **Predictive Timing Framework:**
+          
+          **Machine Learning Applications:**
+          - Customer Behavior Prediction: {{ml_behavior_prediction}}
+          - Timing Optimization Models: {{ml_timing_optimization}}
+          - Success Probability Scoring: {{ml_success_probability}}
+          - Revenue Impact Forecasting: {{ml_revenue_forecasting}}
+          
+          **Predictive Indicators:**
+          
+          **Leading Indicators:**
+          - Usage Trend Analysis: {{usage_trend_analysis}}
+          - Engagement Pattern Changes: {{engagement_pattern_changes}}
+          - Feature Adoption Velocity: {{feature_adoption_velocity}}
+          - Support Interaction Patterns: {{support_interaction_patterns}}
+          
+          **Lagging Indicators:**
+          - Success Metric Achievement: {{success_metric_achievement}}
+          - Satisfaction Score Improvements: {{satisfaction_score_improvements}}
+          - Outcome Delivery Confirmation: {{outcome_delivery_confirmation}}
+          - ROI Demonstration Results: {{roi_demonstration_results}}
+          
+          **Contextual Timing Factors:**
+          - Business Calendar Events: {{business_calendar_context}}
+          - Budget Cycle Positioning: {{budget_cycle_context}}
+          - Competitive Landscape Changes: {{competitive_landscape_context}}
+          - Industry Trend Alignment: {{industry_trend_context}}
+          
+          **AI-Powered Optimization:**
+          - Real-time Timing Adjustments: {{realtime_timing_adjustments}}
+          - Personalized Timing Strategies: {{personalized_timing_strategies}}
+          - Dynamic Trigger Thresholds: {{dynamic_trigger_thresholds}}
+          - Continuous Learning Models: {{continuous_learning_models}}
+          
+          **Timing Quality Assurance:**
+          {{timing_quality_framework}}
+
+  - id: value-communication-framework
+    title: Value Communication & Packaging Strategies
+    instruction: |
+      Design sophisticated value communication with LLM assistance for compelling upsell presentations.
+      Focus on value stacking, benefit articulation, and objection prevention.
+    variables:
+      - value_stacking
+      - communication_methods
+    sections:
+      - id: value-stacking-architecture
+        title: Value Stacking & Benefit Architecture
+        template: |
+          **Value Stacking Philosophy:**
+          {{value_stacking_philosophy}}
+          
+          **Elevate Framework Value Communication:**
+          Apply mini-Hormozi Value Equation principles to every upsell offer:
+          - **Dream Outcome Enhancement**: What additional specific outcome does the upsell provide?
+          - **Perceived Likelihood Boost**: How can we quickly convey effectiveness through social proof or clear benefit statements?
+          - **Time Delay Reduction**: Does it offer faster results or quicker access compared to finding solution later?
+          - **Effort & Sacrifice Minimization**: Frame price as incremental, high-value addition with emphasis on ease of adding to current order
+          
+          **Value Architecture Framework:**
+          
+          **Core Value Foundation:**
+          - Primary Benefit: {{primary_benefit_description}}
+          - Core Value Proposition: {{core_value_proposition}}
+          - Quantifiable Impact: {{quantifiable_impact_metrics}}
+          - Success Guarantee Elements: {{success_guarantee_elements}}
+          
+          **Supplementary Value Layers:**
+          
+          **Layer 1: Enhanced Functionality**
+          - Additional Features: {{enhanced_functionality_features}}
+          - Capability Expansion: {{capability_expansion_details}}
+          - Performance Improvements: {{performance_improvement_metrics}}
+          - Value Quantification: {{functionality_value_quantification}}
+          
+          **Layer 2: Support & Service Enhancement**
+          - Premium Support Benefits: {{premium_support_benefits}}
+          - Service Level Improvements: {{service_level_improvements}}
+          - Dedicated Resource Access: {{dedicated_resource_access}}
+          - Response Time Enhancements: {{response_time_enhancements}}
+          
+          **Layer 3: Strategic Advantages**
+          - Competitive Edge Benefits: {{competitive_edge_benefits}}
+          - Strategic Capability Additions: {{strategic_capability_additions}}
+          - Future-Proofing Elements: {{future_proofing_elements}}
+          - Industry-Specific Advantages: {{industry_specific_advantages}}
+          
+          **Layer 4: Exclusive Benefits**
+          - Exclusive Access Features: {{exclusive_access_features}}
+          - Early Adopter Advantages: {{early_adopter_advantages}}
+          - Special Recognition Elements: {{special_recognition_elements}}
+          - Community Access Benefits: {{community_access_benefits}}
+          
+          **Value Stack Optimization:**
+          {{value_stack_optimization_strategy}}
+      - id: roi-communication-framework
+        title: ROI Communication & Business Case Development
+        template: |
+          **ROI Communication Strategy:**
+          
+          **Business Case Framework:**
+          
+          **Quantified Benefits:**
+          - Revenue Impact: {{revenue_impact_quantification}}
+          - Cost Savings: {{cost_savings_quantification}}
+          - Efficiency Gains: {{efficiency_gains_quantification}}
+          - Risk Mitigation Value: {{risk_mitigation_value}}
+          
+          **Investment Analysis:**
+          - Total Investment Required: {{total_investment_required}}
+          - Implementation Costs: {{implementation_costs}}
+          - Ongoing Investment: {{ongoing_investment}}
+          - Opportunity Cost Analysis: {{opportunity_cost_analysis}}
+          
+          **ROI Calculation Framework:**
+          - Short-term ROI (Year 1): {{short_term_roi}}%
+          - Medium-term ROI (Year 2-3): {{medium_term_roi}}%
+          - Long-term ROI (Year 3+): {{long_term_roi}}%
+          - Break-even Timeline: {{break_even_timeline}}
+          
+          **Risk-Benefit Analysis:**
+          - Implementation Risks: {{implementation_risks}}
+          - Risk Mitigation Strategies: {{risk_mitigation_strategies}}
+          - Success Probability Assessment: {{success_probability}}
+          - Contingency Planning: {{contingency_planning}}
+          
+          **Competitive Analysis:**
+          - Alternative Solution Comparison: {{alternative_solution_comparison}}
+          - Do-Nothing Scenario Impact: {{do_nothing_scenario}}
+          - Competitive Advantage Maintenance: {{competitive_advantage_maintenance}}
+          - Market Position Implications: {{market_position_implications}}
+          
+          **Success Measurement Framework:**
+          {{roi_success_measurement_framework}}
+      - id: objection-handling-framework
+        title: Objection Prevention & Handling Framework
+        template: |
+          **Objection Handling Strategy:**
+          
+          **Common Objection Categories:**
+          
+          **Budget/Cost Objections:**
+          - Primary Objections: {{budget_objections_list}}
+          - Prevention Strategies: {{budget_objection_prevention}}
+          - Response Frameworks: {{budget_objection_responses}}
+          - Value Reframing Techniques: {{budget_value_reframing}}
+          
+          **Timing Objections:**
+          - Primary Objections: {{timing_objections_list}}
+          - Prevention Strategies: {{timing_objection_prevention}}
+          - Response Frameworks: {{timing_objection_responses}}
+          - Urgency Creation Methods: {{timing_urgency_creation}}
+          
+          **Need/Relevance Objections:**
+          - Primary Objections: {{need_objections_list}}
+          - Prevention Strategies: {{need_objection_prevention}}
+          - Response Frameworks: {{need_objection_responses}}
+          - Relevance Demonstration: {{need_relevance_demonstration}}
+          
+          **Authority/Decision-Making Objections:**
+          - Primary Objections: {{authority_objections_list}}
+          - Prevention Strategies: {{authority_objection_prevention}}
+          - Response Frameworks: {{authority_objection_responses}}
+          - Stakeholder Engagement: {{authority_stakeholder_engagement}}
+          
+          **Implementation/Complexity Objections:**
+          - Primary Objections: {{implementation_objections_list}}
+          - Prevention Strategies: {{implementation_objection_prevention}}
+          - Response Frameworks: {{implementation_objection_responses}}
+          - Complexity Reduction Strategies: {{implementation_complexity_reduction}}
+          
+          **Objection Prevention Strategies:**
+          
+          **Proactive Communication:**
+          - Benefit Communication Timing: {{benefit_communication_timing}}
+          - Value Demonstration Methods: {{value_demonstration_methods}}
+          - Success Story Integration: {{success_story_integration}}
+          - Social Proof Leveraging: {{social_proof_leveraging}}
+          
+          **Educational Content Strategy:**
+          - Objection-Addressing Content: {{objection_addressing_content}}
+          - FAQ Development: {{faq_development_strategy}}
+          - Case Study Selection: {{case_study_selection_criteria}}
+          - Testimonial Integration: {{testimonial_integration_strategy}}
+          
+          **Objection Response Quality:**
+          {{objection_response_quality_framework}}
+
+  - id: customer-success-driven-framework
+    title: Customer Success-Driven Upselling Framework
+    instruction: |
+      Create customer success-focused upselling strategies with LLM guidance for outcome-driven expansion.
+      Focus on success metrics, outcome achievement, and value realization.
+    sections:
+      - id: success-metrics-integration
+        title: Customer Success Metrics Integration
+        template: |
+          **Success-Driven Upselling Philosophy:**
+          {{success_driven_philosophy}}
+          
+          **Success Metric Framework:**
+          
+          **Primary Success Indicators:**
+          - Outcome Achievement Rate: {{outcome_achievement_rate}}%
+          - Customer Satisfaction Score: {{customer_satisfaction_score}}
+          - Value Realization Timeline: {{value_realization_timeline}}
+          - Goal Attainment Percentage: {{goal_attainment_percentage}}%
+          
+          **Success-Driven Expansion Triggers:**
+          
+          **High Success Indicators:**
+          - Success Metrics: {{high_success_metrics}}
+          - Expansion Readiness Score: {{high_success_expansion_score}}/10
+          - Upsell Strategy: {{high_success_upsell_strategy}}
+          - Success Leveraging Approach: {{high_success_leveraging}}
+          
+          **Moderate Success Indicators:**
+          - Success Metrics: {{moderate_success_metrics}}
+          - Expansion Readiness Score: {{moderate_success_expansion_score}}/10
+          - Upsell Strategy: {{moderate_success_upsell_strategy}}
+          - Success Enhancement Focus: {{moderate_success_enhancement}}
+          
+          **Developing Success Indicators:**
+          - Success Metrics: {{developing_success_metrics}}
+          - Expansion Readiness Score: {{developing_success_expansion_score}}/10
+          - Upsell Strategy: {{developing_success_upsell_strategy}}
+          - Success Acceleration Approach: {{developing_success_acceleration}}
+          
+          **Success Team Integration:**
+          - Success Manager Role: {{success_manager_upsell_role}}
+          - Expansion Identification Training: {{expansion_identification_training}}
+          - Success-Sales Collaboration: {{success_sales_collaboration}}
+          - Success-Driven Revenue Attribution: {{success_revenue_attribution}}
+          
+          **Outcome Realization Framework:**
+          {{outcome_realization_framework}}
+      - id: value-realization-optimization
+        title: Value Realization & Outcome Amplification
+        template: |
+          **Value Realization Strategy:**
+          
+          **Value Tracking Framework:**
+          - Baseline Value Measurement: {{baseline_value_measurement}}
+          - Value Realization Milestones: {{value_realization_milestones}}
+          - Outcome Improvement Tracking: {{outcome_improvement_tracking}}
+          - ROI Documentation Process: {{roi_documentation_process}}
+          
+          **Outcome Amplification Opportunities:**
+          
+          **Performance Enhancement Upsells:**
+          - Current Performance Metrics: {{current_performance_metrics}}
+          - Enhancement Opportunities: {{performance_enhancement_opportunities}}
+          - Amplification Strategy: {{performance_amplification_strategy}}
+          - Expected Outcome Improvements: {{expected_outcome_improvements}}
+          
+          **Capability Expansion Upsells:**
+          - Current Capability Scope: {{current_capability_scope}}
+          - Capability Gap Analysis: {{capability_gap_analysis}}
+          - Expansion Opportunities: {{capability_expansion_opportunities}}
+          - Value Addition Potential: {{capability_value_addition}}
+          
+          **Scale Optimization Upsells:**
+          - Current Scale Limitations: {{current_scale_limitations}}
+          - Scaling Opportunities: {{scaling_opportunities}}
+          - Scale Optimization Strategy: {{scale_optimization_strategy}}
+          - Growth Impact Projection: {{growth_impact_projection}}
+          
+          **Innovation Enhancement Upsells:**
+          - Innovation Capability Assessment: {{innovation_capability_assessment}}
+          - Future-Ready Feature Opportunities: {{future_ready_opportunities}}
+          - Innovation Enhancement Strategy: {{innovation_enhancement_strategy}}
+          - Competitive Advantage Development: {{competitive_advantage_development}}
+          
+          **Success Amplification Framework:**
+          {{success_amplification_framework}}
+      - id: relationship-preservation-strategy
+        title: Relationship Preservation & Trust Building
+        template: |
+          **Relationship Preservation Philosophy:**
+          {{relationship_preservation_philosophy}}
+          
+          **Trust-Building Framework:**
+          
+          **Transparency Principles:**
+          - Honest Communication Standards: {{honest_communication_standards}}
+          - Value Transparency Practices: {{value_transparency_practices}}
+          - Cost-Benefit Clarity: {{cost_benefit_clarity}}
+          - Outcome Expectation Setting: {{outcome_expectation_setting}}
+          
+          **Customer-First Approach:**
+          - Customer Success Priority: {{customer_success_priority}}
+          - Long-term Relationship Focus: {{long_term_relationship_focus}}
+          - Mutual Value Creation: {{mutual_value_creation}}
+          - Win-Win Outcome Design: {{win_win_outcome_design}}
+          
+          **Relationship Risk Management:**
+          - Over-Selling Prevention: {{over_selling_prevention}}
+          - Expectation Management: {{expectation_management_framework}}
+          - Implementation Support: {{implementation_support_framework}}
+          - Success Guarantee Programs: {{success_guarantee_programs}}
+          
+          **Long-term Relationship Strategy:**
+          - Partnership Development: {{partnership_development_strategy}}
+          - Strategic Advisory Positioning: {{strategic_advisory_positioning}}
+          - Thought Leadership Sharing: {{thought_leadership_sharing}}
+          - Industry Collaboration: {{industry_collaboration_approach}}
+          
+          **Relationship Health Monitoring:**
+          {{relationship_health_monitoring_framework}}
+
+  - id: performance-measurement-framework
+    title: Upsell Performance Measurement & Optimization
+    instruction: |
+      Create comprehensive performance tracking with LLM assistance for continuous upsell optimization.
+      Focus on revenue metrics, customer satisfaction, and relationship health.
+    sections:
+      - id: upsell-metrics-architecture
+        title: Upsell Performance Metrics Architecture
+        template: |
+          **Metrics Philosophy:**
+          {{upsell_metrics_philosophy}}
+          
+          **Primary Performance Metrics:**
+          
+          **Revenue Metrics:**
+          - Upsell Revenue Growth: {{upsell_revenue_growth}}%
+          - Expansion MRR/ARR: {{expansion_mrr_arr}}
+          - Average Upsell Value: {{average_upsell_value}}
+          - Upsell Revenue Per Customer: {{upsell_revenue_per_customer}}
+          
+          **Conversion Metrics:**
+          - Upsell Conversion Rate: {{upsell_conversion_rate}}%
+          - Time to Upsell Conversion: {{time_to_upsell_conversion}}
+          - Upsell Pipeline Velocity: {{upsell_pipeline_velocity}}
+          - Success Rate by Segment: {{success_rate_by_segment}}
+          
+          **Customer Health Metrics:**
+          - Customer Satisfaction Post-Upsell: {{satisfaction_post_upsell}}
+          - Net Promoter Score Impact: {{nps_impact}}
+          - Customer Retention Rate: {{retention_rate_impact}}
+          - Relationship Health Score: {{relationship_health_score}}
+          
+          **Efficiency Metrics:**
+          - Cost Per Upsell: {{cost_per_upsell}}
+          - Sales Cycle Length: {{upsell_sales_cycle_length}}
+          - Resource Utilization Rate: {{resource_utilization_rate}}
+          - ROI Per Upsell Campaign: {{roi_per_upsell_campaign}}
+          
+          **Quality Metrics:**
+          - Implementation Success Rate: {{implementation_success_rate}}%
+          - Value Realization Timeline: {{value_realization_timeline}}
+          - Customer Outcome Achievement: {{customer_outcome_achievement}}%
+          - Upsell Retention Rate: {{upsell_retention_rate}}%
+          
+          **Metrics Collection Framework:**
+          {{metrics_collection_framework}}
+      - id: optimization-methodology
+        title: Continuous Optimization Methodology
+        template: |
+          **Optimization Philosophy:**
+          {{optimization_philosophy}}
+          
+          **Optimization Cycle Framework:**
+          
+          **Weekly Optimization Activities:**
+          
+          **Monday: Performance Analysis**
+          - Metric Review: {{monday_metric_review}}
+          - Trend Analysis: {{monday_trend_analysis}}
+          - Anomaly Investigation: {{monday_anomaly_investigation}}
+          - Opportunity Identification: {{monday_opportunity_identification}}
+          
+          **Tuesday-Wednesday: Strategy Refinement**
+          - A/B Testing Implementation: {{ab_testing_implementation}}
+          - Targeting Optimization: {{targeting_optimization}}
+          - Messaging Refinement: {{messaging_refinement}}
+          - Process Improvement: {{process_improvement}}
+          
+          **Thursday-Friday: Results Analysis**
+          - Test Results Evaluation: {{test_results_evaluation}}
+          - Implementation Decision Making: {{implementation_decision_making}}
+          - Performance Impact Assessment: {{performance_impact_assessment}}
+          - Documentation Updates: {{documentation_updates}}
+          
+          **Monthly Strategic Optimization:**
+          
+          **Strategic Review:**
+          - Portfolio Performance Analysis: {{portfolio_performance_analysis}}
+          - Segment Effectiveness Review: {{segment_effectiveness_review}}
+          - Channel Performance Assessment: {{channel_performance_assessment}}
+          - ROI Optimization: {{roi_optimization_approach}}
+          
+          **Tactical Optimization:**
+          - Value Proposition Refinement: {{value_proposition_refinement}}
+          - Timing Strategy Optimization: {{timing_strategy_optimization}}
+          - Communication Enhancement: {{communication_enhancement}}
+          - Process Streamlining: {{process_streamlining}}
+          
+          **Quarterly Strategic Review:**
+          {{quarterly_strategic_review_framework}}
+      - id: predictive-analytics-framework
+        title: Predictive Analytics & AI-Powered Insights
+        template: |
+          **Predictive Analytics Framework:**
+          
+          **Machine Learning Applications:**
+          - Customer Propensity Scoring: {{ml_propensity_scoring}}
+          - Revenue Forecasting: {{ml_revenue_forecasting}}
+          - Churn Risk Assessment: {{ml_churn_risk_assessment}}
+          - Success Probability Prediction: {{ml_success_probability}}
+          
+          **AI-Powered Optimization:**
+          - Dynamic Pricing Optimization: {{ai_pricing_optimization}}
+          - Personalized Upsell Recommendations: {{ai_personalized_recommendations}}
+          - Optimal Timing Predictions: {{ai_timing_predictions}}
+          - Content Optimization: {{ai_content_optimization}}
+          
+          **Predictive Model Categories:**
+          
+          **Customer Behavior Models:**
+          - Usage Pattern Prediction: {{usage_pattern_prediction}}
+          - Engagement Likelihood Scoring: {{engagement_likelihood_scoring}}
+          - Feature Adoption Prediction: {{feature_adoption_prediction}}
+          - Satisfaction Score Forecasting: {{satisfaction_score_forecasting}}
+          
+          **Revenue Prediction Models:**
+          - Expansion Revenue Forecasting: {{expansion_revenue_forecasting}}
+          - Lifetime Value Prediction: {{ltv_prediction_models}}
+          - Upsell Timing Optimization: {{upsell_timing_optimization}}
+          - Portfolio Value Optimization: {{portfolio_value_optimization}}
+          
+          **Risk Assessment Models:**
+          - Implementation Risk Scoring: {{implementation_risk_scoring}}
+          - Customer Success Risk Assessment: {{success_risk_assessment}}
+          - Competitive Threat Analysis: {{competitive_threat_analysis}}
+          - Market Timing Risk Evaluation: {{market_timing_risk}}
+          
+          **Model Performance & Validation:**
+          {{model_performance_validation_framework}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Success Framework
+    instruction: |
+      Create comprehensive implementation plan with clear phases, milestones, and success criteria.
+      Include team enablement, technology requirements, and performance benchmarks.
+    sections:
+      - id: implementation-phases
+        title: Upsell Strategy Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Team Requirements:** {{phase_team_requirements}}
+          **Budget Allocation:** {{phase_budget}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_date}}
+          
+          **Success Criteria:**
+          - Revenue Target: {{phase_revenue_target}}
+          - Conversion Rate Target: {{phase_conversion_target}}%
+          - Customer Satisfaction Target: {{phase_satisfaction_target}}
+          - Implementation Quality Score: {{phase_quality_target}}
+          
+          **Risk Mitigation:**
+          {{phase_risk_mitigation}}
+          
+          **Dependencies:**
+          {{phase_dependencies}}
+      - id: team-enablement-framework
+        title: Team Enablement & Training Framework
+        template: |
+          **Team Enablement Strategy:**
+          
+          **Role-Specific Training:**
+          
+          **Sales Team:**
+          - Upselling Methodology Training: {{sales_methodology_training}}
+          - Value Communication Training: {{sales_value_communication_training}}
+          - Customer Success Integration: {{sales_success_integration_training}}
+          - Objection Handling Training: {{sales_objection_handling_training}}
+          
+          **Customer Success Team:**
+          - Expansion Identification Training: {{cs_expansion_identification_training}}
+          - Value Realization Measurement: {{cs_value_measurement_training}}
+          - Upsell Handoff Protocols: {{cs_upsell_handoff_training}}
+          - Relationship Preservation Training: {{cs_relationship_preservation_training}}
+          
+          **Marketing Team:**
+          - Upsell Campaign Development: {{marketing_campaign_development_training}}
+          - Customer Segmentation for Upsells: {{marketing_segmentation_training}}
+          - Content Creation for Expansion: {{marketing_content_creation_training}}
+          - Performance Analytics: {{marketing_analytics_training}}
+          
+          **Leadership Team:**
+          - Strategic Upselling Oversight: {{leadership_strategic_training}}
+          - Performance Management: {{leadership_performance_training}}
+          - Team Coordination: {{leadership_coordination_training}}
+          - Culture Development: {{leadership_culture_training}}
+          
+          **Training Resources:**
+          {{training_resource_framework}}
+          
+          **Ongoing Development:**
+          {{ongoing_development_plan}}
+      - id: technology-requirements
+        title: Technology Stack & System Integration
+        template: |
+          **Technology Architecture:**
+          
+          **Core Platform Requirements:**
+          - CRM Enhancement: {{crm_enhancement_requirements}}
+          - Revenue Analytics Platform: {{revenue_analytics_requirements}}
+          - Customer Success Platform: {{customer_success_platform_requirements}}
+          - Automation Tools: {{automation_tool_requirements}}
+          
+          **Analytics & Intelligence:**
+          - Predictive Analytics Platform: {{predictive_analytics_platform}}
+          - Business Intelligence Tools: {{bi_tool_requirements}}
+          - Customer Data Platform: {{cdp_requirements}}
+          - Performance Dashboard: {{performance_dashboard_requirements}}
+          
+          **Communication & Collaboration:**
+          - Sales Enablement Platform: {{sales_enablement_platform}}
+          - Communication Tools: {{communication_tool_requirements}}
+          - Project Management Platform: {{project_management_requirements}}
+          - Knowledge Management System: {{knowledge_management_requirements}}
+          
+          **Integration Framework:**
+          - System Integration Requirements: {{system_integration_requirements}}
+          - Data Flow Architecture: {{data_flow_architecture}}
+          - API Integration Strategy: {{api_integration_strategy}}
+          - Security & Compliance: {{security_compliance_requirements}}
+          
+          **Technology Implementation Plan:**
+          {{technology_implementation_plan}}
+
+  - id: strategy-completion-framework
+    title: Upsell Strategy Framework Completion & Validation
+    instruction: |
+      Final validation of upsell strategy framework ensuring comprehensive coverage and implementation readiness.
+      Include success metrics, quality checks, and deployment preparation.
+    content: |
+      ---
+      
+      ## Upsell Strategy Framework Completion
+      
+      **Framework Development Completed:** {{completion_date}}
+      **Company:** {{company_name}}
+      **Business Model:** {{business_model_type}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Framework Components:**
+      - [ ] Revenue optimization and customer value maximization strategies
+      - [ ] Conditional approaches for product vs service-based upselling
+      - [ ] Timing and trigger optimization systems
+      - [ ] Value communication and packaging frameworks
+      - [ ] Customer success-driven upselling methodologies
+      - [ ] Performance measurement and optimization systems
+      - [ ] Implementation roadmap with team enablement
+      
+      **Quality Validation:**
+      - [ ] Revenue strategies are customer-centric and sustainable
+      - [ ] Timing triggers are data-driven with clear scoring systems
+      - [ ] Value communication is compelling and objection-preventive
+      - [ ] Customer success integration preserves relationships
+      - [ ] Performance metrics cover revenue and satisfaction
+      - [ ] Implementation plan is realistic and well-resourced
+      - [ ] Team enablement ensures successful execution
+      
+      **LLM Integration Validation:**
+      - [ ] Real-time guidance for revenue optimization decisions
+      - [ ] Customer value maximization powered by AI insights
+      - [ ] Predictive analytics for timing optimization
+      - [ ] Automated insights and strategy recommendations
+      - [ ] Quality assurance with relationship preservation focus
+      
+      **Business Impact Projection:**
+      - Expected Revenue Growth: {{expected_revenue_growth}}%
+      - Projected Upsell Conversion Rate: {{projected_upsell_conversion}}%
+      - Estimated Customer LTV Increase: {{estimated_ltv_increase}}%
+      - Predicted Customer Satisfaction Maintenance: {{predicted_satisfaction_score}}
+      
+      **Next Steps:**
+      1. {{next_step_1}} - Owner: {{next_step_1_owner}} - Due: {{next_step_1_date}}
+      2. {{next_step_2}} - Owner: {{next_step_2_owner}} - Due: {{next_step_2_date}}
+      3. {{next_step_3}} - Owner: {{next_step_3_owner}} - Due: {{next_step_3_date}}
+      
+      **First Performance Review:** {{first_review_date}}
+      
+      ---
+      
+      ## Upsell Strategy Certification
+      
+      **Strategy Approved:** {{approval_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Implementation Readiness:**
+      - [ ] Team trained on customer-centric upselling principles
+      - [ ] Technology stack configured and tested
+      - [ ] Value communication frameworks developed
+      - [ ] Performance baselines established
+      - [ ] Monitoring systems operational
+      - [ ] Optimization processes defined
+      - [ ] Quality assurance validated
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Upsell Strategy Framework_
+      _Status: Ready for Implementation_
+      _Template: Upsell Strategy Framework v1.0_
+
+# Advanced template configuration and validation
+variables:
+  upsell_offers:
+    type: array
+    description: "Primary upsell offerings and their strategic positioning"
+    min_items: 3
+    max_items: 10
+    items:
+      type: object
+      properties:
+        offer_name:
+          type: string
+          min_length: 5
+        offer_type:
+          type: string
+          enum: ["tier_upgrade", "feature_addition", "service_expansion", "volume_increase", "premium_support"]
+        revenue_impact:
+          type: number
+          min: 0
+        customer_value:
+          type: string
+          min_length: 20
+        target_segments:
+          type: array
+          items:
+            type: string
+    validation:
+      - offer_value_clarity: "Each offer must have clear customer value proposition"
+      - revenue_projection: "Revenue impact must be realistic and data-driven"
+      - segment_alignment: "Offers must align with target segment needs"
+
+  timing_triggers:
+    type: array
+    description: "Behavioral and contextual triggers that indicate upsell readiness"
+    min_items: 5
+    max_items: 15
+    items:
+      type: object
+      properties:
+        trigger_name:
+          type: string
+          min_length: 5
+        trigger_type:
+          type: string
+          enum: ["behavioral", "usage_based", "milestone", "seasonal", "lifecycle"]
+        readiness_score:
+          type: number
+          min: 1
+          max: 10
+        response_strategy:
+          type: string
+          min_length: 20
+    validation:
+      - trigger_specificity: "Triggers must be specific and measurable"
+      - scoring_logic: "Scoring system must be logical and consistent"
+      - response_appropriateness: "Response strategies must match trigger urgency"
+
+  value_stacking:
+    type: object
+    description: "Value stacking framework for compelling upsell presentations"
+    properties:
+      core_value:
+        type: object
+        required: ["primary_benefit", "quantified_impact", "success_metrics"]
+      supplementary_layers:
+        type: array
+        min_items: 3
+        items:
+          type: object
+          required: ["layer_name", "benefits", "value_quantification"]
+      communication_strategy:
+        type: object
+        required: ["presentation_sequence", "benefit_emphasis", "objection_prevention"]
+    validation:
+      - value_hierarchy: "Value layers must build logically upon each other"
+      - quantification_accuracy: "Value quantification must be credible and verifiable"
+      - communication_clarity: "Value communication must be clear and compelling"
+
+revenue_optimization_framework:
+  expansion_strategies:
+    tier_advancement:
+      characteristics: ["feature_enhancement", "service_upgrade", "capacity_increase"]
+      success_factors: ["current_utilization", "growth_trajectory", "satisfaction_level"]
+      optimization: ["timing", "value_demonstration", "implementation_support"]
+    
+    usage_scaling:
+      characteristics: ["volume_increase", "capacity_expansion", "frequency_enhancement"]
+      success_factors: ["usage_patterns", "growth_indicators", "budget_availability"]
+      optimization: ["predictive_scaling", "proactive_planning", "value_realization"]
+    
+    capability_expansion:
+      characteristics: ["new_features", "additional_modules", "extended_functionality"]
+      success_factors: ["current_adoption", "identified_gaps", "strategic_alignment"]
+      optimization: ["gap_analysis", "strategic_positioning", "implementation_ease"]
+
+customer_success_integration:
+  success_metrics:
+    outcome_achievement: ["goal_attainment", "value_realization", "satisfaction_improvement"]
+    relationship_health: ["engagement_quality", "advocacy_behavior", "retention_indicators"]
+    growth_potential: ["expansion_readiness", "success_trajectory", "strategic_alignment"]
+  
+  expansion_readiness:
+    high_success: ["outcome_achievement", "strong_advocacy", "strategic_partnership"]
+    moderate_success: ["steady_progress", "satisfaction_growth", "implementation_success"]
+    developing_success: ["early_wins", "engagement_improvement", "potential_demonstration"]
+
+timing_optimization_framework:
+  lifecycle_timing:
+    onboarding: ["quick_wins", "early_success", "confidence_building"]
+    adoption: ["feature_discovery", "value_realization", "success_demonstration"]
+    growth: ["scaling_needs", "capacity_requirements", "strategic_expansion"]
+    maturity: ["optimization_opportunities", "innovation_adoption", "strategic_evolution"]
+  
+  contextual_timing:
+    business_cycles: ["budget_planning", "strategic_planning", "performance_reviews"]
+    seasonal_patterns: ["industry_cycles", "market_conditions", "competitive_landscape"]
+    success_milestones: ["achievement_celebration", "outcome_demonstration", "future_planning"]
+
+value_communication_framework:
+  communication_principles:
+    customer_centric: ["outcome_focused", "value_quantified", "success_oriented"]
+    transparent: ["honest_benefits", "clear_costs", "realistic_expectations"]
+    compelling: ["benefit_stacking", "social_proof", "urgency_creation"]
+  
+  objection_prevention:
+    budget_concerns: ["roi_demonstration", "value_justification", "payment_flexibility"]
+    timing_issues: ["urgency_creation", "opportunity_cost", "competitive_advantage"]
+    implementation_complexity: ["support_assurance", "phased_approach", "success_guarantee"]
+
+quality_validation_framework:
+  revenue_sustainability:
+    - customer_value_focus: "Revenue growth must be driven by customer value creation"
+    - relationship_preservation: "Upselling must strengthen, not strain relationships"
+    - long_term_perspective: "Strategies must optimize for long-term customer lifetime value"
+    - mutual_benefit: "Upsells must provide mutual benefit to customer and company"
+  
+  implementation_effectiveness:
+    - systematic_approach: "Implementation must be systematic and well-coordinated"
+    - team_readiness: "Teams must be properly trained and equipped"
+    - technology_support: "Technology must enable and enhance upselling efforts"
+    - performance_measurement: "Success must be measurable and tracked consistently"
+  
+  customer_experience_quality:
+    - seamless_integration: "Upselling must integrate seamlessly into customer journey"
+    - value_demonstration: "Value must be clearly demonstrated and realized"
+    - support_excellence: "Implementation support must ensure customer success"
+    - satisfaction_maintenance: "Customer satisfaction must be maintained or improved"
+
+conditional_logic:
+  business_model:
+    product_based:
+      focus_areas: ["feature_upgrades", "tier_advancement", "usage_scaling", "add_on_modules"]
+      optimization: ["in_app_upselling", "usage_monitoring", "feature_adoption", "capacity_planning"]
+    
+    service_based:
+      focus_areas: ["scope_expansion", "service_tier_upgrades", "frequency_increases", "value_added_services"]
+      optimization: ["relationship_leveraging", "outcome_demonstration", "expertise_positioning", "strategic_advisory"]
+  
+  customer_segment:
+    enterprise:
+      considerations: ["strategic_alignment", "multiple_stakeholders", "complex_decisions", "long_cycles"]
+      optimization: ["executive_engagement", "business_case_development", "pilot_programs", "phased_implementation"]
+    
+    mid_market:
+      considerations: ["growth_trajectory", "resource_constraints", "efficiency_focus", "competitive_pressure"]
+      optimization: ["roi_demonstration", "implementation_ease", "quick_wins", "scalability_emphasis"]
+    
+    small_business:
+      considerations: ["budget_sensitivity", "simplicity_needs", "immediate_value", "limited_resources"]
+      optimization: ["value_demonstration", "ease_of_use", "affordable_pricing", "quick_implementation"]
+
+integration_requirements:
+  data_integration:
+    customer_data: ["usage_patterns", "satisfaction_scores", "success_metrics", "engagement_history"]
+    revenue_data: ["current_spending", "payment_history", "contract_terms", "renewal_dates"]
+    success_data: ["outcome_achievement", "goal_progress", "milestone_completion", "value_realization"]
+  
+  system_integration:
+    crm_systems: ["opportunity_management", "customer_tracking", "communication_history", "pipeline_management"]
+    success_platforms: ["health_scoring", "outcome_tracking", "engagement_monitoring", "renewal_management"]
+    analytics_tools: ["performance_tracking", "predictive_modeling", "roi_calculation", "trend_analysis"]
+
+privacy_compliance:
+  data_governance:
+    collection: ["consent_based", "purpose_limited", "minimal_collection", "transparent_usage"]
+    processing: ["lawful_basis", "purpose_limitation", "data_minimization", "accuracy_maintenance"]
+    storage: ["security_measures", "retention_limits", "access_controls", "audit_trails"]
+  
+  customer_communication:
+    transparency: ["clear_benefits", "honest_pricing", "realistic_expectations", "open_communication"]
+    consent: ["opt_in_mechanisms", "preference_management", "withdrawal_options", "choice_respect"]
+    trust: ["relationship_focus", "value_delivery", "promise_keeping", "ethical_practices"]

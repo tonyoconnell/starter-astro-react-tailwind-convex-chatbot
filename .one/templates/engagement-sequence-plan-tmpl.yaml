@@ -1,0 +1,2126 @@
+template:
+  id: engagement-sequence-plan-template-v1
+  name: Engagement Sequence Plan - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-{{sequence_type}}-engagement-plan.md"
+    title: "{{sequence_type}} Engagement Sequence Plan - {{company_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  llm_assistance:
+    real_time_guidance: true
+    decision_support: true
+    optimization_suggestions: true
+    pattern_recognition: true
+    performance_prediction: true
+  custom_elicitation:
+    title: "Engagement Sequence Design Actions"
+    sections:
+      - id: sequence-strategy-development
+        options:
+          - "Analyze customer journey stage and behavioral triggers using Elevate Framework friction point identification (shipping questions, checkout confusion, trust concerns, value re-evaluation)"
+          - "Map engagement touchpoints across customer lifecycle with real-time assistance focus using proactive and reactive engagement modes"
+          - "Identify conversation flow optimization opportunities using proactive and reactive engagement modes"
+          - "Research personalization vectors and data points for PL (Perceived Likelihood) boosting and ES (Effort/Sacrifice) reduction using Elevate principles"
+          - "Study competitive engagement strategies and gaps using Perceived Likelihood (PL) and Effort/Sacrifice (ES) analysis from Hormozi's Value Equation"
+          - "Define automated vs human-hybrid decision criteria based on complexity, value tier, and risk assessment"
+          - "Explore multi-channel orchestration possibilities (website chatbots, messaging apps, social media direct engagement, email near real-time responses)"
+          - "Analyze engagement timing and frequency optimization using behavioral triggers and exit intent"
+          - "Proceed to next section"
+      - id: trigger-event-analysis
+        options:
+          - "Map behavioral trigger events using Elevate Framework friction points (shipping questions, checkout confusion, trust concerns, value re-evaluation)"
+          - "Define engagement threshold criteria and scoring based on time on page, exit intent, idle time, and specific button clicks"
+          - "Analyze real-time vs batch trigger processing needs for immediate assistance during purchase consideration"
+          - "Research predictive trigger modeling opportunities using Elevate engagement patterns and persuasion principles"
+          - "Study trigger event attribution and source tracking across website, social, and messaging channels"
+          - "Explore trigger combination rules and logic for multi-signal engagement activation"
+          - "Define trigger priority and escalation frameworks using customer value tier and complexity scoring"
+          - "Map trigger-to-response matching algorithms for contextual FAQ, live chat, and proactive messaging"
+          - "Proceed to next section"
+      - id: conversation-flow-optimization
+        options:
+          - "Design conversation trees with dynamic branching"
+          - "Optimize conversation context preservation"
+          - "Develop personality-adaptive conversation styles"
+          - "Create conversation goal achievement pathways"
+          - "Design conversation hand-off protocols"
+          - "Build conversation quality assessment frameworks"
+          - "Explore conversation sentiment-based adaptations"
+          - "Design conversation recovery and re-engagement flows"
+          - "Proceed to next section"
+      - id: performance-optimization-framework
+        options:
+          - "Design engagement effectiveness measurement systems"
+          - "Create A/B testing frameworks for sequence variations"
+          - "Develop predictive engagement scoring models"
+          - "Build real-time optimization algorithms"
+          - "Create engagement quality vs quantity balance"
+          - "Design personalization effectiveness tracking"
+          - "Build multi-channel attribution models"
+          - "Create engagement ROI optimization frameworks"
+          - "Proceed to final sequence plan"
+
+sections:
+  - id: sequence-overview
+    title: Engagement Sequence Plan Overview
+    instruction: |
+      This plan creates comprehensive engagement sequences with LLM-powered real-time assistance for decision support.
+      Focus on multi-channel orchestration, conversation flow design, and performance optimization.
+      
+      The sequence plan includes:
+      - Intelligent trigger event detection and response
+      - Dynamic conversation flows with AI assistance
+      - Multi-channel engagement orchestration
+      - Personalization frameworks and data utilization
+      - Human-hybrid vs automated engagement logic
+      - Performance tracking and optimization systems
+      
+      Output file location: `docs/{{company_name}}-{{sequence_type}}-engagement-plan.md`
+
+  - id: sequence-strategy-framework
+    title: Engagement Sequence Strategy & Context
+    instruction: |
+      Define overall engagement sequence strategy with LLM guidance for strategic alignment.
+      Use strategic_context and engagement_goals variables for customization.
+    sections:
+      - id: sequence-objectives
+        title: Sequence Objectives & Success Criteria
+        template: |
+          **Engagement Sequence Type:** {{sequence_type}}
+          **Primary Business Objective:** {{primary_business_objective}}
+          
+          **Success Criteria Framework:**
+          
+          **Primary Success Metrics:**
+          1. {{primary_success_metric}} - Target: {{primary_metric_target}}
+          2. {{secondary_success_metric}} - Target: {{secondary_metric_target}}
+          3. {{tertiary_success_metric}} - Target: {{tertiary_metric_target}}
+          
+          **Engagement Quality Indicators:**
+          - Response Rate: {{target_response_rate}}
+          - Conversation Completion: {{target_completion_rate}}
+          - Sentiment Score: {{target_sentiment_score}}
+          - Escalation Rate: {{target_escalation_rate}}
+          
+          **Business Impact Metrics:**
+          - Conversion Rate: {{target_conversion_rate}}
+          - Customer Lifetime Value Impact: {{target_ltv_impact}}
+          - Cost Per Engagement: {{target_cost_per_engagement}}
+          - Time to Value: {{target_time_to_value}}
+      - id: customer-journey-alignment
+        title: Customer Journey Stage Alignment
+        conditional:
+          awareness_stage:
+            template: |
+              **Customer Journey Stage:** Awareness
+              **Engagement Strategy:** Educational and Value-Driven
+              
+              **Stage-Specific Considerations:**
+              - Problem Recognition Level: {{problem_recognition_level}}
+              - Information Seeking Behavior: {{information_seeking_patterns}}
+              - Trust Building Requirements: {{trust_building_approach}}
+              - Content Consumption Preferences: {{content_preferences}}
+              
+              **Engagement Approach (Elevate Framework - ENGAGE):**
+              - Primary Goal: {{awareness_engagement_goal}}
+              - Educational Content Mix: {{educational_content_strategy}}
+              - Value Demonstration: {{value_demonstration_approach}}
+              - Trust Building Tactics: {{trust_building_tactics}}
+              - Friction Reduction Focus: Address common questions proactively (shipping, returns, compatibility)
+              - Real-time Assistance: Chatbots and contextual help for immediate support during consideration phase
+              - PL Boosting Elements: Security reassurance, guarantees, and support availability
+              - ES Reduction Tactics: Instant answers via chatbot, clarifying costs upfront, simplifying complex info
+              
+              **Transition Triggers:**
+              {{awareness_to_consideration_triggers}}
+          consideration_stage:
+            template: |
+              **Customer Journey Stage:** Consideration
+              **Engagement Strategy:** Solution-Focused and Comparative
+              
+              **Stage-Specific Considerations:**
+              - Solution Evaluation Criteria: {{evaluation_criteria}}
+              - Comparison Shopping Behavior: {{comparison_behavior}}
+              - Decision Timeline: {{decision_timeline}}
+              - Stakeholder Involvement: {{stakeholder_dynamics}}
+              
+              **Engagement Approach:**
+              - Primary Goal: {{consideration_engagement_goal}}
+              - Solution Positioning: {{solution_positioning_strategy}}
+              - Objection Handling: {{objection_handling_approach}}
+              - Social Proof Integration: {{social_proof_strategy}}
+              
+              **Transition Triggers:**
+              {{consideration_to_decision_triggers}}
+          decision_stage:
+            template: |
+              **Customer Journey Stage:** Decision
+              **Engagement Strategy:** Conversion-Optimized and Urgency-Driven
+              
+              **Stage-Specific Considerations:**
+              - Purchase Decision Factors: {{decision_factors}}
+              - Risk Mitigation Needs: {{risk_mitigation_requirements}}
+              - Urgency Drivers: {{urgency_factors}}
+              - Final Evaluation Process: {{final_evaluation_process}}
+              
+              **Engagement Approach:**
+              - Primary Goal: {{decision_engagement_goal}}
+              - Conversion Optimization: {{conversion_optimization_strategy}}
+              - Risk Reversal: {{risk_reversal_approach}}
+              - Urgency Creation: {{urgency_creation_tactics}}
+              
+              **Transition Triggers:**
+              {{decision_to_purchase_triggers}}
+          retention_stage:
+            template: |
+              **Customer Journey Stage:** Retention/Nurture
+              **Engagement Strategy:** Relationship-Building and Value-Reinforcement
+              
+              **Stage-Specific Considerations:**
+              - Customer Success Indicators: {{success_indicators}}
+              - Value Realization Timeline: {{value_realization_timeline}}
+              - Expansion Opportunities: {{expansion_opportunities}}
+              - Loyalty Building Factors: {{loyalty_factors}}
+              
+              **Engagement Approach:**
+              - Primary Goal: {{retention_engagement_goal}}
+              - Value Reinforcement: {{value_reinforcement_strategy}}
+              - Success Acceleration: {{success_acceleration_approach}}
+              - Relationship Deepening: {{relationship_building_tactics}}
+              
+              **Transition Triggers:**
+              {{retention_to_expansion_triggers}}
+      - id: channel-strategy-overview
+        title: Multi-Channel Engagement Strategy
+        template: |
+          **Channel Orchestration Philosophy:**
+          {{channel_orchestration_approach}}
+          
+          **Primary Engagement Channels:**
+          1. {{primary_channel}} - Role: {{primary_channel_role}}
+          2. {{secondary_channel}} - Role: {{secondary_channel_role}}
+          3. {{tertiary_channel}} - Role: {{tertiary_channel_role}}
+          
+          **Channel Coordination Framework:**
+          - Message Consistency: {{message_consistency_approach}}
+          - Context Preservation: {{context_preservation_method}}
+          - Cross-Channel Attribution: {{attribution_tracking_approach}}
+          - Channel Handoff Protocols: {{handoff_protocols}}
+          
+          **Channel-Specific Optimization:**
+          {{channel_specific_optimizations}}
+
+  - id: trigger-events-framework
+    title: Trigger Events & Activation Logic
+    instruction: |
+      Define comprehensive trigger event framework with LLM assistance for pattern recognition.
+      Use trigger_events variable to customize activation criteria and response logic.
+    variables:
+      - trigger_events
+      - activation_criteria
+    sections:
+      - id: behavioral-triggers
+        title: Behavioral Trigger Events
+        instruction: Create comprehensive behavioral trigger framework with scoring and prioritization
+        repeatable: true
+        template: |
+          **Trigger Event: {{trigger_event_name}}**
+          **Category:** {{trigger_category}}
+          **Priority Score:** {{trigger_priority_score}}/10
+          
+          **Trigger Conditions (Elevate Framework):**
+          - Primary Condition: {{primary_trigger_condition}}
+          - Secondary Conditions: {{secondary_trigger_conditions}}
+          - Exclusion Criteria: {{trigger_exclusion_criteria}}
+          - Time Window: {{trigger_time_window}}
+          - Unanswered Specific Questions: Shipping details, return policies, product compatibility, material specifics
+          - Checkout Complexity: Confusion about required fields, payment options, process flow
+          - Trust & Security Flicker: Last-second payment security worries, legitimacy concerns
+          - Value Re-Evaluation: "Is this worth it?" moments, competitor comparison urges
+          - Trust Signal Needs: Security concerns, guarantee inquiries, return policy questions
+          
+          **Activation Logic:**
+          ```
+          IF {{primary_condition_logic}}
+          AND {{secondary_condition_logic}}
+          AND NOT {{exclusion_logic}}
+          WITHIN {{time_window_logic}}
+          THEN ACTIVATE {{trigger_response_type}}
+          WITH PRIORITY {{trigger_priority}}
+          ```
+          
+          **Trigger Scoring Algorithm (Enhanced with Elevate Principles):**
+          - Recency Weight: {{recency_weight}} ({{recency_calculation}})
+          - Frequency Weight: {{frequency_weight}} ({{frequency_calculation}})
+          - Intent Strength: {{intent_strength}} ({{intent_calculation}}) - High intent = checkout proximity
+          - Context Relevance: {{context_relevance}} ({{context_calculation}})
+          - Friction Level: Purchase hesitation indicators and common objection signals
+          - Trust Requirement: Security, guarantee, or credibility concerns
+          - **Total Score: {{total_trigger_score}}**
+          
+          **Response Mapping:**
+          - High Priority (8-10): {{high_priority_response}}
+          - Medium Priority (5-7): {{medium_priority_response}}
+          - Low Priority (1-4): {{low_priority_response}}
+          
+          **Data Sources:**
+          {{trigger_data_sources}}
+      - id: engagement-threshold-matrix
+        title: Engagement Threshold & Escalation Matrix
+        template: |
+          **Engagement Threshold Framework:**
+          
+          **Automated Engagement Thresholds:**
+          
+          **Level 1: Light Touch Automation**
+          - Trigger Score Range: {{level_1_score_range}}
+          - Response Type: {{level_1_response_type}}
+          - Personalization Level: {{level_1_personalization}}
+          - Follow-up Logic: {{level_1_followup}}
+          
+          **Level 2: Medium Touch Automation**
+          - Trigger Score Range: {{level_2_score_range}}
+          - Response Type: {{level_2_response_type}}
+          - Personalization Level: {{level_2_personalization}}
+          - Follow-up Logic: {{level_2_followup}}
+          
+          **Level 3: High Touch Hybrid**
+          - Trigger Score Range: {{level_3_score_range}}
+          - Response Type: {{level_3_response_type}}
+          - Human Involvement: {{level_3_human_involvement}}
+          - Escalation Criteria: {{level_3_escalation}}
+          
+          **Escalation Pathways:**
+          
+          **Automated to Human Escalation:**
+          - Trigger Conditions: {{automation_escalation_triggers}}
+          - Handoff Process: {{handoff_process}}
+          - Context Transfer: {{context_transfer_protocol}}
+          - Response Time SLA: {{escalation_response_sla}}
+          
+          **Human Override Protocols:**
+          {{human_override_framework}}
+      - id: trigger-combination-logic
+        title: Complex Trigger Combination Rules
+        template: |
+          **Multi-Trigger Scenarios:**
+          
+          **Trigger Combination Rules:**
+          
+          **Scenario 1: {{combination_scenario_1}}**
+          - Trigger Combination: {{trigger_combo_1}}
+          - Logic Operator: {{logic_operator_1}}
+          - Weighted Scoring: {{weighted_scoring_1}}
+          - Response Modification: {{response_modification_1}}
+          
+          **Scenario 2: {{combination_scenario_2}}**
+          - Trigger Combination: {{trigger_combo_2}}
+          - Logic Operator: {{logic_operator_2}}
+          - Weighted Scoring: {{weighted_scoring_2}}
+          - Response Modification: {{response_modification_2}}
+          
+          **Scenario 3: {{combination_scenario_3}}**
+          - Trigger Combination: {{trigger_combo_3}}
+          - Logic Operator: {{logic_operator_3}}
+          - Weighted Scoring: {{weighted_scoring_3}}
+          - Response Modification: {{response_modification_3}}
+          
+          **Trigger Conflict Resolution:**
+          - Priority Resolution Method: {{priority_resolution_method}}
+          - Timing Conflict Handling: {{timing_conflict_handling}}
+          - Channel Conflict Resolution: {{channel_conflict_resolution}}
+          
+          **Trigger Suppression Rules:**
+          {{trigger_suppression_framework}}
+
+  - id: response-templates-framework
+    title: Response Templates & Content Framework
+    instruction: |
+      Create comprehensive response template library with LLM-powered dynamic personalization.
+      Use response_templates variable for template categorization and optimization.
+    variables:
+      - response_templates
+      - personalization_data
+    sections:
+      - id: template-architecture
+        title: Response Template Architecture
+        template: |
+          **Template System Overview:**
+          
+          **Template Hierarchy:**
+          - Base Templates: {{base_template_count}} core frameworks
+          - Variation Templates: {{variation_template_count}} personalized versions
+          - Dynamic Elements: {{dynamic_element_count}} real-time customizations
+          - Conditional Blocks: {{conditional_block_count}} context-dependent sections
+          
+          **Template Categories:**
+          
+          **1. Welcome & Onboarding Templates:**
+          - First Contact: {{welcome_template_variations}}
+          - Onboarding Sequence: {{onboarding_template_variations}}
+          - Value Introduction: {{value_intro_variations}}
+          
+          **2. Educational & Nurture Templates:**
+          - Problem Education: {{problem_education_variations}}
+          - Solution Education: {{solution_education_variations}}
+          - Value Demonstration: {{value_demo_variations}}
+          
+          **3. Conversion & Sales Templates:**
+          - Objection Handling: {{objection_handling_variations}}
+          - Social Proof: {{social_proof_variations}}
+          - Urgency Creation: {{urgency_creation_variations}}
+          
+          **4. Retention & Success Templates:**
+          - Success Celebration: {{success_celebration_variations}}
+          - Value Reinforcement: {{value_reinforcement_variations}}
+          - Expansion Opportunity: {{expansion_opportunity_variations}}
+          
+          **Template Selection Logic:**
+          {{template_selection_algorithm}}
+      - id: engagement-tools-tactics
+        title: Engagement Tools & Tactics Framework (Elevate ENGAGE)
+        template: |
+          **Engagement Tools Framework (From Elevate Chapter 12):**
+          
+          **Reactive Engagement Tools:**
+          - Live Chat: {{live_chat_strategy}} (Ideal for complex, nuanced queries requiring human interaction)
+          - Chat Now Buttons: {{chat_button_placement}} (Strategic placement on high-intent pages)
+          - Quick Query Forms: {{query_form_optimization}} (Simple submission for immediate response)
+          - FAQ Access Points: {{faq_integration_strategy}} (Embedded help within page flow)
+          
+          **Proactive Engagement Tools:**
+          - Behavioral Chatbots: {{behavioral_chatbot_config}} (Triggered by specific user actions)
+          - Exit-Intent Popups: {{exit_intent_strategy}} (Offering assistance when users attempt to leave)
+          - Time-Based Triggers: {{time_based_trigger_setup}} (e.g., after 60 seconds of inactivity)
+          - Contextual Tooltips: {{contextual_tooltip_framework}} (Embedded explanations near potential confusion points)
+          
+          **Multi-Channel Engagement Framework:**
+          - Website Integration: {{website_engagement_setup}} (Chatbots, contextual FAQs, live chat)
+          - Messaging Apps: {{messaging_app_strategy}} (Facebook Messenger, Instagram DMs, WhatsApp responses)
+          - Social Media Direct: {{social_media_engagement}} (Prompt responses to purchase-intent comments)
+          - Email Near Real-Time: {{email_engagement_protocol}} (Rapid response to pre-sale inquiries)
+          
+          **Engagement Message Framework:**
+          - Helpful Tone: {{helpful_tone_guidelines}} (Assistance-focused, not aggressive selling)
+          - Brand Voice Consistency: {{brand_voice_engagement}} (Maintain established voice across channels)
+          - Clear and Concise: {{message_clarity_standards}} (Immediate value delivery)
+          - Trust Building: {{trust_building_messaging}} (Reassurance about security, guarantees, support)
+          
+          **Proactive Engagement Timing:**
+          - Behavioral Triggers: {{proactive_timing_rules}} (Exit intent, idle time, specific page sections)
+          - Relevance Focus: {{relevance_criteria}} (Helpful intervention, not interruption)
+          - Channel Appropriateness: {{channel_timing_optimization}} (Respect platform norms and user expectations)
+          
+          **Engagement Performance Optimization:**
+          {{engagement_tools_optimization_framework}}
+      - id: dynamic-personalization
+        title: Dynamic Personalization Framework
+        sections:
+          - id: personalization-data-points
+            title: Personalization Data Points & Sources
+            template: |
+              **Primary Personalization Vectors:**
+              
+              **Demographic Personalization:**
+              - Industry: {{industry_personalization_approach}}
+              - Company Size: {{company_size_personalization}}
+              - Role/Title: {{role_title_personalization}}
+              - Geographic Location: {{geographic_personalization}}
+              
+              **Behavioral Personalization:**
+              - Engagement History: {{engagement_history_usage}}
+              - Content Preferences: {{content_preference_tracking}}
+              - Channel Preferences: {{channel_preference_tracking}}
+              - Timing Preferences: {{timing_preference_tracking}}
+              
+              **Psychographic Personalization:**
+              - Communication Style: {{communication_style_adaptation}}
+              - Decision-Making Style: {{decision_style_adaptation}}
+              - Risk Tolerance: {{risk_tolerance_adaptation}}
+              - Learning Style: {{learning_style_adaptation}}
+              
+              **Contextual Personalization:**
+              - Current Journey Stage: {{journey_stage_context}}
+              - Recent Interactions: {{recent_interaction_context}}
+              - Current Challenges: {{challenge_context_tracking}}
+              - Goal Alignment: {{goal_alignment_context}}
+              
+              **Data Source Integration:**
+              {{personalization_data_sources}}
+          - id: dynamic-content-generation
+            title: Dynamic Content Generation Rules
+            template: |
+              **Content Personalization Engine:**
+              
+              **Real-Time Content Adaptation (Elevate Framework Integration):**
+              - Subject Line Optimization: {{subject_line_personalization}}
+              - Opening Personalization: {{opening_personalization_rules}}
+              - Content Body Adaptation: {{content_body_personalization}} with focus on reducing ES (Effort/Sacrifice)
+              - CTA Personalization: {{cta_personalization_approach}} emphasizing PL (Perceived Likelihood) boosting
+              - Trust Signal Integration: Security badges, guarantees, and social proof contextually inserted
+              - Objection Handling: Proactive addressing of common purchase hesitations
+              
+              **Contextual Content Blocks:**
+              
+              **Industry-Specific Blocks:**
+              ```
+              {% if industry == "healthcare" %}
+              {{healthcare_specific_content}}
+              {% elif industry == "finance" %}
+              {{finance_specific_content}}
+              {% elif industry == "technology" %}
+              {{technology_specific_content}}
+              {% endif %}
+              ```
+              
+              **Stage-Specific Blocks:**
+              ```
+              {% if journey_stage == "awareness" %}
+              {{awareness_content_block}}
+              {% elif journey_stage == "consideration" %}
+              {{consideration_content_block}}
+              {% elif journey_stage == "decision" %}
+              {{decision_content_block}}
+              {% endif %}
+              ```
+              
+              **Behavioral Adaptation Logic:**
+              {{behavioral_adaptation_rules}}
+          - id: a-i-content-optimization
+            title: AI-Powered Content Optimization
+            template: |
+              **LLM Integration Framework:**
+              
+              **Real-Time Content Enhancement:**
+              - Tone Adaptation: {{tone_adaptation_llm_prompts}}
+              - Length Optimization: {{length_optimization_criteria}}
+              - Complexity Adjustment: {{complexity_adjustment_rules}}
+              - Emotional Resonance: {{emotional_resonance_optimization}}
+              
+              **Content Quality Assurance:**
+              - Grammar & Style Check: {{grammar_style_llm_validation}}
+              - Brand Voice Consistency: {{brand_voice_validation}}
+              - Message Clarity: {{message_clarity_scoring}}
+              - Engagement Prediction: {{engagement_prediction_model}}
+              
+              **Performance-Driven Optimization:**
+              - A/B Test Generation: {{ab_test_variant_generation}}
+              - Performance Analysis: {{performance_analysis_prompts}}
+              - Optimization Suggestions: {{optimization_suggestion_framework}}
+              
+              **LLM Prompt Engineering:**
+              {{llm_prompt_templates}}
+      - id: template-testing-optimization
+        title: Template Testing & Optimization Framework
+        template: |
+          **Template Performance Framework:**
+          
+          **A/B Testing Methodology:**
+          - Test Design: {{template_test_design}}
+          - Sample Size Calculation: {{template_sample_size}}
+          - Success Metrics: {{template_success_metrics}}
+          - Test Duration: {{template_test_duration}}
+          
+          **Template Optimization Cycle:**
+          
+          **Week 1: Baseline Performance**
+          - Deploy template variations
+          - Collect baseline metrics
+          - Monitor engagement patterns
+          - Identify early indicators
+          
+          **Week 2-3: Performance Analysis**
+          - Analyze conversion data
+          - Segment performance by persona
+          - Identify optimization opportunities
+          - Generate improvement hypotheses
+          
+          **Week 4: Optimization Implementation**
+          - Deploy optimized versions
+          - Test new personalization rules
+          - Validate performance improvements
+          - Document successful patterns
+          
+          **Template Performance Metrics:**
+          {{template_performance_tracking}}
+
+  - id: automation-hybrid-logic
+    title: Automated vs Human-Hybrid Engagement Logic
+    instruction: |
+      Define sophisticated logic for determining when to use automation vs human involvement.
+      Include LLM assistance for real-time decision making and escalation protocols.
+    sections:
+      - id: automation-decision-framework
+        title: Automation Decision Framework
+        template: |
+          **Automation Suitability Matrix:**
+          
+          **Full Automation Criteria:**
+          - Interaction Complexity Score: {{automation_complexity_threshold}}
+          - Customer Value Tier: {{automation_value_threshold}}
+          - Risk Level: {{automation_risk_threshold}}
+          - Response Time Requirements: {{automation_timing_threshold}}
+          
+          **Automation Decision Tree:**
+          ```
+          Engagement Request Received
+          ├── Complexity Analysis
+          │   ├── Simple (Score 1-3) → Full Automation
+          │   ├── Medium (Score 4-6) → Automation with Review
+          │   └── Complex (Score 7-10) → Human Required
+          ├── Value Tier Analysis
+          │   ├── High Value → Human Touch Required
+          │   ├── Medium Value → Hybrid Approach
+          │   └── Standard Value → Automation Preferred
+          └── Risk Assessment
+              ├── High Risk → Human Oversight Required
+              ├── Medium Risk → Automated with Monitoring
+              └── Low Risk → Full Automation
+          ```
+          
+          **Automation Confidence Scoring:**
+          - Intent Recognition Confidence: {{intent_confidence_threshold}}
+          - Response Appropriateness: {{response_confidence_threshold}}
+          - Context Understanding: {{context_confidence_threshold}}
+          - Outcome Prediction: {{outcome_confidence_threshold}}
+          
+          **Human Escalation Triggers:**
+          {{human_escalation_criteria}}
+      - id: hybrid-engagement-protocols
+        title: Human-Hybrid Engagement Protocols
+        sections:
+          - id: handoff-protocols
+            title: Automation-to-Human Handoff Protocols
+            template: |
+              **Seamless Handoff Framework:**
+              
+              **Handoff Trigger Conditions:**
+              1. **Complexity Escalation**
+                 - Condition: {{complexity_escalation_condition}}
+                 - Trigger Score: {{complexity_trigger_score}}
+                 - Handoff Type: {{complexity_handoff_type}}
+              
+              2. **Sentiment Escalation**
+                 - Condition: {{sentiment_escalation_condition}}
+                 - Trigger Score: {{sentiment_trigger_score}}
+                 - Handoff Type: {{sentiment_handoff_type}}
+              
+              3. **Value Escalation**
+                 - Condition: {{value_escalation_condition}}
+                 - Trigger Score: {{value_trigger_score}}
+                 - Handoff Type: {{value_handoff_type}}
+              
+              **Context Transfer Protocol:**
+              - Conversation History: {{conversation_history_transfer}}
+              - Customer Profile: {{customer_profile_transfer}}
+              - Engagement Goals: {{goal_context_transfer}}
+              - Previous Attempts: {{attempt_history_transfer}}
+              - Recommended Approach: {{recommended_approach_transfer}}
+              
+              **Human Agent Briefing:**
+              {{human_agent_briefing_template}}
+          - id: human-oversight-framework
+            title: Human Oversight & Quality Assurance
+            template: |
+              **Human Oversight Levels:**
+              
+              **Level 1: Automated with Monitoring**
+              - Human Review: Post-engagement audit
+              - Review Frequency: {{level_1_review_frequency}}
+              - Quality Thresholds: {{level_1_quality_thresholds}}
+              - Intervention Triggers: {{level_1_intervention_triggers}}
+              
+              **Level 2: Automated with Pre-Approval**
+              - Human Review: Pre-send approval required
+              - Review Timeline: {{level_2_review_timeline}}
+              - Approval Criteria: {{level_2_approval_criteria}}
+              - Emergency Override: {{level_2_override_protocol}}
+              
+              **Level 3: Human-Led with AI Support**
+              - Human Role: Primary engagement owner
+              - AI Support: Content suggestions and optimization
+              - Decision Authority: {{level_3_decision_authority}}
+              - Quality Assurance: {{level_3_quality_framework}}
+              
+              **Quality Assurance Metrics:**
+              {{human_oversight_metrics}}
+          - id: hybrid-optimization
+            title: Hybrid Performance Optimization
+            template: |
+              **Hybrid Performance Framework:**
+              
+              **Automation Performance Tracking:**
+              - Success Rate by Interaction Type: {{automation_success_tracking}}
+              - Escalation Rate Analysis: {{escalation_rate_analysis}}
+              - Customer Satisfaction: {{automation_satisfaction_tracking}}
+              - Efficiency Metrics: {{automation_efficiency_metrics}}
+              
+              **Human Performance Integration:**
+              - Human Agent Effectiveness: {{human_effectiveness_tracking}}
+              - Hybrid Collaboration Metrics: {{collaboration_metrics}}
+              - Knowledge Transfer: {{knowledge_transfer_tracking}}
+              - Continuous Improvement: {{continuous_improvement_framework}}
+              
+              **Optimization Feedback Loops:**
+              {{optimization_feedback_framework}}
+
+  - id: conversation-flow-design
+    title: Conversation Flow Design & Orchestration
+    instruction: |
+      Design sophisticated conversation flows with LLM assistance for dynamic adaptation.
+      Focus on context preservation, goal achievement, and natural conversation progression.
+    sections:
+      - id: conversation-architecture
+        title: Conversation Flow Architecture
+        template: |
+          **Conversation Flow Philosophy:**
+          {{conversation_flow_philosophy}}
+          
+          **Flow Architecture Components:**
+          
+          **1. Conversation Initiation Layer**
+          - Entry Point Mapping: {{entry_point_mapping}}
+          - Context Establishment: {{context_establishment_approach}}
+          - Goal Identification: {{goal_identification_method}}
+          - Personalization Setup: {{personalization_setup}}
+          
+          **2. Conversation Progression Layer**
+          - Flow Decision Points: {{flow_decision_points}}
+          - Dynamic Branching Logic: {{branching_logic}}
+          - Context Maintenance: {{context_maintenance_approach}}
+          - Progress Tracking: {{progress_tracking_method}}
+          
+          **3. Conversation Completion Layer**
+          - Goal Achievement Validation: {{goal_achievement_validation}}
+          - Next Step Definition: {{next_step_definition}}
+          - Follow-up Scheduling: {{followup_scheduling}}
+          - Success Measurement: {{success_measurement}}
+          
+          **Flow State Management:**
+          {{flow_state_management_framework}}
+      - id: dynamic-conversation-trees
+        title: Dynamic Conversation Trees & Branching
+        sections:
+          - id: conversation-decision-points
+            title: Conversation Decision Points & Logic
+            repeatable: true
+            template: |
+              **Decision Point: {{decision_point_name}}**
+              **Context:** {{decision_point_context}}
+              **Trigger:** {{decision_point_trigger}}
+              
+              **Decision Criteria:**
+              - Primary Factor: {{primary_decision_factor}}
+              - Secondary Factors: {{secondary_decision_factors}}
+              - Context Modifiers: {{context_modifiers}}
+              - User Input Weight: {{user_input_weight}}
+              
+              **Branching Options:**
+              
+              **Branch A: {{branch_a_name}}**
+              - Condition: {{branch_a_condition}}
+              - Response Template: {{branch_a_template}}
+              - Next Actions: {{branch_a_next_actions}}
+              - Success Criteria: {{branch_a_success}}
+              
+              **Branch B: {{branch_b_name}}**
+              - Condition: {{branch_b_condition}}
+              - Response Template: {{branch_b_template}}
+              - Next Actions: {{branch_b_next_actions}}
+              - Success Criteria: {{branch_b_success}}
+              
+              **Branch C: {{branch_c_name}}**
+              - Condition: {{branch_c_condition}}
+              - Response Template: {{branch_c_template}}
+              - Next Actions: {{branch_c_next_actions}}
+              - Success Criteria: {{branch_c_success}}
+              
+              **Default/Fallback Branch:**
+              - Fallback Response: {{fallback_response}}
+              - Recovery Strategy: {{recovery_strategy}}
+              - Escalation Path: {{escalation_path}}
+          - id: context-preservation-framework
+            title: Context Preservation & Memory Management
+            template: |
+              **Context Management System:**
+              
+              **Context Data Model:**
+              - User Profile Context: {{user_profile_context}}
+              - Conversation History Context: {{conversation_history_context}}
+              - Goal Progress Context: {{goal_progress_context}}
+              - Preference Context: {{preference_context}}
+              - Interaction Context: {{interaction_context}}
+              
+              **Context Persistence Layers:**
+              
+              **Session Context (Short-term)**
+              - Storage Duration: {{session_context_duration}}
+              - Data Scope: {{session_context_scope}}
+              - Access Pattern: {{session_context_access}}
+              - Cleanup Logic: {{session_context_cleanup}}
+              
+              **User Context (Medium-term)**
+              - Storage Duration: {{user_context_duration}}
+              - Data Scope: {{user_context_scope}}
+              - Update Frequency: {{user_context_updates}}
+              - Privacy Controls: {{user_context_privacy}}
+              
+              **Historical Context (Long-term)**
+              - Storage Duration: {{historical_context_duration}}
+              - Data Scope: {{historical_context_scope}}
+              - Archival Strategy: {{historical_context_archival}}
+              - Analytics Usage: {{historical_context_analytics}}
+              
+              **Context Utilization Framework:**
+              {{context_utilization_approach}}
+          - id: conversation-goal-management
+            title: Conversation Goal Achievement Framework
+            template: |
+              **Goal Management Architecture:**
+              
+              **Goal Definition Framework:**
+              - Primary Goal Types: {{primary_goal_types}}
+              - Goal Hierarchy: {{goal_hierarchy_structure}}
+              - Goal Dependencies: {{goal_dependencies}}
+              - Goal Measurement: {{goal_measurement_criteria}}
+              
+              **Goal Tracking System:**
+              - Progress Indicators: {{goal_progress_indicators}}
+              - Milestone Definition: {{goal_milestones}}
+              - Achievement Validation: {{goal_achievement_validation}}
+              - Failure Recovery: {{goal_failure_recovery}}
+              
+              **Multi-Goal Conversation Management:**
+              - Goal Prioritization: {{multi_goal_prioritization}}
+              - Goal Conflict Resolution: {{goal_conflict_resolution}}
+              - Goal Switching Logic: {{goal_switching_logic}}
+              - Goal Completion Sequencing: {{goal_completion_sequencing}}
+              
+              **Adaptive Goal Framework:**
+              {{adaptive_goal_management}}
+      - id: conversation-optimization
+        title: Conversation Optimization & Learning
+        template: |
+          **Conversation Performance Optimization:**
+          
+          **Conversation Quality Metrics:**
+          - Goal Achievement Rate: {{goal_achievement_rate}}
+          - Conversation Satisfaction: {{conversation_satisfaction}}
+          - Engagement Quality: {{engagement_quality_metrics}}
+          - Efficiency Metrics: {{conversation_efficiency}}
+          
+          **Learning & Improvement Framework:**
+          - Pattern Recognition: {{conversation_pattern_recognition}}
+          - Success Factor Analysis: {{success_factor_analysis}}
+          - Failure Point Identification: {{failure_point_identification}}
+          - Optimization Opportunity Mapping: {{optimization_opportunity_mapping}}
+          
+          **Real-Time Conversation Adaptation:**
+          - Sentiment Monitoring: {{real_time_sentiment_monitoring}}
+          - Engagement Level Tracking: {{engagement_level_tracking}}
+          - Goal Progress Assessment: {{goal_progress_assessment}}
+          - Dynamic Response Adjustment: {{dynamic_response_adjustment}}
+          
+          **Conversation A/B Testing:**
+          {{conversation_ab_testing_framework}}
+
+  - id: multi-channel-orchestration
+    title: Multi-Channel Engagement Orchestration
+    instruction: |
+      Design comprehensive multi-channel orchestration with unified messaging and context.
+      Include channel-specific optimization and cross-channel attribution tracking.
+    sections:
+      - id: channel-coordination-framework
+        title: Channel Coordination & Message Consistency
+        template: |
+          **Channel Orchestration Philosophy:**
+          {{channel_orchestration_philosophy}}
+          
+          **Cross-Channel Coordination:**
+          
+          **Message Consistency Framework:**
+          - Core Message Alignment: {{core_message_alignment}}
+          - Channel-Specific Adaptation: {{channel_adaptation_approach}}
+          - Brand Voice Consistency: {{brand_voice_consistency}}
+          - Timing Coordination: {{timing_coordination_approach}}
+          
+          **Channel Integration Architecture:**
+          
+          **Primary Channels:**
+          1. **{{primary_channel_1}}**
+             - Role: {{primary_channel_1_role}}
+             - Message Type: {{primary_channel_1_message_type}}
+             - Timing: {{primary_channel_1_timing}}
+             - Success Metrics: {{primary_channel_1_metrics}}
+          
+          2. **{{primary_channel_2}}**
+             - Role: {{primary_channel_2_role}}
+             - Message Type: {{primary_channel_2_message_type}}
+             - Timing: {{primary_channel_2_timing}}
+             - Success Metrics: {{primary_channel_2_metrics}}
+          
+          3. **{{primary_channel_3}}**
+             - Role: {{primary_channel_3_role}}
+             - Message Type: {{primary_channel_3_message_type}}
+             - Timing: {{primary_channel_3_timing}}
+             - Success Metrics: {{primary_channel_3_metrics}}
+          
+          **Channel Handoff Protocols:**
+          {{channel_handoff_protocols}}
+      - id: channel-specific-optimization
+        title: Channel-Specific Optimization Strategies
+        sections:
+          - id: email-optimization
+            title: Email Channel Optimization
+            conditional:
+              email_channel_active:
+                template: |
+                  **Email Engagement Optimization:**
+                  
+                  **Subject Line Optimization:**
+                  - Personalization Strategy: {{email_subject_personalization}}
+                  - A/B Testing Framework: {{email_subject_testing}}
+                  - Performance Benchmarks: {{email_subject_benchmarks}}
+                  - Dynamic Optimization: {{email_subject_dynamic_optimization}}
+                  
+                  **Content Optimization:**
+                  - Template Hierarchy: {{email_template_hierarchy}}
+                  - Personalization Elements: {{email_personalization_elements}}
+                  - Mobile Optimization: {{email_mobile_optimization}}
+                  - CTA Optimization: {{email_cta_optimization}}
+                  
+                  **Timing & Frequency:**
+                  - Send Time Optimization: {{email_timing_optimization}}
+                  - Frequency Capping: {{email_frequency_capping}}
+                  - Re-engagement Logic: {{email_reengagement_logic}}
+                  - Suppression Rules: {{email_suppression_rules}}
+                  
+                  **Performance Tracking:**
+                  {{email_performance_framework}}
+          - id: sms-optimization
+            title: SMS Channel Optimization
+            conditional:
+              sms_channel_active:
+                template: |
+                  **SMS Engagement Optimization:**
+                  
+                  **Message Optimization:**
+                  - Character Limit Strategy: {{sms_character_strategy}}
+                  - Personalization Approach: {{sms_personalization}}
+                  - Link Strategy: {{sms_link_strategy}}
+                  - Emoji Usage: {{sms_emoji_strategy}}
+                  
+                  **Timing Strategy:**
+                  - Time Zone Optimization: {{sms_timezone_optimization}}
+                  - Day-of-Week Strategy: {{sms_day_strategy}}
+                  - Frequency Limits: {{sms_frequency_limits}}
+                  - Urgency Handling: {{sms_urgency_handling}}
+                  
+                  **Compliance & Quality:**
+                  - Opt-in Management: {{sms_optin_management}}
+                  - Compliance Rules: {{sms_compliance_rules}}
+                  - Quality Scoring: {{sms_quality_scoring}}
+                  - Deliverability Optimization: {{sms_deliverability}}
+          - id: social-media-optimization
+            title: Social Media Channel Optimization
+            conditional:
+              social_channel_active:
+                template: |
+                  **Social Media Engagement Optimization:**
+                  
+                  **Platform-Specific Strategy:**
+                  - LinkedIn: {{linkedin_engagement_strategy}}
+                  - Twitter: {{twitter_engagement_strategy}}
+                  - Facebook: {{facebook_engagement_strategy}}
+                  - Instagram: {{instagram_engagement_strategy}}
+                  
+                  **Content Adaptation:**
+                  - Platform Format Optimization: {{social_format_optimization}}
+                  - Hashtag Strategy: {{social_hashtag_strategy}}
+                  - Visual Content: {{social_visual_strategy}}
+                  - Community Management: {{social_community_strategy}}
+                  
+                  **Engagement Automation:**
+                  - Response Automation: {{social_response_automation}}
+                  - Monitoring & Alerts: {{social_monitoring_alerts}}
+                  - Escalation Protocols: {{social_escalation_protocols}}
+          - id: direct-mail-optimization
+            title: Direct Mail Channel Optimization
+            conditional:
+              direct_mail_channel_active:
+                template: |
+                  **Direct Mail Engagement Optimization:**
+                  
+                  **Personalization Strategy:**
+                  - Variable Data Printing: {{direct_mail_personalization}}
+                  - Segmentation Approach: {{direct_mail_segmentation}}
+                  - Creative Customization: {{direct_mail_creative}}
+                  - Offer Personalization: {{direct_mail_offers}}
+                  
+                  **Integration Strategy:**
+                  - Digital Integration: {{direct_mail_digital_integration}}
+                  - QR Code Strategy: {{direct_mail_qr_strategy}}
+                  - URL Tracking: {{direct_mail_url_tracking}}
+                  - Follow-up Sequencing: {{direct_mail_followup}}
+          - id: phone-optimization
+            title: Phone Channel Optimization
+            conditional:
+              phone_channel_active:
+                template: |
+                  **Phone Engagement Optimization:**
+                  
+                  **Call Strategy:**
+                  - Timing Optimization: {{phone_timing_optimization}}
+                  - Script Personalization: {{phone_script_personalization}}
+                  - Objection Handling: {{phone_objection_handling}}
+                  - Follow-up Protocols: {{phone_followup_protocols}}
+                  
+                  **Performance Optimization:**
+                  - Connection Rate Optimization: {{phone_connection_optimization}}
+                  - Conversation Quality: {{phone_conversation_quality}}
+                  - Outcome Tracking: {{phone_outcome_tracking}}
+                  - Agent Training: {{phone_agent_training}}
+      - id: cross-channel-attribution
+        title: Cross-Channel Attribution & Analytics
+        template: |
+          **Attribution Framework:**
+          
+          **Attribution Model:**
+          - Attribution Method: {{attribution_method}}
+          - Touch Point Weighting: {{touchpoint_weighting}}
+          - Time Decay Model: {{time_decay_model}}
+          - Channel Credit Assignment: {{channel_credit_assignment}}
+          
+          **Cross-Channel Tracking:**
+          - User Journey Mapping: {{journey_mapping_approach}}
+          - Channel Interaction Tracking: {{interaction_tracking}}
+          - Conversion Path Analysis: {{conversion_path_analysis}}
+          - Channel Assist Metrics: {{channel_assist_metrics}}
+          
+          **Performance Analytics:**
+          - Channel Effectiveness: {{channel_effectiveness_metrics}}
+          - ROI by Channel: {{channel_roi_analysis}}
+          - Synergy Analysis: {{channel_synergy_analysis}}
+          - Optimization Insights: {{optimization_insights}}
+          
+          **Unified Reporting:**
+          {{unified_reporting_framework}}
+
+  - id: personalization-framework
+    title: Personalization Framework & Data Utilization
+    instruction: |
+      Create comprehensive personalization framework with LLM assistance for dynamic adaptation.
+      Focus on data utilization, privacy compliance, and performance optimization.
+    sections:
+      - id: personalization-architecture
+        title: Personalization Architecture & Data Model
+        template: |
+          **Personalization Philosophy:**
+          {{personalization_philosophy}}
+          
+          **Data Architecture:**
+          
+          **Customer Data Platform (CDP) Integration:**
+          - Data Sources: {{cdp_data_sources}}
+          - Data Unification: {{cdp_unification_approach}}
+          - Real-time Updates: {{cdp_realtime_updates}}
+          - API Integration: {{cdp_api_integration}}
+          
+          **Personalization Data Model:**
+          
+          **Identity Resolution:**
+          - Customer Identification: {{identity_resolution_approach}}
+          - Cross-Device Tracking: {{cross_device_tracking}}
+          - Anonymous User Handling: {{anonymous_user_handling}}
+          - Identity Stitching: {{identity_stitching}}
+          
+          **Behavioral Data Collection:**
+          - Website Interactions: {{website_interaction_tracking}}
+          - Email Engagement: {{email_engagement_tracking}}
+          - Purchase History: {{purchase_history_tracking}}
+          - Content Consumption: {{content_consumption_tracking}}
+          
+          **Preference Management:**
+          - Explicit Preferences: {{explicit_preference_collection}}
+          - Implicit Preferences: {{implicit_preference_inference}}
+          - Preference Evolution: {{preference_evolution_tracking}}
+          - Preference Conflicts: {{preference_conflict_resolution}}
+          
+          **Data Quality Framework:**
+          {{data_quality_management}}
+      - id: dynamic-personalization-engine
+        title: Dynamic Personalization Engine
+        sections:
+          - id: real-time-personalization
+            title: Real-Time Personalization Logic
+            template: |
+              **Real-Time Personalization Framework:**
+              
+              **Personalization Decision Engine:**
+              - Decision Speed: {{personalization_decision_speed}}
+              - Context Processing: {{context_processing_approach}}
+              - Fallback Mechanisms: {{personalization_fallbacks}}
+              - Quality Assurance: {{personalization_quality_checks}}
+              
+              **Personalization Algorithms:**
+              
+              **Collaborative Filtering:**
+              - User-Based CF: {{user_based_cf_approach}}
+              - Item-Based CF: {{item_based_cf_approach}}
+              - Matrix Factorization: {{matrix_factorization_approach}}
+              - Cold Start Handling: {{cold_start_handling}}
+              
+              **Content-Based Filtering:**
+              - Feature Extraction: {{feature_extraction_approach}}
+              - Similarity Calculation: {{similarity_calculation}}
+              - Content Recommendation: {{content_recommendation_logic}}
+              - Profile Building: {{profile_building_approach}}
+              
+              **Hybrid Approaches:**
+              - Algorithm Combination: {{algorithm_combination_approach}}
+              - Weight Optimization: {{weight_optimization_method}}
+              - Performance Balancing: {{performance_balancing}}
+              
+              **Machine Learning Integration:**
+              {{ml_personalization_framework}}
+          - id: contextual-personalization
+            title: Contextual Personalization Rules
+            template: |
+              **Contextual Personalization Framework:**
+              
+              **Context Dimensions:**
+              
+              **Temporal Context:**
+              - Time of Day: {{time_of_day_personalization}}
+              - Day of Week: {{day_of_week_personalization}}
+              - Season/Month: {{seasonal_personalization}}
+              - Business Cycle: {{business_cycle_personalization}}
+              
+              **Situational Context:**
+              - Device Type: {{device_type_personalization}}
+              - Location: {{location_based_personalization}}
+              - Weather: {{weather_based_personalization}}
+              - Current Activity: {{activity_based_personalization}}
+              
+              **Behavioral Context:**
+              - Recent Actions: {{recent_action_personalization}}
+              - Engagement Level: {{engagement_level_personalization}}
+              - Journey Stage: {{journey_stage_personalization}}
+              - Intent Signals: {{intent_signal_personalization}}
+              
+              **Business Context:**
+              - Campaign Goals: {{campaign_goal_personalization}}
+              - Inventory Levels: {{inventory_based_personalization}}
+              - Promotional Calendar: {{promotional_personalization}}
+              - Business Priorities: {{business_priority_personalization}}
+              
+              **Context Rule Engine:**
+              {{context_rule_engine_framework}}
+          - id: ai-powered-personalization
+            title: AI-Powered Personalization Enhancement
+            template: |
+              **AI Enhancement Framework:**
+              
+              **LLM-Powered Personalization:**
+              - Content Generation: {{llm_content_generation}}
+              - Style Adaptation: {{llm_style_adaptation}}
+              - Emotional Tone: {{llm_emotional_adaptation}}
+              - Complexity Adjustment: {{llm_complexity_adaptation}}
+              
+              **Predictive Personalization:**
+              - Next Best Action: {{next_best_action_prediction}}
+              - Churn Risk Prediction: {{churn_risk_personalization}}
+              - Lifetime Value Prediction: {{ltv_prediction_personalization}}
+              - Conversion Probability: {{conversion_probability_personalization}}
+              
+              **Natural Language Processing:**
+              - Intent Recognition: {{intent_recognition_approach}}
+              - Sentiment Analysis: {{sentiment_analysis_integration}}
+              - Entity Extraction: {{entity_extraction_approach}}
+              - Topic Modeling: {{topic_modeling_integration}}
+              
+              **Computer Vision Integration:**
+              - Visual Content Personalization: {{visual_content_personalization}}
+              - Image Recognition: {{image_recognition_integration}}
+              - Visual Preference Learning: {{visual_preference_learning}}
+              
+              **AI Ethics & Fairness:**
+              {{ai_ethics_personalization}}
+      - id: privacy-compliance-framework
+        title: Privacy Compliance & Data Governance
+        template: |
+          **Privacy-First Personalization:**
+          
+          **Data Governance Framework:**
+          - Data Collection Policies: {{data_collection_policies}}
+          - Consent Management: {{consent_management_approach}}
+          - Data Retention Policies: {{data_retention_policies}}
+          - Data Subject Rights: {{data_subject_rights_framework}}
+          
+          **Privacy-Preserving Techniques:**
+          - Data Minimization: {{data_minimization_approach}}
+          - Pseudonymization: {{pseudonymization_approach}}
+          - Differential Privacy: {{differential_privacy_approach}}
+          - Federated Learning: {{federated_learning_approach}}
+          
+          **Compliance Requirements:**
+          - GDPR Compliance: {{gdpr_compliance_framework}}
+          - CCPA Compliance: {{ccpa_compliance_framework}}
+          - Industry Regulations: {{industry_regulation_compliance}}
+          - Cross-Border Data: {{cross_border_data_handling}}
+          
+          **Transparency & Control:**
+          - Personalization Transparency: {{personalization_transparency}}
+          - User Control Mechanisms: {{user_control_mechanisms}}
+          - Opt-out Capabilities: {{opt_out_capabilities}}
+          - Data Portability: {{data_portability_framework}}
+          
+          **Audit & Monitoring:**
+          {{privacy_audit_framework}}
+
+  - id: escalation-paths
+    title: Escalation Paths & Exception Handling
+    instruction: |
+      Define comprehensive escalation pathways with LLM assistance for decision support.
+      Include exception handling, quality assurance, and performance optimization.
+    variables:
+      - escalation_paths
+      - exception_scenarios
+    sections:
+      - id: escalation-triggers
+        title: Escalation Trigger Framework
+        instruction: Define comprehensive escalation trigger criteria with scoring and prioritization
+        repeatable: true
+        template: |
+          **Escalation Trigger: {{escalation_trigger_name}}**
+          **Category:** {{escalation_category}}
+          **Severity Level:** {{escalation_severity}}/5
+          **Response Time SLA:** {{escalation_response_sla}}
+          
+          **Trigger Conditions:**
+          - Primary Condition: {{primary_escalation_condition}}
+          - Supporting Conditions: {{supporting_escalation_conditions}}
+          - Threshold Values: {{escalation_thresholds}}
+          - Time-Based Factors: {{time_based_escalation_factors}}
+          
+          **Detection Logic:**
+          ```
+          IF {{primary_condition_logic}}
+          AND ({{supporting_condition_1}} OR {{supporting_condition_2}})
+          AND {{threshold_condition}}
+          WITHIN {{time_window}}
+          THEN ESCALATE TO {{escalation_target}}
+          WITH PRIORITY {{escalation_priority}}
+          ```
+          
+          **Escalation Scoring:**
+          - Urgency Score: {{urgency_score}}/10 ({{urgency_factors}})
+          - Impact Score: {{impact_score}}/10 ({{impact_factors}})
+          - Customer Value Score: {{value_score}}/10 ({{value_factors}})
+          - Risk Score: {{risk_score}}/10 ({{risk_factors}})
+          - **Total Escalation Score: {{total_escalation_score}}/40**
+          
+          **Escalation Routing:**
+          - Score 30-40: {{high_priority_routing}}
+          - Score 20-29: {{medium_priority_routing}}
+          - Score 10-19: {{low_priority_routing}}
+          - Score 0-9: {{monitoring_routing}}
+          
+          **Context Package:**
+          {{escalation_context_package}}
+      - id: escalation-routing-framework
+        title: Escalation Routing & Assignment Framework
+        template: |
+          **Escalation Routing Architecture:**
+          
+          **Routing Decision Matrix:**
+          
+          **Level 1: Automated Escalation**
+          - Trigger Criteria: {{level_1_trigger_criteria}}
+          - Routing Logic: {{level_1_routing_logic}}
+          - Assignment Method: {{level_1_assignment_method}}
+          - Response Time: {{level_1_response_time}}
+          
+          **Level 2: Specialist Escalation**
+          - Trigger Criteria: {{level_2_trigger_criteria}}
+          - Specialist Types: {{level_2_specialist_types}}
+          - Assignment Logic: {{level_2_assignment_logic}}
+          - Response Time: {{level_2_response_time}}
+          
+          **Level 3: Manager Escalation**
+          - Trigger Criteria: {{level_3_trigger_criteria}}
+          - Manager Types: {{level_3_manager_types}}
+          - Assignment Protocol: {{level_3_assignment_protocol}}
+          - Response Time: {{level_3_response_time}}
+          
+          **Level 4: Executive Escalation**
+          - Trigger Criteria: {{level_4_trigger_criteria}}
+          - Executive Routing: {{level_4_executive_routing}}
+          - Emergency Protocols: {{level_4_emergency_protocols}}
+          - Response Time: {{level_4_response_time}}
+          
+          **Dynamic Routing Factors:**
+          - Specialist Availability: {{specialist_availability_logic}}
+          - Workload Balancing: {{workload_balancing_logic}}
+          - Expertise Matching: {{expertise_matching_logic}}
+          - Customer Preference: {{customer_preference_routing}}
+          
+          **Escalation Queue Management:**
+          {{escalation_queue_management}}
+      - id: exception-handling-framework
+        title: Exception Handling & Recovery Protocols
+        sections:
+          - id: exception-categories
+            title: Exception Categories & Response Protocols
+            repeatable: true
+            template: |
+              **Exception Type: {{exception_type}}**
+              **Category:** {{exception_category}}
+              **Frequency:** {{exception_frequency}}
+              **Impact Level:** {{exception_impact_level}}
+              
+              **Exception Description:**
+              {{exception_description}}
+              
+              **Detection Criteria:**
+              - Automated Detection: {{automated_detection_criteria}}
+              - Manual Detection: {{manual_detection_process}}
+              - Monitoring Systems: {{monitoring_system_alerts}}
+              - Customer Reports: {{customer_reporting_process}}
+              
+              **Response Protocol:**
+              
+              **Immediate Response (0-15 minutes):**
+              1. {{immediate_response_step_1}}
+              2. {{immediate_response_step_2}}
+              3. {{immediate_response_step_3}}
+              
+              **Short-term Response (15 minutes - 4 hours):**
+              1. {{short_term_response_step_1}}
+              2. {{short_term_response_step_2}}
+              3. {{short_term_response_step_3}}
+              
+              **Long-term Resolution (4 hours - 24 hours):**
+              1. {{long_term_resolution_step_1}}
+              2. {{long_term_resolution_step_2}}
+              3. {{long_term_resolution_step_3}}
+              
+              **Recovery Procedures:**
+              - Data Recovery: {{data_recovery_procedure}}
+              - Service Restoration: {{service_restoration_procedure}}
+              - Customer Communication: {{customer_communication_procedure}}
+              - Post-Incident Review: {{post_incident_review_procedure}}
+              
+              **Prevention Measures:**
+              {{exception_prevention_measures}}
+          - id: quality-assurance-framework
+            title: Quality Assurance & Monitoring
+            template: |
+              **Quality Assurance Framework:**
+              
+              **Continuous Monitoring:**
+              - Real-time Metrics: {{realtime_monitoring_metrics}}
+              - Quality Thresholds: {{quality_threshold_definitions}}
+              - Alert Systems: {{quality_alert_systems}}
+              - Dashboard Monitoring: {{dashboard_monitoring_setup}}
+              
+              **Quality Checkpoints:**
+              
+              **Pre-Engagement Quality Checks:**
+              - Content Validation: {{content_validation_checks}}
+              - Personalization Accuracy: {{personalization_accuracy_checks}}
+              - Compliance Verification: {{compliance_verification_checks}}
+              - Technical Validation: {{technical_validation_checks}}
+              
+              **During-Engagement Monitoring:**
+              - Engagement Progress: {{engagement_progress_monitoring}}
+              - Quality Indicators: {{quality_indicator_monitoring}}
+              - Customer Satisfaction: {{customer_satisfaction_monitoring}}
+              - Performance Metrics: {{performance_metrics_monitoring}}
+              
+              **Post-Engagement Review:**
+              - Outcome Validation: {{outcome_validation_process}}
+              - Quality Scoring: {{quality_scoring_framework}}
+              - Improvement Identification: {{improvement_identification}}
+              - Success Pattern Analysis: {{success_pattern_analysis}}
+              
+              **Quality Improvement Loop:**
+              {{quality_improvement_framework}}
+          - id: escalation-performance-optimization
+            title: Escalation Performance Optimization
+            template: |
+              **Performance Optimization Framework:**
+              
+              **Escalation Metrics:**
+              - Escalation Rate: {{escalation_rate_targets}}
+              - Resolution Time: {{resolution_time_targets}}
+              - Customer Satisfaction: {{escalation_satisfaction_targets}}
+              - Quality Scores: {{escalation_quality_targets}}
+              
+              **Performance Analysis:**
+              - Trend Analysis: {{escalation_trend_analysis}}
+              - Root Cause Analysis: {{escalation_root_cause_analysis}}
+              - Pattern Recognition: {{escalation_pattern_recognition}}
+              - Predictive Analysis: {{escalation_predictive_analysis}}
+              
+              **Optimization Strategies:**
+              - Prevention Focus: {{escalation_prevention_strategies}}
+              - Process Improvement: {{escalation_process_improvement}}
+              - Training Enhancement: {{escalation_training_enhancement}}
+              - Technology Optimization: {{escalation_technology_optimization}}
+              
+              **Continuous Improvement:**
+              {{escalation_continuous_improvement}}
+
+  - id: performance-tracking-optimization
+    title: Performance Tracking & Optimization Framework
+    instruction: |
+      Create comprehensive performance tracking with LLM assistance for insights and optimization.
+      Focus on actionable metrics, predictive analytics, and continuous improvement.
+    sections:
+      - id: performance-metrics-architecture
+        title: Performance Metrics Architecture
+        template: |
+          **Metrics Philosophy:**
+          {{metrics_philosophy}}
+          
+          **Metrics Hierarchy:**
+          
+          **North Star Metrics:**
+          - Primary North Star: {{primary_north_star_metric}}
+          - Secondary North Star: {{secondary_north_star_metric}}
+          - Supporting Indicators: {{north_star_supporting_indicators}}
+          
+          **Strategic KPIs:**
+          1. {{strategic_kpi_1}} - Target: {{strategic_target_1}}
+          2. {{strategic_kpi_2}} - Target: {{strategic_target_2}}
+          3. {{strategic_kpi_3}} - Target: {{strategic_target_3}}
+          4. {{strategic_kpi_4}} - Target: {{strategic_target_4}}
+          5. {{strategic_kpi_5}} - Target: {{strategic_target_5}}
+          
+          **Operational Metrics:**
+          
+          **Engagement Metrics:**
+          - Response Rate: {{response_rate_benchmark}}
+          - Open Rate: {{open_rate_benchmark}}
+          - Click-Through Rate: {{ctr_benchmark}}
+          - Engagement Duration: {{engagement_duration_benchmark}}
+          - Conversation Completion Rate: {{completion_rate_benchmark}}
+          
+          **Quality Metrics:**
+          - Customer Satisfaction Score: {{satisfaction_score_benchmark}}
+          - Net Promoter Score: {{nps_benchmark}}
+          - Message Quality Score: {{message_quality_benchmark}}
+          - Personalization Accuracy: {{personalization_accuracy_benchmark}}
+          
+          **Efficiency Metrics:**
+          - Cost Per Engagement: {{cost_per_engagement_benchmark}}
+          - Time to Response: {{response_time_benchmark}}
+          - Automation Success Rate: {{automation_success_benchmark}}
+          - Human Escalation Rate: {{escalation_rate_benchmark}}
+          
+          **Business Impact Metrics:**
+          - Conversion Rate: {{conversion_rate_benchmark}}
+          - Revenue Per Engagement: {{revenue_per_engagement_benchmark}}
+          - Customer Lifetime Value Impact: {{ltv_impact_benchmark}}
+          - Return on Investment: {{roi_benchmark}}
+          
+          **Metrics Collection Framework:**
+          {{metrics_collection_framework}}
+      - id: analytics-dashboard-framework
+        title: Analytics Dashboard & Reporting Framework
+        sections:
+          - id: real-time-dashboards
+            title: Real-Time Performance Dashboards
+            template: |
+              **Real-Time Dashboard Architecture:**
+              
+              **Executive Dashboard:**
+              - Key Metrics: {{executive_dashboard_metrics}}
+              - Update Frequency: {{executive_update_frequency}}
+              - Alert Thresholds: {{executive_alert_thresholds}}
+              - Drill-Down Capabilities: {{executive_drilldown}}
+              
+              **Operational Dashboard:**
+              - Performance Metrics: {{operational_dashboard_metrics}}
+              - Update Frequency: {{operational_update_frequency}}
+              - Team Views: {{operational_team_views}}
+              - Action Items: {{operational_action_items}}
+              
+              **Campaign Dashboard:**
+              - Campaign Performance: {{campaign_dashboard_metrics}}
+              - A/B Test Results: {{ab_test_dashboard}}
+              - Optimization Insights: {{optimization_insights_dashboard}}
+              - Predictive Analytics: {{predictive_analytics_dashboard}}
+              
+              **Channel Dashboard:**
+              - Channel Performance: {{channel_dashboard_metrics}}
+              - Cross-Channel Analytics: {{cross_channel_dashboard}}
+              - Attribution Insights: {{attribution_dashboard}}
+              - ROI Analysis: {{roi_analysis_dashboard}}
+              
+              **Dashboard Personalization:**
+              {{dashboard_personalization_framework}}
+          - id: automated-reporting
+            title: Automated Reporting & Insights
+            template: |
+              **Automated Reporting Framework:**
+              
+              **Report Types & Cadence:**
+              
+              **Daily Reports:**
+              - Performance Summary: {{daily_performance_summary}}
+              - Alert Summary: {{daily_alert_summary}}
+              - Key Actions: {{daily_key_actions}}
+              - Trend Indicators: {{daily_trend_indicators}}
+              
+              **Weekly Reports:**
+              - Performance Analysis: {{weekly_performance_analysis}}
+              - Goal Progress: {{weekly_goal_progress}}
+              - Optimization Wins: {{weekly_optimization_wins}}
+              - Next Week Focus: {{weekly_focus_areas}}
+              
+              **Monthly Reports:**
+              - Strategic Review: {{monthly_strategic_review}}
+              - ROI Analysis: {{monthly_roi_analysis}}
+              - Trend Analysis: {{monthly_trend_analysis}}
+              - Recommendation Summary: {{monthly_recommendations}}
+              
+              **Quarterly Reports:**
+              - Business Impact Review: {{quarterly_business_impact}}
+              - Strategic Alignment: {{quarterly_strategic_alignment}}
+              - Investment Analysis: {{quarterly_investment_analysis}}
+              - Future Planning: {{quarterly_future_planning}}
+              
+              **Automated Insights Generation:**
+              - Pattern Recognition: {{automated_pattern_recognition}}
+              - Anomaly Detection: {{automated_anomaly_detection}}
+              - Predictive Insights: {{automated_predictive_insights}}
+              - Recommendation Engine: {{automated_recommendation_engine}}
+              
+              **Report Distribution:**
+              {{report_distribution_framework}}
+          - id: advanced-analytics
+            title: Advanced Analytics & Predictive Modeling
+            template: |
+              **Advanced Analytics Framework:**
+              
+              **Predictive Analytics:**
+              - Engagement Prediction: {{engagement_prediction_model}}
+              - Conversion Prediction: {{conversion_prediction_model}}
+              - Churn Risk Prediction: {{churn_prediction_model}}
+              - Lifetime Value Prediction: {{ltv_prediction_model}}
+              
+              **Machine Learning Models:**
+              - Model Types: {{ml_model_types}}
+              - Training Data: {{ml_training_data}}
+              - Model Validation: {{ml_model_validation}}
+              - Model Deployment: {{ml_model_deployment}}
+              
+              **Statistical Analysis:**
+              - Correlation Analysis: {{correlation_analysis_approach}}
+              - Regression Analysis: {{regression_analysis_approach}}
+              - Time Series Analysis: {{time_series_analysis}}
+              - Cohort Analysis: {{cohort_analysis_approach}}
+              
+              **Experimental Design:**
+              - A/B Testing Framework: {{ab_testing_statistical_framework}}
+              - Multivariate Testing: {{multivariate_testing_approach}}
+              - Statistical Significance: {{statistical_significance_criteria}}
+              - Sample Size Calculation: {{sample_size_calculation}}
+              
+              **Data Science Integration:**
+              {{data_science_integration_framework}}
+      - id: optimization-framework
+        title: Continuous Optimization Framework
+        sections:
+          - id: performance-optimization-cycle
+            title: Performance Optimization Cycle
+            template: |
+              **Optimization Methodology:**
+              
+              **Weekly Optimization Cycle:**
+              
+              **Monday: Data Collection & Analysis**
+              - Performance Data Review: {{monday_data_review}}
+              - Trend Identification: {{monday_trend_identification}}
+              - Anomaly Investigation: {{monday_anomaly_investigation}}
+              - Hypothesis Generation: {{monday_hypothesis_generation}}
+              
+              **Tuesday-Wednesday: Test Design & Implementation**
+              - Test Design: {{test_design_process}}
+              - Resource Allocation: {{test_resource_allocation}}
+              - Implementation: {{test_implementation}}
+              - Monitoring Setup: {{test_monitoring_setup}}
+              
+              **Thursday-Friday: Results Analysis & Optimization**
+              - Results Collection: {{results_collection_process}}
+              - Statistical Analysis: {{statistical_analysis_process}}
+              - Winner Identification: {{winner_identification_process}}
+              - Optimization Implementation: {{optimization_implementation}}
+              
+              **Continuous Improvement Framework:**
+              - Learning Documentation: {{learning_documentation_process}}
+              - Best Practice Sharing: {{best_practice_sharing}}
+              - Process Refinement: {{process_refinement_approach}}
+              - Innovation Exploration: {{innovation_exploration}}
+          - id: ai-powered-optimization
+            title: AI-Powered Optimization Engine
+            template: |
+              **AI Optimization Framework:**
+              
+              **Automated Optimization:**
+              - Real-time Optimization: {{realtime_optimization_approach}}
+              - Dynamic Content Optimization: {{dynamic_content_optimization}}
+              - Timing Optimization: {{timing_optimization_ai}}
+              - Channel Optimization: {{channel_optimization_ai}}
+              
+              **LLM-Powered Insights:**
+              - Performance Analysis: {{llm_performance_analysis}}
+              - Optimization Recommendations: {{llm_optimization_recommendations}}
+              - Trend Prediction: {{llm_trend_prediction}}
+              - Strategic Insights: {{llm_strategic_insights}}
+              
+              **Reinforcement Learning:**
+              - Reward Function Design: {{reward_function_design}}
+              - Action Space Definition: {{action_space_definition}}
+              - Learning Algorithm: {{learning_algorithm_selection}}
+              - Performance Evaluation: {{rl_performance_evaluation}}
+              
+              **AI Ethics & Transparency:**
+              {{ai_optimization_ethics}}
+          - id: optimization-governance
+            title: Optimization Governance & Quality Control
+            template: |
+              **Optimization Governance Framework:**
+              
+              **Optimization Standards:**
+              - Minimum Test Duration: {{minimum_test_duration}}
+              - Statistical Significance Requirements: {{statistical_significance_requirements}}
+              - Sample Size Requirements: {{sample_size_requirements}}
+              - Quality Gates: {{optimization_quality_gates}}
+              
+              **Approval Processes:**
+              - Low-Risk Optimizations: {{low_risk_approval_process}}
+              - Medium-Risk Optimizations: {{medium_risk_approval_process}}
+              - High-Risk Optimizations: {{high_risk_approval_process}}
+              - Emergency Optimizations: {{emergency_optimization_process}}
+              
+              **Risk Management:**
+              - Risk Assessment Framework: {{optimization_risk_assessment}}
+              - Risk Mitigation Strategies: {{optimization_risk_mitigation}}
+              - Rollback Procedures: {{optimization_rollback_procedures}}
+              - Impact Monitoring: {{optimization_impact_monitoring}}
+              
+              **Optimization Documentation:**
+              {{optimization_documentation_framework}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Success Framework
+    instruction: |
+      Create comprehensive implementation roadmap with clear phases, milestones, and success criteria.
+      Include team enablement, technology requirements, and performance benchmarks.
+    sections:
+      - id: implementation-phases
+        title: Implementation Phase Planning
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Team Size:** {{phase_team_size}}
+          **Budget:** {{phase_budget}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_date}}
+          
+          **Success Criteria:**
+          - Primary Metric: {{phase_primary_metric}} - Target: {{phase_primary_target}}
+          - Secondary Metric: {{phase_secondary_metric}} - Target: {{phase_secondary_target}}
+          - Quality Gate: {{phase_quality_gate}} - Threshold: {{phase_quality_threshold}}
+          
+          **Dependencies:**
+          - Previous Phase Dependencies: {{previous_phase_dependencies}}
+          - External Dependencies: {{external_dependencies}}
+          - Resource Dependencies: {{resource_dependencies}}
+          - Technology Dependencies: {{technology_dependencies}}
+          
+          **Risk Factors:**
+          - High Risk: {{high_risk_factors}}
+          - Medium Risk: {{medium_risk_factors}}
+          - Mitigation Strategies: {{risk_mitigation_strategies}}
+          
+          **Go/No-Go Criteria:**
+          {{phase_go_no_go_criteria}}
+      - id: quick-wins-strategy
+        title: Quick Wins & Early Success Strategy
+        template: |
+          **Quick Wins Implementation:**
+          
+          **30-Day Quick Wins:**
+          
+          **Week 1: Foundation Setup**
+          - Day 1-2: {{week_1_day_1_2_activities}}
+          - Day 3-4: {{week_1_day_3_4_activities}}
+          - Day 5-7: {{week_1_day_5_7_activities}}
+          
+          **Week 2: Initial Deployment**
+          - Day 8-10: {{week_2_day_8_10_activities}}
+          - Day 11-12: {{week_2_day_11_12_activities}}
+          - Day 13-14: {{week_2_day_13_14_activities}}
+          
+          **Week 3: Optimization & Learning**
+          - Day 15-17: {{week_3_day_15_17_activities}}
+          - Day 18-19: {{week_3_day_18_19_activities}}
+          - Day 20-21: {{week_3_day_20_21_activities}}
+          
+          **Week 4: Scale & Systematize**
+          - Day 22-24: {{week_4_day_22_24_activities}}
+          - Day 25-26: {{week_4_day_25_26_activities}}
+          - Day 27-28: {{week_4_day_27_28_activities}}
+          - Day 29-30: {{week_4_day_29_30_activities}}
+          
+          **Early Success Metrics:**
+          - 30-Day Targets: {{thirty_day_targets}}
+          - Success Indicators: {{early_success_indicators}}
+          - Momentum Builders: {{momentum_building_activities}}
+          
+          **Communication Strategy:**
+          {{early_success_communication}}
+      - id: team-enablement-plan
+        title: Team Enablement & Training Plan
+        template: |
+          **Team Enablement Strategy:**
+          
+          **Role-Specific Training:**
+          
+          **Marketing Team Training:**
+          - Core Competencies: {{marketing_core_competencies}}
+          - Training Modules: {{marketing_training_modules}}
+          - Certification Requirements: {{marketing_certifications}}
+          - Ongoing Development: {{marketing_ongoing_development}}
+          
+          **Sales Team Training:**
+          - Core Competencies: {{sales_core_competencies}}
+          - Training Modules: {{sales_training_modules}}
+          - Certification Requirements: {{sales_certifications}}
+          - Ongoing Development: {{sales_ongoing_development}}
+          
+          **Customer Success Training:**
+          - Core Competencies: {{cs_core_competencies}}
+          - Training Modules: {{cs_training_modules}}
+          - Certification Requirements: {{cs_certifications}}
+          - Ongoing Development: {{cs_ongoing_development}}
+          
+          **Technical Team Training:**
+          - Core Competencies: {{technical_core_competencies}}
+          - Training Modules: {{technical_training_modules}}
+          - Certification Requirements: {{technical_certifications}}
+          - Ongoing Development: {{technical_ongoing_development}}
+          
+          **Training Resources:**
+          - Internal Resources: {{internal_training_resources}}
+          - External Resources: {{external_training_resources}}
+          - Documentation: {{training_documentation}}
+          - Support Systems: {{training_support_systems}}
+          
+          **Competency Assessment:**
+          {{competency_assessment_framework}}
+      - id: technology-requirements
+        title: Technology Requirements & Integration
+        template: |
+          **Technology Stack Requirements:**
+          
+          **Core Platform Requirements:**
+          - Engagement Platform: {{core_engagement_platform}}
+          - CRM Integration: {{crm_integration_requirements}}
+          - Marketing Automation: {{marketing_automation_requirements}}
+          - Analytics Platform: {{analytics_platform_requirements}}
+          
+          **Integration Requirements:**
+          - API Requirements: {{api_integration_requirements}}
+          - Data Synchronization: {{data_sync_requirements}}
+          - Real-time Capabilities: {{realtime_capability_requirements}}
+          - Security Requirements: {{security_integration_requirements}}
+          
+          **Scalability Requirements:**
+          - Performance Benchmarks: {{performance_benchmark_requirements}}
+          - Scalability Thresholds: {{scalability_threshold_requirements}}
+          - Growth Accommodation: {{growth_accommodation_requirements}}
+          - Resource Optimization: {{resource_optimization_requirements}}
+          
+          **Compliance & Security:**
+          - Data Security: {{data_security_requirements}}
+          - Privacy Compliance: {{privacy_compliance_requirements}}
+          - Audit Capabilities: {{audit_capability_requirements}}
+          - Backup & Recovery: {{backup_recovery_requirements}}
+          
+          **Implementation Timeline:**
+          {{technology_implementation_timeline}}
+
+  - id: sequence-completion-framework
+    title: Sequence Plan Completion & Validation
+    instruction: |
+      Final validation of engagement sequence plan ensuring all components are comprehensive and actionable.
+      Include success metrics, quality checks, and implementation readiness assessment.
+    content: |
+      ---
+      
+      ## Engagement Sequence Plan Completion
+      
+      **Plan Development Completed:** {{completion_date}}
+      **Sequence Type:** {{sequence_type}}
+      **Company:** {{company_name}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Sequence Plan Components:**
+      - [ ] Trigger events framework with automated detection
+      - [ ] Response templates with dynamic personalization
+      - [ ] Multi-channel orchestration strategy
+      - [ ] Conversation flow design with AI assistance
+      - [ ] Human-hybrid escalation protocols
+      - [ ] Performance tracking and optimization framework
+      - [ ] Implementation roadmap with team enablement
+      
+      **Quality Validation:**
+      - [ ] All trigger events have clear detection logic
+      - [ ] Response templates include personalization rules
+      - [ ] Channel coordination ensures message consistency
+      - [ ] Escalation paths are clearly defined with SLAs
+      - [ ] Performance metrics are measurable and actionable
+      - [ ] Implementation plan is realistic and resourced
+      - [ ] Team training requirements are comprehensive
+      
+      **LLM Integration Validation:**
+      - [ ] Real-time decision support integrated
+      - [ ] Content optimization powered by AI
+      - [ ] Predictive analytics for engagement optimization
+      - [ ] Automated insights and recommendations
+      - [ ] Quality assurance with AI assistance
+      
+      **Business Impact Projection:**
+      - Expected Engagement Rate Improvement: {{expected_engagement_improvement}}%
+      - Projected Conversion Rate Increase: {{projected_conversion_increase}}%
+      - Estimated Cost Per Engagement Reduction: {{estimated_cost_reduction}}%
+      - Predicted Customer Satisfaction Improvement: {{predicted_satisfaction_improvement}}%
+      
+      **Next Steps:**
+      1. {{next_step_1}} - Owner: {{next_step_1_owner}} - Due: {{next_step_1_date}}
+      2. {{next_step_2}} - Owner: {{next_step_2_owner}} - Due: {{next_step_2_date}}
+      3. {{next_step_3}} - Owner: {{next_step_3_owner}} - Due: {{next_step_3_date}}
+      
+      **Success Review Date:** {{first_success_review_date}}
+      
+      ---
+      
+      ## Engagement Sequence Certification
+      
+      **Sequence Plan Approved:** {{approval_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Implementation Readiness:**
+      - [ ] Team trained and certified
+      - [ ] Technology stack configured
+      - [ ] Content templates ready
+      - [ ] Performance baselines established
+      - [ ] Monitoring systems operational
+      - [ ] Escalation procedures tested
+      - [ ] Quality assurance validated
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Engagement Sequence_
+      _Status: Ready for Implementation_
+      _Template: Engagement Sequence Plan v1.0_
+
+# Advanced template configuration
+variables:
+  strategic_context:
+    type: object
+    properties:
+      sequence_type:
+        type: string
+        description: "Type of engagement sequence (onboarding, nurture, conversion, retention, etc.)"
+        required: true
+      business_objectives:
+        type: array
+        description: "Primary business objectives for the engagement sequence"
+        min_items: 1
+        max_items: 5
+      target_customer_segments:
+        type: array
+        description: "Customer segments targeted by this sequence"
+        min_items: 1
+      journey_stage_focus:
+        type: string
+        enum: ["awareness", "consideration", "decision", "retention", "expansion"]
+        description: "Primary customer journey stage for this sequence"
+    validation:
+      - context_alignment: "Strategic context must align with business objectives"
+      - segment_specificity: "Target segments must be clearly defined"
+      - journey_stage_appropriate: "Sequence design must match journey stage needs"
+
+  trigger_events:
+    type: array
+    description: "Comprehensive trigger event definitions"
+    min_items: 3
+    max_items: 15
+    items:
+      type: object
+      properties:
+        trigger_name:
+          type: string
+          description: "Descriptive name for the trigger event"
+        trigger_category:
+          type: string
+          enum: ["behavioral", "temporal", "contextual", "engagement", "lifecycle"]
+        priority_score:
+          type: number
+          min: 1
+          max: 10
+          description: "Priority scoring for trigger importance"
+        conditions:
+          type: object
+          description: "Trigger condition definitions and logic"
+        response_mapping:
+          type: object
+          description: "Response template and action mapping"
+    validation:
+      - trigger_completeness: "All trigger events must have complete condition logic"
+      - priority_distribution: "Trigger priorities should be distributed across score range"
+      - response_alignment: "Trigger responses must align with business objectives"
+
+  response_templates:
+    type: object
+    properties:
+      template_categories:
+        type: array
+        description: "Categories of response templates"
+        min_items: 4
+      personalization_levels:
+        type: array
+        description: "Levels of personalization available"
+        min_items: 3
+      dynamic_elements:
+        type: array
+        description: "Dynamic content elements for real-time customization"
+        min_items: 5
+      quality_standards:
+        type: object
+        description: "Quality standards for template creation and usage"
+    validation:
+      - template_coverage: "Templates must cover all major engagement scenarios"
+      - personalization_depth: "Personalization must be meaningful and data-driven"
+      - quality_consistency: "All templates must meet established quality standards"
+
+  escalation_paths:
+    type: array
+    description: "Escalation pathway definitions"
+    min_items: 3
+    max_items: 8
+    items:
+      type: object
+      properties:
+        escalation_name:
+          type: string
+          description: "Name of the escalation pathway"
+        trigger_criteria:
+          type: object
+          description: "Criteria that trigger this escalation"
+        routing_logic:
+          type: object
+          description: "Logic for routing escalated engagements"
+        sla_requirements:
+          type: object
+          description: "Service level agreement requirements"
+        quality_assurance:
+          type: object
+          description: "Quality assurance measures for escalations"
+    validation:
+      - escalation_completeness: "All escalation paths must have complete routing logic"
+      - sla_realistic: "SLA requirements must be realistic and achievable"
+      - quality_maintained: "Quality standards must be maintained in escalations"
+
+engagement_sequence_types:
+  onboarding:
+    focus: "New customer introduction and value realization"
+    typical_duration: "30-90 days"
+    key_metrics: ["activation_rate", "time_to_value", "engagement_depth"]
+    channels: ["email", "in_app", "sms", "phone"]
+  
+  nurture:
+    focus: "Relationship building and trust development"
+    typical_duration: "60-180 days"
+    key_metrics: ["engagement_rate", "content_consumption", "lead_scoring"]
+    channels: ["email", "content", "social", "webinars"]
+  
+  conversion:
+    focus: "Sales conversion and decision acceleration"
+    typical_duration: "7-30 days"
+    key_metrics: ["conversion_rate", "sales_velocity", "deal_size"]
+    channels: ["email", "phone", "direct_mail", "retargeting"]
+  
+  retention:
+    focus: "Customer success and churn prevention"
+    typical_duration: "Ongoing"
+    key_metrics: ["retention_rate", "satisfaction_score", "usage_metrics"]
+    channels: ["email", "in_app", "customer_success", "community"]
+  
+  expansion:
+    focus: "Upsell and cross-sell opportunities"
+    typical_duration: "30-90 days"
+    key_metrics: ["expansion_revenue", "account_growth", "feature_adoption"]
+    channels: ["email", "in_app", "account_management", "events"]
+
+channel_capabilities:
+  email:
+    strengths: ["detailed_content", "personalization", "automation", "tracking"]
+    limitations: ["deliverability", "attention_competition", "mobile_formatting"]
+    optimization_factors: ["subject_lines", "send_timing", "content_length", "cta_placement"]
+  
+  sms:
+    strengths: ["immediacy", "high_open_rates", "mobile_native", "urgency"]
+    limitations: ["character_limits", "compliance", "frequency_sensitivity", "cost"]
+    optimization_factors: ["timing", "brevity", "personalization", "link_strategy"]
+  
+  phone:
+    strengths: ["personal_connection", "complex_conversations", "immediate_feedback", "relationship_building"]
+    limitations: ["scalability", "cost", "availability_matching", "compliance"]
+    optimization_factors: ["timing", "script_quality", "agent_training", "follow_up"]
+  
+  social_media:
+    strengths: ["engagement", "community", "viral_potential", "brand_building"]
+    limitations: ["algorithm_dependence", "platform_changes", "resource_intensive", "measurement"]
+    optimization_factors: ["content_quality", "timing", "hashtag_strategy", "community_management"]
+  
+  direct_mail:
+    strengths: ["tangible_impact", "attention_getting", "personalization", "integration"]
+    limitations: ["cost", "response_time", "environmental_concerns", "tracking"]
+    optimization_factors: ["design_quality", "personalization", "timing", "digital_integration"]
+
+llm_assistance_capabilities:
+  real_time_guidance:
+    content_optimization: "Dynamic content improvement suggestions"
+    tone_adaptation: "Real-time tone adjustment based on context"
+    personalization: "Dynamic personalization based on user data"
+    quality_assurance: "Automated quality checking and improvement"
+  
+  decision_support:
+    escalation_decisions: "AI-powered escalation routing decisions"
+    channel_selection: "Optimal channel recommendation"
+    timing_optimization: "Best timing prediction for engagement"
+    content_selection: "Most effective content variant selection"
+  
+  performance_prediction:
+    engagement_likelihood: "Prediction of engagement success probability"
+    conversion_prediction: "Likelihood of conversion for each interaction"
+    optimal_frequency: "Prediction of optimal engagement frequency"
+    churn_risk_assessment: "Real-time churn risk evaluation"
+
+quality_validation_framework:
+  sequence_completeness:
+    - trigger_coverage: "All relevant trigger events must be identified and defined"
+    - response_comprehensiveness: "Response templates must cover all engagement scenarios"
+    - channel_optimization: "Each channel must be optimized for its unique strengths"
+    - escalation_clarity: "Escalation paths must be clear and actionable"
+  
+  performance_orientation:
+    - metrics_measurable: "All success metrics must be quantifiable and trackable"
+    - benchmarks_realistic: "Performance benchmarks must be achievable yet ambitious"
+    - optimization_systematic: "Optimization processes must be systematic and data-driven"
+    - roi_focused: "All activities must contribute to measurable business outcomes"
+  
+  implementation_readiness:
+    - resource_allocation: "Required resources must be clearly identified and allocated"
+    - timeline_realistic: "Implementation timeline must be realistic and achievable"
+    - dependencies_managed: "All dependencies must be identified and managed"
+    - risk_mitigation: "Major risks must be identified with mitigation strategies"
+  
+  technology_integration:
+    - platform_compatibility: "All technology requirements must be compatible with existing systems"
+    - scalability_planning: "System must be designed for growth and scalability"
+    - security_compliance: "All security and compliance requirements must be met"
+    - user_experience: "Technology implementation must enhance user experience"
+
+conditional_logic:
+  sequence_type:
+    onboarding:
+      focus_areas: ["activation", "value_realization", "habit_formation", "success_milestones"]
+      critical_metrics: ["time_to_first_value", "feature_adoption", "engagement_consistency"]
+    nurture:
+      focus_areas: ["education", "trust_building", "preference_learning", "relationship_development"]
+      critical_metrics: ["content_engagement", "lead_scoring_progression", "brand_affinity"]
+    conversion:
+      focus_areas: ["objection_handling", "urgency_creation", "social_proof", "risk_mitigation"]
+      critical_metrics: ["conversion_rate", "sales_cycle_acceleration", "average_deal_size"]
+    retention:
+      focus_areas: ["success_reinforcement", "value_demonstration", "issue_resolution", "loyalty_building"]
+      critical_metrics: ["churn_rate", "satisfaction_scores", "usage_metrics", "renewal_rates"]
+  
+  business_model:
+    b2b:
+      considerations: ["decision_committees", "longer_cycles", "relationship_focus", "value_demonstration"]
+      channels: ["email", "linkedin", "phone", "direct_mail", "events"]
+    b2c:
+      considerations: ["emotional_triggers", "immediate_gratification", "social_proof", "convenience"]
+      channels: ["email", "sms", "social_media", "mobile_app", "retargeting"]
+    saas:
+      considerations: ["trial_conversion", "feature_adoption", "usage_optimization", "expansion"]
+      channels: ["email", "in_app", "knowledge_base", "chat", "phone"]
+
+integration_requirements:
+  data_sources:
+    customer_data_platform:
+      required_data: ["identity", "behaviors", "preferences", "history", "context"]
+      integration_type: "real_time_api"
+      update_frequency: "continuous"
+    
+    marketing_automation:
+      required_data: ["campaign_performance", "engagement_history", "lead_scoring"]
+      integration_type: "bidirectional_sync"
+      update_frequency: "real_time"
+    
+    crm_system:
+      required_data: ["customer_lifecycle", "sales_interactions", "support_history"]
+      integration_type: "bidirectional_sync"
+      update_frequency: "real_time"
+  
+  output_systems:
+    engagement_platforms:
+      required_outputs: ["trigger_events", "content_selection", "timing_optimization"]
+      format: "api_calls"
+      latency_requirements: "sub_second"
+    
+    analytics_platforms:
+      required_outputs: ["performance_metrics", "attribution_data", "optimization_insights"]
+      format: "structured_data_feeds"
+      latency_requirements: "near_real_time"
+
+privacy_compliance_framework:
+  data_governance:
+    collection_principles: ["minimal_collection", "purpose_limitation", "consent_based"]
+    retention_policies: ["automated_deletion", "purpose_expiration", "user_control"]
+    processing_lawfulness: ["consent", "legitimate_interest", "contract_necessity"]
+  
+  user_rights:
+    access_rights: ["data_portability", "transparency", "correction_capabilities"]
+    control_rights: ["opt_out", "preference_management", "deletion_requests"]
+    notification_rights: ["privacy_policy", "processing_notices", "breach_notification"]
+  
+  technical_safeguards:
+    data_protection: ["encryption", "pseudonymization", "access_controls"]
+    privacy_by_design: ["default_privacy", "data_minimization", "transparency"]
+    accountability: ["audit_trails", "compliance_monitoring", "regular_assessments"]

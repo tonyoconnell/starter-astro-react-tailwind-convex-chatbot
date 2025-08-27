@@ -1,0 +1,211 @@
+name: elevate-greenfield-workflow
+description: Workflow for new businesses implementing the Elevate Framework from scratch
+version: 1.0.0
+workflow_type: greenfield
+decision_tree: |
+  ```mermaid
+  graph TD
+    A[Start: New Business] --> B{Foundation Complete?}
+    B -->|No| C[Foundation Analysis]
+    B -->|Yes| D{Business Type?}
+    
+    C --> E[Company Workshop]
+    C --> F[Market Research]
+    C --> G[Customer Avatar]
+    E --> H[Strategic Alignment]
+    F --> H
+    G --> H
+    H --> D
+    
+    D -->|Product| I[Product ATTRACT Path]
+    D -->|Service| J[Service ATTRACT Path]
+    D -->|SaaS| K[SaaS ATTRACT Path]
+    
+    I --> L[Hook Strategy]
+    J --> L
+    K --> L
+    
+    L --> M[Gift Development]
+    M --> N[Capture Optimization]
+    
+    N --> O{ATTRACT Validated?}
+    O -->|No| L
+    O -->|Yes| P[CONVERT Phase]
+    
+    P --> Q[Engagement Design]
+    Q --> R[Sales Optimization]
+    R --> S[Nurture Sequences]
+    
+    S --> T{CONVERT Validated?}
+    T -->|No| P
+    T -->|Yes| U[GROW Phase]
+    
+    U --> V[Upsell Strategy]
+    V --> W[Success Program]
+    W --> X[Advocacy System]
+    
+    X --> Y{GROW Validated?}
+    Y -->|No| U
+    Y -->|Yes| Z[Continuous Optimization]
+  ```
+phases:
+  foundation:
+    duration: 1-2 weeks
+    agents:
+      - elevate-marketing-orchestrator
+      - brand-identity-specialist
+      - market-research-analyst
+      - customer-journey-designer
+    deliverables:
+      - Company Foundation Brief
+      - Market Analysis Report
+      - Customer Avatar Profile
+      - Strategic Alignment Blueprint
+    validation:
+      checklist: foundation-completeness-checklist.md
+      minimum_score: 4_stars
+  
+  attract:
+    duration: 2-3 weeks
+    prerequisites:
+      - foundation_complete
+      - strategic_priorities_defined
+    agents:
+      - content-hook-specialist
+      - lead-magnet-creator
+      - lead-capture-expert
+    deliverables:
+      - Hook Content Library
+      - Lead Magnet Asset
+      - Capture Page Design
+    validation:
+      checklist: attract-campaign-checklist.md
+      success_metrics:
+        - cost_per_lead_target
+        - lead_quality_score
+        - capture_conversion_rate
+  
+  convert:
+    duration: 3-4 weeks
+    prerequisites:
+      - attract_system_live
+      - minimum_100_leads
+    agents:
+      - engagement-specialist
+      - sales-environment-optimizer
+      - nurture-campaign-manager
+    deliverables:
+      - Engagement Sequence
+      - Optimized Sales Page
+      - Nurture Email Campaign
+    validation:
+      checklist: convert-campaign-checklist.md
+      success_metrics:
+        - lead_to_customer_rate
+        - cart_abandonment_improvement
+        - email_engagement_rates
+  
+  grow:
+    duration: 2-3 weeks
+    prerequisites:
+      - convert_system_optimized
+      - minimum_50_customers
+    agents:
+      - upsell-strategist
+      - customer-success-manager
+      - advocacy-campaign-designer
+    deliverables:
+      - Upsell/Cross-sell Offers
+      - Success Program Design
+      - Referral System
+    validation:
+      checklist: grow-campaign-checklist.md
+      success_metrics:
+        - average_order_value_increase
+        - customer_lifetime_value
+        - referral_activation_rate
+
+conditional_paths:
+  business_model:
+    product:
+      focus: "Physical product considerations"
+      special_agents:
+        - logistics coordination
+        - inventory planning
+    service:
+      focus: "Service delivery optimization"
+      special_agents:
+        - onboarding specialist
+        - service quality manager
+    saas:
+      focus: "Subscription optimization"
+      special_agents:
+        - trial conversion expert
+        - churn prevention specialist
+  
+  market_maturity:
+    new_market:
+      approach: "Education-first strategy"
+      timeline_multiplier: 1.5
+    established_market:
+      approach: "Differentiation focus"
+      timeline_multiplier: 1.0
+    saturated_market:
+      approach: "Blue ocean positioning"
+      timeline_multiplier: 1.2
+
+quality_gates:
+  foundation_to_attract:
+    requirements:
+      - foundation_score: 4_plus_stars
+      - brand_voice_defined: true
+      - customer_avatar_complete: true
+      - unique_mechanism_clear: true
+  
+  attract_to_convert:
+    requirements:
+      - lead_flow_established: true
+      - cost_per_lead_acceptable: true
+      - lead_quality_validated: true
+      - capture_rate_optimized: true
+  
+  convert_to_grow:
+    requirements:
+      - sales_process_proven: true
+      - customer_base_established: true
+      - conversion_rate_stable: true
+      - nurture_system_active: true
+
+optimization_loops:
+  weekly_reviews:
+    - metric_analysis
+    - a_b_test_results
+    - customer_feedback
+    - competitive_updates
+  
+  monthly_optimization:
+    - full_funnel_analysis
+    - agent_performance_review
+    - strategy_adjustments
+    - resource_reallocation
+
+success_indicators:
+  phase_1_foundation:
+    - Clear brand differentiation
+    - Validated market opportunity
+    - Deep customer understanding
+  
+  phase_2_attract:
+    - Predictable lead generation
+    - Optimized acquisition costs
+    - Quality lead flow
+  
+  phase_3_convert:
+    - Consistent sales conversion
+    - Shortened sales cycles
+    - Improved customer experience
+  
+  phase_4_grow:
+    - Increased customer value
+    - Active referral generation
+    - Sustainable growth engine

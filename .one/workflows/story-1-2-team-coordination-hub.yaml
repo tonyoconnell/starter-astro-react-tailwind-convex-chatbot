@@ -1,0 +1,301 @@
+team_coordination_hub:
+  id: story-1-2-team-coordination
+  name: Team Coordination Hub for Engineering Director
+  version: 1.0
+  purpose: Agent discovery, capability matching, and workload balancing for CASCADE workflows
+  
+  # Story 1.2 Performance Requirements
+  performance_targets:
+    agent_discovery_time: 1000  # <1 second
+    assignment_efficiency: 0.90  # >90% optimal matching
+    workload_imbalance: 0.10     # <10% imbalance
+    coordination_latency: 100    # <100ms updates
+  
+  # Agent Discovery System
+  agent_discovery:
+    scan_paths:
+      - ".claude/agents/"
+      - ".one/teams/"
+      - "one/agents/"
+    
+    file_patterns:
+      - "*.md"
+      - "*.yaml"
+      - "*.yml"
+    
+    capability_extraction:
+      patterns:
+        domain: "**Domain**: (.+)"
+        specialization: "**Specialization**: (.+)"
+        capabilities: "## Key Capabilities"
+        skills: "### (.+)"
+        experience: "**Experience**: (.+)"
+        current_assignment: "**Current Assignment**: (.+)"
+    
+    agent_classification:
+      teams:
+        engineering:
+          patterns: ["engineering", "technical", "developer", "architect"]
+          roles: ["engineering-director", "engineering-architect", "engineering-developer"]
+        
+        marketing:
+          patterns: ["marketing", "content", "brand", "social"]
+          roles: ["marketing-director", "content-creator", "marketing-team-manager"]
+        
+        research:
+          patterns: ["research", "analysis", "intelligence", "market"]
+          roles: ["research-analyst", "market-researcher", "intelligence-manager"]
+        
+        design:
+          patterns: ["design", "ux", "ui", "user-experience"]
+          roles: ["ux-designer", "ui-specialist", "design-team-manager"]
+        
+        quality:
+          patterns: ["quality", "assurance", "testing", "validation"]
+          roles: ["quality-assurance", "testing-specialist", "validation-expert"]
+  
+  # Capability Matching Engine
+  capability_matching:
+    story_analysis:
+      complexity_keywords:
+        high: ["architecture", "system", "integration", "complex", "critical"]
+        medium: ["feature", "enhancement", "moderate", "standard"]
+        low: ["fix", "simple", "minor", "routine"]
+      
+      domain_keywords:
+        technical: ["engineering", "development", "code", "system", "architecture"]
+        creative: ["design", "content", "brand", "marketing", "visual"]
+        analytical: ["research", "analysis", "data", "metrics", "intelligence"]
+        coordination: ["management", "coordination", "planning", "organization"]
+    
+    matching_algorithms:
+      skill_overlap:
+        weight: 0.4
+        calculation: "intersection(story_requirements, agent_capabilities) / union(story_requirements, agent_capabilities)"
+      
+      domain_alignment:
+        weight: 0.3
+        calculation: "match_score(story_domain, agent_domain)"
+      
+      experience_level:
+        weight: 0.2
+        calculation: "agent_experience_score * story_complexity_multiplier"
+      
+      availability:
+        weight: 0.1
+        calculation: "1 - (current_workload / max_capacity)"
+  
+  # Workload Balancing System
+  workload_balancing:
+    capacity_management:
+      default_capacity: 5  # stories per agent
+      capacity_overrides:
+        engineering-director: 8
+        marketing-director: 6
+        research-analyst: 7
+        quality-assurance: 4
+    
+    workload_tracking:
+      metrics:
+        - active_stories
+        - story_complexity_points
+        - estimated_completion_time
+        - quality_score_average
+        - coordination_overhead
+    
+    balancing_strategies:
+      round_robin:
+        description: "Distribute stories evenly across available agents"
+        use_when: "agents have similar capabilities"
+        weight: 0.3
+      
+      capability_first:
+        description: "Prioritize best capability match regardless of workload"
+        use_when: "story requires specific expertise"
+        weight: 0.4
+      
+      load_balanced:
+        description: "Balance workload while considering capability match"
+        use_when: "general story assignment"
+        weight: 0.3
+  
+  # Progress Tracking Dashboard
+  progress_tracking:
+    agent_status:
+      fields:
+        - agent_id
+        - current_stories
+        - workload_percentage
+        - quality_score_trend
+        - last_activity
+        - availability_status
+    
+    story_assignments:
+      tracking:
+        - assignment_timestamp
+        - story_complexity
+        - estimated_duration
+        - actual_duration
+        - quality_outcome
+        - agent_satisfaction_score
+    
+    coordination_metrics:
+      efficiency:
+        - assignment_time
+        - handoff_smoothness
+        - communication_clarity
+        - dependency_resolution
+      
+      quality:
+        - story_quality_scores
+        - agent_performance_trends
+        - coordination_success_rate
+        - escalation_frequency
+  
+  # Agent Assignment Process
+  assignment_process:
+    steps:
+      - id: story_analysis
+        description: "Analyze story requirements and complexity"
+        inputs: ["story_requirements", "context_data"]
+        outputs: ["complexity_score", "required_capabilities", "domain_classification"]
+      
+      - id: agent_discovery
+        description: "Discover and parse available agents"
+        inputs: ["agent_directories"]
+        outputs: ["agent_capabilities", "availability_status", "current_workload"]
+      
+      - id: capability_matching
+        description: "Match story requirements to agent capabilities"
+        inputs: ["story_requirements", "agent_capabilities"]
+        outputs: ["capability_scores", "matching_recommendations"]
+      
+      - id: workload_assessment
+        description: "Assess current workload and capacity"
+        inputs: ["agent_workload", "capacity_limits"]
+        outputs: ["availability_scores", "workload_balance"]
+      
+      - id: optimal_assignment
+        description: "Calculate optimal agent assignment"
+        inputs: ["capability_scores", "availability_scores", "balancing_strategy"]
+        outputs: ["assignment_recommendation", "confidence_score"]
+      
+      - id: assignment_execution
+        description: "Execute assignment and update tracking"
+        inputs: ["assignment_recommendation"]
+        outputs: ["assignment_confirmation", "tracking_update"]
+  
+  # Quality Gates for Team Coordination
+  quality_gates:
+    assignment_quality:
+      capability_match: 
+        threshold: 0.8
+        description: "Agent capabilities must match story requirements with >80% score"
+      
+      workload_balance:
+        threshold: 0.9
+        description: "Workload imbalance must be <10% across team"
+      
+      availability_check:
+        threshold: 0.7
+        description: "Assigned agent must have >70% availability"
+    
+    coordination_effectiveness:
+      assignment_time:
+        threshold: 1000  # <1 second
+        description: "Agent assignment must complete within 1 second"
+      
+      handoff_quality:
+        threshold: 4.0
+        description: "Story handoff must maintain 4.0+ star quality"
+      
+      communication_clarity:
+        threshold: 0.9
+        description: "Assignment communication must be >90% clear"
+  
+  # Integration with CASCADE Workflow
+  cascade_integration:
+    mission_to_story:
+      input: "mission_objectives_from_mission_commander"
+      processing: "analyze_story_requirements_and_assign_engineering_director"
+      output: "engineering_director_assignment_with_context"
+    
+    story_to_task:
+      input: "completed_story_from_engineering_director"
+      processing: "break_down_tasks_and_assign_specialist_agents"
+      output: "task_assignments_with_agent_coordination"
+    
+    quality_feedback:
+      input: "quality_validation_results"
+      processing: "update_agent_performance_metrics_and_assignment_algorithms"
+      output: "improved_assignment_accuracy"
+  
+  # Monitoring and Optimization
+  monitoring:
+    real_time_metrics:
+      - agent_utilization_percentage
+      - story_assignment_success_rate
+      - average_assignment_time
+      - quality_score_trends
+      - workload_balance_coefficient
+    
+    optimization_triggers:
+      workload_imbalance:
+        threshold: 0.15  # 15% imbalance
+        action: "rebalance_assignments"
+      
+      assignment_failures:
+        threshold: 0.1  # >10% failure rate
+        action: "review_matching_algorithms"
+      
+      quality_degradation:
+        threshold: 3.5  # <3.5 average quality
+        action: "reassess_capability_matching"
+  
+  # Agent Coordination Templates
+  coordination_templates:
+    story_assignment:
+      template: |
+        ## Story Assignment: {{story_id}}
+        
+        **Assigned Agent**: {{agent_id}}
+        **Assignment Confidence**: {{confidence_score}}%
+        **Expected Completion**: {{estimated_completion}}
+        
+        ### Story Requirements
+        - **Complexity**: {{complexity_level}}
+        - **Domain**: {{domain_classification}}
+        - **Key Capabilities Needed**: {{required_capabilities}}
+        
+        ### Agent Match Analysis
+        - **Capability Match**: {{capability_match_score}}%
+        - **Current Workload**: {{current_workload}}/{{max_capacity}}
+        - **Availability**: {{availability_percentage}}%
+        
+        ### Quality Expectations
+        - **Target Quality Score**: 4.0+ stars
+        - **CASCADE Integration**: Required
+        - **Handoff Requirements**: {{handoff_requirements}}
+    
+    workload_balance_report:
+      template: |
+        ## Team Workload Balance Report
+        
+        **Generated**: {{timestamp}}
+        **Balance Coefficient**: {{balance_coefficient}}
+        **Status**: {{balance_status}}
+        
+        ### Agent Utilization
+        {{#agents}}
+        - **{{agent_id}}**: {{utilization}}% ({{current_stories}}/{{capacity}} stories)
+        {{/agents}}
+        
+        ### Recommendations
+        {{#recommendations}}
+        - {{recommendation}}
+        {{/recommendations}}
+        
+        ### Quality Metrics
+        - **Average Quality Score**: {{average_quality}}
+        - **Assignment Success Rate**: {{assignment_success_rate}}%
+        - **Coordination Efficiency**: {{coordination_efficiency}}%

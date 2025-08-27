@@ -1,0 +1,302 @@
+monthly_strategy_calendar:
+  month: "{{MONTH_YEAR}}"
+  theme: "{{MONTHLY_THEME}}"
+  strategic_objectives:
+    - "{{OBJECTIVE_1}}"
+    - "{{OBJECTIVE_2}}"
+    - "{{OBJECTIVE_3}}"
+    
+  key_campaigns:
+    primary_campaign:
+      name: "{{PRIMARY_CAMPAIGN_NAME}}"
+      duration: "{{PRIMARY_CAMPAIGN_DURATION}}"
+      budget: "{{PRIMARY_CAMPAIGN_BUDGET}}"
+      objectives: "{{PRIMARY_CAMPAIGN_OBJECTIVES}}"
+      
+    secondary_campaign:
+      name: "{{SECONDARY_CAMPAIGN_NAME}}"
+      duration: "{{SECONDARY_CAMPAIGN_DURATION}}"
+      budget: "{{SECONDARY_CAMPAIGN_BUDGET}}"
+      objectives: "{{SECONDARY_CAMPAIGN_OBJECTIVES}}"
+      
+    ongoing_campaigns:
+      - name: "{{ONGOING_CAMPAIGN_1}}"
+        focus: "{{ONGOING_FOCUS_1}}"
+      - name: "{{ONGOING_CAMPAIGN_2}}"
+        focus: "{{ONGOING_FOCUS_2}}"
+        
+  weekly_breakdown:
+    week_1:
+      dates: "{{WEEK_1_DATES}}"
+      theme: "{{WEEK_1_THEME}}"
+      primary_focus: "{{WEEK_1_FOCUS}}"
+      key_activities:
+        - "{{WEEK_1_ACTIVITY_1}}"
+        - "{{WEEK_1_ACTIVITY_2}}"
+        - "{{WEEK_1_ACTIVITY_3}}"
+      campaign_milestones:
+        - "{{WEEK_1_MILESTONE_1}}"
+        - "{{WEEK_1_MILESTONE_2}}"
+        
+    week_2:
+      dates: "{{WEEK_2_DATES}}"
+      theme: "{{WEEK_2_THEME}}"
+      primary_focus: "{{WEEK_2_FOCUS}}"
+      key_activities:
+        - "{{WEEK_2_ACTIVITY_1}}"
+        - "{{WEEK_2_ACTIVITY_2}}"
+        - "{{WEEK_2_ACTIVITY_3}}"
+      campaign_milestones:
+        - "{{WEEK_2_MILESTONE_1}}"
+        - "{{WEEK_2_MILESTONE_2}}"
+        
+    week_3:
+      dates: "{{WEEK_3_DATES}}"
+      theme: "{{WEEK_3_THEME}}"
+      primary_focus: "{{WEEK_3_FOCUS}}"
+      key_activities:
+        - "{{WEEK_3_ACTIVITY_1}}"
+        - "{{WEEK_3_ACTIVITY_2}}"
+        - "{{WEEK_3_ACTIVITY_3}}"
+      campaign_milestones:
+        - "{{WEEK_3_MILESTONE_1}}"
+        - "{{WEEK_3_MILESTONE_2}}"
+        
+    week_4:
+      dates: "{{WEEK_4_DATES}}"
+      theme: "{{WEEK_4_THEME}}"
+      primary_focus: "{{WEEK_4_FOCUS}}"
+      key_activities:
+        - "{{WEEK_4_ACTIVITY_1}}"
+        - "{{WEEK_4_ACTIVITY_2}}"
+        - "{{WEEK_4_ACTIVITY_3}}"
+      campaign_milestones:
+        - "{{WEEK_4_MILESTONE_1}}"
+        - "{{WEEK_4_MILESTONE_2}}"
+        
+  content_themes:
+    week_1_theme:
+      name: "{{WEEK_1_CONTENT_THEME}}"
+      description: "{{WEEK_1_THEME_DESCRIPTION}}"
+      content_pillars:
+        - "{{WEEK_1_PILLAR_1}}"
+        - "{{WEEK_1_PILLAR_2}}"
+        - "{{WEEK_1_PILLAR_3}}"
+        
+    week_2_theme:
+      name: "{{WEEK_2_CONTENT_THEME}}"
+      description: "{{WEEK_2_THEME_DESCRIPTION}}"
+      content_pillars:
+        - "{{WEEK_2_PILLAR_1}}"
+        - "{{WEEK_2_PILLAR_2}}"
+        - "{{WEEK_2_PILLAR_3}}"
+        
+    week_3_theme:
+      name: "{{WEEK_3_CONTENT_THEME}}"
+      description: "{{WEEK_3_THEME_DESCRIPTION}}"
+      content_pillars:
+        - "{{WEEK_3_PILLAR_1}}"
+        - "{{WEEK_3_PILLAR_2}}"
+        - "{{WEEK_3_PILLAR_3}}"
+        
+    week_4_theme:
+      name: "{{WEEK_4_CONTENT_THEME}}"
+      description: "{{WEEK_4_THEME_DESCRIPTION}}"
+      content_pillars:
+        - "{{WEEK_4_PILLAR_1}}"
+        - "{{WEEK_4_PILLAR_2}}"
+        - "{{WEEK_4_PILLAR_3}}"
+        
+  channel_strategies:
+    social_media:
+      monthly_goals:
+        follower_growth: "{{SOCIAL_FOLLOWER_GOAL}}"
+        engagement_rate: "{{SOCIAL_ENGAGEMENT_GOAL}}"
+        reach: "{{SOCIAL_REACH_GOAL}}"
+        
+      platform_focus:
+        facebook:
+          priority_level: "{{FB_PRIORITY}}"
+          content_focus: "{{FB_CONTENT_FOCUS}}"
+          posting_frequency: "{{FB_POSTING_FREQUENCY}}"
+          key_campaigns: "{{FB_KEY_CAMPAIGNS}}"
+          
+        instagram:
+          priority_level: "{{IG_PRIORITY}}"
+          content_focus: "{{IG_CONTENT_FOCUS}}"
+          posting_frequency: "{{IG_POSTING_FREQUENCY}}"
+          key_campaigns: "{{IG_KEY_CAMPAIGNS}}"
+          
+        tiktok:
+          priority_level: "{{TIKTOK_PRIORITY}}"
+          content_focus: "{{TIKTOK_CONTENT_FOCUS}}"
+          posting_frequency: "{{TIKTOK_POSTING_FREQUENCY}}"
+          key_campaigns: "{{TIKTOK_KEY_CAMPAIGNS}}"
+          
+        linkedin:
+          priority_level: "{{LINKEDIN_PRIORITY}}"
+          content_focus: "{{LINKEDIN_CONTENT_FOCUS}}"
+          posting_frequency: "{{LINKEDIN_POSTING_FREQUENCY}}"
+          key_campaigns: "{{LINKEDIN_KEY_CAMPAIGNS}}"
+          
+        twitter:
+          priority_level: "{{TWITTER_PRIORITY}}"
+          content_focus: "{{TWITTER_CONTENT_FOCUS}}"
+          posting_frequency: "{{TWITTER_POSTING_FREQUENCY}}"
+          key_campaigns: "{{TWITTER_KEY_CAMPAIGNS}}"
+          
+    email_marketing:
+      monthly_goals:
+        list_growth: "{{EMAIL_LIST_GROWTH_GOAL}}"
+        open_rate: "{{EMAIL_OPEN_RATE_GOAL}}"
+        click_rate: "{{EMAIL_CLICK_RATE_GOAL}}"
+        conversion_rate: "{{EMAIL_CONVERSION_GOAL}}"
+        
+      campaign_schedule:
+        newsletters:
+          frequency: "{{NEWSLETTER_FREQUENCY}}"
+          send_day: "{{NEWSLETTER_SEND_DAY}}"
+          themes: "{{NEWSLETTER_THEMES}}"
+          
+        promotional:
+          week_1: "{{PROMO_WEEK_1}}"
+          week_2: "{{PROMO_WEEK_2}}"
+          week_3: "{{PROMO_WEEK_3}}"
+          week_4: "{{PROMO_WEEK_4}}"
+          
+        nurture_sequences:
+          new_subscriber: "{{NEW_SUBSCRIBER_SEQUENCE}}"
+          customer_onboarding: "{{CUSTOMER_ONBOARDING_SEQUENCE}}"
+          re_engagement: "{{RE_ENGAGEMENT_SEQUENCE}}"
+          
+    content_marketing:
+      monthly_goals:
+        blog_posts: "{{BLOG_POST_GOAL}}"
+        video_content: "{{VIDEO_CONTENT_GOAL}}"
+        podcast_episodes: "{{PODCAST_EPISODE_GOAL}}"
+        website_traffic: "{{WEBSITE_TRAFFIC_GOAL}}"
+        
+      content_calendar:
+        blog_schedule:
+          week_1: "{{BLOG_WEEK_1_TOPICS}}"
+          week_2: "{{BLOG_WEEK_2_TOPICS}}"
+          week_3: "{{BLOG_WEEK_3_TOPICS}}"
+          week_4: "{{BLOG_WEEK_4_TOPICS}}"
+          
+        video_schedule:
+          week_1: "{{VIDEO_WEEK_1_TOPICS}}"
+          week_2: "{{VIDEO_WEEK_2_TOPICS}}"
+          week_3: "{{VIDEO_WEEK_3_TOPICS}}"
+          week_4: "{{VIDEO_WEEK_4_TOPICS}}"
+          
+        podcast_schedule:
+          week_1: "{{PODCAST_WEEK_1_TOPICS}}"
+          week_2: "{{PODCAST_WEEK_2_TOPICS}}"
+          week_3: "{{PODCAST_WEEK_3_TOPICS}}"
+          week_4: "{{PODCAST_WEEK_4_TOPICS}}"
+          
+    paid_advertising:
+      monthly_budget: "{{MONTHLY_AD_BUDGET}}"
+      budget_allocation:
+        google_ads: "{{GOOGLE_ADS_BUDGET}}"
+        facebook_ads: "{{FACEBOOK_ADS_BUDGET}}"
+        linkedin_ads: "{{LINKEDIN_ADS_BUDGET}}"
+        other_platforms: "{{OTHER_ADS_BUDGET}}"
+        
+      campaign_objectives:
+        awareness: "{{AWARENESS_CAMPAIGN_FOCUS}}"
+        consideration: "{{CONSIDERATION_CAMPAIGN_FOCUS}}"
+        conversion: "{{CONVERSION_CAMPAIGN_FOCUS}}"
+        retention: "{{RETENTION_CAMPAIGN_FOCUS}}"
+        
+  seasonal_opportunities:
+    holidays:
+      - name: "{{HOLIDAY_1}}"
+        date: "{{HOLIDAY_1_DATE}}"
+        campaign_opportunity: "{{HOLIDAY_1_OPPORTUNITY}}"
+        
+      - name: "{{HOLIDAY_2}}"
+        date: "{{HOLIDAY_2_DATE}}"
+        campaign_opportunity: "{{HOLIDAY_2_OPPORTUNITY}}"
+        
+    industry_events:
+      - name: "{{INDUSTRY_EVENT_1}}"
+        date: "{{INDUSTRY_EVENT_1_DATE}}"
+        participation_plan: "{{INDUSTRY_EVENT_1_PLAN}}"
+        
+      - name: "{{INDUSTRY_EVENT_2}}"
+        date: "{{INDUSTRY_EVENT_2_DATE}}"
+        participation_plan: "{{INDUSTRY_EVENT_2_PLAN}}"
+        
+    trending_topics:
+      - trend: "{{TRENDING_TOPIC_1}}"
+        relevance: "{{TRENDING_RELEVANCE_1}}"
+        content_angle: "{{TRENDING_ANGLE_1}}"
+        
+      - trend: "{{TRENDING_TOPIC_2}}"
+        relevance: "{{TRENDING_RELEVANCE_2}}"
+        content_angle: "{{TRENDING_ANGLE_2}}"
+        
+  performance_measurement:
+    key_metrics:
+      brand_awareness:
+        reach: "{{BRAND_REACH_TARGET}}"
+        impressions: "{{BRAND_IMPRESSIONS_TARGET}}"
+        mention_sentiment: "{{BRAND_SENTIMENT_TARGET}}"
+        
+      engagement:
+        social_engagement_rate: "{{SOCIAL_ENGAGEMENT_TARGET}}"
+        email_engagement_rate: "{{EMAIL_ENGAGEMENT_TARGET}}"
+        website_engagement: "{{WEBSITE_ENGAGEMENT_TARGET}}"
+        
+      conversion:
+        lead_generation: "{{LEAD_GENERATION_TARGET}}"
+        sales_conversion: "{{SALES_CONVERSION_TARGET}}"
+        customer_acquisition: "{{CUSTOMER_ACQUISITION_TARGET}}"
+        
+    reporting_schedule:
+      weekly_reviews: "{{WEEKLY_REVIEW_SCHEDULE}}"
+      monthly_analysis: "{{MONTHLY_ANALYSIS_SCHEDULE}}"
+      stakeholder_reports: "{{STAKEHOLDER_REPORT_SCHEDULE}}"
+      
+    optimization_checkpoints:
+      week_1: "{{WEEK_1_OPTIMIZATION_FOCUS}}"
+      week_2: "{{WEEK_2_OPTIMIZATION_FOCUS}}"
+      week_3: "{{WEEK_3_OPTIMIZATION_FOCUS}}"
+      week_4: "{{WEEK_4_OPTIMIZATION_FOCUS}}"
+      
+  resource_planning:
+    team_allocation:
+      content_creators: "{{CONTENT_CREATOR_ALLOCATION}}"
+      social_media_managers: "{{SMM_ALLOCATION}}"
+      email_marketers: "{{EMAIL_MARKETER_ALLOCATION}}"
+      paid_ads_specialists: "{{ADS_SPECIALIST_ALLOCATION}}"
+      
+    budget_allocation:
+      content_creation: "{{CONTENT_CREATION_BUDGET}}"
+      paid_advertising: "{{PAID_ADVERTISING_BUDGET}}"
+      tools_and_software: "{{TOOLS_SOFTWARE_BUDGET}}"
+      freelancers_contractors: "{{FREELANCER_BUDGET}}"
+      
+    timeline_management:
+      content_creation_deadlines: "{{CONTENT_DEADLINES}}"
+      campaign_launch_dates: "{{CAMPAIGN_LAUNCH_DATES}}"
+      review_and_approval_cycles: "{{REVIEW_APPROVAL_CYCLES}}"
+      
+  risk_management:
+    potential_challenges:
+      - challenge: "{{CHALLENGE_1}}"
+        mitigation_strategy: "{{MITIGATION_1}}"
+        
+      - challenge: "{{CHALLENGE_2}}"
+        mitigation_strategy: "{{MITIGATION_2}}"
+        
+    backup_plans:
+      content_backup: "{{CONTENT_BACKUP_PLAN}}"
+      campaign_backup: "{{CAMPAIGN_BACKUP_PLAN}}"
+      resource_backup: "{{RESOURCE_BACKUP_PLAN}}"
+      
+    crisis_preparedness:
+      response_team: "{{CRISIS_RESPONSE_TEAM}}"
+      communication_protocol: "{{CRISIS_COMMUNICATION_PROTOCOL}}"
+      escalation_procedures: "{{CRISIS_ESCALATION_PROCEDURES}}"

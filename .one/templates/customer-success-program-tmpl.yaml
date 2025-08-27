@@ -1,0 +1,1360 @@
+template:
+  id: customer-success-program-template-v1
+  name: Customer Success Program - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-customer-success-program.md"
+    title: "{{company_name}} Customer Success Program Framework"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  llm_assistance:
+    real_time_guidance: true
+    decision_support: true
+    optimization_suggestions: true
+    customer_lifecycle_focus: true
+    value_realization_tracking: true
+    retention_optimization: true
+  custom_elicitation:
+    title: "Customer Success Program Development Actions"
+    sections:
+      - id: customer-lifecycle-mapping
+        options:
+          - "Map complete customer lifecycle from onboarding to advocacy"
+          - "Identify critical success milestones and value realization points"
+          - "Design touchpoint optimization for relationship deepening"
+          - "Analyze customer health indicators and early warning systems"
+          - "Research customer success patterns and best practice frameworks"
+          - "Study retention drivers and churn prevention strategies"
+          - "Design proactive intervention and support systems"
+          - "Map value delivery tracking and measurement systems"
+          - "Proceed to next section"
+      - id: feedback-systems-architecture
+        options:
+          - "Design comprehensive feedback collection across all touchpoints"
+          - "Create closed-loop feedback systems for continuous improvement"
+          - "Develop sentiment analysis and satisfaction measurement"
+          - "Build voice of customer programs and insight generation"
+          - "Design feedback-driven product and service optimization"
+          - "Create customer advisory and co-creation opportunities"
+          - "Map feedback integration into business decision processes"
+          - "Design predictive feedback analysis and trend identification"
+          - "Proceed to next section"
+      - id: value-realization-optimization
+        options:
+          - "Map customer value realization pathways and milestones"
+          - "Design outcome tracking and success measurement systems"
+          - "Create value communication and reinforcement strategies"
+          - "Build ROI demonstration and business case validation"
+          - "Design expansion opportunity identification and activation"
+          - "Map success story development and advocacy programs"
+          - "Create value optimization and enhancement strategies"
+          - "Design competitive differentiation through success delivery"
+          - "Proceed to next section"
+      - id: retention-loyalty-strategy
+        options:
+          - "Design proactive retention and loyalty enhancement programs"
+          - "Create churn prediction and prevention systems"
+          - "Build customer health scoring and intervention triggers"
+          - "Design loyalty program architecture and reward systems"
+          - "Map community building and peer connection strategies"
+          - "Create advocacy development and referral programs"
+          - "Design renewal optimization and expansion strategies"
+          - "Build long-term relationship investment frameworks"
+          - "Proceed to program completion"
+
+sections:
+  - id: program-overview
+    title: Customer Success Program Overview
+    instruction: |
+      This Customer Success Program creates comprehensive post-purchase experience optimization with systematic value realization tracking and retention enhancement.
+      Focus on proactive customer success management, continuous value delivery, and long-term relationship investment.
+      
+      The program includes:
+      - Customer lifecycle management with proactive milestone tracking
+      - Comprehensive feedback systems for continuous improvement
+      - Value realization measurement and optimization frameworks
+      - Retention and loyalty development programs
+      - Advocacy and expansion opportunity management
+      - Success team enablement and performance optimization
+      
+      Output file location: `docs/{{company_name}}-customer-success-program.md`
+
+  - id: customer-lifecycle-framework
+    title: Customer Lifecycle Management & Success Milestones
+    instruction: |
+      Design comprehensive customer lifecycle management with LLM assistance for proactive success optimization.
+      Focus on milestone tracking, value realization, and relationship deepening across the entire customer journey.
+    variables:
+      - success_milestones
+      - lifecycle_stages
+      - touchpoint_optimization
+    sections:
+      - id: lifecycle-stage-architecture
+        title: Customer Lifecycle Stage Architecture
+        template: |
+          **Customer Success Philosophy:**
+          {{customer_success_philosophy}}
+          
+          **Lifecycle Management Framework:**
+          
+          **Stage 1: Onboarding & Initial Success ({{onboarding_duration}})**
+          - Primary Objective: {{onboarding_primary_objective}}
+          - Success Milestones: {{onboarding_success_milestones}}
+          - Value Realization Goals: {{onboarding_value_goals}}
+          - Key Touchpoints: {{onboarding_key_touchpoints}}
+          - Success Metrics: {{onboarding_success_metrics}}
+          - Risk Indicators: {{onboarding_risk_indicators}}
+          - Intervention Triggers: {{onboarding_intervention_triggers}}
+          
+          **Stage 2: Early Adoption & Value Discovery ({{adoption_duration}})**
+          - Primary Objective: {{adoption_primary_objective}}
+          - Success Milestones: {{adoption_success_milestones}}
+          - Value Realization Goals: {{adoption_value_goals}}
+          - Key Touchpoints: {{adoption_key_touchpoints}}
+          - Success Metrics: {{adoption_success_metrics}}
+          - Risk Indicators: {{adoption_risk_indicators}}
+          - Intervention Triggers: {{adoption_intervention_triggers}}
+          
+          **Stage 3: Full Utilization & Optimization ({{utilization_duration}})**
+          - Primary Objective: {{utilization_primary_objective}}
+          - Success Milestones: {{utilization_success_milestones}}
+          - Value Realization Goals: {{utilization_value_goals}}
+          - Key Touchpoints: {{utilization_key_touchpoints}}
+          - Success Metrics: {{utilization_success_metrics}}
+          - Risk Indicators: {{utilization_risk_indicators}}
+          - Intervention Triggers: {{utilization_intervention_triggers}}
+          
+          **Stage 4: Advanced Success & Expansion ({{expansion_duration}})**
+          - Primary Objective: {{expansion_primary_objective}}
+          - Success Milestones: {{expansion_success_milestones}}
+          - Value Realization Goals: {{expansion_value_goals}}
+          - Key Touchpoints: {{expansion_key_touchpoints}}
+          - Success Metrics: {{expansion_success_metrics}}
+          - Risk Indicators: {{expansion_risk_indicators}}
+          - Intervention Triggers: {{expansion_intervention_triggers}}
+          
+          **Stage 5: Advocacy & Partnership ({{advocacy_duration}})**
+          - Primary Objective: {{advocacy_primary_objective}}
+          - Success Milestones: {{advocacy_success_milestones}}
+          - Value Realization Goals: {{advocacy_value_goals}}
+          - Key Touchpoints: {{advocacy_key_touchpoints}}
+          - Success Metrics: {{advocacy_success_metrics}}
+          - Risk Indicators: {{advocacy_risk_indicators}}
+          - Intervention Triggers: {{advocacy_intervention_triggers}}
+      - id: milestone-tracking-system
+        title: Success Milestone Tracking & Management
+        instruction: Define comprehensive milestone tracking with measurable outcomes and intervention protocols
+        repeatable: true
+        template: |
+          **Milestone: {{milestone_name}}**
+          **Lifecycle Stage:** {{milestone_stage}}
+          **Target Timeline:** {{milestone_timeline}}
+          **Success Criteria:** {{milestone_success_criteria}}
+          
+          **Milestone Description:**
+          {{milestone_detailed_description}}
+          
+          **Value Realization Impact:**
+          - Business Value: {{milestone_business_value}}
+          - Customer Impact: {{milestone_customer_impact}}
+          - Relationship Deepening: {{milestone_relationship_impact}}
+          - Future Success Enablement: {{milestone_future_impact}}
+          
+          **Tracking Mechanisms:**
+          - Progress Indicators: {{milestone_progress_indicators}}
+          - Measurement Methods: {{milestone_measurement_methods}}
+          - Data Sources: {{milestone_data_sources}}
+          - Reporting Frequency: {{milestone_reporting_frequency}}
+          
+          **Success Support Strategy:**
+          - Enablement Resources: {{milestone_enablement_resources}}
+          - Support Touchpoints: {{milestone_support_touchpoints}}
+          - Acceleration Tactics: {{milestone_acceleration_tactics}}
+          - Barrier Removal: {{milestone_barrier_removal}}
+          
+          **Risk Mitigation:**
+          - Risk Indicators: {{milestone_risk_indicators}}
+          - Early Warning Systems: {{milestone_early_warning}}
+          - Intervention Protocols: {{milestone_intervention_protocols}}
+          - Recovery Strategies: {{milestone_recovery_strategies}}
+          
+          **Milestone Celebration:**
+          {{milestone_celebration_strategy}}
+      - id: customer-health-scoring
+        title: Customer Health Scoring & Predictive Analytics
+        template: |
+          **Customer Health Philosophy:**
+          {{customer_health_philosophy}}
+          
+          **Health Scoring Framework:**
+          
+          **Product Adoption Score (Weight: {{adoption_score_weight}}%)**
+          - Feature Utilization: {{feature_utilization_scoring}}
+          - Usage Frequency: {{usage_frequency_scoring}}
+          - Usage Depth: {{usage_depth_scoring}}
+          - Advanced Feature Adoption: {{advanced_feature_scoring}}
+          
+          **Engagement Score (Weight: {{engagement_score_weight}}%)**
+          - Touchpoint Participation: {{touchpoint_participation_scoring}}
+          - Response Rates: {{response_rate_scoring}}
+          - Initiative Taking: {{initiative_taking_scoring}}
+          - Feedback Provision: {{feedback_provision_scoring}}
+          
+          **Value Realization Score (Weight: {{value_score_weight}}%)**
+          - ROI Achievement: {{roi_achievement_scoring}}
+          - Outcome Attainment: {{outcome_attainment_scoring}}
+          - Success Milestone Progress: {{milestone_progress_scoring}}
+          - Business Impact Demonstration: {{business_impact_scoring}}
+          
+          **Relationship Quality Score (Weight: {{relationship_score_weight}}%)**
+          - Satisfaction Ratings: {{satisfaction_rating_scoring}}
+          - NPS Scores: {{nps_scoring}}
+          - Advocacy Behaviors: {{advocacy_behavior_scoring}}
+          - Renewal Intent: {{renewal_intent_scoring}}
+          
+          **Risk Indicators Score (Weight: {{risk_score_weight}}%)**
+          - Usage Decline: {{usage_decline_scoring}}
+          - Support Ticket Patterns: {{support_ticket_scoring}}
+          - Competitive Interest: {{competitive_interest_scoring}}
+          - Contract Changes: {{contract_changes_scoring}}
+          
+          **Health Score Interpretation:**
+          - Excellent (90-100): {{excellent_health_description}}
+          - Good (75-89): {{good_health_description}}
+          - At Risk (50-74): {{at_risk_health_description}}
+          - Critical (0-49): {{critical_health_description}}
+          
+          **Predictive Analytics Integration:**
+          {{predictive_analytics_framework}}
+
+  - id: feedback-systems-architecture
+    title: Comprehensive Feedback Systems & Voice of Customer
+    instruction: |
+      Create sophisticated feedback collection and analysis systems with LLM assistance for continuous improvement.
+      Focus on closed-loop feedback, sentiment analysis, and customer insight generation.
+    variables:
+      - feedback_loops
+      - feedback_channels
+      - insight_generation
+    sections:
+      - id: feedback-collection-framework
+        title: Multi-Channel Feedback Collection Strategy
+        template: |
+          **Feedback Collection Philosophy:**
+          {{feedback_collection_philosophy}}
+          
+          **Feedback Channel Architecture:**
+          
+          **Proactive Feedback Channels:**
+          
+          **Educational Journey Surveys:**
+          - Onboarding Feedback: {{onboarding_survey_strategy}}
+          - Learning Effectiveness: {{learning_effectiveness_surveys}}
+          - Feature Mastery Assessment: {{feature_mastery_surveys}}
+          - Milestone Surveys: {{milestone_survey_strategy}}
+          - Value Realization Tracking: {{value_realization_surveys}}
+          - Quarterly Health Checks: {{quarterly_survey_strategy}}
+          - Annual Relationship Reviews: {{annual_survey_strategy}}
+          
+          **In-App Feedback Systems:**
+          - Feature Feedback: {{feature_feedback_system}}
+          - Experience Ratings: {{experience_rating_system}}
+          - Contextual Surveys: {{contextual_survey_system}}
+          - Micro-Feedback Collection: {{micro_feedback_system}}
+          
+          **Relationship Touchpoint Feedback:**
+          - Support Interaction Reviews: {{support_feedback_system}}
+          - Success Review Feedback: {{success_review_feedback}}
+          - Training Session Evaluations: {{training_feedback_system}}
+          - Event and Webinar Feedback: {{event_feedback_system}}
+          
+          **Reactive Feedback Channels:**
+          
+          **Issue Resolution Feedback:**
+          - Support Ticket Resolution: {{support_resolution_feedback}}
+          - Escalation Handling: {{escalation_feedback_system}}
+          - Problem Recovery: {{problem_recovery_feedback}}
+          - Service Restoration: {{service_restoration_feedback}}
+          
+          **Continuous Listening Systems:**
+          - Social Media Monitoring: {{social_media_monitoring}}
+          - Review Site Tracking: {{review_site_tracking}}
+          - Community Forum Analysis: {{community_forum_analysis}}
+          - Sales Conversation Insights: {{sales_conversation_insights}}
+          
+          **Feedback Collection Optimization:**
+          {{feedback_collection_optimization}}
+      - id: sentiment-analysis-framework
+        title: Sentiment Analysis & Emotional Intelligence
+        template: |
+          **Sentiment Analysis Strategy:**
+          
+          **Sentiment Tracking Framework:**
+          - Overall Sentiment Score: {{overall_sentiment_measurement}}
+          - Feature-Specific Sentiment: {{feature_sentiment_tracking}}
+          - Journey Stage Sentiment: {{journey_sentiment_analysis}}
+          - Touchpoint Sentiment: {{touchpoint_sentiment_measurement}}
+          
+          **Emotional Intelligence Integration:**
+          
+          **Emotion Detection Systems:**
+          - Text Analysis: {{text_emotion_analysis}}
+          - Voice Analysis: {{voice_emotion_analysis}}
+          - Behavioral Pattern Analysis: {{behavioral_emotion_analysis}}
+          - Interaction Quality Assessment: {{interaction_quality_assessment}}
+          
+          **Sentiment Categorization:**
+          - Positive Sentiment (8-10): {{positive_sentiment_actions}}
+          - Neutral Sentiment (5-7): {{neutral_sentiment_actions}}
+          - Negative Sentiment (1-4): {{negative_sentiment_actions}}
+          - Critical Sentiment (0): {{critical_sentiment_actions}}
+          
+          **Sentiment-Driven Response Protocols:**
+          - Immediate Response Triggers: {{immediate_response_triggers}}
+          - Escalation Protocols: {{sentiment_escalation_protocols}}
+          - Recovery Strategies: {{sentiment_recovery_strategies}}
+          - Opportunity Identification: {{sentiment_opportunity_identification}}
+          
+          **Emotional Journey Mapping:**
+          {{emotional_journey_mapping_framework}}
+      - id: closed-loop-feedback-system
+        title: Closed-Loop Feedback & Continuous Improvement
+        template: |
+          **Closed-Loop Feedback Philosophy:**
+          {{closed_loop_philosophy}}
+          
+          **Feedback Processing Framework:**
+          
+          **Collection Phase:**
+          - Feedback Capture: {{feedback_capture_process}}
+          - Data Aggregation: {{feedback_aggregation_process}}
+          - Initial Categorization: {{feedback_categorization_process}}
+          - Priority Assessment: {{feedback_priority_assessment}}
+          
+          **Analysis Phase:**
+          - Trend Analysis: {{feedback_trend_analysis}}
+          - Root Cause Analysis: {{feedback_root_cause_analysis}}
+          - Impact Assessment: {{feedback_impact_assessment}}
+          - Solution Identification: {{feedback_solution_identification}}
+          
+          **Response Phase:**
+          - Customer Communication: {{customer_feedback_communication}}
+          - Solution Implementation: {{solution_implementation_process}}
+          - Progress Updates: {{progress_update_process}}
+          - Outcome Validation: {{outcome_validation_process}}
+          
+          **Improvement Phase:**
+          - Process Enhancement: {{process_enhancement_approach}}
+          - System Updates: {{system_update_process}}
+          - Training Adjustments: {{training_adjustment_process}}
+          - Policy Modifications: {{policy_modification_process}}
+          
+          **Feedback Loop Effectiveness Measurement:**
+          - Response Time: {{feedback_response_time_target}}
+          - Resolution Rate: {{feedback_resolution_rate_target}}
+          - Customer Satisfaction: {{feedback_satisfaction_target}}
+          - Implementation Success: {{implementation_success_target}}
+          
+          **Continuous Improvement Integration:**
+          {{continuous_improvement_framework}}
+      - id: voice-of-customer-program
+        title: Voice of Customer Program & Insight Generation
+        template: |
+          **Voice of Customer Strategy:**
+          
+          **Customer Advisory Framework:**
+          - Advisory Board Composition: {{advisory_board_composition}}
+          - Meeting Cadence: {{advisory_meeting_cadence}}
+          - Agenda Framework: {{advisory_agenda_framework}}
+          - Outcome Integration: {{advisory_outcome_integration}}
+          
+          **Customer Interview Programs:**
+          - Regular Interview Schedule: {{customer_interview_schedule}}
+          - Interview Topics: {{customer_interview_topics}}
+          - Interviewer Training: {{interviewer_training_program}}
+          - Insight Documentation: {{insight_documentation_process}}
+          
+          **Customer Co-Creation Opportunities:**
+          - Product Development Input: {{product_development_input}}
+          - Service Design Collaboration: {{service_design_collaboration}}
+          - Process Improvement Participation: {{process_improvement_participation}}
+          - Innovation Partnership: {{innovation_partnership_framework}}
+          
+          **Insight Generation Framework:**
+          - Data Mining Techniques: {{data_mining_techniques}}
+          - Pattern Recognition: {{pattern_recognition_methods}}
+          - Predictive Modeling: {{predictive_modeling_approach}}
+          - Actionable Insight Creation: {{actionable_insight_creation}}
+          
+          **Insight Dissemination:**
+          - Internal Reporting: {{internal_insight_reporting}}
+          - Cross-Functional Sharing: {{cross_functional_insight_sharing}}
+          - Executive Briefings: {{executive_insight_briefings}}
+          - Strategic Planning Integration: {{strategic_planning_integration}}
+          
+          **Voice of Customer Impact Measurement:**
+          {{voc_impact_measurement_framework}}
+
+  - id: value-realization-tracking
+    title: Value Realization Tracking & Optimization
+    instruction: |
+      Design comprehensive value realization measurement with LLM assistance for success demonstration.
+      Focus on ROI tracking, outcome measurement, and value communication optimization.
+    variables:
+      - value_metrics
+      - roi_tracking
+      - outcome_measurement
+    sections:
+      - id: value-measurement-framework
+        title: Value Measurement & ROI Tracking
+        template: |
+          **Value Measurement Philosophy:**
+          {{value_measurement_philosophy}}
+          
+          **Elevate Framework Value Demonstration:**
+          Value measurement serves both customer education and business intelligence. By systematically tracking and communicating value realization, we validate customer purchase decisions, build loyalty, and identify expansion opportunities.
+          
+          **Educational Value Communication:**
+          - **Success Story Development**: Document and share customer wins to educate and inspire others
+          - **ROI Reporting**: Help customers understand and communicate their return on investment
+          - **Outcome Amplification**: Show customers how to maximize value from their investment
+          - **Future Value Projection**: Educate customers on potential additional benefits and growth opportunities
+          
+          **Value Categories & Metrics:**
+          
+          **Financial Value Metrics:**
+          - Cost Savings: {{cost_savings_measurement}}
+          - Revenue Generation: {{revenue_generation_tracking}}
+          - Productivity Gains: {{productivity_gains_measurement}}
+          - Efficiency Improvements: {{efficiency_improvement_tracking}}
+          
+          **Operational Value Metrics:**
+          - Process Optimization: {{process_optimization_measurement}}
+          - Time Savings: {{time_savings_tracking}}
+          - Quality Improvements: {{quality_improvement_measurement}}
+          - Risk Reduction: {{risk_reduction_tracking}}
+          
+          **Strategic Value Metrics:**
+          - Competitive Advantage: {{competitive_advantage_measurement}}
+          - Market Position: {{market_position_tracking}}
+          - Innovation Enablement: {{innovation_enablement_measurement}}
+          - Strategic Capability: {{strategic_capability_tracking}}
+          
+          **Stakeholder Value Metrics:**
+          - Customer Satisfaction: {{customer_satisfaction_measurement}}
+          - Employee Experience: {{employee_experience_tracking}}
+          - Partner Relationships: {{partner_relationship_measurement}}
+          - Brand Perception: {{brand_perception_tracking}}
+          
+          **ROI Calculation Framework:**
+          - Investment Tracking: {{investment_tracking_methodology}}
+          - Benefit Quantification: {{benefit_quantification_process}}
+          - ROI Calculation Methods: {{roi_calculation_methods}}
+          - Payback Period Analysis: {{payback_period_analysis}}
+          
+          **Value Realization Timeline:**
+          {{value_realization_timeline_framework}}
+      - id: outcome-tracking-system
+        title: Outcome Tracking & Success Demonstration
+        instruction: Define comprehensive outcome tracking with business impact measurement
+        repeatable: true
+        template: |
+          **Outcome Category: {{outcome_category}}**
+          **Business Impact Level:** {{business_impact_level}}
+          **Measurement Timeline:** {{outcome_measurement_timeline}}
+          
+          **Outcome Definition:**
+          {{outcome_detailed_description}}
+          
+          **Success Criteria:**
+          - Primary Success Metric: {{primary_success_metric}}
+          - Secondary Success Metrics: {{secondary_success_metrics}}
+          - Baseline Measurement: {{baseline_measurement}}
+          - Target Achievement: {{target_achievement}}
+          
+          **Measurement Methodology:**
+          - Data Collection Methods: {{data_collection_methods}}
+          - Measurement Tools: {{measurement_tools}}
+          - Reporting Frequency: {{outcome_reporting_frequency}}
+          - Validation Process: {{outcome_validation_process}}
+          
+          **Stakeholder Impact Assessment:**
+          - Primary Stakeholders: {{primary_stakeholders_impacted}}
+          - Stakeholder Benefits: {{stakeholder_benefits}}
+          - Impact Measurement: {{stakeholder_impact_measurement}}
+          - Feedback Integration: {{stakeholder_feedback_integration}}
+          
+          **Business Case Validation:**
+          - ROI Demonstration: {{roi_demonstration_approach}}
+          - Business Impact Proof: {{business_impact_proof}}
+          - Value Communication: {{value_communication_strategy}}
+          - Success Story Development: {{success_story_development}}
+          
+          **Outcome Optimization:**
+          - Performance Enhancement: {{outcome_performance_enhancement}}
+          - Barrier Removal: {{outcome_barrier_removal}}
+          - Acceleration Strategies: {{outcome_acceleration_strategies}}
+          - Expansion Opportunities: {{outcome_expansion_opportunities}}
+      - id: value-communication-strategy
+        title: Value Communication & Success Storytelling
+        template: |
+          **Value Communication Philosophy:**
+          {{value_communication_philosophy}}
+          
+          **Communication Framework:**
+          
+          **Internal Value Communication:**
+          - Executive Reporting: {{executive_value_reporting}}
+          - Team Updates: {{team_value_updates}}
+          - Cross-Functional Sharing: {{cross_functional_value_sharing}}
+          - Performance Reviews: {{performance_review_integration}}
+          
+          **Customer Value Communication:**
+          - Success Reviews: {{customer_success_reviews}}
+          - Value Dashboards: {{customer_value_dashboards}}
+          - Business Reviews: {{customer_business_reviews}}
+          - ROI Reporting: {{customer_roi_reporting}}
+          
+          **External Value Communication:**
+          - Case Study Development: {{case_study_development}}
+          - Success Story Sharing: {{success_story_sharing}}
+          - Industry Presentations: {{industry_presentation_strategy}}
+          - Thought Leadership: {{thought_leadership_approach}}
+          
+          **Value Storytelling Framework:**
+          - Challenge Documentation: {{challenge_documentation_approach}}
+          - Solution Implementation: {{solution_implementation_story}}
+          - Results Demonstration: {{results_demonstration_strategy}}
+          - Future Vision Sharing: {{future_vision_communication}}
+          
+          **Success Metrics Communication:**
+          - Quantitative Results: {{quantitative_results_communication}}
+          - Qualitative Improvements: {{qualitative_improvement_communication}}
+          - Stakeholder Testimonials: {{stakeholder_testimonial_strategy}}
+          - Visual Impact Presentation: {{visual_impact_presentation}}
+          
+          **Value Communication Optimization:**
+          {{value_communication_optimization}}
+
+  - id: conditional-success-strategies
+    title: High-Touch vs Automated Success Programs
+    instruction: |
+      Define conditional success strategies based on customer segment and engagement model.
+      Create differentiated approaches for high-touch personal success management vs automated digital success.
+    sections:
+      - id: high-touch-success-program
+        title: High-Touch Personal Success Management
+        conditional:
+          high_touch:
+            template: |
+              **High-Touch Success Strategy:**
+              
+              **Personal Success Management Framework:**
+              - Dedicated CSM Assignment: {{dedicated_csm_approach}}
+              - Relationship Depth Focus: {{relationship_depth_strategy}}
+              - Customized Success Planning: {{customized_planning_approach}}
+              - Executive Relationship Management: {{executive_relationship_strategy}}
+              
+              **Elevate Education Integration:**
+              High-touch customers receive personalized education paths with dedicated coaching to ensure comprehensive value realization and accelerated time-to-outcome achievement.
+              
+              **Success Manager Engagement Model:**
+              
+              **Regular Touchpoint Schedule:**
+              - Weekly Check-ins: {{weekly_checkin_strategy}}
+              - Bi-weekly Strategic Reviews: {{biweekly_review_approach}}
+              - Monthly Business Reviews: {{monthly_business_review}}
+              - Quarterly Strategic Planning: {{quarterly_planning_sessions}}
+              
+              **Proactive Success Activities:**
+              - Success Plan Development: {{success_plan_development}}
+              - Goal Setting and Tracking: {{goal_setting_tracking}}
+              - Milestone Celebration: {{milestone_celebration_approach}}
+              - Value Realization Coaching: {{value_realization_coaching}}
+              
+              **Strategic Consultation Services:**
+              - Best Practice Sharing: {{best_practice_sharing}}
+              - Industry Benchmarking: {{industry_benchmarking}}
+              - Strategic Roadmap Development: {{strategic_roadmap_development}}
+              - Innovation Collaboration: {{innovation_collaboration}}
+              
+              **Executive Engagement Strategy:**
+              - C-Level Relationships: {{c_level_relationship_strategy}}
+              - Strategic Partnership Development: {{strategic_partnership_development}}
+              - Executive Business Reviews: {{executive_business_reviews}}
+              - Board-Level Reporting: {{board_level_reporting}}
+              
+              **High-Touch Escalation Protocols:**
+              {{high_touch_escalation_protocols}}
+              
+              **High-Touch Success Metrics:**
+              {{high_touch_success_metrics}}
+      - id: automated-success-program
+        title: Automated Digital Success Management
+        conditional:
+          automated:
+            template: |
+              **Automated Success Strategy:**
+              
+              **Digital Success Platform Framework:**
+              - Self-Service Success Portal: {{self_service_portal_strategy}}
+              - Automated Onboarding: {{automated_onboarding_approach}}
+              - AI-Powered Recommendations: {{ai_recommendation_system}}
+              - Digital Health Monitoring: {{digital_health_monitoring}}
+              
+              **Elevate Education Automation:**
+              Automated customers receive systematic educational sequences designed to accelerate adoption, demonstrate value, and identify expansion opportunities through behavioral triggers and milestone achievements.
+              
+              **Automated Engagement Sequences:**
+              
+              **Onboarding Automation:**
+              - Welcome Series: {{automated_welcome_series}}
+              - Setup Guidance: {{automated_setup_guidance}}
+              - Feature Introduction: {{automated_feature_introduction}}
+              - Early Success Milestones: {{automated_early_milestones}}
+              
+              **Ongoing Success Automation:**
+              - Usage Optimization Tips: {{usage_optimization_automation}}
+              - Feature Adoption Campaigns: {{feature_adoption_automation}}
+              - Value Realization Reminders: {{value_realization_automation}}
+              - Success Milestone Recognition: {{milestone_recognition_automation}}
+              
+              **Behavioral Trigger Automation:**
+              - Usage Pattern Responses: {{usage_pattern_automation}}
+              - Engagement Level Adjustments: {{engagement_level_automation}}
+              - Risk Signal Interventions: {{risk_signal_automation}}
+              - Opportunity Identification: {{opportunity_identification_automation}}
+              
+              **Elevate Self-Service Educational Resources:**
+              - Knowledge Base: {{knowledge_base_strategy}}
+              - Video Learning Library: {{video_learning_library}}
+              - Interactive Tutorials: {{interactive_tutorial_system}}
+              - Progressive Learning Paths: {{progressive_learning_paths}}
+              - Best Practice Guides: {{best_practice_guides}}
+              - Quick Win Templates: {{quick_win_templates}}
+              - Community Forums: {{community_forum_strategy}}
+              - Peer Learning Networks: {{peer_learning_networks}}
+              
+              **AI-Powered Success Intelligence:**
+              - Predictive Success Modeling: {{predictive_success_modeling}}
+              - Personalized Recommendations: {{personalized_recommendation_engine}}
+              - Automated Insight Generation: {{automated_insight_generation}}
+              - Dynamic Content Delivery: {{dynamic_content_delivery}}
+              
+              **Automated Escalation Triggers:**
+              {{automated_escalation_triggers}}
+              
+              **Digital Success Metrics:**
+              {{digital_success_metrics}}
+
+  - id: retention-loyalty-optimization
+    title: Retention & Loyalty Optimization Programs
+    instruction: |
+      Create comprehensive retention and loyalty strategies with LLM assistance for long-term customer investment.
+      Focus on churn prevention, loyalty development, and advocacy creation.
+    variables:
+      - retention_strategies
+      - loyalty_programs
+      - advocacy_development
+    sections:
+      - id: churn-prevention-framework
+        title: Churn Prediction & Prevention System
+        template: |
+          **Churn Prevention Philosophy:**
+          {{churn_prevention_philosophy}}
+          
+          **Churn Risk Prediction Model:**
+          
+          **Leading Indicators:**
+          - Usage Decline Patterns: {{usage_decline_indicators}}
+          - Engagement Drop Signals: {{engagement_drop_signals}}
+          - Support Ticket Escalation: {{support_escalation_indicators}}
+          - Satisfaction Score Trends: {{satisfaction_trend_indicators}}
+          
+          **Behavioral Risk Signals:**
+          - Feature Abandonment: {{feature_abandonment_scoring}}
+          - Login Frequency Decline: {{login_frequency_scoring}}
+          - Value Realization Stagnation: {{value_stagnation_scoring}}
+          - Competitive Research Activity: {{competitive_research_scoring}}
+          
+          **Relationship Risk Indicators:**
+          - Communication Responsiveness: {{communication_responsiveness_scoring}}
+          - Meeting Participation Decline: {{meeting_participation_scoring}}
+          - Feedback Sentiment Shift: {{feedback_sentiment_scoring}}
+          - Stakeholder Changes: {{stakeholder_change_scoring}}
+          
+          **Financial Risk Factors:**
+          - Budget Constraints: {{budget_constraint_indicators}}
+          - ROI Realization Delays: {{roi_delay_indicators}}
+          - Payment Delays: {{payment_delay_indicators}}
+          - Contract Negotiation Patterns: {{contract_negotiation_indicators}}
+          
+          **Churn Risk Scoring:**
+          - Low Risk (0-25): {{low_risk_churn_actions}}
+          - Medium Risk (26-50): {{medium_risk_churn_actions}}
+          - High Risk (51-75): {{high_risk_churn_actions}}
+          - Critical Risk (76-100): {{critical_risk_churn_actions}}
+          
+          **Intervention Strategy Framework:**
+          {{churn_intervention_framework}}
+      - id: retention-strategy-architecture
+        title: Proactive Retention Strategy Architecture
+        instruction: Define proactive retention strategies for different risk levels and customer segments
+        repeatable: true
+        template: |
+          **Retention Strategy: {{retention_strategy_name}}**
+          **Target Segment:** {{retention_target_segment}}
+          **Risk Level:** {{retention_risk_level}}
+          **Strategy Timeline:** {{retention_strategy_timeline}}
+          
+          **Strategy Description:**
+          {{retention_strategy_description}}
+          
+          **Intervention Components:**
+          
+          **Relationship Reinforcement:**
+          - Executive Engagement: {{executive_engagement_approach}}
+          - Personal Outreach: {{personal_outreach_strategy}}
+          - Relationship Mapping: {{relationship_mapping_approach}}
+          - Trust Rebuilding: {{trust_rebuilding_strategy}}
+          
+          **Value Optimization:**
+          - Usage Optimization: {{usage_optimization_approach}}
+          - ROI Enhancement: {{roi_enhancement_strategy}}
+          - Success Acceleration: {{success_acceleration_approach}}
+          - Outcome Improvement: {{outcome_improvement_strategy}}
+          
+          **Support Enhancement:**
+          - Dedicated Support: {{dedicated_support_approach}}
+          - Priority Access: {{priority_access_strategy}}
+          - Specialized Training: {{specialized_training_approach}}
+          - Customized Solutions: {{customized_solution_strategy}}
+          
+          **Investment Justification:**
+          - Business Case Reinforcement: {{business_case_reinforcement}}
+          - ROI Demonstration: {{roi_demonstration_approach}}
+          - Future Value Projection: {{future_value_projection}}
+          - Competitive Advantage: {{competitive_advantage_communication}}
+          
+          **Success Measurement:**
+          - Retention Rate Impact: {{retention_rate_measurement}}
+          - Risk Score Improvement: {{risk_score_improvement}}
+          - Satisfaction Recovery: {{satisfaction_recovery_measurement}}
+          - Engagement Restoration: {{engagement_restoration_measurement}}
+          
+          **Strategy Optimization:**
+          {{retention_strategy_optimization}}
+      - id: loyalty-program-architecture
+        title: Customer Loyalty & Advocacy Development
+        template: |
+          **Loyalty Program Philosophy:**
+          {{loyalty_program_philosophy}}
+          
+          **Loyalty Development Framework:**
+          
+          **Loyalty Tier Architecture:**
+          
+          **Foundation Tier (New Customers)**
+          - Qualification Criteria: {{foundation_tier_criteria}}
+          - Benefits Package: {{foundation_tier_benefits}}
+          - Advancement Requirements: {{foundation_tier_advancement}}
+          - Engagement Strategy: {{foundation_tier_engagement}}
+          
+          **Growth Tier (Engaged Customers)**
+          - Qualification Criteria: {{growth_tier_criteria}}
+          - Benefits Package: {{growth_tier_benefits}}
+          - Advancement Requirements: {{growth_tier_advancement}}
+          - Engagement Strategy: {{growth_tier_engagement}}
+          
+          **Success Tier (High-Value Customers)**
+          - Qualification Criteria: {{success_tier_criteria}}
+          - Benefits Package: {{success_tier_benefits}}
+          - Advancement Requirements: {{success_tier_advancement}}
+          - Engagement Strategy: {{success_tier_engagement}}
+          
+          **Advocacy Tier (Champions)**
+          - Qualification Criteria: {{advocacy_tier_criteria}}
+          - Benefits Package: {{advocacy_tier_benefits}}
+          - Advancement Requirements: {{advocacy_tier_advancement}}
+          - Engagement Strategy: {{advocacy_tier_engagement}}
+          
+          **Partnership Tier (Strategic Allies)**
+          - Qualification Criteria: {{partnership_tier_criteria}}
+          - Benefits Package: {{partnership_tier_benefits}}
+          - Advancement Requirements: {{partnership_tier_advancement}}
+          - Engagement Strategy: {{partnership_tier_engagement}}
+          
+          **Loyalty Benefit Categories:**
+          - Exclusive Access: {{exclusive_access_benefits}}
+          - Enhanced Support: {{enhanced_support_benefits}}
+          - Recognition Programs: {{recognition_program_benefits}}
+          - Investment Opportunities: {{investment_opportunity_benefits}}
+          
+          **Loyalty Measurement Framework:**
+          {{loyalty_measurement_framework}}
+      - id: advocacy-development-program
+        title: Customer Advocacy & Referral Program
+        template: |
+          **Advocacy Development Strategy:**
+          
+          **Advocacy Identification Framework:**
+          - Advocacy Readiness Indicators: {{advocacy_readiness_indicators}}
+          - Champion Characteristics: {{champion_characteristics}}
+          - Influence Mapping: {{influence_mapping_approach}}
+          - Advocacy Potential Scoring: {{advocacy_potential_scoring}}
+          
+          **Advocacy Development Pathway:**
+          
+          **Satisfaction to Advocacy:**
+          - Satisfaction Enhancement: {{satisfaction_enhancement_approach}}
+          - Success Story Development: {{success_story_development}}
+          - Value Realization Amplification: {{value_realization_amplification}}
+          - Relationship Deepening: {{relationship_deepening_strategy}}
+          
+          **Advocacy Activation:**
+          - Advocacy Request Strategy: {{advocacy_request_strategy}}
+          - Participation Frameworks: {{participation_frameworks}}
+          - Content Co-Creation: {{content_co_creation_approach}}
+          - Speaking Opportunities: {{speaking_opportunity_strategy}}
+          
+          **Advocacy Program Components:**
+          
+          **Reference Program:**
+          - Reference Qualification: {{reference_qualification_criteria}}
+          - Reference Rewards: {{reference_reward_system}}
+          - Reference Management: {{reference_management_process}}
+          - Reference Success Tracking: {{reference_success_tracking}}
+          
+          **Referral Program:**
+          - Referral Incentives: {{referral_incentive_structure}}
+          - Referral Process: {{referral_process_framework}}
+          - Referral Tracking: {{referral_tracking_system}}
+          - Referral Success Measurement: {{referral_success_measurement}}
+          
+          **Content Advocacy:**
+          - Case Study Participation: {{case_study_participation}}
+          - Testimonial Development: {{testimonial_development}}
+          - Video Success Stories: {{video_success_story_strategy}}
+          - Industry Speaking: {{industry_speaking_opportunities}}
+          
+          **Community Advocacy:**
+          - User Group Leadership: {{user_group_leadership}}
+          - Community Mentoring: {{community_mentoring_program}}
+          - Peer Support Networks: {{peer_support_networks}}
+          - Knowledge Sharing: {{knowledge_sharing_frameworks}}
+          
+          **Advocacy Measurement & Optimization:**
+          {{advocacy_measurement_optimization}}
+
+  - id: performance-measurement-framework
+    title: Customer Success Performance & Optimization
+    instruction: |
+      Create comprehensive performance measurement with LLM assistance for continuous program optimization.
+      Focus on success metrics, team performance, and program effectiveness tracking.
+    sections:
+      - id: success-metrics-architecture
+        title: Customer Success Metrics & KPI Framework
+        template: |
+          **Success Metrics Philosophy:**
+          {{success_metrics_philosophy}}
+          
+          **Metric Categories & Frameworks:**
+          
+          **Customer Health & Satisfaction Metrics:**
+          - Net Promoter Score (NPS): {{nps_measurement_framework}}
+          - Customer Satisfaction Score (CSAT): {{csat_measurement_framework}}
+          - Customer Effort Score (CES): {{ces_measurement_framework}}
+          - Customer Health Score: {{health_score_framework}}
+          
+          **Retention & Growth Metrics:**
+          - Customer Retention Rate: {{retention_rate_measurement}}
+          - Churn Rate by Segment: {{churn_rate_measurement}}
+          - Net Revenue Retention: {{net_revenue_retention}}
+          - Expansion Revenue: {{expansion_revenue_tracking}}
+          
+          **Value Realization Metrics:**
+          - Time to Value: {{time_to_value_measurement}}
+          - Value Realization Rate: {{value_realization_rate}}
+          - ROI Achievement: {{roi_achievement_tracking}}
+          - Success Milestone Completion: {{milestone_completion_tracking}}
+          
+          **Engagement & Adoption Metrics:**
+          - Product Adoption Rate: {{adoption_rate_measurement}}
+          - Feature Utilization: {{feature_utilization_tracking}}
+          - Engagement Frequency: {{engagement_frequency_measurement}}
+          - Support Ticket Trends: {{support_ticket_analysis}}
+          
+          **Success Team Performance Metrics:**
+          - Customer Success Manager Efficiency: {{csm_efficiency_metrics}}
+          - Resolution Time: {{resolution_time_tracking}}
+          - Proactive Intervention Success: {{proactive_intervention_metrics}}
+          - Team Productivity: {{team_productivity_measurement}}
+          
+          **Business Impact Metrics:**
+          - Customer Lifetime Value: {{ltv_measurement}}
+          - Customer Acquisition Cost Recovery: {{cac_recovery_tracking}}
+          - Revenue per Customer: {{revenue_per_customer}}
+          - Advocacy Impact: {{advocacy_impact_measurement}}
+          
+          **Metrics Dashboard Architecture:**
+          {{metrics_dashboard_framework}}
+      - id: performance-optimization-methodology
+        title: Continuous Performance Optimization
+        template: |
+          **Optimization Philosophy:**
+          {{performance_optimization_philosophy}}
+          
+          **Optimization Cycle Framework:**
+          
+          **Daily Performance Monitoring:**
+          - Real-time Metric Tracking: {{realtime_metric_tracking}}
+          - Alert System Management: {{alert_system_management}}
+          - Daily Team Huddles: {{daily_team_huddles}}
+          - Issue Escalation: {{issue_escalation_process}}
+          
+          **Weekly Performance Reviews:**
+          - Metric Trend Analysis: {{weekly_trend_analysis}}
+          - Performance Gap Identification: {{performance_gap_identification}}
+          - Action Plan Development: {{weekly_action_planning}}
+          - Success Story Capture: {{success_story_capture}}
+          
+          **Monthly Strategic Analysis:**
+          - Comprehensive Performance Review: {{monthly_performance_review}}
+          - Customer Segment Analysis: {{segment_performance_analysis}}
+          - Program Effectiveness Assessment: {{program_effectiveness_assessment}}
+          - Optimization Strategy Development: {{optimization_strategy_development}}
+          
+          **Quarterly Program Evolution:**
+          - Strategic Program Review: {{quarterly_program_review}}
+          - Methodology Refinement: {{methodology_refinement}}
+          - Technology Enhancement: {{technology_enhancement_planning}}
+          - Team Development Planning: {{team_development_planning}}
+          
+          **Performance Benchmarking:**
+          - Industry Benchmark Comparison: {{industry_benchmark_comparison}}
+          - Best Practice Identification: {{best_practice_identification}}
+          - Competitive Analysis: {{competitive_analysis_framework}}
+          - Innovation Opportunity Assessment: {{innovation_opportunity_assessment}}
+          
+          **Optimization Impact Measurement:**
+          {{optimization_impact_measurement}}
+
+  - id: program-implementation-roadmap
+    title: Implementation Roadmap & Success Framework
+    instruction: |
+      Create comprehensive implementation plan with clear phases, team enablement, and technology requirements.
+      Include change management, success criteria, and performance benchmarks.
+    sections:
+      - id: implementation-phases
+        title: Customer Success Program Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Team Requirements:** {{phase_team_requirements}}
+          **Budget Allocation:** {{phase_budget}}
+          **Success Criteria:** {{phase_success_criteria}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_date}}
+          
+          **Technology Implementation:**
+          - Platform Setup: {{platform_setup_requirements}}
+          - Integration Configuration: {{integration_configuration}}
+          - Data Migration: {{data_migration_plan}}
+          - Testing & Validation: {{testing_validation_approach}}
+          
+          **Team Enablement:**
+          - Hiring & Onboarding: {{hiring_onboarding_plan}}
+          - Training & Certification: {{training_certification_program}}
+          - Process Documentation: {{process_documentation}}
+          - Performance Management: {{performance_management_setup}}
+          
+          **Customer Communication:**
+          - Program Introduction: {{program_introduction_strategy}}
+          - Expectation Setting: {{expectation_setting_approach}}
+          - Feedback Collection: {{feedback_collection_plan}}
+          - Success Communication: {{success_communication_strategy}}
+          
+          **Risk Mitigation:**
+          {{phase_risk_mitigation}}
+          
+          **Success Measurement:**
+          {{phase_success_measurement}}
+      - id: technology-requirements
+        title: Technology Stack & Platform Requirements
+        template: |
+          **Technology Architecture:**
+          
+          **Core Platform Requirements:**
+          - Customer Success Platform: {{customer_success_platform}}
+          - CRM Integration: {{crm_integration_requirements}}
+          - Analytics & Reporting: {{analytics_reporting_requirements}}
+          - Communication Tools: {{communication_tools_requirements}}
+          
+          **Data Management Technology:**
+          - Customer Data Platform: {{customer_data_platform}}
+          - Health Scoring Engine: {{health_scoring_engine}}
+          - Predictive Analytics: {{predictive_analytics_platform}}
+          - Data Visualization: {{data_visualization_tools}}
+          
+          **Automation & AI Technology:**
+          - Workflow Automation: {{workflow_automation_platform}}
+          - AI/ML Capabilities: {{ai_ml_capabilities}}
+          - Chatbot & Self-Service: {{chatbot_self_service}}
+          - Personalization Engine: {{personalization_engine}}
+          
+          **Integration Requirements:**
+          - API Management: {{api_management_requirements}}
+          - Data Synchronization: {{data_synchronization}}
+          - Security & Compliance: {{security_compliance_requirements}}
+          - Scalability Planning: {{scalability_planning}}
+          
+          **Technology Implementation Plan:**
+          {{technology_implementation_framework}}
+      - id: team-enablement-framework
+        title: Customer Success Team Enablement & Development
+        template: |
+          **Team Enablement Strategy:**
+          
+          **Role Definition & Structure:**
+          - Customer Success Manager: {{csm_role_definition}}
+          - Success Operations: {{success_operations_role}}
+          - Customer Success Analyst: {{analyst_role_definition}}
+          - Success Engineer: {{success_engineer_role}}
+          
+          **Competency Framework:**
+          
+          **Core Competencies:**
+          - Customer Relationship Management: {{relationship_management_competency}}
+          - Value Realization Facilitation: {{value_realization_competency}}
+          - Data Analysis & Insights: {{data_analysis_competency}}
+          - Technology Proficiency: {{technology_proficiency_competency}}
+          
+          **Training & Development Program:**
+          - Onboarding Curriculum: {{onboarding_curriculum}}
+          - Ongoing Education: {{ongoing_education_program}}
+          - Certification Programs: {{certification_programs}}
+          - Performance Coaching: {{performance_coaching_framework}}
+          
+          **Performance Management:**
+          - Goal Setting Framework: {{goal_setting_framework}}
+          - Performance Metrics: {{individual_performance_metrics}}
+          - Review Processes: {{performance_review_processes}}
+          - Career Development: {{career_development_planning}}
+          
+          **Team Culture & Collaboration:**
+          - Success Mindset Development: {{success_mindset_development}}
+          - Cross-Functional Collaboration: {{cross_functional_collaboration}}
+          - Knowledge Sharing: {{knowledge_sharing_frameworks}}
+          - Innovation Encouragement: {{innovation_encouragement}}
+          
+          **Team Success Measurement:**
+          {{team_success_measurement_framework}}
+
+  - id: program-completion-framework
+    title: Customer Success Program Completion & Validation
+    instruction: |
+      Final validation of customer success program ensuring comprehensive coverage and implementation readiness.
+      Include success metrics, quality checks, and deployment preparation.
+    content: |
+      ---
+      
+      ## Customer Success Program Completion
+      
+      **Program Development Completed:** {{completion_date}}
+      **Company:** {{company_name}}
+      **Program Type:** {{program_type}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Program Components:**
+      - [ ] Customer lifecycle management with milestone tracking
+      - [ ] Comprehensive feedback systems and voice of customer
+      - [ ] Value realization tracking and ROI measurement
+      - [ ] Conditional high-touch vs automated success strategies
+      - [ ] Retention and loyalty optimization programs
+      - [ ] Performance measurement and optimization frameworks
+      - [ ] Implementation roadmap with team enablement
+      
+      **Quality Validation:**
+      - [ ] Lifecycle stages are comprehensive with clear milestones
+      - [ ] Feedback systems enable closed-loop improvement
+      - [ ] Value measurement demonstrates business impact
+      - [ ] Success strategies are differentiated by customer needs
+      - [ ] Retention programs proactively prevent churn
+      - [ ] Performance metrics drive continuous optimization
+      - [ ] Implementation plan is realistic and well-resourced
+      
+      **LLM Integration Validation:**
+      - [ ] Real-time guidance for customer success decisions
+      - [ ] Predictive analytics for proactive intervention
+      - [ ] Automated insights and optimization recommendations
+      - [ ] AI-powered personalization and engagement
+      - [ ] Quality assurance with relationship preservation focus
+      
+      **Business Impact Projection:**
+      - Expected Customer Retention Rate: {{expected_retention_rate}}%
+      - Projected NPS Improvement: {{projected_nps_improvement}} points
+      - Estimated LTV Increase: {{estimated_ltv_increase}}%
+      - Predicted Advocacy Development Rate: {{predicted_advocacy_rate}}%
+      
+      **Next Steps:**
+      1. {{next_step_1}} - Owner: {{next_step_1_owner}} - Due: {{next_step_1_date}}
+      2. {{next_step_2}} - Owner: {{next_step_2_owner}} - Due: {{next_step_2_date}}
+      3. {{next_step_3}} - Owner: {{next_step_3_owner}} - Due: {{next_step_3_date}}
+      
+      **First Performance Review:** {{first_review_date}}
+      
+      ---
+      
+      ## Customer Success Program Certification
+      
+      **Program Approved:** {{approval_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Implementation Readiness:**
+      - [ ] Team trained on customer success methodologies
+      - [ ] Technology stack configured and integrated
+      - [ ] Process documentation completed
+      - [ ] Performance baselines established
+      - [ ] Monitoring systems operational
+      - [ ] Optimization processes defined
+      - [ ] Quality assurance validated
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Customer Success Program_
+      _Status: Ready for Implementation_
+      _Template: Customer Success Program v1.0_
+
+# Advanced template configuration and validation
+variables:
+  success_milestones:
+    type: array
+    description: "Key customer success milestones across the lifecycle"
+    min_items: 5
+    max_items: 15
+    items:
+      type: object
+      properties:
+        milestone_name:
+          type: string
+          min_length: 5
+        milestone_stage:
+          type: string
+          enum: ["onboarding", "adoption", "utilization", "expansion", "advocacy"]
+        business_value:
+          type: string
+          min_length: 20
+        success_criteria:
+          type: string
+          min_length: 30
+    validation:
+      - milestone_progression: "Milestones must build logical progression of success"
+      - measurable_outcomes: "Each milestone must have measurable success criteria"
+      - business_impact: "Milestones must demonstrate clear business value"
+
+  feedback_loops:
+    type: array
+    description: "Feedback collection and analysis systems"
+    min_items: 4
+    max_items: 10
+    items:
+      type: object
+      properties:
+        feedback_type:
+          type: string
+          enum: ["proactive", "reactive", "continuous", "strategic"]
+        collection_method:
+          type: string
+          min_length: 10
+        analysis_approach:
+          type: string
+          min_length: 20
+        action_integration:
+          type: string
+          min_length: 30
+    validation:
+      - feedback_completeness: "Feedback systems must cover all customer touchpoints"
+      - closed_loop_design: "All feedback must have clear action integration"
+      - sentiment_tracking: "Systems must track sentiment and emotional indicators"
+
+  retention_strategies:
+    type: array
+    description: "Customer retention and churn prevention strategies"
+    min_items: 3
+    max_items: 8
+    items:
+      type: object
+      properties:
+        strategy_name:
+          type: string
+          min_length: 5
+        target_segment:
+          type: string
+          min_length: 10
+        intervention_approach:
+          type: string
+          min_length: 30
+        success_measurement:
+          type: string
+          min_length: 20
+    validation:
+      - proactive_approach: "Strategies must be proactive, not just reactive"
+      - segment_relevance: "Each strategy must be relevant to target segment"
+      - measurable_impact: "Strategies must have clear success measurement"
+
+customer_lifecycle_framework:
+  stage_progression:
+    onboarding:
+      focus: ["setup", "initial_value", "relationship_building", "expectation_setting"]
+      duration: "30-90 days"
+      success_criteria: ["first_value_achieved", "adoption_started", "relationship_established"]
+    
+    adoption:
+      focus: ["feature_utilization", "workflow_integration", "value_realization", "success_coaching"]
+      duration: "90-180 days"
+      success_criteria: ["core_features_adopted", "workflow_integration", "roi_demonstrated"]
+    
+    utilization:
+      focus: ["optimization", "advanced_features", "business_integration", "outcome_achievement"]
+      duration: "6-12 months"
+      success_criteria: ["full_utilization", "business_outcomes", "optimization_achieved"]
+    
+    expansion:
+      focus: ["growth_opportunities", "additional_value", "strategic_partnership", "advocacy_development"]
+      duration: "12+ months"
+      success_criteria: ["expansion_achieved", "strategic_value", "advocacy_behaviors"]
+    
+    advocacy:
+      focus: ["thought_leadership", "peer_influence", "co_innovation", "strategic_alliance"]
+      duration: "ongoing"
+      success_criteria: ["reference_participation", "peer_influence", "innovation_partnership"]
+
+value_realization_model:
+  value_categories:
+    financial_value:
+      metrics: ["cost_savings", "revenue_generation", "productivity_gains", "efficiency_improvements"]
+      measurement: ["roi_calculation", "payback_period", "net_present_value", "total_cost_ownership"]
+    
+    operational_value:
+      metrics: ["process_optimization", "time_savings", "quality_improvements", "risk_reduction"]
+      measurement: ["efficiency_ratios", "cycle_time_reduction", "quality_scores", "risk_mitigation"]
+    
+    strategic_value:
+      metrics: ["competitive_advantage", "market_position", "innovation_enablement", "capability_building"]
+      measurement: ["market_share", "strategic_positioning", "innovation_metrics", "capability_assessment"]
+
+feedback_system_architecture:
+  collection_methods:
+    proactive_surveys:
+      types: ["onboarding", "milestone", "quarterly", "annual"]
+      timing: ["scheduled", "triggered", "event_based", "lifecycle_stage"]
+      analysis: ["sentiment", "satisfaction", "effort", "loyalty"]
+    
+    reactive_feedback:
+      types: ["support_interaction", "issue_resolution", "escalation", "recovery"]
+      timing: ["immediate", "post_resolution", "follow_up", "retrospective"]
+      analysis: ["problem_identification", "resolution_quality", "relationship_impact", "prevention"]
+    
+    continuous_listening:
+      types: ["social_monitoring", "review_tracking", "community_analysis", "conversation_insights"]
+      timing: ["real_time", "daily", "weekly", "trend_analysis"]
+      analysis: ["sentiment_trends", "topic_analysis", "influence_mapping", "competitive_intelligence"]
+
+retention_optimization_framework:
+  churn_prediction:
+    risk_indicators:
+      usage_patterns: ["declining_usage", "feature_abandonment", "login_frequency", "engagement_quality"]
+      relationship_health: ["communication_responsiveness", "satisfaction_trends", "feedback_sentiment", "stakeholder_changes"]
+      business_factors: ["budget_constraints", "roi_delays", "competitive_evaluation", "strategic_shifts"]
+    
+    intervention_strategies:
+      relationship_reinforcement: ["executive_engagement", "personal_outreach", "trust_rebuilding", "value_demonstration"]
+      value_optimization: ["usage_enhancement", "roi_improvement", "outcome_acceleration", "success_coaching"]
+      support_enhancement: ["dedicated_resources", "priority_access", "specialized_training", "custom_solutions"]
+
+success_program_differentiation:
+  high_touch_characteristics:
+    customer_profile: ["enterprise", "strategic", "high_value", "complex_needs"]
+    service_model: ["dedicated_csm", "executive_relationship", "strategic_consulting", "custom_success_planning"]
+    engagement_frequency: ["weekly_touchpoints", "monthly_reviews", "quarterly_planning", "annual_strategy"]
+    
+  automated_characteristics:
+    customer_profile: ["smb", "self_service", "standard_needs", "digital_native"]
+    service_model: ["digital_platform", "automated_workflows", "self_service_resources", "community_support"]
+    engagement_frequency: ["automated_touchpoints", "triggered_interventions", "on_demand_access", "scheduled_check_ins"]
+
+quality_validation_framework:
+  lifecycle_management:
+    - comprehensive_stages: "All lifecycle stages must be thoroughly defined"
+    - milestone_clarity: "Success milestones must be specific and measurable"
+    - progression_logic: "Stage progression must be logical and value-driven"
+    - intervention_readiness: "Proactive intervention systems must be defined"
+  
+  feedback_effectiveness:
+    - comprehensive_collection: "Feedback systems must cover all customer touchpoints"
+    - closed_loop_process: "All feedback must have clear action integration"
+    - sentiment_intelligence: "Emotional intelligence must be integrated"
+    - continuous_improvement: "Feedback must drive systematic improvement"
+  
+  value_demonstration:
+    - measurement_rigor: "Value measurement must be comprehensive and rigorous"
+    - roi_clarity: "ROI calculation and demonstration must be clear"
+    - stakeholder_relevance: "Value communication must address all stakeholders"
+    - outcome_tracking: "Business outcomes must be systematically tracked"
+  
+  retention_effectiveness:
+    - predictive_capability: "Churn prediction must be accurate and actionable"
+    - intervention_success: "Retention strategies must demonstrate effectiveness"
+    - loyalty_development: "Loyalty programs must drive long-term commitment"
+    - advocacy_creation: "Programs must systematically develop customer advocacy"
+
+conditional_logic:
+  customer_segment:
+    enterprise:
+      focus_areas: ["strategic_partnership", "executive_relationship", "complex_integration", "custom_success"]
+      service_model: ["high_touch", "dedicated_resources", "strategic_consulting", "executive_engagement"]
+    
+    mid_market:
+      focus_areas: ["value_optimization", "growth_facilitation", "best_practice_sharing", "expansion_opportunities"]
+      service_model: ["hybrid_touch", "shared_resources", "structured_programs", "regular_reviews"]
+    
+    smb:
+      focus_areas: ["quick_value", "ease_of_use", "self_service", "community_support"]
+      service_model: ["digital_first", "automated_workflows", "self_service_resources", "community_engagement"]
+
+integration_requirements:
+  data_integration:
+    customer_data: ["profile_information", "usage_analytics", "engagement_history", "satisfaction_metrics"]
+    business_metrics: ["financial_performance", "operational_efficiency", "strategic_outcomes", "competitive_position"]
+    relationship_data: ["touchpoint_history", "communication_logs", "feedback_responses", "advocacy_activities"]
+  
+  system_integration:
+    crm_platform: ["customer_profiles", "opportunity_management", "communication_tracking", "pipeline_integration"]
+    product_platform: ["usage_analytics", "feature_adoption", "performance_metrics", "behavior_tracking"]
+    support_platform: ["ticket_management", "resolution_tracking", "satisfaction_measurement", "escalation_handling"]
+
+privacy_compliance:
+  data_governance:
+    collection: ["consent_based", "purpose_limited", "transparent_usage", "opt_out_respect"]
+    storage: ["secure_systems", "retention_policies", "access_controls", "audit_trails"]
+    usage: ["purpose_alignment", "consent_boundaries", "sharing_limitations", "deletion_rights"]
+  
+  relationship_ethics:
+    success_integrity: ["authentic_value", "honest_communication", "realistic_expectations", "transparent_measurement"]
+    customer_autonomy: ["choice_respect", "pressure_avoidance", "value_demonstration", "outcome_focus"]
+    long_term_partnership: ["mutual_benefit", "sustainable_practices", "trust_building", "relationship_investment"]

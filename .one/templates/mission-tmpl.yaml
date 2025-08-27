@@ -1,0 +1,203 @@
+template:
+  id: agent-one-mission-template
+  name: Agent ONE Mission Document
+  version: 2.0
+  output:
+    format: markdown
+    filename: missions/mission-{{mission_num}}-{{mission_title_short}}.md
+    title: "Mission {{mission_num}}: {{mission_title}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  quality_gates: true
+  cascade_integration: true
+
+agent_one_integration:
+  user_profile: one/me/me.md
+  company_context: one/company/company.md  
+  quality_validation: .one/tasks/mission-quality-gate.md
+  cascade_preparation: true
+  agent_coordination: intelligent_routing
+
+quality_standards:
+  minimum_score: 4.0
+  validation_required: true
+  cascade_approval: automatic
+  agent_assignment: preference_based
+
+agent_config:
+  editable_sections: 
+    - Status
+    - Objective
+    - Strategic Alignment
+    - Success Metrics
+    - Quality Gates
+    - Agent Team
+    - CASCADE Integration
+    - Stories
+    - Timeline
+    - Mission Log
+
+sections:
+  - id: mission_header
+    title: Mission Header
+    type: template-text
+    template: |
+      # Mission {{mission_num}}: {{mission_title}}
+
+      **Status:** {{status}}
+      **Priority:** {{priority}}
+      **Lead:** {{lead_agent}}
+      **Teams:** {{teams}}
+      **Objective:** {{objective}}
+    instruction: Define the mission header with key details
+    elicit: true
+    owner: mission-director
+    editors: [mission-director]
+
+  - id: objective
+    title: Mission Objective
+    type: template-text
+    template: |
+      ## 🎯 Mission Objective
+
+      {{objective_description}}
+
+      ### Success Definition
+      {{success_definition}}
+
+      ### Strategic Alignment
+      **Company Mission Alignment:** {{company_mission_alignment}}
+      **Market Position Impact:** {{market_position_impact}}
+      **Business Value:** {{business_value_proposition}}
+    instruction: Define clear, measurable business goal with strategic company alignment
+    elicit: true
+    owner: mission-director
+    editors: [mission-director]
+    
+  - id: agent_team_configuration
+    title: Agent Team Configuration
+    type: template-text
+    template: |
+      ## 🤖 Agent Team Assignment
+
+      **Mission Commander:** {{mission_commander}}
+      **Primary Team:** {{primary_agent_team}}
+      
+      ### Specialized Agents
+      {{#each specialized_agents}}
+      - **{{agent_name}}:** {{agent_role}} ({{specialization}})
+      {{/each}}
+
+      ### Agent Coordination
+      - **Communication Style:** {{communication_preference}}
+      - **Feedback Frequency:** {{feedback_frequency}}
+      - **Quality Standards:** {{quality_enforcement_level}}
+    instruction: Configure intelligent agent assignments based on user preferences and mission requirements
+    elicit: true
+    owner: mission-director
+    editors: [mission-director, task-master]
+
+  - id: quality_gates
+    title: Quality Gate Framework
+    type: template-text
+    template: |
+      ## ⭐ Quality Gate System
+
+      **Quality Standard:** {{quality_threshold}} stars minimum
+      **Validation Status:** {{validation_status}}
+      **Quality Score:** {{current_quality_score}}/5.0
+
+      ### CASCADE Quality Gates
+      - **Mission Quality Gate:** {{mission_quality_status}} ({{mission_quality_score}})
+      - **Story Quality Gate:** Ready for 4.0+ validation
+      - **Task Quality Gate:** Configured for 4.0+ validation  
+      - **Agent Quality Gate:** Configured for 4.0+ validation
+
+      ### Quality Metrics
+      - **Strategic Clarity:** {{strategic_clarity_score}}/5.0
+      - **Resource Allocation:** {{resource_allocation_score}}/5.0
+      - **Success Measurability:** {{success_measurability_score}}/5.0
+      - **Agent Assignment:** {{agent_assignment_score}}/5.0
+    instruction: Track quality validation scores and CASCADE gate status
+    elicit: true
+    owner: mission-director
+    editors: [mission-director, quality-assurance]
+
+  - id: success_metrics
+    title: Success Metrics
+    type: numbered-list
+    template: |
+      - metric: "{{metric_name}}"
+        target: "{{target_value}}"
+        current: "{{current_value}}"
+    instruction: Define measurable success metrics for the mission
+    elicit: true
+    owner: mission-director
+    editors: [mission-director, analyst]
+
+  - id: cascade_integration
+    title: CASCADE Integration
+    type: template-text
+    template: |
+      ## 🌊 CASCADE Workflow Integration
+
+      ### Mission → Story Spawning
+      **Story Generation:** {{story_spawning_status}}
+      **Template Personalization:** {{story_template_personalization}}
+      **Quality Gate Configuration:** {{story_quality_gates_configured}}
+      
+      ### Agent Coordination Pipeline
+      **Intelligent Routing:** {{agent_routing_configured}}
+      **Specialization Matching:** {{specialization_matching_accuracy}}
+      **Quality Enforcement:** {{quality_enforcement_active}}
+      
+      ### Real-time Monitoring
+      **Dashboard Integration:** {{dashboard_integration_status}}
+      **Progress Tracking:** {{progress_tracking_active}}
+      **Performance Analytics:** {{performance_analytics_configured}}
+    instruction: Configure CASCADE workflow automation and monitoring systems
+    elicit: false
+    owner: system
+    editors: [mission-director]
+
+  - id: stories
+    title: Mission Stories
+    type: bullet-list
+    instruction: |
+      Stories will be automatically spawned from this validated mission using CASCADE workflow.
+      Initial story placeholders for planning purposes:
+    template: |
+      - [ ] Story {{story_num}}: {{story_title}} ({{story_status}})
+        - **Objective:** {{story_objective}}
+        - **Agent Team:** {{story_agent_team}}
+        - **Quality Target:** 4.0+ stars
+        - **Timeline:** {{story_timeline}}
+        - **CASCADE Status:** {{story_cascade_status}}
+    elicit: true
+    owner: mission-director
+    editors: [mission-director, story-teller]
+
+  - id: timeline
+    title: Mission Timeline
+    type: template-text
+    template: |
+      ## 📅 Timeline
+
+      - **Start Date:** {{start_date}}
+      - **Target Date:** {{target_date}}
+      - **Current Phase:** {{current_phase}}
+      - **Days Remaining:** {{days_remaining}}
+    instruction: Define mission timeline and current progress
+    elicit: true
+    owner: mission-director
+    editors: [mission-director]
+
+  - id: mission_log
+    title: Mission Log
+    type: table
+    columns: [Date, Event, Impact, Notes]
+    instruction: Track major mission events and milestones
+    owner: mission-director
+    editors: [mission-director, team-leads]

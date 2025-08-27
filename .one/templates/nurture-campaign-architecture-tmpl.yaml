@@ -1,0 +1,1202 @@
+template:
+  id: nurture-campaign-architecture-template-v1
+  name: Nurture Campaign Architecture - Elevate Marketing
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-{{campaign_type}}-nurture-architecture.md"
+    title: "{{campaign_type}} Nurture Campaign Architecture - {{company_name}}"
+
+workflow:
+  mode: interactive
+  elicitation: advanced-elicitation
+  llm_assistance:
+    real_time_guidance: true
+    decision_support: true
+    optimization_suggestions: true
+    relationship_building_focus: true
+    long_term_conversion_strategy: true
+  custom_elicitation:
+    title: "Nurture Campaign Architecture Development Actions"
+    sections:
+      - id: relationship-strategy-development
+        options:
+          - "Analyze relationship building using Intent-Based Branding (IBB) and value-first approaches"
+          - "Map trust-building touchpoints using Elevate Framework relationship marketing principles"
+          - "Design progressive value reveal strategies for sustained engagement without aggressive selling"
+          - "Research emotional connection patterns using storytelling and empathy-driven content"
+          - "Study customer success indicators and celebrate transformation milestones"
+          - "Explore educational content sequencing for authority building and expertise positioning"
+          - "Analyze timing patterns for relationship-respectful conversion optimization"
+          - "Design reciprocity and social proof integration using customer success stories"
+          - "Proceed to next section"
+      - id: conversion-strategy-architecture
+        options:
+          - "Map long-term conversion pathways with multiple touchpoints"
+          - "Design conversion trigger identification and activation systems"
+          - "Analyze customer readiness indicators and engagement scoring"
+          - "Research conversion barrier removal and objection handling"
+          - "Study social proof and authority building sequences"
+          - "Explore urgency creation without relationship damage"
+          - "Design conversion opportunity recognition and capture"
+          - "Map conversion attribution across extended nurture cycles"
+          - "Proceed to next section"
+      - id: content-strategy-framework
+        options:
+          - "Design content progression from awareness to advocacy"
+          - "Map educational content sequencing for expertise building"
+          - "Create value-first content strategies with subtle promotion"
+          - "Develop storytelling frameworks for emotional connection"
+          - "Design social proof integration and customer success stories"
+          - "Explore interactive content for engagement amplification"
+          - "Create content personalization and dynamic adaptation"
+          - "Design content performance tracking and optimization"
+          - "Proceed to next section"
+      - id: multi-channel-orchestration
+        options:
+          - "Design seamless multi-channel nurture experiences"
+          - "Map channel-specific strengths for relationship building"
+          - "Create cross-channel conversation continuity systems"
+          - "Develop channel coordination for consistent messaging"
+          - "Design channel-specific content optimization strategies"
+          - "Explore omnichannel customer journey orchestration"
+          - "Create channel performance attribution and optimization"
+          - "Design channel escalation and handoff protocols"
+          - "Proceed to campaign architecture completion"
+
+sections:
+  - id: campaign-overview
+    title: Nurture Campaign Architecture Overview
+    instruction: |
+      This nurture campaign architecture creates comprehensive long-term relationship building and conversion systems.
+      Focus on sustainable engagement, trust development, and gradual conversion optimization.
+      
+      The architecture includes:
+      - Relationship building frameworks with progressive value delivery
+      - Long-term conversion strategies with multiple engagement pathways
+      - Content sequencing for education, trust, and authority building
+      - Multi-channel orchestration for consistent experience delivery
+      - Performance tracking for relationship and conversion optimization
+      - Segmentation strategies for personalized nurture experiences
+      
+      Output file location: `docs/{{company_name}}-{{campaign_type}}-nurture-architecture.md`
+
+  - id: relationship-building-framework
+    title: Relationship Building & Trust Development Framework
+    instruction: |
+      Design comprehensive relationship building strategies with LLM assistance for emotional intelligence.
+      Focus on long-term trust development, value delivery, and loyalty creation.
+    variables:
+      - campaign_duration
+      - content_themes
+      - relationship_goals
+    sections:
+      - id: relationship-strategy
+        title: Relationship Development Strategy
+        template: |
+          **Nurture Campaign Type:** {{campaign_type}}
+          **Primary Relationship Objective:** {{primary_relationship_objective}}
+          **Campaign Duration:** {{campaign_duration}}
+          
+          **Relationship Building Philosophy:**
+          {{relationship_building_philosophy}}
+          
+          **Trust Development Framework (Elevate Nurture Principles - IBB Integration):**
+          
+          **Intent-Based Branding (IBB) Core Tenets:**
+          - Lead with Value Consistently: Provide valuable insights before any selling attempt
+          - Build Trust & Authority: Position as credible, helpful expert through demonstration
+          - Stay Top-of-Mind: Regular valuable content keeps brand present when timing is right
+          - Segment for Relevance: Tailor communication based on initial interest/behavior
+          - Shift Beliefs & Overcome Objections: Address misconceptions through nurture content
+          
+          **Stage 1: Awareness & Introduction ({{stage_1_duration}})**
+          - Primary Goal: {{stage_1_primary_goal}} (Lead with value, not pitch - IBB principle)
+          - Trust Elements: {{stage_1_trust_elements}} (Transparency, helpful content, no aggressive selling)
+          - Value Delivery: {{stage_1_value_delivery}} (Educational insights, problem solutions, further tips)
+          - Engagement Strategy: {{stage_1_engagement_strategy}} (Build authority through expertise, deliver more value)
+          - IBB Implementation: Continue providing value related to initial Gift, no direct pitching
+          - Success Metrics: {{stage_1_success_metrics}} (Engagement rate, content consumption, value recognition)
+          
+          **Stage 2: Education & Authority Building ({{stage_2_duration}})**
+          - Primary Goal: {{stage_2_primary_goal}} (Deep dive into core problem, explore failed solutions)
+          - Trust Elements: {{stage_2_trust_elements}} (Expertise demonstration, unique insights)
+          - Value Delivery: {{stage_2_value_delivery}} (Problem/solution education, methodology sharing)
+          - Engagement Strategy: {{stage_2_engagement_strategy}} (Thought leadership, case studies)
+          - IBB Implementation: Share relatable customer journeys, behind-the-scenes content
+          - Success Metrics: {{stage_2_success_metrics}} (Content depth engagement, authority recognition)
+          
+          **Stage 3: Consideration & Relationship Deepening ({{stage_3_duration}})**
+          - Primary Goal: {{stage_3_primary_goal}}
+          - Trust Elements: {{stage_3_trust_elements}}
+          - Value Delivery: {{stage_3_value_delivery}}
+          - Engagement Strategy: {{stage_3_engagement_strategy}}
+          - Success Metrics: {{stage_3_success_metrics}}
+          
+          **Stage 4: Decision Support & Conversion ({{stage_4_duration}})**
+          - Primary Goal: {{stage_4_primary_goal}} (Pre-frame offer as logical solution, build anticipation)
+          - Trust Elements: {{stage_4_trust_elements}} (Strong guarantees, risk reversal, social proof)
+          - Value Delivery: {{stage_4_value_delivery}} (Decision support, outcome visualization)
+          - Engagement Strategy: {{stage_4_engagement_strategy}} (Gentle conversion approach, value emphasis)
+          - IBB Implementation: Present core offer as natural next step, respect relationship built
+          - Success Metrics: {{stage_4_success_metrics}} (Conversion rate, relationship preservation score)
+          
+          **Stage 5: Advocacy & Long-term Relationship ({{stage_5_duration}})**
+          - Primary Goal: {{stage_5_primary_goal}}
+          - Trust Elements: {{stage_5_trust_elements}}
+          - Value Delivery: {{stage_5_value_delivery}}
+          - Engagement Strategy: {{stage_5_engagement_strategy}}
+          - Success Metrics: {{stage_5_success_metrics}}
+      - id: value-delivery-architecture
+        title: Progressive Value Delivery Architecture
+        template: |
+          **Value Delivery Philosophy (Elevate Framework IBB):**
+          {{value_delivery_philosophy}}
+          
+          **Core IBB Principles:**
+          - Lead with value consistently before selling
+          - Build trust and authority through expertise demonstration
+          - Address underlying objections through educational content
+          - Stay top-of-mind through regular valuable insights
+          - Shift beliefs and overcome misconceptions gradually
+          
+          **Value Ladder Design:**
+          
+          **Foundation Value (Immediate)**
+          - Value Type: {{foundation_value_type}}
+          - Delivery Method: {{foundation_delivery_method}}
+          - Engagement Trigger: {{foundation_trigger}}
+          - Expected Impact: {{foundation_impact}}
+          - Measurement: {{foundation_measurement}}
+          
+          **Educational Value (Short-term)**
+          - Value Type: {{educational_value_type}}
+          - Delivery Method: {{educational_delivery_method}}
+          - Engagement Trigger: {{educational_trigger}}
+          - Expected Impact: {{educational_impact}}
+          - Measurement: {{educational_measurement}}
+          
+          **Strategic Value (Medium-term)**
+          - Value Type: {{strategic_value_type}}
+          - Delivery Method: {{strategic_delivery_method}}
+          - Engagement Trigger: {{strategic_trigger}}
+          - Expected Impact: {{strategic_impact}}
+          - Measurement: {{strategic_measurement}}
+          
+          **Transformational Value (Long-term)**
+          - Value Type: {{transformational_value_type}}
+          - Delivery Method: {{transformational_delivery_method}}
+          - Engagement Trigger: {{transformational_trigger}}
+          - Expected Impact: {{transformational_impact}}
+          - Measurement: {{transformational_measurement}}
+          
+          **Value Reinforcement System:**
+          {{value_reinforcement_framework}}
+      - id: emotional-connection-framework
+        title: Emotional Connection & Loyalty Framework
+        template: |
+          **Emotional Engagement Strategy:**
+          
+          **Emotional Journey Mapping:**
+          - Initial Emotion: {{initial_emotional_state}}
+          - Desired Emotion: {{target_emotional_state}}
+          - Emotional Milestones: {{emotional_progression_milestones}}
+          - Connection Deepening Strategy: {{connection_deepening_approach}}
+          
+          **Emotional Triggers & Responses:**
+          
+          **Trust Building Triggers:**
+          - Transparency Moments: {{transparency_trigger_moments}}
+          - Vulnerability Sharing: {{vulnerability_sharing_strategy}}
+          - Consistency Demonstration: {{consistency_demonstration}}
+          - Expertise Validation: {{expertise_validation_approach}}
+          
+          **Connection Amplification:**
+          - Personal Story Integration: {{personal_story_strategy}}
+          - Shared Values Emphasis: {{shared_values_approach}}
+          - Community Building: {{community_building_strategy}}
+          - Recognition & Appreciation: {{recognition_framework}}
+          
+          **Loyalty Development System:**
+          - Exclusive Access: {{exclusive_access_strategy}}
+          - Insider Information: {{insider_information_approach}}
+          - Special Privileges: {{special_privileges_framework}}
+          - Advocacy Opportunities: {{advocacy_opportunity_creation}}
+          
+          **Emotional Intelligence Integration:**
+          {{emotional_intelligence_framework}}
+
+  - id: long-term-conversion-strategy
+    title: Long-term Conversion Strategy & Pathway Design
+    instruction: |
+      Create sophisticated long-term conversion strategies with LLM guidance for conversion optimization.
+      Focus on multiple conversion pathways, trigger identification, and relationship preservation.
+    variables:
+      - conversion_triggers
+      - conversion_pathways
+    sections:
+      - id: conversion-pathway-architecture
+        title: Multi-Path Conversion Architecture
+        template: |
+          **Conversion Strategy Philosophy:**
+          {{conversion_strategy_philosophy}}
+          
+          **Primary Conversion Pathways:**
+          
+          **Pathway 1: Education-to-Conversion**
+          - Trigger Events: {{education_conversion_triggers}}
+          - Pathway Description: {{education_pathway_description}}
+          - Typical Timeline: {{education_conversion_timeline}}
+          - Success Indicators: {{education_success_indicators}}
+          - Optimization Focus: {{education_optimization_focus}}
+          
+          **Pathway 2: Problem-Solution Fit**
+          - Trigger Events: {{problem_solution_triggers}}
+          - Pathway Description: {{problem_solution_description}}
+          - Typical Timeline: {{problem_solution_timeline}}
+          - Success Indicators: {{problem_solution_indicators}}
+          - Optimization Focus: {{problem_solution_optimization}}
+          
+          **Pathway 3: Social Proof Influence**
+          - Trigger Events: {{social_proof_triggers}}
+          - Pathway Description: {{social_proof_description}}
+          - Typical Timeline: {{social_proof_timeline}}
+          - Success Indicators: {{social_proof_indicators}}
+          - Optimization Focus: {{social_proof_optimization}}
+          
+          **Pathway 4: Timing-Based Opportunity**
+          - Trigger Events: {{timing_based_triggers}}
+          - Pathway Description: {{timing_based_description}}
+          - Typical Timeline: {{timing_based_timeline}}
+          - Success Indicators: {{timing_based_indicators}}
+          - Optimization Focus: {{timing_based_optimization}}
+          
+          **Pathway Optimization Framework:**
+          {{pathway_optimization_strategy}}
+      - id: conversion-trigger-system
+        title: Conversion Trigger Detection & Activation
+        instruction: Define comprehensive conversion trigger system with scoring and response protocols
+        repeatable: true
+        template: |
+          **Conversion Trigger: {{trigger_name}}**
+          **Category:** {{trigger_category}}
+          **Conversion Probability Score:** {{conversion_probability}}/10
+          **Relationship Impact:** {{relationship_impact_assessment}}
+          
+          **Trigger Identification:**
+          - Behavioral Indicators: {{behavioral_trigger_indicators}}
+          - Engagement Patterns: {{engagement_pattern_triggers}}
+          - Contextual Signals: {{contextual_trigger_signals}}
+          - Timing Factors: {{timing_trigger_factors}}
+          
+          **Trigger Scoring Algorithm:**
+          - Intent Strength: {{intent_strength_score}}/10
+          - Urgency Level: {{urgency_level_score}}/10
+          - Relationship Readiness: {{relationship_readiness_score}}/10
+          - Competitive Window: {{competitive_window_score}}/10
+          - **Total Trigger Score: {{total_trigger_score}}/40**
+          
+          **Response Strategy by Score:**
+          - High Priority (30-40): {{high_priority_response_strategy}}
+          - Medium Priority (20-29): {{medium_priority_response_strategy}}
+          - Low Priority (10-19): {{low_priority_response_strategy}}
+          - Monitor Only (0-9): {{monitor_only_strategy}}
+          
+          **Conversion Activation Protocol:**
+          {{conversion_activation_steps}}
+          
+          **Relationship Preservation Strategy:**
+          {{relationship_preservation_approach}}
+      - id: conversion-optimization-framework
+        title: Conversion Optimization & Performance Enhancement
+        template: |
+          **Conversion Optimization Philosophy:**
+          {{conversion_optimization_philosophy}}
+          
+          **Optimization Framework:**
+          
+          **A/B Testing Strategy:**
+          - Test Categories: {{conversion_test_categories}}
+          - Testing Frequency: {{conversion_testing_frequency}}
+          - Sample Size Requirements: {{conversion_sample_requirements}}
+          - Statistical Significance: {{conversion_statistical_thresholds}}
+          
+          **Conversion Funnel Analysis:**
+          - Funnel Stages: {{conversion_funnel_stages}}
+          - Drop-off Analysis: {{conversion_dropoff_analysis}}
+          - Optimization Priorities: {{conversion_optimization_priorities}}
+          - Improvement Strategies: {{conversion_improvement_strategies}}
+          
+          **Conversion Attribution Modeling:**
+          - Attribution Method: {{conversion_attribution_method}}
+          - Touch Point Weighting: {{conversion_touchpoint_weighting}}
+          - Time Decay Model: {{conversion_time_decay}}
+          - Channel Credit Assignment: {{conversion_channel_credit}}
+          
+          **Long-term Value Optimization:**
+          - Customer Lifetime Value Focus: {{ltv_optimization_focus}}
+          - Retention Rate Impact: {{retention_rate_considerations}}
+          - Upsell Opportunity Mapping: {{upsell_opportunity_mapping}}
+          - Advocacy Development: {{advocacy_development_strategy}}
+          
+          **Conversion Quality Assurance:**
+          {{conversion_quality_framework}}
+
+  - id: content-sequencing-strategy
+    title: Content Sequencing & Educational Progression
+    instruction: |
+      Design sophisticated content sequencing with LLM assistance for educational impact.
+      Focus on progressive learning, authority building, and value demonstration.
+    variables:
+      - content_themes
+      - educational_progression
+    sections:
+      - id: content-architecture
+        title: Educational Content Architecture
+        template: |
+          **Content Strategy Philosophy:**
+          {{content_strategy_philosophy}}
+          
+          **Content Theme Framework:**
+          
+          **Primary Content Themes:**
+          1. {{primary_theme_1}} - Purpose: {{theme_1_purpose}}
+          2. {{primary_theme_2}} - Purpose: {{theme_2_purpose}}
+          3. {{primary_theme_3}} - Purpose: {{theme_3_purpose}}
+          4. {{primary_theme_4}} - Purpose: {{theme_4_purpose}}
+          5. {{primary_theme_5}} - Purpose: {{theme_5_purpose}}
+          
+          **Content Progression Model:**
+          
+          **Foundation Level (Weeks 1-2)**
+          - Content Focus: {{foundation_content_focus}}
+          - Learning Objectives: {{foundation_learning_objectives}}
+          - Value Delivery: {{foundation_value_delivery}}
+          - Engagement Tactics: {{foundation_engagement_tactics}}
+          
+          **Development Level (Weeks 3-6)**
+          - Content Focus: {{development_content_focus}}
+          - Learning Objectives: {{development_learning_objectives}}
+          - Value Delivery: {{development_value_delivery}}
+          - Engagement Tactics: {{development_engagement_tactics}}
+          
+          **Advanced Level (Weeks 7-10)**
+          - Content Focus: {{advanced_content_focus}}
+          - Learning Objectives: {{advanced_learning_objectives}}
+          - Value Delivery: {{advanced_value_delivery}}
+          - Engagement Tactics: {{advanced_engagement_tactics}}
+          
+          **Mastery Level (Weeks 11+)**
+          - Content Focus: {{mastery_content_focus}}
+          - Learning Objectives: {{mastery_learning_objectives}}
+          - Value Delivery: {{mastery_value_delivery}}
+          - Engagement Tactics: {{mastery_engagement_tactics}}
+          
+          **Content Quality Standards:**
+          {{content_quality_framework}}
+      - id: storytelling-framework
+        title: Strategic Storytelling & Narrative Development
+        template: |
+          **Storytelling Strategy:**
+          
+          **Narrative Architecture:**
+          - Master Story Arc: {{master_story_arc}}
+          - Character Development: {{character_development_strategy}}
+          - Conflict Resolution: {{conflict_resolution_approach}}
+          - Transformation Journey: {{transformation_journey_mapping}}
+          
+          **Story Categories & Themes:**
+          
+          **Origin Stories:**
+          - Company Foundation: {{company_origin_story_strategy}}
+          - Product Development: {{product_origin_story_approach}}
+          - Team Member Journeys: {{team_story_integration}}
+          - Mission Evolution: {{mission_story_development}}
+          
+          **Customer Success Stories:**
+          - Transformation Stories: {{transformation_story_framework}}
+          - Challenge & Resolution: {{challenge_resolution_stories}}
+          - Results & Impact: {{results_impact_storytelling}}
+          - Emotional Journey: {{emotional_journey_stories}}
+          
+          **Educational Stories:**
+          - Case Study Narratives: {{case_study_storytelling}}
+          - Lesson-Based Stories: {{lesson_based_narratives}}
+          - Industry Examples: {{industry_example_stories}}
+          - Best Practice Stories: {{best_practice_storytelling}}
+          
+          **Future Vision Stories:**
+          - Possibility Narratives: {{possibility_story_creation}}
+          - Innovation Stories: {{innovation_storytelling}}
+          - Industry Evolution: {{industry_evolution_stories}}
+          - Customer Future State: {{future_state_narratives}}
+          
+          **Story Performance Optimization:**
+          {{storytelling_optimization_framework}}
+      - id: social-proof-integration
+        title: Social Proof & Authority Building Integration
+        template: |
+          **Social Proof Strategy:**
+          
+          **Authority Building Framework:**
+          - Expertise Demonstration: {{expertise_demonstration_strategy}}
+          - Thought Leadership: {{thought_leadership_approach}}
+          - Industry Recognition: {{industry_recognition_leverage}}
+          - Media Mentions: {{media_mention_integration}}
+          
+          **Social Proof Categories:**
+          
+          **Customer Testimonials:**
+          - Collection Strategy: {{testimonial_collection_strategy}}
+          - Presentation Format: {{testimonial_presentation_format}}
+          - Rotation Schedule: {{testimonial_rotation_schedule}}
+          - Authenticity Verification: {{testimonial_authenticity_approach}}
+          
+          **Usage Statistics:**
+          - Performance Metrics: {{performance_metrics_sharing}}
+          - Growth Numbers: {{growth_numbers_presentation}}
+          - Impact Statistics: {{impact_statistics_strategy}}
+          - Comparative Data: {{comparative_data_approach}}
+          
+          **Expert Endorsements:**
+          - Industry Leaders: {{industry_leader_endorsements}}
+          - Peer Recognition: {{peer_recognition_leverage}}
+          - Awards & Certifications: {{awards_certification_strategy}}
+          - Partnership Validation: {{partnership_validation_approach}}
+          
+          **Community Social Proof:**
+          - User-Generated Content: {{ugc_integration_strategy}}
+          - Community Size: {{community_size_leverage}}
+          - Engagement Levels: {{engagement_level_demonstration}}
+          - Success Rate Sharing: {{success_rate_sharing_approach}}
+          
+          **Social Proof Optimization:**
+          {{social_proof_optimization_framework}}
+
+  - id: conditional-campaign-approaches
+    title: Email vs Multi-Channel Nurture Approaches
+    instruction: |
+      Define conditional approaches based on channel strategy with LLM optimization for each channel type.
+      Create comprehensive strategies for both email-focused and multi-channel campaigns.
+    sections:
+      - id: email-focused-approach
+        title: Email-Focused Nurture Campaign
+        conditional:
+          email_primary:
+            template: |
+              **Email-Centric Nurture Strategy:**
+              
+              **Email Optimization Framework:**
+              - Send Frequency: {{email_send_frequency}}
+              - Optimal Send Times: {{email_optimal_timing}}
+              - Subject Line Strategy: {{email_subject_strategy}}
+              - Content Length Optimization: {{email_content_length}}
+              
+              **Email Sequence Architecture (Elevate Nurture Framework + IBB):**
+              
+              **Sequence Types Available (Chapter 14 Framework):**
+              - Post-Gift Value Sequence: Follow up initial Gift with more related tips/insights
+              - Problem/Solution Sequence: Deep dive into core problem, explore failed solutions, introduce unique approach
+              - Story/Rapport Building Sequence: Share relatable customer journeys, brand origin, behind-the-scenes
+              - Pre-Offer/Launch Sequence: Build anticipation and desire before presenting core offer explicitly
+              - Abandoned Cart Sequence: Specific urgent sequence for potential lost sales recovery
+              
+              **Welcome Series (Emails 1-3) - Value-First IBB Approach**
+              - Email 1: {{welcome_email_1_focus}} (Gift delivery + additional value, no selling) - Send: {{welcome_1_timing}}
+              - Email 2: {{welcome_email_2_focus}} (Related tips/insights, continue value delivery) - Send: {{welcome_2_timing}}
+              - Email 3: {{welcome_email_3_focus}} (Problem/solution education, authority building) - Send: {{welcome_3_timing}}
+              
+              **Educational Series (Emails 4-12) - Authority Building**
+              - Educational Theme 1: {{educational_theme_1}} (Deep problem exploration) - Emails: {{theme_1_email_count}}
+              - Educational Theme 2: {{educational_theme_2}} (Solution methodology) - Emails: {{theme_2_email_count}}
+              - Educational Theme 3: {{educational_theme_3}} (Unique mechanism introduction) - Emails: {{theme_3_email_count}}
+              
+              **Social Proof Series (Emails 13-18)**
+              - Customer Success Focus: {{customer_success_email_strategy}}
+              - Case Study Integration: {{case_study_email_approach}}
+              - Testimonial Strategy: {{testimonial_email_strategy}}
+              
+              **Conversion Series (Emails 19-24) - Relationship-Respectful Conversion (IBB)**
+              - Soft Conversion Approach: {{soft_conversion_email_strategy}} (Pre-frame offer as logical solution)
+              - Direct Conversion Strategy: {{direct_conversion_email_approach}} (Value equation emphasis, Hormozi framework)
+              - Objection Handling: {{objection_handling_email_strategy}} (Address common misconceptions through education)
+              - Abandoned Cart Recovery: {{abandoned_cart_email_strategy}} (Specific urgent sequence for cart abandoners)
+              - Trust Reinforcement: Strong guarantee and risk reversal messaging (impossible to miss)
+              - Relationship Preservation: Maintain helpful, non-aggressive tone throughout conversion attempts
+              
+              **Email Personalization Strategy:**
+              {{email_personalization_framework}}
+              
+              **Email Performance Optimization:**
+              {{email_performance_optimization}}
+      - id: multi-channel-approach
+        title: Multi-Channel Nurture Campaign
+        conditional:
+          multi_channel:
+            template: |
+              **Multi-Channel Orchestration Strategy:**
+              
+              **Channel Integration Framework:**
+              - Primary Channel: {{primary_nurture_channel}}
+              - Secondary Channels: {{secondary_nurture_channels}}
+              - Channel Coordination: {{channel_coordination_strategy}}
+              - Message Consistency: {{message_consistency_approach}}
+              
+              **Channel-Specific Strategies:**
+              
+              **Email Channel Strategy:**
+              - Role: {{email_channel_role}}
+              - Content Type: {{email_content_strategy}}
+              - Frequency: {{email_frequency_strategy}}
+              - Integration Points: {{email_integration_points}}
+              
+              **Social Media Strategy:**
+              - Platforms: {{social_media_platforms}}
+              - Content Approach: {{social_content_approach}}
+              - Engagement Tactics: {{social_engagement_tactics}}
+              - Community Building: {{social_community_strategy}}
+              
+              **Content Marketing Strategy:**
+              - Blog Integration: {{blog_integration_strategy}}
+              - Video Content: {{video_content_strategy}}
+              - Podcast Integration: {{podcast_integration_strategy}}
+              - Webinar Strategy: {{webinar_strategy_approach}}
+              
+              **Direct Mail Integration:**
+              - Physical Touchpoints: {{direct_mail_touchpoints}}
+              - Digital Integration: {{direct_mail_digital_bridge}}
+              - Personalization: {{direct_mail_personalization}}
+              - Tracking Strategy: {{direct_mail_tracking}}
+              
+              **Phone/SMS Strategy:**
+              - Outreach Timing: {{phone_sms_timing_strategy}}
+              - Message Coordination: {{phone_sms_coordination}}
+              - Permission Strategy: {{phone_sms_permission_approach}}
+              - Integration Flow: {{phone_sms_integration_flow}}
+              
+              **Retargeting Integration (Elevate Nurture Chapter 14):**
+              - **Website Visitors (7-30 days):** {{website_visitor_retargeting}} (Viewed key SELL pages but didn't buy)
+              - **Cart Abandoners:** {{cart_abandoner_retargeting}} (Added items but didn't complete checkout)
+              - **Content Engagers:** {{content_engager_retargeting}} (Read specific blog posts indicating high interest)
+              - **Email Non-Openers:** {{email_nonopener_retargeting}} (Supplement email with social retargeting)
+              
+              **Retargeting Message Strategy:**
+              - Remind & Reinforce Value: {{retargeting_value_reinforcement}} (Showcase benefits, social proof)
+              - Address Likely Objections: {{retargeting_objection_address}} (Price, timing, complexity concerns)
+              - Gentle Call Back: {{retargeting_gentle_callback}} (Non-aggressive return to relevant page)
+              - Scarcity/Incentive (Strategic): {{retargeting_scarcity_strategy}} (Use carefully, maintain relationship focus)
+              
+              **Multi-Channel Performance Tracking:**
+              {{multi_channel_performance_framework}}
+
+  - id: segmentation-personalization
+    title: Advanced Segmentation & Personalization
+    instruction: |
+      Create sophisticated segmentation and personalization strategies with LLM assistance for maximum relevance.
+      Focus on behavioral, psychographic, and lifecycle-based segmentation.
+    sections:
+      - id: segmentation-framework
+        title: Advanced Segmentation Strategy
+        template: |
+          **Segmentation Philosophy (Elevate Framework Integration):**
+          {{segmentation_philosophy}}
+          
+          **Elevate-Based Segmentation Criteria (Enhanced with Prompts Framework):**
+          - Gift/Lead Magnet Source: Segment by initial value delivered (checklist downloaders vs webinar attendees)
+          - Engagement Level: Based on content consumption and interaction quality (email opens, link clicks, time spent)
+          - Conversion Readiness: Using behavioral signals and engagement patterns (pricing page views, demo requests)
+          - Problem Awareness: Depth of understanding of core challenges (beginner vs advanced content consumption)
+          - Solution Stage: Awareness, consideration, or decision phase positioning (research vs comparison behavior)
+          - Industry/Role Specificity: Segment by professional context for maximum relevance
+          - Communication Preference: Segment by preferred content format and engagement style
+          
+          **Primary Segmentation Dimensions:**
+          
+          **Demographic Segmentation:**
+          - Industry: {{industry_segmentation_approach}}
+          - Company Size: {{company_size_segmentation}}
+          - Role/Function: {{role_function_segmentation}}
+          - Geographic: {{geographic_segmentation}}
+          
+          **Behavioral Segmentation:**
+          - Engagement Level: {{engagement_level_segmentation}}
+          - Content Preferences: {{content_preference_segmentation}}
+          - Purchase History: {{purchase_history_segmentation}}
+          - Usage Patterns: {{usage_pattern_segmentation}}
+          
+          **Psychographic Segmentation:**
+          - Value Orientation: {{value_orientation_segmentation}}
+          - Decision Style: {{decision_style_segmentation}}
+          - Communication Preference: {{communication_preference_segmentation}}
+          - Innovation Adoption: {{innovation_adoption_segmentation}}
+          
+          **Lifecycle Segmentation:**
+          - Customer Journey Stage: {{journey_stage_segmentation}}
+          - Relationship Maturity: {{relationship_maturity_segmentation}}
+          - Purchase Readiness: {{purchase_readiness_segmentation}}
+          - Success Level: {{success_level_segmentation}}
+          
+          **Dynamic Segmentation Rules:**
+          {{dynamic_segmentation_framework}}
+      - id: personalization-engine
+        title: Personalization Engine & Dynamic Content
+        template: |
+          **Personalization Strategy:**
+          
+          **Personalization Levels:**
+          
+          **Basic Personalization:**
+          - Name & Company: {{name_company_personalization}}
+          - Industry References: {{industry_reference_personalization}}
+          - Role-Specific Content: {{role_specific_personalization}}
+          - Geographic Customization: {{geographic_personalization}}
+          
+          **Behavioral Personalization:**
+          - Content History: {{content_history_personalization}}
+          - Engagement Patterns: {{engagement_pattern_personalization}}
+          - Interaction Preferences: {{interaction_preference_personalization}}
+          - Channel Preferences: {{channel_preference_personalization}}
+          
+          **Advanced Personalization:**
+          - Predictive Content: {{predictive_content_personalization}}
+          - Dynamic Timing: {{dynamic_timing_personalization}}
+          - Contextual Messaging: {{contextual_messaging_personalization}}
+          - AI-Powered Optimization: {{ai_powered_personalization}}
+          
+          **Personalization Decision Engine:**
+          - Data Sources: {{personalization_data_sources}}
+          - Decision Logic: {{personalization_decision_logic}}
+          - Fallback Strategies: {{personalization_fallback_strategies}}
+          - Quality Assurance: {{personalization_quality_assurance}}
+          
+          **Dynamic Content Framework:**
+          {{dynamic_content_framework}}
+      - id: segment-specific-strategies
+        title: Segment-Specific Nurture Strategies
+        instruction: Create tailored nurture strategies for different customer segments
+        repeatable: true
+        template: |
+          **Segment: {{segment_name}}**
+          **Segment Size:** {{segment_size_percentage}}%
+          **Priority Level:** {{segment_priority_level}}
+          
+          **Segment Characteristics:**
+          - Demographics: {{segment_demographics}}
+          - Behavioral Patterns: {{segment_behavioral_patterns}}
+          - Pain Points: {{segment_pain_points}}
+          - Value Drivers: {{segment_value_drivers}}
+          
+          **Tailored Nurture Strategy:**
+          
+          **Content Strategy:**
+          - Content Themes: {{segment_content_themes}}
+          - Content Format Preferences: {{segment_content_formats}}
+          - Educational Focus: {{segment_educational_focus}}
+          - Case Study Selection: {{segment_case_study_strategy}}
+          
+          **Engagement Strategy:**
+          - Communication Tone: {{segment_communication_tone}}
+          - Engagement Frequency: {{segment_engagement_frequency}}
+          - Channel Preferences: {{segment_channel_preferences}}
+          - Interaction Style: {{segment_interaction_style}}
+          
+          **Conversion Strategy:**
+          - Conversion Triggers: {{segment_conversion_triggers}}
+          - Value Proposition Emphasis: {{segment_value_prop_emphasis}}
+          - Objection Handling: {{segment_objection_handling}}
+          - Social Proof Types: {{segment_social_proof_types}}
+          
+          **Success Metrics:**
+          {{segment_success_metrics}}
+
+  - id: performance-optimization-framework
+    title: Performance Tracking & Optimization Framework
+    instruction: |
+      Create comprehensive performance tracking with LLM assistance for continuous improvement.
+      Focus on relationship metrics, conversion optimization, and long-term value creation.
+    sections:
+      - id: performance-metrics-architecture
+        title: Nurture Performance Metrics Architecture
+        template: |
+          **Metrics Philosophy (Elevate Framework Success Measurement):**
+          {{nurture_metrics_philosophy}}
+          
+          **Elevate Framework Success Indicators:**
+          - Value Delivery Effectiveness: How well content addresses customer needs
+          - Trust Building Progress: Engagement depth and response quality improvements
+          - Authority Recognition: References to expertise and thought leadership
+          - Relationship Health: Consistency of engagement and positive sentiment
+          
+          **Metric Categories:**
+          
+          **Relationship Health Metrics:**
+          - Engagement Rate: {{engagement_rate_definition}} - Target: {{engagement_rate_target}}
+          - Content Consumption: {{content_consumption_metric}} - Target: {{content_consumption_target}}
+          - Interaction Quality: {{interaction_quality_metric}} - Target: {{interaction_quality_target}}
+          - Relationship Depth: {{relationship_depth_metric}} - Target: {{relationship_depth_target}}
+          
+          **Educational Progress Metrics:**
+          - Learning Progression: {{learning_progression_metric}} - Target: {{learning_progression_target}}
+          - Knowledge Retention: {{knowledge_retention_metric}} - Target: {{knowledge_retention_target}}
+          - Skill Development: {{skill_development_metric}} - Target: {{skill_development_target}}
+          - Expertise Recognition: {{expertise_recognition_metric}} - Target: {{expertise_recognition_target}}
+          
+          **Conversion Readiness Metrics:**
+          - Lead Scoring Progress: {{lead_scoring_metric}} - Target: {{lead_scoring_target}}
+          - Purchase Intent Signals: {{purchase_intent_metric}} - Target: {{purchase_intent_target}}
+          - Decision Stage Progression: {{decision_stage_metric}} - Target: {{decision_stage_target}}
+          - Conversion Probability: {{conversion_probability_metric}} - Target: {{conversion_probability_target}}
+          
+          **Long-term Value Metrics:**
+          - Customer Lifetime Value: {{ltv_metric_definition}} - Target: {{ltv_target}}
+          - Retention Rate: {{retention_rate_metric}} - Target: {{retention_rate_target}}
+          - Advocacy Development: {{advocacy_metric}} - Target: {{advocacy_target}}
+          - Referral Generation: {{referral_metric}} - Target: {{referral_target}}
+          
+          **Efficiency Metrics:**
+          - Cost Per Engagement: {{cost_per_engagement_metric}} - Target: {{cost_per_engagement_target}}
+          - Time to Conversion: {{time_to_conversion_metric}} - Target: {{time_to_conversion_target}}
+          - Resource Utilization: {{resource_utilization_metric}} - Target: {{resource_utilization_target}}
+          - ROI per Nurture Cycle: {{roi_per_cycle_metric}} - Target: {{roi_per_cycle_target}}
+          
+          **Metrics Collection Framework:**
+          {{metrics_collection_framework}}
+      - id: optimization-methodology
+        title: Continuous Optimization Methodology
+        template: |
+          **Optimization Philosophy:**
+          {{optimization_philosophy}}
+          
+          **Optimization Cycle Framework:**
+          
+          **Weekly Optimization Activities:**
+          
+          **Monday: Performance Review**
+          - Metric Analysis: {{monday_metric_analysis}}
+          - Trend Identification: {{monday_trend_identification}}
+          - Anomaly Investigation: {{monday_anomaly_investigation}}
+          - Hypothesis Development: {{monday_hypothesis_development}}
+          
+          **Tuesday-Wednesday: Test Implementation**
+          - A/B Test Design: {{test_design_process}}
+          - Content Optimization: {{content_optimization_process}}
+          - Segmentation Refinement: {{segmentation_refinement}}
+          - Personalization Enhancement: {{personalization_enhancement}}
+          
+          **Thursday-Friday: Results Analysis**
+          - Test Results Review: {{test_results_analysis}}
+          - Statistical Validation: {{statistical_validation_process}}
+          - Implementation Decisions: {{implementation_decision_process}}
+          - Documentation Updates: {{documentation_update_process}}
+          
+          **Monthly Optimization Focus:**
+          
+          **Strategic Optimization:**
+          - Campaign Architecture Review: {{campaign_architecture_review}}
+          - Segment Performance Analysis: {{segment_performance_analysis}}
+          - Channel Effectiveness Review: {{channel_effectiveness_review}}
+          - ROI Optimization: {{roi_optimization_approach}}
+          
+          **Tactical Optimization:**
+          - Content Performance Optimization: {{content_performance_optimization}}
+          - Timing Optimization: {{timing_optimization_approach}}
+          - Frequency Optimization: {{frequency_optimization_method}}
+          - Personalization Refinement: {{personalization_refinement}}
+          
+          **Quarterly Strategic Review:**
+          {{quarterly_strategic_review_framework}}
+      - id: ai-powered-optimization
+        title: AI-Powered Optimization & Insights
+        template: |
+          **AI Optimization Framework:**
+          
+          **Machine Learning Applications:**
+          - Predictive Analytics: {{ml_predictive_analytics}}
+          - Content Optimization: {{ml_content_optimization}}
+          - Timing Optimization: {{ml_timing_optimization}}
+          - Personalization Enhancement: {{ml_personalization_enhancement}}
+          
+          **LLM-Powered Insights:**
+          - Performance Analysis: {{llm_performance_analysis}}
+          - Optimization Recommendations: {{llm_optimization_recommendations}}
+          - Content Generation: {{llm_content_generation}}
+          - Strategy Refinement: {{llm_strategy_refinement}}
+          
+          **Automated Optimization Systems:**
+          - Real-time Adjustments: {{automated_realtime_adjustments}}
+          - Content A/B Testing: {{automated_content_testing}}
+          - Segment Optimization: {{automated_segment_optimization}}
+          - Performance Monitoring: {{automated_performance_monitoring}}
+          
+          **AI Ethics & Quality Assurance:**
+          {{ai_ethics_quality_framework}}
+
+  - id: implementation-roadmap
+    title: Implementation Roadmap & Success Framework
+    instruction: |
+      Create comprehensive implementation plan with clear phases, milestones, and success criteria.
+      Include technology requirements, team enablement, and performance benchmarks.
+    sections:
+      - id: implementation-phases
+        title: Nurture Campaign Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          **Team Requirements:** {{phase_team_requirements}}
+          **Budget Allocation:** {{phase_budget}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Deliverables:**
+          1. {{deliverable_1}} - Owner: {{deliverable_1_owner}} - Due: {{deliverable_1_date}}
+          2. {{deliverable_2}} - Owner: {{deliverable_2_owner}} - Due: {{deliverable_2_date}}
+          3. {{deliverable_3}} - Owner: {{deliverable_3_owner}} - Due: {{deliverable_3_date}}
+          4. {{deliverable_4}} - Owner: {{deliverable_4_owner}} - Due: {{deliverable_4_date}}
+          
+          **Success Criteria:**
+          - Primary Metric: {{phase_primary_metric}} - Target: {{phase_primary_target}}
+          - Secondary Metric: {{phase_secondary_metric}} - Target: {{phase_secondary_target}}
+          - Quality Gate: {{phase_quality_gate}} - Threshold: {{phase_quality_threshold}}
+          
+          **Risk Mitigation:**
+          {{phase_risk_mitigation}}
+          
+          **Dependencies:**
+          {{phase_dependencies}}
+      - id: technology-requirements
+        title: Technology Stack & Integration Requirements
+        template: |
+          **Technology Architecture:**
+          
+          **Core Platform Requirements:**
+          - Marketing Automation Platform: {{marketing_automation_platform}}
+          - CRM Integration: {{crm_integration_requirements}}
+          - Content Management System: {{cms_requirements}}
+          - Analytics Platform: {{analytics_platform_requirements}}
+          
+          **Personalization Technology:**
+          - Personalization Engine: {{personalization_engine_requirements}}
+          - AI/ML Platforms: {{ai_ml_platform_requirements}}
+          - Data Management Platform: {{dmp_requirements}}
+          - Real-time Decision Engine: {{real_time_decision_requirements}}
+          
+          **Content Technology:**
+          - Content Creation Tools: {{content_creation_tools}}
+          - Asset Management: {{asset_management_requirements}}
+          - Video Platform: {{video_platform_requirements}}
+          - Design Tools: {{design_tool_requirements}}
+          
+          **Performance Technology:**
+          - Attribution Platform: {{attribution_platform_requirements}}
+          - Testing Tools: {{testing_tool_requirements}}
+          - Dashboard Solution: {{dashboard_solution_requirements}}
+          - Reporting Tools: {{reporting_tool_requirements}}
+          
+          **Integration Requirements:**
+          {{technology_integration_framework}}
+      - id: team-enablement-plan
+        title: Team Enablement & Training Framework
+        template: |
+          **Team Enablement Strategy:**
+          
+          **Role-Specific Training:**
+          
+          **Nurture Campaign Manager:**
+          - Core Competencies: {{manager_core_competencies}}
+          - Training Modules: {{manager_training_modules}}
+          - Certification Requirements: {{manager_certifications}}
+          - Performance Standards: {{manager_performance_standards}}
+          
+          **Content Creators:**
+          - Core Competencies: {{creator_core_competencies}}
+          - Training Modules: {{creator_training_modules}}
+          - Certification Requirements: {{creator_certifications}}
+          - Performance Standards: {{creator_performance_standards}}
+          
+          **Data Analysts:**
+          - Core Competencies: {{analyst_core_competencies}}
+          - Training Modules: {{analyst_training_modules}}
+          - Certification Requirements: {{analyst_certifications}}
+          - Performance Standards: {{analyst_performance_standards}}
+          
+          **Marketing Technologists:**
+          - Core Competencies: {{technologist_core_competencies}}
+          - Training Modules: {{technologist_training_modules}}
+          - Certification Requirements: {{technologist_certifications}}
+          - Performance Standards: {{technologist_performance_standards}}
+          
+          **Training Resources:**
+          {{training_resource_framework}}
+          
+          **Ongoing Development:**
+          {{ongoing_development_plan}}
+
+  - id: campaign-completion-framework
+    title: Nurture Campaign Architecture Completion & Validation
+    instruction: |
+      Final validation of nurture campaign architecture ensuring comprehensive coverage and implementation readiness.
+      Include success metrics, quality checks, and deployment preparation.
+    content: |
+      ---
+      
+      ## Nurture Campaign Architecture Completion
+      
+      **Architecture Development Completed:** {{completion_date}}
+      **Campaign Type:** {{campaign_type}}
+      **Company:** {{company_name}}
+      **Campaign Duration:** {{campaign_duration}}
+      **Developed By:** {{developer_name}}
+      **Implementation Ready Date:** {{implementation_ready_date}}
+      
+      **Architecture Components:**
+      - [ ] Relationship building framework with progressive trust development
+      - [ ] Long-term conversion strategy with multiple pathways
+      - [ ] Content sequencing with educational progression
+      - [ ] Conditional strategies for email vs multi-channel approaches
+      - [ ] Advanced segmentation and personalization frameworks
+      - [ ] Performance tracking and optimization systems
+      - [ ] Implementation roadmap with team enablement
+      
+      **Quality Validation:**
+      - [ ] Relationship building strategy is comprehensive and sustainable
+      - [ ] Conversion triggers are clearly defined with scoring systems
+      - [ ] Content themes provide progressive value and expertise building
+      - [ ] Channel strategies are optimized for relationship preservation
+      - [ ] Segmentation enables meaningful personalization
+      - [ ] Performance metrics cover relationship health and conversion
+      - [ ] Implementation plan is realistic and well-resourced
+      
+      **LLM Integration Validation:**
+      - [ ] Real-time guidance for relationship building decisions
+      - [ ] Content optimization powered by AI for maximum relevance
+      - [ ] Predictive analytics for conversion timing optimization
+      - [ ] Automated insights and optimization recommendations
+      - [ ] Quality assurance with AI-powered relationship preservation
+      
+      **Business Impact Projection:**
+      - Expected Relationship Depth Improvement: {{expected_relationship_improvement}}%
+      - Projected Long-term Conversion Rate: {{projected_conversion_rate}}%
+      - Estimated Customer Lifetime Value Increase: {{estimated_ltv_increase}}%
+      - Predicted Advocacy Development Rate: {{predicted_advocacy_rate}}%
+      
+      **Next Steps:**
+      1. {{next_step_1}} - Owner: {{next_step_1_owner}} - Due: {{next_step_1_date}}
+      2. {{next_step_2}} - Owner: {{next_step_2_owner}} - Due: {{next_step_2_date}}
+      3. {{next_step_3}} - Owner: {{next_step_3_owner}} - Due: {{next_step_3_date}}
+      
+      **First Performance Review:** {{first_review_date}}
+      
+      ---
+      
+      ## Nurture Campaign Certification
+      
+      **Architecture Approved:** {{approval_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Implementation Readiness:**
+      - [ ] Team trained on relationship building principles
+      - [ ] Technology stack configured and tested
+      - [ ] Content library developed and sequenced
+      - [ ] Performance baselines established
+      - [ ] Monitoring systems operational
+      - [ ] Optimization processes defined
+      - [ ] Quality assurance validated
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Nurture Campaign Architecture_
+      _Status: Ready for Implementation_
+      _Template: Nurture Campaign Architecture v1.0_
+
+# Advanced template configuration and validation
+variables:
+  campaign_duration:
+    type: string
+    description: "Duration of the nurture campaign (e.g., '90 days', '6 months', 'ongoing')"
+    required: true
+    validation:
+      - realistic_timeline: "Campaign duration must be realistic for relationship building"
+      - sufficient_touchpoints: "Duration must allow for adequate relationship development"
+
+  content_themes:
+    type: array
+    description: "Primary content themes for educational progression"
+    min_items: 3
+    max_items: 8
+    items:
+      type: object
+      properties:
+        theme_name:
+          type: string
+          min_length: 5
+        theme_purpose:
+          type: string
+          min_length: 20
+        progression_level:
+          type: string
+          enum: ["foundation", "development", "advanced", "mastery"]
+    validation:
+      - theme_progression: "Themes must build upon each other logically"
+      - value_focused: "Each theme must deliver clear value to prospects"
+      - expertise_building: "Themes should establish authority and expertise"
+
+  conversion_triggers:
+    type: array
+    description: "Behavioral and contextual triggers that indicate conversion readiness"
+    min_items: 5
+    max_items: 15
+    items:
+      type: object
+      properties:
+        trigger_name:
+          type: string
+          min_length: 5
+        trigger_category:
+          type: string
+          enum: ["behavioral", "temporal", "contextual", "engagement", "external"]
+        conversion_probability:
+          type: number
+          min: 1
+          max: 10
+        relationship_impact:
+          type: string
+          enum: ["positive", "neutral", "risk"]
+    validation:
+      - trigger_completeness: "All triggers must have clear detection criteria"
+      - relationship_preservation: "Triggers must consider relationship preservation"
+      - scoring_logic: "Trigger scoring must be logical and data-driven"
+
+relationship_building_framework:
+  trust_development:
+    stages: ["awareness", "credibility", "reliability", "intimacy", "advocacy"]
+    tactics: ["transparency", "consistency", "expertise", "value_delivery", "reciprocity"]
+    measurement: ["engagement_depth", "response_quality", "initiative_taking", "referral_behavior"]
+  
+  value_delivery:
+    types: ["educational", "strategic", "tactical", "transformational"]
+    progression: ["immediate", "short_term", "medium_term", "long_term"]
+    measurement: ["value_recognition", "implementation_rate", "outcome_achievement", "satisfaction"]
+  
+  emotional_connection:
+    elements: ["shared_values", "personal_stories", "community", "recognition"]
+    development: ["empathy", "understanding", "connection", "loyalty"]
+    measurement: ["emotional_response", "engagement_quality", "advocacy_behavior", "retention"]
+
+conversion_strategy_framework:
+  pathway_types:
+    education_based:
+      characteristics: ["knowledge_building", "expertise_demonstration", "trust_development"]
+      triggers: ["information_seeking", "learning_engagement", "expertise_recognition"]
+      timeline: "extended"
+    
+    problem_solution:
+      characteristics: ["pain_point_identification", "solution_positioning", "fit_demonstration"]
+      triggers: ["problem_expression", "solution_research", "fit_confirmation"]
+      timeline: "moderate"
+    
+    social_proof:
+      characteristics: ["peer_validation", "authority_endorsement", "success_stories"]
+      triggers: ["peer_seeking", "validation_requests", "success_interest"]
+      timeline: "accelerated"
+    
+    timing_based:
+      characteristics: ["opportunity_windows", "urgency_creation", "decision_catalysts"]
+      triggers: ["timing_signals", "urgency_indicators", "decision_pressure"]
+      timeline: "immediate"
+
+content_progression_model:
+  foundation_level:
+    focus: ["problem_awareness", "solution_introduction", "value_demonstration"]
+    formats: ["educational_content", "introductory_guides", "foundation_resources"]
+    outcomes: ["awareness", "interest", "initial_trust"]
+  
+  development_level:
+    focus: ["deeper_education", "methodology_sharing", "capability_building"]
+    formats: ["detailed_guides", "case_studies", "best_practices"]
+    outcomes: ["understanding", "capability", "confidence"]
+  
+  advanced_level:
+    focus: ["strategic_insights", "advanced_strategies", "thought_leadership"]
+    formats: ["strategic_content", "industry_analysis", "innovation_insights"]
+    outcomes: ["expertise_recognition", "strategic_alignment", "partnership_potential"]
+  
+  mastery_level:
+    focus: ["cutting_edge_insights", "future_trends", "transformation_guidance"]
+    formats: ["exclusive_content", "preview_access", "collaborative_insights"]
+    outcomes: ["mastery_recognition", "advisory_relationship", "advocacy"]
+
+channel_optimization_framework:
+  email_optimization:
+    elements: ["subject_lines", "content_structure", "personalization", "timing"]
+    best_practices: ["value_first", "relationship_focus", "consistency", "authenticity"]
+    measurement: ["open_rates", "engagement_rates", "relationship_depth", "conversion_quality"]
+  
+  multi_channel_coordination:
+    elements: ["message_consistency", "channel_strengths", "context_preservation", "handoff_protocols"]
+    best_practices: ["unified_experience", "channel_optimization", "preference_respect", "seamless_transition"]
+    measurement: ["cross_channel_engagement", "journey_completion", "experience_quality", "preference_alignment"]
+
+quality_validation_framework:
+  relationship_focus:
+    - sustainable_engagement: "Engagement strategies must be sustainable long-term"
+    - trust_building: "All activities must contribute to trust development"
+    - value_delivery: "Consistent value delivery must be maintained"
+    - relationship_preservation: "Conversion activities must preserve relationships"
+  
+  conversion_effectiveness:
+    - trigger_accuracy: "Conversion triggers must be accurately identified"
+    - pathway_optimization: "Multiple conversion pathways must be optimized"
+    - timing_optimization: "Conversion timing must respect relationship readiness"
+    - quality_maintenance: "Conversion quality must be prioritized over quantity"
+  
+  implementation_readiness:
+    - resource_planning: "Implementation must be properly resourced"
+    - team_readiness: "Team must be trained on relationship-focused approach"
+    - technology_readiness: "Technology must support relationship building"
+    - measurement_readiness: "Metrics must track both relationships and conversions"
+
+conditional_logic:
+  campaign_type:
+    email_primary:
+      focus_areas: ["subject_optimization", "content_depth", "sequence_design", "personalization"]
+      constraints: ["frequency_limits", "content_length", "deliverability", "engagement_maintenance"]
+    
+    multi_channel:
+      focus_areas: ["channel_coordination", "message_consistency", "experience_continuity", "preference_respect"]
+      constraints: ["complexity_management", "resource_requirements", "coordination_challenges", "attribution_complexity"]
+  
+  industry_type:
+    b2b:
+      considerations: ["longer_cycles", "multiple_stakeholders", "educational_focus", "authority_building"]
+      optimization: ["thought_leadership", "expertise_demonstration", "relationship_depth", "trust_development"]
+    
+    b2c:
+      considerations: ["emotional_triggers", "lifestyle_alignment", "social_proof", "convenience"]
+      optimization: ["emotional_connection", "lifestyle_integration", "community_building", "experience_quality"]
+
+integration_requirements:
+  data_requirements:
+    behavioral_data: ["engagement_history", "content_consumption", "interaction_patterns", "preference_signals"]
+    relationship_data: ["trust_indicators", "engagement_quality", "response_patterns", "advocacy_behaviors"]
+    conversion_data: ["trigger_events", "pathway_progression", "conversion_readiness", "outcome_tracking"]
+  
+  technology_integration:
+    marketing_automation: ["sequence_management", "personalization_engine", "trigger_detection", "performance_tracking"]
+    crm_integration: ["relationship_tracking", "conversation_history", "opportunity_management", "outcome_attribution"]
+    analytics_platform: ["engagement_analytics", "relationship_metrics", "conversion_attribution", "optimization_insights"]
+
+privacy_compliance:
+  data_governance:
+    collection: ["consent_based", "purpose_limited", "minimal_collection", "transparent_usage"]
+    storage: ["secure_storage", "retention_limits", "access_controls", "audit_trails"]
+    usage: ["purpose_alignment", "consent_respect", "preference_honor", "opt_out_respect"]
+  
+  relationship_ethics:
+    trust_preservation: ["honest_communication", "value_delivery", "promise_keeping", "expectation_management"]
+    manipulation_avoidance: ["authentic_engagement", "genuine_value", "honest_positioning", "ethical_persuasion"]
+    long_term_focus: ["sustainable_practices", "relationship_investment", "mutual_benefit", "ethical_conversion"]

@@ -1,0 +1,752 @@
+template:
+  id: strategic-alignment-blueprint-template-v1
+  name: Strategic Alignment Blueprint
+  version: 1.0
+  output:
+    format: markdown
+    filename: "docs/{{company_name}}-strategic-alignment-blueprint.md"
+    title: "{{company_name}} Strategic Alignment Blueprint"
+
+workflow:
+  mode: interactive
+  elicitation: strategic-synthesis
+  custom_elicitation:
+    title: "Strategic Synthesis Elicitation Actions"
+    sections:
+      - id: foundation-synthesis
+        options:
+          - "Synthesize Company Foundation insights - Distill core strategic elements"
+          - "Integrate Market Analysis findings - Identify strategic opportunities"
+          - "Align Customer Avatar insights - Map customer needs to strategy"
+          - "Cross-reference competitive positioning - Validate differentiation"
+          - "Identify strategic synergies - Find reinforcing elements"
+          - "Challenge strategic assumptions - Test for blind spots"
+          - "Proceed to strategic priorities"
+      - id: priority-optimization
+        options:
+          - "Evaluate resource allocation - Optimize for maximum impact"
+          - "Assess capability requirements - Identify gaps and needs"
+          - "Model growth scenarios - Test different strategic paths"
+          - "Analyze risk-reward profiles - Balance opportunity and exposure"
+          - "Map dependency chains - Understand execution sequence"
+          - "Validate market timing - Ensure strategic readiness"
+          - "Proceed to success metrics"
+      - id: measurement-framework
+        options:
+          - "Define leading indicators - Early success signals"
+          - "Establish lagging indicators - Outcome measurements"
+          - "Create feedback loops - Continuous improvement systems"
+          - "Set milestone checkpoints - Progress validation points"
+          - "Design pivot triggers - When to adapt strategy"
+          - "Build reporting dashboards - Visibility frameworks"
+          - "Proceed to implementation planning"
+
+sections:
+  - id: strategic-overview
+    title: Strategic Alignment Overview
+    instruction: |
+      This Strategic Alignment Blueprint synthesizes insights from Company Foundation, Market Analysis, and Customer Avatar research into a cohesive strategic framework.
+      
+      The blueprint serves as the master strategic document that:
+      - Aligns all marketing initiatives with business objectives
+      - Prioritizes resource allocation for maximum impact
+      - Defines clear success metrics and KPIs
+      - Creates decision frameworks for strategic choices
+      
+      Output file location: `docs/{{company_name}}-strategic-alignment-blueprint.md`
+
+  - id: foundation-synthesis
+    title: Foundation Synthesis & Strategic Context
+    instruction: |
+      Synthesize key insights from Company Foundation Brief, Market Analysis, and Customer Avatar Profile.
+      Extract strategic implications and identify reinforcing elements across all analyses.
+      Use elicitation to deepen understanding of strategic connections.
+    elicit: true
+    custom_elicitation: foundation-synthesis
+    sections:
+      - id: strategic-foundation
+        title: Strategic Foundation Elements
+        template: |
+          **Company Mission Alignment:**
+          {{mission_strategic_implications}}
+          
+          **Unique Mechanism Leverage:**
+          - Mechanism: {{unique_mechanism_name}}
+          - Strategic Advantage: {{mechanism_strategic_advantage}}
+          - Competitive Moat: {{mechanism_competitive_protection}}
+          
+          **Brand Voice Strategic Role:**
+          {{brand_voice_strategic_application}}
+          
+          **Core Value Proposition Focus:**
+          {{value_proposition_strategic_priority}}
+      - id: market-opportunity-synthesis
+        title: Market Opportunity Synthesis
+        template: |
+          **Primary Market Opportunity:**
+          {{primary_market_opportunity}}
+          
+          **Market Timing Assessment:**
+          - Current Stage: {{market_maturity_stage}}
+          - Timing Advantage: {{timing_strategic_advantage}}
+          - Window of Opportunity: {{opportunity_timeframe}}
+          
+          **Competitive Positioning Strategy:**
+          {{competitive_positioning_synthesis}}
+          
+          **Market Expansion Potential:**
+          {{market_expansion_opportunities}}
+      - id: customer-alignment-synthesis
+        title: Customer Strategic Alignment
+        template: |
+          **Primary Customer Segment Focus:**
+          - Segment: {{primary_segment_definition}}
+          - Strategic Value: {{segment_strategic_importance}}
+          - Growth Potential: {{segment_growth_projection}}
+          
+          **Customer Journey Optimization:**
+          {{journey_strategic_priorities}}
+          
+          **Customer Success Alignment:**
+          {{customer_success_strategic_role}}
+          
+          **Lifetime Value Optimization:**
+          {{ltv_optimization_strategy}}
+
+  - id: strategic-priorities-framework
+    title: Strategic Priorities & Decision Framework
+    instruction: |
+      Define strategic priorities based on synthesis insights. Create clear decision frameworks for resource allocation.
+      Use priority scoring to ensure objective strategic choices.
+    elicit: true
+    custom_elicitation: priority-optimization
+    variables:
+      - strategic_priorities
+      - resource_allocation
+    sections:
+      - id: strategic-priorities
+        title: Strategic Priority Matrix
+        instruction: Define 3-5 strategic priorities with clear scoring and rationale
+        repeatable: true
+        template: |
+          **Priority {{priority_number}}: {{priority_name}}**
+          
+          **Strategic Objective:**
+          {{priority_objective}}
+          
+          **Business Impact Score:** {{impact_score}}/10
+          - Revenue Impact: {{revenue_impact_assessment}}
+          - Customer Impact: {{customer_impact_assessment}}
+          - Competitive Impact: {{competitive_impact_assessment}}
+          
+          **Feasibility Score:** {{feasibility_score}}/10
+          - Resource Requirements: {{resource_requirements}}
+          - Capability Readiness: {{capability_assessment}}
+          - Time to Impact: {{time_to_value}}
+          
+          **Strategic Alignment Score:** {{alignment_score}}/10
+          - Mission Alignment: {{mission_alignment_rating}}
+          - Unique Mechanism Leverage: {{mechanism_leverage_rating}}
+          - Market Opportunity Fit: {{market_fit_rating}}
+          
+          **Total Priority Score:** {{total_priority_score}}/30
+      - id: resource-allocation-framework
+        title: Resource Allocation Strategy
+        template: |
+          **Resource Allocation Model:**
+          {{resource_allocation_philosophy}}
+          
+          **Budget Distribution Framework:**
+          - Priority 1 Allocation: {{priority_1_budget_percentage}}%
+          - Priority 2 Allocation: {{priority_2_budget_percentage}}%
+          - Priority 3 Allocation: {{priority_3_budget_percentage}}%
+          - Innovation/Testing Reserve: {{innovation_budget_percentage}}%
+          - Operational Buffer: {{buffer_budget_percentage}}%
+          
+          **Human Resource Allocation:**
+          {{human_resource_strategy}}
+          
+          **Technology Investment Priorities:**
+          {{technology_investment_priorities}}
+      - id: decision-framework
+        title: Strategic Decision Framework
+        template: |
+          **Decision Criteria Hierarchy:**
+          1. {{primary_decision_criterion}} (Weight: {{primary_weight}}%)
+          2. {{secondary_decision_criterion}} (Weight: {{secondary_weight}}%)
+          3. {{tertiary_decision_criterion}} (Weight: {{tertiary_weight}}%)
+          4. {{quaternary_decision_criterion}} (Weight: {{quaternary_weight}}%)
+          
+          **Go/No-Go Thresholds:**
+          - Minimum Strategic Score: {{minimum_strategic_score}}
+          - Required ROI Projection: {{required_roi_threshold}}
+          - Maximum Risk Tolerance: {{risk_tolerance_level}}
+          
+          **Strategic Pivot Triggers:**
+          {{pivot_trigger_conditions}}
+
+  - id: growth-phase-strategy
+    title: Business Stage & Growth Phase Strategy
+    instruction: |
+      Define stage-specific strategies based on business maturity and growth objectives.
+      Create conditional strategies that adapt to different growth phases.
+    sections:
+      - id: current-stage-strategy
+        title: Current Business Stage Strategy
+        conditional:
+          startup:
+            template: |
+              **Startup Stage Strategic Focus:**
+              
+              **Market Entry Strategy:**
+              {{startup_market_entry_strategy}}
+              
+              **MVP to Market Fit:**
+              - Current Status: {{product_market_fit_status}}
+              - Key Metrics: {{pmf_key_metrics}}
+              - Strategic Milestones: {{pmf_milestones}}
+              
+              **Resource Conservation:**
+              {{startup_resource_strategy}}
+              
+              **Growth Triggers:**
+              {{startup_growth_triggers}}
+          growth:
+            template: |
+              **Growth Stage Strategic Focus:**
+              
+              **Scaling Strategy:**
+              {{growth_scaling_strategy}}
+              
+              **Market Expansion:**
+              - Geographic Expansion: {{geographic_expansion_plan}}
+              - Segment Expansion: {{segment_expansion_plan}}
+              - Product Line Extension: {{product_expansion_plan}}
+              
+              **Operational Excellence:**
+              {{growth_operational_priorities}}
+              
+              **Competitive Defense:**
+              {{growth_competitive_strategy}}
+          mature:
+            template: |
+              **Mature Stage Strategic Focus:**
+              
+              **Market Leadership:**
+              {{mature_leadership_strategy}}
+              
+              **Innovation Pipeline:**
+              - Disruption Defense: {{disruption_defense_strategy}}
+              - Innovation Investments: {{innovation_investment_areas}}
+              - Partnership Strategy: {{strategic_partnership_approach}}
+              
+              **Optimization Focus:**
+              {{mature_optimization_priorities}}
+              
+              **Legacy Transformation:**
+              {{legacy_transformation_strategy}}
+      - id: phase-transition-planning
+        title: Growth Phase Transition Planning
+        template: |
+          **Next Phase Preparation:**
+          {{next_phase_description}}
+          
+          **Transition Triggers:**
+          - Revenue Milestone: {{revenue_transition_trigger}}
+          - Customer Base: {{customer_transition_trigger}}
+          - Market Share: {{market_share_trigger}}
+          - Operational Maturity: {{operational_trigger}}
+          
+          **Capability Building:**
+          {{transition_capability_requirements}}
+          
+          **Strategic Shifts Required:**
+          {{transition_strategic_adjustments}}
+
+  - id: success-metrics-framework
+    title: Success Metrics & KPI Framework
+    instruction: |
+      Define comprehensive success metrics aligned with strategic priorities.
+      Create measurement systems that provide actionable insights.
+    elicit: true
+    custom_elicitation: measurement-framework
+    variables:
+      - success_metrics
+    sections:
+      - id: kpi-architecture
+        title: KPI Architecture
+        template: |
+          **North Star Metric:**
+          - Metric: {{north_star_metric}}
+          - Current Baseline: {{north_star_baseline}}
+          - Target: {{north_star_target}}
+          - Timeframe: {{north_star_timeframe}}
+          
+          **Strategic KPI Hierarchy:**
+          {{kpi_hierarchy_structure}}
+      - id: priority-specific-metrics
+        title: Priority-Specific Success Metrics
+        instruction: Define 3-5 key metrics for each strategic priority
+        repeatable: true
+        template: |
+          **Priority: {{priority_name}}**
+          
+          **Primary Success Metrics:**
+          1. {{primary_metric}}
+             - Baseline: {{primary_baseline}}
+             - Target: {{primary_target}}
+             - Measurement Frequency: {{primary_frequency}}
+          
+          2. {{secondary_metric}}
+             - Baseline: {{secondary_baseline}}
+             - Target: {{secondary_target}}
+             - Measurement Frequency: {{secondary_frequency}}
+          
+          3. {{tertiary_metric}}
+             - Baseline: {{tertiary_baseline}}
+             - Target: {{tertiary_target}}
+             - Measurement Frequency: {{tertiary_frequency}}
+          
+          **Leading Indicators:**
+          {{priority_leading_indicators}}
+          
+          **Lagging Indicators:**
+          {{priority_lagging_indicators}}
+      - id: measurement-systems
+        title: Measurement & Reporting Systems
+        template: |
+          **Data Collection Framework:**
+          {{data_collection_methodology}}
+          
+          **Reporting Cadence:**
+          - Daily Monitoring: {{daily_metrics}}
+          - Weekly Reviews: {{weekly_metrics}}
+          - Monthly Analysis: {{monthly_metrics}}
+          - Quarterly Strategic Review: {{quarterly_metrics}}
+          
+          **Dashboard Architecture:**
+          {{dashboard_design_framework}}
+          
+          **Accountability Structure:**
+          {{metric_ownership_framework}}
+
+  - id: implementation-roadmap
+    title: Strategic Implementation Roadmap
+    instruction: |
+      Create actionable implementation plan with clear phases, milestones, and dependencies.
+      Ensure roadmap aligns with strategic priorities and resource constraints.
+    sections:
+      - id: phase-planning
+        title: Implementation Phases
+        repeatable: true
+        template: |
+          **Phase {{phase_number}}: {{phase_name}}**
+          **Duration:** {{phase_duration}}
+          
+          **Phase Objectives:**
+          {{phase_objectives}}
+          
+          **Key Initiatives:**
+          1. {{initiative_1}} - {{initiative_1_owner}}
+          2. {{initiative_2}} - {{initiative_2_owner}}
+          3. {{initiative_3}} - {{initiative_3_owner}}
+          
+          **Success Criteria:**
+          {{phase_success_criteria}}
+          
+          **Dependencies:**
+          {{phase_dependencies}}
+          
+          **Risk Factors:**
+          {{phase_risks}}
+      - id: quick-wins-strategy
+        title: Quick Wins & Momentum Building
+        template: |
+          **30-Day Quick Wins:**
+          1. {{quick_win_1}} - Impact: {{qw1_impact}}
+          2. {{quick_win_2}} - Impact: {{qw2_impact}}
+          3. {{quick_win_3}} - Impact: {{qw3_impact}}
+          
+          **90-Day Momentum Builders:**
+          {{ninety_day_initiatives}}
+          
+          **Early Success Communication:**
+          {{success_communication_strategy}}
+      - id: capability-development
+        title: Strategic Capability Development
+        template: |
+          **Core Capabilities Required:**
+          {{core_capability_requirements}}
+          
+          **Capability Building Plan:**
+          - Internal Development: {{internal_development_plan}}
+          - External Partnerships: {{partnership_strategy}}
+          - Technology Enablement: {{technology_capability_plan}}
+          
+          **Skills Gap Analysis:**
+          {{skills_gap_assessment}}
+          
+          **Training & Development:**
+          {{training_investment_plan}}
+
+  - id: risk-mitigation-strategy
+    title: Risk Management & Contingency Planning
+    instruction: |
+      Identify strategic risks and develop mitigation strategies.
+      Create contingency plans for major risk scenarios.
+    sections:
+      - id: risk-assessment
+        title: Strategic Risk Assessment
+        repeatable: true
+        template: |
+          **Risk: {{risk_name}}**
+          **Category:** {{risk_category}}
+          **Probability:** {{risk_probability}}/5
+          **Impact:** {{risk_impact}}/5
+          **Risk Score:** {{risk_score}}/25
+          
+          **Risk Description:**
+          {{risk_detailed_description}}
+          
+          **Mitigation Strategy:**
+          {{risk_mitigation_approach}}
+          
+          **Contingency Plan:**
+          {{risk_contingency_plan}}
+          
+          **Early Warning Indicators:**
+          {{risk_warning_signs}}
+      - id: scenario-planning
+        title: Strategic Scenario Planning
+        template: |
+          **Best Case Scenario:**
+          - Conditions: {{best_case_conditions}}
+          - Strategic Response: {{best_case_strategy}}
+          - Resource Allocation: {{best_case_resources}}
+          
+          **Base Case Scenario:**
+          - Conditions: {{base_case_conditions}}
+          - Strategic Response: {{base_case_strategy}}
+          - Resource Allocation: {{base_case_resources}}
+          
+          **Worst Case Scenario:**
+          - Conditions: {{worst_case_conditions}}
+          - Strategic Response: {{worst_case_strategy}}
+          - Resource Allocation: {{worst_case_resources}}
+          
+          **Black Swan Considerations:**
+          {{black_swan_planning}}
+
+  - id: strategic-governance
+    title: Strategic Governance & Review Framework
+    instruction: |
+      Establish governance structure for strategic execution and adaptation.
+      Create review cycles and decision-making protocols.
+    sections:
+      - id: governance-structure
+        title: Strategic Governance Structure
+        template: |
+          **Strategic Leadership Team:**
+          {{strategic_leadership_composition}}
+          
+          **Decision Rights Matrix:**
+          {{decision_rights_framework}}
+          
+          **Escalation Protocols:**
+          {{escalation_procedures}}
+          
+          **Strategic Communication Cadence:**
+          {{communication_rhythm}}
+      - id: review-cycles
+        title: Strategic Review Cycles
+        template: |
+          **Monthly Strategic Reviews:**
+          - Focus: {{monthly_review_focus}}
+          - Participants: {{monthly_participants}}
+          - Outputs: {{monthly_outputs}}
+          
+          **Quarterly Strategic Planning:**
+          - Focus: {{quarterly_planning_focus}}
+          - Participants: {{quarterly_participants}}
+          - Outputs: {{quarterly_outputs}}
+          
+          **Annual Strategic Refresh:**
+          - Focus: {{annual_refresh_focus}}
+          - Participants: {{annual_participants}}
+          - Outputs: {{annual_outputs}}
+          
+          **Continuous Improvement Process:**
+          {{continuous_improvement_framework}}
+
+  - id: integration-alignment
+    title: Cross-Functional Integration & Alignment
+    instruction: |
+      Ensure strategic alignment across all business functions.
+      Create integration points and collaboration frameworks.
+    sections:
+      - id: functional-alignment
+        title: Functional Alignment Framework
+        template: |
+          **Marketing-Sales Alignment:**
+          {{marketing_sales_integration}}
+          
+          **Marketing-Product Alignment:**
+          {{marketing_product_integration}}
+          
+          **Marketing-Customer Success Alignment:**
+          {{marketing_cs_integration}}
+          
+          **Marketing-Operations Alignment:**
+          {{marketing_ops_integration}}
+          
+          **Cross-Functional OKRs:**
+          {{cross_functional_objectives}}
+      - id: communication-protocols
+        title: Strategic Communication Protocols
+        template: |
+          **Internal Communication Strategy:**
+          {{internal_communication_framework}}
+          
+          **Stakeholder Update Cadence:**
+          {{stakeholder_communication_rhythm}}
+          
+          **Strategic Narrative:**
+          {{strategic_story_framework}}
+          
+          **Change Management Approach:**
+          {{change_management_strategy}}
+
+  - id: strategic-evolution
+    title: Strategic Evolution & Adaptation Framework
+    instruction: |
+      Create frameworks for strategic evolution as market conditions change.
+      Build adaptive capacity into strategic planning.
+    sections:
+      - id: adaptation-triggers
+        title: Strategic Adaptation Triggers
+        template: |
+          **Market Signal Monitoring:**
+          {{market_signal_framework}}
+          
+          **Adaptation Thresholds:**
+          - Market Share Change: {{market_share_threshold}}
+          - Customer Behavior Shift: {{customer_behavior_threshold}}
+          - Competitive Landscape Change: {{competitive_threshold}}
+          - Technology Disruption: {{technology_threshold}}
+          
+          **Strategic Pivot Protocol:**
+          {{pivot_decision_process}}
+      - id: innovation-pipeline
+        title: Strategic Innovation Pipeline
+        template: |
+          **Innovation Investment Framework:**
+          {{innovation_investment_model}}
+          
+          **Experimentation Budget:**
+          {{experimentation_allocation}}
+          
+          **Innovation Metrics:**
+          {{innovation_success_metrics}}
+          
+          **Future-Proofing Initiatives:**
+          {{future_proofing_strategies}}
+
+  - id: final-synthesis
+    title: Strategic Synthesis & Executive Summary
+    instruction: |
+      Create executive summary that captures the essence of the strategic alignment.
+      Provide clear next steps and immediate actions.
+    content: |
+      ## Executive Strategic Summary
+      
+      **Strategic Vision:**
+      {{strategic_vision_statement}}
+      
+      **Top 3 Strategic Priorities:**
+      1. {{top_priority_1}} - {{priority_1_rationale}}
+      2. {{top_priority_2}} - {{priority_2_rationale}}
+      3. {{top_priority_3}} - {{priority_3_rationale}}
+      
+      **Resource Allocation Summary:**
+      {{resource_allocation_summary}}
+      
+      **Success Metrics Summary:**
+      {{key_success_metrics_summary}}
+      
+      **Immediate Next Steps:**
+      1. {{immediate_action_1}} - Owner: {{action_1_owner}} - Due: {{action_1_date}}
+      2. {{immediate_action_2}} - Owner: {{action_2_owner}} - Due: {{action_2_date}}
+      3. {{immediate_action_3}} - Owner: {{action_3_owner}} - Due: {{action_3_date}}
+      
+      **Strategic Review Date:** {{first_review_date}}
+      
+      ---
+      
+      ## Strategic Alignment Certification
+      
+      **Blueprint Completed:** {{completion_date}}
+      **Strategic Lead:** {{strategic_lead_name}}
+      **Executive Sponsor:** {{executive_sponsor_name}}
+      **Next Review:** {{next_review_date}}
+      
+      **Alignment Validation:**
+      - [ ] Synthesizes all foundation research effectively
+      - [ ] Priorities are clear and measurable
+      - [ ] Resource allocation is optimized
+      - [ ] Success metrics are comprehensive
+      - [ ] Implementation roadmap is actionable
+      - [ ] Risk mitigation is thorough
+      - [ ] Governance structure is clear
+      
+      ---
+      
+      _Document Version: 1.0_
+      _Framework: ONE Elevate Marketing Strategic Alignment_
+      _Status: Active Strategic Blueprint_
+
+# Advanced template features and validation
+variables:
+  strategic_priorities:
+    type: array
+    min_items: 3
+    max_items: 5
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          min_length: 5
+        objective:
+          type: string
+          min_length: 20
+        impact_score:
+          type: number
+          min: 1
+          max: 10
+        feasibility_score:
+          type: number
+          min: 1
+          max: 10
+        alignment_score:
+          type: number
+          min: 1
+          max: 10
+    validation:
+      - priorities_are_specific: "Each priority must have specific, measurable objectives"
+      - priorities_are_strategic: "Priorities must be strategic, not just tactical"
+      - priorities_are_achievable: "Priorities must be realistic given resources"
+  
+  resource_allocation:
+    type: object
+    properties:
+      budget_distribution:
+        type: object
+        validation:
+          - totals_100_percent: "Budget allocation must total 100%"
+          - includes_buffer: "Must include operational buffer allocation"
+      human_resources:
+        type: object
+        required: ["allocation_model", "capability_gaps"]
+      technology_investments:
+        type: array
+        min_items: 1
+    validation:
+      - allocation_matches_priorities: "Resource allocation must align with strategic priorities"
+      - realistic_constraints: "Allocation must reflect real resource constraints"
+  
+  success_metrics:
+    type: object
+    properties:
+      north_star_metric:
+        type: object
+        required: ["metric", "baseline", "target", "timeframe"]
+      priority_metrics:
+        type: array
+        min_items: 3
+        items:
+          type: object
+          required: ["metric", "baseline", "target", "frequency"]
+      measurement_systems:
+        type: object
+        required: ["data_collection", "reporting_cadence", "accountability"]
+    validation:
+      - metrics_are_measurable: "All metrics must be quantifiable and measurable"
+      - metrics_have_baselines: "Metrics must include current baseline values"
+      - metrics_have_targets: "Metrics must have specific target values"
+      - metrics_have_owners: "Each metric must have clear ownership"
+
+quality_checks:
+  strategic_coherence:
+    - synthesis_comprehensive: "Must effectively synthesize all research inputs"
+    - priorities_aligned: "Priorities must align with company mission and market opportunity"
+    - resources_optimized: "Resource allocation must optimize for maximum impact"
+    - metrics_comprehensive: "Success metrics must cover all strategic priorities"
+  
+  implementation_readiness:
+    - roadmap_actionable: "Implementation roadmap must have clear, actionable steps"
+    - quick_wins_identified: "Must include quick wins for momentum building"
+    - risks_addressed: "Major risks must be identified with mitigation strategies"
+    - governance_clear: "Governance structure must be clearly defined"
+  
+  adaptation_capability:
+    - evolution_framework: "Must include framework for strategic evolution"
+    - pivot_triggers: "Clear triggers for strategic adaptation must be defined"
+    - review_cycles: "Regular review cycles must be established"
+
+conditional_logic:
+  business_stage:
+    startup:
+      focus_areas: ["market_entry", "product_market_fit", "resource_conservation"]
+      metric_emphasis: ["growth_rate", "burn_rate", "customer_acquisition"]
+    growth:
+      focus_areas: ["scaling", "market_expansion", "operational_excellence"]
+      metric_emphasis: ["market_share", "customer_retention", "unit_economics"]
+    mature:
+      focus_areas: ["market_leadership", "innovation", "optimization"]
+      metric_emphasis: ["profitability", "market_position", "innovation_metrics"]
+  
+  market_dynamics:
+    emerging:
+      strategy_emphasis: ["first_mover", "market_education", "category_creation"]
+    growing:
+      strategy_emphasis: ["market_share_capture", "competitive_positioning", "scale"]
+    mature:
+      strategy_emphasis: ["differentiation", "customer_loyalty", "innovation"]
+    declining:
+      strategy_emphasis: ["transformation", "adjacency_exploration", "efficiency"]
+
+integration_requirements:
+  input_documents:
+    - company_foundation_brief:
+        required_elements: ["unique_mechanism", "brand_voice", "core_offer"]
+    - market_analysis_report:
+        required_elements: ["market_opportunities", "competitive_landscape", "trends"]
+    - customer_avatar_profile:
+        required_elements: ["segment_definition", "journey_map", "value_drivers"]
+  
+  output_alignment:
+    - marketing_campaigns:
+        alignment_points: ["messaging", "targeting", "positioning"]
+    - sales_enablement:
+        alignment_points: ["value_props", "objection_handling", "pricing"]
+    - product_development:
+        alignment_points: ["feature_priorities", "market_fit", "roadmap"]
+
+validation_rules:
+  completeness:
+    - all_sections_complete: "All template sections must be thoroughly completed"
+    - synthesis_demonstrated: "Clear synthesis of all input documents must be shown"
+    - priorities_scored: "All priorities must be scored using the framework"
+    - metrics_defined: "Success metrics must be defined for all priorities"
+  
+  strategic_quality:
+    - priorities_are_strategic: "Priorities must be strategic, not just tactical"
+    - allocation_justified: "Resource allocation must be clearly justified"
+    - risks_realistic: "Risk assessment must be realistic and comprehensive"
+    - implementation_feasible: "Implementation plan must be feasible given constraints"
+  
+  measurement_quality:
+    - metrics_smart: "All metrics must be Specific, Measurable, Achievable, Relevant, Time-bound"
+    - baselines_established: "Current baselines must be established for all metrics"
+    - ownership_clear: "Metric ownership must be clearly assigned"
+    - systems_defined: "Measurement systems must be clearly defined"

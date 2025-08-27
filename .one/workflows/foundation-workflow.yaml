@@ -1,0 +1,192 @@
+workflow:
+  name: Foundation Creation Workflow
+  description: Creates personalized Company, Market, Customer foundation for new users
+  version: 1.0
+  type: foundation
+  trigger: new_user_onboarding
+
+steps:
+  - id: welcome
+    name: Welcome & Context Setting
+    type: interactive
+    agent: foundation-specialist
+    duration: 30_seconds
+    actions:
+      - display_welcome_message
+      - explain_foundation_importance
+      - set_user_expectations
+    output:
+      user_engagement: ready_to_proceed
+
+  - id: company_discovery
+    name: Company Intelligence Gathering
+    type: elicitation
+    agent: foundation-specialist
+    duration: 2_minutes
+    dependencies: [welcome]
+    actions:
+      - gather_project_type
+      - collect_company_basics
+      - identify_business_model
+      - capture_unique_value_proposition
+    templates:
+      - company-foundation-brief-tmpl.yaml
+    output:
+      company_foundation:
+        name: string
+        mission: string
+        type: enum
+        model: enum
+        unique_value: string
+
+  - id: market_analysis
+    name: Market Intelligence Creation
+    type: research_and_elicitation
+    agent: foundation-specialist
+    duration: 90_seconds
+    dependencies: [company_discovery]
+    actions:
+      - identify_industry
+      - research_competitors
+      - analyze_market_opportunity
+      - estimate_market_size
+      - identify_trends
+    templates:
+      - market-analysis-report-tmpl.yaml
+    output:
+      market_intelligence:
+        industry: string
+        size: string
+        opportunity: string
+        competitors: array
+        trends: array
+
+  - id: customer_avatar_creation
+    name: Customer Intelligence Development
+    type: elicitation_and_analysis
+    agent: foundation-specialist
+    duration: 90_seconds
+    dependencies: [company_discovery]
+    actions:
+      - define_primary_customer
+      - identify_customer_problems
+      - map_current_solutions
+      - determine_value_proposition_fit
+      - create_customer_avatar
+      - map_customer_journey
+    templates:
+      - customer-avatar-profile-tmpl.yaml
+    output:
+      customer_intelligence:
+        primary_customer: string
+        problems: array
+        solutions: array
+        avatar: object
+        journey: object
+
+  - id: foundation_synthesis
+    name: Foundation Integration & Scoring
+    type: analysis
+    agent: foundation-specialist
+    duration: 30_seconds
+    dependencies: [company_discovery, market_analysis, customer_avatar_creation]
+    actions:
+      - integrate_foundation_components
+      - calculate_foundation_scores
+      - generate_recommendations
+      - create_next_step_suggestions
+    output:
+      foundation_complete:
+        overall_score: number
+        company_score: number
+        market_score: number
+        customer_score: number
+        recommendations: array
+        next_steps: array
+
+  - id: foundation_storage
+    name: Foundation Persistence & Export
+    type: data_management
+    agent: foundation-specialist
+    duration: 15_seconds
+    dependencies: [foundation_synthesis]
+    actions:
+      - save_foundation_yaml
+      - export_foundation_json
+      - create_foundation_summary
+      - generate_foundation_dashboard_data
+    templates:
+      - foundation-tmpl.yaml
+    output:
+      foundation_files:
+        - data/foundation/foundation.yaml
+        - data/foundation/foundation.json
+        - data/foundation/foundation-summary.md
+
+  - id: mission_suggestions
+    name: Mission Recommendations
+    type: strategic_analysis
+    agent: foundation-specialist
+    duration: 30_seconds
+    dependencies: [foundation_storage]
+    actions:
+      - analyze_foundation_for_missions
+      - suggest_attract_missions
+      - suggest_convert_missions
+      - suggest_grow_missions
+      - prioritize_mission_recommendations
+    output:
+      mission_recommendations:
+        attract: array
+        convert: array
+        grow: array
+        priority: array
+
+success_criteria:
+  - foundation_completion_rate > 90%
+  - average_completion_time < 5_minutes
+  - user_satisfaction_score > 4.5
+  - foundation_quality_score > 80%
+
+quality_gates:
+  - company_clarity_check: "Company mission and value proposition are clear and distinct"
+  - market_validation: "Market opportunity is specific and addressable"
+  - customer_specificity: "Customer avatar is detailed and actionable"
+  - foundation_coherence: "All foundation elements align and support each other"
+
+next_actions:
+  success:
+    - redirect_to_mission_creation
+    - show_foundation_dashboard
+    - enable_story_creation
+  
+  incomplete:
+    - retry_foundation_wizard
+    - offer_foundation_enhancement
+    - connect_with_foundation_specialist
+
+integration:
+  elevate_methodology:
+    foundation_to_attract: "Use customer problems to create Hook content"
+    foundation_to_convert: "Use value proposition to design Sell sequences"
+    foundation_to_grow: "Use customer journey to build Upsell strategies"
+  
+  agent_handoffs:
+    marketing_missions: marketing-director
+    product_missions: engineering-director
+    growth_missions: viral-growth-orchestrator
+
+metrics:
+  track:
+    - completion_rate
+    - time_to_completion
+    - foundation_quality_scores
+    - user_satisfaction
+    - subsequent_mission_creation_rate
+  
+  targets:
+    completion_rate: ">90%"
+    avg_completion_time: "<5 minutes"
+    quality_score: ">80%"
+    satisfaction: ">4.5/5"
+    mission_activation: ">70%"
